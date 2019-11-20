@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Component Library with Storybook
 
-## Available Scripts
+Datahub Explorer is a REACT-driven system that provides viewing capabilities for end users. This release is for DHS environments only.
+This project is the web service that serves content to explorer-ui.
 
-In the project directory, you can run:
 
-### `npm start`
+# Getting Started
+Explorer is distributed as a group of three Docker containers, one of which contains the UI environment, one of which contains the backed, 
+and the third contains MarkLogic and is only packaged as a convenience and is only intended for demo use.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The customer is expected to use a complete MarkLogic installation, as supported by Data Hub Services rather than the containerized version. 
+That version is not supported for any purpose other than demonstration. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Development Setup
 
-### `npm test`
+Below are the commands to start the Data Hub Explorer UI
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+# Install dependencies
+npm install
 
-### `npm run build`
+# Start the UI development environment
+npm start
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Setup the backend development environment
+Follow the README instructions to build and run the server locally from command line
+https://project.marklogic.com/repo/projects/PROD/repos/datahubenterprise/browse?at=refs%2Fheads%2Fdevelop
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Build Docker Container
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Make sure you have docker installed on your local system.
 
-### `npm run eject`
+```
+# Build Docker image
+docker build -t explorer-ui .
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Run Docker container
+Replace API_URL with server IP
+docker run -e API_URL=172.0.1.0:8080 -e SSL_CERT=/etc/nginx/www.explorer.com.cert.pem -e SSL_KEY=/etc/nginx/www.explorer.com.key.pem -p 80:80 -p 443:443 explorer-ui
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Build and Run the backend Docker container
+Follow the README instructions in the server repo
+https://project.marklogic.com/repo/projects/PROD/repos/datahubenterprise/browse?at=refs%2Fheads%2Fdevelop
+```
+see more details:
+https://wiki.marklogic.com/display/ENGINEERING/Run+Explorer+via+Docker#f520f246cb4a42cb9035ba4f62231ada
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Unit Testing
+```
+# Run Unit Tests
+npm run test
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Run explore BE and FE using docker-compose
+https://wiki.marklogic.com/display/ENGINEERING/Run+Explorer+via+Docker#RunExplorerviaDocker-SetupMLRegistry
 
-## Learn More
+# Contribute
+Explorer is a closed-source project. You can contribute to its success by reporting errors you encounter and 
+suggesting improvement or additional features to Product Management.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Support
+The MarkLogic Data Hub is designed, written, and maintained by [MarkLogic][marklogic] Engineering.
