@@ -1,10 +1,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs/react';
-import MlButton from '../components/ml-button';
+import MlButton from '../components/ml-button/ml-button';
 
 export default {
-  title: "Button",
+  title: "MlButton",
   decorators: [withKnobs],
   parameters: {
     info: {
