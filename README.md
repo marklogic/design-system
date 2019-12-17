@@ -2,8 +2,6 @@
 
 > MarkLogic UI Component Library
 
-[![NPM](https://img.shields.io/npm/v/marklogic-ui-library.svg)](https://www.npmjs.com/package/marklogic-ui-library) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
 ## Install
 
 ```bash
@@ -12,20 +10,22 @@ npm install --save marklogic-ui-library
 
 ## Usage
 
+  - Add Ant Design CSS file to app: '../node_modules/antd/dist/antd.css';
+  - Add minifed CSS file to app:  path to '../node_modules/marklogic-ui-library/dist/styles.min.css'
+
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from 'marklogic-ui-library'
+import { MlButton } from 'marklogic-ui-library';
 
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
+const App = () => {
+  return (
+    <MlButton>Submit</MlButton>
+  )
 }
 ```
 
-## License
+## Development
 
-MIT © [brucean52](https://github.com/brucean52)
+In Progress
+
