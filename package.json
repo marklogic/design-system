@@ -1,6 +1,6 @@
 {
   "name": "marklogic-ui-library",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "MarkLogic UI Component Library",
   "author": "brucean52",
   "license": "MIT",
@@ -20,6 +20,7 @@
     "prepare": "npm run minify-css && npm run build",
     "predeploy": "cd playground && npm install && npm run build",
     "deploy": "gh-pages -d playground/build",
+    "install:all": "(npm install); (cd playground && npm install)",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "minify-css": "node-sass --include-path scss src/styles.scss dist/styles.min.css --output-style compressed"
@@ -60,7 +61,6 @@
     "@storybook/react": "^5.2.8",
     "@svgr/rollup": "^4.3.2",
     "antd": "^3.26.3",
-    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "cross-env": "^5.2.0",
     "eslint": "^6.2.1",
