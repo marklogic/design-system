@@ -22,7 +22,7 @@
     "deploy": "gh-pages -d playground/build",
     "install:all": "(npm install); (cd playground && npm install)",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -c .storybook -o storybook-dist",
     "minify-css": "node-sass --include-path scss src/styles.scss dist/styles.min.css --output-style compressed"
   },
   "peerDependencies": {

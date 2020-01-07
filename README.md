@@ -58,12 +58,18 @@ npm run install:all
 npm run storybook
 
 Storybook: localhost:6006 
-
 ```
-Publishing static version of Storybook: TBD
+
+## Publishing static version of Storybook
+```
+# Build Storybook
+npm run build-storybook
+
+Static files will be in the /storybook-dist folder
+```
 
 
-## Publishing the Library
+## Publishing the Library to NPM
 Make sure you are logged in to npm
 ``` 
 Update root/package.json
