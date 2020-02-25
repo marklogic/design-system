@@ -18,7 +18,6 @@ export default {
   }
 }
 
-
 const defaultProps = () => ({
   // defaultValue: number('defaultValue', 0),
   min: number('min', 0),
@@ -36,7 +35,7 @@ const defaultProps = () => ({
   // icon1Type: text('icon1-type', null),
   // icon2Type: text('icon2-type', null),
   onChange: action('onChange'),
-  onAfterChange: action('onAfterChange'),
+  onAfterChange: action('onAfterChange')
 })
 
 export const basicSingle = () => {
@@ -82,7 +81,7 @@ export const basicRange = () => {
 export const disabled = () => {
   const props = _.extend(
     {
-      disabled: true
+      disabled: boolean('disabled', false)
     },
     _.omit(defaultProps(), 'disabled')
   )
@@ -136,7 +135,6 @@ export const disabled = () => {
 //   }
 // }
 
-
 // export const sliderWithIcon = () => {
 //   const value = number('value', 0)
 //   const props = defaultProps()
@@ -159,9 +157,51 @@ export const customizeTooltip = () => {
 }
 
 export const graduatedSlider = () => {
-  return (<div>Not implemented</div>)
+  const marks = {
+    0: '0°C',
+    26: '26°C',
+    37: '37°C',
+    100: {
+      style: {
+        color: '#f50'
+      },
+      label: <strong>100°C</strong>
+    }
+  }
+  return (
+    <div>
+      <h4>included=true</h4>
+      <MlSlider marks={marks} defaultValue={37} />
+      <MlSlider range marks={marks} defaultValue={[26, 37]} />
+
+      <h4>included=false</h4>
+      <MlSlider marks={marks} included={false} defaultValue={37} />
+
+      <h4>marks & step</h4>
+      <MlSlider marks={marks} step={10} defaultValue={37} />
+
+      <h4>step=null</h4>
+      <MlSlider marks={marks} step={null} defaultValue={37} />
+    </div>
+  )
 }
 
 export const vertical = () => {
-  return (<div>Not implemented</div>)
+  const style = {
+    display: 'inline-block',
+    height: 300,
+    marginLeft: 70
+  }
+  const props = _.extend(
+    {
+      vertical: boolean('vertical', true),
+      tooltipPlacement: 'right'
+    },
+    _.omit(defaultProps(), ['vertical', 'tooltipPlacement'])
+  )
+  return (
+    <div style={style}>
+      <MlSlider {...props} />
+    </div>
+  )
 }
