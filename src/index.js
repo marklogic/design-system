@@ -1,7 +1,9 @@
-import MlButton from './ml-button';
-import MlFooter from './ml-footer';
+import MlButton from './ml-button'
+import MLLayout from './ml-layout'
+import MLFooter from './ml-footer'
 
-export { 
+export {
   MlButton,
-  MlFooter
+  MLLayout,
+  MLFooter
 }
