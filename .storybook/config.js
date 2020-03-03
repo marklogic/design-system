@@ -11,7 +11,7 @@ addDecorator(
     header: true,
     source: true
   })
-); 
+);
 
 addParameters({
   options: {
