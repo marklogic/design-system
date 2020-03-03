@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs/react';
-import MlFooter from '../src/ml-footer';
+import MLFooter from '../src/ml-footer';
 
 export default {
   title: "Footer",
@@ -13,4 +13,4 @@ export default {
   }
 };
 
-export const basic = () => <MlFooter year="2019"></MlFooter>;
+export const basic = () => <MLFooter year="2019"></MLFooter>;
