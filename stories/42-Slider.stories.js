@@ -16,38 +16,6 @@ export default {
   }
 }
 
-// const defaultProps = () => {
-//   let props = {
-//     // defaultValue: number('defaultValue', 0),
-//     min: number('min', 0),
-//     max: number('max', 100),
-//     dots: boolean('dots', false),
-//     step: number('step', 0),
-//     autoFocus: boolean('autoFocus', false),
-//     marks: object('marks', undefined),
-//     // tipFormatter: function('tipFormatter', null); // There isn't a knob type for function? Unless I eval a string?,
-//     tooltipVisible: boolean('tooltipVisible', true),
-//     tooltipPlacement: text('tooltipPlacement', 'top'),
-//     included: boolean('included', true),
-//     reverse: boolean('reverse', false),
-//     range: boolean('range', false),
-//     disabled: boolean('disabled', false),
-//     vertical: boolean('vertical', false),
-//     onChange: action('onChange'),
-//     onAfterChange: action('onAfterChange')
-//   }
-//   // if (props.range) {
-//   //   _.assign(props, {
-//   //   })
-//   //   _.assign(props, {
-//   //     defaultValue: number('defaultValue', 0),
-//   //   })
-//   //   props = _.omit(props, ['defaultValue', 'defaultValueLow', 'defaultValueHigh'])
-//   // } else {
-//   //   props = _.omit(props, ['defaultValueLow', 'defaultValueHigh'])
-//   // }
-// }
-
 const noopFormatter = (n) => `${n}`
 const percentFormatter = (n) => `${n}%`
 
@@ -71,11 +39,7 @@ export const basicSingle = () => {
     onChange: action('onChange'),
     onAfterChange: action('onAfterChange')
   }
-  return (
-    <MLSlider
-      {...props}
-    />
-  )
+  return <MLSlider {...props} />
 }
 
 const tooltipPlacementOptions = {
