@@ -1,10 +1,7 @@
 import React from 'react'
-import { Meta, Story, Props } from '@storybook/addon-docs/blocks'
-// import { action } from '@storybook/addon-actions'
-import { withKnobs, array, boolean, number, text, object, select } from '@storybook/addon-knobs'
+import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import MLSlider from '../src/ml-slider'
-import _ from 'lodash'
 
 export default {
   title: 'Data Entry/MLSlider',
@@ -58,6 +55,7 @@ const tooltipPlacementOptions = {
 }
 
 export const basicRange = () => {
+  // Assemble the props in pieces so we can have them in the right order
   const props1 = {
     min: number('min', 0),
     max: number('max', 100),
@@ -67,7 +65,6 @@ export const basicRange = () => {
   }
   const defaultValueLow = number('defaultValueLow', 0)
   const defaultValueHigh = number('defaultValueHigh', 100)
-
   const props2 = {
     defaultValue: [defaultValueLow, defaultValueHigh],
     disabled: boolean('disabled', false),
