@@ -34,7 +34,9 @@ export const basic = () => {
     min: number('min', 0),
     max: number('max', 100),
     step: number('step', 1),
-    precision: number('precision', 0)
+    precision: number('precision', 0),
+    onChange: action('onChange'),
+    onPressEnter: action('onPressEnter')
   }
   return (<MLInputNumber {...props} />)
 }
