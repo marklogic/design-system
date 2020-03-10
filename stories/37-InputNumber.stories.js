@@ -115,11 +115,13 @@ export const sizes = () => {
     onChange: action('onChange'),
     onPressEnter: action('onPressEnter')
   }
-  return (<div>
-    <MLInputNumber {...props} size='small' />
-    <MLInputNumber {...props} size='middle' />
-    <MLInputNumber {...props} size='large' />
-  </div>)
+  return (
+    <div>
+      <MLInputNumber {...props} size='small' />
+      <MLInputNumber {...props} size='middle' />
+      <MLInputNumber {...props} size='large' />
+    </div>
+  )
 }
 export const decimals = () => {
   const props = {
