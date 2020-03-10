@@ -13,7 +13,7 @@ MLRadio.propTypes = {
 }
 
 const MLGroup = (props) => (
-  <Group {...props}>
+  <Group size='small' {...props}>
     {props.children}
   </Group>
 )

@@ -1,8 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import MLRadio from '../src/ml-radio'
-import {withKnobs, boolean, select, text, array, number} from "@storybook/addon-knobs";
-import _ from 'lodash'
+import { withKnobs, boolean, text, array, number } from '@storybook/addon-knobs'
 
 export default {
   title: 'Data Entry/MLRadio',
@@ -18,7 +17,7 @@ export const radio = () => {
   const label = text('label', 'Radio')
   const props = {
     disabled: boolean('disabled', false),
-    checked: boolean('checked', false),
+    checked: boolean('checked', false)
   }
   return (<MLRadio {...props}>{label}</MLRadio>)
 }
