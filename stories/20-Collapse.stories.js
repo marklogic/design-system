@@ -48,11 +48,17 @@ export const basic = () => {
   const panelProps = {
     header: text('header', 'This is panel header 1')
   }
-  const showExtras = boolean('extra (example)', false)
+  const showExtras = boolean('extra', false)
   if (showExtras) {
     panelProps.extra = extraNode
   }
   const panelBodyText = text('Body Text', 'Example body text')
+
+  const useCustomCollapse = boolean('custom style', false)
+  if (useCustomCollapse) {
+    collapseProps.className = 'site-collapse-custom-collapse'
+    panelProps.className = 'site-collapse-custom-panel'
+  }
   return (
     <MLCollapse {...collapseProps}>
       <MLPanel {...panelProps} key='1'>
@@ -83,11 +89,17 @@ export const accordion = () => {
   const panelProps = {
     header: text('header', 'This is panel header 1')
   }
-  const showExtras = boolean('extra (example)', false)
+  const showExtras = boolean('extra', false)
   if (showExtras) {
     panelProps.extra = extraNode
   }
   const panelBodyText = text('Body Text', 'Example body text')
+
+  const useCustomCollapse = boolean('custom style', false)
+  if (useCustomCollapse) {
+    collapseProps.className = 'site-collapse-custom-collapse'
+    panelProps.className = 'site-collapse-custom-panel'
+  }
   return (
     <MLCollapse {...collapseProps}>
       <MLPanel {...panelProps} key='1'>
@@ -118,9 +130,15 @@ export const nestedPanel = () => {
   const panelProps = {
     header: text('header', 'This is panel header 1')
   }
-  const showExtras = boolean('extra (example)', false)
+  const showExtras = boolean('extra', false)
   if (showExtras) {
     panelProps.extra = extraNode
+  }
+
+  const useCustomCollapse = boolean('custom style', false)
+  if (useCustomCollapse) {
+    collapseProps.className = 'site-collapse-custom-collapse'
+    panelProps.className = 'site-collapse-custom-panel'
   }
   return (
     <MLCollapse {...collapseProps}>
@@ -157,7 +175,7 @@ export const customPanelStyle = () => {
     header: text('header', 'This is panel header 1')
   }
 
-  const showExtras = boolean('extra (example)', false)
+  const showExtras = boolean('extra', false)
   if (showExtras) {
     panelProps.extra = extraNode
   }
