@@ -66,5 +66,6 @@ export const basic = () => {
     dataSource: sampleNestedData,
     columns: columns
   }
-  return (<MLTable {...props} />)
+  // TODO: Handle onChange for nested tables, and figure out a way to differentiate the callback values
+  return (<MLTable {...props} onChange={action('onChange')} />)
 }
