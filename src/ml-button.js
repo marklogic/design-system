@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button } from 'antd';
 // import styles from './styles.scss'
 
-const MlButton = (props) => {
+const MLButton = (props) => {
   return (
     <Button {...props}>
       {props.children}
@@ -12,12 +12,12 @@ const MlButton = (props) => {
 };
 
 // MarkLogic Defaults
-MlButton.defaultProps = {
+MLButton.defaultProps = {
   size: 'small'
 }
 
 // Typechecking for Ant Design properties
-MlButton.propTypes = {
+MLButton.propTypes = {
   disabled: PropTypes.bool,
   ghost: PropTypes.bool,
   href: PropTypes.string,
@@ -35,4 +35,4 @@ MlButton.propTypes = {
   block: PropTypes.bool,
 };
 
-export default MlButton;
+export default MLButton;
