@@ -1,205 +1,259 @@
-export default [
-  {
-    emp_no: 281328,
-    first_name: 'Eishiro',
-    last_name: 'Trachtenberg',
-    gender: 'M',
-    hire_date: '1988-01-21',
-    work_experience: {
-      emp_no: 281328,
-      dept_no: 'd008',
-      dept_name: 'Research',
-      titles: [
-        {
-          title: 'Staff',
-          from_date: '1988-01-21',
-          to_date: '1996-01-21'
-        },
-        {
-          title: 'Senior Staff',
-          from_date: '1996-01-21',
-          to_date: '9999-01-01'
-        }
-      ]
-    },
-    salary: [
-      {
-        salary: '56926',
-        from_date: '1995-01-19',
-        to_date: '1996-01-19'
-      },
-      {
-        salary: '51184',
-        from_date: '1989-01-20',
-        to_date: '1990-01-20'
-      },
-      {
-        salary: '60014',
-        from_date: '1999-01-18',
-        to_date: '2000-01-18'
-      },
-      {
-        salary: '47619',
-        from_date: '1988-01-21',
-        to_date: '1989-01-20'
-      },
-      {
-        salary: '58153',
-        from_date: '1996-01-19',
-        to_date: '1997-01-18'
-      },
-      {
-        salary: '51837',
-        from_date: '1990-01-20',
-        to_date: '1991-01-20'
-      },
-      {
-        salary: '56264',
-        from_date: '1993-01-19',
-        to_date: '1994-01-19'
-      },
-      {
-        salary: '59706',
-        from_date: '1998-01-18',
-        to_date: '1999-01-18'
-      },
-      {
-        salary: '62624',
-        from_date: '2001-01-17',
-        to_date: '2002-01-17'
-      },
-      {
-        salary: '63223',
-        from_date: '2002-01-17',
-        to_date: '9999-01-01'
-      },
-      {
-        salary: '57000',
-        from_date: '1994-01-19',
-        to_date: '1995-01-19'
-      },
-      {
-        salary: '55221',
-        from_date: '1991-01-20',
-        to_date: '1992-01-20'
-      },
-      {
-        salary: '54926',
-        from_date: '1992-01-20',
-        to_date: '1993-01-19'
-      },
-      {
-        salary: '62816',
-        from_date: '2000-01-18',
-        to_date: '2001-01-17'
-      },
-      {
-        salary: '58096',
-        from_date: '1997-01-18',
-        to_date: '1998-01-18'
-      }
-    ]
-  },
+const pureLessThanSorter = (a, b) => (a < b) ? -1 : (a > b) ? 1 : 0
+const extractSortColumnDecorator = (sortFn) => (dataIndex) => (a, b) => sortFn(a[dataIndex], b[dataIndex])
 
-  {
-    emp_no: 12315,
-    first_name: 'Firsty',
-    last_name: 'Lasty',
-    gender: 'X',
-    hire_date: '2000-01-21',
-    work_experience: {
-      emp_no: 12315,
-      dept_no: 'd008',
-      dept_name: 'Research',
-      titles: [
+const lessThanSorter = extractSortColumnDecorator(pureLessThanSorter)
+const dateSorter = extractSortColumnDecorator((a, b) => {
+  return pureLessThanSorter(new Date(a), new Date(b))
+})
+
+export const sampleNestedData = {
+  dataSource: [
+    {
+      emp_no: 281328,
+      first_name: 'Eishiro',
+      last_name: 'Trachtenberg',
+      gender: 'M',
+      hire_date: '1988-01-21',
+      work_experience: {
+        emp_no: 281328,
+        dept_no: 'd008',
+        dept_name: 'Research',
+        titles: [
+          {
+            title: 'Staff',
+            from_date: '1988-01-21',
+            to_date: '1996-01-21',
+          },
+          {
+            title: 'Senior Staff',
+            from_date: '1996-01-21',
+            to_date: '9999-01-01',
+          },
+        ],
+      },
+      salary: [
         {
-          title: 'Staff',
-          from_date: '1988-01-21',
-          to_date: '1996-01-21'
+          salary: '56926',
+          from_date: '1995-01-19',
+          to_date: '1996-01-19',
         },
         {
-          title: 'Senior Staff',
-          from_date: '1996-01-21',
-          to_date: '9999-01-01'
-        }
-      ]
+          salary: '51184',
+          from_date: '1989-01-20',
+          to_date: '1990-01-20',
+        },
+        {
+          salary: '60014',
+          from_date: '1999-01-18',
+          to_date: '2000-01-18',
+        },
+        {
+          salary: '47619',
+          from_date: '1988-01-21',
+          to_date: '1989-01-20',
+        },
+        {
+          salary: '58153',
+          from_date: '1996-01-19',
+          to_date: '1997-01-18',
+        },
+        {
+          salary: '51837',
+          from_date: '1990-01-20',
+          to_date: '1991-01-20',
+        },
+        {
+          salary: '56264',
+          from_date: '1993-01-19',
+          to_date: '1994-01-19',
+        },
+        {
+          salary: '59706',
+          from_date: '1998-01-18',
+          to_date: '1999-01-18',
+        },
+        {
+          salary: '62624',
+          from_date: '2001-01-17',
+          to_date: '2002-01-17',
+        },
+        {
+          salary: '63223',
+          from_date: '2002-01-17',
+          to_date: '9999-01-01',
+        },
+        {
+          salary: '57000',
+          from_date: '1994-01-19',
+          to_date: '1995-01-19',
+        },
+        {
+          salary: '55221',
+          from_date: '1991-01-20',
+          to_date: '1992-01-20',
+        },
+        {
+          salary: '54926',
+          from_date: '1992-01-20',
+          to_date: '1993-01-19',
+        },
+        {
+          salary: '62816',
+          from_date: '2000-01-18',
+          to_date: '2001-01-17',
+        },
+        {
+          salary: '58096',
+          from_date: '1997-01-18',
+          to_date: '1998-01-18',
+        },
+      ],
     },
-    salary: [
-      {
-        salary: '56926',
-        from_date: '1995-01-19',
-        to_date: '1996-01-19'
+
+    {
+      emp_no: 12315,
+      first_name: 'Firsty',
+      last_name: 'Lasty',
+      gender: 'X',
+      hire_date: '2000-01-21',
+      work_experience: {
+        emp_no: 12315,
+        dept_no: 'd008',
+        dept_name: 'Research',
+        titles: [
+          {
+            title: 'Staff',
+            from_date: '1988-01-21',
+            to_date: '1996-01-21',
+          },
+          {
+            title: 'Senior Staff',
+            from_date: '1996-01-21',
+            to_date: '9999-01-01',
+          },
+        ],
       },
-      {
-        salary: '51184',
-        from_date: '1989-01-20',
-        to_date: '1990-01-20'
-      },
-      {
-        salary: '60014',
-        from_date: '1999-01-18',
-        to_date: '2000-01-18'
-      },
-      {
-        salary: '47619',
-        from_date: '1988-01-21',
-        to_date: '1989-01-20'
-      },
-      {
-        salary: '58153',
-        from_date: '1996-01-19',
-        to_date: '1997-01-18'
-      },
-      {
-        salary: '51837',
-        from_date: '1990-01-20',
-        to_date: '1991-01-20'
-      },
-      {
-        salary: '56264',
-        from_date: '1993-01-19',
-        to_date: '1994-01-19'
-      },
-      {
-        salary: '59706',
-        from_date: '1998-01-18',
-        to_date: '1999-01-18'
-      },
-      {
-        salary: '62624',
-        from_date: '2001-01-17',
-        to_date: '2002-01-17'
-      },
-      {
-        salary: '63223',
-        from_date: '2002-01-17',
-        to_date: '9999-01-01'
-      },
-      {
-        salary: '57000',
-        from_date: '1994-01-19',
-        to_date: '1995-01-19'
-      },
-      {
-        salary: '55221',
-        from_date: '1991-01-20',
-        to_date: '1992-01-20'
-      },
-      {
-        salary: '54926',
-        from_date: '1992-01-20',
-        to_date: '1993-01-19'
-      },
-      {
-        salary: '62816',
-        from_date: '2000-01-18',
-        to_date: '2001-01-17'
-      },
-      {
-        salary: '58096',
-        from_date: '1997-01-18',
-        to_date: '1998-01-18'
-      }
-    ]
-  }
-]
+      salary: [
+        {
+          salary: '56926',
+          from_date: '1995-01-19',
+          to_date: '1996-01-19',
+        },
+        {
+          salary: '51184',
+          from_date: '1989-01-20',
+          to_date: '1990-01-20',
+        },
+        {
+          salary: '60014',
+          from_date: '1999-01-18',
+          to_date: '2000-01-18',
+        },
+        {
+          salary: '47619',
+          from_date: '1988-01-21',
+          to_date: '1989-01-20',
+        },
+        {
+          salary: '58153',
+          from_date: '1996-01-19',
+          to_date: '1997-01-18',
+        },
+        {
+          salary: '51837',
+          from_date: '1990-01-20',
+          to_date: '1991-01-20',
+        },
+        {
+          salary: '56264',
+          from_date: '1993-01-19',
+          to_date: '1994-01-19',
+        },
+        {
+          salary: '59706',
+          from_date: '1998-01-18',
+          to_date: '1999-01-18',
+        },
+        {
+          salary: '62624',
+          from_date: '2001-01-17',
+          to_date: '2002-01-17',
+        },
+        {
+          salary: '63223',
+          from_date: '2002-01-17',
+          to_date: '9999-01-01',
+        },
+        {
+          salary: '57000',
+          from_date: '1994-01-19',
+          to_date: '1995-01-19',
+        },
+        {
+          salary: '55221',
+          from_date: '1991-01-20',
+          to_date: '1992-01-20',
+        },
+        {
+          salary: '54926',
+          from_date: '1992-01-20',
+          to_date: '1993-01-19',
+        },
+        {
+          salary: '62816',
+          from_date: '2000-01-18',
+          to_date: '2001-01-17',
+        },
+        {
+          salary: '58096',
+          from_date: '1997-01-18',
+          to_date: '1998-01-18',
+        },
+      ],
+    },
+  ],
+  columns:
+  [
+    { title: 'Employee Number', dataIndex: 'emp_no', key: 'emp_no', sorter: lessThanSorter('emp_no') },
+    {
+      title: 'First Name',
+      dataIndex: 'first_name',
+      key: 'first_name',
+      sorter: lessThanSorter('first_name'),
+      defaultSortOrder: 'descend',
+    },
+    { title: 'Last Name', dataIndex: 'last_name', key: 'last_name', sorter: lessThanSorter('last_name') },
+    { title: 'Gender', dataIndex: 'gender', key: 'gender', sorter: lessThanSorter('gender') },
+    { title: 'Hire Date', dataIndex: 'hire_date', key: 'hire_date', sorter: dateSorter('hire_date') },
+    {
+      title: 'Work Experience',
+      dataIndex: 'work_experience',
+      key: 'work_experience',
+      columns: [
+        { title: 'Employee Number', dataIndex: 'emp_no', key: 'emp_no', sorter: lessThanSorter('emp_no') },
+        { title: 'Department Number', dataIndex: 'dept_no', key: 'dept_no', sorter: lessThanSorter('dept_no') },
+        { title: 'Department Name', dataIndex: 'dept_name', key: 'dept_name', sorter: lessThanSorter('dept_name') },
+        {
+          title: 'Job Titles',
+          dataIndex: 'titles',
+          key: 'titles',
+          columns: [
+            { title: 'Job Title', dataIndex: 'title', key: 'title', sorter: lessThanSorter('title') },
+            { title: 'From', dataIndex: 'from_date', key: 'from_date', sorter: dateSorter('from_date') },
+            { title: 'To', dataIndex: 'to_date', key: 'to_date', sorter: dateSorter('to_date') },
+          ],
+        },
+      ],
+    },
+    {
+      title: 'Salary History',
+      dataIndex: 'salary',
+      key: 'salary',
+      columns: [
+        { title: 'Salary', dataIndex: 'salary', key: 'salary2', sorter: lessThanSorter('salary') },
+        { title: 'From', dataIndex: 'from_date', key: 'from_date', sorter: dateSorter('from_date') },
+        { title: 'To', dataIndex: 'to_date', key: 'to_date', sorter: dateSorter('to_date') },
+      ],
+    },
+  ],
+}
