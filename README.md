@@ -29,6 +29,14 @@ const App = () => {
 ## Developing UI Components
 
 ```
+# If you don't have NVM and want to use it to install the proper node version, intall it with these instructions: https://github.com/nvm-sh/nvm
+
+# Install and use node >=8.16 if you don't have it already:
+nvm install 8
+
+# Install Yarn, if you don't have it already:
+npm install -g yarn
+
 # Install Dependencies
 npm run install:all
 
