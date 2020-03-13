@@ -9,7 +9,7 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {
-    "node": ">=8",
+    "node": ">=8.16",
     "npm": ">=5"
   },
   "scripts": {
@@ -18,9 +18,9 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "npm run minify-css && npm run build",
-    "predeploy": "cd playground && npm install && npm run build",
+    "predeploy": "cd playground && yarn && npm run build",
     "deploy": "gh-pages -d playground/build",
-    "install:all": "(npm install); (cd playground && npm install)",
+    "install:all": "(yarn); (cd playground && yarn)",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o storybook-dist",
     "minify-css": "node-sass --include-path scss src/styles.scss dist/styles.min.css --output-style compressed"

@@ -17,20 +17,20 @@ npm install --save marklogic-ui-library
 ```jsx
 import React from 'react'
 
-import { MlButton } from 'marklogic-ui-library';
+import { MLButton } from 'marklogic-ui-library';
 
 const App = () => {
   return (
-    <MlButton>Submit</MlButton>
+    <MLButton>Submit</MLButton>
   )
 }
 ```
 
 ## Developing UI Components
 
-``` 
+```
 # Install Dependencies
-npm run install:all 
+npm run install:all
 
 # Start Rollup (listens for changes for components in src folder)
 root directory
@@ -43,7 +43,7 @@ npm start
 Playground: localhost:3000
 
 ```
-- Add new components in the root/src folder 
+- Add new components in the root/src folder
 - Add CSS to root/src/styles.scss file
 - Import/Export component in root/src/index.js
 - Create Stories for the component in the root/stories folder
@@ -52,12 +52,12 @@ Playground: localhost:3000
 This repo uses Storybook to view components and provide usage guidelines and API documentation
 ```
 # Install Dependencies
-npm run install:all 
+npm run install:all
 
 # Start Storybook
 npm run storybook
 
-Storybook: localhost:6006 
+Storybook: localhost:6006
 ```
 
 ## Publishing static version of Storybook
@@ -71,7 +71,7 @@ Static files will be in the /storybook-dist folder
 
 ## Publishing the Library to NPM
 Make sure you are logged in to npm
-``` 
+```
 Update root/package.json
 version needs to increase everytime it is published.
 
