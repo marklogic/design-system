@@ -33,14 +33,14 @@ const App = () => {
 npm run install:all
 
 # Start Rollup (listens for changes for components in src folder)
-root directory
+# (run from main repo directory):
 npm start
 
-# Start Playground (import and test new components here)
+# In another terminal: Start Playground (import and test new components here)
 cd playground
 npm start
 
-Playground: localhost:3000
+# Playground should be running at http://localhost:3000
 
 ```
 - Add new components in the root/src folder
