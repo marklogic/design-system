@@ -2,6 +2,14 @@
   vertical-align: top;
 }
 
-.ml-table .ml-table {
+.ml-table .ml-table, .ml-table .ml-header-table {
   margin: -16px
+}
+
+.ml-header-table .ant-descriptions-item-content {
+  display: none;
+}
+
+.ml-table .ml-header-table table {
+  border-collapse: collapse; /* Hack to get borders between header-rows to show up */
 }
