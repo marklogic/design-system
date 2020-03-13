@@ -1,10 +1,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs/react';
-import MlButton from '../src/ml-button';
+import MLButton from '../src/ml-button';
 
 export default {
-  title: "MlButton",
+  title: "MLButton",
   decorators: [withKnobs],
   parameters: {
     info: {
@@ -13,15 +13,15 @@ export default {
   }
 };
 
-export const basic = () => <MlButton type="primary" onClick={action('clicked')}>{text("Primary Button Text", 'Primary')}</MlButton>;
+export const basic = () => <MLButton type="primary" onClick={action('clicked')}>{text("Primary Button Text", 'Primary')}</MLButton>;
 
 export const multiple = () => (
   <>
-    <MlButton type="primary" onClick={action('primary clicked')}>{text("Primary Button Text", 'Primary')}</MlButton>
-    <MlButton onClick={action('default clicked')}>{text("Default Button Text", 'Default')}</MlButton>
-    <MlButton type="danger" onClick={action('danger clicked')}>{text("Danger Button Text", 'Danger')}</MlButton>
+    <MLButton type="primary" onClick={action('primary clicked')}>{text("Primary Button Text", 'Primary')}</MLButton>
+    <MLButton onClick={action('default clicked')}>{text("Default Button Text", 'Default')}</MLButton>
+    <MLButton type="danger" onClick={action('danger clicked')}>{text("Danger Button Text", 'Danger')}</MLButton>
   </>
 );
 
-export const disabled = () => <MlButton disabled onClick={action('clicked')}>{text("Disabled", 'Disabled')}</MlButton>;
+export const disabled = () => <MLButton disabled onClick={action('clicked')}>{text("Disabled", 'Disabled')}</MLButton>;
 
