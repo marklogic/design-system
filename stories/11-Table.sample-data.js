@@ -6,6 +6,32 @@ const dateSorter = extractSortColumnDecorator((a, b) => {
   return pureLessThanSorter(new Date(a), new Date(b))
 })
 
+export const sampleBasicData = {
+  dataSource: [
+    {
+      col1: 'row1 val1',
+      col2: 'row1 val2',
+      col3: 'row1 val3',
+      col4: 'row1 val4',
+      col5: 'row1 val5',
+    },
+    {
+      col1: 'row2 val1',
+      col2: 'row2 val2',
+      col3: 'row2 val3',
+      col4: 'row2 val4',
+      col5: 'row2 val5',
+    },
+  ],
+  columns: [
+    { title: 'Column 1', dataIndex: 'col1', key: 'col1', sorter: lessThanSorter('col1') },
+    { title: 'Column 2', dataIndex: 'col2', key: 'col2' },
+    { title: 'Column 3', dataIndex: 'col3', key: 'col3' },
+    { title: 'Column 4', dataIndex: 'col4', key: 'col4' },
+    { title: 'Column 5', dataIndex: 'col5', key: 'col5' },
+  ],
+}
+
 export const sampleNestedData = {
   dataSource: [
     {

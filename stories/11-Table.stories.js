@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import MLTable from '../src/ml-table'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
-import { sampleNestedData } from './11-Table.sample-nested-data.js'
+import { sampleBasicData, sampleNestedData } from './11-Table.sample-data.js'
 
 export default {
   title: 'Data Display/Table',
@@ -13,6 +13,14 @@ export default {
       text: 'Component description goes here',
     },
   },
+}
+
+export const basic = () => {
+  const props = {
+    dataSource: sampleBasicData.dataSource,
+    columns: sampleBasicData.columns,
+  }
+  return (<MLTable {...props} onChange={action('onChange')} />)
 }
 
 export const nestedTables = () => {
