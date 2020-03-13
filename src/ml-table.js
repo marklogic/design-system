@@ -3,6 +3,9 @@ import { Descriptions, Table } from 'antd'
 import _ from 'lodash'
 import './ml-table.css'
 
+/**
+ * Component for showing an un-expanded nested table, which is just a vertical list of column headers.
+ */
 class MLHeaderTable extends React.Component {
   render() {
     const { columns } = this.props
@@ -21,6 +24,9 @@ class MLHeaderTable extends React.Component {
   }
 }
 
+/**
+ * Component for showing basic tables, nested tables, and entity properties for rows in said tables.
+ */
 class MLTable extends React.Component {
   static defaultProps = {
     showBody: true,
@@ -93,8 +99,8 @@ class MLTable extends React.Component {
       <Table
         className='ml-table'
         pagination={{ hideOnSinglePage: true }}
-        {...this.props}
-        dataSource={restructuredData}
+        {...this.props} // This is positioned here so the above props can be overwritten if desired
+        dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
         columns={restructuredColumns}
       >
         {this.props.children}
