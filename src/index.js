@@ -3,6 +3,7 @@ import MLDatePicker from './ml-date-picker'
 import MLFooter from './ml-footer'
 import MLLayout from './ml-layout'
 import MLSlider from './ml-slider'
+import MLTable from './ml-table'
 
 export {
   MLButton,
@@ -10,4 +11,5 @@ export {
   MLFooter,
   MLLayout,
   MLSlider,
+  MLTable,
 }
