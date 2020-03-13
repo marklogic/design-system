@@ -5,7 +5,7 @@
   "version": "0.2.2",
   "license": "Apache-2.0",
   "repository": "http://github.com/marklogic/design-system",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {
@@ -20,7 +20,7 @@
     "prepare": "npm run minify-css && npm run build",
     "predeploy": "cd playground && yarn && npm run build",
     "deploy": "gh-pages -d playground/build",
-    "install:all": "(yarn); (cd playground && yarn)",
+    "install:all": "(yarn link; pushd playground; yarn link \"marklogic-ui-library\"; popd); (yarn); (cd playground && yarn)",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o storybook-dist",
     "minify-css": "node-sass --include-path scss src/styles.scss dist/styles.min.css --output-style compressed"
