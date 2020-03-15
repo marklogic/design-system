@@ -16,7 +16,7 @@ export default {
 }
 
 export const colorPalette = () => (
-  <div>
+  <div className='color-palette-story'>
     <Card title='Component colors'>
       <div><MLButton type='highlight'>Highlight (?)</MLButton></div>
       <div><MLButton type='primary'>primary</MLButton></div>
