@@ -1,6 +1,5 @@
 import React from 'react'
-import { action } from '@storybook/addon-actions'
-import { withKnobs, text } from '@storybook/addon-knobs/react'
+import { withKnobs } from '@storybook/addon-knobs/react'
 import { MLAlert, MLButton } from '../src'
 import { Card, Typography } from 'antd'
 import './debug-colors.less'

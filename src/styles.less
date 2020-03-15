@@ -7,37 +7,11 @@
 /*
 TODOs/notes:
 - What exactly does "highlight" mean for components? Same for "highlight text".
-- Should any of these classnames be changed or updated or done with something else?
-  - I made up some classnames and variables names to be something reasonable,
-    but I'm not sure exactly how they'll be used in the application, so all these
-    names should be reviewed for whether they match how they'll be used.
 - Ant makes Code text scaled down to fit within the slightly padded box that it uses to show code.
   This results in it fitting within the same line-height as other text around it.
   I think this looks better than if I forced the font-size to 14px like the spec asks for.
-- For Link styles, do you mean <a> tags, or Link-style Button components?
+- For Link styles, do you mean <a> tags, or Link-style Button components? Both?
  */
-
-// Ant uses these variables natively, but here we have classes for them for the sake of examples.
-// We might decide to remove this later.
-.text-primary {
-  color: @text-color;
-}
-
-.text-secondary {
-  color: @text-color-secondary;
-}
-
-.text-highlight {
-  color: @text-color-highlight;
-}
-
-.text-disabled {
-  color: @disabled-color;
-}
-
-.text-error {
-  color: @error-color;
-}
 
 .node-1-color { background-color: @node-1-color; }
 .node-2-color { background-color: @node-2-color; }

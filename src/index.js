@@ -5,7 +5,6 @@ import MLDatePicker from './ml-date-picker'
 import MLFooter from './ml-footer'
 import MLLayout from './ml-layout'
 import MLSlider from './ml-slider'
-import MLTypography from './ml-typography'
 
 export {
   MLAlert,
@@ -14,5 +13,4 @@ export {
   MLFooter,
   MLLayout,
   MLSlider,
-  MLTypography,
 }
