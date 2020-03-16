@@ -9,12 +9,11 @@ import MLSlider from './ml-slider'
 
 export {
   MLButton,
-  MLCollapse
+  MLCollapse,
   MLDatePicker,
   MLFooter,
-  MLLayout,
-  MLFooter,
   MLInputNumber,
+  MLLayout,
   MLRadio,
   MLSlider,
 }

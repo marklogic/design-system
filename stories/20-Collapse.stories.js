@@ -13,9 +13,9 @@ export default {
   decorators: [withKnobs],
   parameters: {
     info: {
-      text: 'Component description goes here'
-    }
-  }
+      text: 'Component description goes here',
+    },
+  },
 }
 
 const extraNode = (
@@ -41,12 +41,12 @@ export const basic = () => {
     expandIconPosition: options('expandIconPosition', {
       default: undefined,
       left: 'left',
-      right: 'right'
+      right: 'right',
     }, undefined, { display: 'select' }),
-    onChange: action('onChange')
+    onChange: action('onChange'),
   }
   const panelProps = {
-    header: text('header', 'This is panel header 1')
+    header: text('header', 'This is panel header 1'),
   }
   const showExtras = boolean('extra', false)
   if (showExtras) {
@@ -82,12 +82,12 @@ export const accordion = () => {
     expandIconPosition: options('expandIconPosition', {
       default: undefined,
       left: 'left',
-      right: 'right'
+      right: 'right',
     }, undefined, { display: 'select' }),
-    onChange: action('onChange')
+    onChange: action('onChange'),
   }
   const panelProps = {
-    header: text('header', 'This is panel header 1')
+    header: text('header', 'This is panel header 1'),
   }
   const showExtras = boolean('extra', false)
   if (showExtras) {
@@ -123,12 +123,12 @@ export const nestedPanel = () => {
     expandIconPosition: options('expandIconPosition', {
       default: undefined,
       left: 'left',
-      right: 'right'
+      right: 'right',
     }, undefined, { display: 'select' }),
-    onChange: action('onChange')
+    onChange: action('onChange'),
   }
   const panelProps = {
-    header: text('header', 'This is panel header 1')
+    header: text('header', 'This is panel header 1'),
   }
   const showExtras = boolean('extra', false)
   if (showExtras) {
@@ -167,12 +167,12 @@ export const customPanelStyle = () => {
     expandIconPosition: options('expandIconPosition', {
       default: undefined,
       left: 'left',
-      right: 'right'
+      right: 'right',
     }, undefined, { display: 'select' }),
-    onChange: action('onChange')
+    onChange: action('onChange'),
   }
   const panelProps = {
-    header: text('header', 'This is panel header 1')
+    header: text('header', 'This is panel header 1'),
   }
 
   const showExtras = boolean('extra', false)
