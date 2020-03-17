@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Layout } from 'antd'
-import _ from 'lodash'
 
-const footerStyle = {
+const footerStyleBase = {
   padding: '12px 50px',
   display: 'flex',
   alignItems: 'center',
@@ -12,37 +11,37 @@ const footerStyle = {
   width: '100%',
   textAlign: 'center',
   margin: '0',
-  color: '#999',
-  backgroundColor: '#fff'
+  fontSize: '14px',
+  fontFamily: 'Helvetica Neue',
 }
 
-const contentStyle = {
+const footerStyleWhiteBg = Object.assign({}, footerStyleBase, {
   color: '#999',
-  fontSize: '14px',
-  fontFamily: 'Helvetica Neue'
-}
+  backgroundColor: '#fff',
+})
+
+const footerStyleGraphicBg = Object.assign({}, footerStyleBase, {
+  color: '#fff',
+  background: 'unset',
+})
 
 const spanStyle = {
-  padding: '0 5px'
-}
-
-const linkStyle = {
-  color: 'rgb(88, 106, 214)',
-  cursor: 'pointer'
+  padding: '0 5px',
 }
 
 const MLFooter = (props) => {
+  const footerStyle = props.graphicBackground ? footerStyleGraphicBg : footerStyleWhiteBg
   return (
     <Layout.Footer style={footerStyle} {...props}>
-      <div style={contentStyle}>
+      <div>
         <span style={spanStyle}>Copyright @ {props.year} MarkLogic Corporation. All Rights Reserved.</span>
         |
         <span style={spanStyle}>
-          <span style={linkStyle}>Terms and Conditions</span>
+          <a href='#TODO'>Terms and Conditions</a>
         </span>
         |
         <span style={spanStyle}>
-          <span style={linkStyle}>Policies</span>
+          <a href='#TODO'>Policies</a>
         </span>
       </div>
     </Layout.Footer>
@@ -51,7 +50,8 @@ const MLFooter = (props) => {
 
 // Typechecking for Ant Design properties
 MLFooter.propTypes = {
-  year: PropTypes.number
+  year: PropTypes.number,
+  graphicBackground: PropTypes.bool,
 }
 
 export default MLFooter
