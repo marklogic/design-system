@@ -18,7 +18,6 @@ function iconTile({ component, props, tileStyle }) {
   const componentName = component.displayName
   const style = {
     backgroundColor: text('backgroundColor', '#ccc'),
-    width: props.style.fontSize,
     height: props.style.fontSize,
     lineHeight: props.style.fontSize,
   }
@@ -99,7 +98,7 @@ export const shortList = () => {
   )
 }
 
-export const iconList = () => {
+export const completeList = () => {
   const filters = {
     showAntIcons: boolean('show Ant icons', true),
     antIconVariant: select('Ant icon variant', {
@@ -108,20 +107,15 @@ export const iconList = () => {
       TwoTone: 'TwoTone',
     }, 'Filled'),
     showFontAwesomeIcons: boolean('show FontAwesome icons', true),
-    style: {
-      fontSize: number('fontSize (px)', 36) + 'px',
-      color: text('color', 'red'),
-    },
   }
   const props = {
     highlight: boolean('highlight', true),
     spin: boolean('spin', false),
-    style: select('style', {
-      None: {},
-      Color: { color: 'red' },
-      fontSize: { fontSize: '20px' },
-    }, {}),
     rotate: number('rotate', 0),
+    style: {
+      fontSize: number('fontSize (px)', 36) + 'px',
+      color: text('color', null),
+    },
   }
   const iconSets = []
   if (filters.showAntIcons) {
