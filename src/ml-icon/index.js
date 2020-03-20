@@ -12,6 +12,16 @@ function MLIconWrapper({ highlight, color, component, ...props }) {
   if (highlight) {
     className = [props.className, 'ml-icon-highlight'].join(' ')
   }
+  if (/Outlined$/.test(component.displayName)) {
+    className = [props.className, 'ml-icon-outlined'].join(' ')
+  }
+  if (/Filled$/.test(component.displayName)) {
+    className = [props.className, 'ml-icon-filled'].join(' ')
+  }
+  if (/TwoTone$/.test(component.displayName)) {
+    className = [props.className, 'ml-icon-two-toned'].join(' ')
+  }
+  className = className.replace('^ +', '')
   return React.createElement(component, Object.assign({}, props, { className }))
 }
 

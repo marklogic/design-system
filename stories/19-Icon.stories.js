@@ -14,9 +14,10 @@ export default {
   },
 }
 
-function iconTile({ componentName, component, props }) {
+function iconTile({ component, props, style }) {
+  const componentName = component.displayName
   return (
-    <div key={componentName} className='ml-storybook-icon-tile'>
+    <div style={style} key={componentName} className='ml-storybook-icon-tile'>
       <div className='ml-storybook-icon'>
         {React.createElement(component, props)}
       </div>
@@ -41,7 +42,6 @@ export const exampleIcon = () => {
   const component = AntIcons.CheckCircleFilled
   return (
     iconTile({
-      componentName: component.displayName,
       component,
       props,
     })
@@ -58,6 +58,35 @@ for (const variant of ['Filled', 'Outlined', 'TwoTone']) {
   }
 }
 
+export const shortList = () => {
+  const props = {}
+  window.MLIcon = MLIcon
+  const darkBackground = { backgroundColor: '#ccc' }
+  return (
+    <div>
+      {iconTile({ component: MLIcon.UserOutlined, props, style: darkBackground })}
+      {iconTile({ component: MLIcon.QuestionCircleOutlined, props, style: darkBackground })}
+      {iconTile({ component: MLIcon.SearchOutlined, props, style: darkBackground })}
+      {iconTile({ component: MLIcon.SettingOutlined, props, style: darkBackground })}
+      {iconTile({ component: MLIcon.DashboardOutlined, props, style: darkBackground })}
+      {iconTile({ component: MLIcon.Route, props })}
+      {iconTile({ component: MLIcon.ArrowLeftOutlined, props })}
+      {iconTile({ component: MLIcon.CheckCircleOutlined, props })}
+      {iconTile({ component: MLIcon.CloseCircleOutlined, props })}
+      {iconTile({ component: MLIcon.ExclamationCircleOutlined, props })}
+      {iconTile({ component: MLIcon.ClockCircleOutlined, props })}
+      {iconTile({ component: MLIcon.CalendarOutlined, props })}
+      {iconTile({ component: MLIcon.CheckCircleFilled, props })}
+      {iconTile({ component: MLIcon.InfoCircleFilled, props })}
+      {iconTile({ component: MLIcon.ExclamationCircleFilled, props })}
+      {iconTile({ component: MLIcon.CloseCircleFilled, props })}
+      {iconTile({ component: MLIcon.LockOutlined, props })}
+      {iconTile({ component: MLIcon.DownOutlined, props })}
+      {iconTile({ component: MLIcon.Book, props })}
+    </div>
+  )
+}
+
 export const iconList = () => {
   const filters = {
     showAntIcons: boolean('show Ant icons', true),
@@ -69,7 +98,7 @@ export const iconList = () => {
     showFontAwesomeIcons: boolean('show FontAwesome icons', true),
     style: {
       fontSize: number('fontSize', 36) + 'px',
-      color: text('red'),
+      color: text('color', 'red'),
     },
   }
   const props = {

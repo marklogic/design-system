@@ -5,10 +5,6 @@ import * as FontAwesomeOriginalIcons from '@fortawesome/free-solid-svg-icons'
 import { config as FontAwesomeConfig } from '@fortawesome/fontawesome-svg-core'
 import createReactClass from 'create-react-class'
 
-console.log(FontAwesomeOriginalIcons)
-console.log(Object.entries(FontAwesomeOriginalIcons))
-console.log('Config:', FontAwesomeConfig)
-
 const FontAwesomeIcons = {}
 
 for (const [key, value] of Object.entries(FontAwesomeOriginalIcons)) {
@@ -33,13 +29,11 @@ for (const [key, value] of Object.entries(FontAwesomeOriginalIcons)) {
             )
           },
         })
-        // return (<FontAwesomeIcon icon={value} />)
-        // return React.createFactory(componentName, function() {
-        //   return (<FontAwesomeIcon icon={value} />)
-        // })
       },
     })
   }
 }
+
+// TODO: Consider giving these a more explicit enumerated export structure so editors can find them for importing
 
 export default FontAwesomeIcons
