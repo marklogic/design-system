@@ -2,7 +2,6 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs/react'
 import { MLAlert, MLButton } from '../src'
 import { Card, Typography } from 'antd'
-import './debug-colors.less'
 import './3-ColorPalette.less'
 
 export default {
