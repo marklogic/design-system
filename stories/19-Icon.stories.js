@@ -28,6 +28,27 @@ function iconTile({ componentName, component, props }) {
   )
 }
 
+export const exampleIcon = () => {
+  const props = {
+    highlight: boolean('highlight', true),
+    spin: boolean('spin', false),
+    style: select('style', {
+      None: {},
+      Color: { color: 'red' },
+      fontSize: { fontSize: '20px' },
+    }, {}),
+    rotate: number('rotate', 0),
+  }
+  const component = AntIcons.CoffeeOutlined
+  return (
+    iconTile({
+      componentName: component.displayName,
+      component,
+      props,
+    })
+  )
+}
+
 const antIconSets = {}
 for (const variant of ['Filled', 'Outlined', 'TwoTone']) {
   antIconSets[variant] = {}
@@ -49,14 +70,14 @@ export const iconList = () => {
     showFontAwesomeIcons: boolean('show FontAwesome icons', true),
   }
   const props = {
+    highlight: boolean('highlight', true),
     spin: boolean('spin', false),
     style: select('style', {
       None: {},
       Color: { color: 'red' },
       fontSize: { fontSize: '20px' },
-    }),
+    }, {}),
     rotate: number('rotate', 0),
-    twoToneColor: text('twoToneColor', '#1890ff'),
   }
   const iconSets = []
   if (filters.showAntIcons) {
