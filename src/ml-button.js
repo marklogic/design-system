@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'antd'
-// import styles from './styles.scss'
+import './ml-button.less'
 
 const MLButton = (props) => {
   return (
-    <Button {...props}>
+    <Button {...props} className={[props.className, 'ml-btn'].join(' ')}>
       {props.children}
     </Button>
   )
