@@ -13,5 +13,7 @@
 }
 
 .ml-storybook-icon {
-  font-size: 36px;
+  box-sizing: content-box;
+  padding: 3px;
+  border-radius: 3px;
 }
