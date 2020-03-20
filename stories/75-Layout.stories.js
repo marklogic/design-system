@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, text } from '@storybook/addon-knobs/react'
+import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { MLLayout } from '../src'
 const { MLHeader, MLFooter, MLSider, MLContent } = MLLayout
 
@@ -9,19 +9,21 @@ export default {
   decorators: [withKnobs],
   parameters: {
     info: {
-      text: 'Component description goes here'
-    }
-  }
+      text: 'Component description goes here',
+    },
+  },
 }
 
 export const dataHubLayout = (props) => {
+  const graphicBackground = boolean('graphicBackground', true)
+  const layoutStyle = graphicBackground ? { backgroundImage: 'linear-gradient(to right, #af474a, #73263b)' } : null
   return (
     <MLLayout>
       <MLHeader>Header</MLHeader>
       <MLLayout>
-        <MLLayout>
+        <MLLayout style={layoutStyle}>
           <MLContent style={{ height: '300px' }}>Content</MLContent>
-          <MLFooter>Footer</MLFooter>
+          <MLFooter graphicBackground={graphicBackground} year={2019}>Footer</MLFooter>
         </MLLayout>
         <MLSider>Sider</MLSider>
       </MLLayout>
@@ -30,11 +32,13 @@ export const dataHubLayout = (props) => {
 }
 
 export const generalLayout = (props) => {
+  const graphicBackground = boolean('graphicBackground', true)
+  const layoutStyle = graphicBackground ? { backgroundImage: 'linear-gradient(to right, #af474a, #73263b)' } : null
   return (
-    <MLLayout>
+    <MLLayout style={layoutStyle}>
       <MLHeader>Header</MLHeader>
       <MLContent style={{ height: '300px' }}>Content</MLContent>
-      <MLFooter>Footer</MLFooter>
+      <MLFooter graphicBackground={graphicBackground} year={2019}>Footer</MLFooter>
     </MLLayout>
   )
 }
