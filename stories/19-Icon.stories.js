@@ -32,14 +32,13 @@ export const exampleIcon = () => {
   const props = {
     highlight: boolean('highlight', true),
     spin: boolean('spin', false),
-    style: select('style', {
-      None: {},
-      Color: { color: 'red' },
-      fontSize: { fontSize: '20px' },
-    }, {}),
     rotate: number('rotate', 0),
+    style: {
+      fontSize: number('fontSize', 36) + 'px',
+      color: text('color', 'red'),
+    },
   }
-  const component = AntIcons.CoffeeOutlined
+  const component = AntIcons.CheckCircleFilled
   return (
     iconTile({
       componentName: component.displayName,
@@ -68,6 +67,10 @@ export const iconList = () => {
       TwoTone: 'TwoTone',
     }, 'Filled'),
     showFontAwesomeIcons: boolean('show FontAwesome icons', true),
+    style: {
+      fontSize: number('fontSize', 36) + 'px',
+      color: text('red'),
+    },
   }
   const props = {
     highlight: boolean('highlight', true),

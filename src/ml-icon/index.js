@@ -7,12 +7,12 @@ import '../ml-icon.less'
 // TODO: Handle coloration of individual icons
 
 // Wraper for the Icon components to add custom prop behavior
-function MLIconWrapper({ highlight, component, ...props }) {
+function MLIconWrapper({ highlight, color, component, ...props }) {
   let className = ''
   if (highlight) {
     className = [props.className, 'ml-icon-highlight'].join(' ')
   }
-  return React.createElement(component, Object.assign({}, { className }, props))
+  return React.createElement(component, Object.assign({}, props, { className }))
 }
 
 const AntIconsWrapped = {}
