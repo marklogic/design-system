@@ -1,11 +1,8 @@
 import React from 'react'
-import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
-import { action } from '@storybook/addon-actions'
+import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs'
 import { MLIcon } from '../src'
-import * as FontAwesomeOriginalIcons from '@fortawesome/free-solid-svg-icons'
-import { config as FontAwesomeConfig } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { storiesOf } from '@storybook/react'
+import { AntIcons, FontAwesomeIcons } from '../src/ml-icon'
+import './19-Icon.css'
 
 export default {
   title: 'General/MLIcon',
@@ -17,31 +14,72 @@ export default {
   },
 }
 
-export const iconList = () => {
-  const list = []
-  for (const [componentName, component] of Object.entries(MLIcon)) {
-    list.push((
-      React.createElement(component)
-    ))
-  }
+function iconTile({ componentName, component, props }) {
   return (
-    <div>
-      {list}
+    <div key={componentName} className='ml-storybook-icon-tile'>
+      <div className='ml-storybook-icon'>
+        {React.createElement(component, props)}
+      </div>
+      <div className='ml-storybook-icon-name'>
+        {/* {`<${componentName}\u00A0/>` /* \u00A0 is nonbreaking space *!/ */}
+        {componentName}
+      </div>
     </div>
   )
 }
 
-// const stories = storiesOf('MLIcon', module)
-//   .addDecorator(withKnobs)
-//   .addParameters({
-//     info: {
-//       text: 'Component description goes here',
-//     },
-//   })
-//
-// for (const [componentName, component] of Object.entries(MLIcon)) {
-//   debugger;
-//   stories.add(componentName, () => (
-//     React.createElement(component)
-//   ))
-// }
+const antIconSets = {}
+for (const variant of ['Filled', 'Outlined', 'TwoTone']) {
+  antIconSets[variant] = {}
+  for (const [key, value] of Object.entries(AntIcons)) {
+    if (_.endsWith(key, variant)) {
+      antIconSets[variant][key] = value
+    }
+  }
+}
+
+export const iconList = () => {
+  const filters = {
+    showAntIcons: boolean('show Ant icons', true),
+    antIconVariant: select('Ant icon variant', {
+      Filled: 'Filled',
+      Outlined: 'Outlined',
+      TwoTone: 'TwoTone',
+    }, 'Filled'),
+    showFontAwesomeIcons: boolean('show FontAwesome icons', true),
+  }
+  const props = {
+    spin: boolean('spin', false),
+    style: select('style', {
+      None: {},
+      Color: { color: 'red' },
+      fontSize: { fontSize: '20px' },
+    }),
+    rotate: number('rotate', 0),
+    twoToneColor: text('twoToneColor', '#1890ff'),
+  }
+  const iconSets = []
+  if (filters.showAntIcons) {
+    iconSets.push(antIconSets[filters.antIconVariant])
+  }
+  if (filters.showFontAwesomeIcons) {
+    iconSets.push(FontAwesomeIcons)
+  }
+  const list = []
+  for (const iconSet of iconSets) {
+    for (const [componentName, component] of Object.entries(iconSet)) {
+      list.push((
+        iconTile({
+          componentName,
+          component,
+          props,
+        })
+      ))
+    }
+  }
+  return (
+    <div className='ml-storybook-icon-list'>
+      {list}
+    </div>
+  )
+}

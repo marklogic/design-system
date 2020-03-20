@@ -1,4 +1,5 @@
 import React from 'react'
+import { Icon } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as FontAwesomeOriginalIcons from '@fortawesome/free-solid-svg-icons'
 import { config as FontAwesomeConfig } from '@fortawesome/fontawesome-svg-core'
@@ -22,7 +23,14 @@ for (const [key, value] of Object.entries(FontAwesomeOriginalIcons)) {
         return createReactClass({
           displayName: componentName,
           render: function() {
-            return (<FontAwesomeIcon icon={value} {...this.props} />)
+            return (
+              <Icon
+                {...this.props}
+                component={(props) => ((
+                  <FontAwesomeIcon icon={value} {...props} />
+                ))}
+              />
+            )
           },
         })
         // return (<FontAwesomeIcon icon={value} />)

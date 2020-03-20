@@ -8,3 +8,9 @@ const MLIcon = Object.assign({},
 )
 
 export default MLIcon
+
+// In case you need them separately
+export {
+  AntIcons,
+  FontAwesomeIcons,
+}
