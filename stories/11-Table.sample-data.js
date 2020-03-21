@@ -238,8 +238,7 @@ export const sampleNestedData = {
       ],
     },
   ],
-  columns:
-  [
+  columns: [
     { title: 'Employee Number', dataIndex: 'emp_no', key: 'emp_no', sorter: lessThanSorter('emp_no') },
     {
       title: 'First Name',
@@ -282,4 +281,247 @@ export const sampleNestedData = {
       ],
     },
   ],
+}
+
+export const sampleEntityTypesData = {
+  dataSource: [
+    {
+      name: 'Patients',
+      instances: 25723,
+      last_harmonized: '2020-03-20T17:30:47-0700',
+      display: 2,
+    },
+    {
+      name: 'Person',
+      instances: 1234,
+      last_harmonized: '2010-03-20T17:30:47-0700',
+      display: 1,
+    },
+  ],
+  entityDefinitions: {
+    // TODO: Probably change how we look these up; these keys are made up by me
+    // TODO: Generalize combining entity definitions? They seem to be able to reference others...
+    Patients: {
+      info: {
+        title: 'Patients',
+        version: '0.0.1',
+        baseUri: 'http://example.org/',
+        description: 'Patient Model',
+      },
+      definitions: {
+        Labs: {
+          required: [],
+          pii: [],
+          elementRangeIndex: [],
+          rangeIndex: [],
+          wordLexicon: [],
+          properties: {
+            name: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            value: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            units: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            datetime: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+          },
+        },
+        Admissions: {
+          required: [],
+          pii: [],
+          elementRangeIndex: ['AdmissionID'],
+          rangeIndex: [],
+          wordLexicon: [],
+          properties: {
+            AdmissionID: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            startdate: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            enddate: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            labs: {
+              datatype: 'array',
+              items: {
+                $ref: '#/definitions/Labs',
+              },
+            },
+            diagnoses: {
+              datatype: 'array',
+              items: {
+                $ref: '#/definitions/Diagnoses',
+              },
+            },
+          },
+        },
+        Patients: {
+          required: [],
+          pii: [],
+          elementRangeIndex: ['PatientID'],
+          rangeIndex: [],
+          wordLexicon: [],
+          properties: {
+            PatientID: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            gender: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            dob: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            race: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            'marital-status': {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            language: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            percentagebelowpoverty: {
+              datatype: 'decimal',
+            },
+            admissions: {
+              datatype: 'array',
+              items: {
+                $ref: '#/definitions/Admissions',
+              },
+            },
+          },
+        },
+        Diagnoses: {
+          required: [],
+          pii: [],
+          elementRangeIndex: [],
+          rangeIndex: [],
+          wordLexicon: [],
+          properties: {
+            primaryDiagnosisCode: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            primaryDiagnosisDescription: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+          },
+        },
+      },
+    },
+    Person: {
+      info: {
+        title: 'Person',
+        version: '0.0.1',
+        baseUri: 'http://example.org/',
+      },
+      definitions: {
+        Address: {
+          required: [],
+          pii: [],
+          elementRangeIndex: [],
+          rangeIndex: [],
+          wordLexicon: [],
+          properties: {
+            street: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            state: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            zip: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+          },
+        },
+        Person: {
+          required: [],
+          pii: [],
+          elementRangeIndex: [],
+          rangeIndex: [],
+          wordLexicon: [],
+          properties: {
+            ssn: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            names: {
+              datatype: 'array',
+              description: 'Modified',
+              items: {
+                $ref: '#/definitions/Name',
+              },
+            },
+            educationLevel: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            dateOfBirth: {
+              datatype: 'date',
+            },
+            lastUpdated: {
+              datatype: 'dateTime',
+            },
+            address: {
+              $ref: '#/definitions/Address',
+            },
+            emails: {
+              datatype: 'array',
+              items: {
+                datatype: 'string',
+                collation: 'http://marklogic.com/collation/codepoint',
+              },
+            },
+          },
+        },
+        Name: {
+          required: [],
+          pii: [],
+          elementRangeIndex: [],
+          rangeIndex: [],
+          wordLexicon: [],
+          properties: {
+            prefix: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            first: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            middle: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+            last: {
+              datatype: 'string',
+              collation: 'http://marklogic.com/collation/codepoint',
+            },
+          },
+        },
+      },
+    },
+  },
 }
