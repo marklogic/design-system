@@ -151,79 +151,6 @@ export class MLEntityTypesTable extends React.Component {
 }
 
 export class MLEntityTypeTable extends React.Component {
-  static columns = [
-    { title: 'Property Name', dataIndex: 'name', key: 'name', sorter: lessThanSorter('name') },
-    { title: 'Type', dataIndex: 'type', key: 'type', sorter: lessThanSorter('type') },
-    {
-      title: 'Identifier',
-      dataIndex: 'identifier',
-      key: 'identifier',
-      sorter: lessThanSorter('identifier'),
-      render: (checked, record) => {
-        // TODO: This might depend on the table props for naming things within a table; consider moving columns to constructor
-        if (record.hasSingularColumns) {
-          return <MLRadio name={`${record.name}-identifier`} checked={checked} /> // TODO: Implement onChecked/onChanged/whatever
-        }
-      },
-    },
-    {
-      title: 'Multiple',
-      dataIndex: 'multiple',
-      key: 'multiple',
-      sorter: lessThanSorter('multiple'),
-      render: (checked, record) => (
-        <Checkbox name={`${record.name}-multiple`} checked={checked} /> // TODO: Hook up onChanged
-      ),
-    },
-    {
-      title: 'Indexed',
-      dataIndex: 'indexed',
-      key: 'indexed',
-      sorter: lessThanSorter('indexed'),
-      render: (checked, record) => (
-        <Checkbox name={`${record.name}-indexed`} checked={checked} /> // TODO: Hook up onChanged
-      ),
-    },
-    {
-      title: 'Word Search',
-      dataIndex: 'wordSearch',
-      key: 'wordSearch',
-      sorter: lessThanSorter('wordSearch'),
-      render: (checked, record) => {
-        if (record.hasSingularColumns) {
-          return <Checkbox name={`${record.name}-wordSearch`} checked={checked} /> // TODO: Hook up onChanged
-        }
-      },
-    },
-    {
-      title: 'PII',
-      dataIndex: 'pii',
-      key: 'pii',
-      sorter: lessThanSorter('pii'),
-      render: (checked, record) => {
-        if (true) { // TODO: When is the PII box hidden?
-          return <Checkbox name={`${record.name}-pii`} checked={checked} /> // TODO: Hook up onChanged
-        }
-      },
-    },
-    {
-      title: 'Delete',
-      render: (foo, record) => {
-        return <DeleteOutlined onClick={() => ('TODO')} /> // TODO: hook up onClick to top level props somehow
-      },
-    },
-    {
-      title: 'Add',
-      dataIndex: 'add',
-      key: 'add',
-      render: (foo, record) => {
-        if (true) { // TODO: When is Add button hidden?
-          return <PlusSquareOutlined onClick={() => ('TODO')} /> // TODO: hook up onClick to top level props somehow
-        }
-      },
-    },
-  ]
-
   static defaultState = {
     dataSource: [],
   }
@@ -249,7 +176,84 @@ export class MLEntityTypeTable extends React.Component {
     this.state = {
       dataSource,
       thisEntityDefinition,
+      columns: this.generateColumns(),
     }
+  }
+
+  generateColumns() {
+    return [
+      { title: 'Property Name', dataIndex: 'name', key: 'name', sorter: lessThanSorter('name') },
+      { title: 'Type', dataIndex: 'type', key: 'type', sorter: lessThanSorter('type') },
+      {
+        title: 'Identifier',
+        dataIndex: 'identifier',
+        key: 'identifier',
+        sorter: lessThanSorter('identifier'),
+        render: (checked, record) => {
+        // TODO: This might depend on the table props for naming things within a table; consider moving columns to constructor
+          if (record.hasSingularColumns) {
+            // TODO: Figure out why the `name`s aren't making the Radios mutually exclusive
+            return <MLRadio name={`${this.props.entityName}-identifier`} /*checked={checked}*/ /> // TODO: Implement onChecked/onChanged/whatever
+          }
+        },
+      },
+      {
+        title: 'Multiple',
+        dataIndex: 'multiple',
+        key: 'multiple',
+        sorter: lessThanSorter('multiple'),
+        render: (checked, record) => (
+          <Checkbox name={`${this.props.entityName}-multiple`} /*checked={checked}*/ /> // TODO: Hook up onChanged
+        ),
+      },
+      {
+        title: 'Indexed',
+        dataIndex: 'indexed',
+        key: 'indexed',
+        sorter: lessThanSorter('indexed'),
+        render: (checked, record) => (
+          <Checkbox name={`${this.props.entityName}-indexed`} /*checked={checked}*/ /> // TODO: Hook up onChanged
+        ),
+      },
+      {
+        title: 'Word Search',
+        dataIndex: 'wordSearch',
+        key: 'wordSearch',
+        sorter: lessThanSorter('wordSearch'),
+        render: (checked, record) => {
+          if (record.hasSingularColumns) {
+            return <Checkbox name={`${this.props.entityName}-wordSearch`} /*checked={checked}*/ /> // TODO: Hook up onChanged
+          }
+        },
+      },
+      {
+        title: 'PII',
+        dataIndex: 'pii',
+        key: 'pii',
+        sorter: lessThanSorter('pii'),
+        render: (checked, record) => {
+          if (true) { // TODO: When is the PII box hidden?
+            return <Checkbox name={`${this.props.entityName}-pii`} /*checked={checked}*/ /> // TODO: Hook up onChanged
+          }
+        },
+      },
+      {
+        title: 'Delete',
+        render: (foo, record) => {
+          return <DeleteOutlined onClick={() => ('TODO')} /> // TODO: hook up onClick to top level props somehow
+        },
+      },
+      {
+        title: 'Add',
+        dataIndex: 'add',
+        key: 'add',
+        render: (foo, record) => {
+          if (true) { // TODO: When is Add button hidden?
+            return <PlusSquareOutlined onClick={() => ('TODO')} /> // TODO: hook up onClick to top level props somehow
+          }
+        },
+      },
+    ]
   }
 
   render() {
@@ -258,7 +262,7 @@ export class MLEntityTypeTable extends React.Component {
         {...this.props}
         rowKey='name'
         dataSource={this.state.dataSource}
-        columns={MLEntityTypeTable.columns}
+        columns={this.state.columns}
       />
     )
   }
