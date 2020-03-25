@@ -4,6 +4,7 @@ import _ from 'lodash'
 import './ml-table.css'
 import { DeleteOutlined, PlusSquareOutlined } from '@ant-design/icons' // TODO: Use MLIcon.*
 import MLRadio from './ml-radio'
+const MLCheckbox = Checkbox // TODO: Use real MLCheckbox
 
 /**
  * Component for showing an un-expanded nested table, which is just a vertical list of column headers.
@@ -40,6 +41,116 @@ class MLTable extends React.Component {
       columnExpandedStates: Object.fromEntries(props.columns.map((column) => (
         [column.dataIndex, false]
       ))),
+      columnInputs: Object.fromEntries(props.columns.map(
+        (column) => {
+          if (column.input === 'radio') {
+            const checkedInputRows = props.dataSource.filter((row) => {
+              return !!row[column.dataIndex] && (!column.showInput || column.showInput(row))
+            })
+            if (checkedInputRows.length > 0) {
+              return [this.inputNameForColumn(column), checkedInputRows[0][props.rowKey]]
+            } else {
+              return [this.inputNameForColumn(column), null]
+            }
+          } else if (column.input === 'checkbox') {
+            const checkedInputRows = props.dataSource.filter((row) => {
+              return !!row[column.dataIndex] && (!column.showInput || column.showInput(row))
+            })
+            console.log('checkedInputRows:', checkedInputRows)
+            if (checkedInputRows.length > 0) {
+              return [this.inputNameForColumn(column), checkedInputRows.map((r) => r[props.rowKey])]
+            } else {
+              return [this.inputNameForColumn(column), []]
+            }
+          } else {
+            return undefined
+          }
+        },
+      ).filter(v => v)),
+      // TODO: Do this mapping somewhere that will get updated if the props change
+      columns: props.columns.map((column) => {
+        const rewrittenColumn = Object.assign({}, column)
+        if (column.showInput) {
+          Object.assign(rewrittenColumn, {
+            render: (value, row, index) => {
+              const InputComponentType = ({
+                radio: MLRadio,
+                checkbox: MLCheckbox,
+              })[column.input]
+              if (!InputComponentType) {
+                throw TypeError(`Unknown input type "${column.input}"`)
+              }
+              const currentValue = this.state.columnInputs[this.inputNameForColumn(column)]
+              const currentValueAsArray = Array.isArray(currentValue) ? currentValue : [currentValue]
+              const originalColumnRenderedValue = column.render ? column.render() : null
+              debugger;
+              if (column.showInput(row)) {
+                return (
+                  <InputComponentType
+                    name={this.inputNameForColumn(column)}
+                    value={row[props.rowKey]} // TODO: Consider allowing the user of MLTable to specify the value-key here
+                    onChange={(e) => this.handleColumnInputChange(e)}
+                    checked={currentValueAsArray.includes(row[props.rowKey])}
+                  >
+                    {originalColumnRenderedValue}
+                  </InputComponentType>
+                )
+              } else {
+                return originalColumnRenderedValue
+              }
+            },
+          })
+        }
+        // if (column.showCheckbox) {
+        //   Object.assign(rewrittenColumn, {
+        //     render: (value, row, index) => {
+        //       return (
+        //         // TODO: Consider allowing the user of MLTable to specify the value-key here
+        //         <MLCheckbox
+        //           name={this.inputNameForColumn(column)}
+        //           value={row[props.rowKey]}
+        //           onChange={(e) => this.handleColumnInputChange(e)}
+        //           checked={this.state.columnInputs[this.inputNameForColumn(column)].includes(row[props.rowKey])}
+        //         >
+        //           {column.render ? column.render() : null}
+        //         </MLCheckbox>
+        //       )
+        //     },
+        //   })
+        // }
+        return rewrittenColumn
+      }),
+    }
+  }
+
+  inputNameForColumn(column) {
+    // return `${this.props.id}-${column.dataIndex}`
+    return column.dataIndex
+  }
+
+  handleColumnInputChange(event) {
+    let newValue
+    if (event.target.type === 'checkbox') {
+      if (event.target.checked) {
+        newValue = [...new Set([...this.state.columnInputs[event.target.name], event.target.value])]
+      } else {
+        newValue = this.state.columnInputs[event.target.name].filter((v) => v !== event.target.value)
+      }
+    } else if (event.target.type === 'radio') {
+      newValue = event.target.value
+    } else {
+      throw TypeError(`Tried to handle table input change for unknown input type "${event.target.type}"`)
+    }
+    const newState = {
+      ...this.state,
+      columnInputs: {
+        ...this.state.columnInputs,
+        [event.target.name]: newValue,
+      },
+    }
+    this.setState(newState)
+    if (this.props.onChange) {
+      this.props.onChange(newState)
     }
   }
 
@@ -55,7 +166,8 @@ class MLTable extends React.Component {
   }
 
   render() {
-    const { showBody, columns, dataSource } = this.props
+    const { showBody, dataSource } = this.props
+    const { columns } = this.state
     console.log(showBody)
     if (!showBody) {
       return <MLHeaderTable columns={columns} />
@@ -107,165 +219,6 @@ class MLTable extends React.Component {
       >
         {this.props.children}
       </Table>
-    )
-  }
-}
-
-const pureLessThanSorter = (a, b) => (a < b) ? -1 : (a > b) ? 1 : 0
-const extractSortColumnDecorator = (sortFn) => (dataIndex) => (a, b) => sortFn(a[dataIndex], b[dataIndex])
-
-const lessThanSorter = extractSortColumnDecorator(pureLessThanSorter)
-const dateSorter = extractSortColumnDecorator((a, b) => {
-  return pureLessThanSorter(new Date(a), new Date(b))
-})
-
-export class MLEntityTypesTable extends React.Component {
-  static columns = [
-    { title: 'Name', dataIndex: 'name', key: 'name', sorter: lessThanSorter('name') },
-    { title: 'Instances', dataIndex: 'instances', key: 'instances', sorter: lessThanSorter('instances') },
-    { title: 'Last Harmonized', dataIndex: 'last_harmonized', key: 'last_harmonized', sorter: dateSorter('last_harmonized') },
-    { title: 'Display', dataIndex: 'display', key: 'display', sorter: lessThanSorter('display') },
-    { title: 'Delete' },
-  ]
-
-  render() {
-    return (
-      <Table
-        {...this.props}
-        rowKey='name'
-        dataSource={this.props.dataSource}
-        columns={MLEntityTypesTable.columns}
-        expandable={{
-          expandedRowRender: (record) => {
-            return (
-              <MLEntityTypeTable
-                entityName={record.name} entityDefinition={this.props.entityDefinitions[record.name]}
-              />
-            )
-          },
-          rowExpandable: (record) => {
-            return (this.props.entityDefinitions.hasOwnProperty(record.name))
-          },
-        }}
-      />
-    )
-  }
-}
-
-export class MLEntityTypeTable extends React.Component {
-  static defaultState = {
-    dataSource: [],
-  }
-
-  constructor(props) {
-    super(props)
-    const thisEntityDefinition = props.entityDefinition.definitions[props.entityName]
-    const dataSource = []
-    for (const [propertyName, propertyMeta] of Object.entries(thisEntityDefinition.properties)) {
-      dataSource.push({
-        propertyMeta: propertyMeta,
-        hasSingularColumns: !propertyMeta.hasOwnProperty('$ref') && propertyMeta.dataType !== 'array', // TODO: Confirm this logic, consider name change
-        // TODO: Confirm all of these
-        name: propertyName,
-        type: propertyMeta.dataType, // TODO: Handle when this is another defined data type ($ref is only thing in propertyMeta)
-        identifier: false, // TODO: Where is this sourced from?
-        multiple: propertyMeta.dataType === 'array',
-        indexed: _.includes(thisEntityDefinition.rangeIndex, propertyName),
-        wordSearch: _.includes(thisEntityDefinition.wordLexicon, propertyName),
-        pii: _.includes(thisEntityDefinition.pii, propertyName),
-      })
-    }
-    this.state = {
-      dataSource,
-      thisEntityDefinition,
-      columns: this.generateColumns(),
-    }
-  }
-
-  generateColumns() {
-    return [
-      { title: 'Property Name', dataIndex: 'name', key: 'name', sorter: lessThanSorter('name') },
-      { title: 'Type', dataIndex: 'type', key: 'type', sorter: lessThanSorter('type') },
-      {
-        title: 'Identifier',
-        dataIndex: 'identifier',
-        key: 'identifier',
-        sorter: lessThanSorter('identifier'),
-        render: (checked, record) => {
-        // TODO: This might depend on the table props for naming things within a table; consider moving columns to constructor
-          if (record.hasSingularColumns) {
-            // TODO: Figure out why the `name`s aren't making the Radios mutually exclusive
-            return <MLRadio name={`${this.props.entityName}-identifier`} /*checked={checked}*/ /> // TODO: Implement onChecked/onChanged/whatever
-          }
-        },
-      },
-      {
-        title: 'Multiple',
-        dataIndex: 'multiple',
-        key: 'multiple',
-        sorter: lessThanSorter('multiple'),
-        render: (checked, record) => (
-          <Checkbox name={`${this.props.entityName}-multiple`} /*checked={checked}*/ /> // TODO: Hook up onChanged
-        ),
-      },
-      {
-        title: 'Indexed',
-        dataIndex: 'indexed',
-        key: 'indexed',
-        sorter: lessThanSorter('indexed'),
-        render: (checked, record) => (
-          <Checkbox name={`${this.props.entityName}-indexed`} /*checked={checked}*/ /> // TODO: Hook up onChanged
-        ),
-      },
-      {
-        title: 'Word Search',
-        dataIndex: 'wordSearch',
-        key: 'wordSearch',
-        sorter: lessThanSorter('wordSearch'),
-        render: (checked, record) => {
-          if (record.hasSingularColumns) {
-            return <Checkbox name={`${this.props.entityName}-wordSearch`} /*checked={checked}*/ /> // TODO: Hook up onChanged
-          }
-        },
-      },
-      {
-        title: 'PII',
-        dataIndex: 'pii',
-        key: 'pii',
-        sorter: lessThanSorter('pii'),
-        render: (checked, record) => {
-          if (true) { // TODO: When is the PII box hidden?
-            return <Checkbox name={`${this.props.entityName}-pii`} /*checked={checked}*/ /> // TODO: Hook up onChanged
-          }
-        },
-      },
-      {
-        title: 'Delete',
-        render: (foo, record) => {
-          return <DeleteOutlined onClick={() => ('TODO')} /> // TODO: hook up onClick to top level props somehow
-        },
-      },
-      {
-        title: 'Add',
-        dataIndex: 'add',
-        key: 'add',
-        render: (foo, record) => {
-          if (true) { // TODO: When is Add button hidden?
-            return <PlusSquareOutlined onClick={() => ('TODO')} /> // TODO: hook up onClick to top level props somehow
-          }
-        },
-      },
-    ]
-  }
-
-  render() {
-    return (
-      <Table
-        {...this.props}
-        rowKey='name'
-        dataSource={this.state.dataSource}
-        columns={this.state.columns}
-      />
     )
   }
 }
