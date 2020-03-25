@@ -1,11 +1,12 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLMention from '../src/ml-mention'
+import MLMentions from '../src/ml-mention'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
+const { MLOption } = MLMentions
 
 export default {
-  title: 'Data Entry/MLMention',
+  title: 'Data Entry/MLMentions',
   decorators: [withKnobs],
   parameters: {
     info: {
@@ -17,5 +18,16 @@ export default {
 export const basic = () => {
   const props = {
   }
-  return (<MLMention {...props} />)
+  return (
+    <MLMentions
+      style={{ width: '100%' }}
+      onChange={action('onChange')}
+      onSelect={action('onSelect')}
+      defaultValue='@afc163'
+    >
+      <MLOption value='afc163'>afc163</MLOption>
+      <MLOption value='zombieJ'>zombieJ</MLOption>
+      <MLOption value='yesmeck'>yesmeck</MLOption>
+    </MLMentions>
+  )
 }

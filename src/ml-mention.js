@@ -1,13 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Mention } from 'antd'
+import { Mentions } from 'antd'
+const { Option } = Mentions
 
-const MLMention = (props) => {
+const MLMentions = (props) => {
   return (
-    <Mention {...props}>
+    <Mentions {...props}>
       {props.children}
-    </Mention>
+    </Mentions>
   )
 }
 
-export default MLMention
+const MLOption = (props) => {
+  return (
+    <Option {...props}>
+      {props.children}
+    </Option>
+  )
+}
+
+MLMentions.MLOption = MLOption
+
+export default MLMentions
