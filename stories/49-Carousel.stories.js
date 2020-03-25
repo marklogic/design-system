@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import MLCarousel from '../src/ml-carousel'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
+import './49-Carousel.less'
 
 export default {
   title: 'Data Display/MLCarousel',
@@ -17,5 +18,20 @@ export default {
 export const basic = () => {
   const props = {
   }
-  return (<MLCarousel {...props} />)
+  return (
+    <MLCarousel {...props}>
+      <div>
+        <h3>1</h3>
+      </div>
+      <div>
+        <h3>2</h3>
+      </div>
+      <div>
+        <h3>3</h3>
+      </div>
+      <div>
+        <h3>4</h3>
+      </div>
+    </MLCarousel>
+  )
 }
