@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Autocomplete } from 'antd'
+import { AutoComplete } from 'antd'
 
-const MLAutocomplete = (props) => {
+const MLAutoComplete = (props) => {
   return (
-    <Autocomplete {...props}>
+    <AutoComplete {...props}>
       {props.children}
-    </Autocomplete>
+    </AutoComplete>
   )
 }
 
-export default MLAutocomplete
+export default MLAutoComplete

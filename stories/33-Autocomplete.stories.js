@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import MLAutocomplete from '../src/ml-autocomplete'
+import MLAutoComplete from '../src/ml-autocomplete'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 
 export default {
-  title: 'Data Entry/MLAutocomplete',
+  title: 'Data Entry/MLAutoComplete',
   decorators: [withKnobs],
   parameters: {
     info: {
@@ -14,8 +14,47 @@ export default {
   },
 }
 
-export const basic = () => {
-  const props = {
+const mockVal = (str, repeat = 1) => {
+  return {
+    value: str.repeat(repeat),
   }
-  return (<MLAutocomplete {...props} />)
+}
+
+export const basic = () => {
+  const [value, setValue] = useState('')
+  const [options, setOptions] = useState([])
+  const onSearch = (searchText) => {
+    setOptions(
+      !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)],
+    )
+  }
+  const onSelect = (data) => {
+    console.log('onSelect', data)
+  }
+  const onChange = (data) => {
+    setValue(data)
+  }
+  return (
+    <div>
+      <div>(note: we can't implement the full example because it needs state management to demonstrate and Storybook doesn't support that)</div>
+      <MLAutoComplete
+        options={options}
+        style={{ width: 200 }}
+        onSelect={onSelect}
+        onSearch={onSearch}
+        placeholder='input here'
+      />
+      <br />
+      <br />
+      <MLAutoComplete
+        value={value}
+        options={options}
+        style={{ width: 200 }}
+        onSelect={onSelect}
+        onSearch={onSearch}
+        onChange={onChange}
+        placeholder='control mode'
+      />
+    </div>
+  )
 }

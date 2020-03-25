@@ -1,6 +1,6 @@
 import './styles.less'
 import MLAlert from './ml-alert'
-import MLAutocomplete from './ml-autocomplete'
+import MLAutoComplete from './ml-autocomplete'
 import MLBreadcrumb from './ml-breadcrumb'
 import MLButton from './ml-button'
 import MLCarousel from './ml-carousel'
@@ -27,7 +27,7 @@ import MLUpload from './ml-upload'
 
 export {
   MLAlert,
-  MLAutocomplete,
+  MLAutoComplete,
   MLBreadcrumb,
   MLButton,
   MLCarousel,
