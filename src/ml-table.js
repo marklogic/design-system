@@ -135,15 +135,17 @@ export class MLEntityTypesTable extends React.Component {
         rowKey='name'
         dataSource={this.props.dataSource}
         columns={MLEntityTypesTable.columns}
-        expandedRowRender={(record) => {
-          return (
-            <MLEntityTypeTable
-              entityName={record.name} entityDefinition={this.props.entityDefinitions[record.name]}
-            />
-          )
-        }}
-        rowExpandable={(record) => {
-          return (this.props.entityDefinitions.hasOwnProperty(record.name))
+        expandable={{
+          expandedRowRender: (record) => {
+            return (
+              <MLEntityTypeTable
+                entityName={record.name} entityDefinition={this.props.entityDefinitions[record.name]}
+              />
+            )
+          },
+          rowExpandable: (record) => {
+            return (this.props.entityDefinitions.hasOwnProperty(record.name))
+          },
         }}
       />
     )
