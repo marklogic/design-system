@@ -1,12 +1,9 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLTable, { MLEntityTypesTable } from '../src/ml-table'
+import { MLTable, MLIcon } from '../src'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 import { sampleBasicData, sampleNestedData, sampleEntityTypesData } from './11-Table.sample-data.js'
-import MLRadio from '../src/ml-radio'
-import { Checkbox, Table } from 'antd'
-import { DeleteOutlined, PlusSquareOutlined } from '@ant-design/icons'
 
 export default {
   title: 'Data Display/Table',
@@ -76,8 +73,6 @@ export function entityTable() {
     })
   }
 
-  debugger;
-
   function generateColumns() {
     return [
       { title: 'Property Name', dataIndex: 'name', key: 'name', sorter: lessThanSorter('name') },
@@ -89,13 +84,6 @@ export function entityTable() {
         sorter: lessThanSorter('identifier'),
         input: 'radio',
         showInput: (row) => row.hasSingularColumns,
-        // render: (checked, record) => {
-        // // TODO: This might depend on the table props for naming things within a table; consider moving columns to constructor
-        //   if (record.hasSingularColumns) {
-        //     // TODO: Figure out why the `name`s aren't making the Radios mutually exclusive
-        //     return <MLRadio name={`${entityName}-identifier`} /* checked={checked} */ /> // TODO: Implement onChecked/onChanged/whatever
-        //   }
-        // },
       },
       {
         title: 'Multiple',
@@ -103,10 +91,6 @@ export function entityTable() {
         key: 'multiple',
         sorter: lessThanSorter('multiple'),
         input: 'checkbox',
-        showInput: () => true,
-        // render: (checked, record) => (
-        //   <Checkbox name={`${entityName}-multiple`} /* checked={checked} */ /> // TODO: Hook up onChanged
-        // ),
       },
       {
         title: 'Indexed',
@@ -115,9 +99,6 @@ export function entityTable() {
         sorter: lessThanSorter('indexed'),
         input: 'checkbox',
         showInput: (row) => row.hasSingularColumns,
-        // render: (checked, record) => (
-        //   <Checkbox name={`${entityName}-indexed`} /* checked={checked} */ /> // TODO: Hook up onChanged
-        // ),
       },
       {
         title: 'Word Search',
@@ -126,11 +107,6 @@ export function entityTable() {
         sorter: lessThanSorter('wordSearch'),
         input: 'checkbox',
         showInput: (row) => row.hasSingularColumns,
-        // render: (checked, record) => {
-        //   if (record.hasSingularColumns) {
-        //     return <Checkbox name={`${entityName}-wordSearch`} /* checked={checked} */ /> // TODO: Hook up onChanged
-        //   }
-        // },
       },
       {
         title: 'PII',
@@ -138,17 +114,11 @@ export function entityTable() {
         key: 'pii',
         sorter: lessThanSorter('pii'),
         input: 'checkbox',
-        showInput: () => true,
-        // render: (checked, record) => {
-        //   if (true) { // TODO: When is the PII box hidden?
-        //     return <Checkbox name={`${entityName}-pii`} /* checked={checked} */ /> // TODO: Hook up onChanged
-        //   }
-        // },
       },
       {
         title: 'Delete',
         render: (foo, record) => {
-          return <DeleteOutlined onClick={() => ('TODO')} /> // TODO: hook up onClick to top level props somehow
+          return <MLIcon.DeleteOutlined onClick={() => ('TODO')} /> // TODO: hook up onClick to top level props somehow
         },
       },
       {
@@ -156,9 +126,7 @@ export function entityTable() {
         dataIndex: 'add',
         key: 'add',
         render: (foo, record) => {
-          if (true) { // TODO: When is Add button hidden?
-            return <PlusSquareOutlined onClick={() => ('TODO')} /> // TODO: hook up onClick to top level props somehow
-          }
+          return <MLIcon.PlusSquareOutlined onClick={() => ('TODO')} /> // TODO: hook up onClick to top level props somehow
         },
       },
     ]

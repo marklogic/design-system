@@ -1,8 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Checkbox, Descriptions, Table } from 'antd' // TODO: Use MLCheckbox
 import _ from 'lodash'
 import './ml-table.css'
-import { DeleteOutlined, PlusSquareOutlined } from '@ant-design/icons' // TODO: Use MLIcon.*
 import MLRadio from './ml-radio'
 const MLCheckbox = Checkbox // TODO: Use real MLCheckbox
 
@@ -10,6 +10,14 @@ const MLCheckbox = Checkbox // TODO: Use real MLCheckbox
  * Component for showing an un-expanded nested table, which is just a vertical list of column headers.
  */
 class MLHeaderTable extends React.Component {
+  static propTypes = {
+    columns: PropTypes.arrayOf(
+      PropTypes.objectOf(
+        PropTypes.oneOf([PropTypes.string, PropTypes.func]),
+      ),
+    ),
+  }
+
   render() {
     const { columns } = this.props
     return (
@@ -31,6 +39,19 @@ class MLHeaderTable extends React.Component {
  * Component for showing basic tables, nested tables, and entity properties for rows in said tables.
  */
 class MLTable extends React.Component {
+  static propTypes = { // TODO: Include default Table props as well
+    id: PropTypes.string,
+    rowKey: PropTypes.string,
+    showBody: PropTypes.bool,
+    dataSource: PropTypes.objectOf(PropTypes.oneOf([PropTypes.string, PropTypes.number, PropTypes.bool])),
+    columns: PropTypes.arrayOf(
+      PropTypes.objectOf(
+        PropTypes.oneOf([PropTypes.string, PropTypes.func]),
+      ),
+    ),
+    onChange: PropTypes.func,
+  }
+
   static defaultProps = {
     showBody: true,
   }
@@ -41,7 +62,7 @@ class MLTable extends React.Component {
       columnExpandedStates: Object.fromEntries(props.columns.map((column) => (
         [column.dataIndex, false]
       ))),
-      columnInputs: Object.fromEntries(props.columns.map(
+      columnInputValues: Object.fromEntries(props.columns.map(
         (column) => {
           if (column.input === 'radio') {
             const checkedInputRows = props.dataSource.filter((row) => {
@@ -80,17 +101,17 @@ class MLTable extends React.Component {
               if (!InputComponentType) {
                 throw TypeError(`Unknown input type "${column.input}"`)
               }
-              const currentValue = this.state.columnInputs[this.inputNameForColumn(column)]
-              const currentValueAsArray = Array.isArray(currentValue) ? currentValue : [currentValue]
               const originalColumnRenderedValue = column.render ? column.render() : null
-              debugger;
               if (column.showInput(row)) {
+                const rowValue = row[props.rowKey]
+                const currentValue = this.state.columnInputValues[this.inputNameForColumn(column)]
+                const currentValueAsArray = Array.isArray(currentValue) ? currentValue : [currentValue]
                 return (
                   <InputComponentType
                     name={this.inputNameForColumn(column)}
-                    value={row[props.rowKey]} // TODO: Consider allowing the user of MLTable to specify the value-key here
+                    value={rowValue} // TODO: Consider allowing the user of MLTable to specify the value-key here
                     onChange={(e) => this.handleColumnInputChange(e)}
-                    checked={currentValueAsArray.includes(row[props.rowKey])}
+                    checked={currentValueAsArray.includes(rowValue)}
                   >
                     {originalColumnRenderedValue}
                   </InputComponentType>
@@ -101,23 +122,6 @@ class MLTable extends React.Component {
             },
           })
         }
-        // if (column.showCheckbox) {
-        //   Object.assign(rewrittenColumn, {
-        //     render: (value, row, index) => {
-        //       return (
-        //         // TODO: Consider allowing the user of MLTable to specify the value-key here
-        //         <MLCheckbox
-        //           name={this.inputNameForColumn(column)}
-        //           value={row[props.rowKey]}
-        //           onChange={(e) => this.handleColumnInputChange(e)}
-        //           checked={this.state.columnInputs[this.inputNameForColumn(column)].includes(row[props.rowKey])}
-        //         >
-        //           {column.render ? column.render() : null}
-        //         </MLCheckbox>
-        //       )
-        //     },
-        //   })
-        // }
         return rewrittenColumn
       }),
     }
@@ -131,10 +135,11 @@ class MLTable extends React.Component {
   handleColumnInputChange(event) {
     let newValue
     if (event.target.type === 'checkbox') {
+      const columnInputValue = this.state.columnInputValues[event.target.name]
       if (event.target.checked) {
-        newValue = [...new Set([...this.state.columnInputs[event.target.name], event.target.value])]
+        newValue = [...new Set([...columnInputValue, event.target.value])]
       } else {
-        newValue = this.state.columnInputs[event.target.name].filter((v) => v !== event.target.value)
+        newValue = columnInputValue.filter((v) => v !== event.target.value)
       }
     } else if (event.target.type === 'radio') {
       newValue = event.target.value
@@ -143,8 +148,8 @@ class MLTable extends React.Component {
     }
     const newState = {
       ...this.state,
-      columnInputs: {
-        ...this.state.columnInputs,
+      columnInputValues: {
+        ...this.state.columnInputValues,
         [event.target.name]: newValue,
       },
     }
@@ -216,9 +221,7 @@ class MLTable extends React.Component {
         {...this.props} // This is positioned here so the above props can be overwritten if desired
         dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
         columns={restructuredColumns}
-      >
-        {this.props.children}
-      </Table>
+      />
     )
   }
 }
