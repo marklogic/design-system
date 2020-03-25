@@ -16,6 +16,9 @@ export default {
 
 export const basic = () => {
   const props = {
+    onChange: action('onChange'),
   }
-  return (<MLCheckbox {...props} />)
+  return (
+    <MLCheckbox {...props}>Checkbox</MLCheckbox>
+  )
 }
