@@ -17,5 +17,22 @@ export default {
 export const basic = () => {
   const props = {
   }
-  return (<MLDivider {...props} />)
+  return (
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista
+        probare, quae sunt a te dicta? Refert tamen, quo modo.
+      </p>
+      <MLDivider />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista
+        probare, quae sunt a te dicta? Refert tamen, quo modo.
+      </p>
+      <MLDivider dashed />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista
+        probare, quae sunt a te dicta? Refert tamen, quo modo.
+      </p>
+    </div>
+  )
 }
