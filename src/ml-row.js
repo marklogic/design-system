@@ -1,14 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Grid, Row, Col } from 'antd'
-
-const MLGrid = (props) => {
-  return (
-    <Grid {...props}>
-      {props.children}
-    </Grid>
-  )
-}
+import { Row } from 'antd'
 
 const MLRow = (props) => {
   return (
@@ -18,12 +10,4 @@ const MLRow = (props) => {
   )
 }
 
-const MLCol = (props) => {
-  return (
-    <Col {...props}>
-      {props.children}
-    </Col>
-  )
-}
-
-export default MLGrid
+export default MLRow
