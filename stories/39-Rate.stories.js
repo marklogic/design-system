@@ -16,6 +16,7 @@ export default {
 
 export const basic = () => {
   const props = {
+    onChange: action('onChange'),
   }
   return (<MLRate {...props} />)
 }
