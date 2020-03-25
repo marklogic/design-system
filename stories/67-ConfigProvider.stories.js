@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import MLConfigProvider from '../src/ml-config-provider'
+import { MLConfigProvider } from '../src'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 
@@ -15,7 +15,10 @@ export default {
 }
 
 export const basic = () => {
-  const props = {
-  }
-  return (<MLConfigProvider {...props} />)
+  return (
+    <div>
+      <div>This component doesn't seem to allow updates in Storybook, so here are some static examples:</div>
+      <div>TODO: Consider using this for global settings that are spec'd in the tickets</div>
+    </div>
+  )
 }
