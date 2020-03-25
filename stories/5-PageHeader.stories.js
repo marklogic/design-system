@@ -15,7 +15,12 @@ export default {
 }
 
 export const basic = () => {
-  const props = {
-  }
-  return (<MLPageHeader {...props} />)
+  return (
+    <MLPageHeader
+      className='site-page-header'
+      onBack={action('onBack')}
+      title='Title'
+      subTitle='This is a subtitle'
+    />
+  )
 }
