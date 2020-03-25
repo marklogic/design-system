@@ -14,8 +14,26 @@ export default {
   },
 }
 
+function preventDefault(e) {
+  e.preventDefault()
+  console.log('Clicked! But prevent default.')
+}
+
 export const basic = () => {
   const props = {
   }
-  return (<MLTag {...props} />)
+  return (
+    <div>
+      <MLTag>Tag 1</MLTag>
+      <MLTag>
+        <a href='https://github.com/ant-design/ant-design/issues/1862'>Link</a>
+      </MLTag>
+      <MLTag closable onClose={action('onClose')}>
+        Tag 2
+      </MLTag>
+      <MLTag closable onClose={preventDefault}>
+        Prevent Default
+      </MLTag>
+    </div>
+  )
 }
