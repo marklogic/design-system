@@ -17,5 +17,16 @@ export default {
 export const basic = () => {
   const props = {
   }
-  return (<MLBreadcrumb {...props} />)
+  return (
+    <MLBreadcrumb>
+      <MLBreadcrumb.MLItem>Home</MLBreadcrumb.MLItem>
+      <MLBreadcrumb.MLItem>
+        <a href=''>Application Center</a>
+      </MLBreadcrumb.MLItem>
+      <MLBreadcrumb.MLItem>
+        <a href=''>Application List</a>
+      </MLBreadcrumb.MLItem>
+      <MLBreadcrumb.MLItem>An Application</MLBreadcrumb.MLItem>
+    </MLBreadcrumb>
+  )
 }
