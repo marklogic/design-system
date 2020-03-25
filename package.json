@@ -26,10 +26,6 @@
     "minify-css": "node-sass --include-path scss src/styles.scss dist/styles.min.css --output-style compressed"
   },
   "peerDependencies": {
-    "antd": "^3.20.5",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -60,7 +56,6 @@
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
     "@svgr/rollup": "^4.3.2",
-    "antd": "^3.26.3",
     "babel-loader": "^8.0.6",
     "change-case": "^4.1.1",
     "create-react-class": "^15.6.3",
@@ -93,9 +88,13 @@
     "dist"
   ],
   "dependencies": {
+    "antd": "^4.0.4",
     "@ant-design/icons": "^4.0.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
-    "@fortawesome/react-fontawesome": "^0.1.9"
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
