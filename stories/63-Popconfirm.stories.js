@@ -1,6 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import MLPopconfirm from '../src/ml-popconfirm'
+import { message } from 'antd'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 
@@ -14,8 +15,26 @@ export default {
   },
 }
 
+function confirm(e) {
+  console.log(e)
+  message.success('Click on Yes')
+}
+
+function cancel(e) {
+  console.log(e)
+  message.error('Click on No')
+}
+
 export const basic = () => {
-  const props = {
-  }
-  return (<MLPopconfirm {...props} />)
+  return (
+    <MLPopconfirm
+      title='Are you sure delete this task?'
+      onConfirm={confirm}
+      onCancel={cancel}
+      okText='Yes'
+      cancelText='No'
+    >
+      <a href='#'>Delete</a>
+    </MLPopconfirm>
+  )
 }
