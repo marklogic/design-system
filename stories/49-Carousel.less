@@ -1,11 +1,11 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLNotification from '../src/ml-notification'
+import MLCarousel from '../src/ml-carousel'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 
 export default {
-  title: 'Feedback/MLNotification',
+  title: 'Data Display/MLCarousel',
   decorators: [withKnobs],
   parameters: {
     info: {
@@ -17,5 +17,20 @@ export default {
 export const basic = () => {
   const props = {
   }
-  return (<MLNotification {...props} />)
+  return (
+    <MLCarousel {...props}>
+      <div>
+        <h3>1</h3>
+      </div>
+      <div>
+        <h3>2</h3>
+      </div>
+      <div>
+        <h3>3</h3>
+      </div>
+      <div>
+        <h3>4</h3>
+      </div>
+    </MLCarousel>
+  )
 }

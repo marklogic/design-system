@@ -17,5 +17,9 @@ export default {
 export const basic = () => {
   const props = {
   }
-  return (<MLTooltip {...props} />)
+  return (
+    <MLTooltip title='prompt text'>
+      <span>Tooltip will show on mouse enter.</span>
+    </MLTooltip>
+  )
 }
