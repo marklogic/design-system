@@ -1,6 +1,7 @@
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import external from 'rollup-plugin-peer-deps-external'
+import less from 'rollup-plugin-less'
 import postcss from 'rollup-plugin-postcss'
 import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
@@ -14,26 +15,33 @@ export default {
     {
       file: pkg.main,
       format: 'cjs',
-      sourcemap: true
+      sourcemap: true,
     },
     {
       file: pkg.module,
       format: 'es',
-      sourcemap: true
-    }
+      sourcemap: true,
+    },
   ],
   plugins: [
+    // less(),
     external(),
     postcss({
-      modules: true
+      modules: true,
+      extensions: ['.css', '.scss', '.less'],
+      use: [
+        'sass',
+        ['less', { javascriptEnabled: true }],
+      ],
     }),
     url({ exclude: ['**/*.svg'] }),
     svgr(),
     babel({
-      exclude: 'node_modules/**'
+      exclude: 'node_modules/**',
+      plugins: [['import', { libraryName: 'antd', style: true }]],
       // plugins: [ '@babel/external-helpers' ]
     }),
     resolve(),
-    commonjs()
-  ]
+    commonjs(),
+  ],
 }
