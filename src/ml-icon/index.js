@@ -1,7 +1,6 @@
 import React from 'react'
 import AntIcons from './ant-icons'
 import FontAwesomeIcons from './font-awesome-icons'
-import createReactClass from 'create-react-class'
 import '../ml-icon.less'
 
 // TODO: Handle coloration of individual icons
@@ -31,12 +30,10 @@ const FontAwesomeIconsWrapped = {}
 // Create a wrapped version of every Icon component
 for (const [iconSet, iconSetWrapped] of [[AntIcons, AntIconsWrapped], [FontAwesomeIcons, FontAwesomeIconsWrapped]]) {
   for (const [componentName, component] of Object.entries(iconSet)) {
-    iconSetWrapped[componentName] = createReactClass({
-      displayName: componentName,
-      render: function() {
-        return (<MLIconWrapper {...this.props} component={component} />)
-      },
-    })
+    iconSetWrapped[componentName] = (props) => {
+      return (<MLIconWrapper {...props} component={component} />)
+    }
+    iconSetWrapped[componentName].displayName = componentName
   }
 }
 
