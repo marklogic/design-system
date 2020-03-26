@@ -23,7 +23,7 @@
     "install:all": "(yarn link; pushd playground; yarn link \"marklogic-ui-library\"; popd); (yarn); (cd playground && yarn)",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o storybook-dist",
-    "minify-css": "node-sass --include-path scss src/styles.scss dist/styles.min.css --output-style compressed"
+    "minify-css": "yarn run lessc --js src/styles.less dist/styles.min.css --include-path=./node_modules"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

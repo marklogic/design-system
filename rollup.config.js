@@ -1,7 +1,6 @@
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
-import external from 'rollup-plugin-peer-deps-external'
-import less from 'rollup-plugin-less'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
@@ -24,9 +23,11 @@ export default {
     },
   ],
   plugins: [
-    // less(),
-    external(),
+    peerDepsExternal({ // This unbreaks compilation with 'react-is' namedExports failing.
+      includeDependencies: true,
+    }),
     postcss({
+      extract: true,
       modules: true,
       extensions: ['.css', '.scss', '.less'],
       use: [
@@ -37,11 +38,18 @@ export default {
     url({ exclude: ['**/*.svg'] }),
     svgr(),
     babel({
-      exclude: 'node_modules/**',
+      exclude: /node_modules/,
       plugins: [['import', { libraryName: 'antd', style: true }]],
       // plugins: [ '@babel/external-helpers' ]
     }),
     resolve(),
-    commonjs(),
+    commonjs({
+      include: [
+        /node_modules/,
+      ],
+      // namedExports: { // Never figured out how to get this to work, other than using includeDependencies above
+      //   'react-is': ['isFragment'],
+      // },
+    }),
   ],
 }
