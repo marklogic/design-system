@@ -1,8 +1,11 @@
 import React from 'react'
 import Icon from '@ant-design/icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import * as FontAwesomeOriginalIcons from '@fortawesome/free-solid-svg-icons'
+// import { faRoute, faBook } from '@fortawesome/free-solid-svg-icons'
 import { config as FontAwesomeConfig } from '@fortawesome/fontawesome-svg-core'
+
+// const FontAwesomeOriginalIcons = { faRoute, faBook }
+const FontAwesomeOriginalIcons = { }
 
 const FontAwesomeIcons = {}
 

@@ -1,8 +1,10 @@
 import React from 'react'
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs'
-import { MLIcon } from '../src'
-import { AntIcons, FontAwesomeIcons } from '../src/ml-icon'
+import { MLIcon } from 'marklogic-ui-library'
+// import { AntIcons, FontAwesomeIcons } from 'marklogic-ui-library'
 import './19-Icon.css'
+const AntIcons = MLIcon
+const FontAwesomeIcons = {}
 
 export default {
   title: 'General/MLIcon',
@@ -80,7 +82,7 @@ export const shortList = () => {
       {iconTile({ component: MLIcon.SearchOutlined, props })}
       {iconTile({ component: MLIcon.SettingOutlined, props })}
       {iconTile({ component: MLIcon.DashboardOutlined, props })}
-      {iconTile({ component: MLIcon.Route, props })}
+      {/*{iconTile({ component: MLIcon.Route, props })}*/}
       {iconTile({ component: MLIcon.ArrowLeftOutlined, props })}
       {iconTile({ component: MLIcon.CheckCircleOutlined, props })}
       {iconTile({ component: MLIcon.CloseCircleOutlined, props })}
@@ -93,7 +95,7 @@ export const shortList = () => {
       {iconTile({ component: MLIcon.CloseCircleFilled, props })}
       {iconTile({ component: MLIcon.LockOutlined, props })}
       {iconTile({ component: MLIcon.DownOutlined, props })}
-      {iconTile({ component: MLIcon.Book, props })}
+      {/*{iconTile({ component: MLIcon.Book, props })}*/}
     </div>
   )
 }

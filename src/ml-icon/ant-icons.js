@@ -1,4 +1,4 @@
-import * as AntIcons from '@ant-design/icons/lib/icons'
+import * as AntIcons from '@ant-design/icons'
 
 for (const [componentName, component] of Object.entries(AntIcons)) {
   component.displayName = componentName

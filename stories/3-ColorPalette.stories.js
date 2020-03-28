@@ -1,6 +1,6 @@
 import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs/react'
-import { MLAlert, MLButton } from '../src'
+import { MLAlert, MLButton } from 'marklogic-ui-library'
 import { Card, Typography } from 'antd'
 import './3-ColorPalette.less'
 
