@@ -18,6 +18,7 @@ export const basic = () => <MLButton type='primary' onClick={action('clicked')}>
 export const multiple = () => (
   <div>
     <MLButton type='primary' onClick={action('primary clicked')}>{text('Primary Button Text', 'Primary')}</MLButton>
+    <MLButton type='highlight' onClick={action('primary clicked')}>{text('Highlight Button Text', 'Highlight')}</MLButton>
     <MLButton onClick={action('default clicked')}>{text('Default Button Text', 'Default')}</MLButton>
     <MLButton type='danger' onClick={action('danger clicked')}>{text('Danger Button Text', 'Danger')}</MLButton>
   </div>

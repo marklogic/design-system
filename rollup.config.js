@@ -62,7 +62,7 @@ export default {
     // }),
     // less({ option: { javascriptEnabled: true } }),
     postcssRollup({
-      // extract: true,
+      extract: true,
       // modules: true,
       extensions: ['.css', '.scss', '.less'],
       // plugins: [
