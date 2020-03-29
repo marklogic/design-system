@@ -7,33 +7,22 @@ import {
   // MLSlider,
   MLRadio,
   MLIcon,
-} from 'marklogic-ui-library/dist'
+} from 'marklogic-ui-library/dist/index.es.js'
 
-import 'marklogic-ui-library/dist/styles.min.css'
+import 'marklogic-ui-library/dist/index.css'
 
 export default class App extends Component {
   render () {
+    console.log(MLIcon.CheckCircleFilled)
+    // debugger
     return (
       <div>
         <MLLayout>
           <MLLayout.MLHeader>Header</MLLayout.MLHeader>
           <MLLayout.MLContent>
             <MLButton type='primary'>Test</MLButton>
-            <MLRadio.MLGroup name='radiogroup'>
-              <MLRadio name='radiogroup2' value='A2'>A2</MLRadio>
-            </MLRadio.MLGroup>
-            <MLRadio.MLGroup name='radiogroup'>
-              <MLRadio name='radiogroup2' value='B2'>B2</MLRadio>
-            </MLRadio.MLGroup>
-            <MLRadio.MLGroup name='radiogroup'>
-              <MLRadio name='radiogroup2' value='C2'>C2</MLRadio>
-            </MLRadio.MLGroup>
-            <MLRadio.MLGroup name='radiogroup2'>
-              <MLRadio name='radiogroup' value='A'>A</MLRadio>
-              <MLRadio name='radiogroup' value='B'>B</MLRadio>
-              <MLRadio name='radiogroup' value='C'>C</MLRadio>
-            </MLRadio.MLGroup>
-            <MLIcon.Abacus />
+            <MLIcon.Route />
+            <MLIcon.CheckCircleFilled />
           </MLLayout.MLContent>
           <MLLayout.MLFooter year='2019' />
         </MLLayout>

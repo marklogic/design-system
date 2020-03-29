@@ -77,8 +77,8 @@ module.exports = async ({ config }) => {
     ]
   });
   // config.resolve.extensions.push('.less')
-  config.resolve.alias['marklogic-ui-library/index.css'] = path.resolve(__dirname, '../dist/index.css')
-  config.resolve.alias['marklogic-ui-library$'] = path.resolve(__dirname, '../dist/index.es.js')
+  config.resolve.alias['marklogic-ui-library'] = path.resolve(__dirname, '..')
+  // config.resolve.alias['marklogic-ui-library$'] = path.resolve(__dirname, '../dist/index.es.js')
   // config.resolve.alias['antd'] = './node_modules/antd'
   // config.resolve.alias['antd'] = '/Users/phoenix/Code/work/greenmars/marklogic/design-system/node_modules/antd'
   // config.resolve.alias['antd/dist/antd.less'] = '/Users/phoenix/Code/work/greenmars/marklogic/design-system/node_modules/antd/dist/antd.less'

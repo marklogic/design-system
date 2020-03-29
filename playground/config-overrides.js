@@ -2,11 +2,17 @@ const path = require('path')
 const { override, fixBabelImports, babelInclude, addLessLoader, removeModuleScopePlugin, babelExclude } = require('customize-cra')
 
 module.exports = override(
-  fixBabelImports('import', {
-    libraryName: 'antd',
-    libraryDirectory: 'es',
-    style: true,
-  }),
+  fixBabelImports('import', [
+    {
+      libraryName: 'antd',
+      libraryDirectory: 'es',
+      style: true,
+    },
+    {
+      libraryName: 'marklogic-ui-library',
+      libraryDirectory: 'dist',
+    },
+  ]),
   addLessLoader({
     javascriptEnabled: true,
     // modifyVars: {
