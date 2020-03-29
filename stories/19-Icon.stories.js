@@ -67,7 +67,7 @@ for (const variant of ['Filled', 'Outlined', 'TwoTone']) {
 
 export const shortList = () => {
   const props = {
-    highlight: boolean('highlight', true),
+    highlight: boolean('highlight', false),
     spin: boolean('spin', false),
     rotate: number('rotate', 0),
     style: {
@@ -82,7 +82,7 @@ export const shortList = () => {
       {iconTile({ component: MLIcon.SearchOutlined, props })}
       {iconTile({ component: MLIcon.SettingOutlined, props })}
       {iconTile({ component: MLIcon.DashboardOutlined, props })}
-      {/*{iconTile({ component: MLIcon.Route, props })}*/}
+      {iconTile({ component: MLIcon.Route, props })}
       {iconTile({ component: MLIcon.ArrowLeftOutlined, props })}
       {iconTile({ component: MLIcon.CheckCircleOutlined, props })}
       {iconTile({ component: MLIcon.CloseCircleOutlined, props })}
@@ -95,7 +95,7 @@ export const shortList = () => {
       {iconTile({ component: MLIcon.CloseCircleFilled, props })}
       {iconTile({ component: MLIcon.LockOutlined, props })}
       {iconTile({ component: MLIcon.DownOutlined, props })}
-      {/*{iconTile({ component: MLIcon.Book, props })}*/}
+      {iconTile({ component: MLIcon.Book, props })}
     </div>
   )
 }
@@ -111,7 +111,7 @@ export const completeList = () => {
     showFontAwesomeIcons: boolean('show FontAwesome icons', true),
   }
   const props = {
-    highlight: boolean('highlight', true),
+    highlight: boolean('highlight', false),
     spin: boolean('spin', false),
     rotate: number('rotate', 0),
     style: {
