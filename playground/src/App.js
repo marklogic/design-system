@@ -12,7 +12,7 @@ import {
 
 // import 'marklogic-ui-library/src/*.less'
 
-// import 'marklogic-ui-library/dist/index.css'
+import 'marklogic-ui-library/dist/index.css'
 
 export default class App extends Component {
   render () {
