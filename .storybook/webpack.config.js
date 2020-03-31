@@ -1,7 +1,5 @@
 const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 const path = require('path');
-const webpack = require("webpack");
-const through = require('through2');
 
 module.exports = async ({ config }) => {
   config.module.rules.push({

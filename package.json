@@ -77,7 +77,6 @@
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "lodash": "^4.17.15",
-    "mini-css-extract-plugin": "latest",
     "node-sass": "^4.13.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -85,16 +84,10 @@
     "rollup": "^1.20.1",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.2",
-    "rollup-plugin-ignore": "^1.0.5",
-    "rollup-plugin-import-alias": "^1.0.10",
-    "rollup-plugin-less": "^1.1.2",
-    "rollup-plugin-less-modules": "^0.1.11",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-url": "^2.2.2",
-    "through2": "^3.0.1",
-    "transform-loader": "^0.2.4"
   },
   "files": [
     "dist"
