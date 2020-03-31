@@ -2,14 +2,17 @@ import React, { Component } from 'react'
 
 import {
   MLButton,
-  // MLDatePicker,
+  MLDatePicker,
   MLLayout,
-  // MLSlider,
+  MLSlider,
   MLRadio,
   MLIcon,
 } from 'marklogic-ui-library/dist/index.es.js'
+// } from 'marklogic-ui-library/src'
 
-import 'marklogic-ui-library/dist/index.css'
+// import 'marklogic-ui-library/src/*.less'
+
+// import 'marklogic-ui-library/dist/index.css'
 
 export default class App extends Component {
   render () {
@@ -23,6 +26,9 @@ export default class App extends Component {
             <MLButton type='primary'>Test</MLButton>
             <MLIcon.Route />
             <MLIcon.CheckCircleFilled />
+            <div>
+              <MLSlider tooltipPlacement={'top'} />
+            </div>
           </MLLayout.MLContent>
           <MLLayout.MLFooter year='2019' />
         </MLLayout>
@@ -30,3 +36,4 @@ export default class App extends Component {
     )
   }
 }
+

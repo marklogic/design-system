@@ -18,6 +18,7 @@ export default {
     },
     {
       file: pkg.module,
+      assetFileNames: 'dist/index.css',
       format: 'es',
       sourcemap: true,
     },
@@ -27,8 +28,9 @@ export default {
       includeDependencies: true,
     }),
     postcssRollup({
-      extract: true,
-      modules: false, // For now, we aren't importing class names from stylesheets. Consider doing so?
+      // inject: true,
+      extract: true, // Trying to figure out how to get styles importing properly in Storybook
+      // modules: false, // For now, we aren't importing class names from stylesheets. Consider doing so?
       extensions: ['.css', '.scss', '.less'],
       use: [
         ['less', { javascriptEnabled: true }],
@@ -40,7 +42,7 @@ export default {
       exclude: [
         /node_modules/,
       ],
-      plugins: [['import', { libraryName: 'antd', style: true }]],
+      plugins: [['import', { libraryName: 'antd', style: true, libraryDirectory: 'es' }]],
     }),
     resolve(),
     commonjs({

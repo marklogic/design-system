@@ -13,7 +13,8 @@
     "npm": ">=5"
   },
   "sideEffects": [
-    "*.css"
+    "*.css",
+    "*.less"
   ],
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",

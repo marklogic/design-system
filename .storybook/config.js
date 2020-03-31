@@ -3,8 +3,6 @@ import { create } from '@storybook/theming/create';
 import { withInfo } from '@storybook/addon-info';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import './style.css';
-import '../node_modules/antd/dist/antd.css';
-import '!style-loader!css-loader!marklogic-ui-library/dist/index.css';
 
 addDecorator(
   withInfo({

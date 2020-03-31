@@ -30,23 +30,36 @@ module.exports = async ({ config }) => {
     enforce: 'pre',
   });
   config.module.rules.push({
-    test: /\.less$/,
+    test: /\.less/,
     loaders: [
       "style-loader",
       "css-loader",
       {
         loader: "less-loader",
         options: {
-          javascriptEnabled : true,
-        }
+          javascriptEnabled: true,
+          paths: [
+            path.resolve(__dirname, '../node_modules'),
+            path.resolve(__dirname, '../src'),
+          ]
+        },
       },
     ],
     include: [
-      // path.resolve(__dirname, '../src/'),
-      path.resolve(__dirname, '../node_modules/antd/'),
+      path.resolve(__dirname, '../node_modules/'),
       path.resolve(__dirname, '../stories/'),
+      path.resolve(__dirname, '../src/'),
     ]
   });
-  config.resolve.alias['marklogic-ui-library'] = path.resolve(__dirname, '..')
+  config.resolve.alias['marklogic-ui-library'] = path.resolve(__dirname, '../src')
+  config.resolve.alias['antd'] = path.resolve(__dirname, '../node_modules/antd')
+
+  // DEBUG Fix stringify for regexes
+  Object.defineProperty(RegExp.prototype, "toJSON", {
+    value: RegExp.prototype.toString
+  });
+  console.log("Storybook webpack config:\n", JSON.stringify(config, null, '  '))
+  // DEBUG end
+
   return config;
 };

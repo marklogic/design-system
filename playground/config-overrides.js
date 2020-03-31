@@ -1,5 +1,5 @@
 const path = require('path')
-const { override, fixBabelImports, babelInclude, addLessLoader, removeModuleScopePlugin, babelExclude } = require('customize-cra')
+const { override, fixBabelImports, babelInclude, addLessLoader, addWebpackAlias, removeModuleScopePlugin, babelExclude } = require('customize-cra')
 
 module.exports = override(
   fixBabelImports('import', [
@@ -15,14 +15,20 @@ module.exports = override(
   ]),
   addLessLoader({
     javascriptEnabled: true,
-    // modifyVars: {
-    //   '@primary-color': '#127da1',
-    // },
+    paths: [
+      path.resolve(__dirname, '../node_modules'),
+      path.resolve(__dirname, '../src'),
+    ],
   }),
   removeModuleScopePlugin(),
+  addWebpackAlias({
+    antd: path.resolve(__dirname, 'node_modules/antd'),
+  }),
   babelInclude([
-    path.resolve('src'),
-    path.resolve('node_modules/marklogic-ui-library'),
+    path.resolve(__dirname, 'src'),
+    path.resolve(__dirname, '../src'),
+    path.resolve(__dirname, 'node_modules'),
+    path.resolve(__dirname, 'node_modules/marklogic-ui-library'),
     // path.resolve('../src'),
   ]),
   babelExclude([
