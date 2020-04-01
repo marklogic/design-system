@@ -1,16 +1,11 @@
-@import '~antd/dist/antd.less';
+@import 'antd/es/style/index.less';
 @import './color-palette.less';
+//@import './red-color-palette.less';
 @import './typography.less';
-//@import '../stories/debug-colors.less'; // enable this to check all the colors are being used over the defaults; TODO: remove for production
 
-/*
-TODOs/notes:
-- What exactly does "highlight" mean for components? Same for "highlight text".
-- Ant makes Code text scaled down to fit within the slightly padded box that it uses to show code.
-  This results in it fitting within the same line-height as other text around it.
-  I think this looks better than if I forced the font-size to 14px like the spec asks for.
-- For Link styles, do you mean <a> tags, or Link-style Button components? Both?
- */
+//div {
+//  background: red;
+//}
 
 .node-1-color { background-color: @node-1-color; }
 .node-2-color { background-color: @node-2-color; }
@@ -32,4 +27,3 @@ TODOs/notes:
 .node-18-color { background-color: @node-18-color; }
 .node-19-color { background-color: @node-19-color; }
 .node-20-color { background-color: @node-20-color; }
-
