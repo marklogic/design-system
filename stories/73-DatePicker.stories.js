@@ -52,7 +52,8 @@ export const datePicker = () => {
       middle: 'middle',
       large: 'large'
     }, 'small'),
-    bordered: boolean('bordered', false),
+    // bordered: false,
+    bordered: boolean('bordered', true, 'bordered'),
     // style: object('style'),
     // popupStyle: object('popupStyle'),
     autoFocus: boolean('autoFocus', false),

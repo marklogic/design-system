@@ -1,7 +1,18 @@
 const path = require('path')
-const { override, fixBabelImports, babelInclude, addLessLoader, addWebpackAlias, removeModuleScopePlugin, babelExclude } = require('customize-cra')
+const {
+  override,
+  addWebpackPlugin,
+  fixBabelImports,
+  babelInclude,
+  addLessLoader,
+  addWebpackAlias,
+  removeModuleScopePlugin,
+  babelExclude,
+} = require('customize-cra')
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
 
 module.exports = override(
+  addWebpackPlugin(new AntdDayjsWebpackPlugin()),
   fixBabelImports('import', [
     {
       libraryName: 'antd',

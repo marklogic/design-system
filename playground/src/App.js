@@ -7,7 +7,12 @@ import {
   MLSlider,
   MLRadio,
   MLIcon,
+  MLConfigProvider,
 } from 'marklogic-ui-library/dist/index.es.js'
+
+import {
+  ConfigProvider,
+} from 'antd/es'
 // } from 'marklogic-ui-library/src'
 
 // import 'marklogic-ui-library/src/*.less'
@@ -16,24 +21,24 @@ import 'marklogic-ui-library/dist/index.css'
 
 export default class App extends Component {
   render () {
-    console.log(MLIcon.CheckCircleFilled)
-    // debugger
     return (
       <div>
-        <MLLayout>
-          <MLLayout.MLHeader>Header</MLLayout.MLHeader>
-          <MLLayout.MLContent>
-            <MLButton type='primary'>Test</MLButton>
-            <MLIcon.Route />
-            <MLIcon.CheckCircleFilled />
-            <div>
-              <MLSlider tooltipPlacement={'top'} />
-            </div>
-          </MLLayout.MLContent>
-          <MLLayout.MLFooter year='2019' />
-        </MLLayout>
+        <MLConfigProvider dateFormat='YYYY-MMM-DD, HH:mm:ss'>
+          <MLLayout>
+            <MLLayout.MLHeader>Header</MLLayout.MLHeader>
+            <MLDatePicker />
+            <MLLayout.MLContent>
+              <MLButton type='primary'>Test</MLButton>
+              <MLIcon.Route />
+              <MLIcon.CheckCircleFilled />
+              <div>
+                <MLSlider tooltipPlacement='top' />
+              </div>
+            </MLLayout.MLContent>
+            <MLLayout.MLFooter year='2019' />
+          </MLLayout>
+        </MLConfigProvider>
       </div>
     )
   }
 }
-
