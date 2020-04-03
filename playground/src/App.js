@@ -7,17 +7,10 @@ import {
   MLSlider,
   MLRadio,
   MLIcon,
-} from 'marklogic-ui-library/dist/index.es.js'
-// } from 'marklogic-ui-library/src'
-
-// import 'marklogic-ui-library/src/*.less'
-
-import 'marklogic-ui-library/dist/index.css'
+} from 'marklogic-ui-library'
 
 export default class App extends Component {
   render () {
-    console.log(MLIcon.CheckCircleFilled)
-    // debugger
     return (
       <div>
         <MLLayout>
@@ -27,8 +20,10 @@ export default class App extends Component {
             <MLIcon.Route />
             <MLIcon.CheckCircleFilled />
             <div>
-              <MLSlider tooltipPlacement={'top'} />
+              <MLSlider tooltipPlacement='top' />
             </div>
+            <MLDatePicker />
+            <MLRadio checked />
           </MLLayout.MLContent>
           <MLLayout.MLFooter year='2019' />
         </MLLayout>
@@ -36,4 +31,3 @@ export default class App extends Component {
     )
   }
 }
-

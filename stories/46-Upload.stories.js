@@ -1,10 +1,9 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLUpload, MLButton } from '../src'
+import { MLUpload, MLButton, MLIcon } from '../src'
 import { message } from 'antd'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
-import MLIcon from '../src/ml-icon'
 
 export default {
   title: 'Data Entry/MLUpload',

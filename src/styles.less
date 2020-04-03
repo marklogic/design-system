@@ -1,29 +1,67 @@
 @import 'antd/es/style/index.less';
-@import './color-palette.less';
-//@import './red-color-palette.less';
-@import './typography.less';
 
-//div {
-//  background: red;
-//}
-
-.node-1-color { background-color: @node-1-color; }
-.node-2-color { background-color: @node-2-color; }
-.node-3-color { background-color: @node-3-color; }
-.node-4-color { background-color: @node-4-color; }
-.node-5-color { background-color: @node-5-color; }
-.node-6-color { background-color: @node-6-color; }
-.node-7-color { background-color: @node-7-color; }
-.node-8-color { background-color: @node-8-color; }
-.node-9-color { background-color: @node-9-color; }
-.node-10-color { background-color: @node-10-color; }
-.node-11-color { background-color: @node-11-color; }
-.node-12-color { background-color: @node-12-color; }
-.node-13-color { background-color: @node-13-color; }
-.node-14-color { background-color: @node-14-color; }
-.node-15-color { background-color: @node-15-color; }
-.node-16-color { background-color: @node-16-color; }
-.node-17-color { background-color: @node-17-color; }
-.node-18-color { background-color: @node-18-color; }
-.node-19-color { background-color: @node-19-color; }
-.node-20-color { background-color: @node-20-color; }
+// These variables must be defined for the rollup dist output.
+// For using this modularly, you must replace these using modifyVars in the webpack/customize-react-app config.
+@primary-color: #5B69AF;
+@highlight-color: #7f86b5;
+@text-color: #333333;
+@text-color-secondary: #777777;
+@text-color-highlight: #7f86b5;
+@disabled-color: #cccccc;
+@link-color: #5B69AF;
+@link-hover-color: #7f86b5;
+@btn-primary-bg: #394494;
+@btn-primary-color-hover: #5B69AF;
+@btn-default-color-hover: #394494;
+@btn-danger-bg: #B32424;
+@btn-danger-border: #B32424;
+@btn-danger-color-hover: #bb3a3a;
+@success-color: #389E0D;
+@success-color-background: #EBF5E7;
+@warning-color: #CE8406;
+@warning-color-background: #FAF3E6;
+@error-color: #B32424;
+@error-color-background: #F7E9E9;
+@info-color: #5B69AF;
+@info-color-background: #EFF0F7;
+@tile-color-load-data: #520339;
+@tile-color-entities: #bc811d;
+@tile-color-model: #003A8C;
+@tile-color-loaded-data: #3F6600;
+@tile-color-test-bench: #061178;
+@tile-color-harmonized: #00474F;
+@tile-color-custom: #1D252D;
+@node-1-color: #D5D3DD;
+@node-2-color: #CAE4EA;
+@node-3-color: #E1F3EC;
+@node-4-color: #F6D4A7;
+@node-5-color: #EEC5D4;
+@node-6-color: #DCDAEB;
+@node-7-color: #E2D2DC;
+@node-8-color: #C1C3D6;
+@node-9-color: #CEE0ED;
+@node-10-color: #E1EDB4;
+@node-11-color: #FFECB0;
+@node-12-color: #D9F5F0;
+@node-13-color: #DAF6C5;
+@node-14-color: #BAD8E7;
+@node-15-color: #E7B8B2;
+@node-16-color: #E3DEEB;
+@node-17-color: #BEC5DC;
+@node-18-color: #DFF5BC;
+@node-19-color: #F6C7BF;
+@node-20-color: #EEEFF1;
+@font-size-base: 14px;
+@font-family: Helvetica Neue, Helvetica, Open Sans, Arial, sans-serif;
+@code-family: Consolas, monospace;
+@active-tab-font-size: 18px;
+@active-tab-font-weight: medium;
+@inactive-tab-font-size: 12px;
+@inactive-tab-font-weight: regular;
+@typography-title-font-size: 24px;
+@typography-title-font-weight: regular;
+@heading-color: #333333;
+@heading-1-size: 22px;
+@heading-2-size: 20px;
+@heading-3-size: 18px;
+@heading-4-size: 16px;
