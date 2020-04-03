@@ -1,5 +1,6 @@
 const path = require('path')
 const { override, fixBabelImports, babelInclude, addLessLoader, addWebpackAlias, removeModuleScopePlugin, babelExclude } = require('customize-cra')
+const themeVariables = require('marklogic-ui-library/src/theme-variables.json')
 
 module.exports = override(
   fixBabelImports('import', [
@@ -10,7 +11,7 @@ module.exports = override(
     },
     {
       libraryName: 'marklogic-ui-library',
-      libraryDirectory: 'dist',
+      libraryDirectory: 'src',
     },
   ]),
   addLessLoader({
@@ -19,6 +20,7 @@ module.exports = override(
       path.resolve(__dirname, '../node_modules'),
       path.resolve(__dirname, '../src'),
     ],
+    modifyVars: themeVariables,
   }),
   removeModuleScopePlugin(),
   addWebpackAlias({
