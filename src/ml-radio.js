@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Radio } from 'antd'
+import './ml-radio.less'
 const { Group, Button } = Radio
 
 const MLRadio = (props) => (

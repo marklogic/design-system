@@ -1,16 +1,16 @@
 import React from 'react'
 import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import MLSlider from '../src/ml-slider'
+import { MLSlider } from 'marklogic-ui-library'
 
 export default {
   title: 'Data Entry/MLSlider',
   decorators: [withKnobs],
   parameters: {
     info: {
-      text: 'Component description goes here'
-    }
-  }
+      text: 'Component description goes here',
+    },
+  },
 }
 
 const noopFormatter = (n) => `${n}`
@@ -25,16 +25,18 @@ export const basicSingle = () => {
     autoFocus: boolean('autoFocus', false),
     defaultValue: number('defaultValue', 0),
     disabled: boolean('disabled', false),
-    tipFormatter: select('tipFormatter', {
-      None: noopFormatter,
-      // eslint-disable-next-line no-template-curly-in-string
-      '(n) => `${n}%`': percentFormatter
-    }, noopFormatter),
-    tooltipVisible: boolean('tooltipVisible', true),
-    tooltipPlacement: select('tooltipPlacement', tooltipPlacementOptions, 'top'),
+    // tipFormatter: select('tipFormatter', {
+    //   None: noopFormatter,
+    //   // eslint-disable-next-line no-template-curly-in-string
+    //   '(n) => `${n}%`': percentFormatter,
+    // }, noopFormatter),
+    tipFormatter: percentFormatter,
+    // tooltipVisible: boolean('tooltipVisible', true),
+    // tooltipPlacement: select('tooltipPlacement', tooltipPlacementOptions, 'top'),
+    tooltipPlacement: 'top',
     included: boolean('included', true),
     onChange: action('onChange'),
-    onAfterChange: action('onAfterChange')
+    onAfterChange: action('onAfterChange'),
   }
   return <MLSlider {...props} />
 }
@@ -51,7 +53,7 @@ const tooltipPlacementOptions = {
   bottomLeft: 'bottomLeft',
   leftBottom: 'leftBottom',
   left: 'left',
-  leftTop: 'leftTop'
+  leftTop: 'leftTop',
 }
 
 export const basicRange = () => {
@@ -61,7 +63,7 @@ export const basicRange = () => {
     max: number('max', 100),
     dots: boolean('dots', false),
     step: number('step', 1),
-    autoFocus: boolean('autoFocus', false)
+    autoFocus: boolean('autoFocus', false),
   }
   const defaultValueLow = number('defaultValueLow', 0)
   const defaultValueHigh = number('defaultValueHigh', 100)
@@ -71,19 +73,27 @@ export const basicRange = () => {
     tipFormatter: select('tipFormatter', {
       None: noopFormatter,
       // eslint-disable-next-line no-template-curly-in-string
-      '(n) => `${n}%`': percentFormatter
+      '(n) => `${n}%`': percentFormatter,
     }, noopFormatter),
     tooltipVisible: boolean('tooltipVisible', true),
-    tooltipPlacement: select('tooltipPlacement', tooltipPlacementOptions, 'top'),
+    // tooltipPlacement: select('tipPlacement', tooltipPlacementOptions, 'top'),
+    tooltipPlacement: 'top',
+    // placement: select('tipPlacement', tooltipPlacementOptions, 'top'),
     included: boolean('included', true),
     onChange: action('onChange'),
-    onAfterChange: action('onAfterChange')
+    onAfterChange: action('onAfterChange'),
   }
 
   return (
-    <MLSlider
-      range={true}
-      {...props1} {...props2}
-    />
+    <div>
+      <MLSlider
+        range={true}
+        {...props1} {...props2}
+      />
+      <MLSlider
+        range={true}
+        {...props1} {...props2}
+      />
+    </div>
   )
 }

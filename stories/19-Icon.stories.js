@@ -1,8 +1,10 @@
 import React from 'react'
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs'
-import { MLIcon } from '../src'
-import { AntIcons, FontAwesomeIcons } from '../src/ml-icon'
+import { MLIcon } from 'marklogic-ui-library'
+// import { AntIcons, FontAwesomeIcons } from 'marklogic-ui-library'
 import './19-Icon.css'
+const AntIcons = MLIcon
+const FontAwesomeIcons = {}
 
 export default {
   title: 'General/MLIcon',
@@ -65,7 +67,7 @@ for (const variant of ['Filled', 'Outlined', 'TwoTone']) {
 
 export const shortList = () => {
   const props = {
-    highlight: boolean('highlight', true),
+    highlight: boolean('highlight', false),
     spin: boolean('spin', false),
     rotate: number('rotate', 0),
     style: {
@@ -109,7 +111,7 @@ export const completeList = () => {
     showFontAwesomeIcons: boolean('show FontAwesome icons', true),
   }
   const props = {
-    highlight: boolean('highlight', true),
+    highlight: boolean('highlight', false),
     spin: boolean('spin', false),
     rotate: number('rotate', 0),
     style: {

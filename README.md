@@ -33,6 +33,7 @@ const App = () => {
 
 # Install and use node >=8.16 if you don't have it already:
 nvm install 8
+nvm use 8
 
 # Install Yarn, if you don't have it already:
 npm install -g yarn
@@ -42,11 +43,10 @@ npm run install:all
 
 # Start Rollup (listens for changes for components in src folder)
 # (run from main repo directory):
-npm start
+yarn run start
 
 # In another terminal: Start Playground (import and test new components here)
-cd playground
-npm start
+cd playground; yarn run start
 
 # Playground should be running at http://localhost:3000
 
