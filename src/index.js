@@ -48,6 +48,7 @@ export {
   MLRow,
   MLSlider,
   MLSpin,
+  MLSwitch,
   MLTable,
   MLTag,
   MLTooltip,
