@@ -29,6 +29,7 @@ module.exports = override(
   babelInclude([
     path.resolve(__dirname, 'src'),
     path.resolve(__dirname, '../src'),
+    path.resolve(__dirname, '../stories'),
     path.resolve(__dirname, 'node_modules'),
     path.resolve(__dirname, 'node_modules/marklogic-ui-library'),
     // path.resolve('../src'),
