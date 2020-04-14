@@ -4,6 +4,7 @@ import { Checkbox, Descriptions, Table } from 'antd' // TODO: Use MLCheckbox
 import _ from 'lodash'
 import './ml-table.css'
 import MLRadio from './ml-radio'
+import { DownOutlined, RightOutlined } from './ml-icon'
 const MLCheckbox = Checkbox // TODO: Use real MLCheckbox
 
 /**
@@ -57,6 +58,15 @@ class MLTable extends React.Component {
   }
 
   constructor(props) {
+    if (props.expandable && !props.expandable.expandIcon) {
+      props.expandable.expandIcon = ({ expanded, onExpand, record }) => (
+        expanded ? (
+          <DownOutlined onClick={e => onExpand(record, e)} />
+        ) : (
+          <RightOutlined onClick={e => onExpand(record, e)} />
+        )
+      )
+    }
     super(props)
     this.state = {
       columnExpandedStates: Object.fromEntries(props.columns.map((column) => (

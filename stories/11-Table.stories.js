@@ -60,7 +60,7 @@ export const rowNestedTable = () => {
       key={row.key}
       dataSource={row.subtableDataSource}
       columns={abColumns}
-      bordered
+      showHeader={false}
     />
   )
   const dataSource = [
@@ -93,7 +93,6 @@ export const rowNestedTable = () => {
         dataSource={dataSource}
         columns={abColumns}
         expandable={expandable}
-        bordered
       />
       <div style={{ marginTop: 20 }}>
         This is the contents of expandedRowRender, so the source shows up below (to work around the noRefCheck):
@@ -193,4 +192,3 @@ export function entityTableExample() {
     />
   )
 }
-
