@@ -23,7 +23,7 @@ export const basic = () => {
   return (<MLTable {...props} onChange={action('onChange')} />)
 }
 
-export const nestedTables = () => {
+export const smartMastering = () => {
   const props = {
     dataSource: sampleNestedData.dataSource,
     columns: sampleNestedData.columns,
@@ -31,19 +31,6 @@ export const nestedTables = () => {
   // TODO: Handle onChange for nested tables, and figure out a way to differentiate the callback values
   return (<MLTable {...props} onChange={action('onChange')} />)
 }
-
-// export const entityTypes = () => {
-//   const props = {
-//     rowKey: 'name', // Probably want to use an id in real applications
-//     defaultExpandAllRows: true,
-//     dataSource: sampleEntityTypesData.dataSource,
-//     entityDefinitions: {
-//       Person: sampleEntityTypesData.entityDefinitions.Person,
-//       Patients: sampleEntityTypesData.entityDefinitions.Patients,
-//     },
-//   }
-//   return (<MLEntityTypesTable {...props} onChange={action('onChange')} />)
-// }
 
 const pureLessThanSorter = (a, b) => (a < b) ? -1 : (a > b) ? 1 : 0
 const extractSortColumnDecorator = (sortFn) => (dataIndex) => (a, b) => sortFn(a[dataIndex], b[dataIndex])
@@ -53,7 +40,71 @@ const dateSorter = extractSortColumnDecorator((a, b) => {
   return pureLessThanSorter(new Date(a), new Date(b))
 })
 
-export function entityTable() {
+export const rowNestedTable = () => {
+  const abColumns = [
+    {
+      title: 'A',
+      dataIndex: 'a',
+      key: 'a',
+      sorter: lessThanSorter('a'),
+    },
+    {
+      title: 'B',
+      dataIndex: 'b',
+      key: 'b',
+      sorter: lessThanSorter('b'),
+    },
+  ]
+  const expandedRowRender = (row) => (
+    <MLTable
+      key={row.key}
+      dataSource={row.subtableDataSource}
+      columns={abColumns}
+      bordered
+    />
+  )
+  const dataSource = [
+    {
+      a: 'Thing 1',
+      b: 'Extra data',
+      key: 1,
+      subtableDataSource: [
+        { a: 'Subtable Thing 1', b: 'Subtable extra data' },
+        { a: 'Subtable Thing 2', b: 'Subtable extra data' },
+      ],
+    },
+    {
+      a: 'Thing 2',
+      b: 'Extra data',
+      key: 2,
+      subtableDataSource: [
+        { a: 'Subtable Thing 1', b: 'Subtable extra data' },
+        { a: 'Subtable Thing 2', b: 'Subtable extra data' },
+      ],
+    },
+  ]
+  const expandable = {
+    expandedRowRender,
+    rowExpandable: () => true,
+  }
+  return (
+    <div>
+      <MLTable
+        dataSource={dataSource}
+        columns={abColumns}
+        expandable={expandable}
+        bordered
+      />
+      <div style={{ marginTop: 20 }}>
+        This is the contents of expandedRowRender, so the source shows up below (to work around the noRefCheck):
+      </div>
+      {expandedRowRender(dataSource[0])}
+    </div>
+  )
+}
+
+
+export function entityTableExample() {
   // constructor(props) {
   const entityName = 'Patients'
   const thisEntityDefinition = sampleEntityTypesData.entityDefinitions.Patients.definitions.Patients
@@ -143,65 +194,3 @@ export function entityTable() {
   )
 }
 
-export const entityTypesNestedTable = () => {
-  const abColumns = [
-    {
-      title: 'A',
-      dataIndex: 'a',
-      key: 'a',
-      sorter: lessThanSorter('a'),
-    },
-    {
-      title: 'B',
-      dataIndex: 'b',
-      key: 'b',
-      sorter: lessThanSorter('b'),
-    },
-  ]
-  const expandedRowRender = (row) => (
-    <MLTable
-      key={row.key}
-      dataSource={row.subtableDataSource}
-      columns={abColumns}
-      bordered
-    />
-  )
-  const dataSource = [
-    {
-      a: 'Thing 1',
-      b: 'Extra data',
-      key: 1,
-      subtableDataSource: [
-        { a: 'Subtable Thing 1', b: 'Subtable extra data' },
-        { a: 'Subtable Thing 2', b: 'Subtable extra data' },
-      ],
-    },
-    {
-      a: 'Thing 2',
-      b: 'Extra data',
-      key: 2,
-      subtableDataSource: [
-        { a: 'Subtable Thing 1', b: 'Subtable extra data' },
-        { a: 'Subtable Thing 2', b: 'Subtable extra data' },
-      ],
-    },
-  ]
-  const expandable = {
-    expandedRowRender,
-    rowExpandable: () => true,
-  }
-  return (
-    <div>
-      <MLTable
-        dataSource={dataSource}
-        columns={abColumns}
-        expandable={expandable}
-        bordered
-      />
-      <div style={{ marginTop: 20 }}>
-        This is the contents of expandedRowRender, so the source shows up below (to work around the noRefCheck):
-      </div>
-      {expandedRowRender(dataSource[0])}
-    </div>
-  )
-}
