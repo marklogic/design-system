@@ -5,6 +5,8 @@ import {
   MLDatePicker,
   MLLayout,
   MLSlider,
+  MLRadio,
+  MLIcon,
 } from 'marklogic-ui-library'
 
 export default class App extends Component {
@@ -15,6 +17,13 @@ export default class App extends Component {
           <MLLayout.MLHeader>Header</MLLayout.MLHeader>
           <MLLayout.MLContent>
             <MLButton type='primary'>Test</MLButton>
+            <MLIcon.Route />
+            <MLIcon.CheckCircleFilled />
+            <div>
+              <MLSlider tooltipPlacement='top' />
+            </div>
+            <MLDatePicker />
+            <MLRadio checked />
           </MLLayout.MLContent>
           <MLLayout.MLFooter year='2019' />
         </MLLayout>

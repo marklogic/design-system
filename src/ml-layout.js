@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Layout } from 'antd'
+import './ml-layout.less'
 const { Header, Content, Sider, Footer } = Layout
 
 const layoutStyle = {}

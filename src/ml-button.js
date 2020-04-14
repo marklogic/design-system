@@ -4,8 +4,17 @@ import { Button } from 'antd'
 import './ml-button.less'
 
 const MLButton = (props) => {
+  let type
+  let className
+  if (props.type === 'highlight') {
+    type = 'primary'
+    className = 'ml-btn-highlight'
+  } else {
+    type = props.type
+    className = ''
+  }
   return (
-    <Button {...props} className={[props.className, 'ml-btn'].join(' ')}>
+    <Button {...props} type={type} className={[props.className, 'ml-btn', className].join(' ')}>
       {props.children}
     </Button>
   )
