@@ -114,11 +114,13 @@ export const customBackgroundColors = () => {
       concept_id: 4148238,
       domain: '',
       key: 2,
+      rowClassName: 'red-row',
     },
     {
       concept_id: 4148239,
       domain: 'drug',
       key: 3,
+      rowClassName: 'green-important-row',
     },
   ]
   const columns = [
@@ -126,27 +128,40 @@ export const customBackgroundColors = () => {
       title: 'concept_id',
       dataIndex: 'concept_id',
       key: 'concept_id',
+      render: (text, row, rowIndex) => {
+        return (
+          <div>
+            {text}<br />
+            newline
+          </div>
+        )
+      },
+      className: 'blue-column-before-rows',
     },
     {
       title: 'domain',
       dataIndex: 'domain',
       key: 'domain',
+      className: 'blue-column-higher-specificity',
     },
   ]
   return (
     <MLTable
       className='custom-color-example'
-      headerRowStyle={(column, colIndex) => ({
-        background: 'blue',
-      })}
-      rowStyle={(record, rowIndex) => (rowIndex === 1 ? {
-        background: 'red',
-      } : {})}
-      columnStyle={(column, colIndex) => {
-        return {
-          background: 'blue',
-        }
+      // headerRowStyle={(column, colIndex) => ({
+      //   background: 'blue',
+      // })}
+      rowClassName={(record, rowIndex) => {
+        return record.rowClassName
       }}
+      // rowStyle={(record, rowIndex) => (rowIndex === 1 ? {
+      //   background: 'red',
+      // } : {})}
+      // columnStyle={(column, colIndex) => {
+      //   return {
+      //     background: 'blue',
+      //   }
+      // }}
       // onRow={(record, rowIndex) => {
       //   if (rowIndex === 1) {
       //     return {
@@ -158,9 +173,10 @@ export const customBackgroundColors = () => {
       // }}
       // onHeaderRow={(column, colIndex) => {
       //   return {
-      //     style: {
-      //       backgroundColor: 'blue',
-      //     },
+      //     className: 'purple-header',
+      //     // style: {
+      //     //   backgroundColor: 'blue',
+      //     // },
       //   }
       // }}
       // onColumn={(column, colIndex) => {

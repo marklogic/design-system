@@ -26,7 +26,12 @@ export default class App extends Component {
         {
           dataIndex: 'col1',
           key: 'col1',
-          title: 'Column 1',
+          title: () => (
+            <div>
+              Column 1
+              <MLIcon.InfoCircleFilled />
+            </div>
+          ),
           sorter: lessThanSorter('col1'),
         },
         {

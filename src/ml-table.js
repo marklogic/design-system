@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Descriptions, Table } from 'antd'
 import _ from 'lodash'
-import './ml-table.css'
+import './ml-table.less'
 import { DownOutlined, RightOutlined } from './ml-icon'
 
 /**
@@ -54,8 +54,8 @@ class MLTable extends React.Component {
   static defaultProps = {
     showBody: true,
     columnStyle: () => ({}),
-    headerRowStyle: () => ({}),
-    onHeaderRow: () => ({}),
+    // headerRowStyle: () => ({}),
+    // onHeaderRow: () => ({}),
     rowStyle: () => ({}),
     onRow: () => ({}),
   }
@@ -89,6 +89,14 @@ class MLTable extends React.Component {
     this.setState(stateTransform)
   }
 
+  getCellStyle(text, row, rowIndex, column, colIndex) {
+    return Object.assign(
+      { before: ' ' },
+      this.props.rowStyle(column, colIndex),
+      this.props.columnStyle(row, rowIndex),
+    )
+  }
+
   render() {
     const {
       showBody,
@@ -100,7 +108,7 @@ class MLTable extends React.Component {
     if (!showBody) {
       return <MLHeaderTable columns={columns} />
     }
-    const restructuredColumns = columns.map((column) => {
+    const restructuredColumns = columns.map((column, colIndex) => {
       const restructuredColumn = _.cloneDeep(column)
       restructuredColumn.render = restructuredColumn.render || ((text, record, index) => {
         return text
@@ -116,7 +124,7 @@ class MLTable extends React.Component {
           }
         }
         // If the column has sub-columns, render a sub-table
-        restructuredColumn.render = (text, record, index) => (
+        restructuredColumn.render = (text, record, colIndex) => (
           <MLTable
             columns={column.columns}
             dataSource={record[column.dataIndex]}
@@ -124,12 +132,14 @@ class MLTable extends React.Component {
           />
         )
       }
-      const originalRender = restructuredColumn.render
-      restructuredColumn.render = (text, record, index) => (
-        <div style={this.props.columnStyle(record, index)}>
-          {originalRender(text, record, index)}
-        </div>
-      )
+      // const originalRender = restructuredColumn.render
+      // restructuredColumn.render = (text, row, rowIndex) => {
+      //   return (
+      //     <div style={this.getCellStyle(text, row, rowIndex, column, colIndex)}>
+      //       {originalRender(text, row, rowIndex)}
+      //     </div>
+      //   )
+      // }
       return restructuredColumn
     })
 
@@ -146,12 +156,12 @@ class MLTable extends React.Component {
 
     const restructuredData = restructureData(dataSource)
 
-    const {
-      headerRowStyle,
-      onHeaderRow,
-      rowStyle,
-      onRow,
-    } = this.props
+    // const {
+    //   headerRowStyle,
+    //   onHeaderRow,
+    //   rowStyle,
+    //   onRow,
+    // } = this.props
 
     return (
       <Table
@@ -160,33 +170,33 @@ class MLTable extends React.Component {
         className={['ml-table', this.props.className].join(' ')}
         dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
         columns={restructuredColumns}
-        onHeaderRow={(column, colIndex) => {
-          // User can overwrite header style with headerRowStyle, or other props with onHeaderRow
-          const originalOnHeaderRow = onHeaderRow(column, colIndex)
-          return Object.assign(
-            {
-              style: Object.assign(
-                {},
-                // { background: '#e8e8e8' },
-                headerRowStyle(column, colIndex),
-              ),
-            },
-            originalOnHeaderRow,
-          )
-        }}
-        onRow={(record, rowIndex) => {
-          // User can overwrite row style with rowStyle, or other props with onHeaderRow
-          const originalOnRow = onRow(record, rowIndex)
-          return Object.assign(
-            {
-              style: Object.assign(
-                // { background: '#e8e8e8' },
-                rowStyle(record, rowIndex),
-              ),
-            },
-            originalOnRow,
-          )
-        }}
+        // onHeaderRow={(column, colIndex) => {
+        //   // User can overwrite header style with headerRowStyle, or other props with onHeaderRow
+        //   // const originalOnHeaderRow = onHeaderRow(column, colIndex)
+        //   return Object.assign(
+        //     {
+        //       style: Object.assign(
+        //         {},
+        //         // { background: '#e8e8e8' },
+        //         // headerRowStyle(column, colIndex),
+        //       ),
+        //     },
+        //     // originalOnHeaderRow,
+        //   )
+        // }}
+        // onRow={(record, rowIndex) => {
+        //   // User can overwrite row style with rowStyle, or other props with onHeaderRow
+        //   const originalOnRow = onRow(record, rowIndex)
+        //   return Object.assign(
+        //     {
+        //       style: Object.assign(
+        //         // { background: '#e8e8e8' },
+        //         rowStyle(record, rowIndex),
+        //       ),
+        //     },
+        //     originalOnRow,
+        //   )
+        // }}
       />
     )
   }
