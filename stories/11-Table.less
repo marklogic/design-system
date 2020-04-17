@@ -1,0 +1,26 @@
+.ml-table .ant-table thead > tr > th {
+  background: unset; // Undo too-specific background so we can set it on the tr with JS
+}
+
+.ml-table .ant-table thead > tr {
+  background: #e8e8e8;
+}
+
+.ml-table .ant-table-cell:not(.ant-table-row-expand-icon-cell) {
+  // Move the padding to the inner element so we can give it background color
+  padding: 0;
+  :first-child {
+    padding: 16px;
+    height: 100%;
+  }
+}
+
+.ml-table .ant-table-row-expand-icon-cell {
+  background: #fafafa;
+}
+
+//.ml-table .custom-color-example {
+//  thead .ant-table-cell {
+//    background-color: blue;
+//  }
+//}

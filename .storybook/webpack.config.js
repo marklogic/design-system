@@ -9,7 +9,7 @@ module.exports = async ({ config }) => {
       {
         loader: 'babel-loader',
         options: {
-          presets: [["env", {modules: false}]],
+          presets: [["@babel/preset-env", {modules: false}]],
         }
         // may or may not need this line depending on your app's setup
         //plugins: ['@babel/plugin-transform-react-jsx'],

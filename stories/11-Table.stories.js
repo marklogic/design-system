@@ -4,6 +4,7 @@ import { MLTable, MLIcon } from '../src'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 import { sampleBasicData, sampleNestedData } from './11-Table.sample-data.js'
+import './11-Table.less'
 
 export default {
   title: 'Data Display/Table',
@@ -99,5 +100,82 @@ export const rowNestedTable = () => {
       </div>
       {expandedRowRender(dataSource[0])}
     </div>
+  )
+}
+
+export const customBackgroundColors = () => {
+  const dataSource = [
+    {
+      concept_id: 4148237,
+      domain: 'drug',
+      key: 1,
+    },
+    {
+      concept_id: 4148238,
+      domain: '',
+      key: 2,
+    },
+    {
+      concept_id: 4148239,
+      domain: 'drug',
+      key: 3,
+    },
+  ]
+  const columns = [
+    {
+      title: 'concept_id',
+      dataIndex: 'concept_id',
+      key: 'concept_id',
+    },
+    {
+      title: 'domain',
+      dataIndex: 'domain',
+      key: 'domain',
+    },
+  ]
+  return (
+    <MLTable
+      className='custom-color-example'
+      headerRowStyle={(column, colIndex) => ({
+        background: 'blue',
+      })}
+      rowStyle={(record, rowIndex) => (rowIndex === 1 ? {
+        background: 'red',
+      } : {})}
+      columnStyle={(column, colIndex) => {
+        return {
+          background: 'blue',
+        }
+      }}
+      // onRow={(record, rowIndex) => {
+      //   if (rowIndex === 1) {
+      //     return {
+      //       style: {
+      //         backgroundColor: 'red',
+      //       },
+      //     }
+      //   }
+      // }}
+      // onHeaderRow={(column, colIndex) => {
+      //   return {
+      //     style: {
+      //       backgroundColor: 'blue',
+      //     },
+      //   }
+      // }}
+      // onColumn={(column, colIndex) => {
+      //   return {
+      //     style: {
+      //       backgroundColor: 'blue',
+      //     },
+      //   }
+      // }}
+      dataSource={dataSource}
+      columns={columns}
+      expandable={{
+        rowExpandable: () => true,
+        expandedRowRender: () => 'Some expanded row content',
+      }}
+    />
   )
 }
