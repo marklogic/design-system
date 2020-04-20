@@ -78,3 +78,4 @@ version needs to increase everytime it is published.
 # Build minified CSS and publish library to NPM
 npm publish
 ```
+
