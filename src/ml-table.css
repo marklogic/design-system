@@ -1,0 +1,23 @@
+.ml-table td {
+  vertical-align: top;
+}
+
+.ml-table .ml-table .ant-table {
+  margin-left: -16px;
+}
+
+.ml-table .ant-table-expanded-row .ml-table {
+  margin-left: 32px
+}
+
+.ml-table .ml-header-table {
+  margin: -16px;
+}
+
+.ml-header-table .ant-descriptions-item-label + td {
+  display: none;
+}
+
+.ml-table .ml-header-table table {
+  border-collapse: collapse; /* Hack to get borders between header-rows to show up */
+}

@@ -21,6 +21,7 @@ import MLRate from './ml-rate'
 import MLRow from './ml-row'
 import MLSlider from './ml-slider'
 import MLSpin from './ml-spin'
+import MLTable from './ml-table'
 import MLTag from './ml-tag'
 import MLTooltip from './ml-tooltip'
 import MLUpload from './ml-upload'
@@ -48,6 +49,7 @@ export {
   MLRow,
   MLSlider,
   MLSpin,
+  MLTable,
   MLTag,
   MLTooltip,
   MLUpload,
