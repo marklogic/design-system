@@ -1,23 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button } from 'antd';
-// import styles from './styles.scss'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button } from 'antd'
+import './ml-button.less'
 
-const MlButton = (props) => {
+const MLButton = (props) => {
+  let type
+  let className
+  if (props.type === 'highlight') {
+    type = 'primary'
+    className = 'ml-btn-highlight'
+  } else {
+    type = props.type
+    className = ''
+  }
   return (
-    <Button {...props}>
+    <Button {...props} type={type} className={[props.className, 'ml-btn', className].join(' ')}>
       {props.children}
     </Button>
-  );
-};
+  )
+}
 
 // MarkLogic Defaults
-MlButton.defaultProps = {
-  size: 'small'
+MLButton.defaultProps = {
+  size: 'small',
 }
 
 // Typechecking for Ant Design properties
-MlButton.propTypes = {
+MLButton.propTypes = {
   disabled: PropTypes.bool,
   ghost: PropTypes.bool,
   href: PropTypes.string,
@@ -25,7 +34,7 @@ MlButton.propTypes = {
   icon: PropTypes.string,
   loading: PropTypes.oneOfType([
     PropTypes.bool,
-    PropTypes.shape({ delay: PropTypes.number })
+    PropTypes.shape({ delay: PropTypes.number }),
   ]),
   shape: PropTypes.string,
   size: PropTypes.string,
@@ -33,6 +42,6 @@ MlButton.propTypes = {
   type: PropTypes.string,
   onClick: PropTypes.func,
   block: PropTypes.bool,
-};
+}
 
-export default MlButton;
+export default MLButton

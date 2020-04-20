@@ -1,6 +1,6 @@
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
-import external from 'rollup-plugin-peer-deps-external'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
@@ -14,26 +14,41 @@ export default {
     {
       file: pkg.main,
       format: 'cjs',
-      sourcemap: true
+      sourcemap: true,
     },
     {
       file: pkg.module,
+      assetFileNames: 'dist/index.css',
       format: 'es',
-      sourcemap: true
-    }
+      sourcemap: true,
+    },
   ],
   plugins: [
-    external(),
+    peerDepsExternal({ // This unbreaks compilation with 'react-is' namedExports failing.
+      includeDependencies: true,
+    }),
     postcss({
-      modules: true
+      // inject: true,
+      extract: true, // Trying to figure out how to get styles importing properly in Storybook
+      // modules: false, // For now, we aren't importing class names from stylesheets. Consider doing so?
+      extensions: ['.css', '.scss', '.less'],
+      use: [
+        ['less', { javascriptEnabled: true }],
+      ],
     }),
     url({ exclude: ['**/*.svg'] }),
     svgr(),
     babel({
-      exclude: 'node_modules/**'
-      // plugins: [ '@babel/external-helpers' ]
+      exclude: [
+        /node_modules/,
+      ],
+      plugins: [['import', { libraryName: 'antd', style: true, libraryDirectory: 'es' }]],
     }),
     resolve(),
-    commonjs()
-  ]
+    commonjs({
+      include: [
+        /node_modules/,
+      ],
+    }),
+  ],
 }
