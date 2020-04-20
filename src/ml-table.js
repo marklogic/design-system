@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Descriptions, Table } from 'antd'
-import { cloneDeep, isUndefined, isArray, merge } from 'lodash'
+import { cloneDeep, isUndefined, isArray, merge } from 'lodash-es'
 import './ml-table.css'
 import { DownOutlined, RightOutlined } from './ml-icon'
 

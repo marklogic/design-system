@@ -77,7 +77,7 @@
     "gh-pages": "^2.1.1",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
-    "lodash": "^4.17.15",
+    "lodash-es": "^4.17.15",
     "node-sass": "^4.13.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
