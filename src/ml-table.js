@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Descriptions, Table } from 'antd'
-import _ from 'lodash'
+import { cloneDeep, isUndefined, isArray, merge } from 'lodash'
 import './ml-table.css'
 import { DownOutlined, RightOutlined } from './ml-icon'
 
@@ -91,20 +91,22 @@ class MLTable extends React.Component {
       return <MLHeaderTable columns={columns} />
     }
     const restructuredColumns = columns.map((originalColumn) => {
-      const restructuredColumn = _.cloneDeep(originalColumn)
-      if (!_.isUndefined(originalColumn.columns)) {
-        if (_.isUndefined(originalColumn.dataIndex)) {
+      const restructuredColumn = cloneDeep(originalColumn)
+      if (!isUndefined(originalColumn.columns)) {
+        if (isUndefined(originalColumn.dataIndex)) {
           throw Error('dataIndex must be specified when nesting columns')
         }
         // If the column has sub-columns, add a toggle to the header
         restructuredColumn.onHeaderCell = (column) => {
           const originalOnHeaderCell = (originalColumn.onHeaderCell && originalColumn.onHeaderCell(originalColumn)) || {}
-          return Object.assign({
-            style: Object.assign({
-              cursor: 'pointer',
-            }, originalOnHeaderCell.style),
-            onClick: () => this.toggleColumnExpanded(column),
-          }, originalOnHeaderCell)
+          // noinspection JSValidateTypes
+          return merge(
+            {
+              style: { cursor: 'pointer' },
+              onClick: () => this.toggleColumnExpanded(column),
+            },
+            originalOnHeaderCell,
+          )
         }
         // If the column has sub-columns, render a sub-table
         restructuredColumn.render = (text, record, index) => (
@@ -120,7 +122,7 @@ class MLTable extends React.Component {
 
     function restructureData(dataSource) {
       // TODO: Might restructure more things here; for now just wrap objects in arrays
-      return (_.isArray(dataSource) ? dataSource : [dataSource]).map((row) => {
+      return (isArray(dataSource) ? dataSource : [dataSource]).map((row) => {
         const restructuredRow = {}
         for (const [key, value] of Object.entries(row)) {
           restructuredRow[key] = value
