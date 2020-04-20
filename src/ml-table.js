@@ -90,27 +90,28 @@ class MLTable extends React.Component {
     if (!showBody) {
       return <MLHeaderTable columns={columns} />
     }
-    const restructuredColumns = columns.map((column) => {
-      const restructuredColumn = _.cloneDeep(column)
-      if (!_.isUndefined(column.columns)) {
-        if (_.isUndefined(column.dataIndex)) {
+    const restructuredColumns = columns.map((originalColumn) => {
+      const restructuredColumn = _.cloneDeep(originalColumn)
+      if (!_.isUndefined(originalColumn.columns)) {
+        if (_.isUndefined(originalColumn.dataIndex)) {
           throw Error('dataIndex must be specified when nesting columns')
         }
         // If the column has sub-columns, add a toggle to the header
         restructuredColumn.onHeaderCell = (column) => {
-          return {
-            style: {
+          const originalOnHeaderCell = (originalColumn.onHeaderCell && originalColumn.onHeaderCell(originalColumn)) || {}
+          return Object.assign({
+            style: Object.assign({
               cursor: 'pointer',
-            },
+            }, originalOnHeaderCell.style),
             onClick: () => this.toggleColumnExpanded(column),
-          }
+          }, originalOnHeaderCell)
         }
         // If the column has sub-columns, render a sub-table
         restructuredColumn.render = (text, record, index) => (
           <MLTable
-            columns={column.columns}
-            dataSource={record[column.dataIndex]}
-            showBody={this.state.columnExpandedStates[column.dataIndex]}
+            columns={originalColumn.columns}
+            dataSource={record[originalColumn.dataIndex]}
+            showBody={this.state.columnExpandedStates[originalColumn.dataIndex]}
           />
         )
       }
