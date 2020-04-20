@@ -23,7 +23,7 @@ export const basic = () => {
   return (<MLTable {...props} onChange={action('onChange')} />)
 }
 
-export const smartMastering = () => {
+export const embeddedTables = () => {
   const props = {
     dataSource: sampleNestedData.dataSource,
     columns: sampleNestedData.columns,
