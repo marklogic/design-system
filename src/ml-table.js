@@ -99,6 +99,9 @@ class MLTable extends React.Component {
         // If the column has sub-columns, add a toggle to the header
         restructuredColumn.onHeaderCell = (column) => {
           return {
+            style: {
+              cursor: 'pointer',
+            },
             onClick: () => this.toggleColumnExpanded(column),
           }
         }
