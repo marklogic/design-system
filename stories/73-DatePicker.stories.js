@@ -1,8 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLDatePicker } from 'marklogic-ui-library'
+import { MLDatePicker, MLConfigProvider } from 'marklogic-ui-library'
 import { withKnobs, boolean, select, text, array } from '@storybook/addon-knobs'
-import _ from 'lodash'
 const { MLRangePicker } = MLDatePicker
 
 export default {
@@ -31,15 +30,16 @@ const circleFirstDateRenderFn = (d) => {
 
 const disableOddDates = (d) => d.date() % 2 === 0
 
+const configValues = {
+  dateFormat: ['YYYY-MMM-DD, HH:mm:ss', 'MM/DD/YYYY HH:mm:ss', 'M/D/YY H:mm:ss'],
+  timeFormat: ['HH:mm:ss'],
+  dateTimeFormat: ['YYYY-MMM-DD, HH:mm:ss', 'LT', 'LTS'],
+  monthFormat: 'MMM-YY',
+  weekFormat: 'YYYY-MMM-DD',
+}
+
 export const datePicker = () => {
   const props = {
-    mode: select('mode', {
-      time: 'time',
-      date: 'date',
-      month: 'month',
-      year: 'year',
-      decade: 'decade',
-    }, 'date'),
     picker: select('picker', {
       date: 'date',
       week: 'week',
@@ -70,7 +70,11 @@ export const datePicker = () => {
     onPanelChange: action('onPanelChange'),
     showTime: boolean('showTime', false),
   }
-  return (<MLDatePicker {...props} />)
+  return (
+    <MLConfigProvider {...configValues}>
+      <MLDatePicker {...props} />
+    </MLConfigProvider>
+  )
 }
 
 export const rangePicker = () => {
