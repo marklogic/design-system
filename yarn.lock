@@ -3121,6 +3121,13 @@ ansi-to-html@^0.6.11:
   dependencies:
     entities "^1.1.2"
 
+antd-dayjs-webpack-plugin@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/antd-dayjs-webpack-plugin/-/antd-dayjs-webpack-plugin-1.0.0.tgz#e3f4b0bce3985aa0d75a36341b3f9f67b486423a"
+  integrity sha512-Ix/k8HZxZA7v+Uh+hI3Pw3+fSTlwEnsccFqTZmAeHN1gXSt2vXLXK20KUOZphVgF8zf2zwPpJPlQWvC7TG7lHQ==
+  dependencies:
+    dayjs "*"
+
 antd@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/antd/-/antd-4.0.4.tgz#fe7bf58151e069226941a4febe429f1e2f6c596f"
@@ -5382,6 +5389,11 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     abab "^2.0.0"
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
+
+dayjs@*:
+  version "1.8.25"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.25.tgz#d09a8696cee7191bc1289e739f96626391b9c73c"
+  integrity sha512-Pk36juDfQQGDCgr0Lqd1kw15w3OS6xt21JaLPE3lCfsEf8KrERGwDNwvK1tRjrjqFC0uZBJncT4smZQ4F+uV5g==
 
 de-indent@^1.0.2:
   version "1.0.2"

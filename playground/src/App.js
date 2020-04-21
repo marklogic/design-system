@@ -5,25 +5,22 @@ import {
   MLDatePicker,
   MLLayout,
   MLSlider,
-  MLRadio,
   MLIcon,
   MLConfigProvider,
-} from 'marklogic-ui-library/dist/index.es.js'
+} from 'marklogic-ui-library'
 
-import {
-  ConfigProvider,
-} from 'antd/es'
-// } from 'marklogic-ui-library/src'
-
-// import 'marklogic-ui-library/src/*.less'
-
-import 'marklogic-ui-library/dist/index.css'
+const configValues = {
+  dateFormat: 'YYYY-MMM-DD', // Default for all dates, and datePicker
+  dateTimeFormat: 'YYYY-MMM-DD, HH:mm:ss', // default for all dates with times, and datePicker with times
+  monthFormat: 'MMM-YY', // default for datePicker month mode
+  weekFormat: 'YYYY-MMM-DD', // default for datePicker week mode
+}
 
 export default class App extends Component {
   render () {
     return (
       <div>
-        <MLConfigProvider dateFormat='YYYY-MMM-DD, HH:mm:ss'>
+        <MLConfigProvider {...configValues}>
           <MLLayout>
             <MLLayout.MLHeader>Header</MLLayout.MLHeader>
             <MLDatePicker />
@@ -35,6 +32,7 @@ export default class App extends Component {
                 <MLSlider tooltipPlacement='top' />
               </div>
             </MLLayout.MLContent>
+            <MLDatePicker picker='week' />
             <MLLayout.MLFooter year='2019' />
           </MLLayout>
         </MLConfigProvider>

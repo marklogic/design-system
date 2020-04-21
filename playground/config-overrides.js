@@ -9,11 +9,9 @@ const {
   removeModuleScopePlugin,
   babelExclude,
 } = require('customize-cra')
-const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
 const themeVariables = require('marklogic-ui-library/src/theme-variables.json')
 
 module.exports = override(
-  addWebpackPlugin(new AntdDayjsWebpackPlugin()),
   fixBabelImports('import', [
     {
       libraryName: 'antd',
