@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfigProvider } from 'antd/es'
+import { ConfigProvider } from 'antd'
 
 export const MLConfigContext = React.createContext('YYYY')
 

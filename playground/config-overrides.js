@@ -10,6 +10,7 @@ const {
   babelExclude,
 } = require('customize-cra')
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
+const themeVariables = require('marklogic-ui-library/src/theme-variables.json')
 
 module.exports = override(
   addWebpackPlugin(new AntdDayjsWebpackPlugin()),
@@ -21,7 +22,7 @@ module.exports = override(
     },
     {
       libraryName: 'marklogic-ui-library',
-      libraryDirectory: 'dist',
+      libraryDirectory: 'src',
     },
   ]),
   addLessLoader({
@@ -30,6 +31,7 @@ module.exports = override(
       path.resolve(__dirname, '../node_modules'),
       path.resolve(__dirname, '../src'),
     ],
+    modifyVars: themeVariables,
   }),
   removeModuleScopePlugin(),
   addWebpackAlias({
@@ -38,6 +40,7 @@ module.exports = override(
   babelInclude([
     path.resolve(__dirname, 'src'),
     path.resolve(__dirname, '../src'),
+    path.resolve(__dirname, '../stories'),
     path.resolve(__dirname, 'node_modules'),
     path.resolve(__dirname, 'node_modules/marklogic-ui-library'),
     // path.resolve('../src'),

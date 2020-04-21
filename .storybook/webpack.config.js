@@ -1,5 +1,6 @@
 const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 const path = require('path');
+const themeVariables = require('../src/theme-variables.json')
 
 module.exports = async ({ config }) => {
   config.module.rules.push({
@@ -28,6 +29,19 @@ module.exports = async ({ config }) => {
     enforce: 'pre',
   });
   config.module.rules.push({
+    test: /\.js$/,
+    use: [
+      {
+        loader: 'babel-loader',
+        options: {
+          plugins: [
+            ['import', {libraryName: 'antd', style: true, libraryDirectory: 'es'}]
+          ]
+        }
+      }
+    ],
+  })
+  config.module.rules.push({
     test: /\.less/,
     loaders: [
       "style-loader",
@@ -39,7 +53,8 @@ module.exports = async ({ config }) => {
           paths: [
             path.resolve(__dirname, '../node_modules'),
             path.resolve(__dirname, '../src'),
-          ]
+          ],
+          modifyVars: themeVariables,
         },
       },
     ],
