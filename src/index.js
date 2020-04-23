@@ -43,6 +43,7 @@ export {
   MLMentions,
   MLPageHeader,
   MLPopconfirm,
+  MLProgress,
   MLRadio,
   MLRate,
   MLRow,
