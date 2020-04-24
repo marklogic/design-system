@@ -1,6 +1,6 @@
 {
   "author": "MarkLogic",
-  "name": "marklogic-ui-library",
+  "name": "@marklogic/design-system",
   "description": "MarkLogic Engineering UX design system",
   "version": "0.2.2",
   "license": "Apache-2.0",
@@ -25,7 +25,7 @@
     "prepare": "npm run build",
     "predeploy": "cd playground && yarn && npm run build",
     "deploy": "gh-pages -d playground/build",
-    "install:all": "(yarn link; pushd playground; yarn link \"marklogic-ui-library\"; popd); (yarn); (cd playground && yarn)",
+    "install:all": "(yarn link; pushd playground; yarn link \"@marklogic/design-system\"; popd); (yarn); (cd playground && yarn)",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o storybook-dist"
   },

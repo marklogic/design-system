@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLSpin from '../src/ml-spin'
+import MLSpin from '@marklogic/design-system/ml-spin'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 

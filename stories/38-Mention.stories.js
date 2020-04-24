@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLMentions from '../src/ml-mention'
+import MLMentions from '@marklogic/design-system/ml-mention'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 const { MLOption } = MLMentions

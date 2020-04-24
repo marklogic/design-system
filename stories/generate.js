@@ -21,7 +21,7 @@ console.log({
 const storyTemplate = (
 `import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { ML${componentName} } from 'marklogic-ui-library'
+import { ML${componentName} } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 

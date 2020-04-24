@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLRow, MLCol } from '../src'
+import { MLRow, MLCol } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 

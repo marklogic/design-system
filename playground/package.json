@@ -1,12 +1,12 @@
 {
-  "name": "marklogic-ui-library-playground",
+  "name": "@marklogic/design-system-playground",
   "homepage": "https://brucean52.github.io/marklogic-ui-library",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "antd": "^4.0.4",
-    "marklogic-ui-library": "file:..",
+    "@marklogic/design-system": "file:..",
     "prop-types": "^15.6.2",
     "react-scripts": "^3.3.0"
   },

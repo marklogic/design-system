@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLAlert } from 'marklogic-ui-library'
+import { MLAlert } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 

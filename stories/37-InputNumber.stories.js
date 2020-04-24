@@ -1,7 +1,7 @@
 import React from 'react'
 import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import { MLInputNumber } from 'marklogic-ui-library'
+import { MLInputNumber } from '@marklogic/design-system'
 
 export default {
   title: 'Data Entry/MLInputNumber',

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLConfigProvider } from '../src'
+import { MLConfigProvider } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 

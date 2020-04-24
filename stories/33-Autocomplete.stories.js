@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import MLAutoComplete from '../src/ml-autocomplete'
+import MLAutoComplete from '@marklogic/design-system/ml-autocomplete'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 

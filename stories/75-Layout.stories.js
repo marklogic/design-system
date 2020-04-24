@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
-import { MLLayout } from 'marklogic-ui-library'
+import { MLLayout } from '@marklogic/design-system'
 const { MLHeader, MLFooter, MLSider, MLContent } = MLLayout
 
 export default {

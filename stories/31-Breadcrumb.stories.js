@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLBreadcrumb from '../src/ml-breadcrumb'
+import MLBreadcrumb from '@marklogic/design-system/ml-breadcrumb'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 

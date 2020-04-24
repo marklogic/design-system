@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLRadio } from 'marklogic-ui-library'
+import { MLRadio } from '@marklogic/design-system'
 import { withKnobs, boolean, text, array, number } from '@storybook/addon-knobs'
 
 export default {

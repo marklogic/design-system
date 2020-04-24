@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLTag from '../src/ml-tag'
+import MLTag from '@marklogic/design-system/ml-tag'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 

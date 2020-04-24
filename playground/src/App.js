@@ -7,7 +7,7 @@ import {
   MLSlider,
   MLRadio,
   MLIcon,
-} from 'marklogic-ui-library'
+} from '@marklogic/design-system'
 
 export default class App extends Component {
   render () {

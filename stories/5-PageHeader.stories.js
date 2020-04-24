@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLPageHeader from '../src/ml-page-header'
+import MLPageHeader from '@marklogic/design-system/ml-page-header'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 
