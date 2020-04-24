@@ -1,9 +1,10 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLTable, MLIcon } from '../src'
+import { MLTable, MLIcon } from 'marklogic-ui-library'
 import { withKnobs } from '@storybook/addon-knobs'
 import _ from 'lodash'
 import { sampleBasicData, sampleNestedData } from './11-Table.sample-data.js'
+import { DownOutlined, RightOutlined } from 'marklogic-ui-library/ml-icon'
 
 export default {
   title: 'Data Display/Table',
