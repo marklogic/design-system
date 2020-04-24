@@ -40,6 +40,12 @@ const configValues = {
 
 export const datePicker = () => {
   const props = {
+    picker: select('picker', {
+      date: 'date',
+      week: 'week',
+      month: 'month',
+      year: 'year',
+    }, 'date'),
     // locale: ('locale', default),
     size: select('size', {
       small: 'small',
