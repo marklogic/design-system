@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useState} from "react";
 import { action } from '@storybook/addon-actions'
-import MLTag from '../src/ml-tag'
+import MLTag from 'marklogic-ui-library/ml-tag'
 import { withKnobs } from '@storybook/addon-knobs'
-import _ from 'lodash'
+const { MLCheckableTag } = MLTag
 
 export default {
   title: 'Data Display/MLTag',
@@ -34,6 +34,21 @@ export const basic = () => {
       <MLTag closable onClose={preventDefault}>
         Prevent Default
       </MLTag>
+    </div>
+  )
+}
+
+export const checkableTag = () => {
+  const [tag1State, setTag1State] = useState(false)
+  const [tag2State, setTag2State] = useState(false)
+  const [tag3State, setTag3State] = useState(false)
+  return (
+    <div>
+      <div>See <a href={"https://ant.design/components/tag/#components-tag-demo-checkable"}>Ant's example</a> for how to use with state</div>
+      <br/>
+      <MLCheckableTag checked={tag1State} onChange={() => setTag1State(!tag1State)}>Tag1</MLCheckableTag>
+      <MLCheckableTag checked={tag2State} onChange={() => setTag2State(!tag2State)}>Tag2</MLCheckableTag>
+      <MLCheckableTag checked={tag3State} onChange={() => setTag3State(!tag3State)}>Tag3</MLCheckableTag>
     </div>
   )
 }
