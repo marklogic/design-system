@@ -91,6 +91,7 @@
     "rollup-plugin-url": "^2.2.2"
   },
   "files": [
+    "src",
     "dist"
   ],
   "dependencies": {
