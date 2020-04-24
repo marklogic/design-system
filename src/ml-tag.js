@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Tag } from 'antd'
+import './ml-tag.less'
 const { CheckableTag } = Tag
 
 const MLTag = (props) => {
