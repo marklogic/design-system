@@ -101,3 +101,49 @@ export const rowNestedTable = () => {
     </div>
   )
 }
+
+export const treeData = () => {
+  const abColumns = [
+    {
+      title: 'A',
+      dataIndex: 'a',
+      key: 'a',
+      sorter: lessThanSorter('a'),
+    },
+    {
+      title: 'B',
+      dataIndex: 'b',
+      key: 'b',
+      sorter: lessThanSorter('b'),
+    },
+  ]
+  const dataSource = [
+    { key: 1, a: 1, b: 1 },
+    {
+      key: 2,
+      a: 2,
+      b: 2,
+      children: [
+        {
+          key: 3,
+          a: 3,
+          b: 3,
+          children: [
+            { key: 4, a: 4, b: 4 },
+            { key: 5, a: 5, b: 5 },
+          ],
+        },
+        { key: 6, a: 6, b: 6 },
+      ],
+    },
+    { key: 7, a: 7, b: 7 },
+  ]
+  return (
+    <div>
+      <MLTable
+        dataSource={dataSource}
+        columns={abColumns}
+      />
+    </div>
+  )
+}
