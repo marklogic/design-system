@@ -7,17 +7,17 @@ import './ml-date-picker.less'
 const { RangePicker } = DatePicker
 
 const pickerPropsFromContext = ({ dateFormat, dateTimeFormat, weekFormat, monthFormat }, props) => {
-  const format = get({
-    week: weekFormat,
-    month: monthFormat,
-    // Nothing special for quarter or year pickers
-  }, props.picker, dateFormat)
+  let format
   let showTime = props.showTime
   if (props.showTime === true) {
-    // Use the first dateFormat if multiple are provided, because TimePicker chokes on arrays of formats
-    showTime = {
-      format: isArray(dateFormat) ? dateFormat[0] : dateFormat,
-    }
+    // Use the first dateTimeFormat if multiple are provided, because TimePicker chokes on arrays of formats
+    format = isArray(dateTimeFormat) ? dateTimeFormat[0] : dateTimeFormat
+  } else {
+    format = get({
+      week: weekFormat,
+      month: monthFormat,
+      // Nothing special for quarter or year pickers
+    }, props.picker, dateFormat)
   }
   return { format, showTime }
 }
@@ -73,7 +73,7 @@ MLRangePicker.defaultProps = {
 MLRangePicker.propTypes = {
   bordered: PropTypes.bool,
   placeholder: PropTypes.array,
-  separator: PropTypes.string,
+  separator: PropTypes.oneOf([PropTypes.string, PropTypes.node]),
   size: PropTypes.string,
 }
 

@@ -31,7 +31,7 @@ const circleFirstDateRenderFn = (d) => {
 const disableOddDates = (d) => d.date() % 2 === 0
 
 const configValues = {
-  dateFormat: ['YYYY-MMM-DD, HH:mm:ss', 'MM/DD/YYYY HH:mm:ss', 'M/D/YY H:mm:ss'],
+  dateFormat: ['YYYY-MMM-DD', 'MM/DD/YYYY', 'M/D/YY'],
   timeFormat: ['HH:mm:ss'],
   dateTimeFormat: ['YYYY-MMM-DD, HH:mm:ss', 'LT', 'LTS'],
   monthFormat: 'MMM-YY',
@@ -40,12 +40,6 @@ const configValues = {
 
 export const datePicker = () => {
   const props = {
-    picker: select('picker', {
-      date: 'date',
-      week: 'week',
-      month: 'month',
-      year: 'year',
-    }, 'date'),
     // locale: ('locale', default),
     size: select('size', {
       small: 'small',
@@ -66,6 +60,7 @@ export const datePicker = () => {
       '(d) => d.date() % 2 === 0': disableOddDates,
     }, undefined),
     placeholder: text('placeholder', ''),
+    onCalendarChange: action('onCalendarChange'),
     onOpenChange: action('onOpenChange'),
     onPanelChange: action('onPanelChange'),
     showTime: boolean('showTime', false),
@@ -79,13 +74,6 @@ export const datePicker = () => {
 
 export const rangePicker = () => {
   const props = {
-    mode: select('mode', {
-      time: 'time',
-      date: 'date',
-      month: 'month',
-      year: 'year',
-      decade: 'decade',
-    }, 'date'),
     picker: select('picker', {
       date: 'date',
       week: 'week',
@@ -112,6 +100,7 @@ export const rangePicker = () => {
       '(d) => d.date() % 2 === 0': disableOddDates,
     }, undefined),
     placeholder: array('placeholder', ['Start', 'End']),
+    onCalendarChange: action('onCalendarChange'),
     onOpenChange: action('onOpenChange'),
     onPanelChange: action('onPanelChange'),
     showTime: boolean('showTime', false),
@@ -119,5 +108,9 @@ export const rangePicker = () => {
       <span className='ant-picker-separator'>{text('separator', '–')}</span> // en-dash
     ),
   }
-  return (<MLRangePicker {...props} />)
+  return (
+    <MLConfigProvider {...configValues}>
+      <MLRangePicker {...props} />
+    </MLConfigProvider>
+  )
 }
