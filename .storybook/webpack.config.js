@@ -1,12 +1,16 @@
 const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 const path = require('path');
- 
+const themeVariables = require('../src/theme-variables.json')
+
 module.exports = async ({ config }) => {
   config.module.rules.push({
     test: /\.(stories|story)\.mdx$/,
     use: [
       {
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        options: {
+          presets: [["env", {modules: false}]],
+        }
         // may or may not need this line depending on your app's setup
         //plugins: ['@babel/plugin-transform-react-jsx'],
       },
@@ -25,16 +29,50 @@ module.exports = async ({ config }) => {
     enforce: 'pre',
   });
   config.module.rules.push({
-    test: /\.less$/,
-    loaders: [
-        "style-loader",
-        "css-loader",
-        {
-          loader: "less-loader",
-          options: { javascriptEnabled : true }
+    test: /\.js$/,
+    use: [
+      {
+        loader: 'babel-loader',
+        options: {
+          plugins: [
+            ['import', {libraryName: 'antd', style: true, libraryDirectory: 'es'}]
+          ]
         }
+      }
     ],
-    include: path.resolve(__dirname, '../src/'),
-});
+  })
+  config.module.rules.push({
+    test: /\.less/,
+    loaders: [
+      "style-loader",
+      "css-loader",
+      {
+        loader: "less-loader",
+        options: {
+          javascriptEnabled: true,
+          paths: [
+            path.resolve(__dirname, '../node_modules'),
+            path.resolve(__dirname, '../src'),
+          ],
+          modifyVars: themeVariables,
+        },
+      },
+    ],
+    include: [
+      path.resolve(__dirname, '../node_modules/'),
+      path.resolve(__dirname, '../stories/'),
+      path.resolve(__dirname, '../src/'),
+    ]
+  });
+  config.resolve.alias['marklogic-ui-library'] = path.resolve(__dirname, '../src')
+  config.resolve.alias['antd'] = path.resolve(__dirname, '../node_modules/antd')
+
+  // DEBUG Fix stringify for regexes
+  Object.defineProperty(RegExp.prototype, "toJSON", {
+    value: RegExp.prototype.toString
+  });
+  console.log("Storybook webpack config:\n", JSON.stringify(config, null, '  '))
+  // DEBUG end
+
   return config;
 };

@@ -1,11 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'antd'
-// import styles from './styles.scss'
+import './ml-button.less'
 
 const MLButton = (props) => {
+  let type
+  let className
+  if (props.type === 'highlight') {
+    type = 'primary'
+    className = 'ml-btn-highlight'
+  } else {
+    type = props.type
+    className = ''
+  }
   return (
-    <Button {...props}>
+    <Button {...props} type={type} className={[props.className, 'ml-btn', className].join(' ')}>
       {props.children}
     </Button>
   )
