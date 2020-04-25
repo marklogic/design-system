@@ -86,3 +86,10 @@ version needs to increase everytime it is published.
 # Build minified CSS and publish library to NPM
 npm publish
 ```
+
+
+## Using this library
+
+### Create-React-App
+
+The `playground` folder has an example [config-overrides.js](playground/config-overrides.js) for create-react-app.

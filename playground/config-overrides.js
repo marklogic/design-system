@@ -1,51 +1,36 @@
 const path = require('path')
 const {
   override,
-  addWebpackPlugin,
   fixBabelImports,
   babelInclude,
   addLessLoader,
-  addWebpackAlias,
-  removeModuleScopePlugin,
-  babelExclude,
 } = require('customize-cra')
 const themeVariables = require('marklogic-ui-library/src/theme-variables.json')
 
 module.exports = override(
+  // Both of these are required for using marklogic-ui-library as an ES module
   fixBabelImports('import', [
     {
       libraryName: 'antd',
       libraryDirectory: 'es',
-      style: true,
+      style: true, // This is required so that the less files from antd are included
     },
     {
       libraryName: 'marklogic-ui-library',
       libraryDirectory: 'src',
     },
   ]),
+  // Required for using marklogic-ui-library
   addLessLoader({
     javascriptEnabled: true,
-    paths: [
-      path.resolve(__dirname, '../node_modules'),
-      path.resolve(__dirname, '../src'),
-    ],
+    // This is how you change `less` theme variables
+    // Refer to theme vars below
+    // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
     modifyVars: themeVariables,
   }),
-  removeModuleScopePlugin(),
-  addWebpackAlias({
-    antd: path.resolve(__dirname, 'node_modules/antd'),
-  }),
+  // This must include any source files that import marklogic-ui-library (or JSX, etc)
+  // that needs compilation
   babelInclude([
     path.resolve(__dirname, 'src'),
-    path.resolve(__dirname, '../src'),
-    path.resolve(__dirname, '../stories'),
-    path.resolve(__dirname, 'node_modules'),
-    path.resolve(__dirname, 'node_modules/marklogic-ui-library'),
-    // path.resolve('../src'),
-  ]),
-  babelExclude([
-    path.resolve('node_modules/marklogic-ui-library/node_modules'),
   ]),
 )
-// Refer to theme vars below
-// https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
