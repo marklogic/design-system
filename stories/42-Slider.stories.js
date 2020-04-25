@@ -2,6 +2,7 @@ import React from 'react'
 import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { MLSlider } from 'marklogic-ui-library'
+import { isEmpty } from 'lodash-es'
 
 export default {
   title: 'Data Entry/MLSlider',
@@ -17,6 +18,11 @@ const noopFormatter = (n) => `${n}`
 const percentFormatter = (n) => `${n}%`
 
 export const basicSingle = () => {
+  const tooltipVisible = select('tooltipVisible', {
+    'auto (undefined)': undefined,
+    true: true,
+    false: false,
+  }, undefined)
   const props = {
     min: number('min', 0),
     max: number('max', 100),
@@ -38,6 +44,10 @@ export const basicSingle = () => {
     onChange: action('onChange'),
     onAfterChange: action('onAfterChange'),
   }
+  if (tooltipVisible !== '') {
+    // Hack to make the undefined value work
+    props.tooltipVisible = tooltipVisible
+  }
   return <MLSlider {...props} />
 }
 
@@ -58,6 +68,11 @@ const tooltipPlacementOptions = {
 
 export const basicRange = () => {
   // Assemble the props in pieces so we can have them in the right order
+  const tooltipVisible = select('tooltipVisible', {
+    'auto (undefined)': undefined,
+    true: true,
+    false: false,
+  }, undefined)
   const props1 = {
     min: number('min', 0),
     max: number('max', 100),
@@ -75,13 +90,14 @@ export const basicRange = () => {
       // eslint-disable-next-line no-template-curly-in-string
       '(n) => `${n}%`': percentFormatter,
     }, noopFormatter),
-    tooltipVisible: boolean('tooltipVisible', true),
-    // tooltipPlacement: select('tipPlacement', tooltipPlacementOptions, 'top'),
-    tooltipPlacement: 'top',
+    tooltipPlacement: select('tipPlacement', tooltipPlacementOptions, 'top'),
     // placement: select('tipPlacement', tooltipPlacementOptions, 'top'),
     included: boolean('included', true),
     onChange: action('onChange'),
     onAfterChange: action('onAfterChange'),
+  }
+  if (tooltipVisible !== '') {
+    props1.tooltipVisible = tooltipVisible
   }
 
   return (
