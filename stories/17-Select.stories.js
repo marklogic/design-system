@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs'
 import MLSelect from '../src/ml-select'
+import { filter, isUndefined } from 'lodash-es'
 const { MLOption, MLOptGroup } = MLSelect
 
 export default {
@@ -16,6 +17,15 @@ export default {
 
 // TODO: Flesh out knobs and stories when spec has been reviewed
 
+function filterUndefinedProps(props) {
+  return Object.fromEntries(
+    filter(
+      Object.entries(props),
+      (pair) => !isUndefined(pair[1]),
+    ),
+  )
+}
+
 export const basic = () => {
   const selectProps = {
     disabled: boolean('disabled', false),
@@ -23,26 +33,58 @@ export const basic = () => {
       default: 'default',
       large: 'large',
       small: 'small',
-    }, 'size'),
+    }, 'small'),
     mode: select('mode', {
       default: undefined,
       multiple: 'multiple',
       tags: 'tags',
-    }),
+    }, undefined),
     placeholder: text('placeholder', ''),
     loading: boolean('loading', false),
-    // allowClear: boolean('allowClear', false),
+    onChange: action('onChange'),
+    allowClear: boolean('allowClear', false),
   }
+  const filteredProps = filterUndefinedProps(selectProps)
   return (
-    <div>
-      <MLSelect style={{ width: 220 }} {...selectProps}>
-        <MLOption value='jack'>Jack</MLOption>
-        <MLOption value='lucy'>Lucy</MLOption>
-        <MLOption value='disabled' disabled>
-          Disabled
-        </MLOption>
-        <MLOption value='Yiminghe'>yiminghe</MLOption>
-      </MLSelect>
-    </div>
+    <MLSelect style={{ width: 220 }} {...filteredProps}>
+      <MLOption value='jack'>Jack</MLOption>
+      <MLOption value='lucy'>Lucy</MLOption>
+      <MLOption value='disabled' disabled>
+        Disabled
+      </MLOption>
+      <MLOption value='Yiminghe'>yiminghe</MLOption>
+    </MLSelect>
+  )
+}
+
+export const withOptGroup = () => {
+  const selectProps = {
+    disabled: boolean('disabled', false),
+    size: select('size', {
+      default: 'default',
+      large: 'large',
+      small: 'small',
+    }, 'small'),
+    mode: select('mode', {
+      default: undefined,
+      multiple: 'multiple',
+      tags: 'tags',
+    }, undefined),
+    placeholder: text('placeholder', ''),
+    loading: boolean('loading', false),
+    onChange: action('onChange'),
+    allowClear: boolean('allowClear', false),
+  }
+  const filteredProps = filterUndefinedProps(selectProps)
+  return (
+    <MLSelect defaultValue='lucy' style={{ width: 200 }} {...filteredProps}>
+      <MLOptGroup key='Manager' label='Manager'>
+        <MLOption key='jack' value='jack'>Jack</MLOption>
+        <MLOption key='lucy' value='lucy'>Lucy</MLOption>
+      </MLOptGroup>
+      <MLOptGroup key='Engineer' label='Engineer'>
+        <MLOption key='Yiminghe' value='Yiminghe'>yiminghe</MLOption>
+      </MLOptGroup>
+    </MLSelect>
   )
 }

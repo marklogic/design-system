@@ -1,19 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Select } from 'antd'
-import _ from 'lodash'
+import { includes } from 'lodash-es'
 const { Option, OptGroup } = Select
 
 const MLSelect = (props) => {
-  const mode = props.mode || ''
-  const allowClear = _.includes(['tags', 'multiple'], mode)
-  const showArrow = true
-  const size = 'small'
+  const { mode = '' } = props
+  const allowClear = includes(['tags', 'multiple'], mode)
   return (
     <Select
       allowClear={allowClear}
-      showArrow={showArrow}
-      size={size}
       {...props}
     >
       {props.children}
@@ -21,19 +17,28 @@ const MLSelect = (props) => {
   )
 }
 
-const MLOption = (props) => {
-  return (
-    <Option {...props} />
-  )
+MLSelect.defaultProps = {
+  showArrow: true,
+  size: 'small',
 }
+
+MLSelect.propTypes = {
+  mode: PropTypes.oneOf([null, 'multiple', 'tags']),
+  showArrow: PropTypes.bool,
+  size: PropTypes.oneOf(['default', 'large', 'small']),
+}
+
+class MLOption extends Option {}
+
+MLOption.defaultProps = {}
+MLOption.propTypes = {}
 
 MLSelect.MLOption = MLOption
 
-const MLOptGroup = (props) => {
-  return (
-    <OptGroup {...props} />
-  )
-}
+class MLOptGroup extends OptGroup {}
+
+MLOptGroup.defaultProps = {}
+MLOptGroup.propTypes = {}
 
 MLSelect.MLOptGroup = MLOptGroup
 

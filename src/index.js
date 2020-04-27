@@ -19,6 +19,7 @@ import MLPopconfirm from './ml-popconfirm'
 import MLRadio from './ml-radio'
 import MLRate from './ml-rate'
 import MLRow from './ml-row'
+import MLSelect from './ml-select'
 import MLSlider from './ml-slider'
 import MLSpin from './ml-spin'
 import MLTable from './ml-table'
@@ -47,6 +48,7 @@ export {
   MLRadio,
   MLRate,
   MLRow,
+  MLSelect,
   MLSlider,
   MLSpin,
   MLTable,
