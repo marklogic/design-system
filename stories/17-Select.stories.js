@@ -41,8 +41,17 @@ export const basic = () => {
     }, undefined),
     placeholder: text('placeholder', ''),
     loading: boolean('loading', false),
-    onChange: action('onChange'),
     allowClear: boolean('allowClear', false),
+    onBlur: action('onBlur'),
+    onChange: action('onChange'),
+    onDeselect: action('onDeselect'),
+    onFocus: action('onFocus'),
+    onInputKeyDown: action('onInputKeyDown'),
+    onMouseEnter: action('onMouseEnter'),
+    onMouseLeave: action('onMouseLeave'),
+    onPopupScroll: action('onPopupScroll'),
+    onSearch: action('onSearch'),
+    onSelect: action('onSelect'),
   }
   const filteredProps = filterUndefinedProps(selectProps)
   return (
@@ -72,8 +81,17 @@ export const withOptGroup = () => {
     }, undefined),
     placeholder: text('placeholder', ''),
     loading: boolean('loading', false),
-    onChange: action('onChange'),
     allowClear: boolean('allowClear', false),
+    onBlur: action('onBlur'),
+    onChange: action('onChange'),
+    onDeselect: action('onDeselect'),
+    onFocus: action('onFocus'),
+    onInputKeyDown: action('onInputKeyDown'),
+    onMouseEnter: action('onMouseEnter'),
+    onMouseLeave: action('onMouseLeave'),
+    onPopupScroll: action('onPopupScroll'),
+    onSearch: action('onSearch'),
+    onSelect: action('onSelect'),
   }
   const filteredProps = filterUndefinedProps(selectProps)
   return (
