@@ -17,6 +17,7 @@ export default class App extends Component {
           <MLLayout.MLHeader>Header</MLLayout.MLHeader>
           <MLLayout.MLContent>
             <MLButton type='primary'>Test</MLButton>
+            <MLButton type='highlight'>Test</MLButton>
             <MLIcon.Route />
             <MLIcon.CheckCircleFilled />
             <div>

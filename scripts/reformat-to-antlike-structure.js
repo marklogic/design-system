@@ -1,5 +1,5 @@
-const { pascalCase } = require('change-case')
-const fs = require('fs')
+const { pascalCase, paramCase } = require('change-case')
+const fs = require('fs-extra')
 const path = require('path')
 
 const filesToMove = [
@@ -30,34 +30,75 @@ const filesToMove = [
   'ml-upload.js',
 ]
 
+const inputDir = path.resolve(__dirname, '../src')
+const outputDir = path.resolve(__dirname, '../es')
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir)
+}
+
 function transformComponentCode(code) {
   return code.replace(/import '([./a-zA-Z-]+).(less|css)'/, "import './style'")
-    .replace("'./ml-icon'", "'../ml-icon'")
+    .replace("'./ml-icon'", "'../MLIcon'")
 }
 
 function transformStyleCode(oldStyleCode) {
   return oldStyleCode.replace(/@import '.\/styles.less'/, "@import '../../styles.less'")
+    .replace(/@import 'antd\/[^']*';\n/g, '')
 }
 
-for (const componentFile of filesToMove) {
-  const componentName = pascalCase(componentFile.replace('ml-', 'm-l-').replace('.js', ''))
+const oldIndexPath = path.resolve(inputDir, 'index.js')
+const newIndexPath = path.resolve(outputDir, 'index.js')
+const oldIndexCode = fs.readFileSync(oldIndexPath).toString()
+let newIndexCode = oldIndexCode.toString()
 
-  const componentPath = path.resolve(__dirname, '../src', componentFile)
-  const newComponentIndexFile = path.resolve(__dirname, '../src', componentName, 'index.js')
-  const newComponentFile = path.resolve(__dirname, '../src', componentName, componentName + '.js')
-  const newStyleFile = path.resolve(__dirname, '../src', componentName, 'style', 'index.less')
-  const newStyleIndexJsFile = path.resolve(__dirname, '../src', componentName, 'style', 'index.js')
+function writeStyleFiles(componentFile, componentDir, componentName, customTransform) {
+  const newStyleFile = path.resolve(outputDir, componentName, 'style', 'index.less')
+  const oldStyleFile = componentFile.replace('.js', '') + '.less'
+  const oldStylePath = path.resolve(inputDir, oldStyleFile)
+  // if (fs.existsSync(oldStylePath) || true) {
+  const styleDir = path.resolve(componentDir, 'style')
+  const newStyleIndexJsFile = path.resolve(outputDir, componentName, 'style', 'index.js')
+
+  if (!fs.existsSync(styleDir)) {
+    fs.mkdirSync(styleDir)
+  }
+
+  const oldStyleCode = (
+    fs.existsSync(oldStylePath)
+      ? fs.readFileSync(oldStylePath).toString()
+      : ''
+  )
+  const newStyleCode = transformStyleCode(oldStyleCode)
+  // if (customTransform !== undefined) {
+  //   newStyleCode = customTransform(newStyleCode)
+  // }
+
+  // Write the Component/style/index.less file
+  fs.writeFileSync(newStyleFile, newStyleCode)
+
+  const newStyleIndexJsCode = (
+`import 'antd/es/${paramCase(componentName).replace('ml-', '')}/style'
+import './index.less'
+`
+  )
+
+  // Write the Component/style/index.js file
+  fs.writeFileSync(newStyleIndexJsFile, newStyleIndexJsCode)
+}
+
+function writeComponentFiles(componentName, componentPath, componentDir) {
+  const newComponentIndexFile = path.resolve(outputDir, componentName, 'index.js')
+  const newComponentFile = path.resolve(outputDir, componentName, componentName + '.js')
 
   const oldComponentCode = fs.readFileSync(componentPath).toString()
   const newComponentCode = transformComponentCode(oldComponentCode)
 
   const newComponentIndexCode = (
-`import ${componentName} from './${componentName}'
+    `import ${componentName} from './${componentName}'
 export default ${componentName}
 `
   )
 
-  const componentDir = path.resolve(__dirname, '../src', componentName)
   if (!fs.existsSync(componentDir)) {
     fs.mkdirSync(componentDir)
   }
@@ -71,34 +112,66 @@ export default ${componentName}
   if (!fs.existsSync(newComponentFile)) {
     fs.writeFileSync(newComponentFile, newComponentCode)
   }
+}
 
-  const oldStyleFile = componentFile.replace('.js', '.less')
-  const oldStylePath = path.resolve(__dirname, '../src', oldStyleFile)
-  if (fs.existsSync(oldStylePath)) {
-    const styleDir = path.resolve(componentDir, 'style')
-    if (!fs.existsSync(styleDir)) {
-      fs.mkdirSync(styleDir)
-    }
+for (const componentFile of filesToMove) {
+  const componentName = pascalCase(componentFile.replace('ml-', 'm-l-').replace('.js', ''))
 
-    const oldStyleCode = fs.readFileSync(oldStylePath).toString()
-    const newStyleCode = transformStyleCode(oldStyleCode)
+  const componentPath = path.resolve(inputDir, componentFile)
+  const componentDir = path.resolve(outputDir, componentName)
 
-    // Write the Component/style/index.less file
-    if (!fs.existsSync(newStyleFile)) {
-      fs.writeFileSync(newStyleFile, newStyleCode)
-    }
+  writeComponentFiles(componentName, componentPath, componentDir)
 
-    const newStyleIndexJsCode = "import './index.less'\n"
+  writeStyleFiles(
+    componentFile,
+    componentDir,
+    componentName,
+    // (code) => {
+    //   return code.replace("import '../ml-icon.less'", "import './")
+    // }
+  )
 
-    // Write the Component/style/index.js file
-    if (!fs.existsSync(newStyleIndexJsFile)) {
-      fs.writeFileSync(newStyleIndexJsFile, newStyleIndexJsCode)
-    }
-  }
+  // Update index.js code before writing it later
+  newIndexCode = newIndexCode.replace(componentFile.replace('.js', ''), componentName)
+}
 
-  // Update src/index.js
-  const indexPath = path.resolve(__dirname, '../src/index.js')
-  const oldIndexCode = fs.readFileSync(indexPath).toString()
-  const newIndexCode = oldIndexCode.replace(componentFile.replace('.js', ''), componentName)
-  fs.writeFileSync(indexPath, newIndexCode)
+{
+  // rename MLIcon
+  const componentName = 'MLIcon'
+  const componentFile = 'ml-icon'
+  const componentDir = path.resolve(outputDir, componentName)
+
+  newIndexCode = newIndexCode.replace(componentFile.replace('.js', ''), componentName)
+
+  const oldComponentPath = path.resolve(inputDir, 'ml-icon')
+  const newComponentPath = path.resolve(outputDir, 'MLIcon')
+  fs.copySync(
+    oldComponentPath,
+    newComponentPath,
+    { overwrite: true },
+  )
+
+  const newComponentIndexPath = path.resolve(newComponentPath, 'index.js')
+  fs.writeFileSync(
+    newComponentIndexPath,
+    fs.readFileSync(newComponentIndexPath).toString().replace("import '../ml-icon.less'", "import './style'"),
+  )
+
+  writeStyleFiles(componentFile, componentDir, componentName)
+  // TODO: Extract stuff into functions, then create the style folder for MLIcon and copy ml-icon.less in
+}
+
+// Write the updated index.js
+fs.writeFileSync(newIndexPath, newIndexCode)
+
+{
+  const oldStyleIndexPath = path.resolve(inputDir, 'styles.less')
+  const newStyleIndexPath = path.resolve(outputDir, 'styles.less')
+  fs.writeFileSync(
+    newStyleIndexPath,
+    fs.readFileSync(oldStyleIndexPath).toString().replace(
+      "@import 'antd/es/style/index.less';\n",
+      '',
+    ),
+  )
 }

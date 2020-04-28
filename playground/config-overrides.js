@@ -14,7 +14,6 @@ module.exports = override(
       libraryName: 'marklogic-ui-library',
       libraryDirectory: 'src',
       camel2DashComponentName: false,
-      style: true,
     },
   ]),
   // Required for using marklogic-ui-library
