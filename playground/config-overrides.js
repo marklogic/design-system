@@ -3,19 +3,6 @@ const { override, fixBabelImports, babelInclude, addLessLoader } = require('cust
 const themeVariables = require('marklogic-ui-library/src/theme-variables.json')
 
 module.exports = override(
-  // Both of these are required for using marklogic-ui-library as an ES module
-  fixBabelImports('import', [
-    {
-      libraryName: 'antd',
-      libraryDirectory: 'es',
-      style: true, // This is required so that the less files from antd are included
-    },
-    {
-      libraryName: 'marklogic-ui-library',
-      libraryDirectory: 'src',
-      camel2DashComponentName: false,
-    },
-  ]),
   // Required for using marklogic-ui-library
   addLessLoader({
     javascriptEnabled: true,
@@ -24,12 +11,8 @@ module.exports = override(
     // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
     modifyVars: themeVariables,
   }),
-  // This must include any source files that import marklogic-ui-library (or JSX, etc)
-  // that needs compilation
   babelInclude([
     path.resolve(__dirname, 'src'),
-    /marklogic-ui-library/,
-    /ant/,
-    /node_modules/,
+    /marklogic-ui-library/, // Required for the library to compile
   ]),
 )
