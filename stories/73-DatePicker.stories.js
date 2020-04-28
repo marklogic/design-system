@@ -78,13 +78,6 @@ export const datePicker = () => {
 
 export const rangePicker = () => {
   const props = {
-    picker: select('picker', {
-      date: 'date',
-      week: 'week',
-      month: 'month',
-      quarter: 'quarter',
-      year: 'year',
-    }, 'date'),
     // locale: ('locale', default),
     size: select('size', {
       small: 'small',
