@@ -8,7 +8,12 @@ const { RangePicker } = DatePicker
 
 const pickerPropsFromContext = ({ dateFormat, dateTimeFormat, weekFormat, monthFormat, yearFormat }, props) => {
   let format
-  if (props.showTime === true) {
+  let { showTime } = props
+  if (props.showTime && props.picker !== 'date') {
+    console.warn("DatePicker: 'showTime' can only be used with 'date' picker")
+    showTime = false
+  }
+  if (showTime === true) {
     // Use the first dateTimeFormat if multiple are provided, because TimePicker chokes on arrays of formats
     format = isArray(dateTimeFormat) ? dateTimeFormat[0] : dateTimeFormat
   } else {
@@ -19,7 +24,7 @@ const pickerPropsFromContext = ({ dateFormat, dateTimeFormat, weekFormat, monthF
       // Nothing special for quarter or year pickers
     }, props.picker, dateFormat)
   }
-  return { format }
+  return { format, showTime }
 }
 
 const MLDatePicker = (props) => {
@@ -28,7 +33,7 @@ const MLDatePicker = (props) => {
       {(context) => {
         const contextProps = pickerPropsFromContext(context, props)
         return (
-          <DatePicker {...contextProps} {...props}>
+          <DatePicker {...contextProps} {...props} showTime={contextProps.showTime}>
             {props.children}
           </DatePicker>
         )
@@ -53,7 +58,7 @@ const MLRangePicker = (props) => {
       {(context) => {
         const contextProps = pickerPropsFromContext(context, props)
         return (
-          <RangePicker {...contextProps} {...props}>
+          <RangePicker {...contextProps} {...props} showTime={contextProps.showTime}>
             {props.children}
           </RangePicker>
         )
