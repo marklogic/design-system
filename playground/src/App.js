@@ -15,7 +15,6 @@ const configValues = {
   monthFormat: 'MMM-YY', // default for Month picker
   weekFormat: 'YYYY-MMM-DD', // default for Week picker
   yearFormat: 'YYYY', // default for Year picker
-  quarterFormat: 'YYYY-[Q]Q', // default for Quarter picker
 }
 
 export default class App extends Component {

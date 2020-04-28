@@ -36,7 +36,6 @@ const configValues = {
   dateTimeFormat: ['YYYY-MMM-DD, HH:mm:ss', 'LT', 'LTS'],
   monthFormat: 'MMM-YY',
   weekFormat: 'YYYY-MMM-DD',
-  quarterFormat: 'YYYY-[Q]Q',
   yearFormat: 'YYYY',
 }
 

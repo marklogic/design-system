@@ -11,7 +11,6 @@ const MLConfigProvider = (props) => {
         monthFormat: props.monthFormat,
         weekFormat: props.weekFormat,
         yearFormat: props.yearFormat,
-        quarterFormat: props.quarterFormat,
       }}
     >
       {/* Include Ant's normal config values as well, for Ant components to use */}
@@ -30,7 +29,6 @@ MLConfigProvider.defaultProps = {
   monthFormat: 'MMM-YY',
   weekFormat: 'YYYY-MMM-DD',
   yearFormat: 'YYYY',
-  quarterFormat: 'YYYY-[Q]Q',
 }
 
 MLConfigProvider.propTypes = {
@@ -39,7 +37,6 @@ MLConfigProvider.propTypes = {
   monthFormat: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
   weekFormat: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
   yearFormat: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
-  quarterFormat: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
 }
 
 export const MLConfigContext = React.createContext(MLConfigProvider.defaultProps)
