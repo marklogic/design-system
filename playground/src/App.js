@@ -10,10 +10,12 @@ import {
 } from 'marklogic-ui-library'
 
 const configValues = {
-  dateFormat: 'YYYY-MMM-DD', // Default for all dates, and datePicker
-  dateTimeFormat: 'YYYY-MMM-DD, HH:mm:ss', // default for all dates with times, and datePicker with times
-  monthFormat: 'MMM-YY', // default for datePicker month mode
-  weekFormat: 'YYYY-MMM-DD', // default for datePicker week mode
+  dateFormat: 'YYYY-MMM-DD', // Default for all dates, and DatePicker
+  dateTimeFormat: 'YYYY-MMM-DD, HH:mm:ss', // default for all dates with times, and DatePicker with times
+  monthFormat: 'MMM-YY', // default for Month picker
+  weekFormat: 'YYYY-MMM-DD', // default for Week picker
+  yearFormat: 'YYYY', // default for Year picker
+  quarterFormat: 'YYYY-[Q]Q', // default for Quarter picker
 }
 
 export default class App extends Component {

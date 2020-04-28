@@ -6,9 +6,8 @@ import { MLConfigContext } from './ml-config-provider'
 import './ml-date-picker.less'
 const { RangePicker } = DatePicker
 
-const pickerPropsFromContext = ({ dateFormat, dateTimeFormat, weekFormat, monthFormat }, props) => {
+const pickerPropsFromContext = ({ dateFormat, dateTimeFormat, weekFormat, monthFormat, quarterFormat, yearFormat }, props) => {
   let format
-  let showTime = props.showTime
   if (props.showTime === true) {
     // Use the first dateTimeFormat if multiple are provided, because TimePicker chokes on arrays of formats
     format = isArray(dateTimeFormat) ? dateTimeFormat[0] : dateTimeFormat
@@ -16,10 +15,12 @@ const pickerPropsFromContext = ({ dateFormat, dateTimeFormat, weekFormat, monthF
     format = get({
       week: weekFormat,
       month: monthFormat,
+      quarter: quarterFormat,
+      year: yearFormat,
       // Nothing special for quarter or year pickers
     }, props.picker, dateFormat)
   }
-  return { format, showTime }
+  return { format }
 }
 
 const MLDatePicker = (props) => {
@@ -28,7 +29,7 @@ const MLDatePicker = (props) => {
       {(context) => {
         const contextProps = pickerPropsFromContext(context, props)
         return (
-          <DatePicker format={contextProps.format} {...props} showTime={contextProps.showTime}>
+          <DatePicker {...contextProps} {...props}>
             {props.children}
           </DatePicker>
         )
@@ -51,8 +52,9 @@ const MLRangePicker = (props) => {
   return (
     <MLConfigContext.Consumer>
       {(context) => {
+        const contextProps = pickerPropsFromContext(context, props)
         return (
-          <RangePicker {...pickerPropsFromContext(context, props)} {...props}>
+          <RangePicker {...contextProps} {...props}>
             {props.children}
           </RangePicker>
         )

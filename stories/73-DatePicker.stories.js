@@ -36,16 +36,12 @@ const configValues = {
   dateTimeFormat: ['YYYY-MMM-DD, HH:mm:ss', 'LT', 'LTS'],
   monthFormat: 'MMM-YY',
   weekFormat: 'YYYY-MMM-DD',
+  quarterFormat: 'YYYY-[Q]Q',
+  yearFormat: 'YYYY',
 }
 
 export const datePicker = () => {
   const props = {
-    picker: select('picker', {
-      date: 'date',
-      week: 'week',
-      month: 'month',
-      year: 'year',
-    }, 'date'),
     // locale: ('locale', default),
     size: select('size', {
       small: 'small',
@@ -73,7 +69,10 @@ export const datePicker = () => {
   }
   return (
     <MLConfigProvider {...configValues}>
-      <MLDatePicker {...props} />
+      <div>date: <MLDatePicker {...props} picker='date' /></div>
+      <div>week: <MLDatePicker {...props} picker='week' /></div>
+      <div>month: <MLDatePicker {...props} picker='month' /></div>
+      <div>year: <MLDatePicker {...props} picker='year' /></div>
     </MLConfigProvider>
   )
 }
@@ -84,6 +83,7 @@ export const rangePicker = () => {
       date: 'date',
       week: 'week',
       month: 'month',
+      quarter: 'quarter',
       year: 'year',
     }, 'date'),
     // locale: ('locale', default),
@@ -116,7 +116,10 @@ export const rangePicker = () => {
   }
   return (
     <MLConfigProvider {...configValues}>
-      <MLRangePicker {...props} />
+      <div>date: <MLRangePicker {...props} picker='date' /></div>
+      <div>week: <MLRangePicker {...props} picker='week' /></div>
+      <div>month: <MLRangePicker {...props} picker='month' /></div>
+      <div>year: <MLRangePicker {...props} picker='year' /></div>
     </MLConfigProvider>
   )
 }
