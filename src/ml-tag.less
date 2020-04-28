@@ -1,8 +1,17 @@
-// Make the clickable area of the close button wider
-.ant-tag .anticon-close {
-  margin: 0 -5px 0 0;
+@import './styles.less';
 
-  svg {
-    margin: 0 5px;
+.ant-tag {
+  // Make the clickable area of the close button wider
+  .anticon-close {
+    margin: 0 -5px 0 0;
+
+    svg {
+      margin: 0 5px;
+    }
+  }
+
+  // Add border to un-checked checkable tags
+  &.ant-tag-checkable {
+    border-color: @primary-color;
   }
 }
