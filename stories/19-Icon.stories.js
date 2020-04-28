@@ -1,10 +1,9 @@
 import React from 'react'
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs'
 import { MLIcon } from 'marklogic-ui-library'
-// import { AntIcons, FontAwesomeIcons } from 'marklogic-ui-library'
+import * as AntIcons from 'marklogic-ui-library/ml-icon/ant-icons'
+import * as FontAwesomeIcons from 'marklogic-ui-library/ml-icon/font-awesome-icons'
 import './19-Icon.css'
-const AntIcons = MLIcon
-const FontAwesomeIcons = {}
 
 export default {
   title: 'General/MLIcon',
