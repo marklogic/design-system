@@ -15,8 +15,6 @@ export default {
   },
 }
 
-// TODO: Flesh out knobs and stories when spec has been reviewed
-
 function filterUndefinedProps(props) {
   return Object.fromEntries(
     filter(
