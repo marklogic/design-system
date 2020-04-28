@@ -28,6 +28,8 @@ MLSelect.propTypes = {
   size: PropTypes.oneOf(['default', 'large', 'small']),
 }
 
+// NOTE: The following two are extensions of their base class to work around
+// Ant checking for the types of MLSelect's children to be only Option or OptGroup
 class MLOption extends Option {}
 
 MLOption.defaultProps = {}
