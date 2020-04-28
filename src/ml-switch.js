@@ -2,8 +2,8 @@ import { Switch } from 'antd'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const MLSwitch = (params) => {
-  return <Switch {...params} />
+const MLSwitch = (props) => {
+  return <Switch {...props} />
 }
 
 export const sizes = ['small', 'default']

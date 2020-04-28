@@ -10,8 +10,9 @@ export default {
 }
 
 export const Basic = () => {
-  return <MLSwitch
-    checked={boolean('Checked', true)}
-    size={radios('Size', sizes, 'small')}
-  />
+  return (
+    <MLSwitch
+      size={radios('Size', sizes, 'small')}
+    />
+  )
 }
