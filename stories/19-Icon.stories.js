@@ -3,6 +3,7 @@ import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs
 import { MLIcon } from 'marklogic-ui-library'
 // import { AntIcons, FontAwesomeIcons } from 'marklogic-ui-library'
 import './19-Icon.css'
+import { endsWith } from 'lodash-es'
 const AntIcons = MLIcon
 const FontAwesomeIcons = {}
 
@@ -59,7 +60,7 @@ const antIconSets = {}
 for (const variant of ['Filled', 'Outlined', 'TwoTone']) {
   antIconSets[variant] = {}
   for (const [key, value] of Object.entries(AntIcons)) {
-    if (_.endsWith(key, variant)) {
+    if (endsWith(key, variant)) {
       antIconSets[variant][key] = value
     }
   }
