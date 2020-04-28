@@ -79,7 +79,7 @@ MLRangePicker.defaultProps = {
 MLRangePicker.propTypes = {
   bordered: PropTypes.bool,
   placeholder: PropTypes.array,
-  separator: PropTypes.oneOf([PropTypes.string, PropTypes.node]),
+  separator: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   size: PropTypes.string,
 }
 
