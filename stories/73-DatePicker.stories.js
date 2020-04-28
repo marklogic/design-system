@@ -14,20 +14,6 @@ export default {
   },
 }
 
-const noopDateRender = (d) => <div>{d.date()}</div>
-const circleFirstDateRenderFn = (d) => {
-  const style = {}
-  if (d.date() === 1) {
-    style.border = '1px solid #1890ff'
-    style.borderRadius = '50%'
-  }
-  return (
-    <div className='ant-picker-cell-inner' style={style}>
-      {d.date()}
-    </div>
-  )
-}
-
 const disableOddDates = (d) => d.date() % 2 === 0
 
 const configValues = {
@@ -48,14 +34,8 @@ export const datePicker = () => {
       large: 'large',
     }, 'small'),
     bordered: boolean('bordered', true),
-    // style: object('style'),
-    // popupStyle: object('popupStyle'),
     autoFocus: boolean('autoFocus', false),
     disabled: boolean('disabled', false),
-    // dateRender: select('dateRender', {
-    //   None: noopDateRender,
-    //   'Bordered style': circleFirstDateRenderFn
-    // }, noopDateRender),
     disabledDate: select('disabledDate', {
       None: undefined,
       '(d) => d.date() % 2 === 0': disableOddDates,
@@ -85,14 +65,8 @@ export const rangePicker = () => {
       large: 'large',
     }, 'small'),
     bordered: boolean('bordered', true),
-    // style: object('style'),
-    // popupStyle: object('popupStyle'),
     autoFocus: boolean('autoFocus', false),
     disabled: boolean('disabled', false),
-    // dateRender: select('dateRender', {
-    //   None: noopDateRender,
-    //   'Bordered style': circleFirstDateRenderFn
-    // }, noopDateRender),
     disabledDate: select('disabledDate', {
       None: undefined,
       '(d) => d.date() % 2 === 0': disableOddDates,
