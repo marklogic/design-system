@@ -13,6 +13,8 @@ module.exports = override(
     {
       libraryName: 'marklogic-ui-library',
       libraryDirectory: 'src',
+      camel2DashComponentName: false,
+      style: true,
     },
   ]),
   // Required for using marklogic-ui-library
@@ -27,5 +29,8 @@ module.exports = override(
   // that needs compilation
   babelInclude([
     path.resolve(__dirname, 'src'),
+    /marklogic-ui-library/,
+    /ant/,
+    /node_modules/,
   ]),
 )
