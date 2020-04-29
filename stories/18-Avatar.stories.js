@@ -3,9 +3,21 @@ import { MLAvatar } from '@marklogic/design-system'
 import { text, withKnobs } from '@storybook/addon-knobs'
 
 export default {
-  title: 'MLAvatar',
+  title: 'Data Display/MLAvatar',
+  component: MLAvatar,
+  decorators: [withKnobs],
 }
 
-export const basic = () => <MLAvatar />
+export const Basic = () => <MLAvatar size={text('size')} />
 
-export const withInitials = () => <MLAvatar>DHS</MLAvatar>
+export const WithInitials = () => (
+  <MLAvatar size={text('size')}>
+    {text('childText', 'DHS')}
+  </MLAvatar>
+)
+export const WithImage = () => (
+  <MLAvatar
+    size={text('size')}
+    src={text('src', 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png')}
+  />
+)
