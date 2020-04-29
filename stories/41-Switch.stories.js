@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean, radios, withKnobs } from '@storybook/addon-knobs'
+import { radios, withKnobs } from '@storybook/addon-knobs'
 import { MLSwitch } from 'marklogic-ui-library'
 import { sizes } from 'marklogic-ui-library/ml-switch'
 
@@ -12,7 +12,7 @@ export default {
 export const Basic = () => {
   return (
     <MLSwitch
-      size={radios('Size', sizes, 'small')}
+      size={radios('size', sizes, 'small')}
     />
   )
 }
