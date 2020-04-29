@@ -8,7 +8,7 @@ import { DeleteOutlined } from 'marklogic-ui-library/ml-icon'
 const { MLPanel } = MLCollapse
 
 export default {
-  title: 'Data Display/Collapse',
+  title: 'Data Display/MLCollapse',
   decorators: [withKnobs],
   parameters: {
     info: {
