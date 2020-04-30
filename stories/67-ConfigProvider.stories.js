@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLConfigProvider, MLDatePicker } from '../src'
 import { withKnobs } from '@storybook/addon-knobs'
-import _ from 'lodash'
 
 export default {
   title: 'Other/MLConfigProvider',
