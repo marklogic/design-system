@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Tag } from 'antd'
+import './ml-tag.less'
+const { CheckableTag } = Tag
 
 const MLTag = (props) => {
   return (
@@ -9,5 +11,15 @@ const MLTag = (props) => {
     </Tag>
   )
 }
+
+const MLCheckableTag = (props) => {
+  return (
+    <CheckableTag {...props}>
+      {props.children}
+    </CheckableTag>
+  )
+}
+
+MLTag.MLCheckableTag = MLCheckableTag
 
 export default MLTag
