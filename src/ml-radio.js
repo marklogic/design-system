@@ -19,6 +19,8 @@ const MLGroup = (props) => (
   </Group>
 )
 
+MLGroup.displayName = 'MLRadioGroup'
+
 MLGroup.propTypes = {
 }
 
