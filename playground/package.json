@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "antd": "^4.0.4",
+    "antd": "^4.2.0",
     "marklogic-ui-library": "file:..",
     "prop-types": "^15.6.2",
     "react-scripts": "^3.3.0"
