@@ -1,6 +1,7 @@
 const { pascalCase, paramCase } = require('change-case')
 const fs = require('fs-extra')
 const path = require('path')
+const { exec } = require('child_process')
 
 const filesToMove = [
   'ml-alert.js',
@@ -31,7 +32,7 @@ const filesToMove = [
 ]
 
 const inputDir = path.resolve(__dirname, '../src')
-const outputDir = path.resolve(__dirname, '../es')
+const outputDir = path.resolve(__dirname, '../src')
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir)
 }
@@ -74,6 +75,7 @@ function writeStyleFiles(componentFile, componentDir, componentName, customTrans
   // }
 
   // Write the Component/style/index.less file
+  exec(`git mv ${oldStylePath} ${newStyleFile}`)
   fs.writeFileSync(newStyleFile, newStyleCode)
 
   const newStyleIndexJsCode = (
@@ -109,6 +111,8 @@ export default ${componentName}
   }
 
   // Write the Component/Component.js file
+
+  exec(`git mv ${componentPath} ${newComponentFile}`)
   if (!fs.existsSync(newComponentFile)) {
     fs.writeFileSync(newComponentFile, newComponentCode)
   }
@@ -145,13 +149,16 @@ for (const componentFile of filesToMove) {
 
   const oldComponentPath = path.resolve(inputDir, 'ml-icon')
   const newComponentPath = path.resolve(outputDir, 'MLIcon')
-  fs.copySync(
-    oldComponentPath,
-    newComponentPath,
-    { overwrite: true },
-  )
+
+  exec(`git mv ${oldComponentPath} ${newComponentPath}`)
+  // fs.copySync(
+  //   oldComponentPath,
+  //   newComponentPath,
+  //   { overwrite: true },
+  // )
 
   const newComponentIndexPath = path.resolve(newComponentPath, 'index.js')
+  exec(`git mv ${newComponentPath}/ml-icon.js ${newComponentIndexPath}`)
   fs.writeFileSync(
     newComponentIndexPath,
     fs.readFileSync(newComponentIndexPath).toString().replace("import '../ml-icon.less'", "import './style'"),
