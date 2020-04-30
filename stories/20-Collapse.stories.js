@@ -2,13 +2,12 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLCollapse } from 'marklogic-ui-library'
 import { withKnobs, array, boolean, text, optionsKnob as options } from '@storybook/addon-knobs'
-import './20-Collapse.css'
-import { DeleteOutlined } from '@ant-design/icons'
+import './20-Collapse.less'
+import { DeleteOutlined } from 'marklogic-ui-library/ml-icon'
 const { MLPanel } = MLCollapse
-DeleteOutlined.name = 'DeleteOutlined' // Hack to get it to render properly in the sample code
 
 export default {
-  title: 'Data Display/Collapse',
+  title: 'Data Display/MLCollapse',
   decorators: [withKnobs],
   parameters: {
     info: {
