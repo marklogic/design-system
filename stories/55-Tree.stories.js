@@ -1,9 +1,9 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs/react'
+import { withKnobs, object } from '@storybook/addon-knobs'
 import { MLTree } from 'marklogic-ui-library'
 
 export default {
-  title: 'MLTree',
+  title: 'Data Display/MLTree',
   component: MLTree,
   decorators: [withKnobs],
 }
@@ -51,4 +51,4 @@ const treeData = [
   },
 ]
 
-export const basic = () => <MLTree treeData={treeData} />
+export const basic = () => <MLTree treeData={object('treeData', treeData)} />
