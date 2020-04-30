@@ -3,7 +3,6 @@ import { action } from '@storybook/addon-actions'
 import MLPopconfirm from '../src/ml-popconfirm'
 import { message } from 'antd'
 import { withKnobs } from '@storybook/addon-knobs'
-import _ from 'lodash'
 
 export default {
   title: 'Feedback/MLPopconfirm',

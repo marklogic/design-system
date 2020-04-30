@@ -2,7 +2,6 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import MLPageHeader from '../src/ml-page-header'
 import { withKnobs } from '@storybook/addon-knobs'
-import _ from 'lodash'
 
 export default {
   title: 'Navigation/MLPageHeader',

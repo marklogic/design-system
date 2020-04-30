@@ -4,6 +4,7 @@ import { MLIcon } from 'marklogic-ui-library'
 import * as AntIcons from 'marklogic-ui-library/ml-icon/ant-icons'
 import * as FontAwesomeIcons from 'marklogic-ui-library/ml-icon/font-awesome-icons'
 import './19-Icon.css'
+import { endsWith } from 'lodash-es'
 
 export default {
   title: 'General/MLIcon',
@@ -58,7 +59,7 @@ const antIconSets = {}
 for (const variant of ['Filled', 'Outlined', 'TwoTone']) {
   antIconSets[variant] = {}
   for (const [key, value] of Object.entries(AntIcons)) {
-    if (_.endsWith(key, variant)) {
+    if (endsWith(key, variant)) {
       antIconSets[variant][key] = value
     }
   }
