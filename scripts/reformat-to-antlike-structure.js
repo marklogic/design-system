@@ -1,7 +1,7 @@
 const { pascalCase, paramCase } = require('change-case')
 const fs = require('fs-extra')
 const path = require('path')
-const { exec } = require('child_process')
+const { execSync } = require('child_process')
 
 const filesToMove = [
   'ml-alert.js',
@@ -75,8 +75,11 @@ function writeStyleFiles(componentFile, componentDir, componentName, customTrans
   // }
 
   // Write the Component/style/index.less file
-  exec(`git mv ${oldStylePath} ${newStyleFile}`)
-  fs.writeFileSync(newStyleFile, newStyleCode)
+  console.log(`git mv ${oldStylePath} ${newStyleFile}`)
+  if (fs.existsSync(oldStylePath)) {
+    execSync(`git mv ${oldStylePath} ${newStyleFile}`)
+  }
+  // fs.writeFileSync(newStyleFile, newStyleCode)
 
   const newStyleIndexJsCode = (
 `import 'antd/es/${paramCase(componentName).replace('ml-', '')}/style'
@@ -112,7 +115,8 @@ export default ${componentName}
 
   // Write the Component/Component.js file
 
-  exec(`git mv ${componentPath} ${newComponentFile}`)
+  console.log(`git mv ${componentPath} ${newComponentFile}`)
+  execSync(`git mv ${componentPath} ${newComponentFile}`)
   if (!fs.existsSync(newComponentFile)) {
     fs.writeFileSync(newComponentFile, newComponentCode)
   }
@@ -150,7 +154,8 @@ for (const componentFile of filesToMove) {
   const oldComponentPath = path.resolve(inputDir, 'ml-icon')
   const newComponentPath = path.resolve(outputDir, 'MLIcon')
 
-  exec(`git mv ${oldComponentPath} ${newComponentPath}`)
+  console.log(`git mv ${oldComponentPath} ${newComponentPath}`)
+  execSync(`git mv ${oldComponentPath} ${newComponentPath}`)
   // fs.copySync(
   //   oldComponentPath,
   //   newComponentPath,
@@ -158,7 +163,7 @@ for (const componentFile of filesToMove) {
   // )
 
   const newComponentIndexPath = path.resolve(newComponentPath, 'index.js')
-  exec(`git mv ${newComponentPath}/ml-icon.js ${newComponentIndexPath}`)
+  // execSync(`git mv ${newComponentPath}/ml-icon.js ${newComponentIndexPath}`)
   fs.writeFileSync(
     newComponentIndexPath,
     fs.readFileSync(newComponentIndexPath).toString().replace("import '../ml-icon.less'", "import './style'"),
