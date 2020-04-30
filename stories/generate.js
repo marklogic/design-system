@@ -23,7 +23,6 @@ const storyTemplate = (
 import { action } from '@storybook/addon-actions'
 import { ML${componentName} } from 'marklogic-ui-library'
 import { withKnobs } from '@storybook/addon-knobs'
-import _ from 'lodash'
 
 export default {
   title: '${storyTitle}',

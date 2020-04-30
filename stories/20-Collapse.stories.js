@@ -2,7 +2,6 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLCollapse } from 'marklogic-ui-library'
 import { withKnobs, array, boolean, text, optionsKnob as options } from '@storybook/addon-knobs'
-import _ from 'lodash'
 import './20-Collapse.css'
 import { DeleteOutlined } from '@ant-design/icons'
 const { MLPanel } = MLCollapse

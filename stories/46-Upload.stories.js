@@ -3,7 +3,6 @@ import { action } from '@storybook/addon-actions'
 import { MLUpload, MLButton, MLIcon } from '../src'
 import { message } from 'antd'
 import { withKnobs } from '@storybook/addon-knobs'
-import _ from 'lodash'
 
 export default {
   title: 'Data Entry/MLUpload',
