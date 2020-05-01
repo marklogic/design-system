@@ -1,10 +1,10 @@
 import React from 'react'
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs'
 import { MLIcon } from '@marklogic/design-system'
-// import { AntIcons, FontAwesomeIcons } from '@marklogic/design-system'
+import * as AntIcons from '@marklogic/design-system/ml-icon/ant-icons'
+import * as FontAwesomeIcons from '@marklogic/design-system/ml-icon/font-awesome-icons'
 import './19-Icon.css'
-const AntIcons = MLIcon
-const FontAwesomeIcons = {}
+import { endsWith } from 'lodash-es'
 
 export default {
   title: 'General/MLIcon',
@@ -59,7 +59,7 @@ const antIconSets = {}
 for (const variant of ['Filled', 'Outlined', 'TwoTone']) {
   antIconSets[variant] = {}
   for (const [key, value] of Object.entries(AntIcons)) {
-    if (_.endsWith(key, variant)) {
+    if (endsWith(key, variant)) {
       antIconSets[variant][key] = value
     }
   }

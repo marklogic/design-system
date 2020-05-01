@@ -1,5 +1,10 @@
 const path = require('path')
-const { override, fixBabelImports, babelInclude, addLessLoader } = require('customize-cra')
+const {
+  override,
+  fixBabelImports,
+  babelInclude,
+  addLessLoader,
+} = require('customize-cra')
 const themeVariables = require('@marklogic/design-system/src/theme-variables.json')
 
 module.exports = override(

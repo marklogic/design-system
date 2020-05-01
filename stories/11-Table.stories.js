@@ -2,7 +2,6 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLTable, MLIcon } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
-import _ from 'lodash'
 import { sampleBasicData, sampleNestedData } from './11-Table.sample-data.js'
 
 export default {

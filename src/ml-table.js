@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Descriptions, Table } from 'antd'
-import { cloneDeep, isUndefined, isArray, merge } from 'lodash-es'
+import { cloneDeep, merge } from 'lodash-es'
 import './ml-table.css'
 import { DownOutlined, RightOutlined } from './ml-icon'
 
@@ -92,8 +92,8 @@ class MLTable extends React.Component {
     }
     const restructuredColumns = columns.map((originalColumn) => {
       const restructuredColumn = cloneDeep(originalColumn)
-      if (!isUndefined(originalColumn.columns)) {
-        if (isUndefined(originalColumn.dataIndex)) {
+      if (originalColumn.columns !== undefined) {
+        if (originalColumn.dataIndex === undefined) {
           throw Error('dataIndex must be specified when nesting columns')
         }
         // If the column has sub-columns, add a toggle to the header
@@ -122,7 +122,7 @@ class MLTable extends React.Component {
 
     function restructureData(dataSource) {
       // TODO: Might restructure more things here; for now just wrap objects in arrays
-      return (isArray(dataSource) ? dataSource : [dataSource]).map((row) => {
+      return (Array.isArray(dataSource) ? dataSource : [dataSource]).map((row) => {
         const restructuredRow = {}
         for (const [key, value] of Object.entries(row)) {
           restructuredRow[key] = value
