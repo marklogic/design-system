@@ -3,7 +3,7 @@ import { MLProgress } from 'marklogic-ui-library'
 import { number, withKnobs, radios } from '@storybook/addon-knobs'
 
 export default {
-  component: 'MLProgress',
+  component: MLProgress,
   title: 'Feedback/MLProgress',
   decorators: [withKnobs],
 }
