@@ -8,10 +8,17 @@ export default {
   decorators: [withKnobs],
 }
 
-export const Basic = () => <MLAvatar size={text('size')} />
+/** Parse knob output to allow an integer or text. */
+function getSize() {
+  const val = text('size', 'small')
+  const parsed = parseInt(val)
+  return isNaN(parsed) ? val : parsed
+}
+
+export const Basic = () => <MLAvatar size={getSize()} />
 
 export const WithInitials = () => (
-  <MLAvatar size={text('size')}>
+  <MLAvatar size={text('size', 'small')}>
     {text('childText', 'DHS')}
   </MLAvatar>
 )
