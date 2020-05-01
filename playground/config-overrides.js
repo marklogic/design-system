@@ -8,19 +8,7 @@ const {
 const themeVariables = require('@marklogic/design-system/src/theme-variables.json')
 
 module.exports = override(
-  // Both of these are required for using @marklogic/design-system as an ES module
-  fixBabelImports('import', [
-    {
-      libraryName: 'antd',
-      libraryDirectory: 'es',
-      style: true, // This is required so that the less files from antd are included
-    },
-    {
-      libraryName: '@marklogic/design-system',
-      libraryDirectory: 'src',
-    },
-  ]),
-  // Required for using @marklogic/design-system
+  // Required for using marklogic-ui-library
   addLessLoader({
     javascriptEnabled: true,
     // This is how you change `less` theme variables
@@ -32,5 +20,6 @@ module.exports = override(
   // that needs compilation
   babelInclude([
     path.resolve(__dirname, 'src'),
+    /marklogic-ui-library/, // Required for the library to compile
   ]),
 )

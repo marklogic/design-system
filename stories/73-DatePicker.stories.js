@@ -1,8 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLDatePicker } from '@marklogic/design-system'
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs'
-import _ from 'lodash'
 import { withKnobs, boolean, select, text, array } from '@storybook/addon-knobs'
 const { MLRangePicker } = MLDatePicker
 

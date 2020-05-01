@@ -18,20 +18,21 @@ const configValues = {
 }
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <div>
         <MLConfigProvider {...configValues}>
           <MLLayout>
             <MLLayout.MLHeader>Header</MLLayout.MLHeader>
-            <MLDatePicker />
             <MLLayout.MLContent>
               <MLButton type='primary'>Test</MLButton>
+              <MLButton type='highlight'>Test</MLButton>
               <MLIcon.Route />
               <MLIcon.CheckCircleFilled />
               <div>
                 <MLSlider tooltipPlacement='top' />
               </div>
+              <MLDatePicker />
             </MLLayout.MLContent>
             <MLDatePicker picker='week' />
             <MLLayout.MLFooter year='2019' />
