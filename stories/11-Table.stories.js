@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLTable, MLIcon } from 'marklogic-ui-library'
-import { withKnobs } from '@storybook/addon-knobs'
+import { withKnobs, radios } from '@storybook/addon-knobs'
 import _ from 'lodash'
 import { sampleBasicData, sampleNestedData } from './11-Table.sample-data.js'
 import { DownOutlined, RightOutlined } from 'marklogic-ui-library/ml-icon'
@@ -18,6 +18,7 @@ export default {
 
 export const basic = () => {
   const props = {
+    size: radios('size', ['default', 'middle', 'small'], 'small'),
     dataSource: sampleBasicData.dataSource,
     columns: sampleBasicData.columns,
   }
@@ -26,6 +27,7 @@ export const basic = () => {
 
 export const embeddedTables = () => {
   const props = {
+    size: radios('size', ['default', 'middle', 'small'], 'small'),
     dataSource: sampleNestedData.dataSource,
     columns: sampleNestedData.columns,
   }
@@ -91,6 +93,7 @@ export const rowNestedTable = () => {
   return (
     <div>
       <MLTable
+        size={ radios('size', ['default', 'middle', 'small'], 'small')}
         dataSource={dataSource}
         columns={abColumns}
         expandable={expandable}
@@ -142,6 +145,7 @@ export const treeData = () => {
   return (
     <div>
       <MLTable
+        size={ radios('size', ['default', 'middle', 'small'], 'small')}
         dataSource={dataSource}
         columns={abColumns}
       />
