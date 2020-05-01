@@ -1,12 +1,11 @@
 @import './styles.less';
 
 .ml-collapse {
-  &.ant-collapse > .ant-collapse-item > .ant-collapse-header {
-    color: @primary-color;
-  }
-
-  &.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
-    color: @primary-color;
+  &.ant-collapse > .ant-collapse-item:not(.ant-collapse-item-disabled) > .ant-collapse-header {
+    &,
+    .ant-collapse-arrow {
+      color: @primary-color;
+    }
   }
 
   &.ant-collapse-borderless, &.ant-collapse {
@@ -15,9 +14,5 @@
 
   &.ant-collapse .ant-collapse-item:last-child {
     border-bottom: none;
-  }
-
-  .ant-collapse-item-disabled {
-    color: @disabled-color;
   }
 }
