@@ -41,9 +41,8 @@ npm install -g yarn
 # Install Dependencies
 npm run install:all
 
-# Start Rollup (listens for changes for components in src folder)
-# (run from main repo directory):
-yarn run start
+# Start Storybook:
+yarn run storybook
 
 # In another terminal: Start Playground (import and test new components here)
 cd playground; yarn run start
