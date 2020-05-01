@@ -8,7 +8,7 @@ import { UserOutlined } from '@ant-design/icons'
  */
 const MLAvatar = (props) => {
   return (
-    <Avatar icon={props.children || props.src ? null : <UserOutlined />} {...props}>
+    <Avatar icon={(props.children || props.src) ? null : <UserOutlined />} {...props}>
       {props.children}
     </Avatar>
   )
