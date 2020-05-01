@@ -1,13 +1,23 @@
 @import './styles.less';
 
-.ant-collapse > .ant-collapse-item > .ant-collapse-header {
-  color: @primary-color;
-}
+.ml-collapse {
+  &.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    color: @primary-color;
+  }
 
-.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
-  color: @primary-color;
-}
+  &.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+    color: @primary-color;
+  }
 
-.ant-collapse-borderless, .ant-collapse {
-  background-color: white;
+  &.ant-collapse-borderless, &.ant-collapse {
+    background-color: white;
+  }
+
+  &.ant-collapse .ant-collapse-item:last-child {
+    border-bottom: none;
+  }
+
+  .ant-collapse-item-disabled {
+    color: @disabled-color;
+  }
 }
