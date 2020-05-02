@@ -7,7 +7,7 @@ pipeline{
 	stages{
 	  stage('Build'){
 	    steps{
-	      sh 'npm install;npm run build;npm run build-storybook;'
+	      sh 'yarn install; yarn run build-storybook;'
 	    }
 
 	  }
