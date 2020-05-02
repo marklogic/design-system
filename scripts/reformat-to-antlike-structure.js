@@ -17,7 +17,7 @@ const filesToMove = [
   'ml-divider.js',
   'ml-input-number.js',
   'ml-layout.js',
-  'ml-mention.js',
+  'ml-mentions.js',
   'ml-page-header.js',
   'ml-popconfirm.js',
   'ml-radio.js',
@@ -40,6 +40,8 @@ if (!fs.existsSync(outputDir)) {
 function transformComponentCode(code) {
   return code.replace(/import '([./a-zA-Z-]+).(less|css)'/, "import './style'")
     .replace("'./ml-icon'", "'../MLIcon'")
+    .replace(/from '.\/ml-config-provider'/g, "from '../MLConfigProvider'")
+    // .replace("export default MLConfigProvider\n", "export default MLConfigProvider\nexport {MLConfigContext} from './MLConfigProvider'")
 }
 
 function transformStyleCode(oldStyleCode) {
@@ -79,7 +81,7 @@ function writeStyleFiles(componentFile, componentDir, componentName, customTrans
   if (fs.existsSync(oldStylePath)) {
     execSync(`git mv ${oldStylePath} ${newStyleFile}`)
   }
-  // fs.writeFileSync(newStyleFile, newStyleCode)
+  fs.writeFileSync(newStyleFile, newStyleCode)
 
   const newStyleIndexJsCode = (
 `import 'antd/es/${paramCase(componentName).replace('ml-', '')}/style'
@@ -98,11 +100,18 @@ function writeComponentFiles(componentName, componentPath, componentDir) {
   const oldComponentCode = fs.readFileSync(componentPath).toString()
   const newComponentCode = transformComponentCode(oldComponentCode)
 
-  const newComponentIndexCode = (
+  let newComponentIndexCode = (
     `import ${componentName} from './${componentName}'
 export default ${componentName}
 `
   )
+
+  if (componentName === 'MLConfigProvider') {
+    newComponentIndexCode += (
+`export { MLConfigContext } from './MLConfigProvider'
+`
+    )
+  }
 
   if (!fs.existsSync(componentDir)) {
     fs.mkdirSync(componentDir)
@@ -117,9 +126,7 @@ export default ${componentName}
 
   console.log(`git mv ${componentPath} ${newComponentFile}`)
   execSync(`git mv ${componentPath} ${newComponentFile}`)
-  if (!fs.existsSync(newComponentFile)) {
-    fs.writeFileSync(newComponentFile, newComponentCode)
-  }
+  fs.writeFileSync(newComponentFile, newComponentCode)
 }
 
 for (const componentFile of filesToMove) {

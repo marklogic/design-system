@@ -13,7 +13,7 @@ import MLDivider from './ml-divider'
 import * as MLIcon from './ml-icon'
 import MLInputNumber from './ml-input-number'
 import MLLayout from './ml-layout'
-import MLMention from './ml-mention'
+import MLMentions from './ml-mentions'
 import MLPageHeader from './ml-page-header'
 import MLPopconfirm from './ml-popconfirm'
 import MLRadio from './ml-radio'
@@ -41,7 +41,7 @@ export {
   MLIcon,
   MLInputNumber,
   MLLayout,
-  MLMention,
+  MLMentions,
   MLPageHeader,
   MLPopconfirm,
   MLRadio,
