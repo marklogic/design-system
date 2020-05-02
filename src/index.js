@@ -1,6 +1,5 @@
-import './styles.less'
 import MLAlert from './MLAlert'
-import MLAutoComplete from './MLAutocomplete'
+import MLAutoComplete from './MLAutoComplete'
 import MLBreadcrumb from './MLBreadcrumb'
 import MLButton from './MLButton'
 import MLCarousel from './MLCarousel'
