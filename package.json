@@ -5,9 +5,7 @@
   "version": "0.2.2",
   "license": "Apache-2.0",
   "repository": "http://github.com/marklogic/design-system",
-  "main": "dist/index.js",
   "module": "src/index.js",
-  "jsnext:main": "dist/index.es.js",
   "engines": {
     "node": ">=10",
     "npm": ">=5"
@@ -78,8 +76,7 @@
     "react-scripts": "^3.3.0"
   },
   "files": [
-    "src",
-    "dist"
+    "src"
   ],
   "dependencies": {
     "@ant-design/icons": "^4.0.3",
