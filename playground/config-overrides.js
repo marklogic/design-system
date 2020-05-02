@@ -1,7 +1,6 @@
 const path = require('path')
 const {
   override,
-  fixBabelImports,
   babelInclude,
   addLessLoader,
 } = require('customize-cra')
@@ -20,6 +19,6 @@ module.exports = override(
   // that needs compilation
   babelInclude([
     path.resolve(__dirname, 'src'),
-    /marklogic-ui-library/, // Required for the library to compile
+    /marklogic\/design-system/, // Required for the library to compile
   ]),
 )

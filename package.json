@@ -6,10 +6,10 @@
   "license": "Apache-2.0",
   "repository": "http://github.com/marklogic/design-system",
   "main": "dist/index.js",
-  "module": "es/index.js",
+  "module": "src/index.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {
-    "node": ">=8.16",
+    "node": ">=10",
     "npm": ">=5"
   },
   "sideEffects": [
@@ -22,7 +22,7 @@
     "webpack": "webpack",
     "predeploy": "cd playground && yarn && npm run build",
     "deploy": "gh-pages -d playground/build",
-    "install:all": "(yarn link; pushd playground; yarn link \"@marklogic/design-system\"; popd); (yarn); (cd playground && yarn)",
+    "install:all": "(yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn)",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o storybook-dist"
   },
