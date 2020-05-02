@@ -1,8 +1,8 @@
 import React from 'react'
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs'
 import { MLIcon } from '@marklogic/design-system'
-import * as AntIcons from '@marklogic/design-system/ml-icon/ant-icons'
-import * as FontAwesomeIcons from '@marklogic/design-system/ml-icon/font-awesome-icons'
+import * as AntIcons from '@marklogic/design-system/MLIcon/ant-icons'
+import * as FontAwesomeIcons from '@marklogic/design-system/MLIcon/font-awesome-icons'
 import './19-Icon.css'
 import { endsWith } from 'lodash-es'
 

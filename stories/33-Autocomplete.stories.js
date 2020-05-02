@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import MLAutoComplete from '@marklogic/design-system/ml-autocomplete'
+import { MLAutoComplete } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
 
 export default {

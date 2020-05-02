@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLTooltip from '@marklogic/design-system/ml-tooltip'
+import { MLTooltip } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
 
 export default {
