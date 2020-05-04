@@ -17,6 +17,8 @@ module.exports = override(
   }),
   babelInclude([
     path.resolve(__dirname, 'src'),
-    /marklogic\/design-system/, // Required for @marklogic/design-system to compile
+    /design-system/, // Required for @marklogic/design-system to compile
+    // In a real environment (where node_modules paths are guaranteed),
+    // you may use /@marklogic\/design-system/ for specificity
   ]),
 )
