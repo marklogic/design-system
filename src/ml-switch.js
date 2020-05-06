@@ -14,7 +14,6 @@ MLSwitch.propTypes = {
 }
 
 MLSwitch.defaultProps = {
-  checked: false,
   size: 'small',
 }
 
