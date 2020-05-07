@@ -1,8 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLCarousel from '../src/ml-carousel'
+import { MLCarousel } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
-import _ from 'lodash'
 import './49-Carousel.less'
 
 export default {

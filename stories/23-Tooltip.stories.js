@@ -1,8 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLTooltip from '../src/ml-tooltip'
+import { MLTooltip } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
-import _ from 'lodash'
 
 export default {
   title: 'Data Display/MLTooltip',
