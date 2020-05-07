@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLTable, MLIcon, MLButton } from '@marklogic/design-system'
+import { MLTable, MLButton } from '@marklogic/design-system'
 import { withKnobs, radios } from '@storybook/addon-knobs'
 import { sampleBasicData, sampleNestedData } from './11-Table.sample-data.js'
 
@@ -30,7 +30,13 @@ export const embeddedTables = () => {
     columns: sampleNestedData.columns,
   }
   // TODO: Handle onChange for nested tables, and figure out a way to differentiate the callback values
-  return (<MLTable {...props} onChange={action('onChange')} />)
+  return (
+    <MLTable
+      scroll={{ x: true }}
+      {...props}
+      onChange={action('onChange')}
+    />
+  )
 }
 
 const pureLessThanSorter = (a, b) => (a < b) ? -1 : (a > b) ? 1 : 0
@@ -59,6 +65,7 @@ export const rowNestedTable = () => {
   ]
   const expandedRowRender = (row) => (
     <MLTable
+      scroll={{ x: true }}
       key={row.key}
       dataSource={row.subtableDataSource}
       columns={abColumns}
@@ -89,15 +96,18 @@ export const rowNestedTable = () => {
   return (
     <div>
       <MLTable
+        scroll={{ x: true }}
         size={size}
         dataSource={dataSource}
         columns={abColumns}
         expandedRowRender={expandedRowRender}
       />
-      <div style={{ marginTop: 20 }}>
-        This is the contents of expandedRowRender, so the source shows up below (to work around the noRefCheck):
+      <div style={{ display: 'none' }}>
+        Below is the contents of the expandedRowRender prop function that is
+        displayed above as just "noRefCheck". To implement this, provide a
+        function that returns a value like the below, for the expandedRowRender prop.
+        {expandedRowRender(dataSource[0])}
       </div>
-      {expandedRowRender(dataSource[0])}
     </div>
   )
 }
@@ -124,6 +134,7 @@ export const rowNestedTableWithButtons = () => {
         <MLButton>Example Button</MLButton>
       </div>
       <MLTable
+        scroll={{ x: true }}
         key={row.key}
         dataSource={row.subtableDataSource}
         columns={abColumns}
@@ -158,6 +169,7 @@ export const rowNestedTableWithButtons = () => {
         <MLButton>Example Button</MLButton>
       </div>
       <MLTable
+        scroll={{ x: true }}
         size={size}
         dataSource={dataSource}
         columns={abColumns}
@@ -213,6 +225,7 @@ export const treeData = () => {
   return (
     <div>
       <MLTable
+        scroll={{ x: true }}
         size={radios('size', ['default', 'middle', 'small'], 'middle')}
         dataSource={dataSource}
         columns={abColumns}

@@ -51,10 +51,6 @@ class MLTable extends React.Component {
     onChange: PropTypes.func,
   }
 
-  static defaultProps = {
-    showBody: true,
-  }
-
   constructor(props) {
     super(props)
     this.state = this.getInitialColumnExpandedStates()
@@ -87,7 +83,6 @@ class MLTable extends React.Component {
 
   render() {
     const { showBody, dataSource, columns } = this.props
-    console.log(showBody)
     if (!showBody) {
       return <MLHeaderTable columns={columns} />
     }
@@ -171,6 +166,11 @@ class MLTable extends React.Component {
       />
     )
   }
+}
+
+MLTable.defaultProps = {
+  size: 'middle',
+  showBody: true,
 }
 
 export default MLTable

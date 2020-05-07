@@ -11,29 +11,34 @@
     margin-left: -16px;
   }
 
-  .ant-table-expanded-row .ml-table {
-    margin-left: 32px
-  }
-
-  .ml-header-table, .ml-table {
-    margin: -16px;
+  .ant-table-row > td {
+    .ml-header-table, .ml-table .ant-table {
+      margin: -16px;
+    }
   }
 
   .ant-table-middle {
-    .ml-header-table, .ml-table {
-      margin: -12px -8px;
+    .ant-table-row > td {
+      .ml-header-table, .ml-table .ant-table {
+        margin: -12px -8px;
+      }
     }
   }
 
   .ant-table-small {
-    .ml-header-table, .ml-table {
-      margin: -8px;
+    .ant-table-row > td {
+      .ml-header-table, .ml-table .ant-table {
+        margin: -8px;
+      }
     }
   }
 
   // If the row-nested table has anything around it, don't set its margin-top
-  .ant-table-expanded-row td * .ml-table, .ant-table-expanded-row .ml-table:not(first-child) {
-    margin-top: 0;
+  .ant-table-expanded-row > td > .ml-table:not(first-child), .ant-table-expanded-row > td > * .ml-table {
+    .ant-table {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 
   .ml-header-table .ant-descriptions-item-label + td {
