@@ -110,3 +110,17 @@ export const AlertModals = () => {
     </div>
   )
 }
+
+export const Position = () => {
+  const { visible, toggle, hide } = useVisible()
+  return (
+    <DraggableModalProvider>
+      <MLButton onClick={toggle}>Position Demo</MLButton>
+      <p>Note: modals will be constrained to this story's bounding box.</p>
+      <div>
+        <MLModal visible={visible} onOk={hide} onCancel={hide}>default</MLModal>
+        <MLModal visible={visible} onOk={hide} onCancel={hide} style={{ position: 'absolute', bottom: 0 }}>bottom</MLModal>
+      </div>
+    </DraggableModalProvider>
+  )
+}
