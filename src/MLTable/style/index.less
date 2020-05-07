@@ -31,6 +31,11 @@
     }
   }
 
+  // If the row-nested table has anything around it, don't set its margin-top
+  .ant-table-expanded-row td * .ml-table, .ant-table-expanded-row .ml-table:not(first-child) {
+    margin-top: 0;
+  }
+
   .ml-header-table .ant-descriptions-item-label + td {
     display: none;
   }

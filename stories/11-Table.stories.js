@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLTable, MLIcon } from '@marklogic/design-system'
+import { MLTable, MLIcon, MLButton } from '@marklogic/design-system'
 import { withKnobs, radios } from '@storybook/addon-knobs'
 import { sampleBasicData, sampleNestedData } from './11-Table.sample-data.js'
 
@@ -42,7 +42,7 @@ const dateSorter = extractSortColumnDecorator((a, b) => {
 })
 
 export const rowNestedTable = () => {
-  const size = radios('size', ['default', 'middle', 'small'], 'middle');
+  const size = radios('size', ['default', 'middle', 'small'], 'middle')
   const abColumns = [
     {
       title: 'A',
@@ -88,6 +88,75 @@ export const rowNestedTable = () => {
   ]
   return (
     <div>
+      <MLTable
+        size={size}
+        dataSource={dataSource}
+        columns={abColumns}
+        expandedRowRender={expandedRowRender}
+      />
+      <div style={{ marginTop: 20 }}>
+        This is the contents of expandedRowRender, so the source shows up below (to work around the noRefCheck):
+      </div>
+      {expandedRowRender(dataSource[0])}
+    </div>
+  )
+}
+
+export const rowNestedTableWithButtons = () => {
+  const size = radios('size', ['default', 'middle', 'small'], 'middle')
+  const abColumns = [
+    {
+      title: 'A',
+      dataIndex: 'a',
+      key: 'a',
+      sorter: lessThanSorter('a'),
+    },
+    {
+      title: 'B',
+      dataIndex: 'b',
+      key: 'b',
+      sorter: lessThanSorter('b'),
+    },
+  ]
+  const expandedRowRender = (row) => (
+    <div>
+      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <MLButton>Add</MLButton>
+      </div>
+      <MLTable
+        key={row.key}
+        dataSource={row.subtableDataSource}
+        columns={abColumns}
+        showHeader={true}
+        size={size}
+      />
+    </div>
+  )
+  const dataSource = [
+    {
+      a: 'Thing 1',
+      b: 'Extra data',
+      key: 1,
+      subtableDataSource: [
+        { a: 'Subtable Thing 1', b: 'Subtable extra data' },
+        { a: 'Subtable Thing 2', b: 'Subtable extra data' },
+      ],
+    },
+    {
+      a: 'Thing 2',
+      b: 'Extra data',
+      key: 2,
+      subtableDataSource: [
+        { a: 'Subtable Thing 1', b: 'Subtable extra data' },
+        { a: 'Subtable Thing 2', b: 'Subtable extra data' },
+      ],
+    },
+  ]
+  return (
+    <div>
+      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <MLButton>Add</MLButton>
+      </div>
       <MLTable
         size={size}
         dataSource={dataSource}
