@@ -26,8 +26,8 @@ const MLConfigProvider = (props) => {
 MLConfigProvider.defaultProps = {
   dateFormat: 'YYYY-MMM-DD',
   dateTimeFormat: 'YYYY-MMM-DD, HH:mm:ss',
-  monthFormat: 'MMM-YY',
-  weekFormat: 'YYYY-MMM-DD',
+  monthFormat: 'YYYY-MM',
+  weekFormat: 'YYYY-wo',
   yearFormat: 'YYYY',
 }
 

@@ -17,8 +17,8 @@ const configValues = {
   dateFormat: ['YYYY-MMM-DD', 'MM/DD/YYYY', 'M/D/YY'], // Default for all dates, and datePicker
   timeFormat: ['HH:mm:ss'],
   dateTimeFormat: ['YYYY-MMM-DD, HH:mm:ss', 'LT', 'LTS'], // default for all dates with times, and datePicker with times
-  monthFormat: 'MMM-YY', // default for datePicker month mode
-  weekFormat: 'YYYY-MMM-DD', // default for datePicker week mode
+  monthFormat: 'YYYY-MM', // default for datePicker month mode
+  weekFormat: 'YYYY-wo', // default for datePicker week mode
 }
 
 export const basic = () => {
