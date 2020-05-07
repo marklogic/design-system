@@ -42,6 +42,7 @@ const dateSorter = extractSortColumnDecorator((a, b) => {
 })
 
 export const rowNestedTable = () => {
+  const size = radios('size', ['default', 'middle', 'small'], 'middle');
   const abColumns = [
     {
       title: 'A',
@@ -62,6 +63,7 @@ export const rowNestedTable = () => {
       dataSource={row.subtableDataSource}
       columns={abColumns}
       showHeader={true}
+      size={size}
     />
   )
   const dataSource = [
@@ -87,7 +89,7 @@ export const rowNestedTable = () => {
   return (
     <div>
       <MLTable
-        size={radios('size', ['default', 'middle', 'small'], 'middle')}
+        size={size}
         dataSource={dataSource}
         columns={abColumns}
         expandedRowRender={expandedRowRender}

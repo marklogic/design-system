@@ -115,6 +115,7 @@ class MLTable extends React.Component {
             columns={originalColumn.columns}
             dataSource={record[originalColumn.dataIndex]}
             showBody={this.state.columnExpandedStates[originalColumn.dataIndex]}
+            size={this.props.size}
           />
         )
       }
