@@ -163,10 +163,13 @@ export const rowNestedTableWithButtons = () => {
         columns={abColumns}
         expandedRowRender={expandedRowRender}
       />
-      <div style={{ marginTop: 20 }}>
-        This is the contents of expandedRowRender, so the source shows up below (to work around the noRefCheck):
+      <div style={{ display: 'none' }}>
+        Below is the contents of the expandedRowRender prop function that is
+        displayed above as just "noRefCheck". To implement this, provide a
+        function that returns a value like the below, for the expandedRowRender prop.
+        {expandedRowRender(dataSource[0])}
       </div>
-      {expandedRowRender(dataSource[0])}
+
     </div>
   )
 }
