@@ -12,7 +12,8 @@ import MLDivider from './MLDivider'
 import * as MLIcon from './MLIcon'
 import MLInputNumber from './MLInputNumber'
 import MLLayout from './MLLayout'
-import MLMentions from './MLMentions'
+import MLMention from './MLMentions'
+import MLModal from './MLModal'
 import MLPageHeader from './MLPageHeader'
 import MLPopconfirm from './MLPopconfirm'
 import MLProgress from './MLProgress'
@@ -42,7 +43,8 @@ export {
   MLIcon,
   MLInputNumber,
   MLLayout,
-  MLMentions,
+  MLMention,
+  MLModal,
   MLPageHeader,
   MLPopconfirm,
   MLProgress,
