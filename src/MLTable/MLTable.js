@@ -57,17 +57,17 @@ class MLTable extends React.Component {
 
   constructor(props) {
     super(props)
-    this.setColumnExpandedStates()
+    this.state = this.getInitialColumnExpandedStates()
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.columns !== this.props.columns) {
-      this.setColumnExpandedStates()
+      this.setState(this.getInitialColumnExpandedStates())
     }
   }
 
-  setColumnExpandedStates() {
-    this.state = {
+  getInitialColumnExpandedStates() {
+    return {
       columnExpandedStates: Object.fromEntries(this.props.columns.map((column) => (
         [column.dataIndex, false]
       ))),
@@ -135,43 +135,36 @@ class MLTable extends React.Component {
     const restructuredData = restructureData(dataSource)
 
     // Determine how to modify the expand icon based on children and nested tables
-    const { expandable = {} } = this.props
-    const { rowExpandable = () => false } = expandable
     const hasTreeData = dataSource.some((row) => (row.children !== undefined))
-    const hasNestedTables = dataSource.some((row) => (rowExpandable(row)))
+    const hasNestedTables = (this.props.expandedRowRender !== undefined)
 
-    const restructuredExpandable = merge(
-      {
-        expandIcon: ({ expanded, onExpand, record }) => {
-          if (!hasTreeData && !hasNestedTables) {
-            // No rows will have an icon, so don't add spacers
-            return null
-          }
-          const showIcon = record.children || rowExpandable(record)
-          return (
-            <button
-              style={{ cursor: showIcon ? 'pointer' : 'inherit' }}
-              className='ant-table-row-expand-icon ant-table-row-expand-icon-spaced'
-            >
-              {!showIcon ? null : (
-                expanded ? (
-                  <DownOutlined onClick={e => onExpand(record, e)} />
-                ) : (
-                  <RightOutlined onClick={e => onExpand(record, e)} />
-                )
-              )}
-            </button>)
-        },
-      },
-      this.props.expandable,
-    )
+    const restructuredExpandIcon = ({ expanded, onExpand, record }) => {
+      if (!hasTreeData && !hasNestedTables) {
+        // No rows will have an icon, so don't add spacers
+        return null
+      }
+      const showIcon = record.children || hasNestedTables
+      return (
+        <div
+          style={{ cursor: showIcon ? 'pointer' : 'inherit', width: '20px', display: 'inline-block' }}
+          // className='ant-table-row-expand-icon ant-table-row-expand-icon-spaced'
+        >
+          {!showIcon ? null : (
+            expanded ? (
+              <DownOutlined onClick={e => onExpand(record, e)} />
+            ) : (
+              <RightOutlined onClick={e => onExpand(record, e)} />
+            )
+          )}
+        </div>)
+    }
 
     return (
       <Table
         className='ml-table'
         pagination={{ hideOnSinglePage: true }}
         {...this.props} // This is positioned here so the above props can be overwritten if desired
-        expandable={restructuredExpandable}
+        expandIcon={restructuredExpandIcon}
         dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
         columns={restructuredColumns}
       />

@@ -4,7 +4,7 @@ const {
   babelInclude,
   addLessLoader,
 } = require('customize-cra')
-const themeVariables = require('@marklogic/design-system/src/theme-variables.json')
+const themeVariables = require('../src/theme-variables.json')
 
 module.exports = override(
   // Required for using marklogic-ui-library

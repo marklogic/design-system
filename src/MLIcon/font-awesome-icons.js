@@ -5,18 +5,6 @@ import * as faIcons from '@fortawesome/free-solid-svg-icons'
 
 import { createWrappedMLIcon } from './icon-wrappers'
 
-// import { faRoute, faBook } from '@fortawesome/free-solid-svg-icons'
-// import {IconDefinition} from "@fortawesome/fontawesome-common-types";
-// import { config as FontAwesomeConfig } from '@fortawesome/fontawesome-svg-core'
-
-// const FontAwesomeOriginalIcons = { faRoute, faBook }
-// const FontAwesomeOriginalIcons = { }
-
-// const FontAwesomeIcons = {}
-
-// export const Route = wrapFontAwesomeIcon(faIcons.faRoute)
-// export const Book = wrapFontAwesomeIcon(faIcons.faBook)
-
 const wrapFontAwesomeIcon = (faIcon) => {
   const componentFn = (props) => {
     return (

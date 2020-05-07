@@ -79,11 +79,11 @@
     "src"
   ],
   "dependencies": {
-    "@ant-design/icons": "^4.0.3",
-    "@fortawesome/fontawesome-svg-core": "^1.2.27",
-    "@fortawesome/free-solid-svg-icons": "^5.12.1",
-    "@fortawesome/react-fontawesome": "^0.1.9",
-    "antd": "^4.0.4",
+    "@ant-design/icons": "^4.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "antd": "^3.26.13",
     "lodash-es": "^4",
     "prop-types": "^15.7.2"
   },

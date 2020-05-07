@@ -5,7 +5,7 @@ import { withKnobs, radios } from '@storybook/addon-knobs'
 import { sampleBasicData, sampleNestedData } from './11-Table.sample-data.js'
 
 export default {
-  title: 'Data Display/Table',
+  title: 'Data Display/MLTable',
   decorators: [withKnobs],
   parameters: {
     info: {
@@ -84,17 +84,13 @@ export const rowNestedTable = () => {
       ],
     },
   ]
-  const expandable = {
-    expandedRowRender,
-    rowExpandable: () => true,
-  }
   return (
     <div>
       <MLTable
-        size={ radios('size', ['default', 'middle', 'small'], 'small')}
+        size={radios('size', ['default', 'middle', 'small'], 'middle')}
         dataSource={dataSource}
         columns={abColumns}
-        expandable={expandable}
+        expandedRowRender={expandedRowRender}
       />
       <div style={{ marginTop: 20 }}>
         This is the contents of expandedRowRender, so the source shows up below (to work around the noRefCheck):
@@ -143,7 +139,7 @@ export const treeData = () => {
   return (
     <div>
       <MLTable
-        size={ radios('size', ['default', 'middle', 'small'], 'small')}
+        size={radios('size', ['default', 'middle', 'small'], 'middle')}
         dataSource={dataSource}
         columns={abColumns}
       />
