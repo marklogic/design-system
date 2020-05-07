@@ -135,7 +135,7 @@ class MLTable extends React.Component {
     const restructuredData = restructureData(dataSource)
 
     // Determine how to modify the expand icon based on children and nested tables
-    const hasTreeData = dataSource.some((row) => (row.children !== undefined))
+    const hasTreeData = restructuredData.some((row) => (row.children !== undefined))
     const hasNestedTables = (this.props.expandedRowRender !== undefined)
 
     const restructuredExpandIcon = ({ expanded, onExpand, record }) => {

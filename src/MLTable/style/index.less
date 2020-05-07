@@ -15,16 +15,20 @@
     margin-left: 32px
   }
 
-  .ml-header-table {
+  .ml-header-table, .ml-table {
     margin: -16px;
   }
 
-  .ant-table-middle .ml-header-table {
-    margin: -12px -8px;
+  .ant-table-middle {
+    .ml-header-table, .ml-table {
+      margin: -12px -8px;
+    }
   }
 
-  .ant-table-small .ml-header-table {
-    margin: -8px;
+  .ant-table-small {
+    .ml-header-table, .ml-table {
+      margin: -8px;
+    }
   }
 
   .ml-header-table .ant-descriptions-item-label + td {
