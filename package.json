@@ -20,7 +20,7 @@
     "webpack": "webpack",
     "predeploy": "cd playground && yarn && npm run build",
     "deploy": "gh-pages -d playground/build",
-    "install:all": "(yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn)",
+    "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn)",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o storybook-dist"
   },
