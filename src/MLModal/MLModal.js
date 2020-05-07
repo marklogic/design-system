@@ -1,18 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Modal } from 'antd'
+import { DraggableModal } from 'ant-design-draggable-modal'
 
-const MLModal = (props) => {
-  return (
-    <Modal {...props}>{props.children}</Modal>
-  )
-}
-
-MLModal.propTypes = {
-  children: PropTypes.node,
-}
-
-MLModal.defaultProps = {
-}
+const MLModal = DraggableModal
 
 export default MLModal

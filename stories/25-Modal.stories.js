@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { MLModal, MLButton } from '@marklogic/design-system'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
-import { Modal } from 'antd'
+import {
+  DraggableModalProvider,
+} from 'ant-design-draggable-modal'
 
 export default {
   title: 'Feedback/MLModal',
@@ -9,27 +11,35 @@ export default {
   decorators: [withKnobs],
 }
 
-export const Basic = () => {
+function useVisible() {
   const [visible, setVisible] = useState(false)
+  const toggle = () => setVisible(!visible)
+  const show = () => setVisible(true)
+  const hide = () => setVisible(false)
+  return { visible, toggle, show, hide }
+}
+
+export const Basic = () => {
+  const { visible, show, hide } = useVisible()
   return (
-    <div>
-      <MLButton type='primary' onClick={() => setVisible(true)}>
+    <DraggableModalProvider>
+      <MLButton type='primary' onClick={show}>
         Open Modal
       </MLButton>
       <MLModal
         title={text('title', 'Basic Modal')}
         visible={visible}
         closable={boolean('closable', true)}
-        onOk={() => setVisible(false)}
+        onOk={hide}
         okText={text('okText', 'OK')}
-        onCancel={() => setVisible(false)}
+        onCancel={hide}
         cancelText={text('cancelText', 'Cancel')}
         okType={text('okType', 'primary')}
       >
         <h3>Contents</h3>
         <div>Your text here.</div>
       </MLModal>
-    </div>
+    </DraggableModalProvider>
   )
 }
 
