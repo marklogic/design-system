@@ -61,7 +61,7 @@ export const rowNestedTable = () => {
       key={row.key}
       dataSource={row.subtableDataSource}
       columns={abColumns}
-      showHeader={false}
+      showHeader={true}
     />
   )
   const dataSource = [
