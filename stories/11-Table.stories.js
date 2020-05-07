@@ -121,7 +121,7 @@ export const rowNestedTableWithButtons = () => {
   const expandedRowRender = (row) => (
     <div>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <MLButton>Add</MLButton>
+        <MLButton>Example Button</MLButton>
       </div>
       <MLTable
         key={row.key}
@@ -155,7 +155,7 @@ export const rowNestedTableWithButtons = () => {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <MLButton>Add</MLButton>
+        <MLButton>Example Button</MLButton>
       </div>
       <MLTable
         size={size}
