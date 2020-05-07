@@ -1,0 +1,48 @@
+@import '../../styles.less';
+
+.ml-icon {
+  &.ml-icon-outlined {
+    &.anticon-user,
+    &.anticon-question-circle,
+    &.anticon-search,
+    &.anticon-setting,
+    &.anticon-dashboard,
+    &.anticon-route {
+      color: #fff;
+    }
+
+    &.anticon-arrow-left {
+      color: @text-color;
+    }
+
+    &.anticon-lock {
+      color: rgba(0, 0, 0, 25%);
+    }
+  }
+
+  &.ml-icon-filled {
+    &.anticon-check-circle {
+      color: @success-color;
+    }
+
+    &.anticon-info-circle {
+      color: @primary-color;
+    }
+
+    &.anticon-exclamation-circle {
+      color: @warning-color;
+    }
+
+    &.anticon-close-circle {
+      color: @error-color;
+    }
+  }
+
+  &.anticon .svg-inline--fa {
+    vertical-align: 0;
+  }
+
+  &.anticon.ml-icon-highlight {
+    color: @highlight-color;
+  }
+}
