@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLUpload, MLButton, MLIcon } from '../src'
+import { MLUpload, MLButton, MLIcon } from '@marklogic/design-system'
 import { message } from 'antd'
 import { withKnobs } from '@storybook/addon-knobs'
 

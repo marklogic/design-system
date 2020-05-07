@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLTag } from 'marklogic-ui-library'
+import { MLTag } from '@marklogic/design-system'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import './57-Tag.stories.less'
 const { MLCheckableTag } = MLTag
