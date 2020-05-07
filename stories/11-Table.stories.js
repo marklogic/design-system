@@ -16,7 +16,7 @@ export default {
 
 export const basic = () => {
   const props = {
-    size: radios('size', ['default', 'middle', 'small'], 'small'),
+    size: radios('size', ['default', 'middle', 'small'], 'middle'),
     dataSource: sampleBasicData.dataSource,
     columns: sampleBasicData.columns,
   }
@@ -25,7 +25,7 @@ export const basic = () => {
 
 export const embeddedTables = () => {
   const props = {
-    size: radios('size', ['default', 'middle', 'small'], 'small'),
+    size: radios('size', ['default', 'middle', 'small'], 'middle'),
     dataSource: sampleNestedData.dataSource,
     columns: sampleNestedData.columns,
   }
