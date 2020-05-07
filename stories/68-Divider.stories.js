@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLDivider from '../src/ml-divider'
+import { MLDivider } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
 
 export default {
