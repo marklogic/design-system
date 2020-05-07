@@ -51,6 +51,22 @@ Basic.story = {
   },
 }
 
+export const WithFooter = () => {
+  return (
+    <DraggableModalProvider>
+      <MLButton>Modal with footer</MLButton>
+      <MLModal footer={[
+        <MLButton key='yes'>Yes</MLButton>,
+        <MLModal key='no'>No</MLModal>,
+        <MLButton key='maybe'>Maybe</MLButton>,
+      ]}
+      >
+        <p>body...</p>
+      </MLModal>
+    </DraggableModalProvider>
+  )
+}
+
 function info() {
   MLModal.info({
     title: 'This is a notification message',
