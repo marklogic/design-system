@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text } from '@storybook/addon-knobs/react'
-import { MLButton } from 'marklogic-ui-library'
+import { MLButton } from '@marklogic/design-system'
 
 export default {
   title: 'MLButton',

@@ -1,8 +1,7 @@
 import React from 'react'
 import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import { MLSlider } from 'marklogic-ui-library'
-import { isEmpty } from 'lodash-es'
+import { MLSlider } from '@marklogic/design-system'
 
 export default {
   title: 'Data Entry/MLSlider',
