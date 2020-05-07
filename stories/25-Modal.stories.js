@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { MLModal, MLButton } from '@marklogic/design-system'
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 export default {
   title: 'Feedback/MLModal',
@@ -16,10 +16,14 @@ export const Basic = () => {
         Open Modal
       </MLButton>
       <MLModal
-        title='Basic Modal'
+        title={text('title','Basic Modal')}
         visible={visible}
+        closable={boolean('closable', true)}
         onOk={() => setVisible(false)}
+        okText={text('okText', 'OK')}
         onCancel={() => setVisible(false)}
+        cancelText={text('cancelText', 'Cancel')}
+        okType={text('okType', 'primary')}
       >
         <h3>Contents</h3>
         <div>Your text here.</div>
