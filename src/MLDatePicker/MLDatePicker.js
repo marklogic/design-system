@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { get, isArray } from 'lodash-es'
 import { DatePicker } from 'antd'
 import { MLConfigContext } from '../MLConfigProvider'
-import { MLInputSizeContext } from '../MLInput'
+import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import './style'
 const { RangePicker } = DatePicker
 
@@ -32,7 +32,7 @@ const MLDatePicker = (props) => {
   return (
     <MLConfigContext.Consumer>
       {(pickerContext) => (
-        <MLInputSizeContext.Consumer>
+        <MLSizeContext.Consumer>
           {(contextSize) => {
             const contextProps = pickerPropsFromContext(pickerContext, props)
             const size = contextSize || props.size
@@ -48,7 +48,7 @@ const MLDatePicker = (props) => {
               </DatePicker>
             )
           }}
-        </MLInputSizeContext.Consumer>
+        </MLSizeContext.Consumer>
       )}
     </MLConfigContext.Consumer>
   )

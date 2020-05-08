@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Input } from 'antd'
-import { MLInputSizeContext } from './MLInputSizeContext'
+import MLSizeContext, { MLSizeContextProvider } from '../MLConfigProvider/MLSizeContext'
 import './style'
 import classNames from 'classnames'
 
@@ -9,7 +9,7 @@ const { Search, TextArea, Group, Password } = Input
 
 const MLInput = (props) => {
   return (
-    <MLInputSizeContext.Consumer>
+    <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
@@ -22,7 +22,7 @@ const MLInput = (props) => {
           </Input>
         )
       }}
-    </MLInputSizeContext.Consumer>
+    </MLSizeContext.Consumer>
   )
 }
 
@@ -35,14 +35,14 @@ MLInput.defaultProps = {
 // TODO: When implementing MLSelect, use MLConfigProvider size, same as MLInputNumber
 const MLGroup = (props) => {
   return (
-    <MLInputSizeContext.Provider value={props.size}>
+    <MLSizeContextProvider size={props.size}>
       <Group
         {...props}
         className={classNames(props.className, 'ml-input')}
       >
         {props.children}
       </Group>
-    </MLInputSizeContext.Provider>
+    </MLSizeContextProvider>
   )
 }
 
@@ -55,7 +55,7 @@ MLInput.MLGroup = MLGroup
 
 const MLSearch = (props) => {
   return (
-    <MLInputSizeContext.Consumer>
+    <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
@@ -68,7 +68,7 @@ const MLSearch = (props) => {
           </Search>
         )
       }}
-    </MLInputSizeContext.Consumer>
+    </MLSizeContext.Consumer>
   )
 }
 
@@ -81,7 +81,7 @@ MLInput.MLSearch = MLSearch
 
 const MLTextArea = (props) => {
   return (
-    <MLInputSizeContext.Consumer>
+    <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
@@ -94,7 +94,7 @@ const MLTextArea = (props) => {
           </TextArea>
         )
       }}
-    </MLInputSizeContext.Consumer>
+    </MLSizeContext.Consumer>
   )
 }
 
@@ -107,7 +107,7 @@ MLInput.MLTextArea = MLTextArea
 
 const MLPassword = (props) => {
   return (
-    <MLInputSizeContext.Consumer>
+    <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
@@ -120,7 +120,7 @@ const MLPassword = (props) => {
           </Password>
         )
       }}
-    </MLInputSizeContext.Consumer>
+    </MLSizeContext.Consumer>
   )
 }
 

@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { AutoComplete } from 'antd'
-import { MLInputSizeContext } from '../MLInput'
+import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import classNames from 'classnames'
 
 const MLAutoComplete = (props) => {
   return (
-    <MLInputSizeContext.Consumer>
+    <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
@@ -19,7 +19,7 @@ const MLAutoComplete = (props) => {
           </AutoComplete>
         )
       }}
-    </MLInputSizeContext.Consumer>
+    </MLSizeContext.Consumer>
   )
 }
 
