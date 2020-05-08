@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Input } from 'antd'
-import MLSizeContext, { MLSizeContextProvider } from '../MLConfigProvider/MLSizeContext'
+import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import './style'
 import classNames from 'classnames'
 
