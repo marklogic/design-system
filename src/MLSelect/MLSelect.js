@@ -2,18 +2,30 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Select } from 'antd'
 import { includes } from 'lodash-es'
+import { MLInputSizeContext } from '../MLInput'
+import classNames from 'classnames'
 const { Option, OptGroup } = Select
 
 const MLSelect = (props) => {
   const { mode = '' } = props
   const allowClear = includes(['tags', 'multiple'], mode)
   return (
-    <Select
-      allowClear={allowClear}
-      {...props}
-    >
-      {props.children}
-    </Select>
+    <MLInputSizeContext.Consumer>
+      {(contextSize) => {
+        const size = contextSize || props.size
+        debugger;
+        return (
+          <Select
+            allowClear={allowClear}
+            {...props}
+            size={size}
+            className={classNames(props.className, 'ml-select')}
+          >
+            {props.children}
+          </Select>
+        )
+      }}
+    </MLInputSizeContext.Consumer>
   )
 }
 

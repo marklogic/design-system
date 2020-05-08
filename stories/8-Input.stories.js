@@ -1,8 +1,15 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLInput, MLRow, MLCol, MLInputNumber, MLDatePicker, MLAutoComplete } from '@marklogic/design-system'
 import { withKnobs, radios } from '@storybook/addon-knobs'
-import { Select, Input } from 'antd'
+import {
+  MLAutoComplete,
+  MLCol,
+  MLDatePicker,
+  MLInput,
+  MLInputNumber,
+  MLRow,
+  MLSelect,
+} from '@marklogic/design-system'
 
 export default {
   title: 'Data Entry/MLInput',
@@ -63,18 +70,18 @@ export const inputGroup = () => {
       </MLInput.MLGroup>
       <br />
       <MLInput.MLGroup size={size} compact>
-        <Select defaultValue='Zhejiang'>
-          <Select.Option value='Zhejiang'>Zhejiang</Select.Option>
-          <Select.Option value='Jiangsu'>Jiangsu</Select.Option>
-        </Select>
+        <MLSelect defaultValue='Zhejiang'>
+          <MLSelect.MLOption value='Zhejiang'>Zhejiang</MLSelect.MLOption>
+          <MLSelect.MLOption value='Jiangsu'>Jiangsu</MLSelect.MLOption>
+        </MLSelect>
         <MLInput style={{ width: '50%' }} defaultValue='Xihu District, Hangzhou' />
       </MLInput.MLGroup>
       <br />
       <MLInput.MLGroup size={size} compact>
-        <Select defaultValue='Option1'>
-          <Select.Option value='Option1'>Option1</Select.Option>
-          <Select.Option value='Option2'>Option2</Select.Option>
-        </Select>
+        <MLSelect defaultValue='Option1'>
+          <MLSelect.MLOption value='Option1'>Option1</MLSelect.MLOption>
+          <MLSelect.MLOption value='Option2'>Option2</MLSelect.MLOption>
+        </MLSelect>
         <MLInput style={{ width: '50%' }} defaultValue='input content' />
         <MLInputNumber />
       </MLInput.MLGroup>
@@ -85,21 +92,21 @@ export const inputGroup = () => {
       </MLInput.MLGroup>
       <br />
       <MLInput.MLGroup size={size} compact>
-        <Select defaultValue='Option1-1'>
-          <Select.Option value='Option1-1'>Option1-1</Select.Option>
-          <Select.Option value='Option1-2'>Option1-2</Select.Option>
-        </Select>
-        <Select defaultValue='Option2-2'>
-          <Select.Option value='Option2-1'>Option2-1</Select.Option>
-          <Select.Option value='Option2-2'>Option2-2</Select.Option>
-        </Select>
+        <MLSelect defaultValue='Option1-1'>
+          <MLSelect.MLOption value='Option1-1'>Option1-1</MLSelect.MLOption>
+          <MLSelect.MLOption value='Option1-2'>Option1-2</MLSelect.MLOption>
+        </MLSelect>
+        <MLSelect defaultValue='Option2-2'>
+          <MLSelect.MLOption value='Option2-1'>Option2-1</MLSelect.MLOption>
+          <MLSelect.MLOption value='Option2-2'>Option2-2</MLSelect.MLOption>
+        </MLSelect>
       </MLInput.MLGroup>
       <br />
       <MLInput.MLGroup size={size} compact>
-        <Select defaultValue='1'>
-          <Select.Option value='1'>Between</Select.Option>
-          <Select.Option value='2'>Except</Select.Option>
-        </Select>
+        <MLSelect defaultValue='1'>
+          <MLSelect.MLOption value='1'>Between</MLSelect.MLOption>
+          <MLSelect.MLOption value='2'>Except</MLSelect.MLOption>
+        </MLSelect>
         <MLInput
           style={{ width: 100, textAlign: 'center' }}
           placeholder='Minimum'
@@ -122,6 +129,26 @@ export const inputGroup = () => {
           allowClear={false}
         />
       </MLInput.MLGroup>
+      <br />
+      <MLInput.MLGroup compact>
+        <MLSelect defaultValue='Sign Up'>
+          <MLSelect.MLOption value='Sign Up'>Sign Up</MLSelect.MLOption>
+          <MLSelect.MLOption value='Sign In'>Sign In</MLSelect.MLOption>
+        </MLSelect>
+        <MLAutoComplete
+          // dataSource={this.state.dataSource}
+          style={{ width: 200 }}
+          placeholder='Email'
+        />
+      </MLInput.MLGroup>
+      <br />
+      {/*<MLInput.MLGroup compact>*/}
+      {/*  <MLSelect style={{ width: '30%' }} defaultValue='Home'>*/}
+      {/*    <MLSelect.MLOption value='Home'>Home</MLSelect.MLOption>*/}
+      {/*    <MLSelect.MLOption value='Company'>Company</MLSelect.MLOption>*/}
+      {/*  </MLSelect>*/}
+      {/*  <Cascader style={{ width: '70%' }} options={options} placeholder='Select Address' />*/}
+      {/*</MLInput.MLGroup>*/}
     </div>
   )
 }
@@ -130,9 +157,9 @@ export const inputGroup = () => {
 // TODO: Switch to MLSelect/MLOption
 export const searchBar = () => {
   const selectBefore = (
-    <Select defaultValue='all'>
-      <Select.Option value='all'>All Entities</Select.Option>
-    </Select>
+    <MLSelect defaultValue='all'>
+      <MLSelect.MLOption value='all'>All Entities</MLSelect.MLOption>
+    </MLSelect>
   )
   return (
     <MLInput.MLSearch
