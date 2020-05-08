@@ -1,6 +1,6 @@
-import MLSizeContext from "../MLConfigProvider/MLSizeContext";
-import classNames from "classnames";
-import React from "react";
+import MLSizeContext from '../MLConfigProvider/MLSizeContext'
+import classNames from 'classnames'
+import React from 'react'
 import { Input } from 'antd'
 
 const MLPassword = (props) => {
