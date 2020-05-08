@@ -54,8 +54,9 @@ export const inputGroup = () => {
   return (
     <div>
       <div>
-        Note: Due to a bug in Ant, if you supply `allowClear` (on by default), `prefix`, or `suffix`, then the `style` property may not behave as expected due to the element being wrapped in a &lt;span&gt;
+        Note: Due to a bug in Ant, any of <code>allowClear</code> (on by default), <code>prefix</code>, or <code>suffix</code> are set, then the <code>style</code> property may not behave as expected due to the &lt;input&gt; element being wrapped in a &lt;span&gt;
       </div>
+      <br />
       <MLInput.MLGroup size={size} compact>
         <MLInput placeholder='MLInput' style={{ width: '25%' }} />
         <MLInput.MLSearch placeholder='MLInput.MLSearch' style={{ width: '25%' }} />
