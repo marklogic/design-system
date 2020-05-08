@@ -5,6 +5,7 @@
   "version": "0.2.2",
   "license": "Apache-2.0",
   "repository": "http://github.com/marklogic/design-system",
+  "main": "src/index.js",
   "module": "src/index.js",
   "engines": {
     "node": ">=10",
