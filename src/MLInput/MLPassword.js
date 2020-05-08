@@ -12,7 +12,7 @@ const MLPassword = (props) => {
           <Input.Password
             {...props}
             size={size}
-            className={classNames(props.className, 'ml-input')}
+            className={classNames(props.className, 'ml-input-password')}
           >
             {props.children}
           </Input.Password>

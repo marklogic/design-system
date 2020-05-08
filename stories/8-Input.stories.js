@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, radios } from '@storybook/addon-knobs'
+import { withKnobs, radios, boolean } from '@storybook/addon-knobs'
 import {
   MLAutoComplete,
   MLCol,
@@ -22,8 +22,18 @@ export default {
 }
 
 export const basic = () => {
+  const size = radios('size', ['large', 'default', 'small'], 'small')
+  const selectAddon = (
+    <MLSelect size={size} defaultValue='all' style={{ width: '130px' }}>
+      <MLSelect.MLOption value='all'>Example Select</MLSelect.MLOption>
+    </MLSelect>
+  )
+  const showAddonBefore = boolean('include addonBefore', false)
+  const showAddonAfter = boolean('include addonAfter', false)
   const props = {
-    size: radios('size', ['large', 'default', 'small'], 'small'),
+    size: size,
+    addonBefore: showAddonBefore ? selectAddon : undefined,
+    addonAfter: showAddonAfter ? selectAddon : undefined,
   }
   return (
     <div>

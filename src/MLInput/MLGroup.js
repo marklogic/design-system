@@ -8,7 +8,7 @@ const MLGroup = (props) => {
     <MLSizeContextProvider size={props.size}>
       <Input.Group
         {...props}
-        className={classNames(props.className, 'ml-input')}
+        className={classNames(props.className, 'ml-input-group')}
       >
         {props.children}
       </Input.Group>

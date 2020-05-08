@@ -13,7 +13,6 @@ const MLSelect = (props) => {
     <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
-        debugger;
         return (
           <Select
             allowClear={allowClear}
