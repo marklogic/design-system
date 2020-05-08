@@ -1,8 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLAlert } from 'marklogic-ui-library'
-import { withKnobs, text, boolean, optionsKnob as options } from '@storybook/addon-knobs'
-import { CheckCircleFilled, InfoCircleFilled, ExclamationCircleFilled, CloseCircleFilled } from 'marklogic-ui-library/ml-icon'
+import { MLAlert } from '@marklogic/design-system'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 export default {
   title: 'Feedback/Alert',
