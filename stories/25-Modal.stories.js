@@ -4,11 +4,12 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import {
   DraggableModalProvider,
 } from 'ant-design-draggable-modal'
+import { withActions } from '@storybook/addon-actions'
 
 export default {
   title: 'Feedback/MLModal',
   component: MLModal,
-  decorators: [withKnobs],
+  decorators: [withKnobs, withActions('click')],
 }
 
 function useVisible() {
@@ -52,17 +53,21 @@ Basic.story = {
 }
 
 export const WithFooter = () => {
+  const { visible, show, hide } = useVisible()
   return (
     <DraggableModalProvider>
-      <MLButton>Modal with footer</MLButton>
-      <MLModal footer={[
-        <MLButton key='yes'>Yes</MLButton>,
-        <MLModal key='no'>No</MLModal>,
-        <MLButton key='maybe'>Maybe</MLButton>,
-      ]}
-      >
-        <p>body...</p>
-      </MLModal>
+      <MLButton type='primary' onClick={show}>
+        Modal with footer
+      </MLButton>
+      <MLModal
+        visible={visible}
+        title='Modal with footer'
+        footer={[
+          <MLButton key='yes' onClick={hide}>Yes</MLButton>,
+          <MLButton key='no' onClick={hide}>No</MLButton>,
+          <MLButton key='maybe' onClick={hide}>Maybe</MLButton>,
+        ]}
+      />
     </DraggableModalProvider>
   )
 }
@@ -119,7 +124,8 @@ export const Position = () => {
       <p>Note: modals will be constrained to this story's bounding box.</p>
       <div>
         <MLModal visible={visible} onOk={hide} onCancel={hide}>default</MLModal>
-        <MLModal visible={visible} onOk={hide} onCancel={hide} style={{ position: 'absolute', bottom: 0 }}>bottom</MLModal>
+        <MLModal visible={visible} onOk={hide} onCancel={hide} centered>centered</MLModal>
+        <MLModal visible={visible} onOk={hide} onCancel={hide} style={{ top: 1 }}>bottom</MLModal>
       </div>
     </DraggableModalProvider>
   )
