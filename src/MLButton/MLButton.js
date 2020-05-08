@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'antd'
 import './style'
+import classNames from 'classnames'
 
 const MLButton = (props) => {
   let type
@@ -14,7 +15,7 @@ const MLButton = (props) => {
     className = ''
   }
   return (
-    <Button {...props} type={type} className={[props.className, 'ml-btn', className].join(' ')}>
+    <Button {...props} type={type} className={classNames(props.className, 'ml-btn', className)}>
       {props.children}
     </Button>
   )

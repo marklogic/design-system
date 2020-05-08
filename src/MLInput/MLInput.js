@@ -3,18 +3,21 @@ import PropTypes from 'prop-types'
 import { Input } from 'antd'
 import { MLInputSizeContext } from './MLInputSizeContext'
 import './style'
+import classNames from 'classnames'
 
 const { Search, TextArea, Group, Password } = Input
 
 const MLInput = (props) => {
-  let { className = '' } = props
-  className = [className, 'ml-input'].join(' ')
   return (
     <MLInputSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
-          <Input {...props} className={className} size={size}>
+          <Input
+            {...props}
+            size={size}
+            className={classNames(props.className, 'ml-input')}
+          >
             {props.children}
           </Input>
         )
@@ -31,11 +34,12 @@ MLInput.defaultProps = {
 // TODO: Fix sizing not being taken up by all child inputs
 // TODO: When implementing MLSelect, use MLConfigProvider size, same as MLInputNumber
 const MLGroup = (props) => {
-  let { className = '' } = props
-  className = [className, 'ml-input-group'].join(' ')
   return (
     <MLInputSizeContext.Provider value={props.size}>
-      <Group {...props} className={className}>
+      <Group
+        {...props}
+        className={classNames(props.className, 'ml-input')}
+      >
         {props.children}
       </Group>
     </MLInputSizeContext.Provider>
@@ -50,14 +54,16 @@ MLGroup.displayName = 'MLInputGroup'
 MLInput.MLGroup = MLGroup
 
 const MLSearch = (props) => {
-  let { className = '' } = props
-  className = [className, 'ml-input-search'].join(' ')
   return (
     <MLInputSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
-          <Search {...props} className={className} size={size}>
+          <Search
+            {...props}
+            size={size}
+            className={classNames(props.className, 'ml-input')}
+          >
             {props.children}
           </Search>
         )
@@ -74,14 +80,16 @@ MLSearch.displayName = 'MLInputSearch'
 MLInput.MLSearch = MLSearch
 
 const MLTextArea = (props) => {
-  let { className = '' } = props
-  className = [className, 'ml-input-textarea'].join(' ')
   return (
     <MLInputSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
-          <TextArea {...props} className={className} size={size}>
+          <TextArea
+            {...props}
+            size={size}
+            className={classNames(props.className, 'ml-input')}
+          >
             {props.children}
           </TextArea>
         )
@@ -98,14 +106,16 @@ MLTextArea.displayName = 'MLInputTextArea'
 MLInput.MLTextArea = MLTextArea
 
 const MLPassword = (props) => {
-  let { className = '' } = props
-  className = [className, 'ml-input-password'].join(' ')
   return (
     <MLInputSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
-          <Password {...props} className={className} size={size}>
+          <Password
+            {...props}
+            size={size}
+            className={classNames(props.className, 'ml-input')}
+          >
             {props.children}
           </Password>
         )
