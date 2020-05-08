@@ -32,7 +32,9 @@ export default class App extends Component {
               <div>
                 <MLSlider tooltipPlacement='top' />
               </div>
-              <MLDatePicker />
+              <MLDatePicker size={"small"}/>
+              <MLDatePicker size={"default"}/>
+              <MLDatePicker size={"large"}/>
             </MLLayout.MLContent>
             <MLDatePicker picker='week' />
             <MLLayout.MLFooter year='2019' />

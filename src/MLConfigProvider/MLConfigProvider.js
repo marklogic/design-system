@@ -6,6 +6,7 @@ const MLConfigProvider = (props) => {
   return (
     <MLConfigContext.Provider
       value={{
+        size: props.size,
         dateFormat: props.dateFormat,
         dateTimeFormat: props.dateTimeFormat,
         monthFormat: props.monthFormat,

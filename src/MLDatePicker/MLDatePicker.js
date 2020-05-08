@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { get, isArray } from 'lodash-es'
 import { DatePicker } from 'antd'
 import { MLConfigContext } from '../MLConfigProvider'
+import { MLInputSizeContext } from '../MLInput'
 import './style'
 const { RangePicker } = DatePicker
 
@@ -30,14 +31,25 @@ const pickerPropsFromContext = ({ dateFormat, dateTimeFormat, weekFormat, monthF
 const MLDatePicker = (props) => {
   return (
     <MLConfigContext.Consumer>
-      {(context) => {
-        const contextProps = pickerPropsFromContext(context, props)
-        return (
-          <DatePicker {...contextProps} {...props} showTime={contextProps.showTime}>
-            {props.children}
-          </DatePicker>
-        )
-      }}
+      {(pickerContext) => (
+        <MLInputSizeContext.Consumer>
+          {(contextSize) => {
+            const contextProps = pickerPropsFromContext(pickerContext, props)
+            const size = contextSize || props.size
+            return (
+              <DatePicker
+                {...contextProps}
+                {...props}
+                // The following have to go after props to override it properly
+                showTime={contextProps.showTime}
+                size={size}
+              >
+                {props.children}
+              </DatePicker>
+            )
+          }}
+        </MLInputSizeContext.Consumer>
+      )}
     </MLConfigContext.Consumer>
   )
 }
