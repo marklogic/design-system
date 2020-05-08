@@ -31,8 +31,6 @@ MLInput.defaultProps = {
   allowClear: true,
 }
 
-// TODO: Fix sizing not being taken up by all child inputs
-// TODO: When implementing MLSelect, use MLConfigProvider size, same as MLInputNumber
 const MLGroup = (props) => {
   return (
     <MLSizeContextProvider size={props.size}>
