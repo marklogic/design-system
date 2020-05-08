@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs'
+import { withKnobs, boolean, select, text, radios } from '@storybook/addon-knobs'
 import { MLSelect } from '@marklogic/design-system'
 import { filter, isUndefined } from 'lodash-es'
 const { MLOption, MLOptGroup } = MLSelect
@@ -40,6 +40,7 @@ export const basic = () => {
     placeholder: text('placeholder', ''),
     loading: boolean('loading', false),
     allowClear: boolean('allowClear', false),
+    labelInValue: boolean('labelInValue (affects action payloads)', false),
     onBlur: action('onBlur'),
     onChange: action('onChange'),
     onDeselect: action('onDeselect'),
@@ -80,6 +81,7 @@ export const withOptGroup = () => {
     placeholder: text('placeholder', ''),
     loading: boolean('loading', false),
     allowClear: boolean('allowClear', false),
+    labelInValue: boolean('labelInValue (affects action payloads)', false),
     onBlur: action('onBlur'),
     onChange: action('onChange'),
     onDeselect: action('onDeselect'),
