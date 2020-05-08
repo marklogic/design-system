@@ -36,11 +36,14 @@ export const inputGroup = () => {
   }, 'small')
   return (
     <div>
+      <div>
+        Note: Due to a bug in Ant, if you supply `allowClear` (on by default), `prefix`, or `suffix`, then the `style` property may not behave as expected due to the element being wrapped in a &lt;span&gt;
+      </div>
       <MLInput.MLGroup size={size} compact>
-        <MLInput placeholder={'MLInput'} style={{ width: '25%' }}/>
-        <MLInput.MLSearch placeholder={'MLInput.MLSearch'} style={{ width: '25%' }}/>
-        <MLInput.MLPassword placeholder={'MLInput.MLPassword'} style={{ width: '25%' }}/>
-        <MLInput.MLTextArea placeholder={'MLInput.MLTextArea'}/>
+        <MLInput placeholder='MLInput' style={{ width: '25%' }} />
+        <MLInput.MLSearch placeholder='MLInput.MLSearch' style={{ width: '25%' }} />
+        <MLInput.MLPassword placeholder='MLInput.MLPassword' style={{ width: '25%' }} />
+        <MLInput.MLTextArea placeholder='MLInput.MLTextArea' />
       </MLInput.MLGroup>
       <br />
       <MLInput.MLGroup size={size}>
@@ -97,7 +100,11 @@ export const inputGroup = () => {
           <Select.Option value='1'>Between</Select.Option>
           <Select.Option value='2'>Except</Select.Option>
         </Select>
-        <MLInput style={{ width: 100, textAlign: 'center' }} placeholder='Minimum' />
+        <MLInput
+          style={{ width: 100, textAlign: 'center' }}
+          placeholder='Minimum'
+          allowClear={false}
+        />
         <MLInput
           style={{
             width: 30,
@@ -105,10 +112,15 @@ export const inputGroup = () => {
             pointerEvents: 'none',
             backgroundColor: '#fff',
           }}
+          allowClear={false}
           placeholder='~'
           disabled
         />
-        <MLInput style={{ width: 100, textAlign: 'center', borderLeft: 0 }} placeholder='Maximum' />
+        <MLInput
+          style={{ width: 100, textAlign: 'center', borderLeft: 0 }}
+          placeholder='Maximum'
+          allowClear={false}
+        />
       </MLInput.MLGroup>
     </div>
   )
