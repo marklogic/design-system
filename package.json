@@ -1,38 +1,30 @@
 {
   "author": "MarkLogic",
-  "name": "marklogic-ui-library",
+  "name": "@marklogic/design-system",
   "description": "MarkLogic Engineering UX design system",
   "version": "0.2.2",
   "license": "Apache-2.0",
   "repository": "http://github.com/marklogic/design-system",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "module": "src/index.js",
   "engines": {
-    "node": ">=8.16",
+    "node": ">=10",
     "npm": ">=5"
   },
+  "sideEffects": [
+    "*.css",
+    "*.less"
+  ],
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "build": "rollup -c",
-    "start": "rollup -c -w",
-    "prepare": "npm run minify-css && npm run build",
+    "webpack": "webpack",
     "predeploy": "cd playground && yarn && npm run build",
     "deploy": "gh-pages -d playground/build",
-    "install:all": "(yarn link; pushd playground; yarn link \"marklogic-ui-library\"; popd); (yarn); (cd playground && yarn)",
+    "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn)",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -c .storybook -o storybook-dist",
-    "minify-css": "node-sass --include-path scss src/styles.scss dist/styles.min.css --output-style compressed"
-  },
-  "peerDependencies": {
-    "antd": "^3.20.5",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "build-storybook": "build-storybook -c .storybook -o storybook-dist"
   },
   "devDependencies": {
-    "@ant-design/icons": "^4.0.2",
     "@babel/core": "^7.5.5",
     "@babel/plugin-external-helpers": "^7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -51,6 +43,7 @@
     "@babel/plugin-proposal-throw-expressions": "^7.2.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/plugin-transform-react-jsx-development": "^7.9.0",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^5.2.8",
@@ -60,10 +53,11 @@
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
-    "@svgr/rollup": "^4.3.2",
-    "antd": "^3.26.3",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "8.1.0",
+    "babel-plugin-import": "^1.13.0",
+    "change-case": "^4.1.1",
     "cross-env": "^5.2.0",
+    "css-loader": "^3.4.2",
     "eslint": "^6.2.1",
     "eslint-config-standard": "^14.0.0",
     "eslint-config-standard-react": "^9.0.0",
@@ -72,23 +66,29 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.1",
+    "fs-extra": "^9.0.0",
     "gh-pages": "^2.1.1",
-    "lodash": "^4.17.15",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
     "node-sass": "^4.13.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "^3.1.1",
-    "rollup": "^1.20.1",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.0.2",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-url": "^2.2.2"
+    "react-scripts": "^3.3.0"
   },
   "files": [
-    "dist"
+    "src"
   ],
   "dependencies": {
+    "@ant-design/icons": "^4.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "antd": "^3.26.13",
+    "lodash-es": "^4",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }

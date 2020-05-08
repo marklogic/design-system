@@ -1,0 +1,19 @@
+.ml-storybook-icon-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.ml-storybook-icon-tile {
+  width: 170px;
+  height: 100px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ml-storybook-icon {
+  box-sizing: content-box;
+  padding: 3px;
+  border-radius: 3px;
+}

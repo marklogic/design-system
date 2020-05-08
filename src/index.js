@@ -1,19 +1,57 @@
-import MLButton from './ml-button'
-import MLCollapse from './ml-collapse'
-import MLDatePicker from './ml-date-picker'
+import MLAlert from './MLAlert'
+import MLAutoComplete from './MLAutoComplete'
+import MLBreadcrumb from './MLBreadcrumb'
+import MLButton from './MLButton'
+import MLCarousel from './MLCarousel'
+import MLCheckbox from './MLCheckbox'
+import MLCol from './MLCol'
+import MLCollapse from './MLCollapse'
+import MLConfigProvider from './MLConfigProvider'
+import MLDatePicker from './MLDatePicker'
+import MLDivider from './MLDivider'
+import * as MLIcon from './MLIcon'
 import MLInput from './ml-input'
-import MLInputNumber from './ml-input-number'
-import MLLayout from './ml-layout'
-import MLRadio from './ml-radio'
-import MLSlider from './ml-slider'
+import MLInputNumber from './MLInputNumber'
+import MLLayout from './MLLayout'
+import MLMentions from './MLMentions'
+import MLPageHeader from './MLPageHeader'
+import MLPopconfirm from './MLPopconfirm'
+import MLRadio from './MLRadio'
+import MLRate from './MLRate'
+import MLRow from './MLRow'
+import MLSlider from './MLSlider'
+import MLSpin from './MLSpin'
+import MLTable from './MLTable'
+import MLTag from './MLTag'
+import MLTooltip from './MLTooltip'
+import MLUpload from './MLUpload'
 
 export {
+  MLAlert,
+  MLAutoComplete,
+  MLBreadcrumb,
   MLButton,
+  MLCarousel,
+  MLCheckbox,
+  MLCol,
   MLCollapse,
+  MLConfigProvider,
   MLDatePicker,
+  MLDivider,
+  MLIcon,
   MLInput,
   MLInputNumber,
   MLLayout,
+  MLMentions,
+  MLPageHeader,
+  MLPopconfirm,
   MLRadio,
+  MLRate,
+  MLRow,
   MLSlider,
+  MLSpin,
+  MLTable,
+  MLTag,
+  MLTooltip,
+  MLUpload,
 }

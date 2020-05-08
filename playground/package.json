@@ -1,15 +1,13 @@
 {
-  "name": "marklogic-ui-library-playground",
+  "name": "@marklogic/design-system-playground",
   "homepage": "https://brucean52.github.io/marklogic-ui-library",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "antd": "^3.26.3",
-    "marklogic-ui-library": "file:..",
+    "antd": "^3.26.13",
+    "@marklogic/design-system": "file:..",
     "prop-types": "^15.6.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "react-scripts": "^3.3.0"
   },
   "scripts": {
@@ -36,5 +34,9 @@
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "react-app-rewired": "^2.1.5"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }

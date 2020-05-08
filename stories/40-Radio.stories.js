@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import MLRadio from '../src/ml-radio'
+import { MLRadio } from '@marklogic/design-system'
 import { withKnobs, boolean, text, array, number } from '@storybook/addon-knobs'
 
 export default {
@@ -8,18 +8,45 @@ export default {
   decorators: [withKnobs],
   parameters: {
     info: {
-      text: 'Component description goes here'
-    }
-  }
+      text: 'Component description goes here',
+    },
+  },
 }
 
 export const radio = () => {
   const label = text('label', 'Radio')
   const props = {
     disabled: boolean('disabled', false),
-    checked: boolean('checked', false)
+    checked: boolean('checked', false),
   }
   return (<MLRadio {...props}>{label}</MLRadio>)
+}
+
+const MultiRadioComponent = (props) => {
+  return (
+    <div>
+      <MLRadio {...props}>1</MLRadio>
+      <MLRadio {...props}>2</MLRadio>
+      <MLRadio {...props}>3</MLRadio>
+    </div>
+  )
+}
+
+export const multiRadio = () => {
+  const label = text('label', 'Radio')
+  const props = {
+    name: 'group',
+    disabled: boolean('disabled', false),
+    // checked: boolean('checked', false),
+  }
+  return (
+    <MultiRadioComponent {...props} />
+    // <div>
+    //   <MLRadio {...props}>1</MLRadio>
+    //   <MLRadio {...props}>2</MLRadio>
+    //   <MLRadio {...props}>3</MLRadio>
+    // </div>
+  )
 }
 
 export const radioGroup = () => {
@@ -27,7 +54,7 @@ export const radioGroup = () => {
     name: text('name', 'radiogroup'),
     disabled: boolean('disabled', false),
     defaultValue: number('defaultValue', 1),
-    onChange: action('onChange')
+    onChange: action('onChange'),
   }
   return (
     <MLRadio.MLGroup {...props}>
@@ -45,11 +72,10 @@ export const radioGroupPlainOptions = () => {
     disabled: boolean('disabled', false),
     options: array('options', ['A', 'B', 'C', 'D']),
     defaultValue: text('defaultValue', 'A'),
-    onChange: action('onChange')
+    onChange: action('onChange'),
   }
   return (
-    <MLRadio.MLGroup {...props}>
-    </MLRadio.MLGroup>
+    <MLRadio.MLGroup {...props} />
   )
 }
 
@@ -60,14 +86,13 @@ export const radioGroupWithComplexOptions = () => {
     options: [
       { label: 'Apple', value: '1' },
       { label: 'Pear', value: '2' },
-      { label: 'Orange', value: '3', disabled: true }
+      { label: 'Orange', value: '3', disabled: true },
     ],
     defaultValue: number('defaultValue', 1),
-    onChange: action('onChange')
+    onChange: action('onChange'),
   }
   return (
-    <MLRadio.MLGroup {...props}>
-    </MLRadio.MLGroup>
+    <MLRadio.MLGroup {...props} />
   )
 }
 
@@ -77,7 +102,7 @@ export const radioGroupOutlinedStyle = () => {
     disabled: boolean('disabled', false),
     buttonStyle: 'outline',
     defaultValue: number('defaultValue', 1),
-    onChange: action('onChange')
+    onChange: action('onChange'),
   }
   return (
     <MLRadio.MLGroup {...props}>
@@ -94,7 +119,7 @@ export const radioGroupSolidStyle = () => {
     disabled: boolean('disabled', false),
     buttonStyle: 'solid',
     defaultValue: number('defaultValue', 1),
-    onChange: action('onChange')
+    onChange: action('onChange'),
   }
   return (
     <MLRadio.MLGroup {...props}>
