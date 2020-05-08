@@ -1,32 +1,31 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import MLSizeContext from "../MLConfigProvider/MLSizeContext";
+import classNames from "classnames";
+import React from "react";
 import { Input } from 'antd'
-import MLSizeContext, { MLSizeContextProvider } from '../MLConfigProvider/MLSizeContext'
-import './style'
-import classNames from 'classnames'
 
-const MLInput = (props) => {
+const MLTextArea = (props) => {
   return (
     <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
-          <Input
+          <Input.TextArea
             {...props}
             size={size}
             className={classNames(props.className, 'ml-input')}
           >
             {props.children}
-          </Input>
+          </Input.TextArea>
         )
       }}
     </MLSizeContext.Consumer>
   )
 }
 
-MLInput.defaultProps = {
+MLTextArea.defaultProps = {
   size: 'small',
-  allowClear: true,
 }
 
-export default MLInput
+MLTextArea.displayName = 'MLInputTextArea'
+
+export default MLTextArea

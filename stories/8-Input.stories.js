@@ -130,7 +130,7 @@ export const inputGroup = () => {
         />
       </MLInput.MLGroup>
       <br />
-      <MLInput.MLGroup compact>
+      <MLInput.MLGroup size={size} compact>
         <MLSelect defaultValue='Sign Up'>
           <MLSelect.MLOption value='Sign Up'>Sign Up</MLSelect.MLOption>
           <MLSelect.MLOption value='Sign In'>Sign In</MLSelect.MLOption>
@@ -142,7 +142,7 @@ export const inputGroup = () => {
         />
       </MLInput.MLGroup>
       <br />
-      {/*<MLInput.MLGroup compact>*/}
+      {/*<MLInput.MLGroup size={size} compact>*/}
       {/*  <MLSelect style={{ width: '30%' }} defaultValue='Home'>*/}
       {/*    <MLSelect.MLOption value='Home'>Home</MLSelect.MLOption>*/}
       {/*    <MLSelect.MLOption value='Company'>Company</MLSelect.MLOption>*/}
