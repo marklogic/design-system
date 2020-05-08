@@ -142,13 +142,13 @@ export const inputGroup = () => {
         />
       </MLInput.MLGroup>
       <br />
-      {/*<MLInput.MLGroup size={size} compact>*/}
-      {/*  <MLSelect style={{ width: '30%' }} defaultValue='Home'>*/}
-      {/*    <MLSelect.MLOption value='Home'>Home</MLSelect.MLOption>*/}
-      {/*    <MLSelect.MLOption value='Company'>Company</MLSelect.MLOption>*/}
-      {/*  </MLSelect>*/}
-      {/*  <Cascader style={{ width: '70%' }} options={options} placeholder='Select Address' />*/}
-      {/*</MLInput.MLGroup>*/}
+      {/* <MLInput.MLGroup size={size} compact> */}
+      {/*  <MLSelect style={{ width: '30%' }} defaultValue='Home'> */}
+      {/*    <MLSelect.MLOption value='Home'>Home</MLSelect.MLOption> */}
+      {/*    <MLSelect.MLOption value='Company'>Company</MLSelect.MLOption> */}
+      {/*  </MLSelect> */}
+      {/*  <Cascader style={{ width: '70%' }} options={options} placeholder='Select Address' /> */}
+      {/* </MLInput.MLGroup> */}
     </div>
   )
 }
@@ -157,7 +157,7 @@ export const inputGroup = () => {
 // TODO: Switch to MLSelect/MLOption
 export const searchBar = () => {
   const selectBefore = (
-    <MLSelect defaultValue='all'>
+    <MLSelect defaultValue='all' style={{ width: '130px' }}>
       <MLSelect.MLOption value='all'>All Entities</MLSelect.MLOption>
     </MLSelect>
   )
