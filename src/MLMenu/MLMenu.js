@@ -15,4 +15,14 @@ const MLMenu = (props) => {
   )
 }
 
+MLMenu.defaultProps = {
+  theme: 'light',
+  mode: 'vertical',
+}
+
+MLMenu.propTypes = {
+  theme: PropTypes.oneOf(['light', 'dark']),
+  mode: PropTypes.oneOf(['vertical', 'horizontal', 'inline']),
+}
+
 export default MLMenu
