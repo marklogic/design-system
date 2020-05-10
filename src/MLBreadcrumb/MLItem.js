@@ -1,15 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Breadcrumb } from 'antd'
-import './style'
 const { Item } = Breadcrumb
 
-const MLBreadcrumb = (props) => {
+const MLItem = (props) => {
   return (
-    <Breadcrumb {...props}>
+    <Item {...props}>
       {props.children}
-    </Breadcrumb>
+    </Item>
   )
 }
 
-export default MLBreadcrumb
+export default MLItem
