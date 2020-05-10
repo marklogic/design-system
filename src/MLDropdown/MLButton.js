@@ -12,6 +12,10 @@ const MLButton = (props) => {
   )
 }
 
+MLButton.defaultProps = {
+  size: 'small',
+}
+
 MLButton.displayName = 'MLDropdownButton'
 
 export default MLButton
