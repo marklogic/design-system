@@ -3,7 +3,6 @@ import { action } from '@storybook/addon-actions'
 import { MLDropdown, MLMenu, MLButton, MLTooltip } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
 import { DownOutlined, UserOutlined } from '@marklogic/design-system/src/MLIcon'
-import { User } from '../src/MLIcon'
 
 export default {
   title: 'Navigation/MLDropdown',
