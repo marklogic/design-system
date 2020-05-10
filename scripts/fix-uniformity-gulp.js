@@ -21,29 +21,6 @@ const checkMultipleComponentsOneFile = () => {
   })
 }
 
-const insertStyleImport = () => {
-  return through.obj((file, enc, cb) => {
-    if (!file.isBuffer()) {
-      this.emit('error', new PluginError('fix stuff', 'Only buffers supported'))
-    }
-
-    const code = file.contents.toString()
-    if (!code.includes("import './style'")) {
-      console.log(`${file.history[0]} needs to import style`)
-
-      const importMatches = [...(code).matchAll(/import[^\n]*\n/g)]
-      const lastMatch = _.last(importMatches)
-      const insertPosition = lastMatch.index + lastMatch[0].length
-
-      const newCode = code.slice(0, insertPosition) + "import './style'\n" + code.slice(insertPosition)
-      // console.log(newCode)
-
-      file.contents = Buffer.from(newCode)
-    }
-    return cb(null, file)
-  })
-}
-
 const ensureImport = (importStatement) => {
   return through.obj((file, enc, cb) => {
     if (!file.isBuffer()) {
@@ -52,7 +29,7 @@ const ensureImport = (importStatement) => {
 
     const code = file.contents.toString()
     if (!code.includes(importStatement)) {
-      console.log(`${file.history[0]} needs to import style`)
+      console.log(`${file.history[0]} needs to import: ${importStatement}`)
 
       const importMatches = [...(code).matchAll(/import[^\n]*\n/g)]
       const lastMatch = _.last(importMatches)
@@ -67,6 +44,18 @@ const ensureImport = (importStatement) => {
   })
 }
 
+const removeImport = (importStatementRegex) => {
+  return through.obj((file, enc, cb) => {
+    if (!file.isBuffer()) {
+      this.emit('error', new PluginError('fix stuff', 'Only buffers supported'))
+    }
+    const code = file.contents.toString()
+    const newCode = code.replace(importStatementRegex, '')
+    file.contents = Buffer.from(newCode)
+    return cb(null, file)
+  })
+}
+
 const addClassNames = () => {
   return through.obj((file, enc, cb) => {
     let madeChanges = false
@@ -75,13 +64,13 @@ const addClassNames = () => {
     const childComponentName = path.basename(file.path).replace('.js', '')
     let kebabCaseName
     if (mainComponentName === childComponentName) {
-      kebabCaseName = 'ml-' + kebabCase(childComponentName.replace(/^ML/,''))
+      kebabCaseName = 'ml-' + kebabCase(childComponentName.replace(/^ML/, ''))
     } else {
-      kebabCaseName = 'ml-' + kebabCase(mainComponentName.replace(/^ML/,'') + childComponentName.replace(/^ML/,''))
+      kebabCaseName = 'ml-' + kebabCase(mainComponentName.replace(/^ML/, '') + childComponentName.replace(/^ML/, ''))
     }
 
     {
-      const pattern = new RegExp(`(?<indents> +)<(?<antComponentName>${childComponentName.replace('ML', '')}) +\{\.\.\.props\} *(?<tagEndChar>(>|/>))`, 'g')
+      const pattern = new RegExp(`(?<indents> +)<(?<antComponentName>${childComponentName.replace('ML', '')})[ \n]+\{\.\.\.props\}[ \n]*(?<tagEndChar>(>|/>))`, 'g')
       const matches = [...code.matchAll(pattern)]
       if (matches.length !== 0) {
         madeChanges = true
@@ -96,7 +85,7 @@ $<indents>$<tagEndChar>`)
       file.contents = Buffer.from(code)
     }
     {
-      const pattern = new RegExp(`^(?<indents> +)<(?<antComponentName>${childComponentName.replace('ML', '')})(?<otherProps>.*) \{\.\.\.props\} *(?<tagEndChar>(>|/>))`, 'g')
+      const pattern = new RegExp(`(?<indents> +)<(?<antComponentName>${childComponentName.replace('ML', '')})[ \n]*(?<otherProps>.*)[ \n]+\{\.\.\.props\}[ \n]*(?<tagEndChar>(>|/>))`, 'g')
       const matches = [...code.matchAll(pattern)]
       if (matches.length !== 0) {
         madeChanges = true
@@ -113,22 +102,25 @@ $<indents>$<tagEndChar>`)
     }
 
     if (!madeChanges) {
-      return cb()
+      if (!file.contents.toString().includes("classNames('ml-")) {
+        console.warn(`${mainComponentName}/${childComponentName} may need classNames() call manuallly added`)
+      }
     }
-
-    console.log(file.contents.toString())
 
     cb(null, file)
     // <Breadcrumb {...props}>
   })
 }
 
-gulp.task('fix-uniformity', function(resolve) {
+const fixUniformityTask = gulp.task('fix-uniformity', function(resolve) {
   return gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
     // .pipe(insertStyleImport())
     .pipe(checkMultipleComponentsOneFile())
-    .pipe(ensureImport("import './style'"))
+    // .pipe(ensureImport("import './style'"))
+    .pipe(removeImport(/import '\.\/style'\n/))
     .pipe(ensureImport("import classNames from 'classnames'"))
     .pipe(addClassNames())
     .pipe(gulp.dest(path.resolve(__dirname, '../src')))
 })
+
+module.exports = fixUniformityTask

@@ -3,10 +3,25 @@ const {
   override,
   babelInclude,
   addLessLoader,
+  fixBabelImports,
 } = require('customize-cra')
 const themeVariables = require('../src/theme-variables.json')
 
 module.exports = override(
+  // Both of these are required for using marklogic-ui-library as an ES module
+  fixBabelImports('@marklogic/design-system',
+    {
+      libraryDirectory: 'es',
+      camel2DashComponentName: false,
+      style: true,
+    },
+  ),
+  fixBabelImports(
+    'antd', {
+      libraryDirectory: 'es',
+      style: true,
+    },
+  ),
   // Required for using marklogic-ui-library
   addLessLoader({
     javascriptEnabled: true,
