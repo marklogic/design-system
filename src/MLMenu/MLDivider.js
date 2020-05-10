@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Divider } from 'antd'
+import { Menu } from 'antd'
 import './style'
+const { Divider } = Menu
 
 const MLDivider = (props) => {
   return (
@@ -10,5 +11,7 @@ const MLDivider = (props) => {
     </Divider>
   )
 }
+
+MLDivider.displayName = 'MLMenuDivider'
 
 export default MLDivider

@@ -9,10 +9,12 @@ import MLCollapse from './MLCollapse'
 import MLConfigProvider from './MLConfigProvider'
 import MLDatePicker from './MLDatePicker'
 import MLDivider from './MLDivider'
+import MLDropdown from './MLDropdown'
 import * as MLIcon from './MLIcon'
 import MLInputNumber from './MLInputNumber'
 import MLLayout from './MLLayout'
 import MLMentions from './MLMentions'
+import MLMenu from './MLMenu'
 import MLPageHeader from './MLPageHeader'
 import MLPopconfirm from './MLPopconfirm'
 import MLRadio from './MLRadio'
@@ -37,10 +39,12 @@ export {
   MLConfigProvider,
   MLDatePicker,
   MLDivider,
+  MLDropdown,
   MLIcon,
   MLInputNumber,
   MLLayout,
   MLMentions,
+  MLMenu,
   MLPageHeader,
   MLPopconfirm,
   MLRadio,
