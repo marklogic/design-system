@@ -4,33 +4,37 @@ import { DatePicker } from 'antd'
 import { MLConfigContext } from '../MLConfigProvider'
 import './style'
 import { pickerPropsFromContext } from './utils'
-
 const { RangePicker } = DatePicker
 
-const MLDatePicker = (props) => {
+const MLRangePicker = (props) => {
   return (
     <MLConfigContext.Consumer>
       {(context) => {
         const contextProps = pickerPropsFromContext(context, props)
         return (
-          <DatePicker {...contextProps} {...props} showTime={contextProps.showTime}>
+          <RangePicker {...contextProps} {...props} showTime={contextProps.showTime}>
             {props.children}
-          </DatePicker>
+          </RangePicker>
         )
       }}
     </MLConfigContext.Consumer>
   )
 }
 
-MLDatePicker.defaultProps = {
+MLRangePicker.defaultProps = {
   bordered: true,
+  placeholder: ['Start', 'End'],
+  separator: (
+    <span className='ant-picker-separator'>–</span> // en-dash
+  ),
   size: 'small',
 }
 
-MLDatePicker.propTypes = {
+MLRangePicker.propTypes = {
   bordered: PropTypes.bool,
+  placeholder: PropTypes.array,
+  separator: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   size: PropTypes.string,
 }
 
-
-export default MLDatePicker
+export default MLRangePicker

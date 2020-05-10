@@ -1,7 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Mentions } from 'antd'
-const { Option } = Mentions
 
 const MLMentions = (props) => {
   return (
@@ -11,14 +9,5 @@ const MLMentions = (props) => {
   )
 }
 
-const MLOption = (props) => {
-  return (
-    <Option {...props}>
-      {props.children}
-    </Option>
-  )
-}
-
-MLMentions.MLOption = MLOption
 
 export default MLMentions
