@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { MLDropdown, MLMenu, MLButton, MLTooltip } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
 import { DownOutlined, UserOutlined } from '@marklogic/design-system/src/MLIcon'
+import { User } from '../src/MLIcon'
 
 export default {
   title: 'Navigation/MLDropdown',
@@ -30,49 +31,39 @@ export const basic = () => {
   return (
     <MLDropdown overlay={menu}>
       <a className='ant-dropdown-link' onClick={e => e.preventDefault()}>
-        Hover me <DownOutlined />
+        Click me <DownOutlined />
       </a>
     </MLDropdown>
   )
 }
 
 export const buttonWithDropdownMenu = () => {
-  const handleMenuClick = action('MLMenu onClick')
-  const handleButtonClick = action('MLMenuButton onClick')
   const menu = (
-    <MLMenu onClick={handleMenuClick}>
-      <MLMenu.MLItem key='1' icon={<UserOutlined />}>
+    <MLMenu>
+      <MLMenu.MLItem key='1'>
+        <UserOutlined />
         1st menu item
       </MLMenu.MLItem>
-      <MLMenu.MLItem key='2' icon={<UserOutlined />}>
+      <MLMenu.MLItem key='2'>
+        <UserOutlined />
         2nd menu item
       </MLMenu.MLItem>
-      <MLMenu.MLItem key='3' icon={<UserOutlined />}>
+      <MLMenu.MLItem key='3'>
+        <UserOutlined />
         3rd item
       </MLMenu.MLItem>
     </MLMenu>
   )
   return (
     <div id='components-dropdown-demo-dropdown-button'>
-      <MLDropdown.MLButton onClick={handleButtonClick} overlay={menu}>
+      <MLDropdown.MLButton overlay={menu}>
         Dropdown
       </MLDropdown.MLButton>
-      <MLDropdown.MLButton overlay={menu} icon={<UserOutlined />}>
+      <MLDropdown.MLButton overlay={menu} icon={<UserOutlined style={{ color: 'black' }} />}>
         Dropdown
       </MLDropdown.MLButton>
-      <MLDropdown.MLButton onClick={handleButtonClick} overlay={menu} disabled>
+      <MLDropdown.MLButton overlay={menu} disabled>
         Dropdown
-      </MLDropdown.MLButton>
-      <MLDropdown.MLButton
-        overlay={menu}
-        buttonsRender={([leftButton, rightButton]) => [
-          <MLTooltip title='tooltip' key='leftButton'>
-            {leftButton}
-          </MLTooltip>,
-          rightButton,
-        ]}
-      >
-        With Tooltip
       </MLDropdown.MLButton>
       <MLDropdown overlay={menu}>
         <MLButton>
