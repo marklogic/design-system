@@ -5,8 +5,10 @@ import './style'
 const { Panel } = Collapse
 
 const MLCollapse = (props) => {
+  let { className = '' } = props
+  className = [className, 'ml-collapse'].join(' ')
   return (
-    <Collapse bordered={false} {...props}>
+    <Collapse bordered={false} {...props} className={className}>
       {props.children}
     </Collapse>
   )
