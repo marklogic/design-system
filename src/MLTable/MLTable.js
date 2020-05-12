@@ -162,7 +162,7 @@ class MLTable extends React.Component {
         expandIcon={restructuredExpandIcon}
         dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
         columns={restructuredColumns}
-        className={classNames('ml-table', props.className)}
+        className={classNames('ml-table', this.props.className)}
       />
     )
   }
