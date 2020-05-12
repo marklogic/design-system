@@ -2,6 +2,7 @@ import MLAlert from './MLAlert'
 import MLAutoComplete from './MLAutoComplete'
 import MLBreadcrumb from './MLBreadcrumb'
 import MLButton from './MLButton'
+import MLCard from './MLCard'
 import MLCarousel from './MLCarousel'
 import MLCheckbox from './MLCheckbox'
 import MLCol from './MLCol'
@@ -32,6 +33,7 @@ export {
   MLAutoComplete,
   MLBreadcrumb,
   MLButton,
+  MLCard,
   MLCarousel,
   MLCheckbox,
   MLCol,

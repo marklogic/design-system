@@ -14,4 +14,14 @@ const MLCard = (props) => {
   )
 }
 
+MLCard.defaultProps = {
+  size: 'small',
+  bordered: true,
+}
+
+MLCard.propTypes = {
+  size: PropTypes.oneOf(['default', 'small']),
+  bordered: PropTypes.bool,
+}
+
 export default MLCard
