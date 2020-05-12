@@ -1,7 +1,6 @@
 const gulp = require('gulp')
 const PluginError = require('plugin-error')
 const through = require('through2')
-const debug = require('gulp-debug')
 const path = require('path')
 const _ = require('lodash')
 const { kebabCase } = require('lodash/string')

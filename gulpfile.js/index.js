@@ -1,12 +1,8 @@
 const gulp = require('gulp')
 const babel = require('gulp-babel')
-const PluginError = require('plugin-error')
-const through = require('through2')
 const merge = require('merge-stream')
-const debug = require('gulp-debug')
 const path = require('path')
 const _ = require('lodash')
-const { kebabCase } = require('lodash/string')
 require('./fix-uniformity-gulp')
 
 function compile(modules) {
@@ -43,17 +39,15 @@ function compile(modules) {
           ],
         ],
       })),
-      // .pipe(gulp.dest(path.resolve(__dirname, modules ? 'lib' : 'es'))),
 
     gulp.src([
       path.resolve(__dirname, '..', 'src/*/style/*.less'),
       path.resolve(__dirname, '..', 'src/styles.less'),
     ], { base: path.resolve(__dirname, '..', 'src') }),
-      // .pipe(gulp.dest(path.resolve(__dirname, '..', 'es'))),
 
     gulp.src([
       path.resolve(__dirname, '../src/theme-variables.json'),
-    ])
+    ]),
   ]).pipe(gulp.dest(path.resolve(__dirname, '..', modules === false ? 'es' : 'lib')))
 }
 
