@@ -114,9 +114,7 @@ $<indents>$<tagEndChar>`)
 
 const fixUniformityTask = gulp.task('fix-uniformity', function(resolve) {
   return gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
-    // .pipe(insertStyleImport())
     .pipe(checkMultipleComponentsOneFile())
-    // .pipe(ensureImport("import './style'"))
     .pipe(removeImport(/import '\.\/style'\n/))
     .pipe(ensureImport("import classNames from 'classnames'"))
     .pipe(addClassNames())
