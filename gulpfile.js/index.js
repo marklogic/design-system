@@ -67,7 +67,8 @@ gulp.task('compile-with-lib', done => {
   compile().on('finish', done)
 })
 
-gulp.task(
-  'compile',
-  gulp.parallel('compile-with-es', 'compile-with-lib'),
-)
+gulp.task('compile', gulp.parallel('compile-with-es', 'compile-with-lib'))
+
+gulp.task('compile-watch', () => gulp.watch(path.resolve(__dirname, '../src'), gulp.series(['compile'])))
+
+gulp.task('fix-and-compile', gulp.series(['fix-uniformity', 'compile']))

@@ -16,10 +16,13 @@
     "*.less"
   ],
   "scripts": {
+    "build": "gulp compile",
+    "watch": "gulp compile-watch",
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "webpack": "webpack",
-    "predeploy": "cd playground && yarn && npm run build",
+    "predeploy": "cd playground && yarn && yarn run build",
+    "prepublishOnly": "yarn run build",
     "deploy": "gh-pages -d playground/build",
     "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn)",
     "storybook": "start-storybook -p 6006",
