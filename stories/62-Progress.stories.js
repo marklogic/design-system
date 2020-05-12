@@ -1,5 +1,5 @@
 import React from 'react'
-import { MLProgress } from 'marklogic-ui-library'
+import { MLProgress } from '@marklogic/design-system'
 import { number, withKnobs, radios } from '@storybook/addon-knobs'
 
 export default {
