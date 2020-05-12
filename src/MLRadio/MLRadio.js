@@ -1,9 +1,12 @@
 import React from 'react'
 import { Radio } from 'antd'
-import './style'
+import classNames from 'classnames'
 
 const MLRadio = (props) => (
-  <Radio {...props}>
+  <Radio
+    {...props}
+    className={classNames('ml-radio', props.className)}
+  >
     {props.children}
   </Radio>
 )

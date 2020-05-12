@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Layout } from 'antd'
+import classNames from 'classnames'
 
 const { Footer } = Layout
 
@@ -34,7 +35,11 @@ const footerSpanStyle = {
 const MLFooter = (props) => {
   const footerStyle = props.graphicBackground ? footerStyleGraphicBg : footerStyleWhiteBg
   return (
-    <Footer style={footerStyle} {...props}>
+    <Footer
+      style={footerStyle}
+      {...props}
+      className={classNames('ml-layout-footer', props.className)}
+    >
       <div>
         <span style={footerSpanStyle}>Copyright @ {props.year} MarkLogic Corporation. All Rights Reserved.</span>
         |

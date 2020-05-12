@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Layout } from 'antd'
-import './style'
+import classNames from 'classnames'
 const { Sider } = Layout
 
 const siderStyle = {
@@ -18,7 +18,12 @@ const siderProps = {
 
 const MLSider = (props) => {
   return (
-    <Sider style={siderStyle} {...siderProps} {...props}>
+    <Sider
+      style={siderStyle}
+      {...siderProps}
+      {...props}
+      className={classNames('ml-layout-sider', props.className)}
+    >
       {props.children}
     </Sider>
   )

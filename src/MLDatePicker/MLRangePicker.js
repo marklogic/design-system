@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { DatePicker } from 'antd'
 import { MLConfigContext } from '../MLConfigProvider'
-import './style'
 import { pickerPropsFromContext } from './utils'
+import classNames from 'classnames'
 const { RangePicker } = DatePicker
 
 const MLRangePicker = (props) => {
@@ -12,7 +12,12 @@ const MLRangePicker = (props) => {
       {(context) => {
         const contextProps = pickerPropsFromContext(context, props)
         return (
-          <RangePicker {...contextProps} {...props} showTime={contextProps.showTime}>
+          <RangePicker
+            {...contextProps}
+            {...props}
+            showTime={contextProps.showTime}
+            className={classNames('ml-date-picker-range-picker', props.className)}
+          >
             {props.children}
           </RangePicker>
         )

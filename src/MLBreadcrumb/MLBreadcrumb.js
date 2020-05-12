@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Breadcrumb } from 'antd'
-import './style'
-const { Item } = Breadcrumb
+import classNames from 'classnames'
 
 const MLBreadcrumb = (props) => {
   return (
-    <Breadcrumb {...props}>
+    <Breadcrumb
+      {...props}
+      className={classNames('ml-breadcrumb', props.className)}
+    >
       {props.children}
     </Breadcrumb>
   )

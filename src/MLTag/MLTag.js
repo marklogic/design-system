@@ -1,10 +1,13 @@
 import React from 'react'
 import { Tag } from 'antd'
-import './style'
+import classNames from 'classnames'
 
 const MLTag = (props) => {
   return (
-    <Tag {...props}>
+    <Tag
+      {...props}
+      className={classNames('ml-tag', props.className)}
+    >
       {props.children}
     </Tag>
   )

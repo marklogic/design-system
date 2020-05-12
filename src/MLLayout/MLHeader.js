@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Layout } from 'antd'
-import './style'
+import classNames from 'classnames'
 
 const { Header } = Layout
 
@@ -18,7 +18,11 @@ const headerStyle = {
 
 const MLHeader = (props) => {
   return (
-    <Header style={headerStyle} {...props}>
+    <Header
+      style={headerStyle}
+      {...props}
+      className={classNames('ml-layout-header', props.className)}
+    >
       {props.children}
     </Header>
   )
