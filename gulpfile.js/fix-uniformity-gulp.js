@@ -61,6 +61,9 @@ const removeImport = (importStatementRegex) => {
 
 const addClassNames = () => {
   return through.obj((file, enc, cb) => {
+    if (/.*\/MLSelect\/(MLOptGroup|MLOption).*/.test(file.path)) {
+      return cb(null, file)
+    }
     let madeChanges = false
     let code = file.contents.toString()
     const mainComponentName = path.basename(path.dirname(file.path))
