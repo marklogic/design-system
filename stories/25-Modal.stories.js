@@ -4,19 +4,28 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import {
   DraggableModalProvider,
 } from 'ant-design-draggable-modal'
-import { withActions } from '@storybook/addon-actions'
+import { action } from '@storybook/addon-actions'
 
 export default {
   title: 'Feedback/MLModal',
   component: MLModal,
-  decorators: [withKnobs, withActions('click')],
+  decorators: [withKnobs],
 }
 
 function useVisible() {
   const [visible, setVisible] = useState(false)
-  const toggle = () => setVisible(!visible)
-  const show = () => setVisible(true)
-  const hide = () => setVisible(false)
+  const toggle = (e) => {
+    setVisible(!visible)
+    return action('toggle modal')(e)
+  }
+  const show = (e) => {
+    setVisible(true)
+    return action('show modal')(e)
+  }
+  const hide = (e) => {
+    setVisible(false)
+    return action('hide modal')(e)
+  }
   return { visible, toggle, show, hide }
 }
 
