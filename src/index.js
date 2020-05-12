@@ -20,6 +20,7 @@ import MLRate from './MLRate'
 import MLRow from './MLRow'
 import MLSlider from './MLSlider'
 import MLSpin from './MLSpin'
+import MLSwitch from './MLSwitch'
 import MLTable from './MLTable'
 import MLTag from './MLTag'
 import MLTooltip from './MLTooltip'
@@ -48,6 +49,7 @@ export {
   MLRow,
   MLSlider,
   MLSpin,
+  MLSwitch,
   MLTable,
   MLTag,
   MLTooltip,
