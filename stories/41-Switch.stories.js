@@ -1,7 +1,7 @@
 import React from 'react'
 import { radios, withKnobs } from '@storybook/addon-knobs'
-import { MLSwitch } from 'marklogic-ui-library'
-import { sizes } from 'marklogic-ui-library/ml-switch'
+import { MLSwitch } from '@marklogic/design-system'
+import { sizes } from '@marklogic/design-system/MLSwitch/MLSwitch'
 
 export default {
   component: MLSwitch,
