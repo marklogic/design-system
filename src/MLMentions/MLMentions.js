@@ -13,5 +13,4 @@ const MLMentions = (props) => {
   )
 }
 
-
 export default MLMentions

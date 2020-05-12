@@ -1,9 +1,13 @@
 const gulp = require('gulp')
+const fs = require('fs-extra')
 const PluginError = require('plugin-error')
 const through = require('through2')
 const path = require('path')
 const _ = require('lodash')
 const { kebabCase } = require('lodash/string')
+const merge = require('merge-stream')
+const Vinyl = require('vinyl')
+const eslint = require('gulp-eslint')
 
 const checkMultipleComponentsOneFile = () => {
   return through.obj((file, enc, cb) => {
@@ -111,12 +115,47 @@ $<indents>$<tagEndChar>`)
   })
 }
 
+const ensureStyleFolder = () => {
+  return through.obj(function(file, enc, cb) {
+    const componentDir = path.dirname(file.path)
+    const antComponentName = path.basename(componentDir).replace('ML', '')
+    const styleIndexPath = path.join(componentDir, 'style', 'index.js')
+    if (!fs.existsSync(styleIndexPath)) {
+      this.push(new Vinyl({
+        base: file.base,
+        cwd: file.cwd,
+        path: styleIndexPath,
+        contents: Buffer.from(
+`import 'antd/es/${kebabCase(antComponentName)}/style'
+import './index.less'`),
+      }))
+    }
+    const lessPath = path.join(componentDir, 'style', 'index.less')
+    if (!fs.existsSync(lessPath)) {
+      this.push(new Vinyl({
+        base: file.base,
+        cwd: file.cwd,
+        path: lessPath,
+        contents: Buffer.from(''),
+      }))
+    }
+
+    cb(null)
+  })
+}
+
 const fixUniformityTask = gulp.task('fix-uniformity', function(resolve) {
-  return gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
-    .pipe(checkMultipleComponentsOneFile())
-    .pipe(removeImport(/import '\.\/style'\n/))
-    .pipe(ensureImport("import classNames from 'classnames'"))
-    .pipe(addClassNames())
+  const src = gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
+  return merge(
+    src
+      .pipe(checkMultipleComponentsOneFile())
+      .pipe(removeImport(/import '\.\/style'\n/))
+      .pipe(ensureImport("import classNames from 'classnames'"))
+      .pipe(addClassNames())
+      .pipe(eslint({ fix: true })),
+    src
+      .pipe(ensureStyleFolder()),
+  )
     .pipe(gulp.dest(path.resolve(__dirname, '../src')))
 })
 
