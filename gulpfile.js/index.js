@@ -4,15 +4,24 @@ const merge = require('merge-stream')
 const path = require('path')
 const _ = require('lodash')
 require('./fix-uniformity-gulp')
+const generateIconFiles = require('./generate-icon-files')
+const debug = require('gulp-debug-streams');
+
+const cwd = path.resolve(__dirname, '..')
+const base = path.resolve(__dirname, '../src')
 
 function compile(modules) {
-  return merge([
+  const babelFiles = merge([
     gulp.src([
       path.resolve(__dirname, '../src/ML*/ML*.js'),
       path.resolve(__dirname, '../src/ML*/*.js'),
       path.resolve(__dirname, '../src/ML*/style/*.js'),
       path.resolve(__dirname, '../src/index.js'),
-    ])
+    ]),
+    generateIconFiles(),
+  ])
+  return merge([
+    babelFiles
       .pipe(babel({
         plugins: [
           'transform-react-jsx',
@@ -43,12 +52,16 @@ function compile(modules) {
     gulp.src([
       path.resolve(__dirname, '..', 'src/*/style/*.less'),
       path.resolve(__dirname, '..', 'src/styles.less'),
-    ], { base: path.resolve(__dirname, '..', 'src') }),
+    ], { base }),
 
     gulp.src([
       path.resolve(__dirname, '../src/theme-variables.json'),
     ]),
-  ]).pipe(gulp.dest(path.resolve(__dirname, '..', modules === false ? 'es' : 'lib')))
+  ]).pipe(gulp.dest(
+    modules === false ? 'es' : 'lib',
+    // path.resolve(__dirname, '..', modules === false ? 'es' : 'lib'),
+    { cwd, base },
+  ))
 }
 
 gulp.task('compile-with-es', done => {
