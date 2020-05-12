@@ -19,7 +19,7 @@ const generateFontAwesomeIconCode = (iconName) => {
 
 import { wrapFontAwesomeIcon } from './icon-wrappers'
 const ${iconName} = wrapFontAwesomeIcon(faIcons.fa${iconName})
-export default $iconName`
+export default ${iconName}`
   )
 }
 

@@ -5,7 +5,6 @@ const path = require('path')
 const _ = require('lodash')
 require('./fix-uniformity-gulp')
 const generateIconFiles = require('./generate-icon-files')
-const debug = require('gulp-debug-streams');
 
 const cwd = path.resolve(__dirname, '..')
 const base = path.resolve(__dirname, '../src')
@@ -59,7 +58,6 @@ function compile(modules) {
     ]),
   ]).pipe(gulp.dest(
     modules === false ? 'es' : 'lib',
-    // path.resolve(__dirname, '..', modules === false ? 'es' : 'lib'),
     { cwd, base },
   ))
 }
