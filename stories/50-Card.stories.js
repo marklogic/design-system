@@ -26,10 +26,6 @@ export const basic = () => {
     bordered: backgroundColor === 'light',
     size: radios('size', ['default', 'small'], 'small'),
     extra: showExtra ? (<a href='#' onClick={(e) => (e).preventDefault()}>More</a>) : null,
-    //   null: null,
-    //   link: ,
-    //   icon: (<PlusCircleOutlined />),
-    // }, null),
     style: { width: 300 },
     actions: null,
     activeTabKey: null,
@@ -77,7 +73,7 @@ export const cardInColumn = () => {
   )
 }
 
-export const withActions = () => {
+export const withActionsAndMeta = () => {
   return (
     <div>
       <MLCard
