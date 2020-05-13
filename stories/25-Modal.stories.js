@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { MLModal, MLButton } from '@marklogic/design-system'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+import { withKnobs, boolean } from '@storybook/addon-knobs'
 import {
   DraggableModalProvider,
 } from 'ant-design-draggable-modal'
