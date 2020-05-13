@@ -30,3 +30,18 @@ export const createWrappedMLIcon = (component) => {
   // TODO: Consider using React.forwardRef here like Ant does
   return wrappedComponent
 }
+
+export const wrapFontAwesomeIcon = (faIcon) => {
+  const componentFn = (props) => {
+    return (
+      <Icon
+        {...props}
+        component={(props) => (
+          <FontAwesomeIcon icon={faIcon} {...props} />
+        )}
+      />
+    )
+  }
+  componentFn.displayName = faIcon.iconName
+  return createWrappedMLIcon(componentFn)
+}
