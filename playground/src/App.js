@@ -5,9 +5,13 @@ import {
   MLDatePicker,
   MLLayout,
   MLSlider,
-  MLIcon,
   MLConfigProvider,
 } from '@marklogic/design-system'
+
+import {
+  Route,
+  CheckCircleFilled,
+} from '@marklogic/design-system/MLIcon'
 
 const configValues = {
   dateFormat: 'YYYY-MMM-DD', // Default for all dates, and DatePicker
@@ -27,8 +31,8 @@ export default class App extends Component {
             <MLLayout.MLContent>
               <MLButton type='primary'>Test</MLButton>
               <MLButton type='highlight'>Test</MLButton>
-              <MLIcon.Route />
-              <MLIcon.CheckCircleFilled />
+              <Route />
+              <CheckCircleFilled />
               <div>
                 <MLSlider tooltipPlacement='top' />
               </div>
