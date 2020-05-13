@@ -1,24 +1,7 @@
 import React from 'react'
-import Icon from '@ant-design/icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as faIcons from '@fortawesome/free-solid-svg-icons'
 
-import { createWrappedMLIcon } from './icon-wrappers'
-
-const wrapFontAwesomeIcon = (faIcon) => {
-  const componentFn = (props) => {
-    return (
-      <Icon
-        {...props}
-        component={(props) => (
-          <FontAwesomeIcon icon={faIcon} {...props} />
-        )}
-      />
-    )
-  }
-  componentFn.displayName = faIcon.iconName
-  return createWrappedMLIcon(componentFn)
-}
+import { wrapFontAwesomeIcon } from './icon-wrappers'
 
 export const Ad = wrapFontAwesomeIcon(faIcons.faAd)
 export const AddressBook = wrapFontAwesomeIcon(faIcons.faAddressBook)

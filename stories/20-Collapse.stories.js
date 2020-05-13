@@ -145,6 +145,9 @@ export const nestedPanel = () => {
           <MLPanel {...panelProps} header='This is a nested panel'>
             <p>{exampleText}</p>
           </MLPanel>
+          <MLPanel {...panelProps} header='This is a nested panel'>
+            <p>{exampleText}</p>
+          </MLPanel>
         </MLCollapse>
       </MLPanel>
       <MLPanel {...panelProps} header='This is panel header 2' key='2'>
