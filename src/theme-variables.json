@@ -1,5 +1,6 @@
 {
   "primary-color": "#5B69AF",
+  "processing-color": "@primary-color",
   "highlight-color": "#7f86b5",
   "text-color": "#333333",
   "text-color-secondary": "#777777",

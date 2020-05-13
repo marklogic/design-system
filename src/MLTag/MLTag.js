@@ -1,25 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Tag } from 'antd'
-import './style'
-const { CheckableTag } = Tag
+import classNames from 'classnames'
 
 const MLTag = (props) => {
   return (
-    <Tag {...props}>
+    <Tag
+      {...props}
+      className={classNames('ml-tag', props.className)}
+    >
       {props.children}
     </Tag>
   )
 }
-
-const MLCheckableTag = (props) => {
-  return (
-    <CheckableTag {...props}>
-      {props.children}
-    </CheckableTag>
-  )
-}
-
-MLTag.MLCheckableTag = MLCheckableTag
 
 export default MLTag
