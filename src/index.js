@@ -16,12 +16,14 @@ import MLLayout from './MLLayout'
 import MLMentions from './MLMentions'
 import MLPageHeader from './MLPageHeader'
 import MLPopconfirm from './MLPopconfirm'
+import MLProgress from './MLProgress'
 import MLRadio from './MLRadio'
 import MLRate from './MLRate'
 import MLRow from './MLRow'
 import MLSelect from './MLSelect'
 import MLSlider from './MLSlider'
 import MLSpin from './MLSpin'
+import MLSwitch from './MLSwitch'
 import MLTable from './MLTable'
 import MLTag from './MLTag'
 import MLTooltip from './MLTooltip'
@@ -46,12 +48,14 @@ export {
   MLMentions,
   MLPageHeader,
   MLPopconfirm,
+  MLProgress,
   MLRadio,
   MLRate,
   MLRow,
   MLSelect,
   MLSlider,
   MLSpin,
+  MLSwitch,
   MLTable,
   MLTag,
   MLTooltip,

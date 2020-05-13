@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Alert } from 'antd'
-import './style'
 import { CheckCircleFilled, InfoCircleFilled, ExclamationCircleFilled, CloseCircleFilled } from '../MLIcon'
+import classNames from 'classnames'
 
 const MLAlert = (props) => {
   let icon
@@ -15,8 +15,13 @@ const MLAlert = (props) => {
   } else if (props.type === 'error') {
     icon = <CloseCircleFilled />
   }
+
   return (
-    <Alert icon={icon} {...props} />
+    <Alert
+      icon={icon}
+      {...props}
+      className={classNames('ml-alert', props.className)}
+    />
   )
 }
 

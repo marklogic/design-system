@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { ConfigProvider } from 'antd'
+import classNames from 'classnames'
 
 const MLConfigProvider = (props) => {
   return (
@@ -16,6 +17,7 @@ const MLConfigProvider = (props) => {
       {/* Include Ant's normal config values as well, for Ant components to use */}
       <ConfigProvider
         {...props}
+        className={classNames('ml-config-provider', props.className)}
       >
         {props.children}
       </ConfigProvider>

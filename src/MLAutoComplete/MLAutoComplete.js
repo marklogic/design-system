@@ -13,7 +13,7 @@ const MLAutoComplete = (props) => {
           <AutoComplete
             {...props}
             size={size}
-            className={classNames(props.className, 'ml-auto-complete')}
+            className={classNames('ml-auto-complete', props.className)}
           >
             {props.children}
           </AutoComplete>
