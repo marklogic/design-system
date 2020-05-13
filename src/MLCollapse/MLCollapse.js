@@ -1,25 +1,17 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Collapse } from 'antd'
-import './style'
-const { Panel } = Collapse
+import classNames from 'classnames'
 
 const MLCollapse = (props) => {
   return (
-    <Collapse bordered={false} {...props}>
+    <Collapse
+      bordered={false}
+      {...props}
+      className={classNames('ml-collapse', props.className)}
+    >
       {props.children}
     </Collapse>
   )
 }
-
-const MLPanel = (props) => {
-  return (
-    <Panel {...props}>
-      {props.children}
-    </Panel>
-  )
-}
-
-MLCollapse.MLPanel = MLPanel
 
 export default MLCollapse
