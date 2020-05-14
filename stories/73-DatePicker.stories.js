@@ -20,8 +20,8 @@ const configValues = {
   dateFormat: ['YYYY-MMM-DD', 'MM/DD/YYYY', 'M/D/YY'],
   timeFormat: ['HH:mm:ss'],
   dateTimeFormat: ['YYYY-MMM-DD, HH:mm:ss', 'LT', 'LTS'],
-  monthFormat: 'MMM-YY',
-  weekFormat: 'YYYY-MMM-DD',
+  monthFormat: 'YYYY-MM',
+  weekFormat: 'YYYY-wo',
   yearFormat: 'YYYY',
 }
 
