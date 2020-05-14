@@ -14,7 +14,7 @@ export const Basic = () => {
     <MLHeader
       className='ml-header'
       title='Data Hub Central' subtitle='Insurance Hub' backIcon={false}
-      avatar={{ size: 48, src: 'https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png' }}
+      avatar={{ src: 'https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png' }}
       extra={[
         makeIcon(<MLIcon.Route />, 'route'),
         <span key='divider' style={{ 'border-left': '1px dashed' }} />,
