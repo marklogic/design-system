@@ -14,35 +14,29 @@ export default {
 
 function useVisible() {
   const [visible, setVisible] = useState(false)
-  const toggle = (e) => {
-    setVisible(!visible)
-    return action('toggle modal')(e)
-  }
   const show = (e) => {
     setVisible(true)
-    return action('show modal')(e)
   }
   const hide = (e) => {
     setVisible(false)
-    return action('hide modal')(e)
   }
-  return { visible, toggle, show, hide }
+  return { visible, show, hide }
 }
 
 export const Basic = () => {
   const { visible, show, hide } = useVisible()
   return (
     <DraggableModalProvider>
-      <MLButton type='primary' onClick={show}>
+      <MLButton type='primary' onClick={(e) => { action('onOk')(e); return show(e) }}>
         Open Modal
       </MLButton>
       <MLModal
         title={text('title', 'Basic Modal')}
         visible={visible}
         closable={boolean('closable', true)}
-        onOk={hide}
+        onOk={(e) => { action('onOk')(e); return hide(e) }}
         okText={text('okText', 'OK')}
-        onCancel={hide}
+        onCancel={(e) => { action('onCancel')(e); return hide(e) }}
         cancelText={text('cancelText', 'Cancel')}
         okType={text('okType', 'primary')}
       >
