@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { PageHeader } from 'antd'
 import './style'
 
@@ -15,5 +16,12 @@ const MLHeader = (props) => {
     </PageHeader>
   )
 }
+
+MLHeader.propTypes = {
+  avatar: PropTypes.object,
+  extra: PropTypes.arrayOf(PropTypes.node),
+  title: PropTypes.node,
+  subtitle: PropTypes.node,
+};
 
 export default MLHeader
