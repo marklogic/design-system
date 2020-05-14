@@ -26,6 +26,17 @@ function compile(modules) {
           'transform-react-jsx',
           '@babel/plugin-transform-template-literals',
           '@babel/proposal-class-properties',
+          ['import', {
+            libraryName: '@marklogic/design-system/MLIcon',
+            libraryDirectory: '',
+            camel2DashComponentName: false,
+            customName: function (name) {
+              return `@marklogic/design-system/es/MLIcon/${name}`
+            },
+            style: function() {
+              return '@marklogic/design-system/es/MLIcon/style'
+            },
+          }],
         ],
         presets: [
           '@babel/preset-react',

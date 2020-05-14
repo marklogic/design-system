@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Descriptions, Table } from 'antd'
 import { cloneDeep, merge } from 'lodash-es'
-import { DownOutlined, RightOutlined } from '../MLIcon'
+import { DownOutlined, RightOutlined } from '@marklogic/design-system/MLIcon'
 import classNames from 'classnames'
 
 /**

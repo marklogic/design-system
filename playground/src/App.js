@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 
 import {
+  MLAlert,
+  MLTable,
   MLButton,
+  MLIcon,
   MLDatePicker,
   MLLayout,
   MLSlider,
@@ -29,9 +32,11 @@ export default class App extends Component {
           <MLLayout>
             <MLLayout.MLHeader>Header</MLLayout.MLHeader>
             <MLLayout.MLContent>
+              <MLAlert message='alert text' />
               <MLButton type='primary'>Test</MLButton>
               <MLButton type='highlight'>Test</MLButton>
               <Route />
+              <MLIcon.CheckCircleFilled />
               <CheckCircleFilled />
               <div>
                 <MLSlider tooltipPlacement='top' />

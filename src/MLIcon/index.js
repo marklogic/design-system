@@ -8,3 +8,7 @@ const MLIcon = {}
 Object.assign(MLIcon, FontAwesomeIcons, AntIcons)
 
 export default MLIcon
+
+console.warn("WARNING: Every Ant and FontAwesome icon is being imported. Make sure you're importing icons correctly to avoid a large bundle size.\n" +
+  "eg `import { CheckCircleFilled } from '@marklogic/design-system/MLIcon'`\n" +
+  " with the proper babel")
