@@ -1,12 +1,21 @@
-@typeface: 400 24px "Helvetica Neue", sans-serif;
 .ml-header {
   height: 64px;
   color: white;
   background-color: #031529;
-  font: @typeface;
+  font: 400 24px "Helvetica Neue", sans-serif;
+
+  .ant-page-header-heading {
+    overflow: visible;
+
+    .ant-avatar {
+      margin-left: -14px;
+      top: -8px;
+    }
+  }
+
   .ant-page-header-heading-title {
     color: white;
-    font: @typeface;
+    font: inherit;
     font-size: 28px;
   }
   .ant-avatar {
