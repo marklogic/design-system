@@ -1,1 +1,1 @@
-export {default} from './MLModal'
+export { default } from './MLModal'
