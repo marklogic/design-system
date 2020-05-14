@@ -3,6 +3,14 @@
 }
 
 .ml-table {
+  thead > tr > th {
+    background: unset; // Undo too-specific background so we can set it on the tr with JS
+  }
+
+  thead tr {
+    background: #e8e8e8;
+  }
+
   td:not(.ant-table-row-expand-icon-cell) {
     vertical-align: top;
   }
