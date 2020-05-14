@@ -1,14 +1,19 @@
 import { Avatar } from 'antd'
 import React from 'react'
 import PropTypes from 'prop-types'
-import { UserOutlined } from '@ant-design/icons'
+import UserOutlined from '@ant-design/icons/UserOutlined'
+import classNames from 'classnames'
 
 /**
  * A default icon is shown unless children or `src` are present.
  */
 const MLAvatar = (props) => {
   return (
-    <Avatar icon={(props.children || props.src) ? null : <UserOutlined />} {...props}>
+    <Avatar
+      icon={(props.children || props.src) ? null : <UserOutlined />}
+      {...props}
+      className={classNames('ml-avatar', props.className)}
+    >
       {props.children}
     </Avatar>
   )
