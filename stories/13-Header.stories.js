@@ -1,6 +1,5 @@
 import React from 'react'
 import { MLHeader, MLIcon } from '@marklogic/design-system'
-import './13-Header.less'
 
 export default {
   title: 'Navigation/MLHeader',
