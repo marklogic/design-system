@@ -8,10 +8,10 @@ const MLHeader = (props) => {
   return (
     <PageHeader
       className='ml-header'
-      avatar={avatarProps}
       backIcon={false}
       ghost={false}
       {...props}
+      avatar={avatarProps}
     >
       {props.children}
     </PageHeader>
