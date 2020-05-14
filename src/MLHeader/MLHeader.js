@@ -1,13 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { PageHeader } from 'antd'
+import { MLPageHeader } from '@marklogic/design-system'
 import './style'
 import classNames from 'classnames'
 
+/**
+ * Note that changes to `MLPageHeader` will affect this component.
+ */
 const MLHeader = (props) => {
   const avatarProps = { size: 48, ...props.avatar }
   return (
-    <PageHeader
+    <MLPageHeader
       backIcon={false}
       ghost={false}
       {...props}
@@ -15,7 +18,7 @@ const MLHeader = (props) => {
       className={classNames('ml-header', props.className)}
     >
       {props.children}
-    </PageHeader>
+    </MLPageHeader>
   )
 }
 
