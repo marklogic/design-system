@@ -1,8 +1,8 @@
 import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs/react'
 // import 'antd/es/typography/style/index.less'
-// import 'marklogic-ui-library/styles.less' // TODO: Remove once we have MLTypography
-import { MLAlert, MLButton } from 'marklogic-ui-library'
+// import '@marklogic/design-system/styles.less' // TODO: Remove once we have MLTypography
+import { MLAlert, MLButton } from '@marklogic/design-system'
 import { Card, Typography } from 'antd'
 import './3-ColorPalette.less'
 

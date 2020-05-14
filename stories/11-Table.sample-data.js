@@ -248,7 +248,7 @@ export const sampleNestedData = {
       defaultSortOrder: 'descend',
     },
     { title: 'Last Name', dataIndex: 'last_name', key: 'last_name', sorter: lessThanSorter('last_name') },
-    { title: 'Gender', dataIndex: 'gender', key: 'gender', sorter: lessThanSorter('gender') },
+    { title: 'Gender', dataIndex: 'gender', key: 'gender' },
     { title: 'Hire Date', dataIndex: 'hire_date', key: 'hire_date', sorter: dateSorter('hire_date') },
     {
       title: 'Work Experience',

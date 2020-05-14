@@ -1,15 +1,13 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLCollapse } from 'marklogic-ui-library'
+import { MLCollapse } from '@marklogic/design-system'
 import { withKnobs, array, boolean, text, optionsKnob as options } from '@storybook/addon-knobs'
-import _ from 'lodash'
-import './20-Collapse.css'
-import { DeleteOutlined } from '@ant-design/icons'
+import './20-Collapse.less'
+import { DeleteOutlined } from '@marklogic/design-system/MLIcon'
 const { MLPanel } = MLCollapse
-DeleteOutlined.name = 'DeleteOutlined' // Hack to get it to render properly in the sample code
 
 export default {
-  title: 'Data Display/Collapse',
+  title: 'Data Display/MLCollapse',
   decorators: [withKnobs],
   parameters: {
     info: {
@@ -144,6 +142,9 @@ export const nestedPanel = () => {
     <MLCollapse {...collapseProps}>
       <MLPanel {...panelProps} key='1'>
         <MLCollapse>
+          <MLPanel {...panelProps} header='This is a nested panel'>
+            <p>{exampleText}</p>
+          </MLPanel>
           <MLPanel {...panelProps} header='This is a nested panel'>
             <p>{exampleText}</p>
           </MLPanel>
