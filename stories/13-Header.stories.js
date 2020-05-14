@@ -1,5 +1,6 @@
 import React from 'react'
 import { MLHeader, MLIcon } from '@marklogic/design-system'
+import './13-Header.less'
 
 export default {
   title: 'Navigation/MLHeader',
@@ -12,8 +13,9 @@ export const Basic = () => {
   }
   return (
     <MLHeader
+      className='ml-header'
       title='Data Hub Central' subtitle='Insurance Hub' backIcon={false}
-      avatar={{ src: 'https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png' }}
+      avatar={{ size: 48, src: 'https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png' }}
       extra={[
         makeIcon(<MLIcon.Route />, 'route'),
         <span key='divider' style={{ 'border-left': '1px dashed' }} />,
@@ -22,6 +24,7 @@ export const Basic = () => {
         makeIcon(<MLIcon.SettingFilled />, 'settings'),
         makeIcon(<MLIcon.User />, 'user'),
       ]}
+      ghost={false}
     />
   )
 }
