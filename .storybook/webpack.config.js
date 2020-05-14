@@ -35,7 +35,13 @@ module.exports = async ({ config }) => {
         loader: 'babel-loader',
         options: {
           plugins: [
-            ['import', {libraryName: 'antd', style: true, libraryDirectory: 'es'}]
+            ["import", {libraryName: "antd", style: true, libraryDirectory: "es"}, "antd"],
+            ["import", {
+              libraryName: "@marklogic/design-system",
+              libraryDirectory: "src",
+              camel2DashComponentName: false,
+              style: true,
+            }, "@marklogic/design-system"],
           ]
         }
       }
@@ -64,6 +70,7 @@ module.exports = async ({ config }) => {
       path.resolve(__dirname, '../src/'),
     ]
   });
+  config.resolve.alias['@marklogic/design-system/src'] = path.resolve(__dirname, '../src')
   config.resolve.alias['@marklogic/design-system'] = path.resolve(__dirname, '../src')
   config.resolve.alias['antd'] = path.resolve(__dirname, '../node_modules/antd')
 
