@@ -1,9 +1,9 @@
 import React from 'react';
 import { linkTo } from '@storybook/addon-links';
 
-TODO: Display this as a proper MDX file.
-
 # Welcome to the MarkLogic Design System Storybook
+
+This StoryBook contains demos of the components found in the `@marklogic/design-system` library, along with the source code you can copy in order to use them. Some slight code modifications may be necessary (see below for Gotchas), but it should be a good guideline.
 
 This documentation is meant to be used in conjunction with the [Official Ant v3 Docs](https://3x.ant.design/docs/react/introduce). This library is based off of **version 3** of Ant, so make sure to stick to the v3 docs.
 
@@ -30,10 +30,12 @@ Some components are nested inside others, eg `MLInput.MLGroup`:
 import { MLInput } from '@marklogic/design-system'
 const { MLGroup } = MLInput // or use MLInput.MLGroup directly, in your JSX
 ```
+These displayNames may be updated to be less confusing in a future update.
 
-A few components must be imported directly from their path, or should be if you want tree-shaking (like with {linkTo('MLIcon')}):
+Icons must be imported differently, in order to be tree-shaken properly.
+It is not recommended that you import MLIcon directly, as that will include all Ant and FontAwesome icons in your bundle.
 ```jsx
-import { CheckCircleOutlined } from '@marklogic/design-system/src/MLIcon'
+import { CheckCircleOutlined } from '@marklogic/design-system/MLIcon'
 ```
 
 
