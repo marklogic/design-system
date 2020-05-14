@@ -9,7 +9,7 @@ This documentation is meant to be used in conjunction with the [Official Ant v3 
 
 In your webpack.config.js or config-overrides.js, provide the Less loader the `modifyVars` option, defining any `less` variables you want to override. There is an example at `@marklogic/design-system/src/theme-variables.json`.
 
-See [Ant's page on customizing the theme](https://ant.design/docs/react/customize-theme) for more detail and a full list of theme variables provided by Ant.
+See [Ant's page on customizing the theme](https://3x.ant.design/docs/react/customize-theme) for more detail and a full list of theme variables provided by Ant.
 
 
 ## How to use these components
