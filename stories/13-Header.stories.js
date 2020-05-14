@@ -1,5 +1,6 @@
 import React from 'react'
-import { MLHeader, MLIcon } from '@marklogic/design-system'
+import { MLHeader } from '@marklogic/design-system'
+import { Route as RouteIcon, SearchOutlined, QuestionCircleOutlined, SettingOutlined, UserOutlined } from '@marklogic/design-system/MLIcon'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
 export default {
@@ -18,12 +19,12 @@ export const Basic = () => {
       title={text('title', 'Data Hub Central')}
       avatar={{ src: text('project avatar url', 'https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png') }}
       extra={[
-        makeIcon(<MLIcon.Route />, 'route'),
+        makeIcon(<RouteIcon />, 'route'),
         <span key='divider' style={{ 'border-left': '1px dashed' }} />,
-        makeIcon(<MLIcon.SearchOutlined />, 'search'),
-        makeIcon(<MLIcon.QuestionCircleOutlined />, 'help'),
-        makeIcon(<MLIcon.SettingOutlined />, 'settings'),
-        makeIcon(<MLIcon.UserOutlined />, 'user'),
+        makeIcon(<SearchOutlined />, 'search'),
+        makeIcon(<QuestionCircleOutlined />, 'help'),
+        makeIcon(<SettingOutlined />, 'settings'),
+        makeIcon(<UserOutlined />, 'user'),
       ]}
       ghost={false}
     />
