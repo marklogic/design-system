@@ -18,10 +18,10 @@ export const Basic = () => {
       extra={[
         makeIcon(<MLIcon.Route />, 'route'),
         <span key='divider' style={{ 'border-left': '1px dashed' }} />,
-        makeIcon(<MLIcon.Search />, 'search'),
-        makeIcon(<MLIcon.QuestionCircle />, 'help'),
-        makeIcon(<MLIcon.SettingFilled />, 'settings'),
-        makeIcon(<MLIcon.User />, 'user'),
+        makeIcon(<MLIcon.SearchOutlined />, 'search'),
+        makeIcon(<MLIcon.QuestionCircleOutlined />, 'help'),
+        makeIcon(<MLIcon.SettingOutlined />, 'settings'),
+        makeIcon(<MLIcon.UserOutlined />, 'user'),
       ]}
       ghost={false}
     />
