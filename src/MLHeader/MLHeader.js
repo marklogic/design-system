@@ -22,7 +22,6 @@ MLHeader.propTypes = {
   avatar: PropTypes.object,
   extra: PropTypes.arrayOf(PropTypes.node),
   title: PropTypes.node,
-  subtitle: PropTypes.node,
 };
 
 export default MLHeader

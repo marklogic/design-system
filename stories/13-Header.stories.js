@@ -16,7 +16,6 @@ export const Basic = () => {
     <MLHeader
       className='ml-header'
       title={text('title', 'Data Hub Central')}
-      subtitle={text('subtitle', 'Insurance Hub')}
       avatar={{ src: text('project avatar url', 'https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png') }}
       extra={[
         makeIcon(<MLIcon.Route />, 'route'),
