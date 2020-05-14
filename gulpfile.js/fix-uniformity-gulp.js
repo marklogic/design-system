@@ -130,7 +130,8 @@ const ensureStyleFolder = () => {
         path: styleIndexPath,
         contents: Buffer.from(
 `import 'antd/es/${kebabCase(antComponentName)}/style'
-import './index.less'`),
+import './index.less'
+`),
       }))
     }
     const lessPath = path.join(componentDir, 'style', 'index.less')
@@ -147,19 +148,25 @@ import './index.less'`),
   })
 }
 
-const fixUniformityTask = gulp.task('fix-uniformity', function(resolve) {
-  const src = gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
-  return merge(
-    src
-      .pipe(checkMultipleComponentsOneFile())
-      .pipe(removeImport(/import '\.\/style'\n/))
-      .pipe(ensureImport("import classNames from 'classnames'"))
-      .pipe(addClassNames())
-      .pipe(eslint({ fix: true })),
-    src
-      .pipe(ensureStyleFolder()),
-  )
-    .pipe(gulp.dest(path.resolve(__dirname, '../src')))
-})
+const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
+  () => {
+    const src = gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
+    return merge(
+      src
+        .pipe(checkMultipleComponentsOneFile())
+        .pipe(removeImport(/import '\.\/style'\n/))
+        .pipe(ensureImport("import classNames from 'classnames'"))
+        .pipe(addClassNames()),
+      src
+        .pipe(ensureStyleFolder()),
+    )
+      .pipe(gulp.dest(path.resolve(__dirname, '../src')))
+  },
+  () => {
+    return gulp.src(path.resolve(__dirname, '../src/**/*.js'))
+      .pipe(eslint({ fix: true }))
+      .pipe(gulp.dest(path.resolve(__dirname, '../src')))
+  },
+))
 
 module.exports = fixUniformityTask
