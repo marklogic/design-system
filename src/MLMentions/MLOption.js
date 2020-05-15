@@ -14,4 +14,6 @@ const MLOption = (props) => {
   )
 }
 
+MLOption.displayName = 'MLMentions.MLOption'
+
 export default MLOption

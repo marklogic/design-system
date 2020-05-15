@@ -14,4 +14,6 @@ const MLCheckableTag = (props) => {
   )
 }
 
+MLCheckableTag.displayName = 'MLTag.MLCheckableTag'
+
 export default MLCheckableTag

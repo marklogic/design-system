@@ -29,4 +29,6 @@ const MLSider = (props) => {
   )
 }
 
+MLSider.displayName = 'MLLayout.MLSider'
+
 export default MLSider

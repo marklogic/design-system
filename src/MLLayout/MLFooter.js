@@ -61,4 +61,6 @@ MLFooter.propTypes = {
   graphicBackground: PropTypes.bool,
 }
 
+MLFooter.displayName = 'MLLayout.MLFooter'
+
 export default MLFooter

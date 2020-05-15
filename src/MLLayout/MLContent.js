@@ -19,4 +19,6 @@ const MLContent = (props) => {
   )
 }
 
+MLContent.displayName = 'MLLayout.MLContent'
+
 export default MLContent
