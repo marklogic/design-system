@@ -14,4 +14,6 @@ const MLPanel = (props) => {
   )
 }
 
+MLPanel.displayName = 'MLCollapse.MLPanel'
+
 export default MLPanel

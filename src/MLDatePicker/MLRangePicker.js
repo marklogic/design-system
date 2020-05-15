@@ -42,4 +42,6 @@ MLRangePicker.propTypes = {
   size: PropTypes.string,
 }
 
+MLRangePicker.displayName = 'MLDatePicker.MLRangePicker'
+
 export default MLRangePicker

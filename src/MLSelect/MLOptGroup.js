@@ -9,4 +9,6 @@ class MLOptGroup extends OptGroup {}
 MLOptGroup.defaultProps = {}
 MLOptGroup.propTypes = {}
 
+MLOptGroup.displayName = 'MLSelect.MLOptGroup'
+
 export default MLOptGroup

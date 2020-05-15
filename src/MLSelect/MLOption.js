@@ -9,4 +9,6 @@ class MLOption extends Option {}
 MLOption.defaultProps = {}
 MLOption.propTypes = {}
 
+MLOption.displayName = 'MLSelect.MLOption'
+
 export default MLOption
