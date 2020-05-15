@@ -1,23 +1,33 @@
 .ml-header {
-  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  padding-left: 10px;
+  padding-right: 24px;
+  min-height: 64px;
   color: white;
   background-color: #031529;
   font: 400 24px "Helvetica Neue", sans-serif;
 
-  .ant-page-header-heading {
-    overflow: visible;
-
-    .ant-avatar {
-      margin-left: -14px;
-      top: -8px;
-    }
+  .ml-header-title, .ml-header-avatar, .ml-header-extra {
+    flex-grow: 0;
+  }
+  .ml-header-spacer {
+    flex-grow: 1;
   }
 
-  .ant-page-header-heading-title {
+  .ml-header-title {
+    margin-left: 10px;
     color: white;
     font: inherit;
     font-size: 28px;
   }
+
   .ant-avatar {
     background-color: white;
   }
@@ -28,7 +38,7 @@
     color: white;
     margin: 0;
   }
-  .ant-page-header-heading-extra > * {
+  .ml-header-heading-extra > * {
     margin-left: 30px;
   }
 }
