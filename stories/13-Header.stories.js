@@ -32,6 +32,7 @@ export const Basic = () => {
         <a href='#'>
           <MLAvatar
             src={text('project avatar url', 'https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png')}
+            style={{ backgroundColor: 'white' }} // Because the given src has transparent background
             size={48}
           />
         </a>
