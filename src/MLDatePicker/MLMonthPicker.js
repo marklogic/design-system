@@ -4,35 +4,38 @@ import { DatePicker } from 'antd'
 import { MLConfigContext } from '../MLConfigProvider'
 import { pickerPropsFromContext } from './utils'
 import classNames from 'classnames'
+const { MonthPicker } = DatePicker
 
-const MLDatePicker = (props) => {
+const MLMonthPicker = (props) => {
   return (
     <MLConfigContext.Consumer>
       {(context) => {
-        const contextProps = pickerPropsFromContext('date', context, props)
+        const contextProps = pickerPropsFromContext('month', context, props)
         return (
-          <DatePicker
+          <MonthPicker
             {...contextProps}
             {...props}
             showTime={contextProps.showTime}
-            className={classNames('ml-date-picker', props.className)}
+            className={classNames('ml-date-picker-month-picker', props.className)}
           >
             {props.children}
-          </DatePicker>
+          </MonthPicker>
         )
       }}
     </MLConfigContext.Consumer>
   )
 }
 
-MLDatePicker.defaultProps = {
+MLMonthPicker.defaultProps = {
   bordered: true,
   size: 'small',
 }
 
-MLDatePicker.propTypes = {
+MLMonthPicker.propTypes = {
   bordered: PropTypes.bool,
   size: PropTypes.string,
 }
 
-export default MLDatePicker
+MLMonthPicker.displayName = 'MLDatePicker.MLMonthPicker'
+
+export default MLMonthPicker
