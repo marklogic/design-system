@@ -71,7 +71,7 @@ export default class App extends Component {
                 ]}
               />
             </MLLayout.MLHeader>
-            <MLLayout.MLContent>
+            <MLLayout.MLContent style={{ marginTop: 64 }}>
               <MLButton type='primary'>Test</MLButton>
               <MLButton type='highlight'>Test</MLButton>
               <RouteIcon />
