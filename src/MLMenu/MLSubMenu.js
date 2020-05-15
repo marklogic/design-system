@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Menu } from 'antd'
-import './style'
 import classNames from 'classnames'
 const { SubMenu } = Menu
 
@@ -16,6 +15,6 @@ const MLSubMenu = (props) => {
   )
 }
 
-MLSubMenu.displayName = 'MLMenuSubMenu'
+MLSubMenu.displayName = 'MLMenu.MLSubMenu'
 
 export default MLSubMenu

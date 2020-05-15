@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Menu } from 'antd'
-import './style'
 import classNames from 'classnames'
 
 const MLMenu = (props) => {

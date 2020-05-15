@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Dropdown } from 'antd'
-import './style'
 import classNames from 'classnames'
 const { Button } = Dropdown
 
@@ -21,6 +20,6 @@ MLButton.defaultProps = {
   trigger: 'click',
 }
 
-MLButton.displayName = 'MLDropdownButton'
+MLButton.displayName = 'MLDropdown.MLButton'
 
 export default MLButton
