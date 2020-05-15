@@ -10,7 +10,7 @@ const MLHeader = (props) => {
       <div className='ml-header-avatar'>{props.avatar}</div>
       <div className='ml-header-title'>{props.title}</div>
       <div className='ml-header-spacer' />
-      <div className='ml-header-heading-extra'>{props.extra}</div>
+      <div className='ml-header-extra'>{props.extra}</div>
     </div>
   )
 }
