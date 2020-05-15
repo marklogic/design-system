@@ -7,7 +7,8 @@ const MLTooltip = (props) => {
   return (
     <Tooltip
       {...props}
-      className={classNames('ml-tooltip', props.className)}
+      className={classNames('ml-tooltip-container', props.className)}
+      overlayClassName={classNames('ml-tooltip', props.overlayClassName)}
     >
       {props.children}
     </Tooltip>

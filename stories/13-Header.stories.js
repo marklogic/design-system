@@ -1,5 +1,5 @@
 import React from 'react'
-import { MLHeader } from '@marklogic/design-system'
+import { MLHeader, MLTooltip } from '@marklogic/design-system'
 import { Route as RouteIcon, SearchOutlined, QuestionCircleOutlined, SettingOutlined, UserOutlined } from '@marklogic/design-system/MLIcon'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import { Avatar as MLAvatar } from 'antd' // TODO: Use MLAvatar once it exists
@@ -8,11 +8,22 @@ export default {
   title: 'Navigation/MLHeader',
   component: MLHeader,
   decorators: [withKnobs],
+  description: 'Unlike the other components in this library, this component is not based on any Ant component.',
 }
 
 export const Basic = () => {
   function makeIcon(icon, title) {
-    return <a href={`#${title}`} title={title} key={title}>{icon}</a>
+    return (
+      <MLTooltip
+        title={title}
+        placement='bottom'
+        key={title}
+      >
+        <a href={`#${title}`}>
+          {icon}
+        </a>
+      </MLTooltip>
+    )
   }
   return (
     <MLHeader
@@ -27,7 +38,7 @@ export const Basic = () => {
       }
       extra={[
         makeIcon(<RouteIcon />, 'route'),
-        <span key='divider' style={{ 'border-left': '1px dashed' }} />,
+        <span key='divider' style={{ borderLeft: '1px dashed' }} />,
         makeIcon(<SearchOutlined />, 'search'),
         makeIcon(<QuestionCircleOutlined />, 'help'),
         makeIcon(<SettingOutlined />, 'settings'),
