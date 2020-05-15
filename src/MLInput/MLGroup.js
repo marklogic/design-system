@@ -8,7 +8,7 @@ const MLGroup = (props) => {
     <MLSizeContextProvider size={props.size}>
       <Input.Group
         {...props}
-        className={classNames(props.className, 'ml-input-group')}
+        className={classNames('ml-input-group', props.className)}
       >
         {props.children}
       </Input.Group>
@@ -20,6 +20,6 @@ MLGroup.defaultProps = {
   size: 'small',
 }
 
-MLGroup.displayName = 'MLInputGroup'
+MLGroup.displayName = 'MLInput.MLGroup'
 
 export default MLGroup

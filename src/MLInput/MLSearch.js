@@ -12,7 +12,7 @@ const MLSearch = (props) => {
           <Input.Search
             {...props}
             size={size}
-            className={classNames(props.className, 'ml-input-search')}
+            className={classNames('ml-input-search', props.className)}
           >
             {props.children}
           </Input.Search>
@@ -26,6 +26,6 @@ MLSearch.defaultProps = {
   size: 'small',
 }
 
-MLSearch.displayName = 'MLInputSearch'
+MLSearch.displayName = 'MLInput.MLSearch'
 
 export default MLSearch

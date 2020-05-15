@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Input } from 'antd'
 import MLSizeContext from '../MLConfigProvider/MLSizeContext'
-import './style'
 import classNames from 'classnames'
 
 const MLInput = (props) => {
@@ -14,7 +13,7 @@ const MLInput = (props) => {
           <Input
             {...props}
             size={size}
-            className={classNames(props.className, 'ml-input')}
+            className={classNames('ml-input', props.className)}
           >
             {props.children}
           </Input>

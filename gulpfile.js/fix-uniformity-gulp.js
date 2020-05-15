@@ -29,6 +29,9 @@ const ensureImport = (importStatement) => {
     if (!file.isBuffer()) {
       this.emit('error', new PluginError('fix stuff', 'Only buffers supported'))
     }
+    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext).*/.test(file.path)) {
+      return cb(null, file)
+    }
 
     const code = file.contents.toString()
     if (!code.includes(importStatement)) {
@@ -61,7 +64,7 @@ const removeImport = (importStatementRegex) => {
 
 const addClassNames = () => {
   return through.obj((file, enc, cb) => {
-    if (/.*\/MLSelect\/(MLOptGroup|MLOption).*/.test(file.path)) {
+    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext).*/.test(file.path)) {
       return cb(null, file)
     }
     let madeChanges = false

@@ -12,7 +12,7 @@ const MLPassword = (props) => {
           <Input.Password
             {...props}
             size={size}
-            className={classNames(props.className, 'ml-input-password')}
+            className={classNames('ml-input-password', props.className)}
           >
             {props.children}
           </Input.Password>
@@ -26,6 +26,6 @@ MLPassword.defaultProps = {
   size: 'small',
 }
 
-MLPassword.displayName = 'MLInputPassword'
+MLPassword.displayName = 'MLInput.MLPassword'
 
 export default MLPassword

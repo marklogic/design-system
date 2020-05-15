@@ -12,7 +12,7 @@ const MLTextArea = (props) => {
           <Input.TextArea
             {...props}
             size={size}
-            className={classNames(props.className, 'ml-input-textarea')}
+            className={classNames('ml-input-textarea', props.className)}
           >
             {props.children}
           </Input.TextArea>
@@ -26,6 +26,6 @@ MLTextArea.defaultProps = {
   size: 'small',
 }
 
-MLTextArea.displayName = 'MLInputTextArea'
+MLTextArea.displayName = 'MLInput.MLTextArea'
 
 export default MLTextArea
