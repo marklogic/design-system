@@ -26,25 +26,28 @@ export const Basic = () => {
     )
   }
   return (
-    <MLHeader
-      title={text('title', 'Data Hub Central')}
-      avatar={
-        <a href='#'>
-          <MLAvatar
-            src={text('project avatar url', 'https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png')}
-            style={{ backgroundColor: 'white' }} // Because the given src has transparent background
-            size={48}
-          />
-        </a>
-      }
-      extra={[
-        makeIcon(<RouteIcon />, 'route'),
-        <span key='divider' style={{ borderLeft: '1px dashed' }} />,
-        makeIcon(<SearchOutlined />, 'search'),
-        makeIcon(<QuestionCircleOutlined />, 'help'),
-        makeIcon(<SettingOutlined />, 'settings'),
-        makeIcon(<UserOutlined />, 'user'),
-      ]}
-    />
+    <div>
+      <MLHeader
+        title={text('title', 'Data Hub Central')}
+        avatar={
+          <a href='#'>
+            <MLAvatar
+              src={text('project avatar url', 'https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png')}
+              style={{ backgroundColor: 'white' }} // Because the given src has transparent background
+              size={48}
+            />
+          </a>
+        }
+        extra={[
+          makeIcon(<RouteIcon />, 'route'),
+          <span key='divider' style={{ borderLeft: '1px dashed' }} />,
+          makeIcon(<SearchOutlined />, 'search'),
+          makeIcon(<QuestionCircleOutlined />, 'help'),
+          makeIcon(<SettingOutlined />, 'settings'),
+          makeIcon(<UserOutlined />, 'user'),
+        ]}
+      />
+      (Here's some other content that shouldn't be covered up)
+    </div>
   )
 }
