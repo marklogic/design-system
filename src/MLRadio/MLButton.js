@@ -14,4 +14,6 @@ const MLButton = (props) => (
 
 MLButton.propTypes = {}
 
+MLButton.displayName = 'MLRadio.MLButton'
+
 export default MLButton
