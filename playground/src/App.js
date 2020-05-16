@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 
 import {
   MLButton,
+  MLModal,
   MLDatePicker,
   MLLayout,
   MLSlider,
@@ -13,6 +14,10 @@ import {
   CheckCircleFilled,
 } from '@marklogic/design-system/MLIcon'
 
+import {
+  DraggableModalProvider,
+} from 'ant-design-draggable-modal'
+
 const configValues = {
   dateFormat: 'YYYY-MMM-DD', // Default for all dates, and DatePicker
   dateTimeFormat: 'YYYY-MMM-DD, HH:mm:ss', // default for all dates with times, and DatePicker with times
@@ -21,28 +26,49 @@ const configValues = {
   yearFormat: 'YYYY', // default for Year picker
 }
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <MLConfigProvider {...configValues}>
-          <MLLayout>
-            <MLLayout.MLHeader>Header</MLLayout.MLHeader>
-            <MLLayout.MLContent>
-              <MLButton type='primary'>Test</MLButton>
-              <MLButton type='highlight'>Test</MLButton>
-              <Route />
-              <CheckCircleFilled />
-              <div>
-                <MLSlider tooltipPlacement='top' />
-              </div>
-              <MLDatePicker />
-            </MLLayout.MLContent>
-            <MLDatePicker picker='week' />
-            <MLLayout.MLFooter year='2019' />
-          </MLLayout>
-        </MLConfigProvider>
-      </div>
-    )
+function useVisible() {
+  const [visible, setVisible] = useState(false)
+  const show = (e) => {
+    setVisible(true)
   }
+  const hide = (e) => {
+    setVisible(false)
+  }
+  return { visible, show, hide }
 }
+
+const App = () => {
+  const { visible, show, hide } = useVisible()
+  return (
+    <div>
+      <MLButton
+        onClick={show}
+        size='small'
+        type='primary'
+      >
+        Open Modal
+      </MLButton>
+      <DraggableModalProvider>
+        <MLModal
+          visible={visible}
+          cancelText='Cancel'
+          closable
+          okText='OK'
+          okType='primary'
+          onCancel={hide}
+          onOk={hide}
+          title='Basic Modal'
+        >
+          <h3>
+            Contents
+          </h3>
+          <div>
+            Your text here.
+          </div>
+        </MLModal>
+      </DraggableModalProvider>
+    </div>
+  )
+}
+
+export default App

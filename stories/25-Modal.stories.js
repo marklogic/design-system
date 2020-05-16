@@ -27,6 +27,7 @@ export const Basic = () => {
   const { visible, show, hide } = useVisible()
   return (
     <DraggableModalProvider>
+      <div>See more documentation at <a href={"https://github.com/DylanVann/ant-design-draggable-modal"}>ant-design-draggable-modal</a></div>
       <MLButton type='primary' onClick={(e) => { action('onOk')(e); return show(e) }}>
         Open Modal
       </MLButton>
