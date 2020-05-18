@@ -4,35 +4,38 @@ import { DatePicker } from 'antd'
 import { MLConfigContext } from '../MLConfigProvider'
 import { pickerPropsFromContext } from './utils'
 import classNames from 'classnames'
+const { WeekPicker } = DatePicker
 
-const MLDatePicker = (props) => {
+const MLWeekPicker = (props) => {
   return (
     <MLConfigContext.Consumer>
       {(context) => {
-        const contextProps = pickerPropsFromContext('date', context, props)
+        const contextProps = pickerPropsFromContext('week', context, props)
         return (
-          <DatePicker
+          <WeekPicker
             {...contextProps}
             {...props}
             showTime={contextProps.showTime}
-            className={classNames('ml-date-picker', props.className)}
+            className={classNames('ml-date-picker-week-picker', props.className)}
           >
             {props.children}
-          </DatePicker>
+          </WeekPicker>
         )
       }}
     </MLConfigContext.Consumer>
   )
 }
 
-MLDatePicker.defaultProps = {
+MLWeekPicker.defaultProps = {
   bordered: true,
   size: 'small',
 }
 
-MLDatePicker.propTypes = {
+MLWeekPicker.propTypes = {
   bordered: PropTypes.bool,
   size: PropTypes.string,
 }
 
-export default MLDatePicker
+MLWeekPicker.displayName = 'MLDatePicker.MLWeekPicker'
+
+export default MLWeekPicker
