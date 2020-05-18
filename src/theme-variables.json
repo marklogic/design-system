@@ -1,5 +1,6 @@
- {
+{
   "primary-color": "#5B69AF",
+  "processing-color": "@primary-color",
   "highlight-color": "#7f86b5",
   "text-color": "#333333",
   "text-color-secondary": "#777777",
@@ -28,8 +29,10 @@
   "tile-color-test-bench": "#061178",
   "tile-color-harmonized": "#00474F",
   "tile-color-custom": "#1D252D",
+  "slider-track-background-color": "#a9b1c9",
+  "slider-track-background-color-hover": "@highlight-color",
   "node-1-color": "#D5D3DD",
-  "xnode-2-color": "#CAE4EA",
+  "node-2-color": "#CAE4EA",
   "node-3-color": "#E1F3EC",
   "node-4-color": "#F6D4A7",
   "node-5-color": "#EEC5D4",

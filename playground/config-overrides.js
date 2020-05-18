@@ -1,41 +1,52 @@
 const path = require('path')
-const { override, fixBabelImports, babelInclude, addLessLoader, addWebpackAlias, removeModuleScopePlugin, babelExclude } = require('customize-cra')
-const themeVariables = require('marklogic-ui-library/src/theme-variables.json')
+const {
+  override,
+  babelInclude,
+  addLessLoader,
+  fixBabelImports,
+} = require('customize-cra')
+
+const themeVariables = require('../src/theme-variables.json')
 
 module.exports = override(
-  fixBabelImports('import', [
+  // All three of these are required for using marklogic-ui-library as an ES module
+  fixBabelImports('@marklogic/design-system',
     {
-      libraryName: 'antd',
+      libraryDirectory: 'es',
+      camel2DashComponentName: false,
+      style: true,
+    },
+  ),
+  fixBabelImports('@marklogic/design-system/MLIcon',
+    {
+      libraryDirectory: '',
+      camel2DashComponentName: false,
+      customName: function (name) {
+        return `@marklogic/design-system/es/MLIcon/${name}`
+      },
+      style: function() {
+        return "@marklogic/design-system/es/MLIcon/style"
+      },
+    },
+  ),
+  fixBabelImports(
+    'antd', {
       libraryDirectory: 'es',
       style: true,
     },
-    {
-      libraryName: 'marklogic-ui-library',
-      libraryDirectory: 'src',
-    },
-  ]),
+  ),
+  // Required for using marklogic-ui-library
   addLessLoader({
     javascriptEnabled: true,
-    paths: [
-      path.resolve(__dirname, '../node_modules'),
-      path.resolve(__dirname, '../src'),
-    ],
+    // This is how you change `less` theme variables
+    // Refer to theme vars below
+    // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
     modifyVars: themeVariables,
-  }),
-  removeModuleScopePlugin(),
-  addWebpackAlias({
-    antd: path.resolve(__dirname, 'node_modules/antd'),
   }),
   babelInclude([
     path.resolve(__dirname, 'src'),
-    path.resolve(__dirname, '../src'),
-    path.resolve(__dirname, 'node_modules'),
-    path.resolve(__dirname, 'node_modules/marklogic-ui-library'),
-    // path.resolve('../src'),
-  ]),
-  babelExclude([
-    path.resolve('node_modules/marklogic-ui-library/node_modules'),
+    /design-system/, // Required for @marklogic/design-system to compile
+    // In a real environment (where node_modules paths are guaranteed),
+    // you may use /@marklogic\/design-system/ for specificity
   ]),
 )
-// Refer to theme vars below
-// https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less

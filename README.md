@@ -4,7 +4,7 @@ React component library that extends Ant Design.
 ## Installing the Library
 
 ```
-npm install --save marklogic-ui-library
+npm install --save @marklogic/design-system
 ```
 
 ## Using the Component Library
@@ -12,12 +12,12 @@ npm install --save marklogic-ui-library
 - Setup your application repo to handle custom Ant Design theming https://ant.design/docs/react/use-with-create-react-app#Advanced-Guides
 - Copy config-overrides.js from /playground into application repo
 - Add Ant Design CSS file to app: '../node_modules/antd/dist/antd.css';
-- Add minifed Marklogic UI CSS file to app:  path to '../node_modules/marklogic-ui-library/dist/styles.min.css'
+- Add minifed Marklogic UI CSS file to app:  path to '../node_modules/@marklogic/design-system/dist/styles.min.css'
 
 ```jsx
 import React from 'react'
 
-import { MLButton } from 'marklogic-ui-library';
+import { MLButton } from '@marklogic/design-system';
 
 const App = () => {
   return (
@@ -41,9 +41,8 @@ npm install -g yarn
 # Install Dependencies
 npm run install:all
 
-# Start Rollup (listens for changes for components in src folder)
-# (run from main repo directory):
-yarn run start
+# Start Storybook:
+yarn run storybook
 
 # In another terminal: Start Playground (import and test new components here)
 cd playground; yarn run start
@@ -86,3 +85,10 @@ version needs to increase everytime it is published.
 # Build minified CSS and publish library to NPM
 npm publish
 ```
+
+
+## Using this library
+
+### Create-React-App
+
+The `playground` folder has an example [config-overrides.js](playground/config-overrides.js) for create-react-app.

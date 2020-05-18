@@ -1,6 +1,6 @@
 {
-  "short_name": "marklogic-ui-library",
-  "name": "marklogic-ui-library",
+  "short_name": "@marklogic/design-system",
+  "name": "@marklogic/design-system",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",

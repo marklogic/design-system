@@ -1,15 +1,13 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLCollapse } from 'marklogic-ui-library'
+import { MLCollapse } from '@marklogic/design-system'
 import { withKnobs, array, boolean, text, optionsKnob as options } from '@storybook/addon-knobs'
-import _ from 'lodash'
-import './20-Collapse.css'
-import { DeleteOutlined } from '@ant-design/icons'
+import './20-Collapse.less'
+import { DeleteOutlined } from '@marklogic/design-system/MLIcon'
 const { MLPanel } = MLCollapse
-DeleteOutlined.name = 'DeleteOutlined' // Hack to get it to render properly in the sample code
 
 export default {
-  title: 'Data Display/Collapse',
+  title: 'Data Display/MLCollapse',
   decorators: [withKnobs],
   parameters: {
     info: {
@@ -60,17 +58,20 @@ export const basic = () => {
     panelProps.className = 'site-collapse-custom-panel'
   }
   return (
-    <MLCollapse {...collapseProps}>
-      <MLPanel {...panelProps} key='1'>
-        <p>{panelBodyText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 2' key='2'>
-        <p>{exampleText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
-        <p>{exampleText}</p>
-      </MLPanel>
-    </MLCollapse>
+    <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLCollapse {...collapseProps}>
+        <MLPanel {...panelProps} key='1'>
+          <p>{panelBodyText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 2' key='2'>
+          <p>{exampleText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
+          <p>{exampleText}</p>
+        </MLPanel>
+      </MLCollapse>
+    </div>
   )
 }
 
@@ -101,17 +102,20 @@ export const accordion = () => {
     panelProps.className = 'site-collapse-custom-panel'
   }
   return (
-    <MLCollapse {...collapseProps}>
-      <MLPanel {...panelProps} key='1'>
-        <p>{panelBodyText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 2' key='2'>
-        <p>{exampleText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
-        <p>{exampleText}</p>
-      </MLPanel>
-    </MLCollapse>
+    <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLCollapse {...collapseProps}>
+        <MLPanel {...panelProps} key='1'>
+          <p>{panelBodyText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 2' key='2'>
+          <p>{exampleText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
+          <p>{exampleText}</p>
+        </MLPanel>
+      </MLCollapse>
+    </div>
   )
 }
 
@@ -141,21 +145,28 @@ export const nestedPanel = () => {
     panelProps.className = 'site-collapse-custom-panel'
   }
   return (
-    <MLCollapse {...collapseProps}>
-      <MLPanel {...panelProps} key='1'>
-        <MLCollapse>
-          <MLPanel {...panelProps} header='This is a nested panel'>
-            <p>{exampleText}</p>
-          </MLPanel>
-        </MLCollapse>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 2' key='2'>
-        <p>{exampleText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
-        <p>{exampleText}</p>
-      </MLPanel>
-    </MLCollapse>
+    <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLCollapse {...collapseProps}>
+        <MLPanel {...panelProps} key='1'>
+          <MLCollapse>
+            <MLPanel {...panelProps} header='This is a nested panel'>
+              <p>{exampleText}</p>
+            </MLPanel>
+            <MLPanel {...panelProps} header='This is a nested panel'>
+              <p>{exampleText}</p>
+            </MLPanel>
+          </MLCollapse>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 2' key='2'>
+          <p>{exampleText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
+          <p>{exampleText}</p>
+        </MLPanel>
+      </MLCollapse>
+    </div>
+
   )
 }
 
@@ -188,16 +199,20 @@ export const customPanelStyle = () => {
     panelProps.className = 'site-collapse-custom-panel'
   }
   return (
-    <MLCollapse {...collapseProps}>
-      <MLPanel {...panelProps} key='1'>
-        <p>{panelBodyText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 2' key='2'>
-        <p>{exampleText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
-        <p>{exampleText}</p>
-      </MLPanel>
-    </MLCollapse>
+    <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLCollapse {...collapseProps}>
+        <MLPanel {...panelProps} key='1'>
+          <p>{panelBodyText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 2' key='2'>
+          <p>{exampleText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
+          <p>{exampleText}</p>
+        </MLPanel>
+      </MLCollapse>
+    </div>
+
   )
 }
