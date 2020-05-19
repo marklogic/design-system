@@ -23,7 +23,7 @@
     "predeploy": "cd playground && yarn && yarn run build",
     "prepublishOnly": "yarn run build",
     "deploy": "gh-pages -d playground/build",
-    "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn); (yarn run build)",
+    "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn); (gulp generate-icon-files); (yarn run build)",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o storybook-dist"
   },
@@ -79,7 +79,9 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-debug-streams": "^3.0.0",
+    "gulp-dedupe": "^0.0.2",
     "gulp-eslint": "^6.0.0",
+    "gulp-eval": "^1.0.0",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "lodash": "^4.17.15",
@@ -100,7 +102,8 @@
   "dependencies": {
     "@ant-design/icons": "^4.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/free-regular-svg-icons": "5.13.0",
+    "@fortawesome/free-solid-svg-icons": "5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "antd": "^3.26.13",
     "lodash-es": "^4",

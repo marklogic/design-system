@@ -17,7 +17,6 @@ function compile(modules) {
       path.resolve(__dirname, '../src/ML*/style/*.js'),
       path.resolve(__dirname, '../src/index.js'),
     ]),
-    generateIconFiles(),
   ])
   return merge([
     babelFiles

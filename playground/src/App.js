@@ -12,7 +12,7 @@ import {
 } from '@marklogic/design-system'
 
 import {
-  Route,
+  RouteSolid,
   CheckCircleFilled,
 } from '@marklogic/design-system/MLIcon'
 
