@@ -15,4 +15,6 @@ const MLItem = (props) => {
   )
 }
 
+MLItem.displayName = 'MLBreadcrumb.MLItem'
+
 export default MLItem
