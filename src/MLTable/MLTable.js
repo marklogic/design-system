@@ -53,7 +53,13 @@ class MLTable extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = this.getInitialColumnExpandedStates()
+    this.state = Object.assign(
+      this.getInitialColumnExpandedStates(),
+      {
+        draggingRecordInfo: null,
+        dropTargetRecordInfo: null,
+      },
+    )
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -79,6 +85,13 @@ class MLTable extends React.Component {
       },
     })
     this.setState(stateTransform)
+  }
+
+  handleDragEnterRow(draggingRecordInfo, dropTargetRecordInfo) {
+    console.log(draggingRecordInfo, dropTargetRecordInfo)
+    this.setState({
+      dropTargetRecordInfo,
+    })
   }
 
   render() {
@@ -117,15 +130,24 @@ class MLTable extends React.Component {
       return restructuredColumn
     })
 
-    function restructureData(dataSource) {
+    const restructureData = (dataSource) => {
       // TODO: Might restructure more things here; for now just wrap objects in arrays
-      return (Array.isArray(dataSource) ? dataSource : [dataSource]).map((row) => {
+      const restructuredData = (Array.isArray(dataSource) ? dataSource : [dataSource]).map((row) => {
         const restructuredRow = {}
         for (const [key, value] of Object.entries(row)) {
           restructuredRow[key] = value
         }
         return restructuredRow
       })
+      if (this.state.draggingRecordInfo && this.state.dropTargetRecordInfo) {
+        const removedRow = restructuredData.splice(this.state.draggingRecordInfo.rowIndex, 1)[0]
+        if (this.state.draggingRecordInfo.rowIndex < this.state.dropTargetRecordInfo.rowIndex) {
+          restructuredData.splice(this.state.dropTargetRecordInfo.rowIndex, 0, removedRow)
+        } else {
+          restructuredData.splice(this.state.dropTargetRecordInfo.rowIndex, 0, removedRow)
+        }
+      }
+      return restructuredData
     }
 
     const restructuredData = restructureData(dataSource)
@@ -163,9 +185,65 @@ class MLTable extends React.Component {
         dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
         columns={restructuredColumns}
         className={classNames('ml-table', this.props.className)}
+        onRow={(record, rowIndex) => {
+          const classNameArr = []
+          console.log('this.state:', this, JSON.stringify(this.state))
+          if (this.state.draggingRecordInfo && this.state.draggingRecordInfo.rowIndex === rowIndex) {
+            classNameArr.push('ml-table-row-dragging')
+          }
+          if (this.state.dropTargetRecordInfo && this.state.dropTargetRecordInfo.rowIndex === rowIndex) {
+            classNameArr.push('ml-table-row-drop-target')
+          }
+          return {
+            className: classNames(classNameArr),
+            draggable: true,
+            onDrag: () => console.log('onDrag', record.id),
+            onDragEnd: () => {
+              console.log('onDragEnd', record.id)
+              this.setState({
+                draggingRecordInfo: null,
+                dropTargetRecordInfo: null,
+              })
+            },
+            onDragEnter: (e) => {
+              console.log('onDragEnter', record.id)
+              const draggingRecordInfo = this.state.draggingRecordInfo
+              const dropTargetRecordInfo = { record, rowIndex }
+              this.handleDragEnterRow(draggingRecordInfo, dropTargetRecordInfo)
+            },
+            onDragExit: () => console.log('onDragExit', record.id),
+            onDragLeave: () => console.log('onDragLeave', record.id),
+            onDragOver: () => console.log('onDragOver', record.id),
+            onDragStart: (e) => {
+              this.setState({
+                draggingRecordInfo: { record, rowIndex },
+              })
+              console.log('onDragStart', record.id)
+              e.dataTransfer.setData('application/json', JSON.stringify({
+                record: record,
+                rowIndex: rowIndex,
+              }))
+              console.log(e.dataTransfer.getData('application/json'))
+            },
+            onDrop: () => console.log('onDrop', record.id),
+          }
+        }}
       />
     )
   }
+}
+
+MLTable.propTypes = { // TODO: Include default Table props as well
+  id: PropTypes.string,
+  rowKey: PropTypes.string,
+  showBody: PropTypes.bool,
+  dataSource: PropTypes.objectOf(PropTypes.oneOf([PropTypes.string, PropTypes.number, PropTypes.bool])),
+  columns: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.oneOf([PropTypes.string, PropTypes.func]),
+    ),
+  ),
+  onChange: PropTypes.func,
 }
 
 MLTable.defaultProps = {
