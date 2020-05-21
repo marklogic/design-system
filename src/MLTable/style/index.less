@@ -53,7 +53,7 @@
   }
   .ml-table-row-drop-target {
     position: relative;
-    transform: scale(1);
+    transform: scale(1); // Hack to allow <tr>s to correctly size `position: absolute` children
   }
   .ml-table-row-drop-target::after {
     content: '';
