@@ -10,11 +10,7 @@ import classNames from 'classnames'
  */
 class MLHeaderTable extends React.Component {
   static propTypes = {
-    columns: PropTypes.arrayOf(
-      PropTypes.objectOf(
-        PropTypes.oneOf([PropTypes.string, PropTypes.func]),
-      ),
-    ),
+    columns: PropTypes.arrayOf(PropTypes.any),
   }
 
   render() {
@@ -42,12 +38,11 @@ class MLTable extends React.Component {
     id: PropTypes.string,
     rowKey: PropTypes.string,
     showBody: PropTypes.bool,
-    dataSource: PropTypes.objectOf(PropTypes.oneOf([PropTypes.string, PropTypes.number, PropTypes.bool])),
-    columns: PropTypes.arrayOf(
-      PropTypes.objectOf(
-        PropTypes.oneOf([PropTypes.string, PropTypes.func]),
-      ),
-    ),
+    dataSource: PropTypes.oneOfType([
+      PropTypes.objectOf(PropTypes.any), // Single item data sources are converted into arrays automatically (used in embedded table)
+      PropTypes.arrayOf(PropTypes.any),
+    ]),
+    columns: PropTypes.arrayOf(PropTypes.any),
     onChange: PropTypes.func,
   }
 
