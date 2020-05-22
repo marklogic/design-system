@@ -7,7 +7,7 @@ const { Text } = Typography
 const MLText = (props) => (
   <Text
     {...props}
-    className={classNames('ml-typography-text', props.className)}
+    className={classNames('ml-typography', props.className)}
   >
     {props.children}
   </Text>

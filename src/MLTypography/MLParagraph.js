@@ -7,7 +7,7 @@ const { Paragraph } = Typography
 const MLParagraph = (props) => (
   <Paragraph
     {...props}
-    className={classNames('ml-typography-paragraph', props.className)}
+    className={classNames('ml-typography', props.className)}
   >
     {props.children}
   </Paragraph>

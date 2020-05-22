@@ -7,7 +7,7 @@ const { Title } = Typography
 const MLTitle = (props) => (
   <Title
     {...props}
-    className={classNames('ml-typography-title', props.className)}
+    className={classNames('ml-typography', props.className)}
   >
     {props.children}
   </Title>
