@@ -16,7 +16,7 @@ export default {
   decorators: [withKnobs],
   parameters: {
     info: {
-      text: 'Component description goes here',
+      text: 'Note: See Ant documentation for details on the renderItem prop, which does not display properly here in the story source.',
     },
   },
 }
