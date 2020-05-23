@@ -6,6 +6,7 @@ import {
   MLLayout,
   MLSlider,
   MLConfigProvider,
+  MLEditableSlider,
 } from '@marklogic/design-system'
 
 import {
@@ -25,23 +26,36 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <MLConfigProvider {...configValues}>
-          <MLLayout>
-            <MLLayout.MLHeader>Header</MLLayout.MLHeader>
-            <MLLayout.MLContent>
-              <MLButton type='primary'>Test</MLButton>
-              <MLButton type='highlight'>Test</MLButton>
-              <Route />
-              <CheckCircleFilled />
-              <div>
-                <MLSlider tooltipPlacement='top' />
-              </div>
-              <MLDatePicker />
-            </MLLayout.MLContent>
-            <MLDatePicker picker='week' />
-            <MLLayout.MLFooter year='2019' />
-          </MLLayout>
-        </MLConfigProvider>
+        <div
+          style={{
+            width: '400px',
+          }}
+        >
+          <MLEditableSlider
+            debounceTime={200}
+            defaultValue={0}
+            inputNumberProps={{
+              size: 'small',
+            }}
+            max={100}
+            min={0}
+            onChange={(v) => console.log(v)}
+          />
+          <MLEditableSlider
+            debounceTime={200}
+            defaultValue={[
+              20,
+              70,
+            ]}
+            inputNumberProps={{
+              size: 'small',
+            }}
+            max={100}
+            min={0}
+            range
+            onChange={(v) => console.log(v)}
+          />
+        </div>
       </div>
     )
   }

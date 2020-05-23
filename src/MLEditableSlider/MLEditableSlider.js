@@ -10,6 +10,10 @@ const MLEditableSlider = (props) => {
   const [sliderValue, setSliderValue] = useState(props.defaultValue)
   const [inputNumberValue, setInputNumberValue] = useState(props.defaultValue)
 
+  const handleChange = (data) => (
+    props.onChange ? props.onChange(data) : null
+  )
+
   const sliderProps = Object.assign(
     pick(props, Object.keys(MLSlider.propTypes)),
     props.sliderProps,
@@ -37,7 +41,7 @@ const MLEditableSlider = (props) => {
         onChange={(v) => {
           setSliderValue(v)
           setInputNumberValue(v)
-          this.onChange(v)
+          handleChange(v)
         }}
       >
         {props.children}
@@ -52,7 +56,7 @@ const MLEditableSlider = (props) => {
             const newValue = [Math.min(Number(v), inputNumberValue[1]), inputNumberValue[1]]
             debouncedSetSliderValue(newValue)
             setInputNumberValue(newValue)
-            this.onChange(newValue)
+            handleChange(newValue)
           }}
         />,
         <MLInputNumber
@@ -64,7 +68,7 @@ const MLEditableSlider = (props) => {
             const newValue = [inputNumberValue[0], Math.max(Number(v), inputNumberValue[0])]
             debouncedSetSliderValue(newValue)
             setInputNumberValue(newValue)
-            this.onChange(newValue)
+            handleChange(newValue)
           }}
         />,
       ] : (
@@ -73,9 +77,10 @@ const MLEditableSlider = (props) => {
           defaultValue={props.defaultValue}
           value={inputNumberValue}
           onChange={(v) => {
-            debouncedSetSliderValue(v)
-            setInputNumberValue(v)
-            this.onChange(v)
+            const newValue = Number(v)
+            debouncedSetSliderValue(newValue)
+            setInputNumberValue(newValue)
+            handleChange(newValue)
           }}
         />
       )}
