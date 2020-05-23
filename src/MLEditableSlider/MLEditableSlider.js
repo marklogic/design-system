@@ -91,6 +91,7 @@ const MLEditableSlider = (props) => {
 MLEditableSlider.defaultProps = {
   defaultValue: 0,
   debounceTime: 200,
+  size: 'small',
 }
 
 MLEditableSlider.propTypes = {

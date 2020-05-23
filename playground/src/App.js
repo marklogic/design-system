@@ -34,9 +34,6 @@ export default class App extends Component {
           <MLEditableSlider
             debounceTime={200}
             defaultValue={0}
-            inputNumberProps={{
-              size: 'small',
-            }}
             max={100}
             min={0}
             onChange={(v) => console.log(v)}
@@ -47,9 +44,6 @@ export default class App extends Component {
               20,
               70,
             ]}
-            inputNumberProps={{
-              size: 'small',
-            }}
             max={100}
             min={0}
             range
