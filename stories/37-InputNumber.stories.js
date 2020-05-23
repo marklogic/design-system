@@ -1,7 +1,7 @@
 import React from 'react'
 import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import { MLInputNumber } from 'marklogic-ui-library'
+import { MLInputNumber } from '@marklogic/design-system'
 
 export default {
   title: 'Data Entry/MLInputNumber',
@@ -41,6 +41,7 @@ export const basic = () => {
   return (
     <div>
       <div>Note that defaultValue will not cause this demo to update.</div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLInputNumber {...props} />
     </div>
   )
@@ -74,6 +75,7 @@ export const disabled = () => {
   return (
     <div>
       <div>Note that defaultValue will not cause this demo to update.</div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLInputNumber {...props} />
     </div>
   )
@@ -106,6 +108,7 @@ export const formatter = () => {
   return (
     <div>
       <div>Note that defaultValue will not cause this demo to update.</div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLInputNumber {...props} />
     </div>
   )
@@ -133,6 +136,7 @@ export const sizes = () => {
   return (
     <div>
       <div>Note that defaultValue will not cause this demo to update.</div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLInputNumber {...props} size='small' />
       <MLInputNumber {...props} size='middle' />
       <MLInputNumber {...props} size='large' />
@@ -167,6 +171,7 @@ export const decimals = () => {
   return (
     <div>
       <div>Note that defaultValue will not cause this demo to update.</div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLInputNumber {...props} />
     </div>
   )

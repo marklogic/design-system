@@ -1,5 +1,11 @@
 {
+  "extends": [
+    "plugin:jest-dom/recommended"
+  ],
   "env": {
     "jest": true
-  }
+  },
+  "plugins": [
+    "jest-dom"
+  ]
 }

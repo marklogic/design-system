@@ -1,20 +1,40 @@
 const path = require('path')
-const { override, fixBabelImports, babelInclude, addLessLoader } = require('customize-cra')
-const themeVariables = require('marklogic-ui-library/src/theme-variables.json')
+const {
+  override,
+  babelInclude,
+  addLessLoader,
+  fixBabelImports,
+} = require('customize-cra')
+
+const themeVariables = require('../src/theme-variables.json')
 
 module.exports = override(
-  // Both of these are required for using marklogic-ui-library as an ES module
-  fixBabelImports('import', [
+  // All three of these are required for using marklogic-ui-library as an ES module
+  fixBabelImports('@marklogic/design-system',
     {
-      libraryName: 'antd',
       libraryDirectory: 'es',
-      style: true, // This is required so that the less files from antd are included
+      camel2DashComponentName: false,
+      style: true,
     },
+  ),
+  fixBabelImports('@marklogic/design-system/MLIcon',
     {
-      libraryName: 'marklogic-ui-library',
-      libraryDirectory: 'src',
+      libraryDirectory: '',
+      camel2DashComponentName: false,
+      customName: function (name) {
+        return `@marklogic/design-system/es/MLIcon/${name}`
+      },
+      style: function() {
+        return "@marklogic/design-system/es/MLIcon/style"
+      },
     },
-  ]),
+  ),
+  fixBabelImports(
+    'antd', {
+      libraryDirectory: 'es',
+      style: true,
+    },
+  ),
   // Required for using marklogic-ui-library
   addLessLoader({
     javascriptEnabled: true,
@@ -23,9 +43,10 @@ module.exports = override(
     // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
     modifyVars: themeVariables,
   }),
-  // This must include any source files that import marklogic-ui-library (or JSX, etc)
-  // that needs compilation
   babelInclude([
     path.resolve(__dirname, 'src'),
+    /design-system/, // Required for @marklogic/design-system to compile
+    // In a real environment (where node_modules paths are guaranteed),
+    // you may use /@marklogic\/design-system/ for specificity
   ]),
 )
