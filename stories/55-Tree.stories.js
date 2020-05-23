@@ -1,8 +1,7 @@
 import React from 'react'
 import { withKnobs, object, boolean } from '@storybook/addon-knobs'
 import { MLTree } from '@marklogic/design-system'
-
-import { Tree } from 'antd'
+import { DownOutlined } from '../src/MLIcon'
 
 export default {
   title: 'Data Display/MLTree',
@@ -57,12 +56,18 @@ export const basic = () => {
   const checkable = boolean('checkable', false)
   const selectable = boolean('selectable', false)
   const showLine = boolean('showLine', false)
+  const customSwitcherIcon = boolean('custom switcherIcon', false)
+  const extraProps = {}
+  if (customSwitcherIcon) {
+    extraProps.switcherIcon = <DownOutlined />
+  }
   return (
     <MLTree
       treeData={object('treeData', treeData)}
       checkable={checkable}
       selectable={selectable}
       showLine={showLine}
+      {...extraProps}
     />
   )
 }
