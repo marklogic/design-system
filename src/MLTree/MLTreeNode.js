@@ -4,20 +4,8 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 const { TreeNode } = Tree
 
-const MLTreeNode = (props) => (
-  <TreeNode
-    {...props}
-    className={classNames('ml-tree-tree-node', props.className)}
-  >
-    {props.children}
-  </TreeNode>
-)
-
-MLTreeNode.defaultProps = {
-}
-
-MLTreeNode.propTypes = {
-}
+// This must be a direct alias, or it doesn't render inside Tree
+const MLTreeNode = TreeNode
 
 MLTreeNode.displayName = 'MLTree.MLTreeNode'
 

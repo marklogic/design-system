@@ -17,6 +17,7 @@ MLDirectoryTree.defaultProps = {
 }
 
 MLDirectoryTree.propTypes = {
+  expandAction: PropTypes.string,
 }
 
 MLDirectoryTree.displayName = 'MLTree.MLDirectoryTree'
