@@ -24,7 +24,7 @@ import MLSpin from './MLSpin'
 import MLSwitch from './MLSwitch'
 import MLTable from './MLTable'
 import MLTag from './MLTag'
-import MLTree from './ml-tree'
+import MLTree from './MLTree'
 import MLTooltip from './MLTooltip'
 import MLUpload from './MLUpload'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import MLTree from '../ml-tree'
+import MLTree from '../MLTree'
 
 const treeData = [
   {
