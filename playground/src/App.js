@@ -38,9 +38,9 @@ export default class App extends Component {
                 <MLSlider tooltipPlacement='top' />
               </div>
               <MLDatePicker />
+              <MLDatePicker picker='week' />
+              <MLEmpty />
             </MLLayout.MLContent>
-            <MLDatePicker picker='week' />
-            <MLEmpty/>
             <MLLayout.MLFooter year='2019' />
           </MLLayout>
         </MLConfigProvider>
