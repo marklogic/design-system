@@ -24,8 +24,8 @@ import MLSpin from './MLSpin'
 import MLSwitch from './MLSwitch'
 import MLTable from './MLTable'
 import MLTag from './MLTag'
-import MLTree from './MLTree'
 import MLTooltip from './MLTooltip'
+import MLTree from './MLTree'
 import MLUpload from './MLUpload'
 
 export {
@@ -54,8 +54,8 @@ export {
   MLSpin,
   MLSwitch,
   MLTable,
-  MLTree,
   MLTag,
   MLTooltip,
+  MLTree,
   MLUpload,
 }
