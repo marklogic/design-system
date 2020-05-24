@@ -9,7 +9,7 @@ export default {
   decorators: [withKnobs],
   parameters: {
     info: {
-      text: 'Component description goes here',
+      text: 'Note: On the hosted (non-local) StoryBook, this component\'s custom CSS is not currently rendering correctly. This should not affect use of the component in your app.',
     },
   },
 }
