@@ -8,13 +8,13 @@ export default {
   decorators: [withKnobs],
   parameters: {
     info: {
-      text: 'Component description goes here',
+      text: 'Note that you do not need to supply the `image` prop; the Story Source shows the default value here unnecessarily.',
     },
   },
 }
 
 export const basic = () => {
   return (
-    <MLEmpty></MLEmpty>
+    <MLEmpty/>
   )
 }

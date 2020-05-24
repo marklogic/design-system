@@ -20,6 +20,12 @@ MLEmpty.defaultProps = {
 }
 
 MLEmpty.propTypes = {
+  /** Customize description */
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /** style of image */
+  imageStyle: PropTypes.object,
+  /** Customize image. Will treat as image url when string provided. */
+  image: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 }
 
 export default MLEmpty
