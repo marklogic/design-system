@@ -25,6 +25,7 @@ import MLSwitch from './MLSwitch'
 import MLTable from './MLTable'
 import MLTag from './MLTag'
 import MLTooltip from './MLTooltip'
+import MLTypography from './MLTypography'
 import MLUpload from './MLUpload'
 
 export {
@@ -55,5 +56,6 @@ export {
   MLTable,
   MLTag,
   MLTooltip,
+  MLTypography,
   MLUpload,
 }
