@@ -12,6 +12,7 @@ import MLDivider from './MLDivider'
 import * as MLIcon from './MLIcon'
 import MLInputNumber from './MLInputNumber'
 import MLLayout from './MLLayout'
+import MLList from './MLList'
 import MLMentions from './MLMentions'
 import MLPageHeader from './MLPageHeader'
 import MLPopconfirm from './MLPopconfirm'
@@ -42,6 +43,7 @@ export {
   MLIcon,
   MLInputNumber,
   MLLayout,
+  MLList,
   MLMentions,
   MLPageHeader,
   MLPopconfirm,
