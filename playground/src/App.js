@@ -6,6 +6,7 @@ import {
   MLLayout,
   MLSlider,
   MLConfigProvider,
+  MLEmpty,
 } from '@marklogic/design-system'
 
 import {
@@ -39,6 +40,7 @@ export default class App extends Component {
               <MLDatePicker />
             </MLLayout.MLContent>
             <MLDatePicker picker='week' />
+            <MLEmpty/>
             <MLLayout.MLFooter year='2019' />
           </MLLayout>
         </MLConfigProvider>
