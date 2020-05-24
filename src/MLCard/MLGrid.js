@@ -15,4 +15,6 @@ const MLGrid = (props) => {
   )
 }
 
+MLGrid.displayName = 'MLCard.MLGrid'
+
 export default MLGrid

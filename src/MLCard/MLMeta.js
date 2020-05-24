@@ -15,4 +15,6 @@ const MLMeta = (props) => {
   )
 }
 
+MLMeta.displayName = 'MLCard.MLMeta'
+
 export default MLMeta
