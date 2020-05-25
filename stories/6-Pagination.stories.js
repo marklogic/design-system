@@ -28,7 +28,6 @@ export const basic = () => {
   return (
     <MLPagination
       size={radios('size', ['default', 'small'], 'default')}
-      defaultCurrent={number('defaultCurrent', 1)}
       total={number('total', 50)}
       showSizeChanger={boolean('showSizeChanger', true)}
       disabled={boolean('disabled', false)}
