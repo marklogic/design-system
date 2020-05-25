@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { MLModal, MLButton } from '@marklogic/design-system'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
+import { TrashAlt } from '@marklogic/design-system/MLIcon'
 
 export default {
   title: 'Feedback/MLModal',
@@ -24,7 +25,7 @@ export const Basic = () => {
   const { visible, show, hide } = useVisible()
   return (
     <MLModal.MLDraggableModalProvider>
-      <div>See more documentation at <a href={"https://github.com/DylanVann/ant-design-draggable-modal"}>ant-design-draggable-modal</a></div>
+      <div>See more documentation at <a href='https://github.com/DylanVann/ant-design-draggable-modal'>ant-design-draggable-modal</a></div>
       <MLButton type='primary' onClick={(e) => { action('onOk')(e); return show(e) }}>
         Open Modal
       </MLButton>
@@ -63,11 +64,23 @@ export const WithFooter = () => {
       <MLModal
         visible={visible}
         title='Modal with footer'
-        footer={[
-          <MLButton key='yes' onClick={hide}>Yes</MLButton>,
-          <MLButton key='no' onClick={hide}>No</MLButton>,
-          <MLButton key='maybe' onClick={hide}>Maybe</MLButton>,
-        ]}
+        footer={
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
+            <div>
+              <TrashAlt style={{ fontSize: '22px', color: '#B32424' }} />
+            </div>
+            <div>
+              <MLButton key='yes' onClick={hide}>Yes</MLButton>
+              <MLButton key='no' onClick={hide}>No</MLButton>
+              <MLButton key='maybe' onClick={hide}>Maybe</MLButton>
+            </div>
+          </div>
+        }
       />
     </MLModal.MLDraggableModalProvider>
   )
