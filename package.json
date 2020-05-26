@@ -103,6 +103,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "antd": "^3.26.13",
+    "classnames": "^2.2.6",
     "lodash-es": "^4",
     "prop-types": "^15.7.2"
   },

@@ -1,26 +1,31 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { InputNumber } from 'antd'
 import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import classNames from 'classnames'
+import React from 'react'
+import { Input } from 'antd'
 
-const MLInputNumber = (props) => {
+const MLSearch = (props) => {
   return (
     <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
-          <InputNumber
+          <Input.Search
             {...props}
             size={size}
-            className={classNames('ml-input-number', props.className)}
+            className={classNames('ml-input-search', props.className)}
           >
             {props.children}
-          </InputNumber>
+          </Input.Search>
         )
       }}
     </MLSizeContext.Consumer>
   )
 }
 
-export default MLInputNumber
+MLSearch.defaultProps = {
+  size: 'small',
+}
+
+MLSearch.displayName = 'MLInput.MLSearch'
+
+export default MLSearch

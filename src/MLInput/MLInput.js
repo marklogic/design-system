@@ -1,26 +1,31 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { InputNumber } from 'antd'
+import { Input } from 'antd'
 import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import classNames from 'classnames'
 
-const MLInputNumber = (props) => {
+const MLInput = (props) => {
   return (
     <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
-          <InputNumber
+          <Input
             {...props}
             size={size}
-            className={classNames('ml-input-number', props.className)}
+            className={classNames('ml-input', props.className)}
           >
             {props.children}
-          </InputNumber>
+          </Input>
         )
       }}
     </MLSizeContext.Consumer>
   )
 }
 
-export default MLInputNumber
+MLInput.defaultProps = {
+  size: 'small',
+  allowClear: true,
+}
+
+export default MLInput

@@ -10,6 +10,7 @@ import MLConfigProvider from './MLConfigProvider'
 import MLDatePicker from './MLDatePicker'
 import MLDivider from './MLDivider'
 import * as MLIcon from './MLIcon'
+import MLInput from './MLInput'
 import MLInputNumber from './MLInputNumber'
 import MLLayout from './MLLayout'
 import MLMentions from './MLMentions'
@@ -19,6 +20,7 @@ import MLProgress from './MLProgress'
 import MLRadio from './MLRadio'
 import MLRate from './MLRate'
 import MLRow from './MLRow'
+import MLSelect from './MLSelect'
 import MLSlider from './MLSlider'
 import MLSpin from './MLSpin'
 import MLSwitch from './MLSwitch'
@@ -40,6 +42,7 @@ export {
   MLDatePicker,
   MLDivider,
   MLIcon,
+  MLInput,
   MLInputNumber,
   MLLayout,
   MLMentions,
@@ -49,6 +52,7 @@ export {
   MLRadio,
   MLRate,
   MLRow,
+  MLSelect,
   MLSlider,
   MLSpin,
   MLSwitch,
