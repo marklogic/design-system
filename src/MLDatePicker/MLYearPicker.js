@@ -4,35 +4,38 @@ import { DatePicker } from 'antd'
 import { MLConfigContext } from '../MLConfigProvider'
 import { pickerPropsFromContext } from './utils'
 import classNames from 'classnames'
+const { YearPicker } = DatePicker
 
-const MLDatePicker = (props) => {
+const MLYearPicker = (props) => {
   return (
     <MLConfigContext.Consumer>
       {(context) => {
-        const contextProps = pickerPropsFromContext('date', context, props)
+        const contextProps = pickerPropsFromContext('year', context, props)
         return (
-          <DatePicker
+          <YearPicker
             {...contextProps}
             {...props}
             showTime={contextProps.showTime}
-            className={classNames('ml-date-picker', props.className)}
+            className={classNames('ml-date-picker-year-picker', props.className)}
           >
             {props.children}
-          </DatePicker>
+          </YearPicker>
         )
       }}
     </MLConfigContext.Consumer>
   )
 }
 
-MLDatePicker.defaultProps = {
+MLYearPicker.defaultProps = {
   bordered: true,
   size: 'small',
 }
 
-MLDatePicker.propTypes = {
+MLYearPicker.propTypes = {
   bordered: PropTypes.bool,
   size: PropTypes.string,
 }
 
-export default MLDatePicker
+MLYearPicker.displayName = 'MLDatePicker.MLYearPicker'
+
+export default MLYearPicker
