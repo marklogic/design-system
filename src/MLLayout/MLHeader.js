@@ -28,4 +28,6 @@ const MLHeader = (props) => {
   )
 }
 
+MLHeader.displayName = 'MLLayout.MLHeader'
+
 export default MLHeader

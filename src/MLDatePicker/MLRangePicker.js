@@ -10,7 +10,7 @@ const MLRangePicker = (props) => {
   return (
     <MLConfigContext.Consumer>
       {(context) => {
-        const contextProps = pickerPropsFromContext(context, props)
+        const contextProps = pickerPropsFromContext('range', context, props)
         return (
           <RangePicker
             {...contextProps}
@@ -41,5 +41,7 @@ MLRangePicker.propTypes = {
   separator: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   size: PropTypes.string,
 }
+
+MLRangePicker.displayName = 'MLDatePicker.MLRangePicker'
 
 export default MLRangePicker

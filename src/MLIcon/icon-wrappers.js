@@ -1,21 +1,21 @@
 import React from 'react'
 import Icon from '@ant-design/icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames'
 
 export function MLIconWrapper({ highlight, color, displayName, component, ...props }) {
-  let { className = '' } = props
-  className = [className, 'ml-icon'].join(' ')
+  let className = classNames(props.className, 'ml-icon')
   if (highlight) {
-    className = [className, 'ml-icon-highlight'].join(' ')
+    className = classNames(className, 'ml-icon-highlight')
   }
   if (/Outlined$/.test(displayName)) {
-    className = [className, 'ml-icon-outlined'].join(' ')
+    className = classNames(className, 'ml-icon-outlined')
   }
   if (/Filled$/.test(displayName)) {
-    className = [className, 'ml-icon-filled'].join(' ')
+    className = classNames(className, 'ml-icon-filled')
   }
   if (/TwoTone$/.test(displayName)) {
-    className = [className, 'ml-icon-two-toned'].join(' ')
+    className = classNames(className, 'ml-icon-two-toned')
   }
   className = className.replace('^ +', '')
   return React.createElement(component, Object.assign({}, props, { className }))
