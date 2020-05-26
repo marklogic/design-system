@@ -103,6 +103,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
+    "ant-design-draggable-modal": "^0.0.16",
     "antd": "^3.26.13",
     "classnames": "^2.2.6",
     "lodash-es": "^4",

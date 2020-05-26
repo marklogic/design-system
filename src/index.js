@@ -19,6 +19,7 @@ import MLInputNumber from './MLInputNumber'
 import MLLayout from './MLLayout'
 import MLMentions from './MLMentions'
 import MLMenu from './MLMenu'
+import MLModal from './MLModal'
 import MLPageHeader from './MLPageHeader'
 import MLPopconfirm from './MLPopconfirm'
 import MLProgress from './MLProgress'
@@ -56,6 +57,7 @@ export {
   MLLayout,
   MLMentions,
   MLMenu,
+  MLModal,
   MLPageHeader,
   MLPopconfirm,
   MLProgress,
