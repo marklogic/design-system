@@ -8,7 +8,7 @@ export default {
   title: 'Welcome',
 }
 
-const Welcome = () => <Markdown children={welcomeMarkdown} />
+const Welcome = () => <Markdown className='storybook-welcome-page' children={welcomeMarkdown} />
 
 export const toStorybook = () => <Welcome />
 
