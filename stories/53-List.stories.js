@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs } from '@storybook/addon-knobs/react'
+import { withKnobs, radios, boolean } from '@storybook/addon-knobs'
 import { MLList, MLDivider } from '@marklogic/design-system'
 
 // TODO: Replace with ML version when it's merged
@@ -22,6 +22,10 @@ export default {
 }
 
 export const basic = () => {
+  const props = {
+    size: radios('size', ['small', 'default', 'large'], 'default'),
+    bordered: boolean('bordered', false),
+  }
   const data = [
     'Racing car sprays burning fuel into crowd.',
     'Japanese princess to wed commoner.',
@@ -31,34 +35,11 @@ export const basic = () => {
   ]
   return (
     <div>
-      <MLDivider orientation='left'>Default Size</MLDivider>
       <MLList
         header={<div>Header</div>}
         footer={<div>Footer</div>}
-        bordered
         dataSource={data}
-        renderItem={item => (
-          <MLList.MLItem>
-            <MLText mark>[ITEM]</MLText> {item}
-          </MLList.MLItem>
-        )}
-      />
-      <MLDivider orientation='left'>Small Size</MLDivider>
-      <MLList
-        size='small'
-        header={<div>Header</div>}
-        footer={<div>Footer</div>}
-        bordered
-        dataSource={data}
-        renderItem={item => <MLList.MLItem>{item}</MLList.MLItem>}
-      />
-      <MLDivider orientation='left'>Large Size</MLDivider>
-      <MLList
-        size='large'
-        header={<div>Header</div>}
-        footer={<div>Footer</div>}
-        bordered
-        dataSource={data}
+        {...props}
         renderItem={item => <MLList.MLItem>{item}</MLList.MLItem>}
       />
     </div>
