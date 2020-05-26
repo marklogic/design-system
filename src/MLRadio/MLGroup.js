@@ -16,7 +16,7 @@ MLGroup.defaultProps = {
   size: 'small',
 }
 
-MLGroup.displayName = 'MLRadioGroup'
+MLGroup.displayName = 'MLRadio.MLGroup'
 
 MLGroup.propTypes = {}
 
