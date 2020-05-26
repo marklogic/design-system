@@ -20,11 +20,10 @@
     "watch": "gulp compile-watch",
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "webpack": "webpack",
     "predeploy": "cd playground && yarn && yarn run build",
     "prepublishOnly": "yarn run build",
     "deploy": "gh-pages -d playground/build",
-    "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn)",
+    "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn); (yarn run build)",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o storybook-dist"
   },
@@ -105,6 +104,7 @@
     "@fortawesome/react-fontawesome": "^0.1.7",
     "ant-design-draggable-modal": "^0.0.16",
     "antd": "^3.26.13",
+    "classnames": "^2.2.6",
     "lodash-es": "^4",
     "prop-types": "^15.7.2"
   },

@@ -10,7 +10,7 @@ const MLRangePicker = (props) => {
   return (
     <MLConfigContext.Consumer>
       {(context) => {
-        const contextProps = pickerPropsFromContext(context, props)
+        const contextProps = pickerPropsFromContext('range', context, props)
         return (
           <RangePicker
             {...contextProps}
