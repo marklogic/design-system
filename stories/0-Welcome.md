@@ -34,12 +34,22 @@ import { MLInput } from '@marklogic/design-system'
 const { MLGroup } = MLInput // or use MLInput.MLGroup directly, in your JSX
 ```
 
+## Icons
+
+### Icon Documentation
+
+Note that, unlike other Ant components, you should reference the [v4 documentation specifically for Icons](https://ant.design/components/icon/), since that is a separate package that we use the v4 version for.
+
+Additionally, we have wrapped the [FontAwesome icons](https://fontawesome.com/icons?d=gallery&s=regular,solid&m=free), which have been renamed to be in PascalCase, and are available in MLIcon as well. Eg: the `align-center` icon is available as `<AlignCenter />`
+
 ### Icons must be imported differently, in order to be tree-shaken properly.
 - It is not recommended that you import MLIcon directly, as that will include all Ant and FontAwesome icons in your bundle.
 
-- ```jsx
+- Instead, do:
+```
 import { CheckCircleOutlined } from '@marklogic/design-system/MLIcon'
 ```
+This must be accompanied by a babel-plugin-import configuration for `@marklogic/design-system/MLIcon`, as seen in `playground/src/config-overrides.js`
 
 
 ## Storybook Gotchas
