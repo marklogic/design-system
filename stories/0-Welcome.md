@@ -49,7 +49,6 @@ Additionally, we have wrapped the [FontAwesome icons](https://fontawesome.com/ic
 ```
 import { CheckCircleOutlined } from '@marklogic/design-system/MLIcon'
 ```
-This must be accompanied by a babel-plugin-import configuration for `@marklogic/design-system/MLIcon`, as seen in `playground/src/config-overrides.js`
 
 
 ## Storybook Gotchas
