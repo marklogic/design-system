@@ -1,22 +1,22 @@
 import { get, isArray } from 'lodash-es'
 
-export const pickerPropsFromContext = ({ dateFormat, dateTimeFormat, weekFormat, monthFormat, yearFormat }, props) => {
+export const pickerPropsFromContext = (picker, { dateFormat, dateTimeFormat, weekFormat, monthFormat, yearFormat }, props) => {
   let format
   let { showTime } = props
-  if (props.showTime && props.picker !== 'date') {
-    console.warn("DatePicker: 'showTime' can only be used with 'date' picker")
+  if (props.showTime && !['date', 'range'].includes(picker)) {
+    console.warn("Warning: 'showTime' can only be used with DatePicker or RangePicker")
     showTime = false
   }
   if (showTime === true) {
-    // Use the first dateTimeFormat if multiple are provided, because TimePicker chokes on arrays of formats
-    format = isArray(dateTimeFormat) ? dateTimeFormat[0] : dateTimeFormat
+    format = dateTimeFormat
   } else {
     format = get({
+      date: dateFormat,
       week: weekFormat,
       month: monthFormat,
       year: yearFormat,
       // Nothing special for quarter or year pickers
-    }, props.picker, dateFormat)
+    }, picker, dateFormat)
   }
   return { format, showTime }
 }

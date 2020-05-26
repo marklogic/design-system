@@ -12,7 +12,7 @@ const MLDatePicker = (props) => {
       {(pickerContext) => (
         <MLSizeContext.Consumer>
           {(contextSize) => {
-            const contextProps = pickerPropsFromContext(pickerContext, props)
+            const contextProps = pickerPropsFromContext('date', pickerContext, props)
             const size = contextSize || props.size
             return (
               <DatePicker

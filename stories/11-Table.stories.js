@@ -20,7 +20,12 @@ export const basic = () => {
     dataSource: sampleBasicData.dataSource,
     columns: sampleBasicData.columns,
   }
-  return (<MLTable {...props} onChange={action('onChange')} />)
+  return (
+    <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLTable {...props} onChange={action('onChange')} />
+    </div>
+  )
 }
 
 export const embeddedTables = () => {
@@ -31,11 +36,14 @@ export const embeddedTables = () => {
   }
   // TODO: Handle onChange for nested tables, and figure out a way to differentiate the callback values
   return (
-    <MLTable
-      scroll={{ x: true }}
-      {...props}
-      onChange={action('onChange')}
-    />
+    <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLTable
+        scroll={{ x: true }}
+        {...props}
+        onChange={action('onChange')}
+      />
+    </div>
   )
 }
 
@@ -95,6 +103,7 @@ export const rowNestedTable = () => {
   ]
   return (
     <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLTable
         scroll={{ x: true }}
         size={size}
@@ -165,6 +174,7 @@ export const rowNestedTableWithButtons = () => {
   ]
   return (
     <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <MLButton>Example Button</MLButton>
       </div>
@@ -224,6 +234,7 @@ export const treeData = () => {
   ]
   return (
     <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLTable
         scroll={{ x: true }}
         size={radios('size', ['default', 'middle', 'small'], 'middle')}

@@ -20,11 +20,10 @@
     "watch": "gulp compile-watch",
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "webpack": "webpack",
     "predeploy": "cd playground && yarn && yarn run build",
     "prepublishOnly": "yarn run build",
     "deploy": "gh-pages -d playground/build",
-    "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn)",
+    "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn); (yarn run build)",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o storybook-dist"
   },

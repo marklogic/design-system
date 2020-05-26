@@ -151,23 +151,61 @@ import './index.less'
   })
 }
 
+const fixDisplayNames = () => {
+  return through.obj(function(file, enc, cb) {
+    const childComponentName = path.basename(file.path).replace('.js', '')
+    const parentComponentName = path.basename(path.dirname(file.path))
+
+    if (parentComponentName === childComponentName) {
+      return cb(null, file)
+    }
+
+    const pattern = RegExp(`${childComponentName}.displayName = (.*?)\n`, 'g')
+
+    const code = file.contents.toString()
+    const matches = [...code.matchAll(pattern)]
+
+    const correctedDisplayNameLine = `${childComponentName}.displayName = '${parentComponentName}.${childComponentName}'\n`
+
+    if (matches.length === 0) {
+      // Insert it before the export line
+      const exportPattern = RegExp(`(?<exportLine>export default ${childComponentName})`)
+      const newCode = code.replace(exportPattern, (
+`${correctedDisplayNameLine}
+$<exportLine>`
+      ))
+      file.contents = Buffer.from(newCode)
+    } else if (matches.length === 1) {
+      //  Modify the existing line
+      const newCode = code.replace(pattern, correctedDisplayNameLine)
+      file.contents = Buffer.from(newCode)
+    } else {
+      console.warn(`${parentComponentName}.${childComponentName} has multiple displayName lines; can't fix automatically.`)
+    }
+
+    cb(null, file)
+  })
+}
+
 const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
-  () => {
+  function fixCustomUniformityRules() {
     const src = gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
     return merge(
       src
         .pipe(checkMultipleComponentsOneFile())
         .pipe(removeImport(/import '\.\/style'\n/))
         .pipe(ensureImport("import classNames from 'classnames'"))
-        .pipe(addClassNames()),
+        .pipe(addClassNames())
+        .pipe(fixDisplayNames()),
       src
         .pipe(ensureStyleFolder()),
     )
       .pipe(gulp.dest(path.resolve(__dirname, '../src')))
   },
-  () => {
+  function fixESLintProblems() {
     return gulp.src(path.resolve(__dirname, '../src/**/*.js'))
       .pipe(eslint({ fix: true }))
+      // .pipe(eslint.format()) // Enable later once the output is less
       .pipe(gulp.dest(path.resolve(__dirname, '../src')))
   },
 ))

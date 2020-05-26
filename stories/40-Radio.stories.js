@@ -19,33 +19,11 @@ export const radio = () => {
     disabled: boolean('disabled', false),
     checked: boolean('checked', false),
   }
-  return (<MLRadio {...props}>{label}</MLRadio>)
-}
-
-const MultiRadioComponent = (props) => {
   return (
     <div>
-      <MLRadio {...props}>1</MLRadio>
-      <MLRadio {...props}>2</MLRadio>
-      <MLRadio {...props}>3</MLRadio>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLRadio {...props}>{label}</MLRadio>
     </div>
-  )
-}
-
-export const multiRadio = () => {
-  const label = text('label', 'Radio')
-  const props = {
-    name: 'group',
-    disabled: boolean('disabled', false),
-    // checked: boolean('checked', false),
-  }
-  return (
-    <MultiRadioComponent {...props} />
-    // <div>
-    //   <MLRadio {...props}>1</MLRadio>
-    //   <MLRadio {...props}>2</MLRadio>
-    //   <MLRadio {...props}>3</MLRadio>
-    // </div>
   )
 }
 
@@ -57,12 +35,15 @@ export const radioGroup = () => {
     onChange: action('onChange'),
   }
   return (
-    <MLRadio.MLGroup {...props}>
-      <MLRadio value={1}>A</MLRadio>
-      <MLRadio value={2}>B</MLRadio>
-      <MLRadio value={3}>C</MLRadio>
-      <MLRadio value={4}>D</MLRadio>
-    </MLRadio.MLGroup>
+    <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLRadio.MLGroup {...props}>
+        <MLRadio value={1}>A</MLRadio>
+        <MLRadio value={2}>B</MLRadio>
+        <MLRadio value={3}>C</MLRadio>
+        <MLRadio value={4}>D</MLRadio>
+      </MLRadio.MLGroup>
+    </div>
   )
 }
 
@@ -75,7 +56,10 @@ export const radioGroupPlainOptions = () => {
     onChange: action('onChange'),
   }
   return (
-    <MLRadio.MLGroup {...props} />
+    <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLRadio.MLGroup {...props} />
+    </div>
   )
 }
 
@@ -92,7 +76,10 @@ export const radioGroupWithComplexOptions = () => {
     onChange: action('onChange'),
   }
   return (
-    <MLRadio.MLGroup {...props} />
+    <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLRadio.MLGroup {...props} />
+    </div>
   )
 }
 
@@ -105,12 +92,15 @@ export const radioGroupOutlinedStyle = () => {
     onChange: action('onChange'),
   }
   return (
-    <MLRadio.MLGroup {...props}>
-      <MLRadio.MLButton value={1}>A</MLRadio.MLButton>
-      <MLRadio.MLButton value={2}>B</MLRadio.MLButton>
-      <MLRadio.MLButton value={3}>C</MLRadio.MLButton>
-      <MLRadio.MLButton value={4}>D</MLRadio.MLButton>
-    </MLRadio.MLGroup>
+    <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLRadio.MLGroup {...props}>
+        <MLRadio.MLButton value={1}>A</MLRadio.MLButton>
+        <MLRadio.MLButton value={2}>B</MLRadio.MLButton>
+        <MLRadio.MLButton value={3}>C</MLRadio.MLButton>
+        <MLRadio.MLButton value={4}>D</MLRadio.MLButton>
+      </MLRadio.MLGroup>
+    </div>
   )
 }
 export const radioGroupSolidStyle = () => {
@@ -122,11 +112,14 @@ export const radioGroupSolidStyle = () => {
     onChange: action('onChange'),
   }
   return (
-    <MLRadio.MLGroup {...props}>
-      <MLRadio.MLButton value={1}>A</MLRadio.MLButton>
-      <MLRadio.MLButton value={2}>B</MLRadio.MLButton>
-      <MLRadio.MLButton value={3}>C</MLRadio.MLButton>
-      <MLRadio.MLButton value={4}>D</MLRadio.MLButton>
-    </MLRadio.MLGroup>
+    <div>
+      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
+      <MLRadio.MLGroup {...props}>
+        <MLRadio.MLButton value={1}>A</MLRadio.MLButton>
+        <MLRadio.MLButton value={2}>B</MLRadio.MLButton>
+        <MLRadio.MLButton value={3}>C</MLRadio.MLButton>
+        <MLRadio.MLButton value={4}>D</MLRadio.MLButton>
+      </MLRadio.MLGroup>
+    </div>
   )
 }
