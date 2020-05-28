@@ -29,7 +29,7 @@ const ensureImport = (importStatement) => {
     if (!file.isBuffer()) {
       this.emit('error', new PluginError('fix stuff', 'Only buffers supported'))
     }
-    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext).*/.test(file.path)) {
+    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
       return cb(null, file)
     }
 
@@ -64,7 +64,7 @@ const removeImport = (importStatementRegex) => {
 
 const addClassNames = () => {
   return through.obj((file, enc, cb) => {
-    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext).*/.test(file.path)) {
+    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
       return cb(null, file)
     }
     let madeChanges = false
@@ -191,10 +191,36 @@ $<exportLine>`
   })
 }
 
+const generateIndexFile = (componentPath) => {
+  return through.obj(function(file, enc, cb) {
+    const componentNames = fs.readdirSync(componentPath).filter((dirName) => {
+      return /^ML.*$/.test(dirName) && !/^MLIcon$/.test(dirName)
+    })
+
+    let contents = (
+`import * as MLIcon from './MLIcon'
+export { MLIcon }
+
+`
+    )
+    for (const componentName of componentNames) {
+      contents += (
+`export { default as ${componentName} } from './${componentName}'
+`
+      )
+    }
+    file.contents = Buffer.from(contents)
+
+    return cb(null, file)
+  })
+}
+
 const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
   function fixCustomUniformityRules() {
     const src = gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
     return merge(
+      gulp.src(path.resolve(__dirname, '../src/index.js'))
+        .pipe(generateIndexFile(path.resolve(__dirname, '../src'))),
       src
         .pipe(checkMultipleComponentsOneFile())
         .pipe(removeImport(/import '\.\/style'\n/))
