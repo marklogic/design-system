@@ -15,6 +15,7 @@ const MLSkeleton = (props) => {
 }
 
 MLSkeleton.defaultProps = {
+  avatar: true,
 }
 
 MLSkeleton.propTypes = {
