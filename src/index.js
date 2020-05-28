@@ -1,93 +1,47 @@
-import MLAffix from './MLAffix'
-import MLAlert from './MLAlert'
-import MLAutoComplete from './MLAutoComplete'
-import MLAvatar from './MLAvatar'
-import MLBadge from './MLBadge'
-import MLBreadcrumb from './MLBreadcrumb'
-import MLButton from './MLButton'
-import MLCard from './MLCard'
-import MLCarousel from './MLCarousel'
-import MLCascader from './MLCascader'
-import MLCheckbox from './MLCheckbox'
-import MLCol from './MLCol'
-import MLCollapse from './MLCollapse'
-import MLConfigProvider from './MLConfigProvider'
-import MLDatePicker from './MLDatePicker'
-import MLDescriptions from './MLDescriptions'
-import MLDivider from './MLDivider'
-import MLDropdown from './MLDropdown'
-import MLHeader from './MLHeader'
 import * as MLIcon from './MLIcon'
-import MLInput from './MLInput'
-import MLInputNumber from './MLInputNumber'
-import MLLayout from './MLLayout'
-import MLMentions from './MLMentions'
-import MLMenu from './MLMenu'
-import MLModal from './MLModal'
-import MLPageHeader from './MLPageHeader'
-import MLPopconfirm from './MLPopconfirm'
-import MLProgress from './MLProgress'
-import MLRadio from './MLRadio'
-import MLRate from './MLRate'
-import MLRow from './MLRow'
-import MLSelect from './MLSelect'
-import MLSkeleton from './MLSkeleton'
-import MLSlider from './MLSlider'
-import MLSpin from './MLSpin'
-import MLStatistic from './MLStatistic'
-import MLSwitch from './MLSwitch'
-import MLTable from './MLTable'
-import MLTabs from './MLTabs'
-import MLTag from './MLTag'
-import MLTimeline from './MLTimeline'
-import MLTooltip from './MLTooltip'
-import MLTreeSelect from './MLTreeSelect'
-import MLUpload from './MLUpload'
+export { MLIcon }
 
-export {
-  MLAffix,
-  MLAlert,
-  MLAutoComplete,
-  MLAvatar,
-  MLBadge,
-  MLBreadcrumb,
-  MLButton,
-  MLCard,
-  MLCarousel,
-  MLCascader,
-  MLCheckbox,
-  MLCol,
-  MLCollapse,
-  MLConfigProvider,
-  MLDatePicker,
-  MLDescriptions,
-  MLDivider,
-  MLDropdown,
-  MLHeader,
-  MLIcon,
-  MLInput,
-  MLInputNumber,
-  MLLayout,
-  MLMentions,
-  MLMenu,
-  MLModal,
-  MLPageHeader,
-  MLPopconfirm,
-  MLProgress,
-  MLRadio,
-  MLRate,
-  MLRow,
-  MLSelect,
-  MLSkeleton,
-  MLSlider,
-  MLSpin,
-  MLStatistic,
-  MLSwitch,
-  MLTable,
-  MLTabs,
-  MLTag,
-  MLTimeline,
-  MLTooltip,
-  MLTreeSelect,
-  MLUpload,
-}
+export { default as MLAffix } from './MLAffix'
+export { default as MLAlert } from './MLAlert'
+export { default as MLAutoComplete } from './MLAutoComplete'
+export { default as MLAvatar } from './MLAvatar'
+export { default as MLBadge } from './MLBadge'
+export { default as MLBreadcrumb } from './MLBreadcrumb'
+export { default as MLButton } from './MLButton'
+export { default as MLCard } from './MLCard'
+export { default as MLCarousel } from './MLCarousel'
+export { default as MLCascader } from './MLCascader'
+export { default as MLCheckbox } from './MLCheckbox'
+export { default as MLCol } from './MLCol'
+export { default as MLCollapse } from './MLCollapse'
+export { default as MLConfigProvider } from './MLConfigProvider'
+export { default as MLDatePicker } from './MLDatePicker'
+export { default as MLDescriptions } from './MLDescriptions'
+export { default as MLDivider } from './MLDivider'
+export { default as MLDropdown } from './MLDropdown'
+export { default as MLHeader } from './MLHeader'
+export { default as MLInput } from './MLInput'
+export { default as MLInputNumber } from './MLInputNumber'
+export { default as MLLayout } from './MLLayout'
+export { default as MLMentions } from './MLMentions'
+export { default as MLMenu } from './MLMenu'
+export { default as MLModal } from './MLModal'
+export { default as MLPageHeader } from './MLPageHeader'
+export { default as MLPopconfirm } from './MLPopconfirm'
+export { default as MLProgress } from './MLProgress'
+export { default as MLRadio } from './MLRadio'
+export { default as MLRate } from './MLRate'
+export { default as MLRow } from './MLRow'
+export { default as MLSelect } from './MLSelect'
+export { default as MLSkeleton } from './MLSkeleton'
+export { default as MLSlider } from './MLSlider'
+export { default as MLSpin } from './MLSpin'
+export { default as MLStatistic } from './MLStatistic'
+export { default as MLSwitch } from './MLSwitch'
+export { default as MLTable } from './MLTable'
+export { default as MLTabs } from './MLTabs'
+export { default as MLTag } from './MLTag'
+export { default as MLTimeline } from './MLTimeline'
+export { default as MLTooltip } from './MLTooltip'
+export { default as MLTreeSelect } from './MLTreeSelect'
+export { default as MLUpload } from './MLUpload'
