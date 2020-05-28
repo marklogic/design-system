@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 const { TreeNode } = TreeSelect
 
-const MLTreeNode = TreeNode;
+const MLTreeNode = TreeNode
 
 MLTreeNode.displayName = 'MLTreeSelect.MLTreeNode'
 
