@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Descriptions, Table } from 'antd'
-import { cloneDeep, merge } from 'lodash-es'
+import { clone, merge } from 'lodash-es'
 import { DownOutlined, RightOutlined } from '../MLIcon'
 import classNames from 'classnames'
 
@@ -82,7 +82,7 @@ class MLTable extends React.Component {
       return <MLHeaderTable columns={columns} />
     }
     const restructuredColumns = columns.map((originalColumn) => {
-      const restructuredColumn = cloneDeep(originalColumn)
+      const restructuredColumn = clone(originalColumn)
       if (originalColumn.columns !== undefined) {
         if (originalColumn.dataIndex === undefined) {
           throw Error('dataIndex must be specified when nesting columns')
