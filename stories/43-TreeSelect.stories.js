@@ -33,8 +33,9 @@ export const basic = () => {
       style={{ width: '100%' }}
       dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
       placeholder='Please select'
-      allowClear={boolean('allowClear', false)}
+      allowClear={boolean('allowClear', true)}
       treeDefaultExpandAll={boolean('treeDefaultExpandAll', false)}
+      size={radios('size', ['large', 'middle', 'small'], 'small')}
       {...props}
     >
       <MLTreeSelect.MLTreeNode value='parent 1' title='parent 1'>

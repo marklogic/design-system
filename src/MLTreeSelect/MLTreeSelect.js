@@ -15,6 +15,8 @@ const MLTreeSelect = (props) => {
 }
 
 MLTreeSelect.defaultProps = {
+  allowClear: true,
+  size: 'small',
 }
 
 MLTreeSelect.propTypes = {
