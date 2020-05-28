@@ -15,6 +15,8 @@ const MLDescriptions = (props) => {
 }
 
 MLDescriptions.defaultProps = {
+  size: 'small',
+  colon: false,
 }
 
 MLDescriptions.propTypes = {
