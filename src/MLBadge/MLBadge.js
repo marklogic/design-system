@@ -18,7 +18,7 @@ MLBadge.defaultProps = {
 }
 
 MLBadge.propTypes = {
-/** Customize Badge dot color */
+  /** Customize Badge dot color */
   color: PropTypes.string,
   /** Number to show in badge */
   count: PropTypes.node,

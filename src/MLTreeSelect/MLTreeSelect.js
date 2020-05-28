@@ -24,7 +24,7 @@ MLTreeSelect.defaultProps = {
 }
 
 MLTreeSelect.propTypes = {
-/**   Whether allow clear */
+  /** Whether allow clear */
   allowClear: PropTypes.bool,
   /** auto clear search input value when multiple select is selected/deselected */
   autoClearSearchValue: PropTypes.bool,
