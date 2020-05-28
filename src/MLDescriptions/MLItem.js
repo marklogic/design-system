@@ -19,6 +19,10 @@ MLItem.defaultProps = {
 }
 
 MLItem.propTypes = {
+  /** description of the content */
+  label: PropTypes.node,
+  /** The number of columns included */
+  span: PropTypes.number,
 }
 
 MLItem.displayName = 'MLDescriptions.MLItem'

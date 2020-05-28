@@ -22,6 +22,17 @@ MLSkeleton.defaultProps = {
 }
 
 MLSkeleton.propTypes = {
+  /** Show animation effect */
+  active: PropTypes.bool,
+  /** Show avatar placeholder */
+  avatar: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+  /** Display the skeleton when true */
+  loading: PropTypes.bool,
+  /** Show paragraph placeholder */
+  paragraph: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+  /** Show title placeholder */
+  title: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+
 }
 
 export default MLSkeleton

@@ -18,6 +18,12 @@ MLAffix.defaultProps = {
 }
 
 MLAffix.propTypes = {
+  /** Offset from the bottom of the viewport (in pixels) */
+  offsetBottom: PropTypes.number,
+  /** Offset from the top of the viewport (in pixels) */
+  offsetTop: PropTypes.number,
+  /** Specifies the scrollable area DOM node */
+  target: PropTypes.func,
 }
 
 export default MLAffix

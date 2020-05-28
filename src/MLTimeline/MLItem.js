@@ -20,6 +20,12 @@ MLItem.defaultProps = {
 }
 
 MLItem.propTypes = {
+  /** Set the circle's color to blue, red, green, gray or other custom colors */
+  color: PropTypes.string,
+  /** Customize timeline dot */
+  dot: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /** Customize node position */
+  position: PropTypes.oneOf(['left', 'right']),
 }
 
 MLItem.displayName = 'MLTimeline.MLItem'
