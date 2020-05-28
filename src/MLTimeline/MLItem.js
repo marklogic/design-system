@@ -16,6 +16,7 @@ const MLItem = (props) => {
 }
 
 MLItem.defaultProps = {
+  position: 'left',
 }
 
 MLItem.propTypes = {

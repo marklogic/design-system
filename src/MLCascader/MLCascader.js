@@ -15,6 +15,7 @@ const MLCascader = (props) => {
 }
 
 MLCascader.defaultProps = {
+  size: 'small'
 }
 
 MLCascader.propTypes = {

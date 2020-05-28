@@ -65,7 +65,7 @@ export const basic = () => {
       options={options}
       expandTrigger={radios('expandTrigger', ['click', 'hover'], 'click')}
       changeOnSelect={boolean('changeOnSelect', false)}
-      size={radios('size', ['large', 'middle', 'small'], 'middle')}
+      size={radios('size', ['large', 'default', 'small'], 'small')}
       onChange={action('onChange')}
       placeholder='Please select'
     />
