@@ -21,8 +21,6 @@ MLTabPane.defaultProps = {
 MLTabPane.propTypes = {
   /** Forced render of content in tabs, not lazy render after clicking on tabs */
   forceRender: PropTypes.bool,
-  /** TabPane's key */
-  key: PropTypes.string,
   /** Show text in TabPane's head */
   tab: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 }

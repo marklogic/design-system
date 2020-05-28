@@ -14,6 +14,10 @@ const MLTreeSelect = (props) => {
   )
 }
 
+MLTreeSelect.SHOW_ALL = TreeSelect.SHOW_ALL
+MLTreeSelect.SHOW_PARENT = TreeSelect.SHOW_PARENT
+MLTreeSelect.SHOW_CHILD = TreeSelect.SHOW_CHILD
+
 MLTreeSelect.defaultProps = {
   allowClear: true,
   size: 'small',
@@ -91,9 +95,5 @@ MLTreeSelect.propTypes = {
   /** A callback function, can be executed when you select a treeNode. */
   onSelect: PropTypes.func,
 }
-
-MLTreeSelect.SHOW_ALL = TreeSelect.SHOW_ALL
-MLTreeSelect.SHOW_PARENT = TreeSelect.SHOW_PARENT
-MLTreeSelect.SHOW_CHILD = TreeSelect.SHOW_CHILD
 
 export default MLTreeSelect

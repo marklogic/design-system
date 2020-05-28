@@ -25,7 +25,7 @@ MLDescriptions.propTypes = {
   /** whether to display the border */
   bordered: PropTypes.bool,
   /** the number of DescriptionItems in a row,could be a number or a object like { xs: 8, sm: 16, md: 24},(Only set bordered={true} to take effect) */
-  column: PropTypes.number,
+  column: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
   /** set the size of the list. Can be set to middle,small, or not filled */
   size: PropTypes.oneOf(['default', 'middle', 'small']),
   /** Define description layout */
