@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs } from '@storybook/addon-knobs'
+import {boolean, radios, withKnobs} from "@storybook/addon-knobs";
 import { MLCascader } from '@marklogic/design-system'
 
 export default {
@@ -14,7 +14,60 @@ export default {
 }
 
 export const basic = () => {
+  const options = [
+    {
+      value: 'zhejiang',
+      label: 'Zhejiang',
+      children: [
+        {
+          value: 'hangzhou',
+          label: 'Hangzhou',
+          children: [
+            {
+              value: 'xihu',
+              label: 'West Lake',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      value: 'jiangsu',
+      label: 'Jiangsu',
+      children: [
+        {
+          value: 'nanjing',
+          label: 'Nanjing',
+          children: [
+            {
+              value: 'zhonghuamen',
+              label: 'Zhong Hua Men',
+            },
+          ],
+        },
+        {
+          value: 'disabled',
+          label: 'Disabled',
+          disabled: true,
+          children: [
+            {
+              value: 'foo',
+              label: 'Foo',
+            },
+          ],
+        },
+      ],
+    },
+  ]
   return (
-    <MLCascader />
+    <MLCascader
+      defaultValue={['zhejiang', 'hangzhou', 'xihu']}
+      options={options}
+      expandTrigger={radios('expandTrigger', ['click', 'hover'], 'click')}
+      changeOnSelect={boolean('changeOnSelect', false)}
+      size={radios('size', ['large', 'middle', 'small'], 'middle')}
+      onChange={action('onChange')}
+      placeholder='Please select'
+    />
   )
 }
