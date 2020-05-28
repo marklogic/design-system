@@ -60,3 +60,5 @@ How StoryBook renders Story Source blocks:
 - When showing you the source code for a story, StoryBook displays function props as `noRefCheck`, rather than showing the function contents. When copying from these stories, you will have to provide actual functions here instead. In most cases, Ant is better reference for what functions are appropriate for these props.
 
 - StoryBook will also "collapse" dynamically determined values into whatever their final concrete value is, as it was passed into the React component props. Eg `{ someProp: someCondition ? true : false }` will render only as `{ someProp: true }` (or false, whichever it ended up being)
+
+- StoryBook Source does not show the `key` pseudo-prop (because it is not a prop). Often `key` is necessary for certain functionality, like `MLTabs` tabs activating when clicked.
