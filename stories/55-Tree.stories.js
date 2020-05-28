@@ -35,15 +35,7 @@ const treeData = [
         key: '0-0-1',
         children: [
           {
-            title: (
-              <span
-                style={{
-                  color: '#1890ff',
-                }}
-              >
-                colored span
-              </span>
-            ),
+            title: 'leaf',
             key: '0-0-1-0',
           },
         ],
