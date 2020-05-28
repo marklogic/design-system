@@ -14,8 +14,8 @@ export default {
 }
 
 export const basic = () => {
-  const offsetTop = number('offsetTop', 10)
-  const offsetBottom = number('offsetBottom', 10)
+  const offsetTop = number('offsetTop', 24)
+  const offsetBottom = number('offsetBottom', 24)
   const props = {
     onChange: action('onChange'),
   }
