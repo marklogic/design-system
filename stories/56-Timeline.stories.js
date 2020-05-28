@@ -15,29 +15,55 @@ export default {
 
 export const basic = () => {
   return (
-    <MLTimeline>
-      <MLTimeline.MLItem color='green'>Create a services site 2015-09-01</MLTimeline.MLItem>
-      <MLTimeline.MLItem color='green'>Create a services site 2015-09-01</MLTimeline.MLItem>
-      <MLTimeline.MLItem color='red'>
-        <p>Solve initial network problems 1</p>
-        <p>Solve initial network problems 2</p>
-        <p>Solve initial network problems 3 2015-09-01</p>
-      </MLTimeline.MLItem>
-      <MLTimeline.MLItem>
-        <p>Technical testing 1</p>
-        <p>Technical testing 2</p>
-        <p>Technical testing 3 2015-09-01</p>
-      </MLTimeline.MLItem>
-      <MLTimeline.MLItem color='gray'>
-        <p>Technical testing 1</p>
-        <p>Technical testing 2</p>
-        <p>Technical testing 3 2015-09-01</p>
-      </MLTimeline.MLItem>
-      <MLTimeline.MLItem color='gray'>
-        <p>Technical testing 1</p>
-        <p>Technical testing 2</p>
-        <p>Technical testing 3 2015-09-01</p>
-      </MLTimeline.MLItem>
-    </MLTimeline>
+    <div className='timeline-story'>
+      <MLTimeline>
+        <MLTimeline.MLItem color='green'>
+          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p>Create a services site</p>
+        </MLTimeline.MLItem>
+        <MLTimeline.MLItem color='green'>
+          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p>Create a services site</p>
+        </MLTimeline.MLItem>
+        <MLTimeline.MLItem color='red'>
+          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p>Solve initial network problems 1</p>
+          <p>Solve initial network problems 2</p>
+          <p>Solve initial network problems 3</p>
+        </MLTimeline.MLItem>
+        <MLTimeline.MLItem>
+          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p>Technical testing 1</p>
+          <p>Technical testing 2</p>
+          <p>Technical testing 3</p>
+        </MLTimeline.MLItem>
+        <MLTimeline.MLItem color='gray'>
+          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p>Technical testing 1</p>
+          <p>Technical testing 2</p>
+          <p>Technical testing 3</p>
+        </MLTimeline.MLItem>
+        <MLTimeline.MLItem color='gray'>
+          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p>Technical testing 1</p>
+          <p>Technical testing 2</p>
+          <p>Technical testing 3</p>
+        </MLTimeline.MLItem>
+        <style>{`
+.timeline-story .ml-timeline .ant-timeline-item-content {
+  // margin-top: -5px;
+}
+
+.timeline-story .ant-timeline-item-content {
+  position: relative;
+  top: -12px;
+}
+.timeline-story .timeline-date-label {
+  margin-bottom: -3px;
+}
+`}
+        </style>
+      </MLTimeline>
+    </div>
   )
 }
