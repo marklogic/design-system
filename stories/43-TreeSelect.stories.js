@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs } from '@storybook/addon-knobs'
+import { boolean, radios, withKnobs } from '@storybook/addon-knobs'
 import { MLTreeSelect } from '@marklogic/design-system'
 
 export default {
@@ -14,7 +14,38 @@ export default {
 }
 
 export const basic = () => {
+  const props = {
+    treeCheckable: boolean('treeCheckable', false),
+  }
+  if (!props.treeCheckable) {
+    props.multiple = boolean('multiple', false)
+  }
+  if (props.treeCheckable) {
+    props.showCheckedStrategy = radios('showCheckedStrategy', {
+      'MLTreeSelect.SHOW_PARENT': MLTreeSelect.SHOW_PARENT,
+      'MLTreeSelect.SHOW_ALL': MLTreeSelect.SHOW_ALL,
+      'MLTreeSelect.SHOW_CHILD': MLTreeSelect.SHOW_CHILD,
+    }, MLTreeSelect.SHOW_CHILD)
+  }
   return (
-    <MLTreeSelect />
+    <MLTreeSelect
+      showSearch={boolean('showSearch', false)}
+      style={{ width: '100%' }}
+      dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+      placeholder='Please select'
+      allowClear={boolean('allowClear', false)}
+      treeDefaultExpandAll={boolean('treeDefaultExpandAll', false)}
+      {...props}
+    >
+      <MLTreeSelect.MLTreeNode value='parent 1' title='parent 1'>
+        <MLTreeSelect.MLTreeNode value='parent 1-0' title='parent 1-0'>
+          <MLTreeSelect.MLTreeNode value='leaf1' title='my leaf' />
+          <MLTreeSelect.MLTreeNode value='leaf2' title='your leaf' />
+        </MLTreeSelect.MLTreeNode>
+        <MLTreeSelect.MLTreeNode value='parent 1-1' title='parent 1-1'>
+          <MLTreeSelect.MLTreeNode value='sss' title={<b style={{ color: '#08c' }}>sss</b>} />
+        </MLTreeSelect.MLTreeNode>
+      </MLTreeSelect.MLTreeNode>
+    </MLTreeSelect>
   )
 }

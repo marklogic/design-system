@@ -20,4 +20,8 @@ MLTreeSelect.defaultProps = {
 MLTreeSelect.propTypes = {
 }
 
+MLTreeSelect.SHOW_ALL = TreeSelect.SHOW_ALL
+MLTreeSelect.SHOW_PARENT = TreeSelect.SHOW_PARENT
+MLTreeSelect.SHOW_CHILD = TreeSelect.SHOW_CHILD
+
 export default MLTreeSelect
