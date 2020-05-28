@@ -61,4 +61,4 @@ How StoryBook renders Story Source blocks:
 
 - StoryBook will also "collapse" dynamically determined values into whatever their final concrete value is, as it was passed into the React component props. Eg `{ someProp: someCondition ? true : false }` will render only as `{ someProp: true }` (or false, whichever it ended up being)
 
-- StoryBook Source does not show the `key` pseudo-prop (because it is not a prop). Often `key` is necessary for certain functionality, like `MLTabs` tabs activating when clicked.
+- StoryBook Source does not show the `key` pseudo-prop (because it is not a prop). Often `key` is necessary for certain functionality, like `MLTabs` tabs activating when clicked. See the [React key documentation](https://reactjs.org/docs/lists-and-keys.html) for more context on this.

@@ -442,7 +442,7 @@ export default class App extends Component {
                 title
               />
             </MLLayout.MLContent>
-            <MLLayout.MLFooter year='2019' />
+            <MLLayout.MLFooter year={2019} />
           </MLLayout>
         </MLConfigProvider>
       </div>
