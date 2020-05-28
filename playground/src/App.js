@@ -8,6 +8,7 @@ import {
   MLLayout,
   MLSlider,
   MLConfigProvider,
+  MLPopover,
 } from '@marklogic/design-system'
 
 import {
@@ -84,6 +85,25 @@ export default class App extends Component {
               <MLDatePicker size='default' />
               <MLDatePicker size='large' />
               <MLDatePicker picker='week' />
+              <div style={{ height: 100 }}>Some short content</div>
+              <MLPopover
+                arrowPointAtCenter
+                content={<div><p>Content</p><p>Content</p></div>}
+                placement='top'
+                title='Title'
+                trigger={[
+                  'hover',
+                  'focus',
+                ]}
+              >
+                <MLButton
+                  style={{ marginLeft: '100px' }}
+                  size='small'
+                  type='primary'
+                >
+                  Hover me
+                </MLButton>
+              </MLPopover>
               <div style={{ height: 2000 }}>Some tall content</div>
             </MLLayout.MLContent>
             <MLLayout.MLFooter year='2019' />
