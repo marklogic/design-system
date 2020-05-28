@@ -71,9 +71,9 @@ export const WithFooter = () => {
               justifyContent: 'space-between',
             }}
           >
-            <div>
+            <MLButton type='link'>
               <TrashAlt style={{ fontSize: '22px', color: '#B32424' }} />
-            </div>
+            </MLButton>
             <div>
               <MLButton key='yes' onClick={hide}>Yes</MLButton>
               <MLButton key='no' onClick={hide}>No</MLButton>
