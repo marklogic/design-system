@@ -29,6 +29,7 @@ import MLRow from './MLRow'
 import MLSelect from './MLSelect'
 import MLSlider from './MLSlider'
 import MLSpin from './MLSpin'
+import MLStatistic from "./MLStatistic";
 import MLSwitch from './MLSwitch'
 import MLTable from './MLTable'
 import MLTag from './MLTag'
@@ -67,6 +68,7 @@ export {
   MLSelect,
   MLSlider,
   MLSpin,
+  MLStatistic,
   MLSwitch,
   MLTable,
   MLTag,
