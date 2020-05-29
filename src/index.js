@@ -27,6 +27,7 @@ import MLPopconfirm from './MLPopconfirm'
 import MLProgress from './MLProgress'
 import MLRadio from './MLRadio'
 import MLRate from './MLRate'
+import MLResult from './MLResult'
 import MLRow from './MLRow'
 import MLSelect from './MLSelect'
 import MLSlider from './MLSlider'
@@ -67,6 +68,7 @@ export {
   MLProgress,
   MLRadio,
   MLRate,
+  MLResult,
   MLRow,
   MLSelect,
   MLSlider,

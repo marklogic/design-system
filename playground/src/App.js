@@ -8,6 +8,7 @@ import {
   MLLayout,
   MLSlider,
   MLConfigProvider,
+  MLResult,
   MLEditableSlider,
   MLEmpty,
 } from '@marklogic/design-system'
@@ -87,6 +88,7 @@ export default class App extends Component {
               <MLDatePicker size='default' />
               <MLDatePicker size='large' />
               <MLDatePicker picker='week' />
+              <MLResult type='primary' icon={<Route />} title='title' subTitle='subtitle' />
               <MLEmpty />
               <div
                 style={{
