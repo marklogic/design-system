@@ -3,15 +3,16 @@ import PropTypes from 'prop-types'
 import { InputNumber } from 'antd'
 import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import classNames from 'classnames'
-import MLSlider from "../MLSlider";
+import MLSlider from '../MLSlider'
 
-const MLInputNumber = (props) => {
+const MLInputNumber = React.forwardRef((props, ref) => {
   return (
     <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
           <InputNumber
+            ref={ref}
             {...props}
             size={size}
             className={classNames('ml-input-number', props.className)}
@@ -22,7 +23,7 @@ const MLInputNumber = (props) => {
       }}
     </MLSizeContext.Consumer>
   )
-}
+})
 
 MLInputNumber.propTypes = {
   autoFocus: PropTypes.bool,

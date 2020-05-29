@@ -1,21 +1,28 @@
 import React from 'react'
+import { Form } from 'antd'
 import PropTypes from 'prop-types'
-import { Menu } from 'antd'
 import classNames from 'classnames'
-const { Item } = Menu
+const { Item } = Form
 
 const MLItem = React.forwardRef((props, ref) => {
   return (
     <Item
       ref={ref}
       {...props}
-      className={classNames('ml-menu-item', props.className)}
+      className={classNames('ml-form-item', props.className)}
     >
       {props.children}
     </Item>
   )
 })
 
-MLItem.displayName = 'MLMenu.MLItem'
+MLItem.defaultProps = {
+  colon: true,
+}
+
+MLItem.propTypes = {
+}
+
+MLItem.displayName = 'MLForm.MLItem'
 
 export default MLItem

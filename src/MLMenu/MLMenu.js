@@ -3,16 +3,17 @@ import PropTypes from 'prop-types'
 import { Menu } from 'antd'
 import classNames from 'classnames'
 
-const MLMenu = (props) => {
+const MLMenu = React.forwardRef((props, ref) => {
   return (
     <Menu
+      ref={ref}
       {...props}
       className={classNames('ml-menu', props.className)}
     >
       {props.children}
     </Menu>
   )
-}
+})
 
 MLMenu.defaultProps = {
   theme: 'light',

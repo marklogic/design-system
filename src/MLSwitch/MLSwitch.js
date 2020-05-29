@@ -3,14 +3,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-const MLSwitch = (props) => {
+const MLSwitch = React.forwardRef((props, ref) => {
   return (
     <Switch
+      ref={ref}
       {...props}
       className={classNames('ml-switch', props.className)}
     />
   )
-}
+})
 
 export const sizes = ['small', 'default']
 

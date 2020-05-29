@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import { Tooltip } from 'antd'
 import classNames from 'classnames'
 
-const MLTooltip = (props) => {
+const MLTooltip = React.forwardRef((props, ref) => {
   return (
     <Tooltip
+      ref={ref}
       {...props}
       className={classNames('ml-tooltip-container', props.className)}
       overlayClassName={classNames('ml-tooltip', props.overlayClassName)}
@@ -13,6 +14,6 @@ const MLTooltip = (props) => {
       {props.children}
     </Tooltip>
   )
-}
+})
 
 export default MLTooltip

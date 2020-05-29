@@ -1,20 +1,21 @@
 import React from 'react'
-import { Mentions } from 'antd'
+import PropTypes from 'prop-types'
+import { AutoComplete } from 'antd'
 import classNames from 'classnames'
-const { Option } = Mentions
+const { Option } = AutoComplete
 
 const MLOption = React.forwardRef((props, ref) => {
   return (
     <Option
       ref={ref}
       {...props}
-      className={classNames('ml-mentions-option', props.className)}
+      className={classNames('ml-auto-complete-option', props.className)}
     >
       {props.children}
     </Option>
   )
 })
 
-MLOption.displayName = 'MLMentions.MLOption'
+MLOption.displayName = 'MLAutoComplete.MLOption'
 
 export default MLOption

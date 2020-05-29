@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-const MLHeader = (props) => {
+const MLHeader = React.forwardRef((props, ref) => {
   return (
     <div
       className={classNames('ml-header', props.className)}
@@ -13,7 +13,7 @@ const MLHeader = (props) => {
       <div className='ml-header-extra'>{props.extra}</div>
     </div>
   )
-}
+})
 
 MLHeader.propTypes = {
   avatar: PropTypes.object,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Button } from 'antd'
 import classNames from 'classnames'
 
-const MLButton = (props) => {
+const MLButton = React.forwardRef((props, ref) => {
   let type
   let className
   if (props.type === 'highlight') {
@@ -15,6 +15,7 @@ const MLButton = (props) => {
   }
   return (
     <Button
+      ref={ref}
       {...props}
       type={type}
       className={classNames('ml-btn', props.className, className)}
@@ -22,7 +23,7 @@ const MLButton = (props) => {
       {props.children}
     </Button>
   )
-}
+})
 
 // MarkLogic Defaults
 MLButton.defaultProps = {

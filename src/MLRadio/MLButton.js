@@ -3,14 +3,17 @@ import { Radio } from 'antd'
 import classNames from 'classnames'
 const { Button } = Radio
 
-const MLButton = (props) => (
-  <Button
-    {...props}
-    className={classNames('ml-radio-button', props.className)}
-  >
-    {props.children}
-  </Button>
-)
+const MLButton = React.forwardRef((props, ref) => {
+  return (
+    <Button
+      ref={ref}
+      {...props}
+      className={classNames('ml-radio-button', props.className)}
+    >
+      {props.children}
+    </Button>
+  )
+})
 
 MLButton.propTypes = {}
 

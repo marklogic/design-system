@@ -6,7 +6,7 @@ import { pickerPropsFromContext } from './utils'
 import classNames from 'classnames'
 const { WeekPicker } = DatePicker
 
-const MLWeekPicker = (props) => {
+const MLWeekPicker = React.forwardRef((props, ref) => {
   return (
     <MLConfigContext.Consumer>
       {(context) => {
@@ -14,6 +14,7 @@ const MLWeekPicker = (props) => {
         return (
           <WeekPicker
             {...contextProps}
+            ref={ref}
             {...props}
             showTime={contextProps.showTime}
             className={classNames('ml-date-picker-week-picker', props.className)}
@@ -24,7 +25,7 @@ const MLWeekPicker = (props) => {
       }}
     </MLConfigContext.Consumer>
   )
-}
+})
 
 MLWeekPicker.defaultProps = {
   bordered: true,
