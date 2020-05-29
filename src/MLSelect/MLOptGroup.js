@@ -1,5 +1,4 @@
 import { Select } from 'antd'
-import classNames from 'classnames'
 const { OptGroup } = Select
 
 // NOTE: The Option and OptGroup are extensions of their base class to work around

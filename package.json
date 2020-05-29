@@ -83,6 +83,7 @@
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "lodash": "^4.17.15",
+    "markdown-to-jsx": "^6.11.1",
     "merge-stream": "^2.0.0",
     "node-sass": "^4.13.1",
     "plugin-error": "^1.0.1",
@@ -103,7 +104,9 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
+    "ant-design-draggable-modal": "^0.0.16",
     "antd": "^3.26.13",
+    "classnames": "^2.2.6",
     "lodash-es": "^4",
     "prop-types": "^15.7.2"
   },
