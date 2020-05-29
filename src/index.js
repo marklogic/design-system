@@ -14,6 +14,7 @@ import MLDivider from './MLDivider'
 import MLDropdown from './MLDropdown'
 import MLEditableSlider from './MLEditableSlider'
 import MLEmpty from './MLEmpty'
+import MLForm from './MLForm'
 import MLHeader from './MLHeader'
 import * as MLIcon from './MLIcon'
 import MLInput from './MLInput'
@@ -54,6 +55,7 @@ export {
   MLDropdown,
   MLEditableSlider,
   MLEmpty,
+  MLForm,
   MLHeader,
   MLIcon,
   MLInput,

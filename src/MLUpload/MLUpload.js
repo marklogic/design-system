@@ -15,4 +15,10 @@ const MLUpload = React.forwardRef((props, ref) => {
   )
 })
 
+MLUpload.propTypes = {
+}
+
+MLUpload.defaultProps = {
+}
+
 export default MLUpload
