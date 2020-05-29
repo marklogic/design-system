@@ -9,6 +9,7 @@ import {
   MLSlider,
   MLConfigProvider,
   MLResult,
+  MLEditableSlider,
   MLEmpty,
 } from '@marklogic/design-system'
 
@@ -89,6 +90,30 @@ export default class App extends Component {
               <MLDatePicker picker='week' />
               <MLResult type='primary' icon={<Route />} title='title' subTitle='subtitle' />
               <MLEmpty />
+              <div
+                style={{
+                  width: '400px',
+                }}
+              >
+                <MLEditableSlider
+                  debounceTime={200}
+                  defaultValue={0}
+                  max={100}
+                  min={0}
+                  onChange={(v) => console.log(v)}
+                />
+                <MLEditableSlider
+                  debounceTime={200}
+                  defaultValue={[
+                    20,
+                    70,
+                  ]}
+                  max={100}
+                  min={0}
+                  range
+                  onChange={(v) => console.log(v)}
+                />
+              </div>
               <div style={{ height: 2000 }}>Some tall content</div>
             </MLLayout.MLContent>
             <MLLayout.MLFooter year='2019' />
