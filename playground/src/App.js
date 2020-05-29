@@ -19,6 +19,7 @@ import {
   MLDescriptions,
   MLDivider,
   MLDropdown,
+  MLEmpty,
   MLHeader,
   MLInput,
   MLInputNumber,
@@ -117,10 +118,12 @@ export default class App extends Component {
                 <MLSlider tooltipPlacement='top' />
               </div>
               <MLDatePicker />
+              <MLDatePicker picker='week' />
               <MLDatePicker size='small' />
               <MLDatePicker size='default' />
               <MLDatePicker size='large' />
               <MLDatePicker picker='week' />
+              <MLEmpty />
               <div style={{ height: 2000 }}>Some tall content</div>
               <div>
                 <MLAffix
