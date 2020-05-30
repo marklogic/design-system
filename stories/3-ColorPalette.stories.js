@@ -29,9 +29,9 @@ export const colorPalette = () => (
       <div><MLButton type='link'>link (Button component)</MLButton></div>
     </MLCard>
     <MLCard title='Text colors'>
-      <div><MLTypography.MLText>Primary</MLTypography.MLText></div>
+      <div><MLTypography.MLText>Primary (try highlighting me)</MLTypography.MLText></div>
       <div><MLTypography.MLText type='secondary'>Secondary</MLTypography.MLText></div>
-      <div><MLTypography.MLText mark>Highlight</MLTypography.MLText></div>
+      <div><MLTypography.MLText mark>Mark</MLTypography.MLText></div>
       <div><MLTypography.MLText disabled>Disabled</MLTypography.MLText></div>
       <div><MLTypography.MLText code>Code</MLTypography.MLText></div>
       <div><a>Link (anchor tag)</a></div>
