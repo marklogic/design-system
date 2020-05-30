@@ -38,4 +38,6 @@ MLAlert.propTypes = {
   showIcon: PropTypes.bool,
 }
 
+MLAlert.displayName = 'MLAlert'
+
 export default MLAlert

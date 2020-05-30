@@ -15,4 +15,6 @@ const MLRow = React.forwardRef((props, ref) => {
   )
 })
 
+MLRow.displayName = 'MLRow'
+
 export default MLRow

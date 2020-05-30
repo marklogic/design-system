@@ -15,4 +15,6 @@ const MLRate = React.forwardRef((props, ref) => {
   )
 })
 
+MLRate.displayName = 'MLRate'
+
 export default MLRate

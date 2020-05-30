@@ -42,4 +42,6 @@ MLInputNumber.propTypes = {
   onPressEnter: PropTypes.func,
 }
 
+MLInputNumber.displayName = 'MLInputNumber'
+
 export default MLInputNumber

@@ -31,4 +31,6 @@ MLEmpty.propTypes = {
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 }
 
+MLEmpty.displayName = 'MLEmpty'
+
 export default MLEmpty

@@ -44,4 +44,6 @@ MLDatePicker.propTypes = {
   size: PropTypes.string,
 }
 
+MLDatePicker.displayName = 'MLDatePicker'
+
 export default MLDatePicker

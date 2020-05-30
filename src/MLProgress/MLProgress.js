@@ -27,4 +27,6 @@ MLProgress.defaultProps = {
   type: 'line',
 }
 
+MLProgress.displayName = 'MLProgress'
+
 export default MLProgress

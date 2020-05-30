@@ -25,4 +25,6 @@ MLForm.propTypes = {
 MLForm.create = Form.create
 MLForm.createFormField = Form.createFormField
 
+MLForm.displayName = 'MLForm'
+
 export default MLForm

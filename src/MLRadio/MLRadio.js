@@ -17,4 +17,6 @@ const MLRadio = React.forwardRef((props, ref) => {
 MLRadio.propTypes = {
 }
 
+MLRadio.displayName = 'MLRadio'
+
 export default MLRadio

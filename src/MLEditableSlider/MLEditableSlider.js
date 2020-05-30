@@ -159,4 +159,6 @@ MLEditableSlider.propTypes = {
   onPressEnter: PropTypes.func,
 }
 
+MLEditableSlider.displayName = 'MLEditableSlider'
+
 export default MLEditableSlider

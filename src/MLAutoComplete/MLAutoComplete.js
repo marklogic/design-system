@@ -24,4 +24,6 @@ const MLAutoComplete = React.forwardRef((props, ref) => {
   )
 })
 
+MLAutoComplete.displayName = 'MLAutoComplete'
+
 export default MLAutoComplete

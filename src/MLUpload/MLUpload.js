@@ -21,4 +21,6 @@ MLUpload.propTypes = {
 MLUpload.defaultProps = {
 }
 
+MLUpload.displayName = 'MLUpload'
+
 export default MLUpload

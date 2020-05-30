@@ -44,4 +44,6 @@ MLConfigProvider.propTypes = {
 
 export const MLConfigContext = React.createContext(MLConfigProvider.defaultProps)
 
+MLConfigProvider.displayName = 'MLConfigProvider'
+
 export default MLConfigProvider

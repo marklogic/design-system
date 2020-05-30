@@ -156,16 +156,17 @@ const fixDisplayNames = () => {
     const childComponentName = path.basename(file.path).replace('.js', '')
     const parentComponentName = path.basename(path.dirname(file.path))
 
+    let correctedDisplayNameLine
     if (parentComponentName === childComponentName) {
-      return cb(null, file)
+      correctedDisplayNameLine = `${childComponentName}.displayName = '${parentComponentName}'\n`
+    } else {
+      correctedDisplayNameLine = `${childComponentName}.displayName = '${parentComponentName}.${childComponentName}'\n`
     }
 
     const pattern = RegExp(`${childComponentName}.displayName = (.*?)\n`, 'g')
 
     const code = file.contents.toString()
     const matches = [...code.matchAll(pattern)]
-
-    const correctedDisplayNameLine = `${childComponentName}.displayName = '${parentComponentName}.${childComponentName}'\n`
 
     if (matches.length === 0) {
       // Insert it before the export line

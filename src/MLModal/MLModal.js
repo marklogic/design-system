@@ -14,4 +14,6 @@ const MLModal = React.forwardRef((props, ref) => {
   )
 })
 
+MLModal.displayName = 'MLModal'
+
 export default MLModal

@@ -14,4 +14,6 @@ const MLTag = React.forwardRef((props, ref) => {
   )
 })
 
+MLTag.displayName = 'MLTag'
+
 export default MLTag

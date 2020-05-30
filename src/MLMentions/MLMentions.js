@@ -14,4 +14,6 @@ const MLMentions = React.forwardRef((props, ref) => {
   )
 })
 
+MLMentions.displayName = 'MLMentions'
+
 export default MLMentions

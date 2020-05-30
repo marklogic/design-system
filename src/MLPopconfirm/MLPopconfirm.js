@@ -15,4 +15,6 @@ const MLPopconfirm = React.forwardRef((props, ref) => {
   )
 })
 
+MLPopconfirm.displayName = 'MLPopconfirm'
+
 export default MLPopconfirm

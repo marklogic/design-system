@@ -49,4 +49,6 @@ MLButton.propTypes = {
   block: PropTypes.bool,
 }
 
+MLButton.displayName = 'MLButton'
+
 export default MLButton

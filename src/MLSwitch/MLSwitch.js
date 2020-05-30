@@ -24,4 +24,6 @@ MLSwitch.defaultProps = {
   size: 'small',
 }
 
+MLSwitch.displayName = 'MLSwitch'
+
 export default MLSwitch

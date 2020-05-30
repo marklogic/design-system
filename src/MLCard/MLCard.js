@@ -25,4 +25,6 @@ MLCard.propTypes = {
   bordered: PropTypes.bool,
 }
 
+MLCard.displayName = 'MLCard'
+
 export default MLCard

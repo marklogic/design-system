@@ -15,4 +15,6 @@ const MLCollapse = React.forwardRef((props, ref) => {
   )
 })
 
+MLCollapse.displayName = 'MLCollapse'
+
 export default MLCollapse

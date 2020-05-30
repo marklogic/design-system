@@ -15,4 +15,6 @@ const MLPageHeader = React.forwardRef((props, ref) => {
   )
 })
 
+MLPageHeader.displayName = 'MLPageHeader'
+
 export default MLPageHeader

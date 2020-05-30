@@ -29,4 +29,6 @@ MLInput.defaultProps = {
   allowClear: true,
 }
 
+MLInput.displayName = 'MLInput'
+
 export default MLInput

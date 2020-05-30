@@ -15,4 +15,6 @@ const MLCol = React.forwardRef((props, ref) => {
   )
 })
 
+MLCol.displayName = 'MLCol'
+
 export default MLCol

@@ -15,4 +15,6 @@ const MLDivider = React.forwardRef((props, ref) => {
   )
 })
 
+MLDivider.displayName = 'MLDivider'
+
 export default MLDivider

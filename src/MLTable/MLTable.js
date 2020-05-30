@@ -168,4 +168,6 @@ MLTable.defaultProps = {
   showBody: true,
 }
 
+MLTable.displayName = 'MLTable'
+
 export default MLTable

@@ -15,4 +15,6 @@ export const MLLayout = React.forwardRef((props, ref) => {
   )
 })
 
+MLLayout.displayName = 'MLLayout'
+
 export default MLLayout

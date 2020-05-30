@@ -15,4 +15,6 @@ const MLCheckbox = React.forwardRef((props, ref) => {
   )
 })
 
+MLCheckbox.displayName = 'MLCheckbox'
+
 export default MLCheckbox

@@ -19,4 +19,6 @@ MLDropdown.defaultProps = {
   trigger: 'click',
 }
 
+MLDropdown.displayName = 'MLDropdown'
+
 export default MLDropdown

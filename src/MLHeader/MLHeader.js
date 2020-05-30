@@ -5,6 +5,7 @@ import classNames from 'classnames'
 const MLHeader = React.forwardRef((props, ref) => {
   return (
     <div
+      ref={ref}
       className={classNames('ml-header', props.className)}
     >
       <div className='ml-header-avatar'>{props.avatar}</div>
@@ -15,10 +16,18 @@ const MLHeader = React.forwardRef((props, ref) => {
   )
 })
 
+MLHeader.defaultProps = {
+  avatar: null,
+  extra: [],
+  title: null,
+}
+
 MLHeader.propTypes = {
   avatar: PropTypes.object,
   extra: PropTypes.arrayOf(PropTypes.node),
   title: PropTypes.node,
 }
+
+MLHeader.displayName = 'MLHeader'
 
 export default MLHeader

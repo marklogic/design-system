@@ -15,4 +15,6 @@ const MLSpin = React.forwardRef((props, ref) => {
   )
 })
 
+MLSpin.displayName = 'MLSpin'
+
 export default MLSpin

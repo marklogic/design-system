@@ -15,4 +15,6 @@ const MLBreadcrumb = React.forwardRef((props, ref) => {
   )
 })
 
+MLBreadcrumb.displayName = 'MLBreadcrumb'
+
 export default MLBreadcrumb

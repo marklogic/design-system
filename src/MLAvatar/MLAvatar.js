@@ -35,4 +35,6 @@ MLAvatar.defaultProps = {
   shape: 'circle',
 }
 
+MLAvatar.displayName = 'MLAvatar'
+
 export default MLAvatar

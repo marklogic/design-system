@@ -41,4 +41,6 @@ MLSlider.propTypes = {
   getTooltipPopupContainer: PropTypes.func,
 }
 
+MLSlider.displayName = 'MLSlider'
+
 export default MLSlider

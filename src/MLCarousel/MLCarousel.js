@@ -15,4 +15,6 @@ const MLCarousel = React.forwardRef((props, ref) => {
   )
 })
 
+MLCarousel.displayName = 'MLCarousel'
+
 export default MLCarousel

@@ -39,4 +39,6 @@ MLSelect.propTypes = {
   size: PropTypes.oneOf(['default', 'large', 'small']),
 }
 
+MLSelect.displayName = 'MLSelect'
+
 export default MLSelect

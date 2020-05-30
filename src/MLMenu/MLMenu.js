@@ -25,4 +25,6 @@ MLMenu.propTypes = {
   mode: PropTypes.oneOf(['vertical', 'horizontal', 'inline']),
 }
 
+MLMenu.displayName = 'MLMenu'
+
 export default MLMenu

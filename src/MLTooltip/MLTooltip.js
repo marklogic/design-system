@@ -16,4 +16,6 @@ const MLTooltip = React.forwardRef((props, ref) => {
   )
 })
 
+MLTooltip.displayName = 'MLTooltip'
+
 export default MLTooltip
