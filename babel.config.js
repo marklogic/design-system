@@ -9,33 +9,41 @@ module.exports = function(api) {
         '@babel/preset-react',
       ],
       plugins: [
-        [
-          'import',
-          {
-            libraryName: 'antd',
-            style: true,
-            libraryDirectory: 'es',
+        ['module-resolver', {
+          alias: {
+            '^@marklogic/design-system/(.*)$': './src/\\1',
           },
-          'antd',
-        ],
+        }],
         [
           'import',
           {
             libraryName: '@marklogic/design-system',
-            libraryDirectory: 'src',
+            customName: (name) => {
+              const customNamePath = require('path').resolve(__dirname, `./src/${name}`)
+              console.log('\nMODIFYING COMPONENT IMPORT: ' + customNamePath)
+              return customNamePath
+            },
+            // libraryDirectory: 'src',
             camel2DashComponentName: false,
-            style: true,
+            // style: true,
+            customStyleName: (name) => {
+              const customStylePath = require('path').resolve(__dirname, `./src/${name}/style`)
+              console.log('\nADDING STYLE IMPORT: ' + customStylePath)
+              return customStylePath
+            },
           },
           '@marklogic/design-system',
         ],
-        '@babel/plugin-proposal-class-properties',
-        ['module-resolver', {
-          root: ['./src'],
-          alias: {
-            // "@marklogic/design-system/src": "./src",
-            '@marklogic/design-system': './src',
+        [
+          'import',
+          {
+            libraryName: 'antd',
+            style: 'css',
+            libraryDirectory: 'es',
           },
-        }],
+          'antd',
+        ],
+        '@babel/plugin-proposal-class-properties',
       ],
     }
   }

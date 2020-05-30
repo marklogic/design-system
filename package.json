@@ -12,6 +12,9 @@
     "npm": ">=5"
   },
   "sideEffects": [
+    "dist/*",
+    "es/**/style/*",
+    "lib/**/style/*",
     "*.css",
     "*.less"
   ],

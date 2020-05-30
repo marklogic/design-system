@@ -22,19 +22,20 @@ module.exports = async ({ config }) => {
   //     },
   //   ],
   // });
-  // config.module.rules.push({
-  //   test: /\.(stories|story)\.[tj]sx?$/,
-  //   loader: require.resolve('@storybook/source-loader'),
-  //   exclude: [/node_modules/],
-  //   enforce: 'pre',
-  // });
   config.module.rules.push({
+    test: /\.(stories|story)\.[tj]sx?$/,
+    loader: require.resolve('@storybook/source-loader'),
+    exclude: [/node_modules/],
+    enforce: 'pre',
+  });
+  config.module.rules.splice(0, 0, {
     test: /\.jsx?$/,
+    sideEffects: true,
     use: [
       {
         loader: 'babel-loader',
         options: {
-          // babelrc: true,
+          babelrc: true,
         //   plugins: [
         //     ["import", {libraryName: "antd", style: true, libraryDirectory: "es"}, "antd"],
         //     ["import", {
@@ -71,8 +72,8 @@ module.exports = async ({ config }) => {
       path.resolve(__dirname, '../src/'),
     ]
   });
-  config.resolve.alias['@marklogic/design-system/src'] = path.resolve(__dirname, '../src')
-  config.resolve.alias['@marklogic/design-system'] = path.resolve(__dirname, '../src')
+  // config.resolve.alias['@marklogic/design-system/src'] = path.resolve(__dirname, '../src')
+  // config.resolve.alias['@marklogic/design-system'] = path.resolve(__dirname, '../src')
   config.resolve.alias['antd'] = path.resolve(__dirname, '../node_modules/antd')
 
   // DEBUG Fix stringify for regexes
