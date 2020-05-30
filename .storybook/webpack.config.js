@@ -3,46 +3,47 @@ const path = require('path');
 const themeVariables = require('../src/theme-variables.json')
 
 module.exports = async ({ config }) => {
+  // config.module.rules.push({
+  //   test: /\.(stories|story)\.mdx$/,
+  //   use: [
+  //     {
+  //       loader: 'babel-loader',
+  //       options: {
+  //         presets: [["env", {modules: false}]],
+  //       }
+  //       // may or may not need this line depending on your app's setup
+  //       //plugins: ['@babel/plugin-transform-react-jsx'],
+  //     },
+  //     {
+  //       loader: '@mdx-js/loader',
+  //       options: {
+  //         compilers: [createCompiler({})],
+  //       },
+  //     },
+  //   ],
+  // });
+  // config.module.rules.push({
+  //   test: /\.(stories|story)\.[tj]sx?$/,
+  //   loader: require.resolve('@storybook/source-loader'),
+  //   exclude: [/node_modules/],
+  //   enforce: 'pre',
+  // });
   config.module.rules.push({
-    test: /\.(stories|story)\.mdx$/,
+    test: /\.jsx?$/,
     use: [
       {
         loader: 'babel-loader',
         options: {
-          presets: [["env", {modules: false}]],
-        }
-        // may or may not need this line depending on your app's setup
-        //plugins: ['@babel/plugin-transform-react-jsx'],
-      },
-      {
-        loader: '@mdx-js/loader',
-        options: {
-          compilers: [createCompiler({})],
-        },
-      },
-    ],
-  });
-  config.module.rules.push({
-    test: /\.(stories|story)\.[tj]sx?$/,
-    loader: require.resolve('@storybook/source-loader'),
-    exclude: [/node_modules/],
-    enforce: 'pre',
-  });
-  config.module.rules.push({
-    test: /\.js$/,
-    use: [
-      {
-        loader: 'babel-loader',
-        options: {
-          plugins: [
-            ["import", {libraryName: "antd", style: true, libraryDirectory: "es"}, "antd"],
-            ["import", {
-              libraryName: "@marklogic/design-system",
-              libraryDirectory: "src",
-              camel2DashComponentName: false,
-              style: true,
-            }, "@marklogic/design-system"],
-          ]
+          // babelrc: true,
+        //   plugins: [
+        //     ["import", {libraryName: "antd", style: true, libraryDirectory: "es"}, "antd"],
+        //     ["import", {
+        //       libraryName: "@marklogic/design-system",
+        //       libraryDirectory: "src",
+        //       camel2DashComponentName: false,
+        //       style: true,
+        //     }, "@marklogic/design-system"],
+        //   ]
         }
       }
     ],
@@ -78,7 +79,7 @@ module.exports = async ({ config }) => {
   Object.defineProperty(RegExp.prototype, "toJSON", {
     value: RegExp.prototype.toString
   });
-  console.log("Storybook webpack config:\n", JSON.stringify(config, null, '  '))
+  // console.log("Storybook webpack config:\n", JSON.stringify(config, null, '  '))
   // DEBUG end
 
   return config;
