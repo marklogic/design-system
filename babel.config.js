@@ -38,7 +38,7 @@ module.exports = function(api) {
           'import',
           {
             libraryName: 'antd',
-            style: 'css',
+            style: true,
             libraryDirectory: 'es',
           },
           'antd',

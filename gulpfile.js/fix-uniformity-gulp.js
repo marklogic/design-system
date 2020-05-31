@@ -188,26 +188,34 @@ $<exportLine>`
 }
 
 const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
-  function fixCustomUniformityRules() {
-    const src = gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
-    return merge(
-      src
-        .pipe(checkMultipleComponentsOneFile())
-        .pipe(removeImport(/import '\.\/style'\n/))
-        .pipe(ensureImport("import classNames from 'classnames'"))
-        .pipe(addClassNames())
-        .pipe(fixDisplayNames()),
-      src
-        .pipe(ensureStyleFolder()),
-    )
-      .pipe(gulp.dest(path.resolve(__dirname, '../src')))
-  },
-  function fixESLintProblems() {
-    return gulp.src(path.resolve(__dirname, '../src/**/*.js'))
-      .pipe(eslint({ fix: true }))
-      // .pipe(eslint.format()) // Enable later once the output is less
-      .pipe(gulp.dest(path.resolve(__dirname, '../src')))
-  },
+  // function fixCustomUniformityRules() {
+  //   const src = gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
+  //   return merge(
+  //     src
+  //       .pipe(checkMultipleComponentsOneFile())
+  //       .pipe(removeImport(/import '\.\/style'\n/))
+  //       .pipe(ensureImport("import classNames from 'classnames'"))
+  //       .pipe(addClassNames())
+  //       .pipe(fixDisplayNames()),
+  //     src
+  //       .pipe(ensureStyleFolder()),
+  //   )
+  //     .pipe(gulp.dest(path.resolve(__dirname, '../src')))
+  // },
+  // function fixESLintProblems() {
+  //   return gulp.src(path.resolve(__dirname, '../src/**/*.js'))
+  //     .pipe(eslint({ fix: true }))
+  //     // .pipe(eslint.format()) // Enable later once the output is less
+  //     .pipe(gulp.dest(path.resolve(__dirname, '../src')))
+  // },
+  function renameStoriesToJSX() {
+    return gulp.src(path.resolve(__dirname, '../stories/*.stories.js'))
+      .pipe(through.obj(function(file, enc, cb) {
+        file.path = file.path.replace('stories.js', 'stories.jsx')
+        return cb(null, file)
+      }))
+      .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
+  }
 ))
 
 module.exports = fixUniformityTask
