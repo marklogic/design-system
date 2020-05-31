@@ -9,40 +9,40 @@ module.exports = function(api) {
         '@babel/preset-react',
       ],
       plugins: [
-        ['module-resolver', {
-          alias: {
-            '^@marklogic/design-system/(.*)$': './src/\\1',
-          },
-        }],
-        [
-          'import',
-          {
-            libraryName: '@marklogic/design-system',
-            customName: (name) => {
-              const customNamePath = require('path').resolve(__dirname, `./src/${name}`)
-              console.log('\nMODIFYING COMPONENT IMPORT: ' + customNamePath)
-              return customNamePath
-            },
-            // libraryDirectory: 'src',
-            camel2DashComponentName: false,
-            // style: true,
-            customStyleName: (name) => {
-              const customStylePath = require('path').resolve(__dirname, `./src/${name}/style`)
-              console.log('\nADDING STYLE IMPORT: ' + customStylePath)
-              return customStylePath
-            },
-          },
-          '@marklogic/design-system',
-        ],
-        [
-          'import',
-          {
-            libraryName: 'antd',
-            style: true,
-            libraryDirectory: 'es',
-          },
-          'antd',
-        ],
+    //     ['module-resolver', {
+    //       alias: {
+    //         '^@marklogic/design-system/(.*)$': './src/\\1',
+    //       },
+    //     }],
+    //     [
+    //       'import',
+    //       {
+    //         libraryName: '@marklogic/design-system',
+    //         customName: (name) => {
+    //           const customNamePath = require('path').resolve(__dirname, `./src/${name}`)
+    //           console.log('\nMODIFYING COMPONENT IMPORT: ' + customNamePath)
+    //           return customNamePath
+    //         },
+    //         // libraryDirectory: 'src',
+    //         camel2DashComponentName: false,
+    //         // style: true,
+    //         customStyleName: (name) => {
+    //           const customStylePath = require('path').resolve(__dirname, `./src/${name}/style`)
+    //           console.log('\nADDING STYLE IMPORT: ' + customStylePath)
+    //           return customStylePath
+    //         },
+    //       },
+    //       '@marklogic/design-system',
+    //     ],
+    //     [
+    //       'import',
+    //       {
+    //         libraryName: 'antd',
+    //         style: true,
+    //         libraryDirectory: 'es',
+    //       },
+    //       'antd',
+    //     ],
         '@babel/plugin-proposal-class-properties',
       ],
     }
