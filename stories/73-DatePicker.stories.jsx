@@ -13,10 +13,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
-    },
-    docs: {
-      page: mdx,
+      text: 'Component description goes here',
     },
   },
 }

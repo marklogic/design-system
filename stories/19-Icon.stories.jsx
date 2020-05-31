@@ -5,6 +5,7 @@ import * as AntIcons from '@marklogic/design-system/MLIcon/ant-icons'
 import * as FontAwesomeIcons from '@marklogic/design-system/MLIcon/font-awesome-icons'
 import './19-Icon.css'
 import { endsWith } from 'lodash-es'
+import mdx from './19-Icon.mdx'
 
 export default {
   title: 'General/MLIcon',
@@ -14,7 +15,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

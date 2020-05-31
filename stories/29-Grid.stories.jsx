@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLRow, MLCol } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
+import mdx from './29-Grid.mdx'
 
 export default {
   title: 'Layout/Grid (MLRow and MLCol)',
@@ -11,7 +12,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { MLTag } from '@marklogic/design-system'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import './57-Tag.stories.less'
+import mdx from './57-Tag.mdx'
 const { MLCheckableTag } = MLTag
 
 export default {
@@ -13,7 +14,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

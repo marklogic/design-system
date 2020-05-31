@@ -4,6 +4,7 @@ import { MLCollapse } from '@marklogic/design-system'
 import { withKnobs, array, boolean, text, optionsKnob as options } from '@storybook/addon-knobs'
 import './20-Collapse.less'
 import { DeleteOutlined } from '@marklogic/design-system/MLIcon'
+import mdx from './20-Collapse.mdx'
 const { MLPanel } = MLCollapse
 
 export default {
@@ -14,7 +15,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

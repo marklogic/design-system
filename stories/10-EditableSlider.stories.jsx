@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, number, radios, text } from '@storybook/addon-knobs'
 import { MLEditableSlider } from '@marklogic/design-system'
+import mdx from './10-EditableSlider.mdx'
 
 export default {
   title: 'Data Entry/MLEditableSlider',
@@ -11,7 +12,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

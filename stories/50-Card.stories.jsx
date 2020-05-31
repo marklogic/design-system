@@ -7,6 +7,7 @@ import { withKnobs, radios, text, boolean } from '@storybook/addon-knobs'
 
 // TODO: Use MLAvatar once it exists
 import { Avatar as MLAvatar } from 'antd'
+import mdx from './50-Card.mdx'
 
 export default {
   title: 'Data Display/MLCard',
@@ -16,7 +17,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

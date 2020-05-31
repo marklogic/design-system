@@ -1,6 +1,7 @@
 import React from 'react'
 import { MLAvatar } from '@marklogic/design-system'
 import { text, withKnobs } from '@storybook/addon-knobs'
+import mdx from './18-Avatar.mdx'
 
 export default {
   title: 'Data Display/MLAvatar',

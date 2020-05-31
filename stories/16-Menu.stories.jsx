@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { MLMenu } from '@marklogic/design-system'
 import { withKnobs, radios } from '@storybook/addon-knobs'
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@marklogic/design-system/MLIcon'
+import mdx from './16-Menu.mdx'
 
 export default {
   title: 'Navigation/MLMenu',
@@ -12,7 +13,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

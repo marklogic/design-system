@@ -2,6 +2,7 @@ import React from 'react'
 import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { MLSlider } from '@marklogic/design-system'
+import mdx from './42-Slider.mdx'
 
 export default {
   title: 'Data Entry/MLSlider',
@@ -11,7 +12,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

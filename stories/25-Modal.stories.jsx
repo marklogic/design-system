@@ -3,6 +3,7 @@ import { MLModal, MLButton } from '@marklogic/design-system'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { TrashAlt } from '@marklogic/design-system/MLIcon'
+import mdx from './25-Modal.mdx'
 
 export default {
   title: 'Feedback/MLModal',

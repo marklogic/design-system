@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLMentions } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
+import mdx from './38-Mention.mdx'
 const { MLOption } = MLMentions
 
 export default {
@@ -12,7 +13,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

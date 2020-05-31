@@ -5,6 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { MLAlert, MLButton } from '@marklogic/design-system'
 import { Card, Typography } from 'antd'
 import './3-ColorPalette.less'
+import mdx from './3-ColorPalette.mdx'
 
 export default {
   title: 'Styles',
@@ -14,7 +15,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

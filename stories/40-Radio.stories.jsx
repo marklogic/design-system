@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLRadio } from '@marklogic/design-system'
 import { withKnobs, boolean, text, array, number } from '@storybook/addon-knobs'
+import mdx from './40-Radio.mdx'
 
 export default {
   title: 'Data Entry/MLRadio',
@@ -11,7 +12,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

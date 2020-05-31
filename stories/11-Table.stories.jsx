@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { MLTable, MLButton } from '@marklogic/design-system'
 import { withKnobs, radios } from '@storybook/addon-knobs'
 import { sampleBasicData, sampleNestedData } from './11-Table.sample-data.js'
+import mdx from './11-Table.mdx'
 
 export default {
   title: 'Data Display/MLTable',
@@ -12,7 +13,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

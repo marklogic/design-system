@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLAutoComplete } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
+import mdx from './33-Autocomplete.mdx'
 
 export default {
   title: 'Data Entry/MLAutoComplete',
@@ -11,7 +12,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

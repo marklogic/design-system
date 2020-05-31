@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLRate } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
+import mdx from './39-Rate.mdx'
 
 export default {
   title: 'Data Entry/MLRate',
@@ -11,7 +12,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

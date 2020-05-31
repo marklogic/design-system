@@ -2,6 +2,7 @@ import React from 'react'
 import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { MLInputNumber } from '@marklogic/design-system'
+import mdx from './37-InputNumber.mdx'
 
 export default {
   title: 'Data Entry/MLInputNumber',
@@ -9,7 +10,7 @@ export default {
   parameters: {
     filename: 'src/InputNumber', // TODO: Trying to get multi-file storyshots working
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

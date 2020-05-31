@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { InputNumber } from 'antd'
 import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import classNames from 'classnames'
-import MLSlider from "../MLSlider";
+import MLSlider from '../MLSlider'
 
 const MLInputNumber = (props) => {
   return (

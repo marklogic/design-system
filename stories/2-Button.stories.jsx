@@ -2,6 +2,7 @@ import React from 'react'
 // import { action } from '@storybook/addon-actions'
 // import { withKnobs, radios, boolean } from '@storybook/addon-knobs'
 import {
+import mdx from './2-Button.mdx'
   MLButton,
 } from '@marklogic/design-system'
 

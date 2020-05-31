@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { withKnobs, text, radios, boolean } from '@storybook/addon-knobs'
 import { MLResult, MLButton } from '@marklogic/design-system'
 import { Smile } from '@marklogic/design-system/MLIcon'
+import mdx from './26-Result.mdx'
 
 export default {
   title: 'Feedback/MLResult',
@@ -12,7 +13,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Note: On the hosted (non-local) StoryBook, this component\'s custom CSS is not currently rendering correctly. This should not affect use of the component in your app.',
+      text: 'Note: On the hosted (non-local) StoryBook, this component\'s custom CSS is not currently rendering correctly. This should not affect use of the component in your app.',
     },
   },
 }

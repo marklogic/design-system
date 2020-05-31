@@ -3,6 +3,7 @@ import { MLHeader, MLTooltip, MLLayout } from '@marklogic/design-system'
 import { Route as RouteIcon, SearchOutlined, QuestionCircleOutlined, SettingOutlined, UserOutlined } from '@marklogic/design-system/MLIcon'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import { Avatar as MLAvatar } from 'antd' // TODO: Use MLAvatar once it exists
+import mdx from './13-Header.mdx'
 
 export default {
   title: 'Navigation/MLHeader',

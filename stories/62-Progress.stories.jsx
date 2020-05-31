@@ -1,6 +1,7 @@
 import React from 'react'
 import { MLProgress } from '@marklogic/design-system'
 import { number, withKnobs, radios } from '@storybook/addon-knobs'
+import mdx from './62-Progress.mdx'
 
 export default {
   component: MLProgress,

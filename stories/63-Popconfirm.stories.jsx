@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { MLPopconfirm } from '@marklogic/design-system'
 import { message } from 'antd'
 import { withKnobs } from '@storybook/addon-knobs'
+import mdx from './63-Popconfirm.mdx'
 
 export default {
   title: 'Feedback/MLPopconfirm',
@@ -12,7 +13,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

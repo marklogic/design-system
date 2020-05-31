@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLSpin } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
+import mdx from './27-Spin.mdx'
 
 export default {
   title: 'Feedback/MLSpin',
@@ -11,7 +12,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLAlert } from '@marklogic/design-system'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+import mdx from './24-Alert.mdx'
 
 export default {
   title: 'Feedback/Alert',
@@ -11,7 +12,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
   argTypes: {

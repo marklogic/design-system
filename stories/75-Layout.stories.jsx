@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { MLLayout } from '@marklogic/design-system'
+import mdx from './75-Layout.mdx'
 const { MLHeader, MLFooter, MLSider, MLContent } = MLLayout
 
 export default {
@@ -12,7 +13,7 @@ export default {
       page: mdx,
     },
     info: {
-        text: 'Component description goes here',
+      text: 'Component description goes here',
     },
   },
 }
