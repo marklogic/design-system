@@ -1,7 +1,12 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-import { MLButton } from '../src/MLButton';
+import MLButton from '../src/MLButton';
+import { withInfo } from '@storybook/addon-info';
+import { withKnobs } from '@storybook/addon-knobs';
 
-<Meta title="MDX/MLButton" component={MLButton} />
+<Meta
+  title="MDX/MLButton" component={MLButton}
+  decorators={[withKnobs]}
+/>
 
 # MLButton
 
@@ -10,6 +15,6 @@ markdown documentation.
 
 <Preview>
   <Story name="button MDX">
-  <MLButton/>yay</form>
+    <MLButton>yay</MLButton>
   </Story>
 </Preview>

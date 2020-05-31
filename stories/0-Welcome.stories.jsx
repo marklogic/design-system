@@ -7,10 +7,10 @@ import { text } from '@storybook/addon-knobs'
 import { MLButton, MLAlert } from '@marklogic/design-system'
 import foo from './0-Welcome.less'
 // require('./0-Welcome.less')
-console.log(require('../src/MLButton/style/index.less'))
+// console.log(require('../src/MLButton/style/index.less'))
 
-console.log(foo)
-debugger
+// console.log(foo)
+// debugger
 
 export default {
   title: 'Welcome',

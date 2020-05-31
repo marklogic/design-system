@@ -3,14 +3,17 @@ import { create } from '@storybook/theming/create';
 import { withInfo } from '@storybook/addon-info';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import './style.css';
+import {createElement} from "react";
 
-addDecorator(
-  withInfo({
-    inline: true,
-    header: true,
-    source: true
-  })
-);
+// addDecorator(
+//   withInfo({
+//     inline: true,
+//     header: true,
+//     source: true
+//   })
+// );
+
+addDecorator(createElement)
 
 addParameters({
   options: {
@@ -120,4 +123,4 @@ export default create({
 });
 
 // automatically import all files ending in *.stories.js
-configure(require.context('../stories', true, /\.stories\.jsx?$/), module);
+// configure(require.context('../stories', true, /\.stories\.jsx?$/), module);

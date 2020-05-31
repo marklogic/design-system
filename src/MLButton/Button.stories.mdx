@@ -1,0 +1,37 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions'
+import { withKnobs, text } from '@storybook/addon-knobs/react'
+import { MLButton } from '@marklogic/design-system'
+
+<Meta
+  title="MLButton2"
+  component={MLButton}
+  decorators={[withKnobs]}
+/>
+
+Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
+
+<Preview>
+<Story name='basic'>
+  <MLButton type='primary' onClick={action('clicked')}>{text('Primary Button Text', 'Primary')}</MLButton>
+</Story>
+</Preview>
+
+<Preview>
+<Story name='multiple'>
+<div>
+    <MLButton type='primary' onClick={action('primary clicked')}>{text('Primary Button Text', 'Primary')}</MLButton>
+    <MLButton type='highlight' onClick={action('primary clicked')}>{text('Highlight Button Text', 'Highlight')}</MLButton>
+    <MLButton onClick={action('default clicked')}>{text('Default Button Text', 'Default')}</MLButton>
+    <MLButton type='danger' onClick={action('danger clicked')}>{text('Danger Button Text', 'Danger')}</MLButton>
+</div>
+</Story>
+</Preview>
+
+<Preview>
+<Story name='disabled'>
+    <MLButton disabled onClick={action('clicked')}>{text('Disabled', 'Disabled')}</MLButton>
+</Story>
+</Preview>
+
+<Props of={MLButton}></Props>

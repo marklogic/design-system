@@ -3,25 +3,25 @@ const path = require('path');
 const themeVariables = require('../src/theme-variables.json')
 
 module.exports = async ({ config }) => {
-  config.module.rules.push({
-    test: /\.(stories|story)\.mdx$/,
-    use: [
-      {
-        loader: 'babel-loader',
-        options: {
-          presets: [["env", {modules: false}]],
-        }
-        // may or may not need this line depending on your app's setup
-        //plugins: ['@babel/plugin-transform-react-jsx'],
-      },
-      {
-        loader: '@mdx-js/loader',
-        options: {
-          compilers: [createCompiler({})],
-        },
-      },
-    ],
-  });
+  // config.module.rules.push({
+  //   test: /\.(stories|story)\.mdx$/,
+  //   use: [
+  //     {
+  //       loader: 'babel-loader',
+  //       options: {
+  //         presets: [["env", {modules: false}]],
+  //       }
+  //       // may or may not need this line depending on your app's setup
+  //       //plugins: ['@babel/plugin-transform-react-jsx'],
+  //     },
+  //     {
+  //       loader: '@mdx-js/loader',
+  //       options: {
+  //         compilers: [createCompiler({})],
+  //       },
+  //     },
+  //   ],
+  // });
   config.module.rules.push({
     test: /\.(stories|story)\.[tj]sx?$/,
     loader: require.resolve('@storybook/source-loader'),
@@ -50,7 +50,7 @@ module.exports = async ({ config }) => {
   config.module.rules.push({
     test: /\.less/,
     loaders: [
-      "style-loader",
+      (config.mode === 'production' ? '/Users/phoenix/Code/work/greenmars/marklogic/design-system/node_modules/mini-css-extract-plugin/dist/loader.js' : "style-loader"),
       "css-loader",
       {
         loader: "less-loader",

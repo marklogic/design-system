@@ -131,17 +131,17 @@ export const completeList = () => {
     iconSets.push(FontAwesomeIcons)
   }
   const list = []
-  for (const iconSet of iconSets) {
-    for (const [componentName, component] of Object.entries(iconSet)) {
-      list.push((
-        iconTile({
-          componentName,
-          component,
-          props,
-        })
-      ))
-    }
-  }
+  // for (const iconSet of iconSets) {
+  //   for (const [componentName, component] of Object.entries(iconSet)) {
+  //     list.push((
+  //       iconTile({
+  //         componentName,
+  //         component,
+  //         props,
+  //       })
+  //     ))
+  //   }
+  // }
   return (
     <div className='ml-storybook-icon-list'>
       <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
