@@ -3,14 +3,18 @@ import { action } from '@storybook/addon-actions'
 import { withKnobs, boolean, select, text, radios } from '@storybook/addon-knobs'
 import { MLSelect } from '@marklogic/design-system'
 import { filter, isUndefined } from 'lodash-es'
+import mdx from './17-Select.mdx'
 const { MLOption, MLOptGroup } = MLSelect
 
 export default {
   title: 'Data Entry/MLSelect',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
     info: {
-      text: 'Component description goes here',
+        text: 'Component description goes here',
     },
   },
 }

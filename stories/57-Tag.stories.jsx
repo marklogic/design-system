@@ -9,8 +9,11 @@ export default {
   title: 'Data Display/MLTag',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
     info: {
-      text: 'Component description goes here',
+        text: 'Component description goes here',
     },
   },
 }

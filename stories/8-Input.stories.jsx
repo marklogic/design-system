@@ -16,8 +16,11 @@ export default {
   title: 'Data Entry/MLInput',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
     info: {
-      text: 'Component description goes here',
+        text: 'Component description goes here',
     },
     docs: {
       page: mdx,

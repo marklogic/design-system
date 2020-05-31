@@ -7,8 +7,11 @@ export default {
   title: 'Data Display/MLEmpty',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
     info: {
-      text: 'Note that you do not need to supply the `image` prop; the Story Source shows the default value here unnecessarily.',
+        text: 'Note that you do not need to supply the `image` prop; the Story Source shows the default value here unnecessarily.',
     },
   },
 }

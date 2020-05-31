@@ -8,8 +8,11 @@ export default {
   title: 'Data Entry/MLMentions',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
     info: {
-      text: 'Component description goes here',
+        text: 'Component description goes here',
     },
   },
 }

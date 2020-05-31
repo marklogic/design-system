@@ -10,8 +10,11 @@ export default {
   title: 'General/MLIcon',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
     info: {
-      text: 'Component description goes here',
+        text: 'Component description goes here',
     },
   },
 }

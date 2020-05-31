@@ -8,8 +8,11 @@ export default {
   title: 'Data Display/MLTable',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
     info: {
-      text: 'Component description goes here',
+        text: 'Component description goes here',
     },
   },
 }

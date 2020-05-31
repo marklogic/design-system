@@ -2,14 +2,21 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLDatePicker, MLConfigProvider } from '@marklogic/design-system'
 import { withKnobs, boolean, select, text, array } from '@storybook/addon-knobs'
+import mdx from './73-DatePicker.mdx'
 const { MLRangePicker } = MLDatePicker
 
 export default {
   title: 'Data Entry/MLDatePicker',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
     info: {
-      text: 'Component description goes here',
+        text: 'Component description goes here',
+    },
+    docs: {
+      page: mdx,
     },
   },
 }
@@ -48,7 +55,6 @@ export const datePicker = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLConfigProvider {...configValues}>
         <div>date: <MLDatePicker {...props} /></div>
         <div>week: <MLDatePicker.MLWeekPicker {...props} /></div>
