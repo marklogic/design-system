@@ -3,14 +3,19 @@ import { action } from '@storybook/addon-actions'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import { MLButton } from '@marklogic/design-system'
 
-<Meta title="MLButton" component={MLButton} decorators={[withKnobs]} />
+import * as stories from './2-Button.stories.jsx'
+
+<Meta
+title="MLButton"
+component={MLButton}
+decorators={[withKnobs]}
+argTypes={{type: { control: { type: 'string' } }}}
+/>
 
 Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
 
 <Preview>
-<Story name='basic'>
-  <MLButton type='primary' onClick={action('clicked')}>{text('Primary Button Text', 'Primary')}</MLButton>
-</Story>
+<Story name="basic">{stories.basic()}</Story>
 </Preview>
 
 <Preview>

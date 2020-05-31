@@ -9,6 +9,7 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-knobs',
+    '@storybook/addon-controls',
     {
       name: '@storybook/addon-docs',
       options: {
@@ -16,6 +17,6 @@ module.exports = {
         // babelOptions: {},
         // sourceLoaderOptions: null, // Turns off story source loader
       }
-    }
+    },
   ],
 };

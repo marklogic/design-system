@@ -10,6 +10,7 @@ import {
   MLRow,
   MLSelect,
 } from '@marklogic/design-system'
+import mdx from './8-Input.mdx'
 
 export default {
   title: 'Data Entry/MLInput',
@@ -17,6 +18,9 @@ export default {
   parameters: {
     info: {
       text: 'Component description goes here',
+    },
+    docs: {
+      page: mdx,
     },
   },
 }

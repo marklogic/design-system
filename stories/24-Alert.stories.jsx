@@ -11,21 +11,31 @@ export default {
       text: 'Component description goes here',
     },
   },
+  argTypes: {
+    // type: { control: { type: 'radio', options: ['success'] } },
+  },
 }
 
-export const basic = () => {
+export const basic = ({ ...args }) => {
   const props = {
     description: text('description', 'Some description'),
     closable: boolean('closable', false),
     showIcon: boolean('showIcon', true),
   }
   return (
-    <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
-      <MLAlert message='Success Text' type='success' {...props} />
-      <MLAlert message='Info Text' type='info' {...props} />
-      <MLAlert message='Warning Text' type='warning' {...props} />
-      <MLAlert message='Error Text' type='error' {...props} />
-    </div>
+    <MLAlert
+      message='Success Text'
+      {...args}
+    />
   )
+}
+
+basic.args = {
+  type: 'success',
+  showIcon: true,
+  description: 'Some description',
+  closable: false,
+}
+basic.argTypes = {
+  type: { control: { type: 'options', controlType: 'inline-radio', options: ['success', 'info', 'warning', 'error'] } },
 }

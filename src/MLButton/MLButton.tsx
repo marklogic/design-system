@@ -3,7 +3,12 @@ import PropTypes from 'prop-types'
 import { Button } from 'antd'
 import classNames from 'classnames'
 
-const MLButton = (props) => {
+interface MLButtonProps {
+  size?: string;
+  type?: string;
+  className?: string;
+}
+const MLButton = (props: MLButtonProps) => {
   let type
   let className
   if (props.type === 'highlight') {
