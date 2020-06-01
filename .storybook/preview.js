@@ -6,6 +6,7 @@ addDecorator(
   withInfo({
     inline: true,
     header: true,
-    source: true
+    source: true,
+    propTables: false,
   })
 );

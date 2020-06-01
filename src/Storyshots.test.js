@@ -9,9 +9,15 @@ addSerializer(createSerializer())
 
 Enzyme.configure({ adapter: new Adapter() })
 
+// Stub out Info panels for StoryShots
+const addonInfo = require('@storybook/addon-info')
+addonInfo.withInfo = () => storyFn => storyFn
+
 initStoryshots({
   renderer: mount,
   renderOnly: true,
   test: multiSnapshotWithOptions({}),
   // snapshotSerializers: [createSerializer()],
 })
+
+it('passes', () => {})

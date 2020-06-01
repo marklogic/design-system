@@ -8,6 +8,11 @@ export default {
   component: MLSwitch,
   title: 'Data Entry/MLSwitch',
   decorators: [withKnobs],
+  parameters: {
+    docs: {
+      page: mdx,
+    },
+  },
 }
 
 export const Basic = () => {

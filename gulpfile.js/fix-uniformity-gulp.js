@@ -171,6 +171,10 @@ const fixDisplayNames = () => {
     const childComponentName = path.basename(file.path).replace('.js', '')
     const parentComponentName = path.basename(path.dirname(file.path))
 
+    if (/.*\/(MLSizeContext).*/.test(file.path)) {
+      return cb(null, file)
+    }
+
     if (parentComponentName === childComponentName) {
       return cb(null, file)
     }
@@ -212,6 +216,21 @@ const addMDXFilenameToMeta = () => {
   })
 }
 
+const addFileNameToExports = () => {
+  return through.obj(function(file, enc, cb) {
+    const code = file.contents.toString()
+
+    if (code.includes('  parameters: {\n    fileName: ')) {
+      return cb(null, file)
+    }
+
+    file.contents = Buffer.from(
+      code.replace('  parameters: {\n', `  parameters: {\n    fileName: '${path.basename(file.path)}',\n`)
+    )
+    return cb(null, file)
+  })
+}
+
 const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
   function fixCustomUniformityRules() {
     const src = gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
@@ -226,13 +245,16 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
         .pipe(ensureStyleFolder()),
     )
       .pipe(gulp.dest(path.resolve(__dirname, '../src')))
+    const stories = gulp.src(path.resolve(__dirname, '../stories/*.stories.jsx'))
     const storyJobs = merge(
-      gulp.src(path.resolve(__dirname, '../stories/*.stories.jsx'))
+      stories
         .pipe(skipFiles({filePatterns: [/0-Welcome.*/]}))
         .pipe(addMDXFilenameToMeta())
-        .pipe(ensureImport((file) => `import mdx from '${file.meta.mdxFilepath}'`))
-        .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
+        .pipe(ensureImport((file) => `import mdx from '${file.meta.mdxFilepath}'`)),
+      stories
+        .pipe(addFileNameToExports())
     )
+      .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
     // return storyJobs
     return merge(srcJobs, storyJobs)
   },

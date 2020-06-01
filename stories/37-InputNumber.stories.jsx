@@ -8,7 +8,9 @@ export default {
   title: 'Data Entry/MLInputNumber',
   decorators: [withKnobs],
   parameters: {
-    filename: 'src/InputNumber', // TODO: Trying to get multi-file storyshots working
+    docs: {
+      page: mdx,
+    },
     info: {
       text: 'Component description goes here',
     },

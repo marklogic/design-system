@@ -133,8 +133,12 @@
       "enzyme-to-json/serializer"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!lodash-es|antd)"
+      "node_modules/(?!lodash-es|antd|@storybook/addon-info|react-syntax-highlighter)"
     ],
+    "transform": {
+      "^.+\\.[jt]sx?$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx"
+    },
     "moduleNameMapper": {
       "^@marklogic/design-system/src": "<rootDir>/src",
       "^@marklogic/design-system/MLIcon": "<rootDir>/src/MLIcon",

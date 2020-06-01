@@ -49,20 +49,24 @@ module.exports = function(api) {
       ],
     }
   }
-  if (api.env('test')) {
-    return {
-      presets: [
-        '@babel/preset-react',
-        ['@babel/preset-env', {
-          targets: {
-            node: 'current',
-          },
-        }],
-      ],
-      plugins: [
-        '@babel/plugin-proposal-class-properties',
-      ],
-    }
-  }
+  // if (api.env('test')) {
+  //   return {
+  //     presets: [
+  //       '@babel/preset-react',
+  //       ['@babel/preset-env', {
+  //         targets: {
+  //           node: 'current',
+  //         },
+  //         modules: false,
+  //       }],
+  //     ],
+  //     plugins: [
+  //       // 'transform-es2015-modules-commonjs',
+  //       '@babel/plugin-proposal-class-properties',
+  //       '@babel/plugin-proposal-private-methods',
+  //       '@babel/plugin-proposal-private-property-in-object',
+  //     ],
+  //   }
+  // }
   return {}
 }

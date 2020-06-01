@@ -7,6 +7,9 @@ export default {
   title: 'Data Display/MLAvatar',
   component: MLAvatar,
   decorators: [withKnobs],
+  parameters: {
+    docs: mdx,
+  },
 }
 
 /** Parse knob output to allow an integer or text. */
@@ -19,7 +22,7 @@ function getSize() {
 export const Basic = () => <MLAvatar size={getSize()} />
 
 export const WithInitials = () => (
-  <MLAvatar size={text('size', 'small')}>
+  <MLAvatar size={getSize()}>
     {text('childText', 'DHS')}
   </MLAvatar>
 )
