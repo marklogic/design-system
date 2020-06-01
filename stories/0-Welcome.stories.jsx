@@ -18,7 +18,3 @@ const Welcome = () => (
 )
 
 export const toStorybook = () => <Welcome />
-
-toStorybook.story = {
-  name: 'to Storybook',
-}

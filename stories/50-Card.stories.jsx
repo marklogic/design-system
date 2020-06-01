@@ -4,10 +4,10 @@ import { MLCard, MLCol, MLRow, MLCollapse } from '@marklogic/design-system'
 import '@marklogic/design-system/MLCard/style'
 import { EditOutlined, EllipsisOutlined, SettingOutlined, DeleteOutlined, PlusCircleFilled, CloseOutlined, PlayCircleFilled } from '@marklogic/design-system/MLIcon'
 import { withKnobs, radios, text, boolean } from '@storybook/addon-knobs'
+import mdx from './50-Card.mdx'
 
 // TODO: Use MLAvatar once it exists
 import { Avatar as MLAvatar } from 'antd'
-import mdx from './50-Card.mdx'
 
 export default {
   title: 'Data Display/MLCard',

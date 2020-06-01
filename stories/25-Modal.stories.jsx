@@ -9,6 +9,12 @@ export default {
   title: 'Feedback/MLModal',
   component: MLModal,
   decorators: [withKnobs],
+  parameters: {
+    fileName: '25-Modal.stories.jsx',
+    docs: {
+      page: mdx,
+    },
+  },
 }
 
 function useVisible() {
@@ -45,15 +51,6 @@ export const Basic = () => {
       </MLModal>
     </MLModal.MLDraggableModalProvider>
   )
-}
-
-Basic.story = {
-  parameters: {
-    fileName: '25-Modal.stories.jsx',
-    docs: {
-      storyDescription: 'Default MLModal has "Cancel" and "OK" buttons.',
-    },
-  },
 }
 
 export const WithFooter = () => {

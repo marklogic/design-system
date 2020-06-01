@@ -1,3 +1,7 @@
+body {
+  padding: 0 !important;
+}
+
 #story-root {
   margin: 0 40px;
 }

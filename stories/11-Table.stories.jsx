@@ -24,6 +24,7 @@ export const basic = () => {
     size: radios('size', ['default', 'middle', 'small'], 'middle'),
     dataSource: sampleBasicData.dataSource,
     columns: sampleBasicData.columns,
+    rowKey: 'key',
   }
   return (
     <div>

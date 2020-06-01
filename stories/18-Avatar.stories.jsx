@@ -9,7 +9,9 @@ export default {
   decorators: [withKnobs],
   parameters: {
     fileName: '18-Avatar.stories.jsx',
-    docs: mdx,
+    docs: {
+      page: mdx,
+    },
   },
 }
 

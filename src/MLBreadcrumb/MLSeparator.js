@@ -2,21 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Breadcrumb } from 'antd'
 import classNames from 'classnames'
-const { Item } = Breadcrumb
+const { Separator } = Breadcrumb
 
-const MLItem = (props) => {
+const MLSeparator = (props) => {
   return (
-    <Item
+    <Separator
       {...props}
       className={classNames('ml-breadcrumb-item', props.className)}
     >
       {props.children}
-    </Item>
+    </Separator>
   )
 }
 
-MLItem.displayName = 'MLBreadcrumb.MLItem'
+MLSeparator.displayName = 'MLBreadcrumb.MLSeparator'
 
-MLItem.__ANT_BREADCRUMB_ITEM = true
+MLSeparator.__ANT_BREADCRUMB_SEPARATOR = true
 
-export default MLItem
+export default MLSeparator
