@@ -9,6 +9,7 @@ export default {
   title: 'Navigation/MLDropdown',
   decorators: [withKnobs],
   parameters: {
+    fileName: '15-Dropdown.stories.jsx',
     docs: {
       page: mdx,
     },

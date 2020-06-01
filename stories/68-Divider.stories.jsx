@@ -8,6 +8,7 @@ export default {
   title: 'Other/MLDivider',
   decorators: [withKnobs],
   parameters: {
+    fileName: '68-Divider.stories.jsx',
     docs: {
       page: mdx,
     },

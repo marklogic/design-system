@@ -16,6 +16,7 @@ export default {
   title: 'Data Entry/MLInput',
   decorators: [withKnobs],
   parameters: {
+    fileName: '8-Input.stories.jsx',
     docs: {
       page: mdx,
     },

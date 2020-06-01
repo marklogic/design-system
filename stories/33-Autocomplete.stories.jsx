@@ -8,6 +8,7 @@ export default {
   title: 'Data Entry/MLAutoComplete',
   decorators: [withKnobs],
   parameters: {
+    fileName: '33-AutoComplete.stories.jsx',
     docs: {
       page: mdx,
     },

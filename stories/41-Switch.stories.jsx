@@ -9,6 +9,7 @@ export default {
   title: 'Data Entry/MLSwitch',
   decorators: [withKnobs],
   parameters: {
+    fileName: '41-Switch.stories.jsx',
     docs: {
       page: mdx,
     },

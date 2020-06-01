@@ -8,6 +8,7 @@ export default {
   title: 'Feedback/Alert',
   decorators: [withKnobs],
   parameters: {
+    fileName: '24-Alert.stories.jsx',
     docs: {
       page: mdx,
     },

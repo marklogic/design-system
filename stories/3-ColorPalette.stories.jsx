@@ -11,6 +11,7 @@ export default {
   title: 'Styles',
   decorators: [withKnobs],
   parameters: {
+    fileName: '3-ColorPalette.stories.jsx',
     docs: {
       page: mdx,
     },

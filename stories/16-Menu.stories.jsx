@@ -9,6 +9,7 @@ export default {
   title: 'Navigation/MLMenu',
   decorators: [withKnobs],
   parameters: {
+    fileName: '16-Menu.stories.jsx',
     docs: {
       page: mdx,
     },

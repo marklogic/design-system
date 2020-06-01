@@ -9,6 +9,7 @@ export default {
   title: 'Data Entry/MLUpload',
   decorators: [withKnobs],
   parameters: {
+    fileName: '46-Upload.stories.jsx',
     docs: {
       page: mdx,
     },

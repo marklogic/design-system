@@ -9,6 +9,7 @@ export default {
   title: 'Feedback/MLPopconfirm',
   decorators: [withKnobs],
   parameters: {
+    fileName: '63-Popconfirm.stories.jsx',
     docs: {
       page: mdx,
     },

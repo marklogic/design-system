@@ -8,6 +8,7 @@ export default {
   title: 'Data Display/MLEmpty',
   decorators: [withKnobs],
   parameters: {
+    fileName: '21-Empty.stories.jsx',
     docs: {
       page: mdx,
     },

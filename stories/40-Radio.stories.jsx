@@ -8,6 +8,7 @@ export default {
   title: 'Data Entry/MLRadio',
   decorators: [withKnobs],
   parameters: {
+    fileName: '40-Radio.stories.jsx',
     docs: {
       page: mdx,
     },

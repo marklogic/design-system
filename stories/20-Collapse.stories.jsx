@@ -11,6 +11,7 @@ export default {
   title: 'Data Display/MLCollapse',
   decorators: [withKnobs],
   parameters: {
+    fileName: '20-Collapse.stories.jsx',
     docs: {
       page: mdx,
     },

@@ -8,6 +8,7 @@ export default {
   title: 'Data Entry/MLRate',
   decorators: [withKnobs],
   parameters: {
+    fileName: '39-Rate.stories.jsx',
     docs: {
       page: mdx,
     },

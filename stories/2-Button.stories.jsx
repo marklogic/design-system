@@ -8,6 +8,7 @@ export default {
   title: 'MLButton',
   decorators: [withKnobs],
   parameters: {
+    fileName: '2-Button.stories.jsx',
     docs: {
       page: mdx,
     },

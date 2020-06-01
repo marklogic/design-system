@@ -9,6 +9,7 @@ export default {
   title: 'Layout/MLLayout',
   decorators: [withKnobs],
   parameters: {
+    fileName: '75-Layout.stories.jsx',
     docs: {
       page: mdx,
     },

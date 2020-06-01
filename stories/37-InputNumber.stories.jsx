@@ -8,6 +8,7 @@ export default {
   title: 'Data Entry/MLInputNumber',
   decorators: [withKnobs],
   parameters: {
+    fileName: '37-InputNumber.stories.jsx',
     docs: {
       page: mdx,
     },

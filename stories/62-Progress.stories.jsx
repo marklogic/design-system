@@ -7,6 +7,12 @@ export default {
   component: MLProgress,
   title: 'Feedback/MLProgress',
   decorators: [withKnobs],
+  parameters: {
+    fileName: '62-Progress.stories.jsx',
+    docs: {
+      page: mdx,
+    },
+  }
 }
 
 export const Line = () => {

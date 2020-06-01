@@ -8,6 +8,7 @@ export default {
   title: 'Navigation/MLPageHeader',
   decorators: [withKnobs],
   parameters: {
+    fileName: '5-PageHeader.stories.jsx',
     docs: {
       page: mdx,
     },

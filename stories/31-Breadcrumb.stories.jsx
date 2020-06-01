@@ -8,6 +8,7 @@ export default {
   title: 'Navigation/MLBreadcrumb',
   decorators: [withKnobs],
   parameters: {
+    fileName: '31-Breadcrumb.stories.jsx',
     docs: {
       page: mdx,
     },

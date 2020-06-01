@@ -8,6 +8,7 @@ export default {
   title: 'Other/MLConfigProvider',
   decorators: [withKnobs],
   parameters: {
+    fileName: '67-ConfigProvider.stories.jsx',
     docs: {
       page: mdx,
     },

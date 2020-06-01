@@ -9,6 +9,7 @@ export default {
   title: 'Feedback/MLResult',
   decorators: [withKnobs],
   parameters: {
+    fileName: '26-Result.stories.jsx',
     docs: {
       page: mdx,
     },

@@ -8,6 +8,7 @@ export default {
   title: 'Feedback/MLSpin',
   decorators: [withKnobs],
   parameters: {
+    fileName: '27-Spin.stories.jsx',
     docs: {
       page: mdx,
     },

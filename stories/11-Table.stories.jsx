@@ -9,6 +9,7 @@ export default {
   title: 'Data Display/MLTable',
   decorators: [withKnobs],
   parameters: {
+    fileName: '11-Table.stories.jsx',
     docs: {
       page: mdx,
     },

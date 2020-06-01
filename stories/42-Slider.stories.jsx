@@ -8,6 +8,7 @@ export default {
   title: 'Data Entry/MLSlider',
   decorators: [withKnobs],
   parameters: {
+    fileName: '42-Slider.stories.jsx',
     docs: {
       page: mdx,
     },

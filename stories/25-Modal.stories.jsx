@@ -49,6 +49,7 @@ export const Basic = () => {
 
 Basic.story = {
   parameters: {
+    fileName: '25-Modal.stories.jsx',
     docs: {
       storyDescription: 'Default MLModal has "Cancel" and "OK" buttons.',
     },

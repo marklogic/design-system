@@ -13,6 +13,7 @@ export default {
   title: 'Data Display/MLCard',
   decorators: [withKnobs],
   parameters: {
+    fileName: '50-Card.stories.jsx',
     docs: {
       page: mdx,
     },

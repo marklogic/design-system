@@ -8,6 +8,7 @@ export default {
   title: 'Data Entry/MLCheckbox',
   decorators: [withKnobs],
   parameters: {
+    fileName: '7-Checkbox.stories.jsx',
     docs: {
       page: mdx,
     },

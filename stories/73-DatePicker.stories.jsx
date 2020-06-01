@@ -9,6 +9,7 @@ export default {
   title: 'Data Entry/MLDatePicker',
   decorators: [withKnobs],
   parameters: {
+    fileName: '73-DatePicker.stories.jsx',
     docs: {
       page: mdx,
     },

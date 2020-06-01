@@ -10,6 +10,12 @@ export default {
   component: MLHeader,
   decorators: [withKnobs],
   description: 'Unlike the other components in this library, this component is not based on any Ant component.',
+  parameters: {
+    fileName: '13-Header.stories.jsx',
+    docs: {
+      page: mdx,
+    },
+  }
 }
 
 export const Basic = () => {

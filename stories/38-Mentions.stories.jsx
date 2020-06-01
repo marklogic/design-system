@@ -9,6 +9,7 @@ export default {
   title: 'Data Entry/MLMentions',
   decorators: [withKnobs],
   parameters: {
+    fileName: '38-Mentions.stories.jsx',
     docs: {
       page: mdx,
     },

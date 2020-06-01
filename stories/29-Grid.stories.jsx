@@ -8,6 +8,7 @@ export default {
   title: 'Layout/Grid (MLRow and MLCol)',
   decorators: [withKnobs],
   parameters: {
+    fileName: '29-Grid.stories.jsx',
     docs: {
       page: mdx,
     },

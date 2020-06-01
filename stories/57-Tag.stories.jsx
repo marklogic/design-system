@@ -10,6 +10,7 @@ export default {
   title: 'Data Display/MLTag',
   decorators: [withKnobs],
   parameters: {
+    fileName: '57-Tag.stories.jsx',
     docs: {
       page: mdx,
     },

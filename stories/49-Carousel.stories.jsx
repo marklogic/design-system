@@ -9,6 +9,7 @@ export default {
   title: 'Data Display/MLCarousel',
   decorators: [withKnobs],
   parameters: {
+    fileName: '49-Carousel.stories.jsx',
     docs: {
       page: mdx,
     },

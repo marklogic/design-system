@@ -8,6 +8,7 @@ export default {
   title: 'Data Display/MLTooltip',
   decorators: [withKnobs],
   parameters: {
+    fileName: '23-Tooltip.stories.jsx',
     docs: {
       page: mdx,
     },

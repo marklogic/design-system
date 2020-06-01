@@ -8,6 +8,7 @@ export default {
   title: 'Data Entry/MLEditableSlider',
   decorators: [withKnobs],
   parameters: {
+    fileName: '10-EditableSlider.stories.jsx',
     docs: {
       page: mdx,
     },

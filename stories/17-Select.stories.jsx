@@ -10,6 +10,7 @@ export default {
   title: 'Data Entry/MLSelect',
   decorators: [withKnobs],
   parameters: {
+    fileName: '17-Select.stories.jsx',
     docs: {
       page: mdx,
     },

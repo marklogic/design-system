@@ -11,6 +11,7 @@ export default {
   title: 'General/MLIcon',
   decorators: [withKnobs],
   parameters: {
+    fileName: '19-Icon.stories.jsx',
     docs: {
       page: mdx,
     },
