@@ -1,6 +1,6 @@
 import React from 'react'
 import { MLHeader, MLTooltip, MLLayout } from '@marklogic/design-system'
-import { Route as RouteIcon, SearchOutlined, QuestionCircleOutlined, SettingOutlined, UserOutlined } from '@marklogic/design-system/MLIcon'
+import { RouteSolid, SearchOutlined, QuestionCircleOutlined, SettingOutlined, UserOutlined } from '@marklogic/design-system/MLIcon'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import { Avatar as MLAvatar } from 'antd' // TODO: Use MLAvatar once it exists
 
@@ -39,7 +39,7 @@ export const Basic = () => {
           </a>
         }
         extra={[
-          makeIcon(<RouteIcon />, 'route'),
+          makeIcon(<RouteSolid />, 'route'),
           <span key='divider' style={{ borderLeft: '1px dashed' }} />,
           makeIcon(<SearchOutlined />, 'search'),
           makeIcon(<QuestionCircleOutlined />, 'help'),
