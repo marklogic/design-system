@@ -19,6 +19,7 @@ import * as MLIcon from './MLIcon'
 import MLInput from './MLInput'
 import MLInputNumber from './MLInputNumber'
 import MLLayout from './MLLayout'
+import MLList from './MLList'
 import MLMentions from './MLMentions'
 import MLMenu from './MLMenu'
 import MLModal from './MLModal'
@@ -60,6 +61,7 @@ export {
   MLInput,
   MLInputNumber,
   MLLayout,
+  MLList,
   MLMentions,
   MLMenu,
   MLModal,
