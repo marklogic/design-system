@@ -41,7 +41,7 @@ export const basic = () => {
 export const colorfulTags = () => {
   const customColor = text('color', '#2db7f5')
   return (
-    <div>
+    <div className='colorful-tags-story'>
       <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <h4>Status Colors:</h4>
       <div>
