@@ -3,12 +3,6 @@ import PropTypes from 'prop-types'
 import { Button } from 'antd'
 import classNames from 'classnames'
 
-// interface MLButtonProps {
-//   size?: string;
-//   type?: string;
-//   className?: string;
-// }
-// const MLButton = (props: MLButtonProps) => {
 const MLButton = (props) => {
   let type
   let className

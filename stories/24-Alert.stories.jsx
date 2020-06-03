@@ -16,9 +16,6 @@ export default {
       text: 'Component description goes here',
     },
   },
-  argTypes: {
-    // type: { control: { type: 'radio', options: ['success'] } },
-  },
 }
 
 export const basic = ({ ...args }) => {
@@ -33,14 +30,4 @@ export const basic = ({ ...args }) => {
       {...args}
     />
   )
-}
-
-basic.args = {
-  type: 'success',
-  showIcon: true,
-  description: 'Some description',
-  closable: false,
-}
-basic.argTypes = {
-  type: { control: { type: 'options', controlType: 'inline-radio', options: ['success', 'info', 'warning', 'error'] } },
 }

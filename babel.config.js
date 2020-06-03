@@ -12,5 +12,6 @@ module.exports = function(api) {
       ],
     }
   }
+  // react-scripts Jest (env="test") does not read from this file, so no setting for it here
   return {}
 }

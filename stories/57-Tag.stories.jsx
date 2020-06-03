@@ -78,7 +78,7 @@ export const colorfulTags = () => {
   )
 }
 
-export const CheckableTag = () => {
+export const checkableTag = () => {
   const [tag1State, setTag1State] = useState(false)
   const [tag2State, setTag2State] = useState(false)
   const [tag3State, setTag3State] = useState(false)

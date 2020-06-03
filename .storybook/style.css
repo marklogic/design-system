@@ -1,4 +1,5 @@
 body {
+  /* Undo addon-info padding which makes rendered slightly bigger than viewport */
   padding: 0 !important;
 }
 
