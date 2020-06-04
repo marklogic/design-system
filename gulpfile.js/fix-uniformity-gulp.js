@@ -156,7 +156,7 @@ const fixDisplayNames = () => {
     const childComponentName = path.basename(file.path).replace('.js', '')
     const parentComponentName = path.basename(path.dirname(file.path))
 
-    if (/.*\/(MLSizeContext).*/.test(file.path)) {
+    if (/.*\/(MLSizeContext|MLList\/MLMeta).*/.test(file.path)) {
       return cb(null, file)
     }
 
