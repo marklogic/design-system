@@ -171,7 +171,7 @@ const fixDisplayNames = () => {
     const childComponentName = path.basename(file.path).replace('.js', '')
     const parentComponentName = path.basename(path.dirname(file.path))
 
-    if (/.*\/(MLSizeContext).*/.test(file.path)) {
+    if (/.*\/(MLSizeContext|MLList\/MLMeta).*/.test(file.path)) {
       return cb(null, file)
     }
 
@@ -216,11 +216,30 @@ const addMDXFilenameToMeta = () => {
   })
 }
 
+const addDocsPageToExports = () => {
+  return through.obj(function(file, enc, cb) {
+    const code = file.contents.toString()
+
+    if (/.*\/(0-Welcome.stories).*/.test(file.path)) {
+      return cb(null, file)
+    }
+
+    if (code.includes('    docs: {\n      page: ')) {
+      return cb(null, file)
+    }
+
+    file.contents = Buffer.from(
+      code.replace('  parameters: {\n', `  parameters: {\n    docs: {\n      page: mdx,\n    },\n`)
+    )
+    return cb(null, file)
+  })
+}
+
 const addFileNameToExports = () => {
   return through.obj(function(file, enc, cb) {
     const code = file.contents.toString()
 
-    if (code.includes('  parameters: {\n    fileName: ')) {
+    if (code.includes('    fileName: ')) {
       return cb(null, file)
     }
 
@@ -253,6 +272,7 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
         .pipe(ensureImport((file) => `import mdx from '${file.meta.mdxFilepath}'`)),
       stories
         .pipe(addFileNameToExports())
+        .pipe(addDocsPageToExports())
     )
       .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
     // return storyJobs
