@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { MLCollapse } from '@marklogic/design-system'
 import { withKnobs, array, boolean, text, optionsKnob as options } from '@storybook/addon-knobs'
 import './20-Collapse.less'
-import { DeleteOutlined } from '@marklogic/design-system/MLIcon'
+import { DeleteOutlined } from '@marklogic/design-system/src/MLIcon'
 const { MLPanel } = MLCollapse
 
 export default {
@@ -59,7 +59,6 @@ export const basic = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLCollapse {...collapseProps}>
         <MLPanel {...panelProps} key='1'>
           <p>{panelBodyText}</p>
@@ -103,7 +102,6 @@ export const accordion = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLCollapse {...collapseProps}>
         <MLPanel {...panelProps} key='1'>
           <p>{panelBodyText}</p>
@@ -146,7 +144,6 @@ export const nestedPanel = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLCollapse {...collapseProps}>
         <MLPanel {...panelProps} key='1'>
           <MLCollapse>
@@ -200,7 +197,6 @@ export const customPanelStyle = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLCollapse {...collapseProps}>
         <MLPanel {...panelProps} key='1'>
           <p>{panelBodyText}</p>

@@ -1,20 +1,22 @@
 import React from 'react'
 import Icon from '@ant-design/icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { pascalCase } from 'change-case'
+import classNames from 'classnames'
 
 export function MLIconWrapper({ highlight, color, displayName, component, ...props }) {
-  let className = ''
+  let className = classNames(props.className, 'ml-icon')
   if (highlight) {
-    className = [props.className, 'ml-icon-highlight'].join(' ')
+    className = classNames(className, 'ml-icon-highlight')
   }
   if (/Outlined$/.test(displayName)) {
-    className = [props.className, 'ml-icon-outlined'].join(' ')
+    className = classNames(className, 'ml-icon-outlined')
   }
   if (/Filled$/.test(displayName)) {
-    className = [props.className, 'ml-icon-filled'].join(' ')
+    className = classNames(className, 'ml-icon-filled')
   }
   if (/TwoTone$/.test(displayName)) {
-    className = [props.className, 'ml-icon-two-toned'].join(' ')
+    className = classNames(className, 'ml-icon-two-toned')
   }
   className = className.replace('^ +', '')
   return React.createElement(component, Object.assign({}, props, { className }))
@@ -25,7 +27,7 @@ export const createWrappedMLIcon = (component) => {
   const wrappedComponent = (props) => {
     return (<MLIconWrapper {...props} displayName={displayName} component={component} />)
   }
-  wrappedComponent.displayName = displayName
+  wrappedComponent.displayName = pascalCase(displayName)
   // TODO: Consider using React.forwardRef here like Ant does
   return wrappedComponent
 }
