@@ -126,14 +126,6 @@ class MLTable extends React.Component {
           />
         )
       }
-      // const originalRender = restructuredColumn.render
-      // restructuredColumn.render = (text, row, rowIndex) => {
-      //   return (
-      //     <div style={this.getCellStyle(text, row, rowIndex, column, colIndex)}>
-      //       {originalRender(text, row, rowIndex)}
-      //     </div>
-      //   )
-      // }
       return restructuredColumn
     })
 
@@ -175,40 +167,26 @@ class MLTable extends React.Component {
         </div>)
     }
 
+    // const restructuredOnRow = (record, rowIndex) => {
+    //   const originalOnRowResult = this.props.onRow(record, rowIndex)
+    //   const rowClassName = this.props.rowClassName(record, rowIndex)
+    //   if (rowClassName === undefined) {
+    //     return originalOnRowResult
+    //   }
+    //   const newRowProps = {
+    //     className: rowClassName,
+    //   }
+    //   return Object.assign(newRowProps, originalOnRowResult)
+    // }
+
     return (
       <Table
         pagination={{ hideOnSinglePage: true }}
         {...this.props} // This is positioned here so the above props can be overwritten if desired
+        // onRow={(record, rowIndex) => restructuredOnRow(record, rowIndex)}
         expandIcon={restructuredExpandIcon}
         dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
         columns={restructuredColumns}
-        // onHeaderRow={(column, colIndex) => {
-        //   // User can overwrite header style with headerRowStyle, or other props with onHeaderRow
-        //   // const originalOnHeaderRow = onHeaderRow(column, colIndex)
-        //   return Object.assign(
-        //     {
-        //       style: Object.assign(
-        //         {},
-        //         // { background: '#e8e8e8' },
-        //         // headerRowStyle(column, colIndex),
-        //       ),
-        //     },
-        //     // originalOnHeaderRow,
-        //   )
-        // }}
-        // onRow={(record, rowIndex) => {
-        //   // User can overwrite row style with rowStyle, or other props with onHeaderRow
-        //   const originalOnRow = onRow(record, rowIndex)
-        //   return Object.assign(
-        //     {
-        //       style: Object.assign(
-        //         // { background: '#e8e8e8' },
-        //         rowStyle(record, rowIndex),
-        //       ),
-        //     },
-        //     originalOnRow,
-        //   )
-        // }}
         className={classNames('ml-table', this.props.className)}
       />
     )
@@ -219,10 +197,8 @@ MLTable.defaultProps = {
   size: 'middle',
   showBody: true,
   columnStyle: () => ({}),
-  // headerRowStyle: () => ({}),
-  // onHeaderRow: () => ({}),
   rowStyle: () => ({}),
-  onRow: () => ({}),
+  rowClassName: () => undefined,
 }
 
 export default MLTable

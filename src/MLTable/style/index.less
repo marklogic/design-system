@@ -1,3 +1,5 @@
+@import '../../styles.less';
+
 .ml-header-table table {
   border-collapse: collapse; /* Hack to get borders between header-rows to show up */
 }
@@ -8,7 +10,11 @@
   }
 
   thead tr {
-    background: #e8e8e8;
+    background: @table-header-bg;
+  }
+
+  tbody > tr > td.ant-table-row-expand-icon-cell {
+    background: @table-expand-button-column-bg;
   }
 
   td:not(.ant-table-row-expand-icon-cell) {
