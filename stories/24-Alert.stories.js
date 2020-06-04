@@ -21,7 +21,6 @@ export const basic = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLAlert message='Success Text' type='success' {...props} />
       <MLAlert message='Info Text' type='info' {...props} />
       <MLAlert message='Warning Text' type='warning' {...props} />

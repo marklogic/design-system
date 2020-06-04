@@ -25,7 +25,7 @@
     "deploy": "gh-pages -d playground/build",
     "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn); (yarn run build)",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -c .storybook -o storybook-dist"
+    "build-storybook": "gulp compile-bundle-less; build-storybook -c .storybook -o storybook-dist"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -78,8 +78,12 @@
     "gh-pages": "^2.1.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-cssmin": "^0.2.0",
     "gulp-debug-streams": "^3.0.0",
     "gulp-eslint": "^6.0.0",
+    "gulp-less": "^4.0.1",
+    "gulp-rename": "^2.0.0",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "lodash": "^4.17.15",

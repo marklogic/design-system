@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { InputNumber } from 'antd'
 import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import classNames from 'classnames'
-import MLSlider from "../MLSlider";
+import MLSlider from '../MLSlider'
 
 const MLInputNumber = (props) => {
   return (
@@ -23,6 +23,24 @@ const MLInputNumber = (props) => {
     </MLSizeContext.Consumer>
   )
 }
+
+// propTypes is removed in production automatically, so we need to list them here for runtime use in MLEditableSlider
+MLInputNumber.propKeys = [
+  'autoFocus',
+  'defaultValue',
+  'disabled',
+  'formatter',
+  'max',
+  'min',
+  'parser',
+  'precision',
+  'decimalSeparator',
+  'size',
+  'step',
+  'value',
+  'onChange',
+  'onPressEnter',
+]
 
 MLInputNumber.propTypes = {
   autoFocus: PropTypes.bool,
