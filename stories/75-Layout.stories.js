@@ -56,7 +56,6 @@ export const dataHubLayout = (props) => {
   const footerStyle = graphicBackground ? footerStyleGraphicBg : footerStyleWhiteBg
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLLayout>
         <MLHeader style={headerStyle}>Header</MLHeader>
         <MLLayout>
@@ -90,7 +89,6 @@ export const generalLayout = (props) => {
   const footerStyle = graphicBackground ? footerStyleGraphicBg : footerStyleWhiteBg
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLLayout style={layoutStyle}>
         <MLHeader style={headerStyle}>Header</MLHeader>
         <MLContent style={{ height: '300px' }}>Content</MLContent>
