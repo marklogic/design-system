@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Data Display/MLTooltip Basic 1`] = `
+<span
+  class="ml-tooltip-container"
+>
+  Tooltip will show on mouse enter.
+</span>
+`;

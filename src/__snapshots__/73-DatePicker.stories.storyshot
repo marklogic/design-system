@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Data Entry/MLDatePicker Date Picker 1`] = `
+<div>
+  <div>
+    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
+  </div>
+  <div>
+    date: 
+    <span
+      class="ml-date-picker ant-calendar-picker ant-calendar-picker-small"
+    >
+      <div>
+        <input
+          class="ant-calendar-picker-input ant-input ant-input-sm"
+          placeholder=""
+          readonly=""
+          value=""
+        />
+        <i
+          aria-label="icon: calendar"
+          class="anticon anticon-calendar ant-calendar-picker-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class=""
+            data-icon="calendar"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zm-40 656H184V460h656v380zM184 392V256h128v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h256v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h128v136H184z"
+            />
+          </svg>
+        </i>
+      </div>
+    </span>
+  </div>
+  <div>
+    week: 
+    <span
+      class="ml-date-picker-week-picker ant-calendar-picker ant-calendar-picker-small"
+    >
+      <span
+        style="display:inline-block;width:100%"
+      >
+        <input
+          class="ant-calendar-picker-input ant-input ant-input-sm"
+          placeholder=""
+          readonly=""
+          value=""
+        />
+        <i
+          aria-label="icon: calendar"
+          class="anticon anticon-calendar ant-calendar-picker-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class=""
+            data-icon="calendar"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zm-40 656H184V460h656v380zM184 392V256h128v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h256v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h128v136H184z"
+            />
+          </svg>
+        </i>
+      </span>
+    </span>
+  </div>
+  <div>
+    month: 
+    <span
+      class="ml-date-picker-month-picker ant-calendar-picker ant-calendar-picker-small"
+    >
+      <div>
+        <input
+          class="ant-calendar-picker-input ant-input ant-input-sm"
+          placeholder=""
+          readonly=""
+          value=""
+        />
+        <i
+          aria-label="icon: calendar"
+          class="anticon anticon-calendar ant-calendar-picker-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class=""
+            data-icon="calendar"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zm-40 656H184V460h656v380zM184 392V256h128v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h256v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h128v136H184z"
+            />
+          </svg>
+        </i>
+      </div>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Data Entry/MLDatePicker Range Picker 1`] = `
+<div>
+  <div>
+    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
+  </div>
+  <span
+    class="ml-date-picker-range-picker ant-calendar-picker ant-calendar-picker-small"
+    tabindex="0"
+  >
+    <span
+      class="ant-calendar-picker-input ant-input ant-input-sm"
+    >
+      <input
+        class="ant-calendar-range-picker-input"
+        placeholder="Start"
+        readonly=""
+        tabindex="-1"
+        value=""
+      />
+      <span
+        class="ant-calendar-range-picker-separator"
+      >
+         
+        <span
+          class="ant-picker-separator"
+        >
+          –
+        </span>
+         
+      </span>
+      <input
+        class="ant-calendar-range-picker-input"
+        placeholder="End"
+        readonly=""
+        tabindex="-1"
+        value=""
+      />
+      <i
+        aria-label="icon: calendar"
+        class="anticon anticon-calendar ant-calendar-picker-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class=""
+          data-icon="calendar"
+          fill="currentColor"
+          focusable="false"
+          height="1em"
+          viewBox="64 64 896 896"
+          width="1em"
+        >
+          <path
+            d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zm-40 656H184V460h656v380zM184 392V256h128v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h256v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h128v136H184z"
+          />
+        </svg>
+      </i>
+    </span>
+  </span>
+</div>
+`;

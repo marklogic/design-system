@@ -1,0 +1,472 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Data Entry/MLRadio Radio 1`] = `
+<div>
+  <div>
+    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
+  </div>
+  <label
+    class="ml-radio ant-radio-wrapper"
+  >
+    <span
+      class="ant-radio"
+    >
+      <input
+        class="ant-radio-input"
+        type="radio"
+      />
+      <span
+        class="ant-radio-inner"
+      />
+    </span>
+    <span>
+      Radio
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Storyshots Data Entry/MLRadio Radio Group 1`] = `
+<div>
+  <div>
+    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
+  </div>
+  <div
+    class="ant-radio-group ant-radio-group-outline ant-radio-group-small ml-radio-group"
+  >
+    <label
+      class="ml-radio ant-radio-wrapper ant-radio-wrapper-checked"
+    >
+      <span
+        class="ant-radio ant-radio-checked"
+      >
+        <input
+          checked=""
+          class="ant-radio-input"
+          name="radiogroup"
+          type="radio"
+          value="1"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        A
+      </span>
+    </label>
+    <label
+      class="ml-radio ant-radio-wrapper"
+    >
+      <span
+        class="ant-radio"
+      >
+        <input
+          class="ant-radio-input"
+          name="radiogroup"
+          type="radio"
+          value="2"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        B
+      </span>
+    </label>
+    <label
+      class="ml-radio ant-radio-wrapper"
+    >
+      <span
+        class="ant-radio"
+      >
+        <input
+          class="ant-radio-input"
+          name="radiogroup"
+          type="radio"
+          value="3"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        C
+      </span>
+    </label>
+    <label
+      class="ml-radio ant-radio-wrapper"
+    >
+      <span
+        class="ant-radio"
+      >
+        <input
+          class="ant-radio-input"
+          name="radiogroup"
+          type="radio"
+          value="4"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        D
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Data Entry/MLRadio Radio Group Outlined Style 1`] = `
+<div>
+  <div>
+    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
+  </div>
+  <div
+    class="ant-radio-group ant-radio-group-outline ant-radio-group-small ml-radio-group"
+  >
+    <label
+      class="ml-radio-button ant-radio-button-wrapper ant-radio-button-wrapper-checked"
+    >
+      <span
+        class="ant-radio-button ant-radio-button-checked"
+      >
+        <input
+          checked=""
+          class="ant-radio-button-input"
+          name="radiogroup"
+          type="radio"
+          value="1"
+        />
+        <span
+          class="ant-radio-button-inner"
+        />
+      </span>
+      <span>
+        A
+      </span>
+    </label>
+    <label
+      class="ml-radio-button ant-radio-button-wrapper"
+    >
+      <span
+        class="ant-radio-button"
+      >
+        <input
+          class="ant-radio-button-input"
+          name="radiogroup"
+          type="radio"
+          value="2"
+        />
+        <span
+          class="ant-radio-button-inner"
+        />
+      </span>
+      <span>
+        B
+      </span>
+    </label>
+    <label
+      class="ml-radio-button ant-radio-button-wrapper"
+    >
+      <span
+        class="ant-radio-button"
+      >
+        <input
+          class="ant-radio-button-input"
+          name="radiogroup"
+          type="radio"
+          value="3"
+        />
+        <span
+          class="ant-radio-button-inner"
+        />
+      </span>
+      <span>
+        C
+      </span>
+    </label>
+    <label
+      class="ml-radio-button ant-radio-button-wrapper"
+    >
+      <span
+        class="ant-radio-button"
+      >
+        <input
+          class="ant-radio-button-input"
+          name="radiogroup"
+          type="radio"
+          value="4"
+        />
+        <span
+          class="ant-radio-button-inner"
+        />
+      </span>
+      <span>
+        D
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Data Entry/MLRadio Radio Group Plain Options 1`] = `
+<div>
+  <div>
+    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
+  </div>
+  <div
+    class="ant-radio-group ant-radio-group-outline ant-radio-group-small ml-radio-group"
+  >
+    <label
+      class="ant-radio-wrapper ant-radio-wrapper-checked"
+    >
+      <span
+        class="ant-radio ant-radio-checked"
+      >
+        <input
+          checked=""
+          class="ant-radio-input"
+          name="radiogroup"
+          type="radio"
+          value="A"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        A
+      </span>
+    </label>
+    <label
+      class="ant-radio-wrapper"
+    >
+      <span
+        class="ant-radio"
+      >
+        <input
+          class="ant-radio-input"
+          name="radiogroup"
+          type="radio"
+          value="B"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        B
+      </span>
+    </label>
+    <label
+      class="ant-radio-wrapper"
+    >
+      <span
+        class="ant-radio"
+      >
+        <input
+          class="ant-radio-input"
+          name="radiogroup"
+          type="radio"
+          value="C"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        C
+      </span>
+    </label>
+    <label
+      class="ant-radio-wrapper"
+    >
+      <span
+        class="ant-radio"
+      >
+        <input
+          class="ant-radio-input"
+          name="radiogroup"
+          type="radio"
+          value="D"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        D
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Data Entry/MLRadio Radio Group Solid Style 1`] = `
+<div>
+  <div>
+    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
+  </div>
+  <div
+    class="ant-radio-group ant-radio-group-solid ant-radio-group-small ml-radio-group"
+  >
+    <label
+      class="ml-radio-button ant-radio-button-wrapper ant-radio-button-wrapper-checked"
+    >
+      <span
+        class="ant-radio-button ant-radio-button-checked"
+      >
+        <input
+          checked=""
+          class="ant-radio-button-input"
+          name="radiogroup"
+          type="radio"
+          value="1"
+        />
+        <span
+          class="ant-radio-button-inner"
+        />
+      </span>
+      <span>
+        A
+      </span>
+    </label>
+    <label
+      class="ml-radio-button ant-radio-button-wrapper"
+    >
+      <span
+        class="ant-radio-button"
+      >
+        <input
+          class="ant-radio-button-input"
+          name="radiogroup"
+          type="radio"
+          value="2"
+        />
+        <span
+          class="ant-radio-button-inner"
+        />
+      </span>
+      <span>
+        B
+      </span>
+    </label>
+    <label
+      class="ml-radio-button ant-radio-button-wrapper"
+    >
+      <span
+        class="ant-radio-button"
+      >
+        <input
+          class="ant-radio-button-input"
+          name="radiogroup"
+          type="radio"
+          value="3"
+        />
+        <span
+          class="ant-radio-button-inner"
+        />
+      </span>
+      <span>
+        C
+      </span>
+    </label>
+    <label
+      class="ml-radio-button ant-radio-button-wrapper"
+    >
+      <span
+        class="ant-radio-button"
+      >
+        <input
+          class="ant-radio-button-input"
+          name="radiogroup"
+          type="radio"
+          value="4"
+        />
+        <span
+          class="ant-radio-button-inner"
+        />
+      </span>
+      <span>
+        D
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Data Entry/MLRadio Radio Group With Complex Options 1`] = `
+<div>
+  <div>
+    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
+  </div>
+  <div
+    class="ant-radio-group ant-radio-group-outline ant-radio-group-small ml-radio-group"
+  >
+    <label
+      class="ant-radio-wrapper"
+    >
+      <span
+        class="ant-radio"
+      >
+        <input
+          class="ant-radio-input"
+          name="radiogroup"
+          type="radio"
+          value="1"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        Apple
+      </span>
+    </label>
+    <label
+      class="ant-radio-wrapper"
+    >
+      <span
+        class="ant-radio"
+      >
+        <input
+          class="ant-radio-input"
+          name="radiogroup"
+          type="radio"
+          value="2"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        Pear
+      </span>
+    </label>
+    <label
+      class="ant-radio-wrapper ant-radio-wrapper-disabled"
+    >
+      <span
+        class="ant-radio ant-radio-disabled"
+      >
+        <input
+          class="ant-radio-input"
+          disabled=""
+          name="radiogroup"
+          type="radio"
+          value="3"
+        />
+        <span
+          class="ant-radio-inner"
+        />
+      </span>
+      <span>
+        Orange
+      </span>
+    </label>
+  </div>
+</div>
+`;

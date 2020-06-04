@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Layout/MLLayout Data Hub Layout 1`] = `
+<div>
+  <div>
+    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
+  </div>
+  <section
+    class="ml-layout ant-layout"
+  >
+    <header
+      class="ml-layout-header ant-layout-header"
+      style="background-color:#c4c4c4;display:flex;align-items:center;justify-content:center;text-align:center;height:64px"
+    >
+      Header
+    </header>
+    <section
+      class="ml-layout ant-layout"
+    >
+      <section
+        class="ml-layout ant-layout"
+        style="background-image:linear-gradient(to right, #af474a, #73263b)"
+      >
+        <main
+          class="ml-layout-content ant-layout-content"
+          style="height:300px"
+        >
+          Content
+        </main>
+        <footer
+          class="ml-layout-footer ant-layout-footer"
+          style="padding:12px 50px;color:#fff;background:unset"
+          year="2020"
+        >
+          <span
+            style="padding:0 5px"
+          >
+            Copyright @ 2020 MarkLogic Corporation. All Rights Reserved.
+          </span>
+          |
+          <span
+            style="padding:0 5px"
+          >
+            <a
+              href="#TODO"
+            >
+              Terms and Conditions
+            </a>
+          </span>
+          |
+          <span
+            style="padding:0 5px"
+          >
+            <a
+              href="#TODO"
+            >
+              Policies
+            </a>
+          </span>
+        </footer>
+      </section>
+      <aside
+        class="ml-layout-sider ant-layout-sider ant-layout-sider-dark"
+        style="display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#dddddd;flex:0 0 70px;max-width:70px;min-width:70px;width:70px"
+      >
+        <div
+          class="ant-layout-sider-children"
+        >
+          Sider
+        </div>
+      </aside>
+    </section>
+  </section>
+</div>
+`;
+
+exports[`Storyshots Layout/MLLayout General Layout 1`] = `
+<div>
+  <div>
+    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
+  </div>
+  <section
+    class="ml-layout ant-layout"
+    style="background-image:linear-gradient(to right, #af474a, #73263b)"
+  >
+    <header
+      class="ml-layout-header ant-layout-header"
+      style="background-color:#c4c4c4;display:flex;align-items:center;justify-content:center;text-align:center;height:64px"
+    >
+      Header
+    </header>
+    <main
+      class="ml-layout-content ant-layout-content"
+      style="height:300px"
+    >
+      Content
+    </main>
+    <footer
+      class="ml-layout-footer ant-layout-footer"
+      style="padding:12px 50px;color:#fff;background:unset"
+      year="2020"
+    >
+      <span
+        style="padding:0 5px"
+      >
+        Copyright @ 2020 MarkLogic Corporation. All Rights Reserved.
+      </span>
+      |
+      <span
+        style="padding:0 5px"
+      >
+        <a
+          href="#TODO"
+        >
+          Terms and Conditions
+        </a>
+      </span>
+      |
+      <span
+        style="padding:0 5px"
+      >
+        <a
+          href="#TODO"
+        >
+          Policies
+        </a>
+      </span>
+    </footer>
+  </section>
+</div>
+`;
