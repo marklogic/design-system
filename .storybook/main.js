@@ -42,11 +42,13 @@ module.exports = {
       ],
       include: path.resolve(__dirname, '..'),
     });
+    // This Less config is not currently working, and is patched by importing dist/index.css in preview.js.
+    // Keeping this here in case of any future attempts at getting it working as a first-class citizen
     config.module.rules.push({
       test: /\.less/,
       sideEffects: true,
       loaders: [
-        (config.mode === "PRODUCTION" ? MiniCssExtractPlugin.loader : "style-loader"), // WIP Still not quite working in production
+        (config.mode === "PRODUCTION" ? MiniCssExtractPlugin.loader : "style-loader"),
         "css-loader",
         {
           loader: "less-loader",
