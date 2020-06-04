@@ -26,7 +26,6 @@ export const radio = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLRadio {...props}>{label}</MLRadio>
     </div>
   )
@@ -41,7 +40,6 @@ export const radioGroup = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLRadio.MLGroup {...props}>
         <MLRadio value={1}>A</MLRadio>
         <MLRadio value={2}>B</MLRadio>
@@ -62,7 +60,6 @@ export const radioGroupPlainOptions = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLRadio.MLGroup {...props} />
     </div>
   )
@@ -82,7 +79,6 @@ export const radioGroupWithComplexOptions = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLRadio.MLGroup {...props} />
     </div>
   )
@@ -98,7 +94,6 @@ export const radioGroupOutlinedStyle = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLRadio.MLGroup {...props}>
         <MLRadio.MLButton value={1}>A</MLRadio.MLButton>
         <MLRadio.MLButton value={2}>B</MLRadio.MLButton>
@@ -118,7 +113,6 @@ export const radioGroupSolidStyle = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLRadio.MLGroup {...props}>
         <MLRadio.MLButton value={1}>A</MLRadio.MLButton>
         <MLRadio.MLButton value={2}>B</MLRadio.MLButton>

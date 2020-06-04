@@ -53,7 +53,6 @@ export const datePicker = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLConfigProvider {...configValues}>
         <div>date: <MLDatePicker {...props} /></div>
         <div>week: <MLDatePicker.MLWeekPicker {...props} /></div>
@@ -89,7 +88,6 @@ export const rangePicker = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLConfigProvider {...configValues}>
         <MLRangePicker {...props} />
       </MLConfigProvider>

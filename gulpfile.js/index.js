@@ -2,6 +2,12 @@ const gulp = require('gulp')
 const babel = require('gulp-babel')
 const merge = require('merge-stream')
 const path = require('path')
+const less = require('gulp-less')
+const cssmin = require('gulp-cssmin')
+const rename = require('gulp-rename')
+const concatCss = require('gulp-concat-css')
+const themeVariables = require('../src/theme-variables.json')
+
 const _ = require('lodash')
 require('./fix-uniformity-gulp')
 const generateIconFiles = require('./generate-icon-files')
@@ -62,6 +68,33 @@ function compile(modules) {
   ))
 }
 
+gulp.task('compile-bundle-less', done => {
+  const lessSrc = gulp.src([
+    path.resolve(__dirname, '../node_modules/antd/dist/antd.less'),
+    path.resolve(__dirname, '..', 'src/*/style/*.less'),
+    path.resolve(__dirname, '..', 'src/styles.less'),
+  ]);
+
+  const compileAndBundle = lessSrc
+    .pipe(less( {
+      javascriptEnabled: true,
+      modifyVars: themeVariables,
+    }).on('error', function (err) {
+      console.log(err);
+    }))
+    .pipe(concatCss("index.css"))
+
+  const minified = compileAndBundle
+    .pipe(rename({suffix: '.min'}))
+    .pipe(cssmin().on('error', function(err) {
+      console.log(err);
+    }))
+
+  return merge(compileAndBundle, minified)
+    .pipe(gulp.dest(path.resolve(__dirname, '../dist')))
+    .on('finish', done)
+})
+
 gulp.task('compile-with-es', done => {
   console.log('[Parallel] Compile to es...')
   compile(false).on('finish', done)
@@ -72,7 +105,7 @@ gulp.task('compile-with-lib', done => {
   compile().on('finish', done)
 })
 
-gulp.task('compile', gulp.parallel('compile-with-es', 'compile-with-lib'))
+gulp.task('compile', gulp.parallel('compile-bundle-less', 'compile-with-es', 'compile-with-lib'))
 
 gulp.task('compile-watch', () => gulp.watch(path.resolve(__dirname, '../src'), gulp.series(['compile'])))
 

@@ -1,4 +1,6 @@
 import { addons } from '@storybook/addons';
+import './style.css';
+import '../dist/index.css'
 
 addons.setConfig({
   options: {

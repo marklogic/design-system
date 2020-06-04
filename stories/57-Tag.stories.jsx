@@ -28,7 +28,6 @@ function preventDefault(e) {
 export const basic = () => {
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLTag>Tag 1</MLTag>
       <MLTag>
         <a href='https://github.com/ant-design/ant-design/issues/1862'>Link</a>
@@ -47,7 +46,6 @@ export const colorfulTags = () => {
   const customColor = text('color', '#2db7f5')
   return (
     <div className='colorful-tags-story'>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <h4>Status Colors:</h4>
       <div>
         <MLTag color='success'>success</MLTag>
@@ -84,7 +82,6 @@ export const checkableTag = () => {
   const [tag3State, setTag3State] = useState(false)
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <div>See <a href='https://ant.design/components/tag/#components-tag-demo-checkable'>Ant's example</a> for how to use with state</div>
       <br />
       <MLCheckableTag checked={tag1State} onChange={() => setTag1State(!tag1State)}>Tag1</MLCheckableTag>

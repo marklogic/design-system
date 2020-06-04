@@ -18,16 +18,18 @@ export default {
   },
 }
 
-export const basic = ({ ...args }) => {
+export const basic = () => {
   const props = {
     description: text('description', 'Some description'),
     closable: boolean('closable', false),
     showIcon: boolean('showIcon', true),
   }
   return (
-    <MLAlert
-      message='Success Text'
-      {...args}
-    />
+    <div>
+      <MLAlert message='Success Text' type='success' {...props} />
+      <MLAlert message='Info Text' type='info' {...props} />
+      <MLAlert message='Warning Text' type='warning' {...props} />
+      <MLAlert message='Error Text' type='error' {...props} />
+    </div>
   )
 }
