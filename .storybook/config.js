@@ -3,6 +3,7 @@ import { create } from '@storybook/theming/create';
 import { withInfo } from '@storybook/addon-info';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import './style.css';
+import '../dist/index.css'
 
 addDecorator(
   withInfo({
