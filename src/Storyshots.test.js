@@ -3,7 +3,7 @@ import Enzyme, { mount, shallow, render } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import { createSerializer } from 'enzyme-to-json'
 import { addSerializer } from 'jest-specific-snapshot'
-import React from "react";
+import React from 'react'
 
 addSerializer(createSerializer())
 

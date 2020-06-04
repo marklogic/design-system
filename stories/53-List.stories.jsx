@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, radios, boolean } from '@storybook/addon-knobs'
 import { MLList, MLDivider } from '@marklogic/design-system'
+import mdx from './53-List.mdx'
 
 // TODO: Replace with ML version when it's merged
 import {
@@ -15,6 +16,10 @@ export default {
   title: 'Data Display/MLList',
   decorators: [withKnobs],
   parameters: {
+    fileName: '53-List.stories.jsx',
+    docs: {
+      page: mdx,
+    },
     info: {
       text: 'Note: See Ant documentation for details on the renderItem prop, which does not display properly here in the story source.',
     },
