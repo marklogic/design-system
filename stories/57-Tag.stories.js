@@ -40,7 +40,7 @@ export const basic = () => {
 export const colorfulTags = () => {
   const customColor = text('color', '#2db7f5')
   return (
-    <div>
+    <div className='colorful-tags-story'>
       <h4>Status Colors:</h4>
       <div>
         <MLTag color='success'>success</MLTag>

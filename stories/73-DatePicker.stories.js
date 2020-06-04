@@ -19,7 +19,7 @@ const disableOddDates = (d) => d.date() % 2 === 0
 const configValues = {
   dateFormat: ['YYYY-MMM-DD', 'MM/DD/YYYY', 'M/D/YY'],
   timeFormat: ['HH:mm:ss'],
-  dateTimeFormat: ['YYYY-MMM-DD, HH:mm:ss', 'LT', 'LTS'],
+  dateTimeFormat: ['YYYY-MMM-DD, HH:mm:ss', 'YYYY-MMM-DD, HH:mm', 'LT', 'LTS'],
   monthFormat: 'YYYY-MM',
   weekFormat: 'YYYY-wo',
   yearFormat: 'YYYY',
@@ -47,12 +47,13 @@ export const datePicker = () => {
     showTime: boolean('showTime', false),
   }
   return (
-    <MLConfigProvider {...configValues}>
-      <div>date: <MLDatePicker {...props} picker='date' /></div>
-      <div>week: <MLDatePicker {...props} picker='week' /></div>
-      <div>month: <MLDatePicker {...props} picker='month' /></div>
-      <div>year: <MLDatePicker {...props} picker='year' /></div>
-    </MLConfigProvider>
+    <div>
+      <MLConfigProvider {...configValues}>
+        <div>date: <MLDatePicker {...props} /></div>
+        <div>week: <MLDatePicker.MLWeekPicker {...props} /></div>
+        <div>month: <MLDatePicker.MLMonthPicker {...props} /></div>
+      </MLConfigProvider>
+    </div>
   )
 }
 
@@ -81,11 +82,10 @@ export const rangePicker = () => {
     ),
   }
   return (
-    <MLConfigProvider {...configValues}>
-      <div>date: <MLRangePicker {...props} picker='date' /></div>
-      <div>week: <MLRangePicker {...props} picker='week' /></div>
-      <div>month: <MLRangePicker {...props} picker='month' /></div>
-      <div>year: <MLRangePicker {...props} picker='year' /></div>
-    </MLConfigProvider>
+    <div>
+      <MLConfigProvider {...configValues}>
+        <MLRangePicker {...props} />
+      </MLConfigProvider>
+    </div>
   )
 }

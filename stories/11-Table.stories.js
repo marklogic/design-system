@@ -21,7 +21,11 @@ export const basic = () => {
     dataSource: sampleBasicData.dataSource,
     columns: sampleBasicData.columns,
   }
-  return (<MLTable {...props} onChange={action('onChange')} />)
+  return (
+    <div>
+      <MLTable {...props} onChange={action('onChange')} />
+    </div>
+  )
 }
 
 export const embeddedTables = () => {
@@ -32,11 +36,13 @@ export const embeddedTables = () => {
   }
   // TODO: Handle onChange for nested tables, and figure out a way to differentiate the callback values
   return (
-    <MLTable
-      scroll={{ x: true }}
-      {...props}
-      onChange={action('onChange')}
-    />
+    <div>
+      <MLTable
+        scroll={{ x: true }}
+        {...props}
+        onChange={action('onChange')}
+      />
+    </div>
   )
 }
 

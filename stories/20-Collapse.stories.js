@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { MLCollapse } from '@marklogic/design-system'
 import { withKnobs, array, boolean, text, optionsKnob as options } from '@storybook/addon-knobs'
 import './20-Collapse.less'
-import { DeleteOutlined } from '@marklogic/design-system/MLIcon'
+import { DeleteOutlined } from '@marklogic/design-system/src/MLIcon'
 const { MLPanel } = MLCollapse
 
 export default {
@@ -58,17 +58,19 @@ export const basic = () => {
     panelProps.className = 'site-collapse-custom-panel'
   }
   return (
-    <MLCollapse {...collapseProps}>
-      <MLPanel {...panelProps} key='1'>
-        <p>{panelBodyText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 2' key='2'>
-        <p>{exampleText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
-        <p>{exampleText}</p>
-      </MLPanel>
-    </MLCollapse>
+    <div>
+      <MLCollapse {...collapseProps}>
+        <MLPanel {...panelProps} key='1'>
+          <p>{panelBodyText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 2' key='2'>
+          <p>{exampleText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
+          <p>{exampleText}</p>
+        </MLPanel>
+      </MLCollapse>
+    </div>
   )
 }
 
@@ -99,17 +101,19 @@ export const accordion = () => {
     panelProps.className = 'site-collapse-custom-panel'
   }
   return (
-    <MLCollapse {...collapseProps}>
-      <MLPanel {...panelProps} key='1'>
-        <p>{panelBodyText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 2' key='2'>
-        <p>{exampleText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
-        <p>{exampleText}</p>
-      </MLPanel>
-    </MLCollapse>
+    <div>
+      <MLCollapse {...collapseProps}>
+        <MLPanel {...panelProps} key='1'>
+          <p>{panelBodyText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 2' key='2'>
+          <p>{exampleText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
+          <p>{exampleText}</p>
+        </MLPanel>
+      </MLCollapse>
+    </div>
   )
 }
 
@@ -139,24 +143,27 @@ export const nestedPanel = () => {
     panelProps.className = 'site-collapse-custom-panel'
   }
   return (
-    <MLCollapse {...collapseProps}>
-      <MLPanel {...panelProps} key='1'>
-        <MLCollapse>
-          <MLPanel {...panelProps} header='This is a nested panel'>
-            <p>{exampleText}</p>
-          </MLPanel>
-          <MLPanel {...panelProps} header='This is a nested panel'>
-            <p>{exampleText}</p>
-          </MLPanel>
-        </MLCollapse>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 2' key='2'>
-        <p>{exampleText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
-        <p>{exampleText}</p>
-      </MLPanel>
-    </MLCollapse>
+    <div>
+      <MLCollapse {...collapseProps}>
+        <MLPanel {...panelProps} key='1'>
+          <MLCollapse>
+            <MLPanel {...panelProps} header='This is a nested panel'>
+              <p>{exampleText}</p>
+            </MLPanel>
+            <MLPanel {...panelProps} header='This is a nested panel'>
+              <p>{exampleText}</p>
+            </MLPanel>
+          </MLCollapse>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 2' key='2'>
+          <p>{exampleText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
+          <p>{exampleText}</p>
+        </MLPanel>
+      </MLCollapse>
+    </div>
+
   )
 }
 
@@ -189,16 +196,19 @@ export const customPanelStyle = () => {
     panelProps.className = 'site-collapse-custom-panel'
   }
   return (
-    <MLCollapse {...collapseProps}>
-      <MLPanel {...panelProps} key='1'>
-        <p>{panelBodyText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 2' key='2'>
-        <p>{exampleText}</p>
-      </MLPanel>
-      <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
-        <p>{exampleText}</p>
-      </MLPanel>
-    </MLCollapse>
+    <div>
+      <MLCollapse {...collapseProps}>
+        <MLPanel {...panelProps} key='1'>
+          <p>{panelBodyText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 2' key='2'>
+          <p>{exampleText}</p>
+        </MLPanel>
+        <MLPanel {...panelProps} header='This is panel header 3' key='3' disabled>
+          <p>{exampleText}</p>
+        </MLPanel>
+      </MLCollapse>
+    </div>
+
   )
 }

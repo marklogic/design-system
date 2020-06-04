@@ -1,8 +1,8 @@
 import React from 'react'
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs'
 import { MLIcon } from '@marklogic/design-system'
-import * as AntIcons from '@marklogic/design-system/MLIcon/ant-icons'
-import * as FontAwesomeIcons from '@marklogic/design-system/MLIcon/font-awesome-icons'
+import * as AntIcons from '@marklogic/design-system/src/MLIcon/ant-icons'
+import * as FontAwesomeIcons from '@marklogic/design-system/src/MLIcon/font-awesome-icons'
 import './19-Icon.css'
 import { endsWith } from 'lodash-es'
 
@@ -48,10 +48,12 @@ export const exampleIcon = () => {
   }
   const component = AntIcons.CheckCircleFilled
   return (
-    iconTile({
-      component,
-      props,
-    })
+    <div>
+      {iconTile({
+        component,
+        props,
+      })}
+    </div>
   )
 }
 

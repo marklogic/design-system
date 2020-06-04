@@ -14,31 +14,99 @@ export default {
   },
 }
 
+const footerStyleBase = {
+  padding: '12px 50px',
+}
+const footerStyleWhiteBg = Object.assign({}, footerStyleBase, {
+  color: '#999',
+  backgroundColor: '#fff',
+})
+
+const footerStyleGraphicBg = Object.assign({}, footerStyleBase, {
+  color: '#fff',
+  background: 'unset',
+})
+
+const footerSpanStyle = {
+  padding: '0 5px',
+}
+
+const year = 2020
+
+const siderStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: '#dddddd',
+}
+
+const headerStyle = {
+  backgroundColor: '#c4c4c4',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  textAlign: 'center',
+  height: '64px',
+}
+
 export const dataHubLayout = (props) => {
   const graphicBackground = boolean('graphicBackground', true)
   const layoutStyle = graphicBackground ? { backgroundImage: 'linear-gradient(to right, #af474a, #73263b)' } : null
+  const footerStyle = graphicBackground ? footerStyleGraphicBg : footerStyleWhiteBg
   return (
-    <MLLayout>
-      <MLHeader>Header</MLHeader>
+    <div>
       <MLLayout>
-        <MLLayout style={layoutStyle}>
-          <MLContent style={{ height: '300px' }}>Content</MLContent>
-          <MLFooter graphicBackground={graphicBackground} year={2019}>Footer</MLFooter>
+        <MLHeader style={headerStyle}>Header</MLHeader>
+        <MLLayout>
+          <MLLayout style={layoutStyle}>
+            <MLContent style={{ height: '300px' }}>Content</MLContent>
+            <MLFooter
+              style={footerStyle}
+              year={year}
+            >
+              <span style={footerSpanStyle}>Copyright @ {year} MarkLogic Corporation. All Rights Reserved.</span>
+              |
+              <span style={footerSpanStyle}>
+                <a href='#TODO'>Terms and Conditions</a>
+              </span>
+              |
+              <span style={footerSpanStyle}>
+                <a href='#TODO'>Policies</a>
+              </span>
+            </MLFooter>
+          </MLLayout>
+          <MLSider style={siderStyle} width={70}>Sider</MLSider>
         </MLLayout>
-        <MLSider>Sider</MLSider>
       </MLLayout>
-    </MLLayout>
+    </div>
   )
 }
 
 export const generalLayout = (props) => {
   const graphicBackground = boolean('graphicBackground', true)
   const layoutStyle = graphicBackground ? { backgroundImage: 'linear-gradient(to right, #af474a, #73263b)' } : null
+  const footerStyle = graphicBackground ? footerStyleGraphicBg : footerStyleWhiteBg
   return (
-    <MLLayout style={layoutStyle}>
-      <MLHeader>Header</MLHeader>
-      <MLContent style={{ height: '300px' }}>Content</MLContent>
-      <MLFooter graphicBackground={graphicBackground} year={2019}>Footer</MLFooter>
-    </MLLayout>
+    <div>
+      <MLLayout style={layoutStyle}>
+        <MLHeader style={headerStyle}>Header</MLHeader>
+        <MLContent style={{ height: '300px' }}>Content</MLContent>
+        <MLFooter
+          style={footerStyle}
+          year={year}
+        >
+          <span style={footerSpanStyle}>Copyright @ {year} MarkLogic Corporation. All Rights Reserved.</span>
+          |
+          <span style={footerSpanStyle}>
+            <a href='#TODO'>Terms and Conditions</a>
+          </span>
+          |
+          <span style={footerSpanStyle}>
+            <a href='#TODO'>Policies</a>
+          </span>
+        </MLFooter>
+      </MLLayout>
+    </div>
   )
 }

@@ -13,7 +13,11 @@ export default {
   },
 }
 
-export const basic = () => <MLButton type='primary' onClick={action('clicked')}>{text('Primary Button Text', 'Primary')}</MLButton>
+export const basic = () => (
+  <div>
+    <MLButton type='primary' onClick={action('clicked')}>{text('Primary Button Text', 'Primary')}</MLButton>
+  </div>
+)
 
 export const multiple = () => (
   <div>
@@ -24,4 +28,8 @@ export const multiple = () => (
   </div>
 )
 
-export const disabled = () => <MLButton disabled onClick={action('clicked')}>{text('Disabled', 'Disabled')}</MLButton>
+export const disabled = () => (
+  <div>
+    <MLButton disabled onClick={action('clicked')}>{text('Disabled', 'Disabled')}</MLButton>
+  </div>
+)

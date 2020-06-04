@@ -4,23 +4,9 @@ import { Layout } from 'antd'
 import classNames from 'classnames'
 const { Sider } = Layout
 
-const siderStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  backgroundColor: '#dddddd',
-}
-
-const siderProps = {
-  width: 70,
-}
-
 const MLSider = (props) => {
   return (
     <Sider
-      style={siderStyle}
-      {...siderProps}
       {...props}
       className={classNames('ml-layout-sider', props.className)}
     >
@@ -28,5 +14,7 @@ const MLSider = (props) => {
     </Sider>
   )
 }
+
+MLSider.displayName = 'MLLayout.MLSider'
 
 export default MLSider

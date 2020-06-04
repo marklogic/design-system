@@ -5,12 +5,9 @@ import classNames from 'classnames'
 
 const { Content } = Layout
 
-const contentStyle = {}
-
 const MLContent = (props) => {
   return (
     <Content
-      style={contentStyle}
       {...props}
       className={classNames('ml-layout-content', props.className)}
     >
@@ -18,5 +15,7 @@ const MLContent = (props) => {
     </Content>
   )
 }
+
+MLContent.displayName = 'MLLayout.MLContent'
 
 export default MLContent
