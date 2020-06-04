@@ -4,13 +4,6 @@ import { Alert } from 'antd'
 import { CheckCircleFilled, InfoCircleFilled, ExclamationCircleFilled, CloseCircleFilled } from '../MLIcon'
 import classNames from 'classnames'
 
-// export interface MLAlertProps {
-//   type?: 'success' | 'info' | 'warning' | 'error';
-//   className?: string;
-//   message?: string;
-//   showIcon?: boolean;
-// }
-// const MLAlert = (props: MLAlertProps) => {
 const MLAlert = (props) => {
   let icon
   if (props.type === 'success') {

@@ -31,7 +31,7 @@ export const WithInitials = () => (
 )
 export const WithImage = () => (
   <MLAvatar
-    size={text('size')}
+    size={getSize()}
     src={text('src', 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png')}
   />
 )

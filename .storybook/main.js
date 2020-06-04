@@ -8,20 +8,12 @@ module.exports = {
     '../stories/*.stories.jsx',
     '../stories/*.stories.mdx'
   ],
-  // stories: ['../stories/15-Dropdown.stories.jsx'],
   addons: [
-    // '@storybook/preset-create-react-app',
+    // '@storybook/preset-create-react-app', // Seems to break other stuff about Less, so leave this out
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-knobs',
-    {
-      name: '@storybook/addon-docs',
-      options: {
-        // configureJSX: true,
-        // babelOptions: {},
-        // sourceLoaderOptions: null, // Turns off story source loader
-      }
-    },
+    '@storybook/addon-docs',
   ],
   webpackFinal: async (config, {configType}) => {
     config.module.rules.push({
@@ -81,10 +73,10 @@ module.exports = {
     config.plugins.push(new MiniCssExtractPlugin({filename: "[name].module.css"}));
 
     // DEBUG Fix stringify for regexes
-    Object.defineProperty(RegExp.prototype, "toJSON", {
-      value: RegExp.prototype.toString,
-    });
-    console.log("Storybook webpack config:\n", JSON.stringify(config, null, "  "));
+    // Object.defineProperty(RegExp.prototype, "toJSON", {
+    //   value: RegExp.prototype.toString,
+    // });
+    // console.log("Storybook webpack config:\n", JSON.stringify(config, null, "  "));
     // DEBUG end
 
     return config;
