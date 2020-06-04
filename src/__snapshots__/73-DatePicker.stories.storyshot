@@ -3,9 +3,6 @@
 exports[`Storyshots Data Entry/MLDatePicker Date Picker 1`] = `
 <div>
   <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
-  <div>
     date: 
     <span
       class="ml-date-picker ant-calendar-picker ant-calendar-picker-small"
@@ -114,9 +111,6 @@ exports[`Storyshots Data Entry/MLDatePicker Date Picker 1`] = `
 
 exports[`Storyshots Data Entry/MLDatePicker Range Picker 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <span
     class="ml-date-picker-range-picker ant-calendar-picker ant-calendar-picker-small"
     tabindex="0"

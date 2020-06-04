@@ -5,9 +5,6 @@ exports[`Storyshots Data Entry/MLInputNumber Basic 1`] = `
   <div>
     Note that defaultValue will not cause this demo to update.
   </div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-input-number ant-input-number-sm ml-input-number"
   >
@@ -93,9 +90,6 @@ exports[`Storyshots Data Entry/MLInputNumber Decimals 1`] = `
   <div>
     Note that defaultValue will not cause this demo to update.
   </div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-input-number ant-input-number-sm ml-input-number"
   >
@@ -180,9 +174,6 @@ exports[`Storyshots Data Entry/MLInputNumber Disabled 1`] = `
 <div>
   <div>
     Note that defaultValue will not cause this demo to update.
-  </div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
   </div>
   <div
     class="ant-input-number ant-input-number-sm ml-input-number ant-input-number-disabled"
@@ -270,9 +261,6 @@ exports[`Storyshots Data Entry/MLInputNumber Formatter 1`] = `
   <div>
     Note that defaultValue will not cause this demo to update.
   </div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-input-number ant-input-number-sm ml-input-number ant-input-number-disabled"
   >
@@ -358,9 +346,6 @@ exports[`Storyshots Data Entry/MLInputNumber Sizes 1`] = `
 <div>
   <div>
     Note that defaultValue will not cause this demo to update.
-  </div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
   </div>
   <div
     class="ant-input-number ant-input-number-sm ml-input-number ant-input-number-disabled"

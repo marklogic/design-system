@@ -2,9 +2,6 @@
 
 exports[`Storyshots Data Display/MLTable Basic 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-table-wrapper ml-table"
   >
@@ -251,9 +248,6 @@ exports[`Storyshots Data Display/MLTable Basic 1`] = `
 
 exports[`Storyshots Data Display/MLTable Embedded Tables 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-table-wrapper ml-table"
   >
@@ -931,9 +925,6 @@ exports[`Storyshots Data Display/MLTable Embedded Tables 1`] = `
 
 exports[`Storyshots Data Display/MLTable Row Nested Table 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-table-wrapper ml-table"
   >
@@ -1424,9 +1415,6 @@ exports[`Storyshots Data Display/MLTable Row Nested Table 1`] = `
 
 exports[`Storyshots Data Display/MLTable Row Nested Table With Buttons 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     style="display:flex;justify-content:flex-end"
   >
@@ -1943,9 +1931,6 @@ exports[`Storyshots Data Display/MLTable Row Nested Table With Buttons 1`] = `
 
 exports[`Storyshots Data Display/MLTable Tree Data 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-table-wrapper ml-table"
   >

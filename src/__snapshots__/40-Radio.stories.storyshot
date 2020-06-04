@@ -2,9 +2,6 @@
 
 exports[`Storyshots Data Entry/MLRadio Radio 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <label
     class="ml-radio ant-radio-wrapper"
   >
@@ -28,9 +25,6 @@ exports[`Storyshots Data Entry/MLRadio Radio 1`] = `
 
 exports[`Storyshots Data Entry/MLRadio Radio Group 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-radio-group ant-radio-group-outline ant-radio-group-small ml-radio-group"
   >
@@ -121,9 +115,6 @@ exports[`Storyshots Data Entry/MLRadio Radio Group 1`] = `
 
 exports[`Storyshots Data Entry/MLRadio Radio Group Outlined Style 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-radio-group ant-radio-group-outline ant-radio-group-small ml-radio-group"
   >
@@ -214,9 +205,6 @@ exports[`Storyshots Data Entry/MLRadio Radio Group Outlined Style 1`] = `
 
 exports[`Storyshots Data Entry/MLRadio Radio Group Plain Options 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-radio-group ant-radio-group-outline ant-radio-group-small ml-radio-group"
   >
@@ -307,9 +295,6 @@ exports[`Storyshots Data Entry/MLRadio Radio Group Plain Options 1`] = `
 
 exports[`Storyshots Data Entry/MLRadio Radio Group Solid Style 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-radio-group ant-radio-group-solid ant-radio-group-small ml-radio-group"
   >
@@ -400,9 +385,6 @@ exports[`Storyshots Data Entry/MLRadio Radio Group Solid Style 1`] = `
 
 exports[`Storyshots Data Entry/MLRadio Radio Group With Complex Options 1`] = `
 <div>
-  <div>
-    Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.
-  </div>
   <div
     class="ant-radio-group ant-radio-group-outline ant-radio-group-small ml-radio-group"
   >
