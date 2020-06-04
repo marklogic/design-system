@@ -1,7 +1,8 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import {boolean, radios, withKnobs} from "@storybook/addon-knobs";
+import { boolean, radios, withKnobs } from '@storybook/addon-knobs'
 import { MLPopover, MLButton } from '@marklogic/design-system'
+import './54-Popover.less'
 
 export default {
   title: 'Data Display/MLPopover',
@@ -35,14 +36,16 @@ export const basic = () => {
     </div>
   )
   return (
-    <MLPopover
-      content={content}
-      title='Title'
-      placement={placement}
-      arrowPointAtCenter={boolean('arrowPointAtCenter', false)}
+    <div className='popover-story-demo-container'>
+      <MLPopover
+        content={content}
+        title='Title'
+        placement={placement}
+        arrowPointAtCenter={boolean('arrowPointAtCenter', false)}
       // okText={text('okText', 'OK')}
-    >
-      <MLButton type='primary'>Hover me</MLButton>
-    </MLPopover>
+      >
+        <MLButton type='primary'>Hover me</MLButton>
+      </MLPopover>
+    </div>
   )
 }
