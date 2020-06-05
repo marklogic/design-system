@@ -25,7 +25,7 @@ module.exports = override(
         return `@marklogic/design-system/es/MLIcon/${name}`
       },
       style: function() {
-        return "@marklogic/design-system/es/MLIcon/style"
+        return '@marklogic/design-system/es/MLIcon/style'
       },
     },
   ),
