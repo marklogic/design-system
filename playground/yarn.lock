@@ -1311,7 +1311,9 @@
     "@fortawesome/free-regular-svg-icons" "5.13.0"
     "@fortawesome/free-solid-svg-icons" "5.13.0"
     "@fortawesome/react-fontawesome" "^0.1.7"
+    ant-design-draggable-modal "^0.0.16"
     antd "^3.26.13"
+    classnames "^2.2.6"
     lodash-es "^4"
     prop-types "^15.7.2"
 
@@ -1932,6 +1934,13 @@ ansi-styles@^4.1.0:
   dependencies:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
+
+ant-design-draggable-modal@^0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/ant-design-draggable-modal/-/ant-design-draggable-modal-0.0.16.tgz#e7bdcaa3cab2e44fdae69a554432bf5365feb86b"
+  integrity sha512-cWqK+DpiJKgjkdifAqw14m8+BH/3UQAm+hwIu3Gfcf+QndPciSZ77c6+UmCkZ8+H9vEJ6x6oyXVVwDqpkPRTXw==
+  dependencies:
+    react-uid "^2.2.0"
 
 antd@^3.26.13:
   version "3.26.16"
@@ -9415,6 +9424,13 @@ react-slick@~0.25.2:
     json2mq "^0.2.0"
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
+
+react-uid@^2.2.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-uid/-/react-uid-2.3.0.tgz#bfd47cfd5ad3e37956ed1a8520964842d7bdcc6b"
+  integrity sha512-tsPZ77GR0pISGYmpCLHAbZTabKXZ7zBniKPVqVMMfnXFyo39zq5g/psIlD5vLTKkjQEhWOO8JhqcHnxkwNu6eA==
+  dependencies:
+    tslib "^1.10.0"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"

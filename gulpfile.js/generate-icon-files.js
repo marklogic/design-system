@@ -43,13 +43,11 @@ export default ${iconName}
   )
 }
 
-const generateFontAwesomeIconCode = (faIconName, wrappedIconName, packageName) => {
+const generateFontAwesomeIconCode = (faIconName, wrappedIconName, packageName, iconStyleSuffix) => {
   return (
 `import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const ${faIconName} = require('${packageName}/${faIconName}.js')
-
-const ${wrappedIconName} = wrapFontAwesomeIcon(${faIconName})
+import { ${faIconName} } from '@fortawesome/free-solid-svg-icons/${faIconName}'
+const ${wrappedIconName} = wrapFontAwesomeIcon(${faIconName}, '${iconStyleSuffix}')
 export default ${wrappedIconName}
 `
   )
@@ -96,7 +94,7 @@ const generateFontAwesomeIconFiles = (packageName, iconStyleSuffix, { cwd, base 
         cwd: cwd,
         base: base,
         path: path.resolve(base, iconName + '.js'),
-        contents: Buffer.from(generateFontAwesomeIconCode(faIconName, iconName, packageName)),
+        contents: Buffer.from(generateFontAwesomeIconCode(faIconName, iconName, packageName, iconStyleSuffix)),
       })
       this.push(iconFile)
     }

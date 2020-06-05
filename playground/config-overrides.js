@@ -17,7 +17,9 @@ module.exports = override(
       style: true,
     },
   ),
-  fixBabelImports('@marklogic/design-system/MLIcon',
+  // This needs to include 'es' because TypeScript demands a valid index.js at the imported location
+  //   even if it's not used in the end.
+  fixBabelImports('@marklogic/design-system/es/MLIcon',
     {
       libraryDirectory: '',
       camel2DashComponentName: false,
@@ -45,8 +47,5 @@ module.exports = override(
   }),
   babelInclude([
     path.resolve(__dirname, 'src'),
-    /design-system/, // Required for @marklogic/design-system to compile
-    // In a real environment (where node_modules paths are guaranteed),
-    // you may use /@marklogic\/design-system/ for specificity
   ]),
 )
