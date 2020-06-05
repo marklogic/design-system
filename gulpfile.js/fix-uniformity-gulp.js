@@ -211,10 +211,12 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
     return gulp.src([
       path.resolve(__dirname, '../src/**/*.js'),
       path.resolve(__dirname, '../stories/**/*.js'),
+      path.resolve(__dirname, '../.storybook/*.js'),
+      path.resolve(__dirname, './*.js'),
       path.resolve(__dirname, '../*.js'),
-    ], {base})
+    ], { base })
       .pipe(eslint({ fix: true }))
-      // .pipe(eslint.format()) // Enable later once the output is less
+      .pipe(eslint.format()) // Enable later once the output is less
       .pipe(gulp.dest(path.resolve(__dirname, '..')))
   },
 ))
