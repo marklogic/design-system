@@ -216,7 +216,7 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
       path.resolve(__dirname, '../*.js'),
     ], { base })
       .pipe(eslint({ fix: true }))
-      .pipe(eslint.format()) // Enable later once the output is less
+      // .pipe(eslint.format()) // Enable later once the output is less
       .pipe(gulp.dest(path.resolve(__dirname, '..')))
   },
 ))
