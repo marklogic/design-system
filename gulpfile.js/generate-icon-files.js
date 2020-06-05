@@ -6,11 +6,11 @@ const Vinyl = require('vinyl')
 const gulpEval = require('gulp-eval')
 const dedupe = require('gulp-dedupe')
 
-const generateAntIconIndexCode = (iconNames) => {
+const generateAntIconIndexCode = (iconNames, packageName) => {
   return (
 `import { createWrappedMLIcon } from './icon-wrappers'
 
-import * as AntIcons from '@ant-design/icons'
+import * as AntIcons from '${packageName}'
 
 ${iconNames.map((iconName) => (
 `export const ${iconName} = createWrappedMLIcon(AntIcons.${iconName})`
@@ -19,16 +19,20 @@ ${iconNames.map((iconName) => (
   )
 }
 
-const generateFontAwesomeIconIndexCode = (iconNames, iconStyleSuffix) => {
+const generateFontAwesomeIconIndexCode = (iconNames, iconStyleSuffix, packageName) => {
   return (
 `import React from 'react'
-import * as faIcons from '@fortawesome/free-${iconStyleSuffix.toLowerCase()}-svg-icons'
+import * as faIcons from '${packageName}'
 
 import { wrapFontAwesomeIcon } from './icon-wrappers'
 
-${iconNames.map((iconName) => (
-`export const ${iconName}${iconStyleSuffix} = wrapFontAwesomeIcon(faIcons.fa${iconName}, '${iconStyleSuffix}')`
-)).join('\n')}
+${iconNames.map((iconName) => {
+// Patch icon names that start with numbers
+const prefixedIconName = /^\d.*/.test(iconName) ? `fa${iconName}` : iconName
+return (
+`export const ${prefixedIconName}${iconStyleSuffix} = wrapFontAwesomeIcon(faIcons.fa${iconName}, '${iconStyleSuffix}')`
+)
+}).join('\n')}
 `
   )
 }
@@ -53,7 +57,7 @@ export default ${wrappedIconName}
   )
 }
 
-const generateAntIconFiles = () => {
+const generateAntIconFiles = (packageName) => {
   return through.obj(function(indexFile, enc, cb) {
     // const matches = [...indexFile.contents.toString().matchAll(/export const (?<iconName>\w+) = createWrappedMLIcon/g)]
     // const iconNames = matches.map((pair) => pair[1])
@@ -73,7 +77,7 @@ const generateAntIconFiles = () => {
       cwd: indexFile.cwd,
       base: indexFile.base,
       path: path.resolve(__dirname, '../src/MLIcon', 'ant-icons.js'),
-      contents: Buffer.from(generateAntIconIndexCode(iconNames)),
+      contents: Buffer.from(generateAntIconIndexCode(iconNames, packageName)),
     })
     this.push(ourIndexFile)
 
@@ -89,7 +93,11 @@ const generateFontAwesomeIconFiles = (packageName, iconStyleSuffix, { cwd, base 
     // const iconNames = faIconNames.map((faIconName) => faIconName.replace(/^fa/, '') + iconStyleSuffix)
 
     for (const faIconName of faIconNames) {
-      const iconName = faIconName.replace(/^fa/, '') + iconStyleSuffix
+      let iconName = faIconName.replace(/^fa/, '') + iconStyleSuffix
+      if (/^\d.*/.test(iconName)) {
+        // Patch icons that start with numbers
+        iconName = '_' + iconName
+      }
       const iconFile = new Vinyl({
         cwd: cwd,
         base: base,
@@ -105,7 +113,7 @@ const generateFontAwesomeIconFiles = (packageName, iconStyleSuffix, { cwd, base 
       cwd: indexFile.cwd,
       base: base,
       path: path.resolve(__dirname, '../src/MLIcon', `font-awesome-${iconStyleSuffix.toLowerCase()}-icons.js`),
-      contents: Buffer.from(generateFontAwesomeIconIndexCode(iconNames, iconStyleSuffix)),
+      contents: Buffer.from(generateFontAwesomeIconIndexCode(iconNames, iconStyleSuffix, packageName)),
     })
     this.push(ourIndexFile)
 
@@ -118,12 +126,18 @@ function generateIconFiles({ base }) {
     gulp.src(path.resolve(__dirname, '../node_modules', '@fortawesome/free-solid-svg-icons/index.js'))
       .pipe(gulpEval())
       .pipe(generateFontAwesomeIconFiles('@fortawesome/free-solid-svg-icons', 'Solid', { base })),
+
     gulp.src(path.resolve(__dirname, '../node_modules', '@fortawesome/free-regular-svg-icons/index.js'))
       .pipe(gulpEval())
       .pipe(generateFontAwesomeIconFiles('@fortawesome/free-regular-svg-icons', 'Regular', { base })),
+
+    gulp.src(path.resolve(__dirname, '../node_modules', '@fortawesome/free-brands-svg-icons/index.js'))
+      .pipe(gulpEval())
+      .pipe(generateFontAwesomeIconFiles('@fortawesome/free-brands-svg-icons', 'Brand', { base })),
+
     gulp.src(path.resolve(__dirname, '../node_modules', '@ant-design/icons/lib/icons/index.js'))
       .pipe(gulpEval())
-      .pipe(generateAntIconFiles()),
+      .pipe(generateAntIconFiles('@ant-design/icons')),
   ).pipe(dedupe({ error: true }))
 }
 
