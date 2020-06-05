@@ -19,6 +19,29 @@ MLSlider.defaultProps = {
   tooltipVisible: undefined,
 }
 
+// propTypes is removed in production automatically, so we need to list them here for runtime use in MLEditableSlider
+MLSlider.propKeys = [
+  'autoFocus',
+  'defaultValue',
+  'disabled',
+  'dots',
+  'included',
+  'marks',
+  'max',
+  'min',
+  'range',
+  'reverse',
+  'step',
+  'tipFormatter',
+  'value',
+  'vertical',
+  'onAfterChange',
+  'onChange',
+  'tooltipPlacement',
+  'tooltipVisible',
+  'getTooltipPopupContainer',
+]
+
 MLSlider.propTypes = {
   autoFocus: PropTypes.bool,
   defaultValue: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]),

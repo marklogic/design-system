@@ -25,6 +25,24 @@ const MLInputNumber = React.forwardRef((props, ref) => {
   )
 })
 
+// propTypes is removed in production automatically, so we need to list them here for runtime use in MLEditableSlider
+MLInputNumber.propKeys = [
+  'autoFocus',
+  'defaultValue',
+  'disabled',
+  'formatter',
+  'max',
+  'min',
+  'parser',
+  'precision',
+  'decimalSeparator',
+  'size',
+  'step',
+  'value',
+  'onChange',
+  'onPressEnter',
+]
+
 MLInputNumber.propTypes = {
   autoFocus: PropTypes.bool,
   defaultValue: PropTypes.number,

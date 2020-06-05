@@ -15,12 +15,12 @@ const MLEditableSlider = React.forwardRef((props, ref) => {
   )
 
   const sliderProps = Object.assign(
-    pick(props, Object.keys(MLSlider.propTypes)),
+    pick(props, MLSlider.propKeys),
     props.sliderProps,
   )
 
   const inputNumberProps = Object.assign(
-    pick(props, Object.keys(MLInputNumber.propTypes)),
+    pick(props, MLInputNumber.propKeys),
     props.inputNumberProps,
   )
 
