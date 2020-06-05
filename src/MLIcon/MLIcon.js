@@ -9,4 +9,3 @@ export default MLIcon
 
 export const antIconVariants = ['Filled', 'Outlined', 'TwoTone']
 export const faIconVariants = ['Regular', 'Solid', 'Brand']
-

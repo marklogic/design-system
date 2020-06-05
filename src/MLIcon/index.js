@@ -15,7 +15,7 @@ Object.assign(
   FontAwesomeSolidIcons,
   FontAwesomeRegularIcons,
   FontAwesomeBrandIcons,
-  AntIcons
+  AntIcons,
 )
 
 export default MLIcon

@@ -1,0 +1,4 @@
+import { wrapFontAwesomeIcon } from './icon-wrappers'
+import { faEvernote } from '@fortawesome/free-solid-svg-icons/faEvernote'
+const EvernoteBrand = wrapFontAwesomeIcon(faEvernote, 'Brand')
+export default EvernoteBrand
