@@ -47,6 +47,7 @@ export default {
 }
 
 export const basic = () => {
+  const isInsideTable = boolean('simulate being inside MLTable cell', false)
   const label = text('label', 'Label text')
   // const hasFeedback = boolean('hasFeedback', false)
   const validateStatus = radios('validateStatus', ['success', 'warning', 'error', 'validating'], 'success')
@@ -64,11 +65,8 @@ export const basic = () => {
       </MLForm.MLItem>
     </MLForm>
   )
-  return (
-    <div>
-      <h2>Outside a table:</h2>
-      {formNode}
-      <h2>Inside a table:</h2>
+  if (isInsideTable) {
+    return (
       <MLTable
         bordered
         columns={[
@@ -83,8 +81,10 @@ export const basic = () => {
           { col1: '' },
         ]}
       />
-    </div>
-  )
+    )
+  } else {
+    return formNode
+  }
 }
 
 /* Story 1 */
