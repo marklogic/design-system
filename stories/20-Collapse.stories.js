@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { MLCollapse } from '@marklogic/design-system'
 import { withKnobs, array, boolean, text, optionsKnob as options } from '@storybook/addon-knobs'
 import './20-Collapse.less'
-import { DeleteOutlined } from '@marklogic/design-system/src/MLIcon'
+import { DeleteOutlined } from '@marklogic/design-system/MLIcon'
 const { MLPanel } = MLCollapse
 
 export default {

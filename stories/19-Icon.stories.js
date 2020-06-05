@@ -1,8 +1,9 @@
 import React from 'react'
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs'
 import { MLIcon } from '@marklogic/design-system'
-import * as AntIcons from '@marklogic/design-system/src/MLIcon/ant-icons'
-import * as FontAwesomeIcons from '@marklogic/design-system/src/MLIcon/font-awesome-icons'
+import * as AntIcons from '@marklogic/design-system/MLIcon/ant-icons'
+import * as FontAwesomeSolidIcons from '@marklogic/design-system/MLIcon/font-awesome-solid-icons'
+import * as FontAwesomeRegularIcons from '@marklogic/design-system/MLIcon/font-awesome-regular-icons'
 import './19-Icon.css'
 import { endsWith } from 'lodash-es'
 
@@ -43,7 +44,7 @@ export const exampleIcon = () => {
     rotate: number('rotate', 0),
     style: {
       fontSize: number('fontSize (px)', 36) + 'px',
-      color: text('color', 'red'),
+      color: text('color', ''),
     },
   }
   const component = AntIcons.CheckCircleFilled
@@ -68,6 +69,16 @@ for (const variant of ['Filled', 'Outlined', 'TwoTone']) {
   }
 }
 
+const faIconSets = {}
+for (const variant of ['Regular', 'Solid']) {
+  faIconSets[variant] = {}
+  for (const [key, value] of Object.entries(FontAwesomeRegularIcons).concat(Object.entries(FontAwesomeSolidIcons))) {
+    if (endsWith(key, variant)) {
+      faIconSets[variant][key] = value
+    }
+  }
+}
+
 export const shortList = () => {
   const props = {
     highlight: boolean('highlight', false),
@@ -86,7 +97,7 @@ export const shortList = () => {
       {iconTile({ component: MLIcon.SearchOutlined, props })}
       {iconTile({ component: MLIcon.SettingOutlined, props })}
       {iconTile({ component: MLIcon.DashboardOutlined, props })}
-      {iconTile({ component: MLIcon.Route, props })}
+      {iconTile({ component: MLIcon.RouteSolid, props })}
       {iconTile({ component: MLIcon.ArrowLeftOutlined, props })}
       {iconTile({ component: MLIcon.CheckCircleOutlined, props })}
       {iconTile({ component: MLIcon.CloseCircleOutlined, props })}
@@ -99,7 +110,7 @@ export const shortList = () => {
       {iconTile({ component: MLIcon.CloseCircleFilled, props })}
       {iconTile({ component: MLIcon.LockOutlined, props })}
       {iconTile({ component: MLIcon.DownOutlined, props })}
-      {iconTile({ component: MLIcon.Book, props })}
+      {iconTile({ component: MLIcon.BookSolid, props })}
     </div>
   )
 }
@@ -113,6 +124,10 @@ export const completeList = () => {
       TwoTone: 'TwoTone',
     }, 'Filled'),
     showFontAwesomeIcons: boolean('show FontAwesome icons', true),
+    faIconVariant: select('FontAwesome icon variant', {
+      Regular: 'Regular',
+      Solid: 'Solid',
+    }, 'Regular'),
   }
   const props = {
     highlight: boolean('highlight', false),
@@ -128,7 +143,7 @@ export const completeList = () => {
     iconSets.push(antIconSets[filters.antIconVariant])
   }
   if (filters.showFontAwesomeIcons) {
-    iconSets.push(FontAwesomeIcons)
+    iconSets.push(faIconSets[filters.faIconVariant])
   }
   const list = []
   for (const iconSet of iconSets) {

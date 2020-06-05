@@ -1,12 +1,14 @@
 import MLIcon from './MLIcon'
 
-import * as FontAwesomeIcons from './font-awesome-icons'
+import * as FontAwesomeSolidIcons from './font-awesome-solid-icons'
+import * as FontAwesomeRegularIcons from './font-awesome-regular-icons'
 import * as AntIcons from './ant-icons'
 
-export * from './font-awesome-icons'
+export * from './font-awesome-regular-icons'
+export * from './font-awesome-solid-icons'
 export * from './ant-icons'
 
-Object.assign(MLIcon, FontAwesomeIcons, AntIcons)
+Object.assign(MLIcon, FontAwesomeSolidIcons, FontAwesomeRegularIcons, AntIcons)
 
 export default MLIcon
 

@@ -6,22 +6,52 @@ const Vinyl = require('vinyl')
 const gulpEval = require('gulp-eval')
 const dedupe = require('gulp-dedupe')
 
+const generateAntIconIndexCode = (iconNames) => {
+  return (
+`import { createWrappedMLIcon } from './icon-wrappers'
+
+import * as AntIcons from '@ant-design/icons'
+
+${iconNames.map((iconName) => (
+`export const ${iconName} = createWrappedMLIcon(AntIcons.${iconName})`
+)).join('\n')}
+`
+  )
+}
+
+const generateFontAwesomeIconIndexCode = (iconNames, iconStyleSuffix) => {
+  return (
+`import React from 'react'
+import * as faIcons from '@fortawesome/free-${iconStyleSuffix.toLowerCase()}-svg-icons'
+
+import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+${iconNames.map((iconName) => (
+`export const ${iconName}${iconStyleSuffix} = wrapFontAwesomeIcon(faIcons.fa${iconName}, '${iconStyleSuffix}')`
+)).join('\n')}
+`
+  )
+}
+
 const generateAntIconCode = (iconName) => {
   return (
 `import { createWrappedMLIcon } from './icon-wrappers'
-import { default as Ant${iconName} } from '@ant-design/icons/${iconName}'
+import Ant${iconName} from '@ant-design/icons/${iconName}'
 const ${iconName} = createWrappedMLIcon(Ant${iconName})
-export default ${iconName}`
+export default ${iconName}
+`
   )
 }
 
 const generateFontAwesomeIconCode = (faIconName, wrappedIconName, packageName) => {
   return (
-`import { default as ${faIconName} } from '${packageName}/${faIconName}.js'
+`import { wrapFontAwesomeIcon } from './icon-wrappers'
 
-import { wrapFontAwesomeIcon } from './icon-wrappers'
+const ${faIconName} = require('${packageName}/${faIconName}.js')
+
 const ${wrappedIconName} = wrapFontAwesomeIcon(${faIconName})
-export default ${wrappedIconName}`
+export default ${wrappedIconName}
+`
   )
 }
 
@@ -40,6 +70,15 @@ const generateAntIconFiles = () => {
       })
       this.push(iconFile)
     }
+
+    const ourIndexFile = new Vinyl({
+      cwd: indexFile.cwd,
+      base: indexFile.base,
+      path: path.resolve(__dirname, '../src/MLIcon', 'ant-icons.js'),
+      contents: Buffer.from(generateAntIconIndexCode(iconNames)),
+    })
+    this.push(ourIndexFile)
+
     return cb(null, null)
   })
 }
@@ -62,6 +101,16 @@ const generateFontAwesomeIconFiles = (packageName, iconStyleSuffix, { cwd, base 
       this.push(iconFile)
     }
 
+    const iconNames = faIconNames.map((faIconName) => faIconName.replace(/^fa/, ''))
+
+    const ourIndexFile = new Vinyl({
+      cwd: indexFile.cwd,
+      base: base,
+      path: path.resolve(__dirname, '../src/MLIcon', `font-awesome-${iconStyleSuffix.toLowerCase()}-icons.js`),
+      contents: Buffer.from(generateFontAwesomeIconIndexCode(iconNames, iconStyleSuffix)),
+    })
+    this.push(ourIndexFile)
+
     return cb(null, null)
   })
 }
@@ -76,7 +125,7 @@ function generateIconFiles({ base }) {
       .pipe(generateFontAwesomeIconFiles('@fortawesome/free-regular-svg-icons', 'Regular', { base })),
     gulp.src(path.resolve(__dirname, '../node_modules', '@ant-design/icons/lib/icons/index.js'))
       .pipe(gulpEval())
-      .pipe(generateAntIconFiles('Regular', { base })),
+      .pipe(generateAntIconFiles()),
   ).pipe(dedupe({ error: true }))
 }
 
