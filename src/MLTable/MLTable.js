@@ -34,18 +34,6 @@ class MLHeaderTable extends React.Component {
  * Component for showing basic tables, nested tables, and entity properties for rows in said tables.
  */
 class MLTable extends React.Component {
-  static propTypes = { // TODO: Include default Table props as well
-    id: PropTypes.string,
-    rowKey: PropTypes.string,
-    showBody: PropTypes.bool,
-    dataSource: PropTypes.oneOfType([
-      PropTypes.objectOf(PropTypes.any), // Single item data sources are converted into arrays automatically (used in embedded table)
-      PropTypes.arrayOf(PropTypes.any),
-    ]),
-    columns: PropTypes.arrayOf(PropTypes.any),
-    onChange: PropTypes.func,
-  }
-
   constructor(props) {
     super(props)
     this.state = Object.assign(
@@ -232,12 +220,11 @@ MLTable.propTypes = { // TODO: Include default Table props as well
   id: PropTypes.string,
   rowKey: PropTypes.string,
   showBody: PropTypes.bool,
-  dataSource: PropTypes.objectOf(PropTypes.oneOf([PropTypes.string, PropTypes.number, PropTypes.bool])),
-  columns: PropTypes.arrayOf(
-    PropTypes.objectOf(
-      PropTypes.oneOf([PropTypes.string, PropTypes.func]),
-    ),
-  ),
+  dataSource: PropTypes.oneOfType([
+    PropTypes.objectOf(PropTypes.any), // Single item data sources are converted into arrays automatically (used in embedded table)
+    PropTypes.arrayOf(PropTypes.any),
+  ]),
+  columns: PropTypes.arrayOf(PropTypes.any),
   onChange: PropTypes.func,
 }
 
