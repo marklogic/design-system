@@ -1,8 +1,8 @@
 import React from 'react'
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs'
 import { MLIcon } from '@marklogic/design-system'
-import * as AntIcons from '@marklogic/design-system/MLIcon/ant-icons'
-import * as FontAwesomeIcons from '@marklogic/design-system/MLIcon/font-awesome-icons'
+import * as AntIcons from '@marklogic/design-system/src/MLIcon/ant-icons'
+import * as FontAwesomeIcons from '@marklogic/design-system/src/MLIcon/font-awesome-icons'
 import './19-Icon.css'
 import { endsWith } from 'lodash-es'
 
@@ -49,7 +49,6 @@ export const exampleIcon = () => {
   const component = AntIcons.CheckCircleFilled
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       {iconTile({
         component,
         props,
@@ -80,7 +79,6 @@ export const shortList = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       {iconTile({ component: MLIcon.UserOutlined, props })}
       {iconTile({ component: MLIcon.QuestionCircleOutlined, props })}
       {iconTile({ component: MLIcon.SearchOutlined, props })}
@@ -144,7 +142,6 @@ export const completeList = () => {
   }
   return (
     <div className='ml-storybook-icon-list'>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       {list}
     </div>
   )

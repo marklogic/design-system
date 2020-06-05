@@ -1,0 +1,36 @@
+@import '../../styles.less';
+
+.ml-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 8px 24px 8px 10px;
+  min-height: 64px;
+  color: white;
+  background-color: @site-header-color;
+  font: 400 24px "Helvetica Neue", sans-serif;
+
+  .ml-header-title, .ml-header-avatar, .ml-header-extra {
+    flex-grow: 0;
+  }
+
+  .ml-header-spacer {
+    flex-grow: 1;
+  }
+
+  .ml-header-title {
+    margin-left: 10px;
+    font-size: 28px;
+  }
+
+  .ml-header-extra {
+    .anticon {
+      color: white;
+    }
+
+    > * {
+      margin-left: 30px;
+    }
+  }
+}
