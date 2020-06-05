@@ -50,7 +50,7 @@ export default ${iconName}
 const generateFontAwesomeIconCode = (faIconName, wrappedIconName, packageName, iconStyleSuffix) => {
   return (
 `import { wrapFontAwesomeIcon } from './icon-wrappers'
-import { ${faIconName} } from '@fortawesome/free-solid-svg-icons/${faIconName}'
+import { ${faIconName} } from '${packageName}/${faIconName}'
 const ${wrappedIconName} = wrapFontAwesomeIcon(${faIconName}, '${iconStyleSuffix}')
 export default ${wrappedIconName}
 `

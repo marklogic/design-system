@@ -1,4 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-import { faCompass } from '@fortawesome/free-solid-svg-icons/faCompass'
+import { faCompass } from '@fortawesome/free-regular-svg-icons/faCompass'
 const CompassRegular = wrapFontAwesomeIcon(faCompass, 'Regular')
 export default CompassRegular
