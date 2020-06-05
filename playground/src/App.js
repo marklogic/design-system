@@ -8,6 +8,7 @@ import {
   MLLayout,
   MLSlider,
   MLConfigProvider,
+  MLPopover,
   MLResult,
   MLEditableSlider,
   MLEmpty,
@@ -88,7 +89,26 @@ export default class App extends Component {
               <MLDatePicker size='default' />
               <MLDatePicker size='large' />
               <MLDatePicker picker='week' />
-              <MLResult type='primary' icon={<Route />} title='title' subTitle='subtitle' />
+              <div style={{ height: 100 }}>Some short content</div>
+              <MLPopover
+                arrowPointAtCenter
+                content={<div><p>Content</p><p>Content</p></div>}
+                placement='top'
+                title='Title'
+                trigger={[
+                  'hover',
+                  'focus',
+                ]}
+              >
+                <MLButton
+                  style={{ marginLeft: '100px' }}
+                  size='small'
+                  type='primary'
+                >
+                  Hover me
+                </MLButton>
+              </MLPopover>
+              <MLResult type='primary' icon={<RouteIcon />} title='title' subTitle='subtitle' />
               <MLEmpty />
               <div
                 style={{

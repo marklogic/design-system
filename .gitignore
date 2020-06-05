@@ -23,3 +23,6 @@ storybook-dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.idea
+playground/report*.json
