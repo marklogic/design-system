@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRestroom = require('@fortawesome/free-solid-svg-icons/faRestroom.js')
-
-const RestroomSolid = wrapFontAwesomeIcon(faRestroom)
+import { faRestroom } from '@fortawesome/free-solid-svg-icons/faRestroom'
+const RestroomSolid = wrapFontAwesomeIcon(faRestroom, 'Solid')
 export default RestroomSolid

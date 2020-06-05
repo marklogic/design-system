@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStickyNote = require('@fortawesome/free-regular-svg-icons/faStickyNote.js')
-
-const StickyNoteRegular = wrapFontAwesomeIcon(faStickyNote)
+import { faStickyNote } from '@fortawesome/free-solid-svg-icons/faStickyNote'
+const StickyNoteRegular = wrapFontAwesomeIcon(faStickyNote, 'Regular')
 export default StickyNoteRegular

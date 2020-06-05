@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStethoscope = require('@fortawesome/free-solid-svg-icons/faStethoscope.js')
-
-const StethoscopeSolid = wrapFontAwesomeIcon(faStethoscope)
+import { faStethoscope } from '@fortawesome/free-solid-svg-icons/faStethoscope'
+const StethoscopeSolid = wrapFontAwesomeIcon(faStethoscope, 'Solid')
 export default StethoscopeSolid

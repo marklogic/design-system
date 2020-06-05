@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faNotEqual = require('@fortawesome/free-solid-svg-icons/faNotEqual.js')
-
-const NotEqualSolid = wrapFontAwesomeIcon(faNotEqual)
+import { faNotEqual } from '@fortawesome/free-solid-svg-icons/faNotEqual'
+const NotEqualSolid = wrapFontAwesomeIcon(faNotEqual, 'Solid')
 export default NotEqualSolid

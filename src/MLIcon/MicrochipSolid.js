@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMicrochip = require('@fortawesome/free-solid-svg-icons/faMicrochip.js')
-
-const MicrochipSolid = wrapFontAwesomeIcon(faMicrochip)
+import { faMicrochip } from '@fortawesome/free-solid-svg-icons/faMicrochip'
+const MicrochipSolid = wrapFontAwesomeIcon(faMicrochip, 'Solid')
 export default MicrochipSolid

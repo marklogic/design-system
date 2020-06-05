@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPrint = require('@fortawesome/free-solid-svg-icons/faPrint.js')
-
-const PrintSolid = wrapFontAwesomeIcon(faPrint)
+import { faPrint } from '@fortawesome/free-solid-svg-icons/faPrint'
+const PrintSolid = wrapFontAwesomeIcon(faPrint, 'Solid')
 export default PrintSolid

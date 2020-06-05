@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faChevronCircleUp = require('@fortawesome/free-solid-svg-icons/faChevronCircleUp.js')
-
-const ChevronCircleUpSolid = wrapFontAwesomeIcon(faChevronCircleUp)
+import { faChevronCircleUp } from '@fortawesome/free-solid-svg-icons/faChevronCircleUp'
+const ChevronCircleUpSolid = wrapFontAwesomeIcon(faChevronCircleUp, 'Solid')
 export default ChevronCircleUpSolid

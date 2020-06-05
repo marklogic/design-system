@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLiraSign = require('@fortawesome/free-solid-svg-icons/faLiraSign.js')
-
-const LiraSignSolid = wrapFontAwesomeIcon(faLiraSign)
+import { faLiraSign } from '@fortawesome/free-solid-svg-icons/faLiraSign'
+const LiraSignSolid = wrapFontAwesomeIcon(faLiraSign, 'Solid')
 export default LiraSignSolid

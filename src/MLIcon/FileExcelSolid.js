@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFileExcel = require('@fortawesome/free-solid-svg-icons/faFileExcel.js')
-
-const FileExcelSolid = wrapFontAwesomeIcon(faFileExcel)
+import { faFileExcel } from '@fortawesome/free-solid-svg-icons/faFileExcel'
+const FileExcelSolid = wrapFontAwesomeIcon(faFileExcel, 'Solid')
 export default FileExcelSolid

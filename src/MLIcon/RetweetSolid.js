@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRetweet = require('@fortawesome/free-solid-svg-icons/faRetweet.js')
-
-const RetweetSolid = wrapFontAwesomeIcon(faRetweet)
+import { faRetweet } from '@fortawesome/free-solid-svg-icons/faRetweet'
+const RetweetSolid = wrapFontAwesomeIcon(faRetweet, 'Solid')
 export default RetweetSolid

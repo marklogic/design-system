@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faQuoteLeft = require('@fortawesome/free-solid-svg-icons/faQuoteLeft.js')
-
-const QuoteLeftSolid = wrapFontAwesomeIcon(faQuoteLeft)
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons/faQuoteLeft'
+const QuoteLeftSolid = wrapFontAwesomeIcon(faQuoteLeft, 'Solid')
 export default QuoteLeftSolid

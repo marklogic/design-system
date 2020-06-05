@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSnowflake = require('@fortawesome/free-regular-svg-icons/faSnowflake.js')
-
-const SnowflakeRegular = wrapFontAwesomeIcon(faSnowflake)
+import { faSnowflake } from '@fortawesome/free-solid-svg-icons/faSnowflake'
+const SnowflakeRegular = wrapFontAwesomeIcon(faSnowflake, 'Regular')
 export default SnowflakeRegular

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDumbbell = require('@fortawesome/free-solid-svg-icons/faDumbbell.js')
-
-const DumbbellSolid = wrapFontAwesomeIcon(faDumbbell)
+import { faDumbbell } from '@fortawesome/free-solid-svg-icons/faDumbbell'
+const DumbbellSolid = wrapFontAwesomeIcon(faDumbbell, 'Solid')
 export default DumbbellSolid

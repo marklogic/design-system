@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFlag = require('@fortawesome/free-regular-svg-icons/faFlag.js')
-
-const FlagRegular = wrapFontAwesomeIcon(faFlag)
+import { faFlag } from '@fortawesome/free-solid-svg-icons/faFlag'
+const FlagRegular = wrapFontAwesomeIcon(faFlag, 'Regular')
 export default FlagRegular

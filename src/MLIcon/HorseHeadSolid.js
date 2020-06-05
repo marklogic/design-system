@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHorseHead = require('@fortawesome/free-solid-svg-icons/faHorseHead.js')
-
-const HorseHeadSolid = wrapFontAwesomeIcon(faHorseHead)
+import { faHorseHead } from '@fortawesome/free-solid-svg-icons/faHorseHead'
+const HorseHeadSolid = wrapFontAwesomeIcon(faHorseHead, 'Solid')
 export default HorseHeadSolid

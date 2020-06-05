@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHandSparkles = require('@fortawesome/free-solid-svg-icons/faHandSparkles.js')
-
-const HandSparklesSolid = wrapFontAwesomeIcon(faHandSparkles)
+import { faHandSparkles } from '@fortawesome/free-solid-svg-icons/faHandSparkles'
+const HandSparklesSolid = wrapFontAwesomeIcon(faHandSparkles, 'Solid')
 export default HandSparklesSolid

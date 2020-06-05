@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLocationArrow = require('@fortawesome/free-solid-svg-icons/faLocationArrow.js')
-
-const LocationArrowSolid = wrapFontAwesomeIcon(faLocationArrow)
+import { faLocationArrow } from '@fortawesome/free-solid-svg-icons/faLocationArrow'
+const LocationArrowSolid = wrapFontAwesomeIcon(faLocationArrow, 'Solid')
 export default LocationArrowSolid

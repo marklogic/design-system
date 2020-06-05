@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHotdog = require('@fortawesome/free-solid-svg-icons/faHotdog.js')
-
-const HotdogSolid = wrapFontAwesomeIcon(faHotdog)
+import { faHotdog } from '@fortawesome/free-solid-svg-icons/faHotdog'
+const HotdogSolid = wrapFontAwesomeIcon(faHotdog, 'Solid')
 export default HotdogSolid

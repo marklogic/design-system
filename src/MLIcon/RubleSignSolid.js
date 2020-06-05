@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRubleSign = require('@fortawesome/free-solid-svg-icons/faRubleSign.js')
-
-const RubleSignSolid = wrapFontAwesomeIcon(faRubleSign)
+import { faRubleSign } from '@fortawesome/free-solid-svg-icons/faRubleSign'
+const RubleSignSolid = wrapFontAwesomeIcon(faRubleSign, 'Solid')
 export default RubleSignSolid

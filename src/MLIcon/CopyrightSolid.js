@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCopyright = require('@fortawesome/free-solid-svg-icons/faCopyright.js')
-
-const CopyrightSolid = wrapFontAwesomeIcon(faCopyright)
+import { faCopyright } from '@fortawesome/free-solid-svg-icons/faCopyright'
+const CopyrightSolid = wrapFontAwesomeIcon(faCopyright, 'Solid')
 export default CopyrightSolid

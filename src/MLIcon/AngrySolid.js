@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAngry = require('@fortawesome/free-solid-svg-icons/faAngry.js')
-
-const AngrySolid = wrapFontAwesomeIcon(faAngry)
+import { faAngry } from '@fortawesome/free-solid-svg-icons/faAngry'
+const AngrySolid = wrapFontAwesomeIcon(faAngry, 'Solid')
 export default AngrySolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRedoAlt = require('@fortawesome/free-solid-svg-icons/faRedoAlt.js')
-
-const RedoAltSolid = wrapFontAwesomeIcon(faRedoAlt)
+import { faRedoAlt } from '@fortawesome/free-solid-svg-icons/faRedoAlt'
+const RedoAltSolid = wrapFontAwesomeIcon(faRedoAlt, 'Solid')
 export default RedoAltSolid

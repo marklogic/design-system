@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBookDead = require('@fortawesome/free-solid-svg-icons/faBookDead.js')
-
-const BookDeadSolid = wrapFontAwesomeIcon(faBookDead)
+import { faBookDead } from '@fortawesome/free-solid-svg-icons/faBookDead'
+const BookDeadSolid = wrapFontAwesomeIcon(faBookDead, 'Solid')
 export default BookDeadSolid

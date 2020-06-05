@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTrafficLight = require('@fortawesome/free-solid-svg-icons/faTrafficLight.js')
-
-const TrafficLightSolid = wrapFontAwesomeIcon(faTrafficLight)
+import { faTrafficLight } from '@fortawesome/free-solid-svg-icons/faTrafficLight'
+const TrafficLightSolid = wrapFontAwesomeIcon(faTrafficLight, 'Solid')
 export default TrafficLightSolid

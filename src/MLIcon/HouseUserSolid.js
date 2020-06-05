@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHouseUser = require('@fortawesome/free-solid-svg-icons/faHouseUser.js')
-
-const HouseUserSolid = wrapFontAwesomeIcon(faHouseUser)
+import { faHouseUser } from '@fortawesome/free-solid-svg-icons/faHouseUser'
+const HouseUserSolid = wrapFontAwesomeIcon(faHouseUser, 'Solid')
 export default HouseUserSolid

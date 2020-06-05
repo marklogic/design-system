@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStopwatch = require('@fortawesome/free-solid-svg-icons/faStopwatch.js')
-
-const StopwatchSolid = wrapFontAwesomeIcon(faStopwatch)
+import { faStopwatch } from '@fortawesome/free-solid-svg-icons/faStopwatch'
+const StopwatchSolid = wrapFontAwesomeIcon(faStopwatch, 'Solid')
 export default StopwatchSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPrescriptionBottle = require('@fortawesome/free-solid-svg-icons/faPrescriptionBottle.js')
-
-const PrescriptionBottleSolid = wrapFontAwesomeIcon(faPrescriptionBottle)
+import { faPrescriptionBottle } from '@fortawesome/free-solid-svg-icons/faPrescriptionBottle'
+const PrescriptionBottleSolid = wrapFontAwesomeIcon(faPrescriptionBottle, 'Solid')
 export default PrescriptionBottleSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMoneyBill = require('@fortawesome/free-solid-svg-icons/faMoneyBill.js')
-
-const MoneyBillSolid = wrapFontAwesomeIcon(faMoneyBill)
+import { faMoneyBill } from '@fortawesome/free-solid-svg-icons/faMoneyBill'
+const MoneyBillSolid = wrapFontAwesomeIcon(faMoneyBill, 'Solid')
 export default MoneyBillSolid

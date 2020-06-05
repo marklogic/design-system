@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTransgenderAlt = require('@fortawesome/free-solid-svg-icons/faTransgenderAlt.js')
-
-const TransgenderAltSolid = wrapFontAwesomeIcon(faTransgenderAlt)
+import { faTransgenderAlt } from '@fortawesome/free-solid-svg-icons/faTransgenderAlt'
+const TransgenderAltSolid = wrapFontAwesomeIcon(faTransgenderAlt, 'Solid')
 export default TransgenderAltSolid

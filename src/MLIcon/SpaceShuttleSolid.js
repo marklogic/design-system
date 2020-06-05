@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSpaceShuttle = require('@fortawesome/free-solid-svg-icons/faSpaceShuttle.js')
-
-const SpaceShuttleSolid = wrapFontAwesomeIcon(faSpaceShuttle)
+import { faSpaceShuttle } from '@fortawesome/free-solid-svg-icons/faSpaceShuttle'
+const SpaceShuttleSolid = wrapFontAwesomeIcon(faSpaceShuttle, 'Solid')
 export default SpaceShuttleSolid

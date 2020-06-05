@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMemory = require('@fortawesome/free-solid-svg-icons/faMemory.js')
-
-const MemorySolid = wrapFontAwesomeIcon(faMemory)
+import { faMemory } from '@fortawesome/free-solid-svg-icons/faMemory'
+const MemorySolid = wrapFontAwesomeIcon(faMemory, 'Solid')
 export default MemorySolid

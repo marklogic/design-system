@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRemoveFormat = require('@fortawesome/free-solid-svg-icons/faRemoveFormat.js')
-
-const RemoveFormatSolid = wrapFontAwesomeIcon(faRemoveFormat)
+import { faRemoveFormat } from '@fortawesome/free-solid-svg-icons/faRemoveFormat'
+const RemoveFormatSolid = wrapFontAwesomeIcon(faRemoveFormat, 'Solid')
 export default RemoveFormatSolid

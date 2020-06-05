@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTrashRestore = require('@fortawesome/free-solid-svg-icons/faTrashRestore.js')
-
-const TrashRestoreSolid = wrapFontAwesomeIcon(faTrashRestore)
+import { faTrashRestore } from '@fortawesome/free-solid-svg-icons/faTrashRestore'
+const TrashRestoreSolid = wrapFontAwesomeIcon(faTrashRestore, 'Solid')
 export default TrashRestoreSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faThermometerThreeQuarters = require('@fortawesome/free-solid-svg-icons/faThermometerThreeQuarters.js')
-
-const ThermometerThreeQuartersSolid = wrapFontAwesomeIcon(faThermometerThreeQuarters)
+import { faThermometerThreeQuarters } from '@fortawesome/free-solid-svg-icons/faThermometerThreeQuarters'
+const ThermometerThreeQuartersSolid = wrapFontAwesomeIcon(faThermometerThreeQuarters, 'Solid')
 export default ThermometerThreeQuartersSolid

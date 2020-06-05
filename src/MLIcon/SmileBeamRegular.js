@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSmileBeam = require('@fortawesome/free-regular-svg-icons/faSmileBeam.js')
-
-const SmileBeamRegular = wrapFontAwesomeIcon(faSmileBeam)
+import { faSmileBeam } from '@fortawesome/free-solid-svg-icons/faSmileBeam'
+const SmileBeamRegular = wrapFontAwesomeIcon(faSmileBeam, 'Regular')
 export default SmileBeamRegular

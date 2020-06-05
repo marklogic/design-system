@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFilter = require('@fortawesome/free-solid-svg-icons/faFilter.js')
-
-const FilterSolid = wrapFontAwesomeIcon(faFilter)
+import { faFilter } from '@fortawesome/free-solid-svg-icons/faFilter'
+const FilterSolid = wrapFontAwesomeIcon(faFilter, 'Solid')
 export default FilterSolid

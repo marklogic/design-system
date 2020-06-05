@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTaxi = require('@fortawesome/free-solid-svg-icons/faTaxi.js')
-
-const TaxiSolid = wrapFontAwesomeIcon(faTaxi)
+import { faTaxi } from '@fortawesome/free-solid-svg-icons/faTaxi'
+const TaxiSolid = wrapFontAwesomeIcon(faTaxi, 'Solid')
 export default TaxiSolid

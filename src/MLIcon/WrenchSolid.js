@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faWrench = require('@fortawesome/free-solid-svg-icons/faWrench.js')
-
-const WrenchSolid = wrapFontAwesomeIcon(faWrench)
+import { faWrench } from '@fortawesome/free-solid-svg-icons/faWrench'
+const WrenchSolid = wrapFontAwesomeIcon(faWrench, 'Solid')
 export default WrenchSolid

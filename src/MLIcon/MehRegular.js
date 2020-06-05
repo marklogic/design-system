@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMeh = require('@fortawesome/free-regular-svg-icons/faMeh.js')
-
-const MehRegular = wrapFontAwesomeIcon(faMeh)
+import { faMeh } from '@fortawesome/free-solid-svg-icons/faMeh'
+const MehRegular = wrapFontAwesomeIcon(faMeh, 'Regular')
 export default MehRegular

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDungeon = require('@fortawesome/free-solid-svg-icons/faDungeon.js')
-
-const DungeonSolid = wrapFontAwesomeIcon(faDungeon)
+import { faDungeon } from '@fortawesome/free-solid-svg-icons/faDungeon'
+const DungeonSolid = wrapFontAwesomeIcon(faDungeon, 'Solid')
 export default DungeonSolid

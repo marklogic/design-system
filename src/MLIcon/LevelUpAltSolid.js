@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLevelUpAlt = require('@fortawesome/free-solid-svg-icons/faLevelUpAlt.js')
-
-const LevelUpAltSolid = wrapFontAwesomeIcon(faLevelUpAlt)
+import { faLevelUpAlt } from '@fortawesome/free-solid-svg-icons/faLevelUpAlt'
+const LevelUpAltSolid = wrapFontAwesomeIcon(faLevelUpAlt, 'Solid')
 export default LevelUpAltSolid

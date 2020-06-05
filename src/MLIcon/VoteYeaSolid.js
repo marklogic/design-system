@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faVoteYea = require('@fortawesome/free-solid-svg-icons/faVoteYea.js')
-
-const VoteYeaSolid = wrapFontAwesomeIcon(faVoteYea)
+import { faVoteYea } from '@fortawesome/free-solid-svg-icons/faVoteYea'
+const VoteYeaSolid = wrapFontAwesomeIcon(faVoteYea, 'Solid')
 export default VoteYeaSolid

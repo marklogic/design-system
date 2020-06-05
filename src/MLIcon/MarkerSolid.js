@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMarker = require('@fortawesome/free-solid-svg-icons/faMarker.js')
-
-const MarkerSolid = wrapFontAwesomeIcon(faMarker)
+import { faMarker } from '@fortawesome/free-solid-svg-icons/faMarker'
+const MarkerSolid = wrapFontAwesomeIcon(faMarker, 'Solid')
 export default MarkerSolid

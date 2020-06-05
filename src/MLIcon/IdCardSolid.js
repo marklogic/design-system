@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faIdCard = require('@fortawesome/free-solid-svg-icons/faIdCard.js')
-
-const IdCardSolid = wrapFontAwesomeIcon(faIdCard)
+import { faIdCard } from '@fortawesome/free-solid-svg-icons/faIdCard'
+const IdCardSolid = wrapFontAwesomeIcon(faIdCard, 'Solid')
 export default IdCardSolid

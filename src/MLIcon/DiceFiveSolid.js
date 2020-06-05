@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDiceFive = require('@fortawesome/free-solid-svg-icons/faDiceFive.js')
-
-const DiceFiveSolid = wrapFontAwesomeIcon(faDiceFive)
+import { faDiceFive } from '@fortawesome/free-solid-svg-icons/faDiceFive'
+const DiceFiveSolid = wrapFontAwesomeIcon(faDiceFive, 'Solid')
 export default DiceFiveSolid

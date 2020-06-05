@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faUserCircle = require('@fortawesome/free-regular-svg-icons/faUserCircle.js')
-
-const UserCircleRegular = wrapFontAwesomeIcon(faUserCircle)
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons/faUserCircle'
+const UserCircleRegular = wrapFontAwesomeIcon(faUserCircle, 'Regular')
 export default UserCircleRegular

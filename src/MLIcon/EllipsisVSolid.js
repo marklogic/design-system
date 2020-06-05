@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faEllipsisV = require('@fortawesome/free-solid-svg-icons/faEllipsisV.js')
-
-const EllipsisVSolid = wrapFontAwesomeIcon(faEllipsisV)
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons/faEllipsisV'
+const EllipsisVSolid = wrapFontAwesomeIcon(faEllipsisV, 'Solid')
 export default EllipsisVSolid

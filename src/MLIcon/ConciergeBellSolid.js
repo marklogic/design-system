@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faConciergeBell = require('@fortawesome/free-solid-svg-icons/faConciergeBell.js')
-
-const ConciergeBellSolid = wrapFontAwesomeIcon(faConciergeBell)
+import { faConciergeBell } from '@fortawesome/free-solid-svg-icons/faConciergeBell'
+const ConciergeBellSolid = wrapFontAwesomeIcon(faConciergeBell, 'Solid')
 export default ConciergeBellSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPersonBooth = require('@fortawesome/free-solid-svg-icons/faPersonBooth.js')
-
-const PersonBoothSolid = wrapFontAwesomeIcon(faPersonBooth)
+import { faPersonBooth } from '@fortawesome/free-solid-svg-icons/faPersonBooth'
+const PersonBoothSolid = wrapFontAwesomeIcon(faPersonBooth, 'Solid')
 export default PersonBoothSolid

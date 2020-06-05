@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faKey = require('@fortawesome/free-solid-svg-icons/faKey.js')
-
-const KeySolid = wrapFontAwesomeIcon(faKey)
+import { faKey } from '@fortawesome/free-solid-svg-icons/faKey'
+const KeySolid = wrapFontAwesomeIcon(faKey, 'Solid')
 export default KeySolid

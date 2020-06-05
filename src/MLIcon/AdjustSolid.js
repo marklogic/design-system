@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAdjust = require('@fortawesome/free-solid-svg-icons/faAdjust.js')
-
-const AdjustSolid = wrapFontAwesomeIcon(faAdjust)
+import { faAdjust } from '@fortawesome/free-solid-svg-icons/faAdjust'
+const AdjustSolid = wrapFontAwesomeIcon(faAdjust, 'Solid')
 export default AdjustSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSyncAlt = require('@fortawesome/free-solid-svg-icons/faSyncAlt.js')
-
-const SyncAltSolid = wrapFontAwesomeIcon(faSyncAlt)
+import { faSyncAlt } from '@fortawesome/free-solid-svg-icons/faSyncAlt'
+const SyncAltSolid = wrapFontAwesomeIcon(faSyncAlt, 'Solid')
 export default SyncAltSolid

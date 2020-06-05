@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faUserTimes = require('@fortawesome/free-solid-svg-icons/faUserTimes.js')
-
-const UserTimesSolid = wrapFontAwesomeIcon(faUserTimes)
+import { faUserTimes } from '@fortawesome/free-solid-svg-icons/faUserTimes'
+const UserTimesSolid = wrapFontAwesomeIcon(faUserTimes, 'Solid')
 export default UserTimesSolid

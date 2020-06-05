@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFileDownload = require('@fortawesome/free-solid-svg-icons/faFileDownload.js')
-
-const FileDownloadSolid = wrapFontAwesomeIcon(faFileDownload)
+import { faFileDownload } from '@fortawesome/free-solid-svg-icons/faFileDownload'
+const FileDownloadSolid = wrapFontAwesomeIcon(faFileDownload, 'Solid')
 export default FileDownloadSolid

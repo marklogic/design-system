@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faGlobeAsia = require('@fortawesome/free-solid-svg-icons/faGlobeAsia.js')
-
-const GlobeAsiaSolid = wrapFontAwesomeIcon(faGlobeAsia)
+import { faGlobeAsia } from '@fortawesome/free-solid-svg-icons/faGlobeAsia'
+const GlobeAsiaSolid = wrapFontAwesomeIcon(faGlobeAsia, 'Solid')
 export default GlobeAsiaSolid

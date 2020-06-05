@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTrashAlt = require('@fortawesome/free-regular-svg-icons/faTrashAlt.js')
-
-const TrashAltRegular = wrapFontAwesomeIcon(faTrashAlt)
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons/faTrashAlt'
+const TrashAltRegular = wrapFontAwesomeIcon(faTrashAlt, 'Regular')
 export default TrashAltRegular

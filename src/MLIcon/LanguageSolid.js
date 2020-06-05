@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLanguage = require('@fortawesome/free-solid-svg-icons/faLanguage.js')
-
-const LanguageSolid = wrapFontAwesomeIcon(faLanguage)
+import { faLanguage } from '@fortawesome/free-solid-svg-icons/faLanguage'
+const LanguageSolid = wrapFontAwesomeIcon(faLanguage, 'Solid')
 export default LanguageSolid

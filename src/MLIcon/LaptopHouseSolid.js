@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLaptopHouse = require('@fortawesome/free-solid-svg-icons/faLaptopHouse.js')
-
-const LaptopHouseSolid = wrapFontAwesomeIcon(faLaptopHouse)
+import { faLaptopHouse } from '@fortawesome/free-solid-svg-icons/faLaptopHouse'
+const LaptopHouseSolid = wrapFontAwesomeIcon(faLaptopHouse, 'Solid')
 export default LaptopHouseSolid

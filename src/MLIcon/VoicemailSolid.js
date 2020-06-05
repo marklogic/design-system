@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faVoicemail = require('@fortawesome/free-solid-svg-icons/faVoicemail.js')
-
-const VoicemailSolid = wrapFontAwesomeIcon(faVoicemail)
+import { faVoicemail } from '@fortawesome/free-solid-svg-icons/faVoicemail'
+const VoicemailSolid = wrapFontAwesomeIcon(faVoicemail, 'Solid')
 export default VoicemailSolid

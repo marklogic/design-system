@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHatCowboySide = require('@fortawesome/free-solid-svg-icons/faHatCowboySide.js')
-
-const HatCowboySideSolid = wrapFontAwesomeIcon(faHatCowboySide)
+import { faHatCowboySide } from '@fortawesome/free-solid-svg-icons/faHatCowboySide'
+const HatCowboySideSolid = wrapFontAwesomeIcon(faHatCowboySide, 'Solid')
 export default HatCowboySideSolid

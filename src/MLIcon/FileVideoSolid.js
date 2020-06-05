@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFileVideo = require('@fortawesome/free-solid-svg-icons/faFileVideo.js')
-
-const FileVideoSolid = wrapFontAwesomeIcon(faFileVideo)
+import { faFileVideo } from '@fortawesome/free-solid-svg-icons/faFileVideo'
+const FileVideoSolid = wrapFontAwesomeIcon(faFileVideo, 'Solid')
 export default FileVideoSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBookOpen = require('@fortawesome/free-solid-svg-icons/faBookOpen.js')
-
-const BookOpenSolid = wrapFontAwesomeIcon(faBookOpen)
+import { faBookOpen } from '@fortawesome/free-solid-svg-icons/faBookOpen'
+const BookOpenSolid = wrapFontAwesomeIcon(faBookOpen, 'Solid')
 export default BookOpenSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAlignJustify = require('@fortawesome/free-solid-svg-icons/faAlignJustify.js')
-
-const AlignJustifySolid = wrapFontAwesomeIcon(faAlignJustify)
+import { faAlignJustify } from '@fortawesome/free-solid-svg-icons/faAlignJustify'
+const AlignJustifySolid = wrapFontAwesomeIcon(faAlignJustify, 'Solid')
 export default AlignJustifySolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHourglassEnd = require('@fortawesome/free-solid-svg-icons/faHourglassEnd.js')
-
-const HourglassEndSolid = wrapFontAwesomeIcon(faHourglassEnd)
+import { faHourglassEnd } from '@fortawesome/free-solid-svg-icons/faHourglassEnd'
+const HourglassEndSolid = wrapFontAwesomeIcon(faHourglassEnd, 'Solid')
 export default HourglassEndSolid

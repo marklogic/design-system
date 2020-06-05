@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCodeBranch = require('@fortawesome/free-solid-svg-icons/faCodeBranch.js')
-
-const CodeBranchSolid = wrapFontAwesomeIcon(faCodeBranch)
+import { faCodeBranch } from '@fortawesome/free-solid-svg-icons/faCodeBranch'
+const CodeBranchSolid = wrapFontAwesomeIcon(faCodeBranch, 'Solid')
 export default CodeBranchSolid

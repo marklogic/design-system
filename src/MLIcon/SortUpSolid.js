@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSortUp = require('@fortawesome/free-solid-svg-icons/faSortUp.js')
-
-const SortUpSolid = wrapFontAwesomeIcon(faSortUp)
+import { faSortUp } from '@fortawesome/free-solid-svg-icons/faSortUp'
+const SortUpSolid = wrapFontAwesomeIcon(faSortUp, 'Solid')
 export default SortUpSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faKhanda = require('@fortawesome/free-solid-svg-icons/faKhanda.js')
-
-const KhandaSolid = wrapFontAwesomeIcon(faKhanda)
+import { faKhanda } from '@fortawesome/free-solid-svg-icons/faKhanda'
+const KhandaSolid = wrapFontAwesomeIcon(faKhanda, 'Solid')
 export default KhandaSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTerminal = require('@fortawesome/free-solid-svg-icons/faTerminal.js')
-
-const TerminalSolid = wrapFontAwesomeIcon(faTerminal)
+import { faTerminal } from '@fortawesome/free-solid-svg-icons/faTerminal'
+const TerminalSolid = wrapFontAwesomeIcon(faTerminal, 'Solid')
 export default TerminalSolid

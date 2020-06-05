@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCloudMeatball = require('@fortawesome/free-solid-svg-icons/faCloudMeatball.js')
-
-const CloudMeatballSolid = wrapFontAwesomeIcon(faCloudMeatball)
+import { faCloudMeatball } from '@fortawesome/free-solid-svg-icons/faCloudMeatball'
+const CloudMeatballSolid = wrapFontAwesomeIcon(faCloudMeatball, 'Solid')
 export default CloudMeatballSolid

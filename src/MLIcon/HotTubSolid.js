@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHotTub = require('@fortawesome/free-solid-svg-icons/faHotTub.js')
-
-const HotTubSolid = wrapFontAwesomeIcon(faHotTub)
+import { faHotTub } from '@fortawesome/free-solid-svg-icons/faHotTub'
+const HotTubSolid = wrapFontAwesomeIcon(faHotTub, 'Solid')
 export default HotTubSolid

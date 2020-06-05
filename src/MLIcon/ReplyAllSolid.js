@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faReplyAll = require('@fortawesome/free-solid-svg-icons/faReplyAll.js')
-
-const ReplyAllSolid = wrapFontAwesomeIcon(faReplyAll)
+import { faReplyAll } from '@fortawesome/free-solid-svg-icons/faReplyAll'
+const ReplyAllSolid = wrapFontAwesomeIcon(faReplyAll, 'Solid')
 export default ReplyAllSolid

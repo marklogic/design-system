@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCarrot = require('@fortawesome/free-solid-svg-icons/faCarrot.js')
-
-const CarrotSolid = wrapFontAwesomeIcon(faCarrot)
+import { faCarrot } from '@fortawesome/free-solid-svg-icons/faCarrot'
+const CarrotSolid = wrapFontAwesomeIcon(faCarrot, 'Solid')
 export default CarrotSolid

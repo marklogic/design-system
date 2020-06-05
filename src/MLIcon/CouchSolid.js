@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCouch = require('@fortawesome/free-solid-svg-icons/faCouch.js')
-
-const CouchSolid = wrapFontAwesomeIcon(faCouch)
+import { faCouch } from '@fortawesome/free-solid-svg-icons/faCouch'
+const CouchSolid = wrapFontAwesomeIcon(faCouch, 'Solid')
 export default CouchSolid

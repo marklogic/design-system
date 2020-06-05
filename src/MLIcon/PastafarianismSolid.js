@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPastafarianism = require('@fortawesome/free-solid-svg-icons/faPastafarianism.js')
-
-const PastafarianismSolid = wrapFontAwesomeIcon(faPastafarianism)
+import { faPastafarianism } from '@fortawesome/free-solid-svg-icons/faPastafarianism'
+const PastafarianismSolid = wrapFontAwesomeIcon(faPastafarianism, 'Solid')
 export default PastafarianismSolid

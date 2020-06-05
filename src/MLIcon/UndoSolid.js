@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faUndo = require('@fortawesome/free-solid-svg-icons/faUndo.js')
-
-const UndoSolid = wrapFontAwesomeIcon(faUndo)
+import { faUndo } from '@fortawesome/free-solid-svg-icons/faUndo'
+const UndoSolid = wrapFontAwesomeIcon(faUndo, 'Solid')
 export default UndoSolid

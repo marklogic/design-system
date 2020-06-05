@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faEthernet = require('@fortawesome/free-solid-svg-icons/faEthernet.js')
-
-const EthernetSolid = wrapFontAwesomeIcon(faEthernet)
+import { faEthernet } from '@fortawesome/free-solid-svg-icons/faEthernet'
+const EthernetSolid = wrapFontAwesomeIcon(faEthernet, 'Solid')
 export default EthernetSolid

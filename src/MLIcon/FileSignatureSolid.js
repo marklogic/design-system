@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFileSignature = require('@fortawesome/free-solid-svg-icons/faFileSignature.js')
-
-const FileSignatureSolid = wrapFontAwesomeIcon(faFileSignature)
+import { faFileSignature } from '@fortawesome/free-solid-svg-icons/faFileSignature'
+const FileSignatureSolid = wrapFontAwesomeIcon(faFileSignature, 'Solid')
 export default FileSignatureSolid

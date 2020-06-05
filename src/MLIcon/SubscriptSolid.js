@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSubscript = require('@fortawesome/free-solid-svg-icons/faSubscript.js')
-
-const SubscriptSolid = wrapFontAwesomeIcon(faSubscript)
+import { faSubscript } from '@fortawesome/free-solid-svg-icons/faSubscript'
+const SubscriptSolid = wrapFontAwesomeIcon(faSubscript, 'Solid')
 export default SubscriptSolid

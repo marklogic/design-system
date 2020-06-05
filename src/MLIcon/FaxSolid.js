@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFax = require('@fortawesome/free-solid-svg-icons/faFax.js')
-
-const FaxSolid = wrapFontAwesomeIcon(faFax)
+import { faFax } from '@fortawesome/free-solid-svg-icons/faFax'
+const FaxSolid = wrapFontAwesomeIcon(faFax, 'Solid')
 export default FaxSolid

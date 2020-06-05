@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFaucet = require('@fortawesome/free-solid-svg-icons/faFaucet.js')
-
-const FaucetSolid = wrapFontAwesomeIcon(faFaucet)
+import { faFaucet } from '@fortawesome/free-solid-svg-icons/faFaucet'
+const FaucetSolid = wrapFontAwesomeIcon(faFaucet, 'Solid')
 export default FaucetSolid

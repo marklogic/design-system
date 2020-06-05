@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHandLizard = require('@fortawesome/free-solid-svg-icons/faHandLizard.js')
-
-const HandLizardSolid = wrapFontAwesomeIcon(faHandLizard)
+import { faHandLizard } from '@fortawesome/free-solid-svg-icons/faHandLizard'
+const HandLizardSolid = wrapFontAwesomeIcon(faHandLizard, 'Solid')
 export default HandLizardSolid

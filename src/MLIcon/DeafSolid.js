@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDeaf = require('@fortawesome/free-solid-svg-icons/faDeaf.js')
-
-const DeafSolid = wrapFontAwesomeIcon(faDeaf)
+import { faDeaf } from '@fortawesome/free-solid-svg-icons/faDeaf'
+const DeafSolid = wrapFontAwesomeIcon(faDeaf, 'Solid')
 export default DeafSolid

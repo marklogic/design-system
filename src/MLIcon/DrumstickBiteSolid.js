@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDrumstickBite = require('@fortawesome/free-solid-svg-icons/faDrumstickBite.js')
-
-const DrumstickBiteSolid = wrapFontAwesomeIcon(faDrumstickBite)
+import { faDrumstickBite } from '@fortawesome/free-solid-svg-icons/faDrumstickBite'
+const DrumstickBiteSolid = wrapFontAwesomeIcon(faDrumstickBite, 'Solid')
 export default DrumstickBiteSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faScrewdriver = require('@fortawesome/free-solid-svg-icons/faScrewdriver.js')
-
-const ScrewdriverSolid = wrapFontAwesomeIcon(faScrewdriver)
+import { faScrewdriver } from '@fortawesome/free-solid-svg-icons/faScrewdriver'
+const ScrewdriverSolid = wrapFontAwesomeIcon(faScrewdriver, 'Solid')
 export default ScrewdriverSolid

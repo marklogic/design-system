@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSwimmingPool = require('@fortawesome/free-solid-svg-icons/faSwimmingPool.js')
-
-const SwimmingPoolSolid = wrapFontAwesomeIcon(faSwimmingPool)
+import { faSwimmingPool } from '@fortawesome/free-solid-svg-icons/faSwimmingPool'
+const SwimmingPoolSolid = wrapFontAwesomeIcon(faSwimmingPool, 'Solid')
 export default SwimmingPoolSolid

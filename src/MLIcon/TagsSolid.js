@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTags = require('@fortawesome/free-solid-svg-icons/faTags.js')
-
-const TagsSolid = wrapFontAwesomeIcon(faTags)
+import { faTags } from '@fortawesome/free-solid-svg-icons/faTags'
+const TagsSolid = wrapFontAwesomeIcon(faTags, 'Solid')
 export default TagsSolid

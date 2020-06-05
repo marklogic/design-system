@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTextHeight = require('@fortawesome/free-solid-svg-icons/faTextHeight.js')
-
-const TextHeightSolid = wrapFontAwesomeIcon(faTextHeight)
+import { faTextHeight } from '@fortawesome/free-solid-svg-icons/faTextHeight'
+const TextHeightSolid = wrapFontAwesomeIcon(faTextHeight, 'Solid')
 export default TextHeightSolid

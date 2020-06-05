@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faOtter = require('@fortawesome/free-solid-svg-icons/faOtter.js')
-
-const OtterSolid = wrapFontAwesomeIcon(faOtter)
+import { faOtter } from '@fortawesome/free-solid-svg-icons/faOtter'
+const OtterSolid = wrapFontAwesomeIcon(faOtter, 'Solid')
 export default OtterSolid

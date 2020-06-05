@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPenNib = require('@fortawesome/free-solid-svg-icons/faPenNib.js')
-
-const PenNibSolid = wrapFontAwesomeIcon(faPenNib)
+import { faPenNib } from '@fortawesome/free-solid-svg-icons/faPenNib'
+const PenNibSolid = wrapFontAwesomeIcon(faPenNib, 'Solid')
 export default PenNibSolid

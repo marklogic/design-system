@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDrum = require('@fortawesome/free-solid-svg-icons/faDrum.js')
-
-const DrumSolid = wrapFontAwesomeIcon(faDrum)
+import { faDrum } from '@fortawesome/free-solid-svg-icons/faDrum'
+const DrumSolid = wrapFontAwesomeIcon(faDrum, 'Solid')
 export default DrumSolid

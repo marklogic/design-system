@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faUserNinja = require('@fortawesome/free-solid-svg-icons/faUserNinja.js')
-
-const UserNinjaSolid = wrapFontAwesomeIcon(faUserNinja)
+import { faUserNinja } from '@fortawesome/free-solid-svg-icons/faUserNinja'
+const UserNinjaSolid = wrapFontAwesomeIcon(faUserNinja, 'Solid')
 export default UserNinjaSolid

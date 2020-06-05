@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPalette = require('@fortawesome/free-solid-svg-icons/faPalette.js')
-
-const PaletteSolid = wrapFontAwesomeIcon(faPalette)
+import { faPalette } from '@fortawesome/free-solid-svg-icons/faPalette'
+const PaletteSolid = wrapFontAwesomeIcon(faPalette, 'Solid')
 export default PaletteSolid

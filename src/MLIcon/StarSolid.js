@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStar = require('@fortawesome/free-solid-svg-icons/faStar.js')
-
-const StarSolid = wrapFontAwesomeIcon(faStar)
+import { faStar } from '@fortawesome/free-solid-svg-icons/faStar'
+const StarSolid = wrapFontAwesomeIcon(faStar, 'Solid')
 export default StarSolid

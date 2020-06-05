@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faThumbtack = require('@fortawesome/free-solid-svg-icons/faThumbtack.js')
-
-const ThumbtackSolid = wrapFontAwesomeIcon(faThumbtack)
+import { faThumbtack } from '@fortawesome/free-solid-svg-icons/faThumbtack'
+const ThumbtackSolid = wrapFontAwesomeIcon(faThumbtack, 'Solid')
 export default ThumbtackSolid

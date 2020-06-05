@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFilePowerpoint = require('@fortawesome/free-solid-svg-icons/faFilePowerpoint.js')
-
-const FilePowerpointSolid = wrapFontAwesomeIcon(faFilePowerpoint)
+import { faFilePowerpoint } from '@fortawesome/free-solid-svg-icons/faFilePowerpoint'
+const FilePowerpointSolid = wrapFontAwesomeIcon(faFilePowerpoint, 'Solid')
 export default FilePowerpointSolid

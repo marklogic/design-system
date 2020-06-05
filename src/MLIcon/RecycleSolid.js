@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRecycle = require('@fortawesome/free-solid-svg-icons/faRecycle.js')
-
-const RecycleSolid = wrapFontAwesomeIcon(faRecycle)
+import { faRecycle } from '@fortawesome/free-solid-svg-icons/faRecycle'
+const RecycleSolid = wrapFontAwesomeIcon(faRecycle, 'Solid')
 export default RecycleSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLungsVirus = require('@fortawesome/free-solid-svg-icons/faLungsVirus.js')
-
-const LungsVirusSolid = wrapFontAwesomeIcon(faLungsVirus)
+import { faLungsVirus } from '@fortawesome/free-solid-svg-icons/faLungsVirus'
+const LungsVirusSolid = wrapFontAwesomeIcon(faLungsVirus, 'Solid')
 export default LungsVirusSolid

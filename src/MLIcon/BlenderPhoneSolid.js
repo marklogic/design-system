@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBlenderPhone = require('@fortawesome/free-solid-svg-icons/faBlenderPhone.js')
-
-const BlenderPhoneSolid = wrapFontAwesomeIcon(faBlenderPhone)
+import { faBlenderPhone } from '@fortawesome/free-solid-svg-icons/faBlenderPhone'
+const BlenderPhoneSolid = wrapFontAwesomeIcon(faBlenderPhone, 'Solid')
 export default BlenderPhoneSolid

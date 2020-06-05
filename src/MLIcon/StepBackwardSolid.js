@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStepBackward = require('@fortawesome/free-solid-svg-icons/faStepBackward.js')
-
-const StepBackwardSolid = wrapFontAwesomeIcon(faStepBackward)
+import { faStepBackward } from '@fortawesome/free-solid-svg-icons/faStepBackward'
+const StepBackwardSolid = wrapFontAwesomeIcon(faStepBackward, 'Solid')
 export default StepBackwardSolid

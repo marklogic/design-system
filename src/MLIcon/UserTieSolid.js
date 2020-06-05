@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faUserTie = require('@fortawesome/free-solid-svg-icons/faUserTie.js')
-
-const UserTieSolid = wrapFontAwesomeIcon(faUserTie)
+import { faUserTie } from '@fortawesome/free-solid-svg-icons/faUserTie'
+const UserTieSolid = wrapFontAwesomeIcon(faUserTie, 'Solid')
 export default UserTieSolid

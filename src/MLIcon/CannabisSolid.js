@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCannabis = require('@fortawesome/free-solid-svg-icons/faCannabis.js')
-
-const CannabisSolid = wrapFontAwesomeIcon(faCannabis)
+import { faCannabis } from '@fortawesome/free-solid-svg-icons/faCannabis'
+const CannabisSolid = wrapFontAwesomeIcon(faCannabis, 'Solid')
 export default CannabisSolid

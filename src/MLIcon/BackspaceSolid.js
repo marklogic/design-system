@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBackspace = require('@fortawesome/free-solid-svg-icons/faBackspace.js')
-
-const BackspaceSolid = wrapFontAwesomeIcon(faBackspace)
+import { faBackspace } from '@fortawesome/free-solid-svg-icons/faBackspace'
+const BackspaceSolid = wrapFontAwesomeIcon(faBackspace, 'Solid')
 export default BackspaceSolid

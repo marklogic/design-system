@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHelicopter = require('@fortawesome/free-solid-svg-icons/faHelicopter.js')
-
-const HelicopterSolid = wrapFontAwesomeIcon(faHelicopter)
+import { faHelicopter } from '@fortawesome/free-solid-svg-icons/faHelicopter'
+const HelicopterSolid = wrapFontAwesomeIcon(faHelicopter, 'Solid')
 export default HelicopterSolid

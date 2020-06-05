@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faIdBadge = require('@fortawesome/free-regular-svg-icons/faIdBadge.js')
-
-const IdBadgeRegular = wrapFontAwesomeIcon(faIdBadge)
+import { faIdBadge } from '@fortawesome/free-solid-svg-icons/faIdBadge'
+const IdBadgeRegular = wrapFontAwesomeIcon(faIdBadge, 'Regular')
 export default IdBadgeRegular

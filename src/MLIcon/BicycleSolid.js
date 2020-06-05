@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBicycle = require('@fortawesome/free-solid-svg-icons/faBicycle.js')
-
-const BicycleSolid = wrapFontAwesomeIcon(faBicycle)
+import { faBicycle } from '@fortawesome/free-solid-svg-icons/faBicycle'
+const BicycleSolid = wrapFontAwesomeIcon(faBicycle, 'Solid')
 export default BicycleSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBatteryEmpty = require('@fortawesome/free-solid-svg-icons/faBatteryEmpty.js')
-
-const BatteryEmptySolid = wrapFontAwesomeIcon(faBatteryEmpty)
+import { faBatteryEmpty } from '@fortawesome/free-solid-svg-icons/faBatteryEmpty'
+const BatteryEmptySolid = wrapFontAwesomeIcon(faBatteryEmpty, 'Solid')
 export default BatteryEmptySolid

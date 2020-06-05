@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRecordVinyl = require('@fortawesome/free-solid-svg-icons/faRecordVinyl.js')
-
-const RecordVinylSolid = wrapFontAwesomeIcon(faRecordVinyl)
+import { faRecordVinyl } from '@fortawesome/free-solid-svg-icons/faRecordVinyl'
+const RecordVinylSolid = wrapFontAwesomeIcon(faRecordVinyl, 'Solid')
 export default RecordVinylSolid

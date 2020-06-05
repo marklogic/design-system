@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMagnet = require('@fortawesome/free-solid-svg-icons/faMagnet.js')
-
-const MagnetSolid = wrapFontAwesomeIcon(faMagnet)
+import { faMagnet } from '@fortawesome/free-solid-svg-icons/faMagnet'
+const MagnetSolid = wrapFontAwesomeIcon(faMagnet, 'Solid')
 export default MagnetSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDesktop = require('@fortawesome/free-solid-svg-icons/faDesktop.js')
-
-const DesktopSolid = wrapFontAwesomeIcon(faDesktop)
+import { faDesktop } from '@fortawesome/free-solid-svg-icons/faDesktop'
+const DesktopSolid = wrapFontAwesomeIcon(faDesktop, 'Solid')
 export default DesktopSolid

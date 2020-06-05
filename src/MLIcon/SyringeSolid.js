@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSyringe = require('@fortawesome/free-solid-svg-icons/faSyringe.js')
-
-const SyringeSolid = wrapFontAwesomeIcon(faSyringe)
+import { faSyringe } from '@fortawesome/free-solid-svg-icons/faSyringe'
+const SyringeSolid = wrapFontAwesomeIcon(faSyringe, 'Solid')
 export default SyringeSolid

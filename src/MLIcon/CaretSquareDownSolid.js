@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCaretSquareDown = require('@fortawesome/free-solid-svg-icons/faCaretSquareDown.js')
-
-const CaretSquareDownSolid = wrapFontAwesomeIcon(faCaretSquareDown)
+import { faCaretSquareDown } from '@fortawesome/free-solid-svg-icons/faCaretSquareDown'
+const CaretSquareDownSolid = wrapFontAwesomeIcon(faCaretSquareDown, 'Solid')
 export default CaretSquareDownSolid

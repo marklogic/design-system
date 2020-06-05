@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faWindowMaximize = require('@fortawesome/free-regular-svg-icons/faWindowMaximize.js')
-
-const WindowMaximizeRegular = wrapFontAwesomeIcon(faWindowMaximize)
+import { faWindowMaximize } from '@fortawesome/free-solid-svg-icons/faWindowMaximize'
+const WindowMaximizeRegular = wrapFontAwesomeIcon(faWindowMaximize, 'Regular')
 export default WindowMaximizeRegular

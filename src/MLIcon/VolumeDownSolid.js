@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faVolumeDown = require('@fortawesome/free-solid-svg-icons/faVolumeDown.js')
-
-const VolumeDownSolid = wrapFontAwesomeIcon(faVolumeDown)
+import { faVolumeDown } from '@fortawesome/free-solid-svg-icons/faVolumeDown'
+const VolumeDownSolid = wrapFontAwesomeIcon(faVolumeDown, 'Solid')
 export default VolumeDownSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMenorah = require('@fortawesome/free-solid-svg-icons/faMenorah.js')
-
-const MenorahSolid = wrapFontAwesomeIcon(faMenorah)
+import { faMenorah } from '@fortawesome/free-solid-svg-icons/faMenorah'
+const MenorahSolid = wrapFontAwesomeIcon(faMenorah, 'Solid')
 export default MenorahSolid

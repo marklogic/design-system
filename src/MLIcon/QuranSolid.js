@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faQuran = require('@fortawesome/free-solid-svg-icons/faQuran.js')
-
-const QuranSolid = wrapFontAwesomeIcon(faQuran)
+import { faQuran } from '@fortawesome/free-solid-svg-icons/faQuran'
+const QuranSolid = wrapFontAwesomeIcon(faQuran, 'Solid')
 export default QuranSolid

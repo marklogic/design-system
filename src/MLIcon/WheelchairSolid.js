@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faWheelchair = require('@fortawesome/free-solid-svg-icons/faWheelchair.js')
-
-const WheelchairSolid = wrapFontAwesomeIcon(faWheelchair)
+import { faWheelchair } from '@fortawesome/free-solid-svg-icons/faWheelchair'
+const WheelchairSolid = wrapFontAwesomeIcon(faWheelchair, 'Solid')
 export default WheelchairSolid

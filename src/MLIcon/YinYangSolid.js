@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faYinYang = require('@fortawesome/free-solid-svg-icons/faYinYang.js')
-
-const YinYangSolid = wrapFontAwesomeIcon(faYinYang)
+import { faYinYang } from '@fortawesome/free-solid-svg-icons/faYinYang'
+const YinYangSolid = wrapFontAwesomeIcon(faYinYang, 'Solid')
 export default YinYangSolid

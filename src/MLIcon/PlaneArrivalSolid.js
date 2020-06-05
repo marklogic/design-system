@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPlaneArrival = require('@fortawesome/free-solid-svg-icons/faPlaneArrival.js')
-
-const PlaneArrivalSolid = wrapFontAwesomeIcon(faPlaneArrival)
+import { faPlaneArrival } from '@fortawesome/free-solid-svg-icons/faPlaneArrival'
+const PlaneArrivalSolid = wrapFontAwesomeIcon(faPlaneArrival, 'Solid')
 export default PlaneArrivalSolid

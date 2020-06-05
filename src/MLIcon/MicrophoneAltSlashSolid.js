@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMicrophoneAltSlash = require('@fortawesome/free-solid-svg-icons/faMicrophoneAltSlash.js')
-
-const MicrophoneAltSlashSolid = wrapFontAwesomeIcon(faMicrophoneAltSlash)
+import { faMicrophoneAltSlash } from '@fortawesome/free-solid-svg-icons/faMicrophoneAltSlash'
+const MicrophoneAltSlashSolid = wrapFontAwesomeIcon(faMicrophoneAltSlash, 'Solid')
 export default MicrophoneAltSlashSolid

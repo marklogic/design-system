@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faVolumeMute = require('@fortawesome/free-solid-svg-icons/faVolumeMute.js')
-
-const VolumeMuteSolid = wrapFontAwesomeIcon(faVolumeMute)
+import { faVolumeMute } from '@fortawesome/free-solid-svg-icons/faVolumeMute'
+const VolumeMuteSolid = wrapFontAwesomeIcon(faVolumeMute, 'Solid')
 export default VolumeMuteSolid

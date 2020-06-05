@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBath = require('@fortawesome/free-solid-svg-icons/faBath.js')
-
-const BathSolid = wrapFontAwesomeIcon(faBath)
+import { faBath } from '@fortawesome/free-solid-svg-icons/faBath'
+const BathSolid = wrapFontAwesomeIcon(faBath, 'Solid')
 export default BathSolid

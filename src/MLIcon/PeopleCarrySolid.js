@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPeopleCarry = require('@fortawesome/free-solid-svg-icons/faPeopleCarry.js')
-
-const PeopleCarrySolid = wrapFontAwesomeIcon(faPeopleCarry)
+import { faPeopleCarry } from '@fortawesome/free-solid-svg-icons/faPeopleCarry'
+const PeopleCarrySolid = wrapFontAwesomeIcon(faPeopleCarry, 'Solid')
 export default PeopleCarrySolid

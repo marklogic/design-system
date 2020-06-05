@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMoon = require('@fortawesome/free-solid-svg-icons/faMoon.js')
-
-const MoonSolid = wrapFontAwesomeIcon(faMoon)
+import { faMoon } from '@fortawesome/free-solid-svg-icons/faMoon'
+const MoonSolid = wrapFontAwesomeIcon(faMoon, 'Solid')
 export default MoonSolid

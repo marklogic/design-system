@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faParagraph = require('@fortawesome/free-solid-svg-icons/faParagraph.js')
-
-const ParagraphSolid = wrapFontAwesomeIcon(faParagraph)
+import { faParagraph } from '@fortawesome/free-solid-svg-icons/faParagraph'
+const ParagraphSolid = wrapFontAwesomeIcon(faParagraph, 'Solid')
 export default ParagraphSolid

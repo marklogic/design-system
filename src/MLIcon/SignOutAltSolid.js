@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSignOutAlt = require('@fortawesome/free-solid-svg-icons/faSignOutAlt.js')
-
-const SignOutAltSolid = wrapFontAwesomeIcon(faSignOutAlt)
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons/faSignOutAlt'
+const SignOutAltSolid = wrapFontAwesomeIcon(faSignOutAlt, 'Solid')
 export default SignOutAltSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTextWidth = require('@fortawesome/free-solid-svg-icons/faTextWidth.js')
-
-const TextWidthSolid = wrapFontAwesomeIcon(faTextWidth)
+import { faTextWidth } from '@fortawesome/free-solid-svg-icons/faTextWidth'
+const TextWidthSolid = wrapFontAwesomeIcon(faTextWidth, 'Solid')
 export default TextWidthSolid

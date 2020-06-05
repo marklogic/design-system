@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRibbon = require('@fortawesome/free-solid-svg-icons/faRibbon.js')
-
-const RibbonSolid = wrapFontAwesomeIcon(faRibbon)
+import { faRibbon } from '@fortawesome/free-solid-svg-icons/faRibbon'
+const RibbonSolid = wrapFontAwesomeIcon(faRibbon, 'Solid')
 export default RibbonSolid

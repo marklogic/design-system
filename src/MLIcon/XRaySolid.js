@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faXRay = require('@fortawesome/free-solid-svg-icons/faXRay.js')
-
-const XRaySolid = wrapFontAwesomeIcon(faXRay)
+import { faXRay } from '@fortawesome/free-solid-svg-icons/faXRay'
+const XRaySolid = wrapFontAwesomeIcon(faXRay, 'Solid')
 export default XRaySolid

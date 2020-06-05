@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPenFancy = require('@fortawesome/free-solid-svg-icons/faPenFancy.js')
-
-const PenFancySolid = wrapFontAwesomeIcon(faPenFancy)
+import { faPenFancy } from '@fortawesome/free-solid-svg-icons/faPenFancy'
+const PenFancySolid = wrapFontAwesomeIcon(faPenFancy, 'Solid')
 export default PenFancySolid

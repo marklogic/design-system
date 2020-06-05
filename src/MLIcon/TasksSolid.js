@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTasks = require('@fortawesome/free-solid-svg-icons/faTasks.js')
-
-const TasksSolid = wrapFontAwesomeIcon(faTasks)
+import { faTasks } from '@fortawesome/free-solid-svg-icons/faTasks'
+const TasksSolid = wrapFontAwesomeIcon(faTasks, 'Solid')
 export default TasksSolid

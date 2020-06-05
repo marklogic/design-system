@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faClock = require('@fortawesome/free-solid-svg-icons/faClock.js')
-
-const ClockSolid = wrapFontAwesomeIcon(faClock)
+import { faClock } from '@fortawesome/free-solid-svg-icons/faClock'
+const ClockSolid = wrapFontAwesomeIcon(faClock, 'Solid')
 export default ClockSolid

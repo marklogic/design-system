@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faObjectUngroup = require('@fortawesome/free-regular-svg-icons/faObjectUngroup.js')
-
-const ObjectUngroupRegular = wrapFontAwesomeIcon(faObjectUngroup)
+import { faObjectUngroup } from '@fortawesome/free-solid-svg-icons/faObjectUngroup'
+const ObjectUngroupRegular = wrapFontAwesomeIcon(faObjectUngroup, 'Regular')
 export default ObjectUngroupRegular

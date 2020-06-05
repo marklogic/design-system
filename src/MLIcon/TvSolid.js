@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTv = require('@fortawesome/free-solid-svg-icons/faTv.js')
-
-const TvSolid = wrapFontAwesomeIcon(faTv)
+import { faTv } from '@fortawesome/free-solid-svg-icons/faTv'
+const TvSolid = wrapFontAwesomeIcon(faTv, 'Solid')
 export default TvSolid

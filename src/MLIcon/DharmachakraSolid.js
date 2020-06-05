@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDharmachakra = require('@fortawesome/free-solid-svg-icons/faDharmachakra.js')
-
-const DharmachakraSolid = wrapFontAwesomeIcon(faDharmachakra)
+import { faDharmachakra } from '@fortawesome/free-solid-svg-icons/faDharmachakra'
+const DharmachakraSolid = wrapFontAwesomeIcon(faDharmachakra, 'Solid')
 export default DharmachakraSolid

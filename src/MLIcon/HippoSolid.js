@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHippo = require('@fortawesome/free-solid-svg-icons/faHippo.js')
-
-const HippoSolid = wrapFontAwesomeIcon(faHippo)
+import { faHippo } from '@fortawesome/free-solid-svg-icons/faHippo'
+const HippoSolid = wrapFontAwesomeIcon(faHippo, 'Solid')
 export default HippoSolid

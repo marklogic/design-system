@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBreadSlice = require('@fortawesome/free-solid-svg-icons/faBreadSlice.js')
-
-const BreadSliceSolid = wrapFontAwesomeIcon(faBreadSlice)
+import { faBreadSlice } from '@fortawesome/free-solid-svg-icons/faBreadSlice'
+const BreadSliceSolid = wrapFontAwesomeIcon(faBreadSlice, 'Solid')
 export default BreadSliceSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faUnderline = require('@fortawesome/free-solid-svg-icons/faUnderline.js')
-
-const UnderlineSolid = wrapFontAwesomeIcon(faUnderline)
+import { faUnderline } from '@fortawesome/free-solid-svg-icons/faUnderline'
+const UnderlineSolid = wrapFontAwesomeIcon(faUnderline, 'Solid')
 export default UnderlineSolid

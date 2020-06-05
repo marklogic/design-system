@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMoon = require('@fortawesome/free-regular-svg-icons/faMoon.js')
-
-const MoonRegular = wrapFontAwesomeIcon(faMoon)
+import { faMoon } from '@fortawesome/free-solid-svg-icons/faMoon'
+const MoonRegular = wrapFontAwesomeIcon(faMoon, 'Regular')
 export default MoonRegular

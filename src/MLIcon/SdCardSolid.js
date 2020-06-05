@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSdCard = require('@fortawesome/free-solid-svg-icons/faSdCard.js')
-
-const SdCardSolid = wrapFontAwesomeIcon(faSdCard)
+import { faSdCard } from '@fortawesome/free-solid-svg-icons/faSdCard'
+const SdCardSolid = wrapFontAwesomeIcon(faSdCard, 'Solid')
 export default SdCardSolid

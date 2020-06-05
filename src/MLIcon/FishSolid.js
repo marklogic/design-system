@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFish = require('@fortawesome/free-solid-svg-icons/faFish.js')
-
-const FishSolid = wrapFontAwesomeIcon(faFish)
+import { faFish } from '@fortawesome/free-solid-svg-icons/faFish'
+const FishSolid = wrapFontAwesomeIcon(faFish, 'Solid')
 export default FishSolid

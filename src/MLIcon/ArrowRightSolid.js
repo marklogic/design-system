@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faArrowRight = require('@fortawesome/free-solid-svg-icons/faArrowRight.js')
-
-const ArrowRightSolid = wrapFontAwesomeIcon(faArrowRight)
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight'
+const ArrowRightSolid = wrapFontAwesomeIcon(faArrowRight, 'Solid')
 export default ArrowRightSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHandHoldingMedical = require('@fortawesome/free-solid-svg-icons/faHandHoldingMedical.js')
-
-const HandHoldingMedicalSolid = wrapFontAwesomeIcon(faHandHoldingMedical)
+import { faHandHoldingMedical } from '@fortawesome/free-solid-svg-icons/faHandHoldingMedical'
+const HandHoldingMedicalSolid = wrapFontAwesomeIcon(faHandHoldingMedical, 'Solid')
 export default HandHoldingMedicalSolid

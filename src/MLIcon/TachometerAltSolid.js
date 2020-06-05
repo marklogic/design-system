@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTachometerAlt = require('@fortawesome/free-solid-svg-icons/faTachometerAlt.js')
-
-const TachometerAltSolid = wrapFontAwesomeIcon(faTachometerAlt)
+import { faTachometerAlt } from '@fortawesome/free-solid-svg-icons/faTachometerAlt'
+const TachometerAltSolid = wrapFontAwesomeIcon(faTachometerAlt, 'Solid')
 export default TachometerAltSolid

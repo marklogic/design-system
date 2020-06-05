@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faShoppingBasket = require('@fortawesome/free-solid-svg-icons/faShoppingBasket.js')
-
-const ShoppingBasketSolid = wrapFontAwesomeIcon(faShoppingBasket)
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons/faShoppingBasket'
+const ShoppingBasketSolid = wrapFontAwesomeIcon(faShoppingBasket, 'Solid')
 export default ShoppingBasketSolid

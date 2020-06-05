@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faJedi = require('@fortawesome/free-solid-svg-icons/faJedi.js')
-
-const JediSolid = wrapFontAwesomeIcon(faJedi)
+import { faJedi } from '@fortawesome/free-solid-svg-icons/faJedi'
+const JediSolid = wrapFontAwesomeIcon(faJedi, 'Solid')
 export default JediSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faList = require('@fortawesome/free-solid-svg-icons/faList.js')
-
-const ListSolid = wrapFontAwesomeIcon(faList)
+import { faList } from '@fortawesome/free-solid-svg-icons/faList'
+const ListSolid = wrapFontAwesomeIcon(faList, 'Solid')
 export default ListSolid

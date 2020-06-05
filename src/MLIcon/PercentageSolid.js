@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPercentage = require('@fortawesome/free-solid-svg-icons/faPercentage.js')
-
-const PercentageSolid = wrapFontAwesomeIcon(faPercentage)
+import { faPercentage } from '@fortawesome/free-solid-svg-icons/faPercentage'
+const PercentageSolid = wrapFontAwesomeIcon(faPercentage, 'Solid')
 export default PercentageSolid

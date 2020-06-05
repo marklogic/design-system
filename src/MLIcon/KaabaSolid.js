@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faKaaba = require('@fortawesome/free-solid-svg-icons/faKaaba.js')
-
-const KaabaSolid = wrapFontAwesomeIcon(faKaaba)
+import { faKaaba } from '@fortawesome/free-solid-svg-icons/faKaaba'
+const KaabaSolid = wrapFontAwesomeIcon(faKaaba, 'Solid')
 export default KaabaSolid

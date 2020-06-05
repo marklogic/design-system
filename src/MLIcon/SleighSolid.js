@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSleigh = require('@fortawesome/free-solid-svg-icons/faSleigh.js')
-
-const SleighSolid = wrapFontAwesomeIcon(faSleigh)
+import { faSleigh } from '@fortawesome/free-solid-svg-icons/faSleigh'
+const SleighSolid = wrapFontAwesomeIcon(faSleigh, 'Solid')
 export default SleighSolid

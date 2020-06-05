@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faToolbox = require('@fortawesome/free-solid-svg-icons/faToolbox.js')
-
-const ToolboxSolid = wrapFontAwesomeIcon(faToolbox)
+import { faToolbox } from '@fortawesome/free-solid-svg-icons/faToolbox'
+const ToolboxSolid = wrapFontAwesomeIcon(faToolbox, 'Solid')
 export default ToolboxSolid

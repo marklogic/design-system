@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCut = require('@fortawesome/free-solid-svg-icons/faCut.js')
-
-const CutSolid = wrapFontAwesomeIcon(faCut)
+import { faCut } from '@fortawesome/free-solid-svg-icons/faCut'
+const CutSolid = wrapFontAwesomeIcon(faCut, 'Solid')
 export default CutSolid

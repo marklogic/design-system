@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faToggleOn = require('@fortawesome/free-solid-svg-icons/faToggleOn.js')
-
-const ToggleOnSolid = wrapFontAwesomeIcon(faToggleOn)
+import { faToggleOn } from '@fortawesome/free-solid-svg-icons/faToggleOn'
+const ToggleOnSolid = wrapFontAwesomeIcon(faToggleOn, 'Solid')
 export default ToggleOnSolid

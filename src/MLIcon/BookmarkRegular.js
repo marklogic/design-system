@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBookmark = require('@fortawesome/free-regular-svg-icons/faBookmark.js')
-
-const BookmarkRegular = wrapFontAwesomeIcon(faBookmark)
+import { faBookmark } from '@fortawesome/free-solid-svg-icons/faBookmark'
+const BookmarkRegular = wrapFontAwesomeIcon(faBookmark, 'Regular')
 export default BookmarkRegular

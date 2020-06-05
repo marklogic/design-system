@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHeart = require('@fortawesome/free-solid-svg-icons/faHeart.js')
-
-const HeartSolid = wrapFontAwesomeIcon(faHeart)
+import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart'
+const HeartSolid = wrapFontAwesomeIcon(faHeart, 'Solid')
 export default HeartSolid

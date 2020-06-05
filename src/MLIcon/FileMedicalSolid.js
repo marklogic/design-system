@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFileMedical = require('@fortawesome/free-solid-svg-icons/faFileMedical.js')
-
-const FileMedicalSolid = wrapFontAwesomeIcon(faFileMedical)
+import { faFileMedical } from '@fortawesome/free-solid-svg-icons/faFileMedical'
+const FileMedicalSolid = wrapFontAwesomeIcon(faFileMedical, 'Solid')
 export default FileMedicalSolid

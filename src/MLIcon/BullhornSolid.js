@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBullhorn = require('@fortawesome/free-solid-svg-icons/faBullhorn.js')
-
-const BullhornSolid = wrapFontAwesomeIcon(faBullhorn)
+import { faBullhorn } from '@fortawesome/free-solid-svg-icons/faBullhorn'
+const BullhornSolid = wrapFontAwesomeIcon(faBullhorn, 'Solid')
 export default BullhornSolid

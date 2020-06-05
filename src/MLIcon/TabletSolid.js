@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTablet = require('@fortawesome/free-solid-svg-icons/faTablet.js')
-
-const TabletSolid = wrapFontAwesomeIcon(faTablet)
+import { faTablet } from '@fortawesome/free-solid-svg-icons/faTablet'
+const TabletSolid = wrapFontAwesomeIcon(faTablet, 'Solid')
 export default TabletSolid

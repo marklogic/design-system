@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faKiss = require('@fortawesome/free-regular-svg-icons/faKiss.js')
-
-const KissRegular = wrapFontAwesomeIcon(faKiss)
+import { faKiss } from '@fortawesome/free-solid-svg-icons/faKiss'
+const KissRegular = wrapFontAwesomeIcon(faKiss, 'Regular')
 export default KissRegular

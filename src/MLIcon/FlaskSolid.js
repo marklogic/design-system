@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFlask = require('@fortawesome/free-solid-svg-icons/faFlask.js')
-
-const FlaskSolid = wrapFontAwesomeIcon(faFlask)
+import { faFlask } from '@fortawesome/free-solid-svg-icons/faFlask'
+const FlaskSolid = wrapFontAwesomeIcon(faFlask, 'Solid')
 export default FlaskSolid

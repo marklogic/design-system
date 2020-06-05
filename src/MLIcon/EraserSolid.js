@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faEraser = require('@fortawesome/free-solid-svg-icons/faEraser.js')
-
-const EraserSolid = wrapFontAwesomeIcon(faEraser)
+import { faEraser } from '@fortawesome/free-solid-svg-icons/faEraser'
+const EraserSolid = wrapFontAwesomeIcon(faEraser, 'Solid')
 export default EraserSolid

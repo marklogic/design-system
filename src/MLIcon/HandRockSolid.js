@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHandRock = require('@fortawesome/free-solid-svg-icons/faHandRock.js')
-
-const HandRockSolid = wrapFontAwesomeIcon(faHandRock)
+import { faHandRock } from '@fortawesome/free-solid-svg-icons/faHandRock'
+const HandRockSolid = wrapFontAwesomeIcon(faHandRock, 'Solid')
 export default HandRockSolid

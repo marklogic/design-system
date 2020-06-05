@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPumpSoap = require('@fortawesome/free-solid-svg-icons/faPumpSoap.js')
-
-const PumpSoapSolid = wrapFontAwesomeIcon(faPumpSoap)
+import { faPumpSoap } from '@fortawesome/free-solid-svg-icons/faPumpSoap'
+const PumpSoapSolid = wrapFontAwesomeIcon(faPumpSoap, 'Solid')
 export default PumpSoapSolid

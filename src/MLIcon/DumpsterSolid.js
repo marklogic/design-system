@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDumpster = require('@fortawesome/free-solid-svg-icons/faDumpster.js')
-
-const DumpsterSolid = wrapFontAwesomeIcon(faDumpster)
+import { faDumpster } from '@fortawesome/free-solid-svg-icons/faDumpster'
+const DumpsterSolid = wrapFontAwesomeIcon(faDumpster, 'Solid')
 export default DumpsterSolid

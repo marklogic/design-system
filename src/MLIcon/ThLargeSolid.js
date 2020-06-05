@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faThLarge = require('@fortawesome/free-solid-svg-icons/faThLarge.js')
-
-const ThLargeSolid = wrapFontAwesomeIcon(faThLarge)
+import { faThLarge } from '@fortawesome/free-solid-svg-icons/faThLarge'
+const ThLargeSolid = wrapFontAwesomeIcon(faThLarge, 'Solid')
 export default ThLargeSolid

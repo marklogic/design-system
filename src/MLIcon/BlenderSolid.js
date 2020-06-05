@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBlender = require('@fortawesome/free-solid-svg-icons/faBlender.js')
-
-const BlenderSolid = wrapFontAwesomeIcon(faBlender)
+import { faBlender } from '@fortawesome/free-solid-svg-icons/faBlender'
+const BlenderSolid = wrapFontAwesomeIcon(faBlender, 'Solid')
 export default BlenderSolid

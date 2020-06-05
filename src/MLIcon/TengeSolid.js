@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTenge = require('@fortawesome/free-solid-svg-icons/faTenge.js')
-
-const TengeSolid = wrapFontAwesomeIcon(faTenge)
+import { faTenge } from '@fortawesome/free-solid-svg-icons/faTenge'
+const TengeSolid = wrapFontAwesomeIcon(faTenge, 'Solid')
 export default TengeSolid

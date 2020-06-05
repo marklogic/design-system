@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRing = require('@fortawesome/free-solid-svg-icons/faRing.js')
-
-const RingSolid = wrapFontAwesomeIcon(faRing)
+import { faRing } from '@fortawesome/free-solid-svg-icons/faRing'
+const RingSolid = wrapFontAwesomeIcon(faRing, 'Solid')
 export default RingSolid

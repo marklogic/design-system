@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCheese = require('@fortawesome/free-solid-svg-icons/faCheese.js')
-
-const CheeseSolid = wrapFontAwesomeIcon(faCheese)
+import { faCheese } from '@fortawesome/free-solid-svg-icons/faCheese'
+const CheeseSolid = wrapFontAwesomeIcon(faCheese, 'Solid')
 export default CheeseSolid

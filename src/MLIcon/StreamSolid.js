@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStream = require('@fortawesome/free-solid-svg-icons/faStream.js')
-
-const StreamSolid = wrapFontAwesomeIcon(faStream)
+import { faStream } from '@fortawesome/free-solid-svg-icons/faStream'
+const StreamSolid = wrapFontAwesomeIcon(faStream, 'Solid')
 export default StreamSolid

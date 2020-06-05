@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTimes = require('@fortawesome/free-solid-svg-icons/faTimes.js')
-
-const TimesSolid = wrapFontAwesomeIcon(faTimes)
+import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes'
+const TimesSolid = wrapFontAwesomeIcon(faTimes, 'Solid')
 export default TimesSolid

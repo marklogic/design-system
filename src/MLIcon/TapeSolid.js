@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTape = require('@fortawesome/free-solid-svg-icons/faTape.js')
-
-const TapeSolid = wrapFontAwesomeIcon(faTape)
+import { faTape } from '@fortawesome/free-solid-svg-icons/faTape'
+const TapeSolid = wrapFontAwesomeIcon(faTape, 'Solid')
 export default TapeSolid

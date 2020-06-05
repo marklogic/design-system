@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDoorClosed = require('@fortawesome/free-solid-svg-icons/faDoorClosed.js')
-
-const DoorClosedSolid = wrapFontAwesomeIcon(faDoorClosed)
+import { faDoorClosed } from '@fortawesome/free-solid-svg-icons/faDoorClosed'
+const DoorClosedSolid = wrapFontAwesomeIcon(faDoorClosed, 'Solid')
 export default DoorClosedSolid

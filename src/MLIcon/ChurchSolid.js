@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faChurch = require('@fortawesome/free-solid-svg-icons/faChurch.js')
-
-const ChurchSolid = wrapFontAwesomeIcon(faChurch)
+import { faChurch } from '@fortawesome/free-solid-svg-icons/faChurch'
+const ChurchSolid = wrapFontAwesomeIcon(faChurch, 'Solid')
 export default ChurchSolid

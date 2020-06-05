@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faClosedCaptioning = require('@fortawesome/free-solid-svg-icons/faClosedCaptioning.js')
-
-const ClosedCaptioningSolid = wrapFontAwesomeIcon(faClosedCaptioning)
+import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons/faClosedCaptioning'
+const ClosedCaptioningSolid = wrapFontAwesomeIcon(faClosedCaptioning, 'Solid')
 export default ClosedCaptioningSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHryvnia = require('@fortawesome/free-solid-svg-icons/faHryvnia.js')
-
-const HryvniaSolid = wrapFontAwesomeIcon(faHryvnia)
+import { faHryvnia } from '@fortawesome/free-solid-svg-icons/faHryvnia'
+const HryvniaSolid = wrapFontAwesomeIcon(faHryvnia, 'Solid')
 export default HryvniaSolid

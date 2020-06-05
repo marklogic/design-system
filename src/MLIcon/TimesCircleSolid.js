@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTimesCircle = require('@fortawesome/free-solid-svg-icons/faTimesCircle.js')
-
-const TimesCircleSolid = wrapFontAwesomeIcon(faTimesCircle)
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle'
+const TimesCircleSolid = wrapFontAwesomeIcon(faTimesCircle, 'Solid')
 export default TimesCircleSolid

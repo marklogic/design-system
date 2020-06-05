@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBinoculars = require('@fortawesome/free-solid-svg-icons/faBinoculars.js')
-
-const BinocularsSolid = wrapFontAwesomeIcon(faBinoculars)
+import { faBinoculars } from '@fortawesome/free-solid-svg-icons/faBinoculars'
+const BinocularsSolid = wrapFontAwesomeIcon(faBinoculars, 'Solid')
 export default BinocularsSolid

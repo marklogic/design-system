@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDrumSteelpan = require('@fortawesome/free-solid-svg-icons/faDrumSteelpan.js')
-
-const DrumSteelpanSolid = wrapFontAwesomeIcon(faDrumSteelpan)
+import { faDrumSteelpan } from '@fortawesome/free-solid-svg-icons/faDrumSteelpan'
+const DrumSteelpanSolid = wrapFontAwesomeIcon(faDrumSteelpan, 'Solid')
 export default DrumSteelpanSolid

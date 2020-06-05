@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faChartLine = require('@fortawesome/free-solid-svg-icons/faChartLine.js')
-
-const ChartLineSolid = wrapFontAwesomeIcon(faChartLine)
+import { faChartLine } from '@fortawesome/free-solid-svg-icons/faChartLine'
+const ChartLineSolid = wrapFontAwesomeIcon(faChartLine, 'Solid')
 export default ChartLineSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCreditCard = require('@fortawesome/free-solid-svg-icons/faCreditCard.js')
-
-const CreditCardSolid = wrapFontAwesomeIcon(faCreditCard)
+import { faCreditCard } from '@fortawesome/free-solid-svg-icons/faCreditCard'
+const CreditCardSolid = wrapFontAwesomeIcon(faCreditCard, 'Solid')
 export default CreditCardSolid

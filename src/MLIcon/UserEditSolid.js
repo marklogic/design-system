@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faUserEdit = require('@fortawesome/free-solid-svg-icons/faUserEdit.js')
-
-const UserEditSolid = wrapFontAwesomeIcon(faUserEdit)
+import { faUserEdit } from '@fortawesome/free-solid-svg-icons/faUserEdit'
+const UserEditSolid = wrapFontAwesomeIcon(faUserEdit, 'Solid')
 export default UserEditSolid

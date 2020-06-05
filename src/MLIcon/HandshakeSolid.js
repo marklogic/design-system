@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHandshake = require('@fortawesome/free-solid-svg-icons/faHandshake.js')
-
-const HandshakeSolid = wrapFontAwesomeIcon(faHandshake)
+import { faHandshake } from '@fortawesome/free-solid-svg-icons/faHandshake'
+const HandshakeSolid = wrapFontAwesomeIcon(faHandshake, 'Solid')
 export default HandshakeSolid

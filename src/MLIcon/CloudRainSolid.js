@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCloudRain = require('@fortawesome/free-solid-svg-icons/faCloudRain.js')
-
-const CloudRainSolid = wrapFontAwesomeIcon(faCloudRain)
+import { faCloudRain } from '@fortawesome/free-solid-svg-icons/faCloudRain'
+const CloudRainSolid = wrapFontAwesomeIcon(faCloudRain, 'Solid')
 export default CloudRainSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSimCard = require('@fortawesome/free-solid-svg-icons/faSimCard.js')
-
-const SimCardSolid = wrapFontAwesomeIcon(faSimCard)
+import { faSimCard } from '@fortawesome/free-solid-svg-icons/faSimCard'
+const SimCardSolid = wrapFontAwesomeIcon(faSimCard, 'Solid')
 export default SimCardSolid

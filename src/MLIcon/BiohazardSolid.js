@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBiohazard = require('@fortawesome/free-solid-svg-icons/faBiohazard.js')
-
-const BiohazardSolid = wrapFontAwesomeIcon(faBiohazard)
+import { faBiohazard } from '@fortawesome/free-solid-svg-icons/faBiohazard'
+const BiohazardSolid = wrapFontAwesomeIcon(faBiohazard, 'Solid')
 export default BiohazardSolid

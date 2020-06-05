@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSplotch = require('@fortawesome/free-solid-svg-icons/faSplotch.js')
-
-const SplotchSolid = wrapFontAwesomeIcon(faSplotch)
+import { faSplotch } from '@fortawesome/free-solid-svg-icons/faSplotch'
+const SplotchSolid = wrapFontAwesomeIcon(faSplotch, 'Solid')
 export default SplotchSolid

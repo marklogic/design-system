@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faVihara = require('@fortawesome/free-solid-svg-icons/faVihara.js')
-
-const ViharaSolid = wrapFontAwesomeIcon(faVihara)
+import { faVihara } from '@fortawesome/free-solid-svg-icons/faVihara'
+const ViharaSolid = wrapFontAwesomeIcon(faVihara, 'Solid')
 export default ViharaSolid

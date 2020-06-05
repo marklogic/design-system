@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFilePdf = require('@fortawesome/free-regular-svg-icons/faFilePdf.js')
-
-const FilePdfRegular = wrapFontAwesomeIcon(faFilePdf)
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons/faFilePdf'
+const FilePdfRegular = wrapFontAwesomeIcon(faFilePdf, 'Regular')
 export default FilePdfRegular

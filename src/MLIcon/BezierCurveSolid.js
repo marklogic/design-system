@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBezierCurve = require('@fortawesome/free-solid-svg-icons/faBezierCurve.js')
-
-const BezierCurveSolid = wrapFontAwesomeIcon(faBezierCurve)
+import { faBezierCurve } from '@fortawesome/free-solid-svg-icons/faBezierCurve'
+const BezierCurveSolid = wrapFontAwesomeIcon(faBezierCurve, 'Solid')
 export default BezierCurveSolid

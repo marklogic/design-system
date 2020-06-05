@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAudioDescription = require('@fortawesome/free-solid-svg-icons/faAudioDescription.js')
-
-const AudioDescriptionSolid = wrapFontAwesomeIcon(faAudioDescription)
+import { faAudioDescription } from '@fortawesome/free-solid-svg-icons/faAudioDescription'
+const AudioDescriptionSolid = wrapFontAwesomeIcon(faAudioDescription, 'Solid')
 export default AudioDescriptionSolid

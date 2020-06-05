@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPassport = require('@fortawesome/free-solid-svg-icons/faPassport.js')
-
-const PassportSolid = wrapFontAwesomeIcon(faPassport)
+import { faPassport } from '@fortawesome/free-solid-svg-icons/faPassport'
+const PassportSolid = wrapFontAwesomeIcon(faPassport, 'Solid')
 export default PassportSolid

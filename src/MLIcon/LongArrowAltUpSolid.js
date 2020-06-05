@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLongArrowAltUp = require('@fortawesome/free-solid-svg-icons/faLongArrowAltUp.js')
-
-const LongArrowAltUpSolid = wrapFontAwesomeIcon(faLongArrowAltUp)
+import { faLongArrowAltUp } from '@fortawesome/free-solid-svg-icons/faLongArrowAltUp'
+const LongArrowAltUpSolid = wrapFontAwesomeIcon(faLongArrowAltUp, 'Solid')
 export default LongArrowAltUpSolid

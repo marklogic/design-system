@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLemon = require('@fortawesome/free-regular-svg-icons/faLemon.js')
-
-const LemonRegular = wrapFontAwesomeIcon(faLemon)
+import { faLemon } from '@fortawesome/free-solid-svg-icons/faLemon'
+const LemonRegular = wrapFontAwesomeIcon(faLemon, 'Regular')
 export default LemonRegular

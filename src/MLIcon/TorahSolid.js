@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTorah = require('@fortawesome/free-solid-svg-icons/faTorah.js')
-
-const TorahSolid = wrapFontAwesomeIcon(faTorah)
+import { faTorah } from '@fortawesome/free-solid-svg-icons/faTorah'
+const TorahSolid = wrapFontAwesomeIcon(faTorah, 'Solid')
 export default TorahSolid

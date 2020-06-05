@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLuggageCart = require('@fortawesome/free-solid-svg-icons/faLuggageCart.js')
-
-const LuggageCartSolid = wrapFontAwesomeIcon(faLuggageCart)
+import { faLuggageCart } from '@fortawesome/free-solid-svg-icons/faLuggageCart'
+const LuggageCartSolid = wrapFontAwesomeIcon(faLuggageCart, 'Solid')
 export default LuggageCartSolid

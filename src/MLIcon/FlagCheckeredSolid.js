@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFlagCheckered = require('@fortawesome/free-solid-svg-icons/faFlagCheckered.js')
-
-const FlagCheckeredSolid = wrapFontAwesomeIcon(faFlagCheckered)
+import { faFlagCheckered } from '@fortawesome/free-solid-svg-icons/faFlagCheckered'
+const FlagCheckeredSolid = wrapFontAwesomeIcon(faFlagCheckered, 'Solid')
 export default FlagCheckeredSolid

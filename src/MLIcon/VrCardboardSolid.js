@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faVrCardboard = require('@fortawesome/free-solid-svg-icons/faVrCardboard.js')
-
-const VrCardboardSolid = wrapFontAwesomeIcon(faVrCardboard)
+import { faVrCardboard } from '@fortawesome/free-solid-svg-icons/faVrCardboard'
+const VrCardboardSolid = wrapFontAwesomeIcon(faVrCardboard, 'Solid')
 export default VrCardboardSolid

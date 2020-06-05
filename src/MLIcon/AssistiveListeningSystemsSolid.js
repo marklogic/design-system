@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAssistiveListeningSystems = require('@fortawesome/free-solid-svg-icons/faAssistiveListeningSystems.js')
-
-const AssistiveListeningSystemsSolid = wrapFontAwesomeIcon(faAssistiveListeningSystems)
+import { faAssistiveListeningSystems } from '@fortawesome/free-solid-svg-icons/faAssistiveListeningSystems'
+const AssistiveListeningSystemsSolid = wrapFontAwesomeIcon(faAssistiveListeningSystems, 'Solid')
 export default AssistiveListeningSystemsSolid

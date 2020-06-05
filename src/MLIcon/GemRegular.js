@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faGem = require('@fortawesome/free-regular-svg-icons/faGem.js')
-
-const GemRegular = wrapFontAwesomeIcon(faGem)
+import { faGem } from '@fortawesome/free-solid-svg-icons/faGem'
+const GemRegular = wrapFontAwesomeIcon(faGem, 'Regular')
 export default GemRegular

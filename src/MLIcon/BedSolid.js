@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBed = require('@fortawesome/free-solid-svg-icons/faBed.js')
-
-const BedSolid = wrapFontAwesomeIcon(faBed)
+import { faBed } from '@fortawesome/free-solid-svg-icons/faBed'
+const BedSolid = wrapFontAwesomeIcon(faBed, 'Solid')
 export default BedSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPlusSquare = require('@fortawesome/free-regular-svg-icons/faPlusSquare.js')
-
-const PlusSquareRegular = wrapFontAwesomeIcon(faPlusSquare)
+import { faPlusSquare } from '@fortawesome/free-solid-svg-icons/faPlusSquare'
+const PlusSquareRegular = wrapFontAwesomeIcon(faPlusSquare, 'Regular')
 export default PlusSquareRegular

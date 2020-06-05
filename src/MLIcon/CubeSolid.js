@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCube = require('@fortawesome/free-solid-svg-icons/faCube.js')
-
-const CubeSolid = wrapFontAwesomeIcon(faCube)
+import { faCube } from '@fortawesome/free-solid-svg-icons/faCube'
+const CubeSolid = wrapFontAwesomeIcon(faCube, 'Solid')
 export default CubeSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faGraduationCap = require('@fortawesome/free-solid-svg-icons/faGraduationCap.js')
-
-const GraduationCapSolid = wrapFontAwesomeIcon(faGraduationCap)
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
+const GraduationCapSolid = wrapFontAwesomeIcon(faGraduationCap, 'Solid')
 export default GraduationCapSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPaste = require('@fortawesome/free-solid-svg-icons/faPaste.js')
-
-const PasteSolid = wrapFontAwesomeIcon(faPaste)
+import { faPaste } from '@fortawesome/free-solid-svg-icons/faPaste'
+const PasteSolid = wrapFontAwesomeIcon(faPaste, 'Solid')
 export default PasteSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPaperclip = require('@fortawesome/free-solid-svg-icons/faPaperclip.js')
-
-const PaperclipSolid = wrapFontAwesomeIcon(faPaperclip)
+import { faPaperclip } from '@fortawesome/free-solid-svg-icons/faPaperclip'
+const PaperclipSolid = wrapFontAwesomeIcon(faPaperclip, 'Solid')
 export default PaperclipSolid

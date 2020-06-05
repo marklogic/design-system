@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTemperatureHigh = require('@fortawesome/free-solid-svg-icons/faTemperatureHigh.js')
-
-const TemperatureHighSolid = wrapFontAwesomeIcon(faTemperatureHigh)
+import { faTemperatureHigh } from '@fortawesome/free-solid-svg-icons/faTemperatureHigh'
+const TemperatureHighSolid = wrapFontAwesomeIcon(faTemperatureHigh, 'Solid')
 export default TemperatureHighSolid

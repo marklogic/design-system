@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCopy = require('@fortawesome/free-solid-svg-icons/faCopy.js')
-
-const CopySolid = wrapFontAwesomeIcon(faCopy)
+import { faCopy } from '@fortawesome/free-solid-svg-icons/faCopy'
+const CopySolid = wrapFontAwesomeIcon(faCopy, 'Solid')
 export default CopySolid

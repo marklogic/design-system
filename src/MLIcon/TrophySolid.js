@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTrophy = require('@fortawesome/free-solid-svg-icons/faTrophy.js')
-
-const TrophySolid = wrapFontAwesomeIcon(faTrophy)
+import { faTrophy } from '@fortawesome/free-solid-svg-icons/faTrophy'
+const TrophySolid = wrapFontAwesomeIcon(faTrophy, 'Solid')
 export default TrophySolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFireExtinguisher = require('@fortawesome/free-solid-svg-icons/faFireExtinguisher.js')
-
-const FireExtinguisherSolid = wrapFontAwesomeIcon(faFireExtinguisher)
+import { faFireExtinguisher } from '@fortawesome/free-solid-svg-icons/faFireExtinguisher'
+const FireExtinguisherSolid = wrapFontAwesomeIcon(faFireExtinguisher, 'Solid')
 export default FireExtinguisherSolid

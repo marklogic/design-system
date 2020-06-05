@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faIcicles = require('@fortawesome/free-solid-svg-icons/faIcicles.js')
-
-const IciclesSolid = wrapFontAwesomeIcon(faIcicles)
+import { faIcicles } from '@fortawesome/free-solid-svg-icons/faIcicles'
+const IciclesSolid = wrapFontAwesomeIcon(faIcicles, 'Solid')
 export default IciclesSolid

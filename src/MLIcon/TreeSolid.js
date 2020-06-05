@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTree = require('@fortawesome/free-solid-svg-icons/faTree.js')
-
-const TreeSolid = wrapFontAwesomeIcon(faTree)
+import { faTree } from '@fortawesome/free-solid-svg-icons/faTree'
+const TreeSolid = wrapFontAwesomeIcon(faTree, 'Solid')
 export default TreeSolid

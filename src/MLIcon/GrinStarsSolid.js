@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faGrinStars = require('@fortawesome/free-solid-svg-icons/faGrinStars.js')
-
-const GrinStarsSolid = wrapFontAwesomeIcon(faGrinStars)
+import { faGrinStars } from '@fortawesome/free-solid-svg-icons/faGrinStars'
+const GrinStarsSolid = wrapFontAwesomeIcon(faGrinStars, 'Solid')
 export default GrinStarsSolid

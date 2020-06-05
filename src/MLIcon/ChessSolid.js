@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faChess = require('@fortawesome/free-solid-svg-icons/faChess.js')
-
-const ChessSolid = wrapFontAwesomeIcon(faChess)
+import { faChess } from '@fortawesome/free-solid-svg-icons/faChess'
+const ChessSolid = wrapFontAwesomeIcon(faChess, 'Solid')
 export default ChessSolid

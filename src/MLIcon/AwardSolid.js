@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAward = require('@fortawesome/free-solid-svg-icons/faAward.js')
-
-const AwardSolid = wrapFontAwesomeIcon(faAward)
+import { faAward } from '@fortawesome/free-solid-svg-icons/faAward'
+const AwardSolid = wrapFontAwesomeIcon(faAward, 'Solid')
 export default AwardSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPodcast = require('@fortawesome/free-solid-svg-icons/faPodcast.js')
-
-const PodcastSolid = wrapFontAwesomeIcon(faPodcast)
+import { faPodcast } from '@fortawesome/free-solid-svg-icons/faPodcast'
+const PodcastSolid = wrapFontAwesomeIcon(faPodcast, 'Solid')
 export default PodcastSolid

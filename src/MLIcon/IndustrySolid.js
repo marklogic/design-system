@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faIndustry = require('@fortawesome/free-solid-svg-icons/faIndustry.js')
-
-const IndustrySolid = wrapFontAwesomeIcon(faIndustry)
+import { faIndustry } from '@fortawesome/free-solid-svg-icons/faIndustry'
+const IndustrySolid = wrapFontAwesomeIcon(faIndustry, 'Solid')
 export default IndustrySolid

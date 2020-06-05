@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRobot = require('@fortawesome/free-solid-svg-icons/faRobot.js')
-
-const RobotSolid = wrapFontAwesomeIcon(faRobot)
+import { faRobot } from '@fortawesome/free-solid-svg-icons/faRobot'
+const RobotSolid = wrapFontAwesomeIcon(faRobot, 'Solid')
 export default RobotSolid

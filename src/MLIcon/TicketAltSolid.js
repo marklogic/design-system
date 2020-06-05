@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTicketAlt = require('@fortawesome/free-solid-svg-icons/faTicketAlt.js')
-
-const TicketAltSolid = wrapFontAwesomeIcon(faTicketAlt)
+import { faTicketAlt } from '@fortawesome/free-solid-svg-icons/faTicketAlt'
+const TicketAltSolid = wrapFontAwesomeIcon(faTicketAlt, 'Solid')
 export default TicketAltSolid

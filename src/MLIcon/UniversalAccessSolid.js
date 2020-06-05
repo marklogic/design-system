@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faUniversalAccess = require('@fortawesome/free-solid-svg-icons/faUniversalAccess.js')
-
-const UniversalAccessSolid = wrapFontAwesomeIcon(faUniversalAccess)
+import { faUniversalAccess } from '@fortawesome/free-solid-svg-icons/faUniversalAccess'
+const UniversalAccessSolid = wrapFontAwesomeIcon(faUniversalAccess, 'Solid')
 export default UniversalAccessSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRupeeSign = require('@fortawesome/free-solid-svg-icons/faRupeeSign.js')
-
-const RupeeSignSolid = wrapFontAwesomeIcon(faRupeeSign)
+import { faRupeeSign } from '@fortawesome/free-solid-svg-icons/faRupeeSign'
+const RupeeSignSolid = wrapFontAwesomeIcon(faRupeeSign, 'Solid')
 export default RupeeSignSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPhoneVolume = require('@fortawesome/free-solid-svg-icons/faPhoneVolume.js')
-
-const PhoneVolumeSolid = wrapFontAwesomeIcon(faPhoneVolume)
+import { faPhoneVolume } from '@fortawesome/free-solid-svg-icons/faPhoneVolume'
+const PhoneVolumeSolid = wrapFontAwesomeIcon(faPhoneVolume, 'Solid')
 export default PhoneVolumeSolid

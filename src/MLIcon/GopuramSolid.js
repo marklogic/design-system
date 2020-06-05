@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faGopuram = require('@fortawesome/free-solid-svg-icons/faGopuram.js')
-
-const GopuramSolid = wrapFontAwesomeIcon(faGopuram)
+import { faGopuram } from '@fortawesome/free-solid-svg-icons/faGopuram'
+const GopuramSolid = wrapFontAwesomeIcon(faGopuram, 'Solid')
 export default GopuramSolid

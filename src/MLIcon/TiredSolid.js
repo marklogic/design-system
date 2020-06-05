@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTired = require('@fortawesome/free-solid-svg-icons/faTired.js')
-
-const TiredSolid = wrapFontAwesomeIcon(faTired)
+import { faTired } from '@fortawesome/free-solid-svg-icons/faTired'
+const TiredSolid = wrapFontAwesomeIcon(faTired, 'Solid')
 export default TiredSolid

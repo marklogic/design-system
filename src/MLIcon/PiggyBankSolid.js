@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPiggyBank = require('@fortawesome/free-solid-svg-icons/faPiggyBank.js')
-
-const PiggyBankSolid = wrapFontAwesomeIcon(faPiggyBank)
+import { faPiggyBank } from '@fortawesome/free-solid-svg-icons/faPiggyBank'
+const PiggyBankSolid = wrapFontAwesomeIcon(faPiggyBank, 'Solid')
 export default PiggyBankSolid

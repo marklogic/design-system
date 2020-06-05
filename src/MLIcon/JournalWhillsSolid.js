@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faJournalWhills = require('@fortawesome/free-solid-svg-icons/faJournalWhills.js')
-
-const JournalWhillsSolid = wrapFontAwesomeIcon(faJournalWhills)
+import { faJournalWhills } from '@fortawesome/free-solid-svg-icons/faJournalWhills'
+const JournalWhillsSolid = wrapFontAwesomeIcon(faJournalWhills, 'Solid')
 export default JournalWhillsSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLeaf = require('@fortawesome/free-solid-svg-icons/faLeaf.js')
-
-const LeafSolid = wrapFontAwesomeIcon(faLeaf)
+import { faLeaf } from '@fortawesome/free-solid-svg-icons/faLeaf'
+const LeafSolid = wrapFontAwesomeIcon(faLeaf, 'Solid')
 export default LeafSolid

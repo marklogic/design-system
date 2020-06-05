@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStopCircle = require('@fortawesome/free-solid-svg-icons/faStopCircle.js')
-
-const StopCircleSolid = wrapFontAwesomeIcon(faStopCircle)
+import { faStopCircle } from '@fortawesome/free-solid-svg-icons/faStopCircle'
+const StopCircleSolid = wrapFontAwesomeIcon(faStopCircle, 'Solid')
 export default StopCircleSolid

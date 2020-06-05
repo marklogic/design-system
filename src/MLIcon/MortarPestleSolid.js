@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMortarPestle = require('@fortawesome/free-solid-svg-icons/faMortarPestle.js')
-
-const MortarPestleSolid = wrapFontAwesomeIcon(faMortarPestle)
+import { faMortarPestle } from '@fortawesome/free-solid-svg-icons/faMortarPestle'
+const MortarPestleSolid = wrapFontAwesomeIcon(faMortarPestle, 'Solid')
 export default MortarPestleSolid

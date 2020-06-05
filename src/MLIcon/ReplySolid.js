@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faReply = require('@fortawesome/free-solid-svg-icons/faReply.js')
-
-const ReplySolid = wrapFontAwesomeIcon(faReply)
+import { faReply } from '@fortawesome/free-solid-svg-icons/faReply'
+const ReplySolid = wrapFontAwesomeIcon(faReply, 'Solid')
 export default ReplySolid

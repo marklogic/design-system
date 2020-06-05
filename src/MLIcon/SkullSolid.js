@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSkull = require('@fortawesome/free-solid-svg-icons/faSkull.js')
-
-const SkullSolid = wrapFontAwesomeIcon(faSkull)
+import { faSkull } from '@fortawesome/free-solid-svg-icons/faSkull'
+const SkullSolid = wrapFontAwesomeIcon(faSkull, 'Solid')
 export default SkullSolid

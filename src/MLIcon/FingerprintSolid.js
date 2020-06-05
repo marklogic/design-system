@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFingerprint = require('@fortawesome/free-solid-svg-icons/faFingerprint.js')
-
-const FingerprintSolid = wrapFontAwesomeIcon(faFingerprint)
+import { faFingerprint } from '@fortawesome/free-solid-svg-icons/faFingerprint'
+const FingerprintSolid = wrapFontAwesomeIcon(faFingerprint, 'Solid')
 export default FingerprintSolid

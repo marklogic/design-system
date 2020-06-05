@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCalendarCheck = require('@fortawesome/free-solid-svg-icons/faCalendarCheck.js')
-
-const CalendarCheckSolid = wrapFontAwesomeIcon(faCalendarCheck)
+import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons/faCalendarCheck'
+const CalendarCheckSolid = wrapFontAwesomeIcon(faCalendarCheck, 'Solid')
 export default CalendarCheckSolid

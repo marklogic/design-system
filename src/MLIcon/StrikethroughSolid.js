@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStrikethrough = require('@fortawesome/free-solid-svg-icons/faStrikethrough.js')
-
-const StrikethroughSolid = wrapFontAwesomeIcon(faStrikethrough)
+import { faStrikethrough } from '@fortawesome/free-solid-svg-icons/faStrikethrough'
+const StrikethroughSolid = wrapFontAwesomeIcon(faStrikethrough, 'Solid')
 export default StrikethroughSolid

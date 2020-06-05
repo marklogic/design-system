@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHandPointer = require('@fortawesome/free-solid-svg-icons/faHandPointer.js')
-
-const HandPointerSolid = wrapFontAwesomeIcon(faHandPointer)
+import { faHandPointer } from '@fortawesome/free-solid-svg-icons/faHandPointer'
+const HandPointerSolid = wrapFontAwesomeIcon(faHandPointer, 'Solid')
 export default HandPointerSolid

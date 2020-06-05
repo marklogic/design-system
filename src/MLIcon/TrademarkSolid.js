@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTrademark = require('@fortawesome/free-solid-svg-icons/faTrademark.js')
-
-const TrademarkSolid = wrapFontAwesomeIcon(faTrademark)
+import { faTrademark } from '@fortawesome/free-solid-svg-icons/faTrademark'
+const TrademarkSolid = wrapFontAwesomeIcon(faTrademark, 'Solid')
 export default TrademarkSolid

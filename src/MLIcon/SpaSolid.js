@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSpa = require('@fortawesome/free-solid-svg-icons/faSpa.js')
-
-const SpaSolid = wrapFontAwesomeIcon(faSpa)
+import { faSpa } from '@fortawesome/free-solid-svg-icons/faSpa'
+const SpaSolid = wrapFontAwesomeIcon(faSpa, 'Solid')
 export default SpaSolid

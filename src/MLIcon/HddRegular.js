@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHdd = require('@fortawesome/free-regular-svg-icons/faHdd.js')
-
-const HddRegular = wrapFontAwesomeIcon(faHdd)
+import { faHdd } from '@fortawesome/free-solid-svg-icons/faHdd'
+const HddRegular = wrapFontAwesomeIcon(faHdd, 'Regular')
 export default HddRegular

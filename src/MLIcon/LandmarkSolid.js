@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLandmark = require('@fortawesome/free-solid-svg-icons/faLandmark.js')
-
-const LandmarkSolid = wrapFontAwesomeIcon(faLandmark)
+import { faLandmark } from '@fortawesome/free-solid-svg-icons/faLandmark'
+const LandmarkSolid = wrapFontAwesomeIcon(faLandmark, 'Solid')
 export default LandmarkSolid

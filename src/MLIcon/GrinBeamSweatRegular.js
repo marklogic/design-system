@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faGrinBeamSweat = require('@fortawesome/free-regular-svg-icons/faGrinBeamSweat.js')
-
-const GrinBeamSweatRegular = wrapFontAwesomeIcon(faGrinBeamSweat)
+import { faGrinBeamSweat } from '@fortawesome/free-solid-svg-icons/faGrinBeamSweat'
+const GrinBeamSweatRegular = wrapFontAwesomeIcon(faGrinBeamSweat, 'Regular')
 export default GrinBeamSweatRegular

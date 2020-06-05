@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faListAlt = require('@fortawesome/free-regular-svg-icons/faListAlt.js')
-
-const ListAltRegular = wrapFontAwesomeIcon(faListAlt)
+import { faListAlt } from '@fortawesome/free-solid-svg-icons/faListAlt'
+const ListAltRegular = wrapFontAwesomeIcon(faListAlt, 'Regular')
 export default ListAltRegular

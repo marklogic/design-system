@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faEnvelopeOpen = require('@fortawesome/free-regular-svg-icons/faEnvelopeOpen.js')
-
-const EnvelopeOpenRegular = wrapFontAwesomeIcon(faEnvelopeOpen)
+import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons/faEnvelopeOpen'
+const EnvelopeOpenRegular = wrapFontAwesomeIcon(faEnvelopeOpen, 'Regular')
 export default EnvelopeOpenRegular

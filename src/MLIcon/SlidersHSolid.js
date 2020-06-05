@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSlidersH = require('@fortawesome/free-solid-svg-icons/faSlidersH.js')
-
-const SlidersHSolid = wrapFontAwesomeIcon(faSlidersH)
+import { faSlidersH } from '@fortawesome/free-solid-svg-icons/faSlidersH'
+const SlidersHSolid = wrapFontAwesomeIcon(faSlidersH, 'Solid')
 export default SlidersHSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faNewspaper = require('@fortawesome/free-regular-svg-icons/faNewspaper.js')
-
-const NewspaperRegular = wrapFontAwesomeIcon(faNewspaper)
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper'
+const NewspaperRegular = wrapFontAwesomeIcon(faNewspaper, 'Regular')
 export default NewspaperRegular

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHiking = require('@fortawesome/free-solid-svg-icons/faHiking.js')
-
-const HikingSolid = wrapFontAwesomeIcon(faHiking)
+import { faHiking } from '@fortawesome/free-solid-svg-icons/faHiking'
+const HikingSolid = wrapFontAwesomeIcon(faHiking, 'Solid')
 export default HikingSolid

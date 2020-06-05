@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faWindowMinimize = require('@fortawesome/free-solid-svg-icons/faWindowMinimize.js')
-
-const WindowMinimizeSolid = wrapFontAwesomeIcon(faWindowMinimize)
+import { faWindowMinimize } from '@fortawesome/free-solid-svg-icons/faWindowMinimize'
+const WindowMinimizeSolid = wrapFontAwesomeIcon(faWindowMinimize, 'Solid')
 export default WindowMinimizeSolid

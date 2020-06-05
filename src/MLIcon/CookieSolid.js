@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCookie = require('@fortawesome/free-solid-svg-icons/faCookie.js')
-
-const CookieSolid = wrapFontAwesomeIcon(faCookie)
+import { faCookie } from '@fortawesome/free-solid-svg-icons/faCookie'
+const CookieSolid = wrapFontAwesomeIcon(faCookie, 'Solid')
 export default CookieSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHeadphonesAlt = require('@fortawesome/free-solid-svg-icons/faHeadphonesAlt.js')
-
-const HeadphonesAltSolid = wrapFontAwesomeIcon(faHeadphonesAlt)
+import { faHeadphonesAlt } from '@fortawesome/free-solid-svg-icons/faHeadphonesAlt'
+const HeadphonesAltSolid = wrapFontAwesomeIcon(faHeadphonesAlt, 'Solid')
 export default HeadphonesAltSolid

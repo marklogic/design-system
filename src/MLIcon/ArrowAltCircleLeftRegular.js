@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faArrowAltCircleLeft = require('@fortawesome/free-regular-svg-icons/faArrowAltCircleLeft.js')
-
-const ArrowAltCircleLeftRegular = wrapFontAwesomeIcon(faArrowAltCircleLeft)
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons/faArrowAltCircleLeft'
+const ArrowAltCircleLeftRegular = wrapFontAwesomeIcon(faArrowAltCircleLeft, 'Regular')
 export default ArrowAltCircleLeftRegular

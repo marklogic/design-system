@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faKiwiBird = require('@fortawesome/free-solid-svg-icons/faKiwiBird.js')
-
-const KiwiBirdSolid = wrapFontAwesomeIcon(faKiwiBird)
+import { faKiwiBird } from '@fortawesome/free-solid-svg-icons/faKiwiBird'
+const KiwiBirdSolid = wrapFontAwesomeIcon(faKiwiBird, 'Solid')
 export default KiwiBirdSolid

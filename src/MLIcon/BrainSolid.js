@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBrain = require('@fortawesome/free-solid-svg-icons/faBrain.js')
-
-const BrainSolid = wrapFontAwesomeIcon(faBrain)
+import { faBrain } from '@fortawesome/free-solid-svg-icons/faBrain'
+const BrainSolid = wrapFontAwesomeIcon(faBrain, 'Solid')
 export default BrainSolid

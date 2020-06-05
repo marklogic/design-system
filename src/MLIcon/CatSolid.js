@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCat = require('@fortawesome/free-solid-svg-icons/faCat.js')
-
-const CatSolid = wrapFontAwesomeIcon(faCat)
+import { faCat } from '@fortawesome/free-solid-svg-icons/faCat'
+const CatSolid = wrapFontAwesomeIcon(faCat, 'Solid')
 export default CatSolid

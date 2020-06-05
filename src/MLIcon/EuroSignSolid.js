@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faEuroSign = require('@fortawesome/free-solid-svg-icons/faEuroSign.js')
-
-const EuroSignSolid = wrapFontAwesomeIcon(faEuroSign)
+import { faEuroSign } from '@fortawesome/free-solid-svg-icons/faEuroSign'
+const EuroSignSolid = wrapFontAwesomeIcon(faEuroSign, 'Solid')
 export default EuroSignSolid

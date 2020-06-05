@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faToiletPaper = require('@fortawesome/free-solid-svg-icons/faToiletPaper.js')
-
-const ToiletPaperSolid = wrapFontAwesomeIcon(faToiletPaper)
+import { faToiletPaper } from '@fortawesome/free-solid-svg-icons/faToiletPaper'
+const ToiletPaperSolid = wrapFontAwesomeIcon(faToiletPaper, 'Solid')
 export default ToiletPaperSolid

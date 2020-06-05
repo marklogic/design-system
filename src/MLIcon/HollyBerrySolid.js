@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHollyBerry = require('@fortawesome/free-solid-svg-icons/faHollyBerry.js')
-
-const HollyBerrySolid = wrapFontAwesomeIcon(faHollyBerry)
+import { faHollyBerry } from '@fortawesome/free-solid-svg-icons/faHollyBerry'
+const HollyBerrySolid = wrapFontAwesomeIcon(faHollyBerry, 'Solid')
 export default HollyBerrySolid

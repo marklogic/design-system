@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFolder = require('@fortawesome/free-solid-svg-icons/faFolder.js')
-
-const FolderSolid = wrapFontAwesomeIcon(faFolder)
+import { faFolder } from '@fortawesome/free-solid-svg-icons/faFolder'
+const FolderSolid = wrapFontAwesomeIcon(faFolder, 'Solid')
 export default FolderSolid

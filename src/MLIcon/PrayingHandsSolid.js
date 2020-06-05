@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPrayingHands = require('@fortawesome/free-solid-svg-icons/faPrayingHands.js')
-
-const PrayingHandsSolid = wrapFontAwesomeIcon(faPrayingHands)
+import { faPrayingHands } from '@fortawesome/free-solid-svg-icons/faPrayingHands'
+const PrayingHandsSolid = wrapFontAwesomeIcon(faPrayingHands, 'Solid')
 export default PrayingHandsSolid

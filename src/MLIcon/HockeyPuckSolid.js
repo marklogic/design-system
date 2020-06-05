@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHockeyPuck = require('@fortawesome/free-solid-svg-icons/faHockeyPuck.js')
-
-const HockeyPuckSolid = wrapFontAwesomeIcon(faHockeyPuck)
+import { faHockeyPuck } from '@fortawesome/free-solid-svg-icons/faHockeyPuck'
+const HockeyPuckSolid = wrapFontAwesomeIcon(faHockeyPuck, 'Solid')
 export default HockeyPuckSolid

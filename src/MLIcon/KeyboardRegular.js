@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faKeyboard = require('@fortawesome/free-regular-svg-icons/faKeyboard.js')
-
-const KeyboardRegular = wrapFontAwesomeIcon(faKeyboard)
+import { faKeyboard } from '@fortawesome/free-solid-svg-icons/faKeyboard'
+const KeyboardRegular = wrapFontAwesomeIcon(faKeyboard, 'Regular')
 export default KeyboardRegular

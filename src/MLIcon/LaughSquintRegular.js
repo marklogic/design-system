@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLaughSquint = require('@fortawesome/free-regular-svg-icons/faLaughSquint.js')
-
-const LaughSquintRegular = wrapFontAwesomeIcon(faLaughSquint)
+import { faLaughSquint } from '@fortawesome/free-solid-svg-icons/faLaughSquint'
+const LaughSquintRegular = wrapFontAwesomeIcon(faLaughSquint, 'Regular')
 export default LaughSquintRegular

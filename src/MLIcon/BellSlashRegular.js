@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBellSlash = require('@fortawesome/free-regular-svg-icons/faBellSlash.js')
-
-const BellSlashRegular = wrapFontAwesomeIcon(faBellSlash)
+import { faBellSlash } from '@fortawesome/free-solid-svg-icons/faBellSlash'
+const BellSlashRegular = wrapFontAwesomeIcon(faBellSlash, 'Regular')
 export default BellSlashRegular

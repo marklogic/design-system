@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAddressBook = require('@fortawesome/free-regular-svg-icons/faAddressBook.js')
-
-const AddressBookRegular = wrapFontAwesomeIcon(faAddressBook)
+import { faAddressBook } from '@fortawesome/free-solid-svg-icons/faAddressBook'
+const AddressBookRegular = wrapFontAwesomeIcon(faAddressBook, 'Regular')
 export default AddressBookRegular

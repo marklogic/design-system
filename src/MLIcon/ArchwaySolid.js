@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faArchway = require('@fortawesome/free-solid-svg-icons/faArchway.js')
-
-const ArchwaySolid = wrapFontAwesomeIcon(faArchway)
+import { faArchway } from '@fortawesome/free-solid-svg-icons/faArchway'
+const ArchwaySolid = wrapFontAwesomeIcon(faArchway, 'Solid')
 export default ArchwaySolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDna = require('@fortawesome/free-solid-svg-icons/faDna.js')
-
-const DnaSolid = wrapFontAwesomeIcon(faDna)
+import { faDna } from '@fortawesome/free-solid-svg-icons/faDna'
+const DnaSolid = wrapFontAwesomeIcon(faDna, 'Solid')
 export default DnaSolid

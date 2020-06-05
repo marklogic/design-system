@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faUnlock = require('@fortawesome/free-solid-svg-icons/faUnlock.js')
-
-const UnlockSolid = wrapFontAwesomeIcon(faUnlock)
+import { faUnlock } from '@fortawesome/free-solid-svg-icons/faUnlock'
+const UnlockSolid = wrapFontAwesomeIcon(faUnlock, 'Solid')
 export default UnlockSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPencilRuler = require('@fortawesome/free-solid-svg-icons/faPencilRuler.js')
-
-const PencilRulerSolid = wrapFontAwesomeIcon(faPencilRuler)
+import { faPencilRuler } from '@fortawesome/free-solid-svg-icons/faPencilRuler'
+const PencilRulerSolid = wrapFontAwesomeIcon(faPencilRuler, 'Solid')
 export default PencilRulerSolid

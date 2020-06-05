@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFilm = require('@fortawesome/free-solid-svg-icons/faFilm.js')
-
-const FilmSolid = wrapFontAwesomeIcon(faFilm)
+import { faFilm } from '@fortawesome/free-solid-svg-icons/faFilm'
+const FilmSolid = wrapFontAwesomeIcon(faFilm, 'Solid')
 export default FilmSolid

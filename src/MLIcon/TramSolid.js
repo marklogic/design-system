@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTram = require('@fortawesome/free-solid-svg-icons/faTram.js')
-
-const TramSolid = wrapFontAwesomeIcon(faTram)
+import { faTram } from '@fortawesome/free-solid-svg-icons/faTram'
+const TramSolid = wrapFontAwesomeIcon(faTram, 'Solid')
 export default TramSolid

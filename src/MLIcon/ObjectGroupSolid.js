@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faObjectGroup = require('@fortawesome/free-solid-svg-icons/faObjectGroup.js')
-
-const ObjectGroupSolid = wrapFontAwesomeIcon(faObjectGroup)
+import { faObjectGroup } from '@fortawesome/free-solid-svg-icons/faObjectGroup'
+const ObjectGroupSolid = wrapFontAwesomeIcon(faObjectGroup, 'Solid')
 export default ObjectGroupSolid

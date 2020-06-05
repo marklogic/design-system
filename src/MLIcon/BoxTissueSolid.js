@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBoxTissue = require('@fortawesome/free-solid-svg-icons/faBoxTissue.js')
-
-const BoxTissueSolid = wrapFontAwesomeIcon(faBoxTissue)
+import { faBoxTissue } from '@fortawesome/free-solid-svg-icons/faBoxTissue'
+const BoxTissueSolid = wrapFontAwesomeIcon(faBoxTissue, 'Solid')
 export default BoxTissueSolid

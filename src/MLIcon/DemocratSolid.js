@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDemocrat = require('@fortawesome/free-solid-svg-icons/faDemocrat.js')
-
-const DemocratSolid = wrapFontAwesomeIcon(faDemocrat)
+import { faDemocrat } from '@fortawesome/free-solid-svg-icons/faDemocrat'
+const DemocratSolid = wrapFontAwesomeIcon(faDemocrat, 'Solid')
 export default DemocratSolid

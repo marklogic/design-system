@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faWindowClose = require('@fortawesome/free-regular-svg-icons/faWindowClose.js')
-
-const WindowCloseRegular = wrapFontAwesomeIcon(faWindowClose)
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons/faWindowClose'
+const WindowCloseRegular = wrapFontAwesomeIcon(faWindowClose, 'Regular')
 export default WindowCloseRegular

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHotel = require('@fortawesome/free-solid-svg-icons/faHotel.js')
-
-const HotelSolid = wrapFontAwesomeIcon(faHotel)
+import { faHotel } from '@fortawesome/free-solid-svg-icons/faHotel'
+const HotelSolid = wrapFontAwesomeIcon(faHotel, 'Solid')
 export default HotelSolid

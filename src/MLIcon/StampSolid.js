@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStamp = require('@fortawesome/free-solid-svg-icons/faStamp.js')
-
-const StampSolid = wrapFontAwesomeIcon(faStamp)
+import { faStamp } from '@fortawesome/free-solid-svg-icons/faStamp'
+const StampSolid = wrapFontAwesomeIcon(faStamp, 'Solid')
 export default StampSolid

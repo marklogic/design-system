@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTty = require('@fortawesome/free-solid-svg-icons/faTty.js')
-
-const TtySolid = wrapFontAwesomeIcon(faTty)
+import { faTty } from '@fortawesome/free-solid-svg-icons/faTty'
+const TtySolid = wrapFontAwesomeIcon(faTty, 'Solid')
 export default TtySolid

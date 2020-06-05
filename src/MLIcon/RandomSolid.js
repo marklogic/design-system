@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRandom = require('@fortawesome/free-solid-svg-icons/faRandom.js')
-
-const RandomSolid = wrapFontAwesomeIcon(faRandom)
+import { faRandom } from '@fortawesome/free-solid-svg-icons/faRandom'
+const RandomSolid = wrapFontAwesomeIcon(faRandom, 'Solid')
 export default RandomSolid

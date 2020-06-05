@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHighlighter = require('@fortawesome/free-solid-svg-icons/faHighlighter.js')
-
-const HighlighterSolid = wrapFontAwesomeIcon(faHighlighter)
+import { faHighlighter } from '@fortawesome/free-solid-svg-icons/faHighlighter'
+const HighlighterSolid = wrapFontAwesomeIcon(faHighlighter, 'Solid')
 export default HighlighterSolid

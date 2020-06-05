@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMouse = require('@fortawesome/free-solid-svg-icons/faMouse.js')
-
-const MouseSolid = wrapFontAwesomeIcon(faMouse)
+import { faMouse } from '@fortawesome/free-solid-svg-icons/faMouse'
+const MouseSolid = wrapFontAwesomeIcon(faMouse, 'Solid')
 export default MouseSolid

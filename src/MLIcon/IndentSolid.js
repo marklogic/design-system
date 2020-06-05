@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faIndent = require('@fortawesome/free-solid-svg-icons/faIndent.js')
-
-const IndentSolid = wrapFontAwesomeIcon(faIndent)
+import { faIndent } from '@fortawesome/free-solid-svg-icons/faIndent'
+const IndentSolid = wrapFontAwesomeIcon(faIndent, 'Solid')
 export default IndentSolid

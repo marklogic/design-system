@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faUnlink = require('@fortawesome/free-solid-svg-icons/faUnlink.js')
-
-const UnlinkSolid = wrapFontAwesomeIcon(faUnlink)
+import { faUnlink } from '@fortawesome/free-solid-svg-icons/faUnlink'
+const UnlinkSolid = wrapFontAwesomeIcon(faUnlink, 'Solid')
 export default UnlinkSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faNetworkWired = require('@fortawesome/free-solid-svg-icons/faNetworkWired.js')
-
-const NetworkWiredSolid = wrapFontAwesomeIcon(faNetworkWired)
+import { faNetworkWired } from '@fortawesome/free-solid-svg-icons/faNetworkWired'
+const NetworkWiredSolid = wrapFontAwesomeIcon(faNetworkWired, 'Solid')
 export default NetworkWiredSolid

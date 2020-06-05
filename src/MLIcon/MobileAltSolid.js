@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMobileAlt = require('@fortawesome/free-solid-svg-icons/faMobileAlt.js')
-
-const MobileAltSolid = wrapFontAwesomeIcon(faMobileAlt)
+import { faMobileAlt } from '@fortawesome/free-solid-svg-icons/faMobileAlt'
+const MobileAltSolid = wrapFontAwesomeIcon(faMobileAlt, 'Solid')
 export default MobileAltSolid

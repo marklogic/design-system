@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faOutdent = require('@fortawesome/free-solid-svg-icons/faOutdent.js')
-
-const OutdentSolid = wrapFontAwesomeIcon(faOutdent)
+import { faOutdent } from '@fortawesome/free-solid-svg-icons/faOutdent'
+const OutdentSolid = wrapFontAwesomeIcon(faOutdent, 'Solid')
 export default OutdentSolid

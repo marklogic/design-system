@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPoo = require('@fortawesome/free-solid-svg-icons/faPoo.js')
-
-const PooSolid = wrapFontAwesomeIcon(faPoo)
+import { faPoo } from '@fortawesome/free-solid-svg-icons/faPoo'
+const PooSolid = wrapFontAwesomeIcon(faPoo, 'Solid')
 export default PooSolid

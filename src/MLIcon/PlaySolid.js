@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPlay = require('@fortawesome/free-solid-svg-icons/faPlay.js')
-
-const PlaySolid = wrapFontAwesomeIcon(faPlay)
+import { faPlay } from '@fortawesome/free-solid-svg-icons/faPlay'
+const PlaySolid = wrapFontAwesomeIcon(faPlay, 'Solid')
 export default PlaySolid

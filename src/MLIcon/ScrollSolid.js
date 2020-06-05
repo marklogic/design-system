@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faScroll = require('@fortawesome/free-solid-svg-icons/faScroll.js')
-
-const ScrollSolid = wrapFontAwesomeIcon(faScroll)
+import { faScroll } from '@fortawesome/free-solid-svg-icons/faScroll'
+const ScrollSolid = wrapFontAwesomeIcon(faScroll, 'Solid')
 export default ScrollSolid

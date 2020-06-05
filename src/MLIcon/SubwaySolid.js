@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSubway = require('@fortawesome/free-solid-svg-icons/faSubway.js')
-
-const SubwaySolid = wrapFontAwesomeIcon(faSubway)
+import { faSubway } from '@fortawesome/free-solid-svg-icons/faSubway'
+const SubwaySolid = wrapFontAwesomeIcon(faSubway, 'Solid')
 export default SubwaySolid

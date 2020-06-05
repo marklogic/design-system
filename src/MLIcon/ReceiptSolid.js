@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faReceipt = require('@fortawesome/free-solid-svg-icons/faReceipt.js')
-
-const ReceiptSolid = wrapFontAwesomeIcon(faReceipt)
+import { faReceipt } from '@fortawesome/free-solid-svg-icons/faReceipt'
+const ReceiptSolid = wrapFontAwesomeIcon(faReceipt, 'Solid')
 export default ReceiptSolid

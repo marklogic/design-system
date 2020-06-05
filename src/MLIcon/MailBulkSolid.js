@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMailBulk = require('@fortawesome/free-solid-svg-icons/faMailBulk.js')
-
-const MailBulkSolid = wrapFontAwesomeIcon(faMailBulk)
+import { faMailBulk } from '@fortawesome/free-solid-svg-icons/faMailBulk'
+const MailBulkSolid = wrapFontAwesomeIcon(faMailBulk, 'Solid')
 export default MailBulkSolid

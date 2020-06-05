@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAsterisk = require('@fortawesome/free-solid-svg-icons/faAsterisk.js')
-
-const AsteriskSolid = wrapFontAwesomeIcon(faAsterisk)
+import { faAsterisk } from '@fortawesome/free-solid-svg-icons/faAsterisk'
+const AsteriskSolid = wrapFontAwesomeIcon(faAsterisk, 'Solid')
 export default AsteriskSolid

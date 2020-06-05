@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPizzaSlice = require('@fortawesome/free-solid-svg-icons/faPizzaSlice.js')
-
-const PizzaSliceSolid = wrapFontAwesomeIcon(faPizzaSlice)
+import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons/faPizzaSlice'
+const PizzaSliceSolid = wrapFontAwesomeIcon(faPizzaSlice, 'Solid')
 export default PizzaSliceSolid

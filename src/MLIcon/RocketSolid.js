@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRocket = require('@fortawesome/free-solid-svg-icons/faRocket.js')
-
-const RocketSolid = wrapFontAwesomeIcon(faRocket)
+import { faRocket } from '@fortawesome/free-solid-svg-icons/faRocket'
+const RocketSolid = wrapFontAwesomeIcon(faRocket, 'Solid')
 export default RocketSolid

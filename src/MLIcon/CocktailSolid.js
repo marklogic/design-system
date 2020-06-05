@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCocktail = require('@fortawesome/free-solid-svg-icons/faCocktail.js')
-
-const CocktailSolid = wrapFontAwesomeIcon(faCocktail)
+import { faCocktail } from '@fortawesome/free-solid-svg-icons/faCocktail'
+const CocktailSolid = wrapFontAwesomeIcon(faCocktail, 'Solid')
 export default CocktailSolid

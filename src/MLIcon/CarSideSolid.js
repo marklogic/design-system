@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCarSide = require('@fortawesome/free-solid-svg-icons/faCarSide.js')
-
-const CarSideSolid = wrapFontAwesomeIcon(faCarSide)
+import { faCarSide } from '@fortawesome/free-solid-svg-icons/faCarSide'
+const CarSideSolid = wrapFontAwesomeIcon(faCarSide, 'Solid')
 export default CarSideSolid

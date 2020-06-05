@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCross = require('@fortawesome/free-solid-svg-icons/faCross.js')
-
-const CrossSolid = wrapFontAwesomeIcon(faCross)
+import { faCross } from '@fortawesome/free-solid-svg-icons/faCross'
+const CrossSolid = wrapFontAwesomeIcon(faCross, 'Solid')
 export default CrossSolid

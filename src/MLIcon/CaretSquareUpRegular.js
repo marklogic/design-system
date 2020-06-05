@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCaretSquareUp = require('@fortawesome/free-regular-svg-icons/faCaretSquareUp.js')
-
-const CaretSquareUpRegular = wrapFontAwesomeIcon(faCaretSquareUp)
+import { faCaretSquareUp } from '@fortawesome/free-solid-svg-icons/faCaretSquareUp'
+const CaretSquareUpRegular = wrapFontAwesomeIcon(faCaretSquareUp, 'Regular')
 export default CaretSquareUpRegular

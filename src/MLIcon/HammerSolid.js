@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHammer = require('@fortawesome/free-solid-svg-icons/faHammer.js')
-
-const HammerSolid = wrapFontAwesomeIcon(faHammer)
+import { faHammer } from '@fortawesome/free-solid-svg-icons/faHammer'
+const HammerSolid = wrapFontAwesomeIcon(faHammer, 'Solid')
 export default HammerSolid

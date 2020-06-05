@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSmile = require('@fortawesome/free-solid-svg-icons/faSmile.js')
-
-const SmileSolid = wrapFontAwesomeIcon(faSmile)
+import { faSmile } from '@fortawesome/free-solid-svg-icons/faSmile'
+const SmileSolid = wrapFontAwesomeIcon(faSmile, 'Solid')
 export default SmileSolid

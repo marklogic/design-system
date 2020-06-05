@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faKissBeam = require('@fortawesome/free-solid-svg-icons/faKissBeam.js')
-
-const KissBeamSolid = wrapFontAwesomeIcon(faKissBeam)
+import { faKissBeam } from '@fortawesome/free-solid-svg-icons/faKissBeam'
+const KissBeamSolid = wrapFontAwesomeIcon(faKissBeam, 'Solid')
 export default KissBeamSolid

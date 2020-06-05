@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faUserCheck = require('@fortawesome/free-solid-svg-icons/faUserCheck.js')
-
-const UserCheckSolid = wrapFontAwesomeIcon(faUserCheck)
+import { faUserCheck } from '@fortawesome/free-solid-svg-icons/faUserCheck'
+const UserCheckSolid = wrapFontAwesomeIcon(faUserCheck, 'Solid')
 export default UserCheckSolid

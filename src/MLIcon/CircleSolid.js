@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCircle = require('@fortawesome/free-solid-svg-icons/faCircle.js')
-
-const CircleSolid = wrapFontAwesomeIcon(faCircle)
+import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle'
+const CircleSolid = wrapFontAwesomeIcon(faCircle, 'Solid')
 export default CircleSolid

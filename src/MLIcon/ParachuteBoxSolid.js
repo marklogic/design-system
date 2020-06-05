@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faParachuteBox = require('@fortawesome/free-solid-svg-icons/faParachuteBox.js')
-
-const ParachuteBoxSolid = wrapFontAwesomeIcon(faParachuteBox)
+import { faParachuteBox } from '@fortawesome/free-solid-svg-icons/faParachuteBox'
+const ParachuteBoxSolid = wrapFontAwesomeIcon(faParachuteBox, 'Solid')
 export default ParachuteBoxSolid

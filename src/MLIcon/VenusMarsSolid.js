@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faVenusMars = require('@fortawesome/free-solid-svg-icons/faVenusMars.js')
-
-const VenusMarsSolid = wrapFontAwesomeIcon(faVenusMars)
+import { faVenusMars } from '@fortawesome/free-solid-svg-icons/faVenusMars'
+const VenusMarsSolid = wrapFontAwesomeIcon(faVenusMars, 'Solid')
 export default VenusMarsSolid

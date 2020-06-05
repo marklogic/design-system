@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSearchPlus = require('@fortawesome/free-solid-svg-icons/faSearchPlus.js')
-
-const SearchPlusSolid = wrapFontAwesomeIcon(faSearchPlus)
+import { faSearchPlus } from '@fortawesome/free-solid-svg-icons/faSearchPlus'
+const SearchPlusSolid = wrapFontAwesomeIcon(faSearchPlus, 'Solid')
 export default SearchPlusSolid

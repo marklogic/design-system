@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRss = require('@fortawesome/free-solid-svg-icons/faRss.js')
-
-const RssSolid = wrapFontAwesomeIcon(faRss)
+import { faRss } from '@fortawesome/free-solid-svg-icons/faRss'
+const RssSolid = wrapFontAwesomeIcon(faRss, 'Solid')
 export default RssSolid

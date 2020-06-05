@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCog = require('@fortawesome/free-solid-svg-icons/faCog.js')
-
-const CogSolid = wrapFontAwesomeIcon(faCog)
+import { faCog } from '@fortawesome/free-solid-svg-icons/faCog'
+const CogSolid = wrapFontAwesomeIcon(faCog, 'Solid')
 export default CogSolid

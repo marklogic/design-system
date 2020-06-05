@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faOilCan = require('@fortawesome/free-solid-svg-icons/faOilCan.js')
-
-const OilCanSolid = wrapFontAwesomeIcon(faOilCan)
+import { faOilCan } from '@fortawesome/free-solid-svg-icons/faOilCan'
+const OilCanSolid = wrapFontAwesomeIcon(faOilCan, 'Solid')
 export default OilCanSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMicroscope = require('@fortawesome/free-solid-svg-icons/faMicroscope.js')
-
-const MicroscopeSolid = wrapFontAwesomeIcon(faMicroscope)
+import { faMicroscope } from '@fortawesome/free-solid-svg-icons/faMicroscope'
+const MicroscopeSolid = wrapFontAwesomeIcon(faMicroscope, 'Solid')
 export default MicroscopeSolid

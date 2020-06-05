@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSocks = require('@fortawesome/free-solid-svg-icons/faSocks.js')
-
-const SocksSolid = wrapFontAwesomeIcon(faSocks)
+import { faSocks } from '@fortawesome/free-solid-svg-icons/faSocks'
+const SocksSolid = wrapFontAwesomeIcon(faSocks, 'Solid')
 export default SocksSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBug = require('@fortawesome/free-solid-svg-icons/faBug.js')
-
-const BugSolid = wrapFontAwesomeIcon(faBug)
+import { faBug } from '@fortawesome/free-solid-svg-icons/faBug'
+const BugSolid = wrapFontAwesomeIcon(faBug, 'Solid')
 export default BugSolid

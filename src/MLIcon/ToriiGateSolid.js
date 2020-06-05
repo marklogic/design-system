@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faToriiGate = require('@fortawesome/free-solid-svg-icons/faToriiGate.js')
-
-const ToriiGateSolid = wrapFontAwesomeIcon(faToriiGate)
+import { faToriiGate } from '@fortawesome/free-solid-svg-icons/faToriiGate'
+const ToriiGateSolid = wrapFontAwesomeIcon(faToriiGate, 'Solid')
 export default ToriiGateSolid

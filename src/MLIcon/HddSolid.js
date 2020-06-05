@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHdd = require('@fortawesome/free-solid-svg-icons/faHdd.js')
-
-const HddSolid = wrapFontAwesomeIcon(faHdd)
+import { faHdd } from '@fortawesome/free-solid-svg-icons/faHdd'
+const HddSolid = wrapFontAwesomeIcon(faHdd, 'Solid')
 export default HddSolid

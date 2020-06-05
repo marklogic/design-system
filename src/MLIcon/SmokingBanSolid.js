@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSmokingBan = require('@fortawesome/free-solid-svg-icons/faSmokingBan.js')
-
-const SmokingBanSolid = wrapFontAwesomeIcon(faSmokingBan)
+import { faSmokingBan } from '@fortawesome/free-solid-svg-icons/faSmokingBan'
+const SmokingBanSolid = wrapFontAwesomeIcon(faSmokingBan, 'Solid')
 export default SmokingBanSolid

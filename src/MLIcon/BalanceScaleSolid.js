@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBalanceScale = require('@fortawesome/free-solid-svg-icons/faBalanceScale.js')
-
-const BalanceScaleSolid = wrapFontAwesomeIcon(faBalanceScale)
+import { faBalanceScale } from '@fortawesome/free-solid-svg-icons/faBalanceScale'
+const BalanceScaleSolid = wrapFontAwesomeIcon(faBalanceScale, 'Solid')
 export default BalanceScaleSolid

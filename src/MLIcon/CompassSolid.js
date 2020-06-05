@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCompass = require('@fortawesome/free-solid-svg-icons/faCompass.js')
-
-const CompassSolid = wrapFontAwesomeIcon(faCompass)
+import { faCompass } from '@fortawesome/free-solid-svg-icons/faCompass'
+const CompassSolid = wrapFontAwesomeIcon(faCompass, 'Solid')
 export default CompassSolid

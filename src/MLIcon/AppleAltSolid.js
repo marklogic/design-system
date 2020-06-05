@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAppleAlt = require('@fortawesome/free-solid-svg-icons/faAppleAlt.js')
-
-const AppleAltSolid = wrapFontAwesomeIcon(faAppleAlt)
+import { faAppleAlt } from '@fortawesome/free-solid-svg-icons/faAppleAlt'
+const AppleAltSolid = wrapFontAwesomeIcon(faAppleAlt, 'Solid')
 export default AppleAltSolid

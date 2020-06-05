@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSwimmer = require('@fortawesome/free-solid-svg-icons/faSwimmer.js')
-
-const SwimmerSolid = wrapFontAwesomeIcon(faSwimmer)
+import { faSwimmer } from '@fortawesome/free-solid-svg-icons/faSwimmer'
+const SwimmerSolid = wrapFontAwesomeIcon(faSwimmer, 'Solid')
 export default SwimmerSolid

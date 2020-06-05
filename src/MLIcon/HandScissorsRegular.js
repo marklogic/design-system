@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHandScissors = require('@fortawesome/free-regular-svg-icons/faHandScissors.js')
-
-const HandScissorsRegular = wrapFontAwesomeIcon(faHandScissors)
+import { faHandScissors } from '@fortawesome/free-solid-svg-icons/faHandScissors'
+const HandScissorsRegular = wrapFontAwesomeIcon(faHandScissors, 'Regular')
 export default HandScissorsRegular

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faICursor = require('@fortawesome/free-solid-svg-icons/faICursor.js')
-
-const ICursorSolid = wrapFontAwesomeIcon(faICursor)
+import { faICursor } from '@fortawesome/free-solid-svg-icons/faICursor'
+const ICursorSolid = wrapFontAwesomeIcon(faICursor, 'Solid')
 export default ICursorSolid

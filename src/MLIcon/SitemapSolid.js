@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSitemap = require('@fortawesome/free-solid-svg-icons/faSitemap.js')
-
-const SitemapSolid = wrapFontAwesomeIcon(faSitemap)
+import { faSitemap } from '@fortawesome/free-solid-svg-icons/faSitemap'
+const SitemapSolid = wrapFontAwesomeIcon(faSitemap, 'Solid')
 export default SitemapSolid

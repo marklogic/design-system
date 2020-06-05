@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPowerOff = require('@fortawesome/free-solid-svg-icons/faPowerOff.js')
-
-const PowerOffSolid = wrapFontAwesomeIcon(faPowerOff)
+import { faPowerOff } from '@fortawesome/free-solid-svg-icons/faPowerOff'
+const PowerOffSolid = wrapFontAwesomeIcon(faPowerOff, 'Solid')
 export default PowerOffSolid

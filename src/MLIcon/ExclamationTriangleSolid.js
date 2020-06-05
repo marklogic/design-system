@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faExclamationTriangle = require('@fortawesome/free-solid-svg-icons/faExclamationTriangle.js')
-
-const ExclamationTriangleSolid = wrapFontAwesomeIcon(faExclamationTriangle)
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle'
+const ExclamationTriangleSolid = wrapFontAwesomeIcon(faExclamationTriangle, 'Solid')
 export default ExclamationTriangleSolid

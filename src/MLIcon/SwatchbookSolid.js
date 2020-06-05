@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSwatchbook = require('@fortawesome/free-solid-svg-icons/faSwatchbook.js')
-
-const SwatchbookSolid = wrapFontAwesomeIcon(faSwatchbook)
+import { faSwatchbook } from '@fortawesome/free-solid-svg-icons/faSwatchbook'
+const SwatchbookSolid = wrapFontAwesomeIcon(faSwatchbook, 'Solid')
 export default SwatchbookSolid

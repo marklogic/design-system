@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLaugh = require('@fortawesome/free-solid-svg-icons/faLaugh.js')
-
-const LaughSolid = wrapFontAwesomeIcon(faLaugh)
+import { faLaugh } from '@fortawesome/free-solid-svg-icons/faLaugh'
+const LaughSolid = wrapFontAwesomeIcon(faLaugh, 'Solid')
 export default LaughSolid

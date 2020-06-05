@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faRulerHorizontal = require('@fortawesome/free-solid-svg-icons/faRulerHorizontal.js')
-
-const RulerHorizontalSolid = wrapFontAwesomeIcon(faRulerHorizontal)
+import { faRulerHorizontal } from '@fortawesome/free-solid-svg-icons/faRulerHorizontal'
+const RulerHorizontalSolid = wrapFontAwesomeIcon(faRulerHorizontal, 'Solid')
 export default RulerHorizontalSolid

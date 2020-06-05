@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faEgg = require('@fortawesome/free-solid-svg-icons/faEgg.js')
-
-const EggSolid = wrapFontAwesomeIcon(faEgg)
+import { faEgg } from '@fortawesome/free-solid-svg-icons/faEgg'
+const EggSolid = wrapFontAwesomeIcon(faEgg, 'Solid')
 export default EggSolid

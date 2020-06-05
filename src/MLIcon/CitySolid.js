@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCity = require('@fortawesome/free-solid-svg-icons/faCity.js')
-
-const CitySolid = wrapFontAwesomeIcon(faCity)
+import { faCity } from '@fortawesome/free-solid-svg-icons/faCity'
+const CitySolid = wrapFontAwesomeIcon(faCity, 'Solid')
 export default CitySolid

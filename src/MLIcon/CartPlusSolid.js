@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCartPlus = require('@fortawesome/free-solid-svg-icons/faCartPlus.js')
-
-const CartPlusSolid = wrapFontAwesomeIcon(faCartPlus)
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons/faCartPlus'
+const CartPlusSolid = wrapFontAwesomeIcon(faCartPlus, 'Solid')
 export default CartPlusSolid

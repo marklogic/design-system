@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHeadSideCough = require('@fortawesome/free-solid-svg-icons/faHeadSideCough.js')
-
-const HeadSideCoughSolid = wrapFontAwesomeIcon(faHeadSideCough)
+import { faHeadSideCough } from '@fortawesome/free-solid-svg-icons/faHeadSideCough'
+const HeadSideCoughSolid = wrapFontAwesomeIcon(faHeadSideCough, 'Solid')
 export default HeadSideCoughSolid

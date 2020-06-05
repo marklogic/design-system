@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHeading = require('@fortawesome/free-solid-svg-icons/faHeading.js')
-
-const HeadingSolid = wrapFontAwesomeIcon(faHeading)
+import { faHeading } from '@fortawesome/free-solid-svg-icons/faHeading'
+const HeadingSolid = wrapFontAwesomeIcon(faHeading, 'Solid')
 export default HeadingSolid

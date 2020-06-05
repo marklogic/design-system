@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHSquare = require('@fortawesome/free-solid-svg-icons/faHSquare.js')
-
-const HSquareSolid = wrapFontAwesomeIcon(faHSquare)
+import { faHSquare } from '@fortawesome/free-solid-svg-icons/faHSquare'
+const HSquareSolid = wrapFontAwesomeIcon(faHSquare, 'Solid')
 export default HSquareSolid

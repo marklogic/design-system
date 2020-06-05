@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faGamepad = require('@fortawesome/free-solid-svg-icons/faGamepad.js')
-
-const GamepadSolid = wrapFontAwesomeIcon(faGamepad)
+import { faGamepad } from '@fortawesome/free-solid-svg-icons/faGamepad'
+const GamepadSolid = wrapFontAwesomeIcon(faGamepad, 'Solid')
 export default GamepadSolid

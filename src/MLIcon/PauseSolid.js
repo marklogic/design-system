@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPause = require('@fortawesome/free-solid-svg-icons/faPause.js')
-
-const PauseSolid = wrapFontAwesomeIcon(faPause)
+import { faPause } from '@fortawesome/free-solid-svg-icons/faPause'
+const PauseSolid = wrapFontAwesomeIcon(faPause, 'Solid')
 export default PauseSolid

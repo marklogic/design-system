@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStarAndCrescent = require('@fortawesome/free-solid-svg-icons/faStarAndCrescent.js')
-
-const StarAndCrescentSolid = wrapFontAwesomeIcon(faStarAndCrescent)
+import { faStarAndCrescent } from '@fortawesome/free-solid-svg-icons/faStarAndCrescent'
+const StarAndCrescentSolid = wrapFontAwesomeIcon(faStarAndCrescent, 'Solid')
 export default StarAndCrescentSolid

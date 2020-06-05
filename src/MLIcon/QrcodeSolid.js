@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faQrcode = require('@fortawesome/free-solid-svg-icons/faQrcode.js')
-
-const QrcodeSolid = wrapFontAwesomeIcon(faQrcode)
+import { faQrcode } from '@fortawesome/free-solid-svg-icons/faQrcode'
+const QrcodeSolid = wrapFontAwesomeIcon(faQrcode, 'Solid')
 export default QrcodeSolid

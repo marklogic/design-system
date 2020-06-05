@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMountain = require('@fortawesome/free-solid-svg-icons/faMountain.js')
-
-const MountainSolid = wrapFontAwesomeIcon(faMountain)
+import { faMountain } from '@fortawesome/free-solid-svg-icons/faMountain'
+const MountainSolid = wrapFontAwesomeIcon(faMountain, 'Solid')
 export default MountainSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faDatabase = require('@fortawesome/free-solid-svg-icons/faDatabase.js')
-
-const DatabaseSolid = wrapFontAwesomeIcon(faDatabase)
+import { faDatabase } from '@fortawesome/free-solid-svg-icons/faDatabase'
+const DatabaseSolid = wrapFontAwesomeIcon(faDatabase, 'Solid')
 export default DatabaseSolid

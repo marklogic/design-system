@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCrop = require('@fortawesome/free-solid-svg-icons/faCrop.js')
-
-const CropSolid = wrapFontAwesomeIcon(faCrop)
+import { faCrop } from '@fortawesome/free-solid-svg-icons/faCrop'
+const CropSolid = wrapFontAwesomeIcon(faCrop, 'Solid')
 export default CropSolid

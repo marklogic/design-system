@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faChargingStation = require('@fortawesome/free-solid-svg-icons/faChargingStation.js')
-
-const ChargingStationSolid = wrapFontAwesomeIcon(faChargingStation)
+import { faChargingStation } from '@fortawesome/free-solid-svg-icons/faChargingStation'
+const ChargingStationSolid = wrapFontAwesomeIcon(faChargingStation, 'Solid')
 export default ChargingStationSolid

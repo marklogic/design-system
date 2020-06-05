@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faWeightHanging = require('@fortawesome/free-solid-svg-icons/faWeightHanging.js')
-
-const WeightHangingSolid = wrapFontAwesomeIcon(faWeightHanging)
+import { faWeightHanging } from '@fortawesome/free-solid-svg-icons/faWeightHanging'
+const WeightHangingSolid = wrapFontAwesomeIcon(faWeightHanging, 'Solid')
 export default WeightHangingSolid

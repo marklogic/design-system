@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTheaterMasks = require('@fortawesome/free-solid-svg-icons/faTheaterMasks.js')
-
-const TheaterMasksSolid = wrapFontAwesomeIcon(faTheaterMasks)
+import { faTheaterMasks } from '@fortawesome/free-solid-svg-icons/faTheaterMasks'
+const TheaterMasksSolid = wrapFontAwesomeIcon(faTheaterMasks, 'Solid')
 export default TheaterMasksSolid

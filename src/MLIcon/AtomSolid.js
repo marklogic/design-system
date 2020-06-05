@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAtom = require('@fortawesome/free-solid-svg-icons/faAtom.js')
-
-const AtomSolid = wrapFontAwesomeIcon(faAtom)
+import { faAtom } from '@fortawesome/free-solid-svg-icons/faAtom'
+const AtomSolid = wrapFontAwesomeIcon(faAtom, 'Solid')
 export default AtomSolid

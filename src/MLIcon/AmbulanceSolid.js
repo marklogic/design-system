@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAmbulance = require('@fortawesome/free-solid-svg-icons/faAmbulance.js')
-
-const AmbulanceSolid = wrapFontAwesomeIcon(faAmbulance)
+import { faAmbulance } from '@fortawesome/free-solid-svg-icons/faAmbulance'
+const AmbulanceSolid = wrapFontAwesomeIcon(faAmbulance, 'Solid')
 export default AmbulanceSolid

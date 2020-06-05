@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faVial = require('@fortawesome/free-solid-svg-icons/faVial.js')
-
-const VialSolid = wrapFontAwesomeIcon(faVial)
+import { faVial } from '@fortawesome/free-solid-svg-icons/faVial'
+const VialSolid = wrapFontAwesomeIcon(faVial, 'Solid')
 export default VialSolid

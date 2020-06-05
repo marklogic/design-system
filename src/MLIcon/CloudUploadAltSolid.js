@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCloudUploadAlt = require('@fortawesome/free-solid-svg-icons/faCloudUploadAlt.js')
-
-const CloudUploadAltSolid = wrapFontAwesomeIcon(faCloudUploadAlt)
+import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons/faCloudUploadAlt'
+const CloudUploadAltSolid = wrapFontAwesomeIcon(faCloudUploadAlt, 'Solid')
 export default CloudUploadAltSolid

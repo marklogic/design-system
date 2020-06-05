@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHandPeace = require('@fortawesome/free-regular-svg-icons/faHandPeace.js')
-
-const HandPeaceRegular = wrapFontAwesomeIcon(faHandPeace)
+import { faHandPeace } from '@fortawesome/free-solid-svg-icons/faHandPeace'
+const HandPeaceRegular = wrapFontAwesomeIcon(faHandPeace, 'Regular')
 export default HandPeaceRegular

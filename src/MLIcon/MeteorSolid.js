@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMeteor = require('@fortawesome/free-solid-svg-icons/faMeteor.js')
-
-const MeteorSolid = wrapFontAwesomeIcon(faMeteor)
+import { faMeteor } from '@fortawesome/free-solid-svg-icons/faMeteor'
+const MeteorSolid = wrapFontAwesomeIcon(faMeteor, 'Solid')
 export default MeteorSolid

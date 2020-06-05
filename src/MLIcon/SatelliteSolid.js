@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSatellite = require('@fortawesome/free-solid-svg-icons/faSatellite.js')
-
-const SatelliteSolid = wrapFontAwesomeIcon(faSatellite)
+import { faSatellite } from '@fortawesome/free-solid-svg-icons/faSatellite'
+const SatelliteSolid = wrapFontAwesomeIcon(faSatellite, 'Solid')
 export default SatelliteSolid

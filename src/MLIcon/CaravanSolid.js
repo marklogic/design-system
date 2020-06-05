@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCaravan = require('@fortawesome/free-solid-svg-icons/faCaravan.js')
-
-const CaravanSolid = wrapFontAwesomeIcon(faCaravan)
+import { faCaravan } from '@fortawesome/free-solid-svg-icons/faCaravan'
+const CaravanSolid = wrapFontAwesomeIcon(faCaravan, 'Solid')
 export default CaravanSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPollH = require('@fortawesome/free-solid-svg-icons/faPollH.js')
-
-const PollHSolid = wrapFontAwesomeIcon(faPollH)
+import { faPollH } from '@fortawesome/free-solid-svg-icons/faPollH'
+const PollHSolid = wrapFontAwesomeIcon(faPollH, 'Solid')
 export default PollHSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFeatherAlt = require('@fortawesome/free-solid-svg-icons/faFeatherAlt.js')
-
-const FeatherAltSolid = wrapFontAwesomeIcon(faFeatherAlt)
+import { faFeatherAlt } from '@fortawesome/free-solid-svg-icons/faFeatherAlt'
+const FeatherAltSolid = wrapFontAwesomeIcon(faFeatherAlt, 'Solid')
 export default FeatherAltSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPaintBrush = require('@fortawesome/free-solid-svg-icons/faPaintBrush.js')
-
-const PaintBrushSolid = wrapFontAwesomeIcon(faPaintBrush)
+import { faPaintBrush } from '@fortawesome/free-solid-svg-icons/faPaintBrush'
+const PaintBrushSolid = wrapFontAwesomeIcon(faPaintBrush, 'Solid')
 export default PaintBrushSolid

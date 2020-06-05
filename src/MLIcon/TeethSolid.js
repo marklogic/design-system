@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTeeth = require('@fortawesome/free-solid-svg-icons/faTeeth.js')
-
-const TeethSolid = wrapFontAwesomeIcon(faTeeth)
+import { faTeeth } from '@fortawesome/free-solid-svg-icons/faTeeth'
+const TeethSolid = wrapFontAwesomeIcon(faTeeth, 'Solid')
 export default TeethSolid

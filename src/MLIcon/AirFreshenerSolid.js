@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAirFreshener = require('@fortawesome/free-solid-svg-icons/faAirFreshener.js')
-
-const AirFreshenerSolid = wrapFontAwesomeIcon(faAirFreshener)
+import { faAirFreshener } from '@fortawesome/free-solid-svg-icons/faAirFreshener'
+const AirFreshenerSolid = wrapFontAwesomeIcon(faAirFreshener, 'Solid')
 export default AirFreshenerSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHandPointLeft = require('@fortawesome/free-regular-svg-icons/faHandPointLeft.js')
-
-const HandPointLeftRegular = wrapFontAwesomeIcon(faHandPointLeft)
+import { faHandPointLeft } from '@fortawesome/free-solid-svg-icons/faHandPointLeft'
+const HandPointLeftRegular = wrapFontAwesomeIcon(faHandPointLeft, 'Regular')
 export default HandPointLeftRegular

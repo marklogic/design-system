@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faClipboardCheck = require('@fortawesome/free-solid-svg-icons/faClipboardCheck.js')
-
-const ClipboardCheckSolid = wrapFontAwesomeIcon(faClipboardCheck)
+import { faClipboardCheck } from '@fortawesome/free-solid-svg-icons/faClipboardCheck'
+const ClipboardCheckSolid = wrapFontAwesomeIcon(faClipboardCheck, 'Solid')
 export default ClipboardCheckSolid

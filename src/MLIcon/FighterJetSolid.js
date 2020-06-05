@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFighterJet = require('@fortawesome/free-solid-svg-icons/faFighterJet.js')
-
-const FighterJetSolid = wrapFontAwesomeIcon(faFighterJet)
+import { faFighterJet } from '@fortawesome/free-solid-svg-icons/faFighterJet'
+const FighterJetSolid = wrapFontAwesomeIcon(faFighterJet, 'Solid')
 export default FighterJetSolid

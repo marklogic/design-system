@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCertificate = require('@fortawesome/free-solid-svg-icons/faCertificate.js')
-
-const CertificateSolid = wrapFontAwesomeIcon(faCertificate)
+import { faCertificate } from '@fortawesome/free-solid-svg-icons/faCertificate'
+const CertificateSolid = wrapFontAwesomeIcon(faCertificate, 'Solid')
 export default CertificateSolid

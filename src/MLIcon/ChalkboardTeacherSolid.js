@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faChalkboardTeacher = require('@fortawesome/free-solid-svg-icons/faChalkboardTeacher.js')
-
-const ChalkboardTeacherSolid = wrapFontAwesomeIcon(faChalkboardTeacher)
+import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons/faChalkboardTeacher'
+const ChalkboardTeacherSolid = wrapFontAwesomeIcon(faChalkboardTeacher, 'Solid')
 export default ChalkboardTeacherSolid

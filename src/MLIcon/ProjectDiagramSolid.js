@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faProjectDiagram = require('@fortawesome/free-solid-svg-icons/faProjectDiagram.js')
-
-const ProjectDiagramSolid = wrapFontAwesomeIcon(faProjectDiagram)
+import { faProjectDiagram } from '@fortawesome/free-solid-svg-icons/faProjectDiagram'
+const ProjectDiagramSolid = wrapFontAwesomeIcon(faProjectDiagram, 'Solid')
 export default ProjectDiagramSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faGripLinesVertical = require('@fortawesome/free-solid-svg-icons/faGripLinesVertical.js')
-
-const GripLinesVerticalSolid = wrapFontAwesomeIcon(faGripLinesVertical)
+import { faGripLinesVertical } from '@fortawesome/free-solid-svg-icons/faGripLinesVertical'
+const GripLinesVerticalSolid = wrapFontAwesomeIcon(faGripLinesVertical, 'Solid')
 export default GripLinesVerticalSolid

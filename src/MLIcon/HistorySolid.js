@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faHistory = require('@fortawesome/free-solid-svg-icons/faHistory.js')
-
-const HistorySolid = wrapFontAwesomeIcon(faHistory)
+import { faHistory } from '@fortawesome/free-solid-svg-icons/faHistory'
+const HistorySolid = wrapFontAwesomeIcon(faHistory, 'Solid')
 export default HistorySolid

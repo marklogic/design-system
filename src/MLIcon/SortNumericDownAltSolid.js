@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSortNumericDownAlt = require('@fortawesome/free-solid-svg-icons/faSortNumericDownAlt.js')
-
-const SortNumericDownAltSolid = wrapFontAwesomeIcon(faSortNumericDownAlt)
+import { faSortNumericDownAlt } from '@fortawesome/free-solid-svg-icons/faSortNumericDownAlt'
+const SortNumericDownAltSolid = wrapFontAwesomeIcon(faSortNumericDownAlt, 'Solid')
 export default SortNumericDownAltSolid

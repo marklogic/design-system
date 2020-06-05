@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSeedling = require('@fortawesome/free-solid-svg-icons/faSeedling.js')
-
-const SeedlingSolid = wrapFontAwesomeIcon(faSeedling)
+import { faSeedling } from '@fortawesome/free-solid-svg-icons/faSeedling'
+const SeedlingSolid = wrapFontAwesomeIcon(faSeedling, 'Solid')
 export default SeedlingSolid

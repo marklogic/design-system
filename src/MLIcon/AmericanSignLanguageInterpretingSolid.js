@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAmericanSignLanguageInterpreting = require('@fortawesome/free-solid-svg-icons/faAmericanSignLanguageInterpreting.js')
-
-const AmericanSignLanguageInterpretingSolid = wrapFontAwesomeIcon(faAmericanSignLanguageInterpreting)
+import { faAmericanSignLanguageInterpreting } from '@fortawesome/free-solid-svg-icons/faAmericanSignLanguageInterpreting'
+const AmericanSignLanguageInterpretingSolid = wrapFontAwesomeIcon(faAmericanSignLanguageInterpreting, 'Solid')
 export default AmericanSignLanguageInterpretingSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faAngleLeft = require('@fortawesome/free-solid-svg-icons/faAngleLeft.js')
-
-const AngleLeftSolid = wrapFontAwesomeIcon(faAngleLeft)
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons/faAngleLeft'
+const AngleLeftSolid = wrapFontAwesomeIcon(faAngleLeft, 'Solid')
 export default AngleLeftSolid

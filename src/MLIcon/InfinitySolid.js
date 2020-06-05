@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faInfinity = require('@fortawesome/free-solid-svg-icons/faInfinity.js')
-
-const InfinitySolid = wrapFontAwesomeIcon(faInfinity)
+import { faInfinity } from '@fortawesome/free-solid-svg-icons/faInfinity'
+const InfinitySolid = wrapFontAwesomeIcon(faInfinity, 'Solid')
 export default InfinitySolid

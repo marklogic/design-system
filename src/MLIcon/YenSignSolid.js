@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faYenSign = require('@fortawesome/free-solid-svg-icons/faYenSign.js')
-
-const YenSignSolid = wrapFontAwesomeIcon(faYenSign)
+import { faYenSign } from '@fortawesome/free-solid-svg-icons/faYenSign'
+const YenSignSolid = wrapFontAwesomeIcon(faYenSign, 'Solid')
 export default YenSignSolid

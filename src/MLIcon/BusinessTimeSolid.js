@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBusinessTime = require('@fortawesome/free-solid-svg-icons/faBusinessTime.js')
-
-const BusinessTimeSolid = wrapFontAwesomeIcon(faBusinessTime)
+import { faBusinessTime } from '@fortawesome/free-solid-svg-icons/faBusinessTime'
+const BusinessTimeSolid = wrapFontAwesomeIcon(faBusinessTime, 'Solid')
 export default BusinessTimeSolid

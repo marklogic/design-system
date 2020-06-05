@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faWindowRestore = require('@fortawesome/free-solid-svg-icons/faWindowRestore.js')
-
-const WindowRestoreSolid = wrapFontAwesomeIcon(faWindowRestore)
+import { faWindowRestore } from '@fortawesome/free-solid-svg-icons/faWindowRestore'
+const WindowRestoreSolid = wrapFontAwesomeIcon(faWindowRestore, 'Solid')
 export default WindowRestoreSolid

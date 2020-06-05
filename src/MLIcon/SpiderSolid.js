@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSpider = require('@fortawesome/free-solid-svg-icons/faSpider.js')
-
-const SpiderSolid = wrapFontAwesomeIcon(faSpider)
+import { faSpider } from '@fortawesome/free-solid-svg-icons/faSpider'
+const SpiderSolid = wrapFontAwesomeIcon(faSpider, 'Solid')
 export default SpiderSolid

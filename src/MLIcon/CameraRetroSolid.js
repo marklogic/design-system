@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCameraRetro = require('@fortawesome/free-solid-svg-icons/faCameraRetro.js')
-
-const CameraRetroSolid = wrapFontAwesomeIcon(faCameraRetro)
+import { faCameraRetro } from '@fortawesome/free-solid-svg-icons/faCameraRetro'
+const CameraRetroSolid = wrapFontAwesomeIcon(faCameraRetro, 'Solid')
 export default CameraRetroSolid

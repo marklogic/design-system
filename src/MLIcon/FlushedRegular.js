@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faFlushed = require('@fortawesome/free-regular-svg-icons/faFlushed.js')
-
-const FlushedRegular = wrapFontAwesomeIcon(faFlushed)
+import { faFlushed } from '@fortawesome/free-solid-svg-icons/faFlushed'
+const FlushedRegular = wrapFontAwesomeIcon(faFlushed, 'Regular')
 export default FlushedRegular

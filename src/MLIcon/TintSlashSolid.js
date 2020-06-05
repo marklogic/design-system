@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faTintSlash = require('@fortawesome/free-solid-svg-icons/faTintSlash.js')
-
-const TintSlashSolid = wrapFontAwesomeIcon(faTintSlash)
+import { faTintSlash } from '@fortawesome/free-solid-svg-icons/faTintSlash'
+const TintSlashSolid = wrapFontAwesomeIcon(faTintSlash, 'Solid')
 export default TintSlashSolid

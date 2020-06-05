@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faLightbulb = require('@fortawesome/free-solid-svg-icons/faLightbulb.js')
-
-const LightbulbSolid = wrapFontAwesomeIcon(faLightbulb)
+import { faLightbulb } from '@fortawesome/free-solid-svg-icons/faLightbulb'
+const LightbulbSolid = wrapFontAwesomeIcon(faLightbulb, 'Solid')
 export default LightbulbSolid

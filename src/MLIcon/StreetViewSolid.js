@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStreetView = require('@fortawesome/free-solid-svg-icons/faStreetView.js')
-
-const StreetViewSolid = wrapFontAwesomeIcon(faStreetView)
+import { faStreetView } from '@fortawesome/free-solid-svg-icons/faStreetView'
+const StreetViewSolid = wrapFontAwesomeIcon(faStreetView, 'Solid')
 export default StreetViewSolid

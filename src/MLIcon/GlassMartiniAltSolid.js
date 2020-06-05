@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faGlassMartiniAlt = require('@fortawesome/free-solid-svg-icons/faGlassMartiniAlt.js')
-
-const GlassMartiniAltSolid = wrapFontAwesomeIcon(faGlassMartiniAlt)
+import { faGlassMartiniAlt } from '@fortawesome/free-solid-svg-icons/faGlassMartiniAlt'
+const GlassMartiniAltSolid = wrapFontAwesomeIcon(faGlassMartiniAlt, 'Solid')
 export default GlassMartiniAltSolid

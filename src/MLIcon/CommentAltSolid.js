@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCommentAlt = require('@fortawesome/free-solid-svg-icons/faCommentAlt.js')
-
-const CommentAltSolid = wrapFontAwesomeIcon(faCommentAlt)
+import { faCommentAlt } from '@fortawesome/free-solid-svg-icons/faCommentAlt'
+const CommentAltSolid = wrapFontAwesomeIcon(faCommentAlt, 'Solid')
 export default CommentAltSolid

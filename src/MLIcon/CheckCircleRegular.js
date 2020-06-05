@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faCheckCircle = require('@fortawesome/free-regular-svg-icons/faCheckCircle.js')
-
-const CheckCircleRegular = wrapFontAwesomeIcon(faCheckCircle)
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle'
+const CheckCircleRegular = wrapFontAwesomeIcon(faCheckCircle, 'Regular')
 export default CheckCircleRegular

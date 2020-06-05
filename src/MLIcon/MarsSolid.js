@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faMars = require('@fortawesome/free-solid-svg-icons/faMars.js')
-
-const MarsSolid = wrapFontAwesomeIcon(faMars)
+import { faMars } from '@fortawesome/free-solid-svg-icons/faMars'
+const MarsSolid = wrapFontAwesomeIcon(faMars, 'Solid')
 export default MarsSolid

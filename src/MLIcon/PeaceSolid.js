@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faPeace = require('@fortawesome/free-solid-svg-icons/faPeace.js')
-
-const PeaceSolid = wrapFontAwesomeIcon(faPeace)
+import { faPeace } from '@fortawesome/free-solid-svg-icons/faPeace'
+const PeaceSolid = wrapFontAwesomeIcon(faPeace, 'Solid')
 export default PeaceSolid

@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faWifi = require('@fortawesome/free-solid-svg-icons/faWifi.js')
-
-const WifiSolid = wrapFontAwesomeIcon(faWifi)
+import { faWifi } from '@fortawesome/free-solid-svg-icons/faWifi'
+const WifiSolid = wrapFontAwesomeIcon(faWifi, 'Solid')
 export default WifiSolid

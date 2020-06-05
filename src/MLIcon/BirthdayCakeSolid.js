@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faBirthdayCake = require('@fortawesome/free-solid-svg-icons/faBirthdayCake.js')
-
-const BirthdayCakeSolid = wrapFontAwesomeIcon(faBirthdayCake)
+import { faBirthdayCake } from '@fortawesome/free-solid-svg-icons/faBirthdayCake'
+const BirthdayCakeSolid = wrapFontAwesomeIcon(faBirthdayCake, 'Solid')
 export default BirthdayCakeSolid

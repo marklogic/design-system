@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faStroopwafel = require('@fortawesome/free-solid-svg-icons/faStroopwafel.js')
-
-const StroopwafelSolid = wrapFontAwesomeIcon(faStroopwafel)
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons/faStroopwafel'
+const StroopwafelSolid = wrapFontAwesomeIcon(faStroopwafel, 'Solid')
 export default StroopwafelSolid

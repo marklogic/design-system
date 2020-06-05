@@ -1,6 +1,4 @@
 import { wrapFontAwesomeIcon } from './icon-wrappers'
-
-const faSynagogue = require('@fortawesome/free-solid-svg-icons/faSynagogue.js')
-
-const SynagogueSolid = wrapFontAwesomeIcon(faSynagogue)
+import { faSynagogue } from '@fortawesome/free-solid-svg-icons/faSynagogue'
+const SynagogueSolid = wrapFontAwesomeIcon(faSynagogue, 'Solid')
 export default SynagogueSolid
