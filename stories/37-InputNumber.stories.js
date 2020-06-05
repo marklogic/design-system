@@ -41,7 +41,6 @@ export const basic = () => {
   return (
     <div>
       <div>Note that defaultValue will not cause this demo to update.</div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLInputNumber {...props} />
     </div>
   )
@@ -75,7 +74,6 @@ export const disabled = () => {
   return (
     <div>
       <div>Note that defaultValue will not cause this demo to update.</div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLInputNumber {...props} />
     </div>
   )
@@ -108,7 +106,6 @@ export const formatter = () => {
   return (
     <div>
       <div>Note that defaultValue will not cause this demo to update.</div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLInputNumber {...props} />
     </div>
   )
@@ -136,7 +133,6 @@ export const sizes = () => {
   return (
     <div>
       <div>Note that defaultValue will not cause this demo to update.</div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLInputNumber {...props} size='small' />
       <MLInputNumber {...props} size='middle' />
       <MLInputNumber {...props} size='large' />
@@ -171,7 +167,6 @@ export const decimals = () => {
   return (
     <div>
       <div>Note that defaultValue will not cause this demo to update.</div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       <MLInputNumber {...props} />
     </div>
   )

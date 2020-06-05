@@ -50,7 +50,6 @@ export const exampleIcon = () => {
   const component = AntIcons.CheckCircleFilled
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       {iconTile({
         component,
         props,
@@ -91,7 +90,6 @@ export const shortList = () => {
   }
   return (
     <div>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       {iconTile({ component: MLIcon.UserOutlined, props })}
       {iconTile({ component: MLIcon.QuestionCircleOutlined, props })}
       {iconTile({ component: MLIcon.SearchOutlined, props })}
@@ -159,7 +157,6 @@ export const completeList = () => {
   }
   return (
     <div className='ml-storybook-icon-list'>
-      <div>Note: On the hosted (non-local) StoryBook, this component's custom CSS is not currently rendering correctly. This should not affect use of the component in your app.</div>
       {list}
     </div>
   )
