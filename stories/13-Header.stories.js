@@ -1,6 +1,6 @@
 import React from 'react'
 import { MLHeader, MLTooltip, MLLayout } from '@marklogic/design-system'
-import { RouteSolid, SearchOutlined, QuestionCircleOutlined, SettingOutlined, UserOutlined } from '@marklogic/design-system/MLIcon'
+import { RouteSolid, SearchOutlined, QuestionCircleOutlined, SettingOutlined, UserOutlined } from '@marklogic/design-system/es/MLIcon'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import { Avatar as MLAvatar } from 'antd' // TODO: Use MLAvatar once it exists
 

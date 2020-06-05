@@ -43,7 +43,7 @@ module.exports = async ({ config }) => {
               style: true,
             }, '@marklogic/design-system'],
             ['import', {
-              libraryName: '@marklogic/design-system/MLIcon',
+              libraryName: '@marklogic/design-system/es/MLIcon',
               libraryDirectory: '',
               camel2DashComponentName: false,
               customName: function (name) {
@@ -52,7 +52,7 @@ module.exports = async ({ config }) => {
               style: function () {
                 return '@marklogic/design-system/src/MLIcon/style'
               },
-            }, '@marklogic/design-system/MLIcon'],
+            }, '@marklogic/design-system/es/MLIcon'],
           ],
         },
       },

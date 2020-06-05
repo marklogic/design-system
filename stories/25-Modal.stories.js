@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { MLModal, MLButton } from '@marklogic/design-system'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import { TrashAltSolid } from '@marklogic/design-system/MLIcon'
+import { TrashAltSolid } from '@marklogic/design-system/es/MLIcon'
 
 export default {
   title: 'Feedback/MLModal',

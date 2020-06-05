@@ -32,7 +32,7 @@ function compile(modules) {
           '@babel/plugin-transform-template-literals',
           '@babel/proposal-class-properties',
           ['import', {
-            libraryName: '@marklogic/design-system/MLIcon',
+            libraryName: '@marklogic/design-system/es/MLIcon',
             libraryDirectory: '',
             camel2DashComponentName: false,
             customName: function (name) {

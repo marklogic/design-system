@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Alert } from 'antd'
-import { CheckCircleFilled, InfoCircleFilled, ExclamationCircleFilled, CloseCircleFilled } from '@marklogic/design-system/MLIcon'
+import { CheckCircleFilled, InfoCircleFilled, ExclamationCircleFilled, CloseCircleFilled } from '@marklogic/design-system/es/MLIcon'
 import classNames from 'classnames'
 
 const MLAlert = (props) => {
