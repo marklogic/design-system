@@ -81,6 +81,7 @@ module.exports = async ({ config }) => {
       path.resolve(__dirname, '../src/'),
     ],
   })
+  config.resolve.alias['@marklogic/design-system/es'] = path.resolve(__dirname, '../src')
   config.resolve.alias['@marklogic/design-system/src'] = path.resolve(__dirname, '../src')
   config.resolve.alias['@marklogic/design-system'] = path.resolve(__dirname, '../src')
   config.resolve.alias.antd = path.resolve(__dirname, '../node_modules/antd')

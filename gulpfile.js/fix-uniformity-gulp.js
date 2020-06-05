@@ -216,14 +216,7 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
       path.resolve(__dirname, '../*.js'),
     ], { base })
       .pipe(eslint({ fix: true }))
-      .pipe(eslint.format()) // Enable later once the output is less
-      .pipe(eslint.result(result => {
-        // Called for each ESLint result.
-        console.log(`ESLint result: ${result.filePath}`)
-        console.log(`# Messages: ${result.messages.length}`)
-        console.log(`# Warnings: ${result.warningCount}`)
-        console.log(`# Errors: ${result.errorCount}`)
-      }))
+      // .pipe(eslint.format()) // Enable later once the output is less
       .pipe(gulp.dest(path.resolve(__dirname, '..')))
   },
 ))
