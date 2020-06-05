@@ -29,7 +29,7 @@ const ensureImport = (importStatement) => {
     if (!file.isBuffer()) {
       this.emit('error', new PluginError('fix stuff', 'Only buffers supported'))
     }
-    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext).*/.test(file.path)) {
+    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
       return cb(null, file)
     }
 
@@ -64,7 +64,7 @@ const removeImport = (importStatementRegex) => {
 
 const addClassNames = () => {
   return through.obj((file, enc, cb) => {
-    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext).*/.test(file.path)) {
+    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
       return cb(null, file)
     }
     let madeChanges = false
@@ -156,6 +156,10 @@ const fixDisplayNames = () => {
     const childComponentName = path.basename(file.path).replace('.js', '')
     const parentComponentName = path.basename(path.dirname(file.path))
 
+    if (/.*\/(MLSizeContext|MLList\/MLMeta).*/.test(file.path)) {
+      return cb(null, file)
+    }
+
     if (parentComponentName === childComponentName) {
       return cb(null, file)
     }
@@ -203,10 +207,15 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
       .pipe(gulp.dest(path.resolve(__dirname, '../src')))
   },
   function fixESLintProblems() {
-    return gulp.src(path.resolve(__dirname, '../src/**/*.js'))
+    const base = path.resolve(__dirname, '..')
+    return gulp.src([
+      path.resolve(__dirname, '../src/**/*.js'),
+      path.resolve(__dirname, '../stories/**/*.js'),
+      path.resolve(__dirname, '../*.js'),
+    ], {base})
       .pipe(eslint({ fix: true }))
       // .pipe(eslint.format()) // Enable later once the output is less
-      .pipe(gulp.dest(path.resolve(__dirname, '../src')))
+      .pipe(gulp.dest(path.resolve(__dirname, '..')))
   },
 ))
 
