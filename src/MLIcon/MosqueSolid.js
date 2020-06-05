@@ -1,5 +1,6 @@
-import { default as faMosque } from '@fortawesome/free-solid-svg-icons/faMosque.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faMosque = require('@fortawesome/free-solid-svg-icons/faMosque.js')
+
 const MosqueSolid = wrapFontAwesomeIcon(faMosque)
 export default MosqueSolid

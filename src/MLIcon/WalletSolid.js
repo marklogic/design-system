@@ -1,5 +1,6 @@
-import { default as faWallet } from '@fortawesome/free-solid-svg-icons/faWallet.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faWallet = require('@fortawesome/free-solid-svg-icons/faWallet.js')
+
 const WalletSolid = wrapFontAwesomeIcon(faWallet)
 export default WalletSolid

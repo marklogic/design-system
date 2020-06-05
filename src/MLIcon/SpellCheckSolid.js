@@ -1,5 +1,6 @@
-import { default as faSpellCheck } from '@fortawesome/free-solid-svg-icons/faSpellCheck.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faSpellCheck = require('@fortawesome/free-solid-svg-icons/faSpellCheck.js')
+
 const SpellCheckSolid = wrapFontAwesomeIcon(faSpellCheck)
 export default SpellCheckSolid

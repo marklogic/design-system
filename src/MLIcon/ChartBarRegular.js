@@ -1,5 +1,6 @@
-import { default as faChartBar } from '@fortawesome/free-regular-svg-icons/faChartBar.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faChartBar = require('@fortawesome/free-regular-svg-icons/faChartBar.js')
+
 const ChartBarRegular = wrapFontAwesomeIcon(faChartBar)
 export default ChartBarRegular

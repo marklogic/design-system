@@ -1,5 +1,6 @@
-import { default as faAlignLeft } from '@fortawesome/free-solid-svg-icons/faAlignLeft.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faAlignLeft = require('@fortawesome/free-solid-svg-icons/faAlignLeft.js')
+
 const AlignLeftSolid = wrapFontAwesomeIcon(faAlignLeft)
 export default AlignLeftSolid

@@ -1,5 +1,6 @@
-import { default as faBorderNone } from '@fortawesome/free-solid-svg-icons/faBorderNone.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faBorderNone = require('@fortawesome/free-solid-svg-icons/faBorderNone.js')
+
 const BorderNoneSolid = wrapFontAwesomeIcon(faBorderNone)
 export default BorderNoneSolid

@@ -1,5 +1,6 @@
-import { default as faHourglass } from '@fortawesome/free-regular-svg-icons/faHourglass.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faHourglass = require('@fortawesome/free-regular-svg-icons/faHourglass.js')
+
 const HourglassRegular = wrapFontAwesomeIcon(faHourglass)
 export default HourglassRegular

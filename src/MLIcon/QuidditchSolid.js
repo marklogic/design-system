@@ -1,5 +1,6 @@
-import { default as faQuidditch } from '@fortawesome/free-solid-svg-icons/faQuidditch.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faQuidditch = require('@fortawesome/free-solid-svg-icons/faQuidditch.js')
+
 const QuidditchSolid = wrapFontAwesomeIcon(faQuidditch)
 export default QuidditchSolid

@@ -1,5 +1,6 @@
-import { default as faWater } from '@fortawesome/free-solid-svg-icons/faWater.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faWater = require('@fortawesome/free-solid-svg-icons/faWater.js')
+
 const WaterSolid = wrapFontAwesomeIcon(faWater)
 export default WaterSolid

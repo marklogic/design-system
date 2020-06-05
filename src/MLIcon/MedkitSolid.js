@@ -1,5 +1,6 @@
-import { default as faMedkit } from '@fortawesome/free-solid-svg-icons/faMedkit.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faMedkit = require('@fortawesome/free-solid-svg-icons/faMedkit.js')
+
 const MedkitSolid = wrapFontAwesomeIcon(faMedkit)
 export default MedkitSolid

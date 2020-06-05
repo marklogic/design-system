@@ -1,5 +1,6 @@
-import { default as faPlug } from '@fortawesome/free-solid-svg-icons/faPlug.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faPlug = require('@fortawesome/free-solid-svg-icons/faPlug.js')
+
 const PlugSolid = wrapFontAwesomeIcon(faPlug)
 export default PlugSolid

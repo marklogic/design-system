@@ -1,5 +1,6 @@
-import { default as faCarAlt } from '@fortawesome/free-solid-svg-icons/faCarAlt.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faCarAlt = require('@fortawesome/free-solid-svg-icons/faCarAlt.js')
+
 const CarAltSolid = wrapFontAwesomeIcon(faCarAlt)
 export default CarAltSolid

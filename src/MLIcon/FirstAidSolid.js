@@ -1,5 +1,6 @@
-import { default as faFirstAid } from '@fortawesome/free-solid-svg-icons/faFirstAid.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faFirstAid = require('@fortawesome/free-solid-svg-icons/faFirstAid.js')
+
 const FirstAidSolid = wrapFontAwesomeIcon(faFirstAid)
 export default FirstAidSolid

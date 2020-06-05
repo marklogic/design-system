@@ -1,5 +1,6 @@
-import { default as faThumbsUp } from '@fortawesome/free-regular-svg-icons/faThumbsUp.js'
-
 import { wrapFontAwesomeIcon } from './icon-wrappers'
+
+const faThumbsUp = require('@fortawesome/free-regular-svg-icons/faThumbsUp.js')
+
 const ThumbsUpRegular = wrapFontAwesomeIcon(faThumbsUp)
 export default ThumbsUpRegular
