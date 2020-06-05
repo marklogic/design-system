@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs } from '@storybook/addon-knobs'
+import { withKnobs, boolean, radios, optionsKnob as options, text } from '@storybook/addon-knobs'
 import './36-Form.less'
 import {
+  MLTable,
   MLForm,
   MLInput,
   MLButton,
@@ -43,6 +44,47 @@ export default {
       text: 'See Ant documentation for source code; it is too complex to display usefully here.',
     },
   },
+}
+
+export const basic = () => {
+  const label = text('label', 'Label text')
+  // const hasFeedback = boolean('hasFeedback', false)
+  const validateStatus = radios('validateStatus', ['success', 'warning', 'error', 'validating'], 'success')
+  const help = text('help', 'Help text')
+  const placeholder = text('placeholder', '')
+  const formNode = (
+    <MLForm {...formItemLayout}>
+      <MLForm.MLItem
+        label={label}
+        // hasFeedback={hasFeedback}
+        validateStatus={validateStatus}
+        help={help}
+      >
+        <MLInput placeholder={placeholder} id='error' />
+      </MLForm.MLItem>
+    </MLForm>
+  )
+  return (
+    <div>
+      <h2>Outside a table:</h2>
+      {formNode}
+      <h2>Inside a table:</h2>
+      <MLTable
+        bordered
+        columns={[
+          {
+            title: 'col1',
+            key: 'col1',
+            dataIndex: 'col1',
+            render: () => (formNode),
+          },
+        ]}
+        dataSource={[
+          { col1: '' },
+        ]}
+      />
+    </div>
+  )
 }
 
 /* Story 1 */
@@ -511,105 +553,6 @@ const formItemLayout = {
     xs: { span: 24 },
     sm: { span: 12 },
   },
-}
-
-export const customizedValidation = () => {
-  return (
-    <MLForm {...formItemLayout}>
-      <MLForm.MLItem
-        label='Fail'
-        validateStatus='error'
-        help='Should be combination of numbers & alphabets'
-      >
-        <MLInput placeholder='unavailable choice' id='error' />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem label='Warning' validateStatus='warning'>
-        <MLInput placeholder='Warning' id='warning' />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem
-        label='Validating'
-        hasFeedback
-        validateStatus='validating'
-        help='The information is being validated...'
-      >
-        <MLInput placeholder="I'm the content is being validated" id='validating' />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem label='Success' hasFeedback validateStatus='success'>
-        <MLInput placeholder="I'm the content" id='success' />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem label='Warning' hasFeedback validateStatus='warning'>
-        <MLInput placeholder='Warning' id='warning2' />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem
-        label='Fail'
-        hasFeedback
-        validateStatus='error'
-        help='Should be combination of numbers & alphabets'
-      >
-        <MLInput placeholder='unavailable choice' id='error2' />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem label='Success' hasFeedback validateStatus='success'>
-        <MLDatePicker style={{ width: '100%' }} />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem label='Warning' hasFeedback validateStatus='warning'>
-        <MLTimePicker style={{ width: '100%' }} />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem label='Error' hasFeedback validateStatus='error'>
-        <MLSelect defaultValue='1'>
-          <MLSelect.MLOption value='1'>Option 1</MLSelect.MLOption>
-          <MLSelect.MLOption value='2'>Option 2</MLSelect.MLOption>
-          <MLSelect.MLOption value='3'>Option 3</MLSelect.MLOption>
-        </MLSelect>
-      </MLForm.MLItem>
-
-      <MLForm.MLItem
-        label='Validating'
-        hasFeedback
-        validateStatus='validating'
-        help='The information is being validated...'
-      >
-        <MLCascader defaultValue={['1']} options={[]} />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem label='inline' style={{ marginBottom: 0 }}>
-        <MLForm.MLItem
-          validateStatus='error'
-          help='Please select the correct date'
-          style={{ display: 'inline-block', width: 'calc(50% - 12px)' }}
-        >
-          <MLDatePicker />
-        </MLForm.MLItem>
-        <span style={{ display: 'inline-block', width: '24px', textAlign: 'center' }}>-</span>
-        <MLForm.MLItem style={{ display: 'inline-block', width: 'calc(50% - 12px)' }}>
-          <MLDatePicker />
-        </MLForm.MLItem>
-      </MLForm.MLItem>
-
-      <MLForm.MLItem label='Success' hasFeedback validateStatus='success'>
-        <MLInputNumber style={{ width: '100%' }} />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem label='Success' hasFeedback validateStatus='success'>
-        <MLInput allowClear placeholder='with allowClear' />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem label='Warning' hasFeedback validateStatus='warning'>
-        <MLInput.MLPassword placeholder='with input password' />
-      </MLForm.MLItem>
-
-      <MLForm.MLItem label='Error' hasFeedback validateStatus='error'>
-        <MLInput.MLPassword allowClear placeholder='with input password and allowClear' />
-      </MLForm.MLItem>
-    </MLForm>
-  )
 }
 
 /* Story 6 */

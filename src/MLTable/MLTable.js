@@ -4,6 +4,7 @@ import { Descriptions, Table } from 'antd'
 import { clone, merge } from 'lodash-es'
 import { DownOutlined, RightOutlined } from '../MLIcon'
 import classNames from 'classnames'
+import { MLTableContextProvider } from '../MLConfigProvider/MLTableContext'
 
 /**
  * Component for showing an un-expanded nested table, which is just a vertical list of column headers.
@@ -151,14 +152,16 @@ class MLTable extends React.Component {
     }
 
     return (
-      <Table
-        pagination={{ hideOnSinglePage: true }}
-        {...this.props} // This is positioned here so the above props can be overwritten if desired
-        expandIcon={restructuredExpandIcon}
-        dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
-        columns={restructuredColumns}
-        className={classNames('ml-table', this.props.className)}
-      />
+      <MLTableContextProvider isInsideTable={true}>
+        <Table
+          pagination={{ hideOnSinglePage: true }}
+          {...this.props} // This is positioned here so the above props can be overwritten if desired
+          expandIcon={restructuredExpandIcon}
+          dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
+          columns={restructuredColumns}
+          className={classNames('ml-table', this.props.className)}
+        />
+      </MLTableContextProvider>
     )
   }
 }
