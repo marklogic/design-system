@@ -22,7 +22,11 @@ export const basic = () => {
   }
   return (
     <div>
-      <MLTable {...props} onChange={action('onChange')} />
+      <MLTable
+        {...props}
+        onChange={action('onChange')}
+        rowKey='key'
+      />
     </div>
   )
 }
