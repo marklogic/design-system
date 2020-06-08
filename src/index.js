@@ -36,6 +36,7 @@ import MLSpin from './MLSpin'
 import MLSwitch from './MLSwitch'
 import MLTable from './MLTable'
 import MLTag from './MLTag'
+import MLTimePicker from './MLTimePicker'
 import MLTooltip from './MLTooltip'
 import MLUpload from './MLUpload'
 
@@ -78,6 +79,7 @@ export {
   MLSwitch,
   MLTable,
   MLTag,
+  MLTimePicker,
   MLTooltip,
   MLUpload,
 }
