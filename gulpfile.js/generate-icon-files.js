@@ -141,6 +141,7 @@ function generateIconFiles({ base }) {
   ).pipe(dedupe({ error: true }))
 }
 
+// Run this when @ant-design/icons or any of the @fortawesome packages are updated with new icons, to add those to this library
 gulp.task('generate-icon-files', () => {
   console.log('Generating icon files...')
   const iconFolderPath = path.resolve(__dirname, '..', 'src/MLIcon')
