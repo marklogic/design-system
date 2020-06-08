@@ -23,7 +23,7 @@
     "predeploy": "cd playground && yarn && yarn run build",
     "prepublishOnly": "yarn run build",
     "deploy": "gh-pages -d playground/build",
-    "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn); (gulp generate-icon-files); (yarn run build)",
+    "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn); (yarn run build)",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "gulp compile-bundle-less; build-storybook -c .storybook -o storybook-dist"
   },
