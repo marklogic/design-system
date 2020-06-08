@@ -1,12 +1,19 @@
 .ml-time-picker {
-  //.ant-time-picker-panel-select:nth-child(1) > ul:before {
-
 }
 
 .ml-time-picker-panel {
   .ant-time-picker-panel-select {
     ul {
+      // Counter the translateY on the <li>s
+      margin-top: -32px;
+
+      // Remove the extra blank space below the numbers
       padding-bottom: 0;
+
+      li {
+        // Adjust the position numbers scroll to after clicking on them
+        transform: translateY(32px)
+      }
 
       &::before {
         // Make it stick to the top of the column
@@ -21,6 +28,9 @@
         padding: 0 0 0 12px;
         line-height: 32px;
         user-select: none;
+
+        // Bring it in front of the <li>s
+        z-index: 1;
       }
     }
   }
