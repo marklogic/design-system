@@ -5,6 +5,7 @@ import { clone, merge } from 'lodash-es'
 import { DownOutlined, RightOutlined } from '../MLIcon'
 import classNames from 'classnames'
 import isFunction from 'lodash-es/isFunction'
+import isEqual from "lodash-es/isEqual";
 
 /**
  * Component for showing an un-expanded nested table, which is just a vertical list of column headers.
@@ -39,6 +40,7 @@ class MLTable extends React.Component {
     super(props)
     this.state = Object.assign(
       this.getInitialColumnExpandedStates(),
+      this.getInitialDragBlockedState(),
       this.getInitialRowOrder(),
       {
         dragging: false,
@@ -51,6 +53,7 @@ class MLTable extends React.Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.columns !== this.props.columns) {
       this.setState(Object.assign(
+        this.getInitialDragBlockedState(),
         this.getInitialColumnExpandedStates(),
       ))
     }
@@ -69,12 +72,31 @@ class MLTable extends React.Component {
     }
   }
 
-  getInitialRowOrder() {
-    return {
-      rowOrder: this.props.dataSource.map((row) => (
-        this.getRowKeyValue(row)
-      )),
+  getInitialDragBlockedState() {
+    for (const column of this.props.columns) {
+      if (column.defaultSortOrder) {
+        return { dragBlocked: true }
+      }
     }
+    return { dragBlocked: false }
+  }
+
+  getInitialRowOrder() {
+    let sorter = () => 0
+    let sortOrder = 'ascend'
+    for (const column of this.props.columns) {
+      if (column.defaultSortOrder) {
+        sorter = column.sorter
+        sortOrder = column.defaultSortOrder
+      }
+    }
+    const data = clone(this.restructureData(this.props.dataSource))
+    data.sort((a, b) => sortOrder === 'descend' ? -sorter(a, b) : sorter(a, b))
+    const rowOrder = data.map((row) => (
+      this.getRowKeyValue(row)
+    ))
+    console.log('rowOrder:', JSON.stringify(rowOrder))
+    return { rowOrder }
   }
 
   toggleColumnExpanded(column) {
@@ -89,6 +111,14 @@ class MLTable extends React.Component {
   }
 
   handleDragEnterRow(draggingRecordInfo, dropTargetRecordInfo) {
+    this.setState({
+      dropTargetRecordInfo,
+    })
+    if (draggingRecordInfo.rowIndex === dropTargetRecordInfo.rowIndex) {
+      this.setState({ tempRowOrder: this.state.rowOrder })
+      return
+    }
+
     const newRowOrder = clone(this.state.rowOrder)
     const removedRow = newRowOrder.splice(draggingRecordInfo.rowIndex, 1)[0]
     if (draggingRecordInfo.rowIndex < dropTargetRecordInfo.rowIndex) {
@@ -104,8 +134,10 @@ class MLTable extends React.Component {
   }
 
   getRowKeyValue(row) {
-    const { rowKey } = this.props
-    return row[isFunction(rowKey) ? rowKey(row) : rowKey]
+    const { rowKey = 'key' } = this.props
+    const rowKeyFinal = (isFunction(rowKey) ? rowKey(row) : rowKey)
+    const rowKeyValue = row[rowKeyFinal] || JSON.stringify(row)
+    return rowKeyValue
   }
 
   restructureData (dataSource) {
@@ -135,6 +167,70 @@ class MLTable extends React.Component {
       rowOrder: this.state.rowOrder,
       data: this.reorderData(this.restructureData(this.props.dataSource)),
     })
+  }
+
+  rowDragProps (record, rowIndex) {
+    const rowKeyValue = this.getRowKeyValue(record)
+    const classNameArr = []
+    console.log('this.state:', this, JSON.stringify(this.state))
+    if (this.state.dragging && this.state.draggingRecordInfo && this.getRowKeyValue(this.state.draggingRecordInfo.record) === rowKeyValue) {
+      // if (this.getRowKeyValue(this.state.draggingRecordInfo.record) !== 281328) { debugger }
+      classNameArr.push('ml-table-row-dragging')
+      classNameArr.push('ml-table-row-drop-target')
+    } else if (this.state.postDragStaleHoverCancel) {
+      classNameArr.push('ml-table-row-drag-stale')
+    }
+
+    const rowHandlers = {
+      className: classNames(classNameArr),
+      draggable: true,
+      // onDrag: (e) => console.log('onDrag', record.id),
+      onDragEnd: (e) => {
+        console.log('onDragEnd', record.id)
+        this.setState({
+          rowOrder: this.state.tempRowOrder || this.state.rowOrder,
+          tempRowOrder: null,
+          dragging: false,
+          draggingRecordInfo: null,
+          dropTargetRecordInfo: null,
+        })
+        this.emitChange()
+      },
+      onDragEnter: (e) => {
+        e.preventDefault()
+        console.log('onDragEnter', rowIndex, record)
+        const draggingRecordInfo = this.state.draggingRecordInfo
+        const dropTargetRecordInfo = { record, rowIndex }
+
+        this.handleDragEnterRow(draggingRecordInfo, dropTargetRecordInfo)
+      },
+      // onDragExit: (e) => console.log('onDragExit', record.id),
+      // onDragLeave: (e) => console.log('onDragLeave', record.id),
+      onDragOver: (e) => {
+        e.preventDefault() // Needed to prevent animating back to original position
+        // console.log('onDragOver', rowIndex, record)
+      },
+      onDragStart: (e) => {
+        console.log('onDragStart', rowIndex, record)
+        this.setState({
+          dragging: true,
+          postDragStaleHoverCancel: true,
+          draggingRecordInfo: { record, rowIndex },
+        })
+        e.dataTransfer.setData('application/json', JSON.stringify({
+          record: record,
+          rowIndex: rowIndex,
+        }))
+      },
+    }
+    if (!this.state.dragging && this.state.postDragStaleHoverCancel) {
+      rowHandlers.onMouseMove = (e) => {
+        this.setState({
+          postDragStaleHoverCancel: false,
+        })
+      }
+    }
+    return rowHandlers
   }
 
   render() {
@@ -204,69 +300,20 @@ class MLTable extends React.Component {
       <Table
         pagination={{ hideOnSinglePage: true }}
         {...this.props} // This is positioned here so the above props can be overwritten if desired
+        onChange={(pagination, filters, sorter, extra) => {
+          this.state.rowOrder = extra.currentDataSource.map((r) => this.getRowKeyValue(r))
+          this.state.dragBlocked = !isEqual({}, sorter) || !isEqual(filters, {})
+          this.emitChange()
+        }}
         expandIcon={restructuredExpandIcon}
         dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
         columns={restructuredColumns}
         className={classNames('ml-table', this.props.className)}
         onRow={(record, rowIndex) => {
-          const rowKeyValue = this.getRowKeyValue(record)
-          const classNameArr = []
-          console.log('this.state:', this, JSON.stringify(this.state))
-          if (this.state.dragging && this.state.draggingRecordInfo && this.getRowKeyValue(this.state.draggingRecordInfo.record) === rowKeyValue) {
-            classNameArr.push('ml-table-row-dragging')
-            classNameArr.push('ml-table-row-drop-target')
-          } else if (this.state.postDragStaleHoverCancel) {
-            classNameArr.push('ml-table-row-drag-stale')
-          }
-          const rowHandlers = {
-            className: classNames(classNameArr),
-            draggable: true,
-            // onDrag: (e) => console.log('onDrag', record.id),
-            onDragEnd: (e) => {
-              console.log('onDragEnd', record.id)
-              this.setState({
-                rowOrder: this.state.tempRowOrder || this.state.rowOrder,
-                tempRowOrder: null,
-                dragging: false,
-                draggingRecordInfo: null,
-                dropTargetRecordInfo: null,
-              })
-              this.emitChange()
-            },
-            onDragEnter: (e) => {
-              e.preventDefault()
-              console.log('onDragEnter', record.id)
-              const draggingRecordInfo = this.state.draggingRecordInfo
-              const dropTargetRecordInfo = { record, rowIndex }
-
-              this.handleDragEnterRow(draggingRecordInfo, dropTargetRecordInfo)
-            },
-            // onDragExit: (e) => console.log('onDragExit', record.id),
-            // onDragLeave: (e) => console.log('onDragLeave', record.id),
-            onDragOver: (e) => {
-              e.preventDefault() // Needed to prevent animating back to original position
-              console.log('onDragOver', record.id)
-            },
-            onDragStart: (e) => {
-              this.setState({
-                dragging: true,
-                postDragStaleHoverCancel: true,
-                draggingRecordInfo: { record, rowIndex },
-              })
-              e.dataTransfer.setData('application/json', JSON.stringify({
-                record: record,
-                rowIndex: rowIndex,
-              }))
-            },
-          }
-          if (!this.state.dragging && this.state.postDragStaleHoverCancel) {
-            rowHandlers.onMouseMove = (e) => {
-              this.setState({
-                postDragStaleHoverCancel: false,
-              })
-            }
-          }
-          return rowHandlers
+          return Object.assign(
+            {},
+            (this.state.dragBlocked ? {} : this.rowDragProps(record, rowIndex)),
+          )
         }}
       />
     )
@@ -292,7 +339,7 @@ MLTable.defaultProps = {
   size: 'middle',
   showBody: true,
   onChange: () => {},
-  rowKey: 'key',
+  rowKey: undefined,
 }
 
 export default MLTable

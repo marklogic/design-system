@@ -42,6 +42,7 @@ export const embeddedTables = () => {
     <div>
       <MLTable
         scroll={{ x: true }}
+        rowKey={'emp_no'}
         {...props}
         onChange={action('onChange')}
       />
