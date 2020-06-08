@@ -73,21 +73,21 @@ gulp.task('compile-bundle-less', done => {
     path.resolve(__dirname, '../node_modules/antd/dist/antd.less'),
     path.resolve(__dirname, '..', 'src/*/style/*.less'),
     path.resolve(__dirname, '..', 'src/styles.less'),
-  ]);
+  ])
 
   const compileAndBundle = lessSrc
-    .pipe(less( {
+    .pipe(less({
       javascriptEnabled: true,
       modifyVars: themeVariables,
     }).on('error', function (err) {
-      console.log(err);
+      console.log(err)
     }))
-    .pipe(concatCss("index.css"))
+    .pipe(concatCss('index.css'))
 
   const minified = compileAndBundle
-    .pipe(rename({suffix: '.min'}))
+    .pipe(rename({ suffix: '.min' }))
     .pipe(cssmin().on('error', function(err) {
-      console.log(err);
+      console.log(err)
     }))
 
   return merge(compileAndBundle, minified)
@@ -108,5 +108,10 @@ gulp.task('compile-with-lib', done => {
 gulp.task('compile', gulp.parallel('compile-bundle-less', 'compile-with-es', 'compile-with-lib'))
 
 gulp.task('compile-watch', () => gulp.watch(path.resolve(__dirname, '../src'), gulp.series(['compile'])))
+
+gulp.task('compile-and-watch', gulp.series([
+  'compile',
+  'compile-watch',
+]))
 
 gulp.task('fix-and-compile', gulp.series(['fix-uniformity', 'compile']))
