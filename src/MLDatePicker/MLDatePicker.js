@@ -19,7 +19,7 @@ const MLDatePicker = ({ hourLabel, minuteLabel, secondLabel, ...props }) => {
           {(contextSize) => {
             const contextProps = pickerPropsFromContext('date', pickerContext, props)
 
-            const unitPositions = getOrderedTimeUnits({ hourLabel, minuteLabel, secondLabel, format: contextProps.primaryFormat })
+            const unitPositions = [hourLabel, minuteLabel, secondLabel]
             // Create the style tags to show the hr/min/sec labels in the relevant columns for just this component
             const unitStyleTags = unitPositions.map((unitLabel, index) => (
               <style key={unitLabel}>

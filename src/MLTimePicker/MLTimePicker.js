@@ -1,12 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { TimePicker } from 'antd'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import uniqueId from 'lodash-es/uniqueId'
-import getOrderedTimeUnits from '../_util/getOrderedTimeUnits'
+import getOrderedTimeUnits from './util/getOrderedTimeUnits'
 import { MLConfigContext } from '../MLConfigProvider'
 import MLSizeContext from '../MLConfigProvider/MLSizeContext'
-import { pickerPropsFromContext } from '../MLDatePicker/utils'
 
 const MLTimePicker = React.forwardRef(({ hourLabel, minuteLabel, secondLabel, ...props }, ref) => {
   // Generate an unchanging unique ID to tie this to its specific style elements
