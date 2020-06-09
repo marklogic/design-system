@@ -11,6 +11,7 @@ import MLCollapse from './MLCollapse'
 import MLConfigProvider from './MLConfigProvider'
 import MLDatePicker from './MLDatePicker'
 import MLDivider from './MLDivider'
+import MLDrawer from './MLDrawer'
 import MLDropdown from './MLDropdown'
 import MLEditableSlider from './MLEditableSlider'
 import MLEmpty from './MLEmpty'
@@ -53,6 +54,7 @@ export {
   MLConfigProvider,
   MLDatePicker,
   MLDivider,
+  MLDrawer,
   MLDropdown,
   MLEditableSlider,
   MLEmpty,
