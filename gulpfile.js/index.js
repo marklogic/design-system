@@ -52,8 +52,7 @@ function compile(modules) {
       })),
 
     gulp.src([
-      path.resolve(__dirname, '..', 'src/*/style/*.less'),
-      path.resolve(__dirname, '..', 'src/styles.less'),
+      path.resolve(__dirname, '..', 'src/**/*.less'),
     ], { base }),
 
     gulp.src([
