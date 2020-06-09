@@ -6,7 +6,6 @@ import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import { pickerPropsFromContext } from './utils'
 import classNames from 'classnames'
 import uniqueId from 'lodash-es/uniqueId'
-import getOrderedTimeUnits from '../_util/getOrderedTimeUnits'
 
 const MLDatePicker = ({ hourLabel, minuteLabel, secondLabel, ...props }) => {
   // Generate an unchanging unique ID to tie this to its specific style elements

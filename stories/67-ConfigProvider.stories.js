@@ -34,7 +34,6 @@ export const basic = () => {
         <MLDatePicker.MLWeekPicker /><br />
         <MLDatePicker.MLMonthPicker /><br />
         <MLTimePicker /><br />
-        <MLTimePicker.MLRangePicker /><br />
         ...etc
       </MLConfigProvider>
     </div>
