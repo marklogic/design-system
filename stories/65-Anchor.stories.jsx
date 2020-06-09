@@ -20,7 +20,7 @@ export default {
 export const basic = () => {
   const props = {
     affix: boolean('affix', true),
-    offsetTop: number('offsetTop', 50),
+    offsetTop: number('offsetTop', 24),
     onClick: (e) => { e.preventDefault() },
   }
   return (
