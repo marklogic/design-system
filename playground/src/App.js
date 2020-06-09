@@ -1,29 +1,27 @@
 import React, { Component } from 'react'
 
 import {
-  MLHeader,
-  MLTooltip,
+  MLAvatar,
   MLButton,
-  MLDatePicker,
+  MLConfigProvider,
+  MLHeader,
   MLLayout,
   MLSlider,
-  MLConfigProvider,
-  MLPopover,
-  MLResult,
-  MLEditableSlider,
-  MLEmpty,
+  MLTooltip,
 } from '@marklogic/design-system'
 
 import {
-  Route as RouteIcon,
+  RouteSolid,
   CheckCircleFilled,
   SearchOutlined,
   QuestionCircleOutlined,
   SettingOutlined,
   UserOutlined,
-} from '@marklogic/design-system/MLIcon'
+  ClockCircleOutlined,
+  SmileBeamSolid,
+} from '@marklogic/design-system/es/MLIcon'
+
 import { text } from '@storybook/addon-knobs'
-import { Avatar as MLAvatar } from 'antd'
 
 const configValues = {
   dateFormat: 'YYYY-MMM-DD', // Default for all dates, and DatePicker
@@ -66,7 +64,7 @@ export default class App extends Component {
                   </a>
                 }
                 extra={[
-                  makeIcon(<RouteIcon />, 'route'),
+                  makeIcon(<RouteSolid />, 'route'),
                   <span key='divider' style={{ borderLeft: '1px dashed' }} />,
                   makeIcon(<SearchOutlined />, 'search'),
                   makeIcon(<QuestionCircleOutlined />, 'help'),
@@ -78,66 +76,15 @@ export default class App extends Component {
             <MLLayout.MLContent style={{ marginTop: 64 }}>
               <MLButton type='primary'>Test</MLButton>
               <MLButton type='highlight'>Test</MLButton>
-              <RouteIcon />
+              <RouteSolid />
               <CheckCircleFilled />
               <div>
                 <MLSlider tooltipPlacement='top' />
               </div>
-              <MLDatePicker />
-              <MLDatePicker picker='week' />
-              <MLDatePicker size='small' />
-              <MLDatePicker size='default' />
-              <MLDatePicker size='large' />
-              <MLDatePicker picker='week' />
-              <div style={{ height: 100 }}>Some short content</div>
-              <MLPopover
-                arrowPointAtCenter
-                content={<div><p>Content</p><p>Content</p></div>}
-                placement='top'
-                title='Title'
-                trigger={[
-                  'hover',
-                  'focus',
-                ]}
-              >
-                <MLButton
-                  style={{ marginLeft: '100px' }}
-                  size='small'
-                  type='primary'
-                >
-                  Hover me
-                </MLButton>
-              </MLPopover>
-              <MLResult type='primary' icon={<RouteIcon />} title='title' subTitle='subtitle' />
-              <MLEmpty />
-              <div
-                style={{
-                  width: '400px',
-                }}
-              >
-                <MLEditableSlider
-                  debounceTime={200}
-                  defaultValue={0}
-                  max={100}
-                  min={0}
-                  onChange={(v) => console.log(v)}
-                />
-                <MLEditableSlider
-                  debounceTime={200}
-                  defaultValue={[
-                    20,
-                    70,
-                  ]}
-                  max={100}
-                  min={0}
-                  range
-                  onChange={(v) => console.log(v)}
-                />
-              </div>
-              <div style={{ height: 2000 }}>Some tall content</div>
             </MLLayout.MLContent>
-            <MLLayout.MLFooter year='2019' />
+            <MLLayout.MLFooter year={2019} />
           </MLLayout>
+          <SmileBeamSolid style={{ fontSize: '300px' }} />
         </MLConfigProvider>
       </div>
     )

@@ -15,6 +15,6 @@ export default {
 
 export const basic = () => {
   return (
-    <MLEmpty/>
+    <MLEmpty />
   )
 }

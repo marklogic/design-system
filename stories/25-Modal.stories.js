@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { MLModal, MLButton } from '@marklogic/design-system'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import { TrashAlt } from '@marklogic/design-system/MLIcon'
+import { TrashAltSolid } from '@marklogic/design-system/es/MLIcon'
 
 export default {
   title: 'Feedback/MLModal',
@@ -72,7 +72,7 @@ export const WithFooter = () => {
             }}
           >
             <MLButton type='link'>
-              <TrashAlt style={{ fontSize: '22px', color: '#B32424' }} />
+              <TrashAltSolid style={{ fontSize: '22px', color: '#B32424' }} />
             </MLButton>
             <div>
               <MLButton key='yes' onClick={hide}>Yes</MLButton>
