@@ -115,8 +115,19 @@ gulp.task('compile-with-lib', done => {
   compile().on('finish', done)
 })
 
-gulp.task('compile', gulp.parallel('compile-bundle-less', 'compile-with-es', 'compile-with-lib'))
+gulp.task('compile-js', gulp.parallel('compile-with-es', 'compile-with-lib'))
+gulp.task('compile-less', gulp.parallel('compile-bundle-less'))
 
-gulp.task('compile-watch', () => gulp.watch(path.resolve(__dirname, '../src'), gulp.series(['compile'])))
+gulp.task('compile-all', gulp.parallel('compile-bundle-less', 'compile-with-es', 'compile-with-lib'))
 
-gulp.task('fix-and-compile', gulp.series(['fix-uniformity', 'compile']))
+gulp.task('compile-watch', () => {
+  gulp.watch([
+    path.resolve(__dirname, '../src/**/*.js'),
+    path.resolve(__dirname, '../src/**/*.jsx'),
+  ], gulp.series(['compile-js']))
+  gulp.watch([
+    path.resolve(__dirname, '../src/**/*.less'),
+  ], gulp.series(['compile-less']))
+})
+
+gulp.task('fix-and-compile', gulp.series(['fix-uniformity', 'compile-all']))
