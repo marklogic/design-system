@@ -1,5 +1,5 @@
-.ml-date-picker-container {
-  .ant-calendar-time-picker-select {
+.ml-date-picker-container, .ml-date-picker-range-picker-container {
+  .ant-calendar-time .ant-calendar-time-picker-select {
     ul {
       // Fix scroll height
       max-height: unset;
@@ -22,10 +22,11 @@
         background-color: #f5f5f5;
         font-weight: bold;
 
+        text-align: center; // Center in DatePicker/RangePicker (has wide columns)
+
         display: list-item; // Make it a fake <li> so it sizes right
 
         // Keep it sized properly, same as the other <li>s
-        padding: 0 0 0 12px;
         line-height: 24px;
         user-select: none;
 

@@ -17,6 +17,7 @@ const MLWeekPicker = (props) => {
             {...props}
             showTime={contextProps.showTime}
             className={classNames('ml-date-picker-week-picker', props.className)}
+            dropdownClassName={classNames('ml-date-picker-week-picker-container', props.dropdownClassName)}
           >
             {props.children}
           </WeekPicker>

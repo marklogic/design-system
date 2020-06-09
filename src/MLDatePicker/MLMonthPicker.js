@@ -17,6 +17,7 @@ const MLMonthPicker = (props) => {
             {...props}
             showTime={contextProps.showTime}
             className={classNames('ml-date-picker-month-picker', props.className)}
+            dropdownClassName={classNames('ml-date-picker-month-picker-container', props.dropdownClassName)}
           >
             {props.children}
           </MonthPicker>

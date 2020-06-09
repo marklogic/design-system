@@ -31,6 +31,8 @@ export const basic = () => {
         (application components go here)<br />
         <MLDatePicker /><br />
         <MLDatePicker showTime={true} /><br />
+        <MLDatePicker.MLRangePicker /><br />
+        <MLDatePicker.MLRangePicker showTime={true} /><br />
         <MLDatePicker.MLWeekPicker /><br />
         <MLDatePicker.MLMonthPicker /><br />
         <MLTimePicker /><br />
