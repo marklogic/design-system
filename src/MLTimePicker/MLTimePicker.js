@@ -42,6 +42,8 @@ MLTimePicker.defaultProps = {
   hourLabel: 'Hr',
   minuteLabel: 'Min',
   secondLabel: 'Sec',
+  suffixIcon: <ClockCircleOutlined />,
+  placeholder: 'Select time',
 }
 
 MLTimePicker.propTypes = {
@@ -51,7 +53,7 @@ MLTimePicker.propTypes = {
   format: PropTypes.string,
   className: PropTypes.string,
   popupClassName: PropTypes.string,
-  suffixIcon: <ClockCircleOutlined />,
+  suffixIcon: PropTypes.node,
 }
 
 MLTimePicker.displayName = 'MLTimePicker'
