@@ -2,6 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, number } from '@storybook/addon-knobs'
 import { MLButton, mlmessage } from '@marklogic/design-system'
+import SmileOutlined from '@ant-design/icons/lib/icons/SmileOutlined'
 // import mdx from './60-message.mdx'
 
 export default {
@@ -41,6 +42,11 @@ export const basic = () => {
     // Dismiss manually and asynchronously
     setTimeout(hide, 2500)
   }
+
+  const customIcon = () => {
+    mlmessage.info({ content: 'smiley content', icon: <SmileOutlined /> })
+  }
+
   return (
     <>
       <MLButton type='primary' onClick={info}>
@@ -50,6 +56,7 @@ export const basic = () => {
       <MLButton onClick={error}>Error</MLButton><br />
       <MLButton onClick={warning}>Warning</MLButton><br />
       <MLButton onClick={loading}>Display a loading indicator</MLButton><br />
+      <MLButton onClick={customIcon}>Custom icon</MLButton><br />
     </>
   )
 }

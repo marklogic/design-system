@@ -18,10 +18,7 @@ const base = path.resolve(__dirname, '../src')
 function compile(modules) {
   const babelFiles = merge([
     gulp.src([
-      path.resolve(__dirname, '../src/ML*/ML*.js'),
-      path.resolve(__dirname, '../src/ML*/*.js'),
-      path.resolve(__dirname, '../src/ML*/style/*.js'),
-      path.resolve(__dirname, '../src/index.js'),
+      path.resolve(__dirname, '../src/**/*.js'),
     ]),
     generateIconFiles(),
   ])
@@ -73,21 +70,21 @@ gulp.task('compile-bundle-less', done => {
     path.resolve(__dirname, '../node_modules/antd/dist/antd.less'),
     path.resolve(__dirname, '..', 'src/*/style/*.less'),
     path.resolve(__dirname, '..', 'src/styles.less'),
-  ]);
+  ])
 
   const compileAndBundle = lessSrc
-    .pipe(less( {
+    .pipe(less({
       javascriptEnabled: true,
       modifyVars: themeVariables,
     }).on('error', function (err) {
-      console.log(err);
+      console.log(err)
     }))
-    .pipe(concatCss("index.css"))
+    .pipe(concatCss('index.css'))
 
   const minified = compileAndBundle
-    .pipe(rename({suffix: '.min'}))
+    .pipe(rename({ suffix: '.min' }))
     .pipe(cssmin().on('error', function(err) {
-      console.log(err);
+      console.log(err)
     }))
 
   return merge(compileAndBundle, minified)
