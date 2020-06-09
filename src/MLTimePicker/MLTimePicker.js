@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react'
 import { TimePicker } from 'antd'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { ClockCircleOutlined } from '../MLIcon' // TODO: Fix icon import style when icon branch is merged
 import uniqueId from 'lodash-es/uniqueId'
 import getOrderedTimeUnits from '../_util/getOrderedTimeUnits'
 
@@ -42,7 +41,6 @@ MLTimePicker.defaultProps = {
   hourLabel: 'Hr',
   minuteLabel: 'Min',
   secondLabel: 'Sec',
-  suffixIcon: <ClockCircleOutlined />,
   placeholder: 'Select time',
 }
 
@@ -110,9 +108,6 @@ MLTimePicker.propTypes = {
   /** a callback function which will be called while panel opening/closing */
   onOpenChange: PropTypes.func,
 }
-
-MLTimePicker.blur = TimePicker.blur
-MLTimePicker.focus = TimePicker.focus
 
 MLTimePicker.displayName = 'MLTimePicker'
 
