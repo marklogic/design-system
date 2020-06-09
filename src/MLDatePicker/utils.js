@@ -1,6 +1,6 @@
 import { get, isArray } from 'lodash-es'
 
-export const pickerPropsFromContext = (picker, { dateFormat, dateTimeFormat, weekFormat, monthFormat, yearFormat }, props) => {
+export const pickerPropsFromContext = (picker, { dateFormat, dateTimeFormat, weekFormat, monthFormat }, props) => {
   let format
   let { showTime } = props
   if (props.showTime && !['date', 'range'].includes(picker)) {
@@ -14,7 +14,6 @@ export const pickerPropsFromContext = (picker, { dateFormat, dateTimeFormat, wee
       date: dateFormat,
       week: weekFormat,
       month: monthFormat,
-      year: yearFormat,
       // Nothing special for quarter or year pickers
     }, picker, dateFormat)
   }

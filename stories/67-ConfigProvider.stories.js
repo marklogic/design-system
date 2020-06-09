@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLConfigProvider, MLDatePicker } from '@marklogic/design-system'
+import { MLConfigProvider, MLDatePicker, MLTimePicker } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
 
 export default {
@@ -15,8 +15,8 @@ export default {
 
 const configValues = {
   dateFormat: ['YYYY-MMM-DD', 'MM/DD/YYYY', 'M/D/YY'], // Default for all dates, and datePicker
-  timeFormat: ['HH:mm:ss'],
-  dateTimeFormat: ['YYYY-MMM-DD, HH:mm:ss', 'LT', 'LTS'], // default for all dates with times, and datePicker with times
+  timeFormat: 'HH:mm',
+  dateTimeFormat: ['YYYY-MMM-DD, HH:ss:mm', 'LT', 'LTS'], // default for all dates with times, and datePicker with times
   monthFormat: 'YYYY-MM', // default for datePicker month mode
   weekFormat: 'YYYY-wo', // default for datePicker week mode
 }
@@ -31,6 +31,7 @@ export const basic = () => {
       <MLConfigProvider {...configValues}>
         (application components go here)
         <MLDatePicker />
+        <MLTimePicker />
         ...etc
       </MLConfigProvider>
     </div>

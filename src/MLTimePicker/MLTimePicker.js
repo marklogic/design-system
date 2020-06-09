@@ -4,35 +4,52 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import uniqueId from 'lodash-es/uniqueId'
 import getOrderedTimeUnits from '../_util/getOrderedTimeUnits'
+import { MLConfigContext } from '../MLConfigProvider'
+import MLSizeContext from '../MLConfigProvider/MLSizeContext'
+import { pickerPropsFromContext } from '../MLDatePicker/utils'
 
 const MLTimePicker = React.forwardRef(({ hourLabel, minuteLabel, secondLabel, ...props }, ref) => {
   // Generate an unchanging unique ID to tie this to its specific style elements
   const [componentId] = useState(uniqueId('ml-time-picker-'))
 
-  const unitPositions = getOrderedTimeUnits({ hourLabel, minuteLabel, secondLabel, format: props.format })
-
-  // Create the style tags to show the hr/min/sec labels in the relevant columns for just this component
-  const unitStyleTags = unitPositions.map((unitLabel, index) => (
-    <style key={unitLabel}>
-      {`.ml-time-picker-panel.${componentId} .ant-time-picker-panel-select:nth-child(${index + 1}) ul::before {
-        content: '${unitLabel}'
-      }`}
-    </style>
-  ))
   return (
-    // TODO: Use MLContextProvider for format
-    <>
-      <TimePicker
-        id={componentId}
-        ref={ref}
-        {...props}
-        className={classNames('ml-time-picker', componentId, props.className)}
-        popupClassName={classNames('ml-time-picker-panel', componentId, props.popupClassName)}
-      >
-        {props.children}
-      </TimePicker>
-      {unitStyleTags}
-    </>
+    <MLConfigContext.Consumer>
+      {(pickerContext) => (
+        <MLSizeContext.Consumer>
+          {(contextSize) => {
+            // const contextProps = pickerPropsFromContext('date', pickerContext, props)
+            const format = pickerContext.timeFormat
+            const size = contextSize || props.size
+
+            const unitPositions = getOrderedTimeUnits({ hourLabel, minuteLabel, secondLabel, format })
+
+            // Create the style tags to show the hr/min/sec labels in the relevant columns for just this component
+            const unitStyleTags = unitPositions.map((unitLabel, index) => (
+              <style key={unitLabel}>
+                {`.ml-time-picker-panel.${componentId} .ant-time-picker-panel-select:nth-child(${index + 1}) ul::before {
+                  content: '${unitLabel}'
+                }`}
+              </style>
+            ))
+            return (
+              <>
+                <TimePicker
+                  ref={ref}
+                  {...props}
+                  format={format}
+                  size={size}
+                  className={classNames('ml-time-picker', componentId, props.className)}
+                  popupClassName={classNames('ml-time-picker-panel', componentId, props.popupClassName)}
+                >
+                  {props.children}
+                </TimePicker>
+                {unitStyleTags}
+              </>
+            )
+          }}
+        </MLSizeContext.Consumer>
+      )}
+    </MLConfigContext.Consumer>
   )
 })
 
@@ -51,6 +68,8 @@ MLTimePicker.propTypes = {
   minuteLabel: PropTypes.string,
   /** The label to put in the seconds columns */
   secondLabel: PropTypes.string,
+  /** The size of the component */
+  size: PropTypes.oneOf(['default', 'small', 'large']),
   /** called from timepicker panel to render some addon to its bottom */
   addon: PropTypes.func,
   /** allow clearing text */
