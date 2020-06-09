@@ -18,5 +18,6 @@ export const pickerPropsFromContext = (picker, { dateFormat, dateTimeFormat, wee
       // Nothing special for quarter or year pickers
     }, picker, dateFormat)
   }
-  return { format, showTime }
+  const primaryFormat = isArray(format) ? format[0] : format
+  return { primaryFormat, format, showTime }
 }

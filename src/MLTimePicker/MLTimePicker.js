@@ -4,27 +4,13 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { ClockCircleOutlined } from '../MLIcon' // TODO: Fix icon import style when icon branch is merged
 import uniqueId from 'lodash-es/uniqueId'
+import getOrderedTimeUnits from '../_util/getOrderedTimeUnits'
 
 const MLTimePicker = React.forwardRef(({ hourLabel, minuteLabel, secondLabel, ...props }, ref) => {
   // Generate an unchanging unique ID to tie this to its specific style elements
   const [componentId] = useState(uniqueId('ml-time-picker-'))
 
-  // Determine the order, and which are included, of hr/min/sec
-  const unitMatchers = [
-    // Test for the various ways Moment supports hr/min/sec in the format
-    [hourLabel, /HH?|hh?|kk?/],
-    [minuteLabel, /mm?/],
-    [secondLabel, /ss?|S+/],
-  ]
-  const unitPositions = unitMatchers
-    .filter((pair) => (
-      props.format.match(pair[1]) !== null
-    ))
-    .map((pair) => {
-      return [pair[0], props.format.match(pair[1]).index]
-    })
-    .sort((a, b) => a[1] - b[1])
-    .map((pair) => pair[0])
+  const unitPositions = getOrderedTimeUnits({ hourLabel, minuteLabel, secondLabel, format: props.format })
 
   // Create the style tags to show the hr/min/sec labels in the relevant columns for just this component
   const unitStyleTags = unitPositions.map((unitLabel, index) => (
