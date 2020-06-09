@@ -1,4 +1,5 @@
 import MLAlert from './MLAlert'
+import MLAnchor from './MLAnchor'
 import MLAutoComplete from './MLAutoComplete'
 import MLAvatar from './MLAvatar'
 import MLBreadcrumb from './MLBreadcrumb'
@@ -41,6 +42,7 @@ import MLUpload from './MLUpload'
 
 export {
   MLAlert,
+  MLAnchor,
   MLAutoComplete,
   MLAvatar,
   MLBreadcrumb,
