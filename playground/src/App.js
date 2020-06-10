@@ -12,6 +12,7 @@ import {
   MLResult,
   MLEditableSlider,
   MLEmpty,
+  mlmessage,
 } from '@marklogic/design-system'
 
 import {
@@ -21,8 +22,8 @@ import {
   QuestionCircleOutlined,
   SettingOutlined,
   UserOutlined,
+  SmileOutlined,
 } from '@marklogic/design-system/MLIcon'
-import { text } from '@storybook/addon-knobs'
 import { Avatar as MLAvatar } from 'antd'
 
 const configValues = {
@@ -47,6 +48,34 @@ function makeIcon(icon, title) {
   )
 }
 
+mlmessage.config({
+  maxCount: 3,
+})
+const info = () => {
+  mlmessage.info('This is an info message')
+}
+const success = () => {
+  mlmessage.success('This is a success message')
+}
+
+const error = () => {
+  mlmessage.error('This is an error message')
+}
+
+const warning = () => {
+  mlmessage.warning('This is a warning message')
+}
+
+const loading = () => {
+  const hide = mlmessage.loading('Action in progress..', 0)
+  // Dismiss manually and asynchronously
+  setTimeout(hide, 2500)
+}
+
+const customIcon = () => {
+  mlmessage.info({ content: 'smiley content', icon: <SmileOutlined /> })
+}
+
 export default class App extends Component {
   render() {
     return (
@@ -55,11 +84,11 @@ export default class App extends Component {
           <MLLayout>
             <MLLayout.MLHeader style={{ padding: 0, position: 'fixed', zIndex: 1, width: '100%' }}>
               <MLHeader
-                title={text('title', 'Data Hub Central')}
+                title='Data Hub Central'
                 avatar={
                   <a href='#'>
                     <MLAvatar
-                      src={text('project avatar url', 'https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png')}
+                      src='https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png'
                       style={{ backgroundColor: 'white' }} // Because the given src has transparent background
                       size={48}
                     />
@@ -78,6 +107,18 @@ export default class App extends Component {
             <MLLayout.MLContent style={{ marginTop: 64 }}>
               <MLButton type='primary'>Test</MLButton>
               <MLButton type='highlight'>Test</MLButton>
+              <>
+                <h1>mlmessage buttons:</h1>
+                <br />
+                <MLButton type='primary' onClick={info}>
+                  Info
+                </MLButton><br />
+                <MLButton onClick={success}>Success</MLButton><br />
+                <MLButton onClick={error}>Error</MLButton><br />
+                <MLButton onClick={warning}>Warning</MLButton><br />
+                <MLButton onClick={loading}>Display a loading indicator</MLButton><br />
+                <MLButton onClick={customIcon}>Custom icon</MLButton><br />
+              </>
               <RouteIcon />
               <CheckCircleFilled />
               <div>
