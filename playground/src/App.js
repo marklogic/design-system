@@ -4,8 +4,13 @@ import {
   MLAvatar,
   MLButton,
   MLConfigProvider,
+  MLDatePicker,
+  MLEditableSlider,
+  MLEmpty,
   MLHeader,
   MLLayout,
+  MLPagination,
+  MLResult,
   MLSlider,
   MLTooltip,
 } from '@marklogic/design-system'
@@ -81,6 +86,46 @@ export default class App extends Component {
               <div>
                 <MLSlider tooltipPlacement='top' />
               </div>
+              <MLDatePicker />
+              <MLDatePicker picker='week' />
+              <MLDatePicker size='small' />
+              <MLDatePicker size='default' />
+              <MLDatePicker size='large' />
+              <MLPagination
+                defaultCurrent={3}
+                defaultPageSize={10}
+                simple={false}
+                size='default'
+                total={50}
+              />
+
+              <MLResult type='primary' icon={<RouteSolid />} title='title' subTitle='subtitle' />
+              <MLEmpty />
+              <div
+                style={{
+                  width: '400px',
+                }}
+              >
+                <MLEditableSlider
+                  debounceTime={200}
+                  defaultValue={0}
+                  max={100}
+                  min={0}
+                  onChange={(v) => console.log(v)}
+                />
+                <MLEditableSlider
+                  debounceTime={200}
+                  defaultValue={[
+                    20,
+                    70,
+                  ]}
+                  max={100}
+                  min={0}
+                  range
+                  onChange={(v) => console.log(v)}
+                />
+              </div>
+              <div style={{ height: 2000 }}>Some tall content</div>
             </MLLayout.MLContent>
             <MLLayout.MLFooter year={2019} />
           </MLLayout>
