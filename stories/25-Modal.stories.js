@@ -40,7 +40,11 @@ export const Basic = () => {
         okType={text('okType', 'primary')}
       >
         <h3>Contents</h3>
-        <div>Your text here.</div>
+        <div>
+          Your text here.<br />
+          Your text here.<br />
+          Your text here.<br />
+        </div>
       </MLModal>
     </MLModal.MLDraggableModalProvider>
   )
