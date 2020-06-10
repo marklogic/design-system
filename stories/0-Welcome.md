@@ -47,7 +47,7 @@ Additionally, we have wrapped the [FontAwesome icons](https://fontawesome.com/ic
 
 - Instead, do:
 ```
-import { CheckCircleOutlined } from '@marklogic/design-system/MLIcon'
+import { CheckCircleOutlined } from '@marklogic/design-system/es/MLIcon'
 ```
 
 

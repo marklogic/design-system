@@ -233,10 +233,17 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
       .pipe(gulp.dest(path.resolve(__dirname, '../src')))
   },
   function fixESLintProblems() {
-    return gulp.src(path.resolve(__dirname, '../src/**/*.js'))
+    const base = path.resolve(__dirname, '..')
+    return gulp.src([
+      path.resolve(__dirname, '../src/**/*.js'),
+      path.resolve(__dirname, '../stories/**/*.js'),
+      path.resolve(__dirname, '../.storybook/*.js'),
+      path.resolve(__dirname, './*.js'),
+      path.resolve(__dirname, '../*.js'),
+    ], { base })
       .pipe(eslint({ fix: true }))
       // .pipe(eslint.format()) // Enable later once the output is less
-      .pipe(gulp.dest(path.resolve(__dirname, '../src')))
+      .pipe(gulp.dest(path.resolve(__dirname, '..')))
   },
 ))
 

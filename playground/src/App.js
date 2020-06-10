@@ -19,6 +19,7 @@ import {
   MLDescriptions,
   MLDivider,
   MLDropdown,
+  MLEditableSlider,
   MLEmpty,
   MLHeader,
   MLInput,
@@ -32,6 +33,7 @@ import {
   MLProgress,
   MLRadio,
   MLRate,
+  MLResult,
   MLRow,
   MLSelect,
   MLSkeleton,
@@ -46,19 +48,19 @@ import {
   MLTooltip,
   MLTreeSelect,
   MLUpload,
-  MLResult,
-  MLEditableSlider,
 } from '@marklogic/design-system'
 
 import {
-  Route as RouteIcon,
+  RouteSolid,
   CheckCircleFilled,
   SearchOutlined,
   QuestionCircleOutlined,
   SettingOutlined,
   UserOutlined,
   ClockCircleOutlined,
-} from '@marklogic/design-system/MLIcon'
+  SmileBeamSolid,
+} from '@marklogic/design-system/es/MLIcon'
+
 import { text } from '@storybook/addon-knobs'
 
 const configValues = {
@@ -102,7 +104,7 @@ export default class App extends Component {
                   </a>
                 }
                 extra={[
-                  makeIcon(<RouteIcon />, 'route'),
+                  makeIcon(<RouteSolid />, 'route'),
                   <span key='divider' style={{ borderLeft: '1px dashed' }} />,
                   makeIcon(<SearchOutlined />, 'search'),
                   makeIcon(<QuestionCircleOutlined />, 'help'),
@@ -114,7 +116,7 @@ export default class App extends Component {
             <MLLayout.MLContent style={{ marginTop: 64 }}>
               <MLButton type='primary'>Test</MLButton>
               <MLButton type='highlight'>Test</MLButton>
-              <RouteIcon />
+              <RouteSolid />
               <CheckCircleFilled />
               <div>
                 <MLSlider tooltipPlacement='top' />
@@ -474,6 +476,7 @@ export default class App extends Component {
             </MLLayout.MLContent>
             <MLLayout.MLFooter year={2019} />
           </MLLayout>
+          <SmileBeamSolid style={{ fontSize: '300px' }} />
         </MLConfigProvider>
       </div>
     )
