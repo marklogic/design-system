@@ -18,33 +18,33 @@ export const basic = () => {
     <div className='timeline-story'>
       <MLTimeline>
         <MLTimeline.MLItem color='green'>
-          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p className='timeline-date-label'>2015-09-01</p>
           <p>Create a services site</p>
         </MLTimeline.MLItem>
         <MLTimeline.MLItem color='green'>
-          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p className='timeline-date-label'>2015-09-01</p>
           <p>Create a services site</p>
         </MLTimeline.MLItem>
         <MLTimeline.MLItem color='red'>
-          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p className='timeline-date-label'>2015-09-01</p>
           <p>Solve initial network problems 1</p>
           <p>Solve initial network problems 2</p>
           <p>Solve initial network problems 3</p>
         </MLTimeline.MLItem>
         <MLTimeline.MLItem>
-          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p className='timeline-date-label'>2015-09-01</p>
           <p>Technical testing 1</p>
           <p>Technical testing 2</p>
           <p>Technical testing 3</p>
         </MLTimeline.MLItem>
         <MLTimeline.MLItem color='gray'>
-          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p className='timeline-date-label'>2015-09-01</p>
           <p>Technical testing 1</p>
           <p>Technical testing 2</p>
           <p>Technical testing 3</p>
         </MLTimeline.MLItem>
         <MLTimeline.MLItem color='gray'>
-          <p className={'timeline-date-label'}>2015-09-01</p>
+          <p className='timeline-date-label'>2015-09-01</p>
           <p>Technical testing 1</p>
           <p>Technical testing 2</p>
           <p>Technical testing 3</p>

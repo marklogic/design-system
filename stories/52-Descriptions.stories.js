@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import {boolean, number, radios, withKnobs} from "@storybook/addon-knobs";
+import { boolean, number, radios, withKnobs } from '@storybook/addon-knobs'
 import { MLDescriptions } from '@marklogic/design-system'
 
 export default {
