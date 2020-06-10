@@ -1,5 +1,5 @@
-const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
-const path = require('path');
+const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin')
+const path = require('path')
 const themeVariables = require('../src/theme-variables.json')
 
 module.exports = async ({ config }) => {
@@ -9,10 +9,10 @@ module.exports = async ({ config }) => {
       {
         loader: 'babel-loader',
         options: {
-          presets: [["env", {modules: false}]],
-        }
+          presets: [['env', { modules: false }]],
+        },
         // may or may not need this line depending on your app's setup
-        //plugins: ['@babel/plugin-transform-react-jsx'],
+        // plugins: ['@babel/plugin-transform-react-jsx'],
       },
       {
         loader: '@mdx-js/loader',
@@ -21,13 +21,13 @@ module.exports = async ({ config }) => {
         },
       },
     ],
-  });
+  })
   config.module.rules.push({
     test: /\.(stories|story)\.[tj]sx?$/,
     loader: require.resolve('@storybook/source-loader'),
     exclude: [/node_modules/],
     enforce: 'pre',
-  });
+  })
   config.module.rules.push({
     test: /\.js$/,
     use: [
@@ -35,25 +35,36 @@ module.exports = async ({ config }) => {
         loader: 'babel-loader',
         options: {
           plugins: [
-            ["import", {libraryName: "antd", style: true, libraryDirectory: "es"}, "antd"],
-            ["import", {
-              libraryName: "@marklogic/design-system",
-              libraryDirectory: "src",
+            ['import', { libraryName: 'antd', style: true, libraryDirectory: 'es' }, 'antd'],
+            ['import', {
+              libraryName: '@marklogic/design-system',
+              libraryDirectory: 'src',
               camel2DashComponentName: false,
               style: true,
-            }, "@marklogic/design-system"],
-          ]
-        }
-      }
+            }, '@marklogic/design-system'],
+            ['import', {
+              libraryName: '@marklogic/design-system/es/MLIcon',
+              libraryDirectory: '',
+              camel2DashComponentName: false,
+              customName: function (name) {
+                return `@marklogic/design-system/src/MLIcon/${name}`
+              },
+              style: function () {
+                return '@marklogic/design-system/src/MLIcon/style'
+              },
+            }, '@marklogic/design-system/es/MLIcon'],
+          ],
+        },
+      },
     ],
   })
   config.module.rules.push({
     test: /\.less/,
     loaders: [
-      "style-loader",
-      "css-loader",
+      'style-loader',
+      'css-loader',
       {
-        loader: "less-loader",
+        loader: 'less-loader',
         options: {
           javascriptEnabled: true,
           paths: [
@@ -68,18 +79,19 @@ module.exports = async ({ config }) => {
       path.resolve(__dirname, '../node_modules/'),
       path.resolve(__dirname, '../stories/'),
       path.resolve(__dirname, '../src/'),
-    ]
-  });
+    ],
+  })
+  config.resolve.alias['@marklogic/design-system/es'] = path.resolve(__dirname, '../src')
   config.resolve.alias['@marklogic/design-system/src'] = path.resolve(__dirname, '../src')
   config.resolve.alias['@marklogic/design-system'] = path.resolve(__dirname, '../src')
-  config.resolve.alias['antd'] = path.resolve(__dirname, '../node_modules/antd')
+  config.resolve.alias.antd = path.resolve(__dirname, '../node_modules/antd')
 
   // DEBUG Fix stringify for regexes
-  Object.defineProperty(RegExp.prototype, "toJSON", {
-    value: RegExp.prototype.toString
-  });
-  console.log("Storybook webpack config:\n", JSON.stringify(config, null, '  '))
+  Object.defineProperty(RegExp.prototype, 'toJSON', {
+    value: RegExp.prototype.toString,
+  })
+  console.log('Storybook webpack config:\n', JSON.stringify(config, null, '  '))
   // DEBUG end
 
-  return config;
-};
+  return config
+}
