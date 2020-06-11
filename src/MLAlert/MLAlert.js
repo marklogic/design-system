@@ -1,10 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Alert } from 'antd'
-import CheckCircleFilled from '../MLIcon/CheckCircleFilled'
-import InfoCircleFilled from '../MLIcon/InfoCircleFilled'
-import ExclamationCircleFilled from '../MLIcon/ExclamationCircleFilled'
-import CloseCircleFilled from '../MLIcon/CloseCircleFilled'
+import { CheckCircleFilled, InfoCircleFilled, ExclamationCircleFilled, CloseCircleFilled } from '../MLIcon'
 import classNames from 'classnames'
 
 const MLAlert = (props) => {

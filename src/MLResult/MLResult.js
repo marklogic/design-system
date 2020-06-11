@@ -2,10 +2,7 @@ import React from 'react'
 import { Result } from 'antd'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import CheckCircleFilled from '../MLIcon/CheckCircleFilled'
-import InfoCircleFilled from '../MLIcon/InfoCircleFilled'
-import ExclamationCircleFilled from '../MLIcon/ExclamationCircleFilled'
-import CloseCircleFilled from '../MLIcon/CloseCircleFilled'
+import { CheckCircleFilled, InfoCircleFilled, ExclamationCircleFilled, CloseCircleFilled } from '../MLIcon'
 
 const MLResult = (props) => {
   let { icon } = props

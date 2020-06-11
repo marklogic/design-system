@@ -150,7 +150,6 @@
     },
     "moduleNameMapper": {
       "^@marklogic/design-system/src": "<rootDir>/src",
-      "^@marklogic/design-system/MLIcon": "<rootDir>/src/MLIcon",
       "^@marklogic/design-system": "<rootDir>/src",
       "\\.(css|less)$": "jest-transform-stub"
     }

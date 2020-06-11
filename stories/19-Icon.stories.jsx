@@ -1,6 +1,6 @@
 import React from 'react'
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs'
-import { MLIcon } from '@marklogic/design-system'
+import MLIcon from '../src/MLIcon'
 import * as AntIcons from '../src/MLIcon/ant-icons'
 import * as FontAwesomeSolidIcons from '../src/MLIcon/font-awesome-solid-icons'
 import * as FontAwesomeRegularIcons from '../src/MLIcon/font-awesome-regular-icons'
