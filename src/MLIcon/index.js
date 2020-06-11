@@ -20,6 +20,9 @@ Object.assign(
 
 export default MLIcon
 
-console.warn("WARNING: Every Ant and FontAwesome icon is being imported. Make sure you're importing icons directly to avoid a large bundle size.\n" +
-  "eg `import { CheckCircleFilled } from '@marklogic/design-system/es/MLIcon'`\n" +
-  " with the proper babel-import-plugin configured for `@marklogic/design-system/es/MLIcon`. (See Playground's config-overrides for an example)")
+if (typeof process !== 'object') {
+  // Don't warn in Node (or Jest), just the browser
+  console.warn("WARNING: Every Ant and FontAwesome icon is being imported. Make sure you're importing icons directly to avoid a large bundle size.\n" +
+    "eg `import { CheckCircleFilled } from '@marklogic/design-system/es/MLIcon'`\n" +
+    " with the proper babel-import-plugin configured for `@marklogic/design-system/es/MLIcon`. (See Playground's config-overrides for an example)")
+}
