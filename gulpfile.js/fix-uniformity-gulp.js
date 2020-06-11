@@ -44,7 +44,7 @@ const ensureImport = (_importStatement) => {
       this.emit('error', new PluginError('fix stuff', 'Only buffers supported'))
     }
     const importStatement = (typeof _importStatement === 'function' ? _importStatement(file) : _importStatement)
-    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext).*/.test(file.path)) {
+    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
       return cb(null, file)
     }
 
@@ -79,7 +79,7 @@ const removeImport = (importStatementRegex) => {
 
 const addClassNames = () => {
   return through.obj((file, enc, cb) => {
-    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext).*/.test(file.path)) {
+    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
       return cb(null, file)
     }
     let madeChanges = false
@@ -279,10 +279,17 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
     return merge(srcJobs, storyJobs)
   },
   function fixESLintProblems() {
-    return gulp.src(path.resolve(__dirname, '../src/**/*.js'))
+    const base = path.resolve(__dirname, '..')
+    return gulp.src([
+      path.resolve(__dirname, '../src/**/*.js'),
+      path.resolve(__dirname, '../stories/**/*.js'),
+      path.resolve(__dirname, '../.storybook/*.js'),
+      path.resolve(__dirname, './*.js'),
+      path.resolve(__dirname, '../*.js'),
+    ], { base })
       .pipe(eslint({ fix: true }))
       // .pipe(eslint.format()) // Enable later once the output is less
-      .pipe(gulp.dest(path.resolve(__dirname, '../src')))
+      .pipe(gulp.dest(path.resolve(__dirname, '..')))
   },
   // function renameStoriesToJSX() {
   //   return gulp.src(path.resolve(__dirname, '../stories/*.stories.js'))

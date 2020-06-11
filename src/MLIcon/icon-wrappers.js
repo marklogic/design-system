@@ -23,6 +23,7 @@ export function MLIconWrapper({ highlight, color, displayName, component, ...pro
 }
 
 export const createWrappedMLIcon = (component) => {
+  if (component === undefined) { debugger }
   const displayName = component.displayName || component.render.displayName // go through render if it's a forwardRef object
   const wrappedComponent = (props) => {
     return (<MLIconWrapper {...props} displayName={displayName} component={component} />)
@@ -32,7 +33,8 @@ export const createWrappedMLIcon = (component) => {
   return wrappedComponent
 }
 
-export const wrapFontAwesomeIcon = (faIcon) => {
+export const wrapFontAwesomeIcon = (faIcon, variantName) => {
+  if (faIcon === undefined || variantName === undefined) { debugger }
   const componentFn = (props) => {
     return (
       <Icon
@@ -43,6 +45,7 @@ export const wrapFontAwesomeIcon = (faIcon) => {
       />
     )
   }
-  componentFn.displayName = faIcon.iconName
+  if (!variantName) { debugger }
+  componentFn.displayName = pascalCase(faIcon.iconName + variantName)
   return createWrappedMLIcon(componentFn)
 }

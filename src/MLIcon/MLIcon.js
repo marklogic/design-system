@@ -3,22 +3,9 @@ import { Icon } from 'antd'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-const MLIcon = React.forwardRef((props, ref) => {
-  return (
-    <Icon
-      ref={ref}
-      {...props}
-      className={classNames('ml-icon', props.className)}
-    >
-      {props.children}
-    </Icon>
-  )
-})
-
-MLIcon.defaultProps = {
-}
-
-MLIcon.propTypes = {
-}
+const MLIcon = Icon
 
 export default MLIcon
+
+export const antIconVariants = ['Filled', 'Outlined', 'TwoTone']
+export const faIconVariants = ['Regular', 'Solid', 'Brand']

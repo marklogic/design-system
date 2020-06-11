@@ -2,7 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLCard, MLCol, MLRow, MLCollapse } from '@marklogic/design-system'
 import '@marklogic/design-system/MLCard/style'
-import { EditOutlined, EllipsisOutlined, SettingOutlined, DeleteOutlined, PlusCircleFilled, CloseOutlined, PlayCircleFilled } from '@marklogic/design-system/MLIcon'
+import { EditOutlined, EllipsisOutlined, SettingOutlined, DeleteOutlined, PlusCircleFilled, CloseOutlined, PlayCircleFilled } from '@marklogic/design-system/es/MLIcon'
 import { withKnobs, radios, text, boolean } from '@storybook/addon-knobs'
 import mdx from './50-Card.mdx'
 

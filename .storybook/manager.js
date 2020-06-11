@@ -1,5 +1,5 @@
-import { addons } from '@storybook/addons';
-import './style.css';
+import { addons } from '@storybook/addons'
+import './style.css'
 import '../dist/index.css'
 
 addons.setConfig({
@@ -70,4 +70,4 @@ addons.setConfig({
      */
     storySort: undefined,
   },
-});
+})
