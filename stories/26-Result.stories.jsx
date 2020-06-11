@@ -2,7 +2,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, radios, boolean } from '@storybook/addon-knobs'
 import { MLResult, MLButton } from '@marklogic/design-system'
-import { SmileRegular } from '@marklogic/design-system/es/MLIcon'
+import SmileRegular from '../src/MLIcon/SmileRegular'
 import mdx from './26-Result.mdx'
 
 export default {

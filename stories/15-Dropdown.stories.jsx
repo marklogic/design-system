@@ -2,7 +2,8 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLDropdown, MLMenu, MLButton, MLTooltip } from '@marklogic/design-system'
 import { withKnobs } from '@storybook/addon-knobs'
-import { DownOutlined, UserOutlined } from '@marklogic/design-system/es/MLIcon'
+import DownOutlined from '../src/MLIcon/DownOutlined'
+import UserOutlined from '../src/MLIcon/UserOutlined'
 import mdx from './15-Dropdown.mdx'
 
 export default {

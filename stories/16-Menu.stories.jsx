@@ -2,7 +2,9 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLMenu } from '@marklogic/design-system'
 import { withKnobs, radios } from '@storybook/addon-knobs'
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@marklogic/design-system/es/MLIcon'
+import AppstoreOutlined from '../src/MLIcon/AppstoreOutlined'
+import MailOutlined from '../src/MLIcon/MailOutlined'
+import SettingOutlined from '../src/MLIcon/SettingOutlined'
 import mdx from './16-Menu.mdx'
 
 export default {
