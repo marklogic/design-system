@@ -1,10 +1,14 @@
 import React from 'react'
 import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs'
 import { MLIcon } from '@marklogic/design-system'
-import * as AntIcons from '@marklogic/design-system/src/MLIcon/ant-icons'
-import * as FontAwesomeIcons from '@marklogic/design-system/src/MLIcon/font-awesome-icons'
+import * as AntIcons from '@marklogic/design-system/es/MLIcon/ant-icons'
+import * as FontAwesomeSolidIcons from '@marklogic/design-system/es/MLIcon/font-awesome-solid-icons'
+import * as FontAwesomeRegularIcons from '@marklogic/design-system/es/MLIcon/font-awesome-regular-icons'
+import * as FontAwesomeBrandIcons from '@marklogic/design-system/es/MLIcon/font-awesome-brand-icons'
 import './19-Icon.css'
 import { endsWith } from 'lodash-es'
+import { antIconVariants, faIconVariants } from '../src/MLIcon/MLIcon'
+import reduce from 'lodash-es/reduce'
 
 export default {
   title: 'General/MLIcon',
@@ -30,7 +34,7 @@ function iconTile({ component, props, tileStyle }) {
       </div>
       <div className='ml-storybook-icon-name'>
         {/* {`<${componentName}\u00A0/>` /* \u00A0 is nonbreaking space *!/ */}
-        {componentName}
+        &lt;{componentName}&nbsp;/&gt;
       </div>
     </div>
   )
@@ -43,7 +47,7 @@ export const exampleIcon = () => {
     rotate: number('rotate', 0),
     style: {
       fontSize: number('fontSize (px)', 36) + 'px',
-      color: text('color', 'red'),
+      color: text('color', ''),
     },
   }
   const component = AntIcons.CheckCircleFilled
@@ -58,11 +62,29 @@ export const exampleIcon = () => {
 }
 
 const antIconSets = {}
-for (const variant of ['Filled', 'Outlined', 'TwoTone']) {
+for (const variant of antIconVariants) {
   antIconSets[variant] = {}
   for (const [key, value] of Object.entries(AntIcons)) {
     if (endsWith(key, variant)) {
       antIconSets[variant][key] = value
+    }
+  }
+}
+
+const faIconSetEntries = reduce(
+  [FontAwesomeRegularIcons, FontAwesomeSolidIcons, FontAwesomeBrandIcons],
+  (acc, obj) => {
+    return acc.concat(Object.entries(obj))
+  }, [],
+)
+
+const faIconSets = {}
+for (const variant of faIconVariants) {
+  faIconSets[variant] = {}
+
+  for (const [key, value] of faIconSetEntries) {
+    if (endsWith(key, variant)) {
+      faIconSets[variant][key] = value
     }
   }
 }
@@ -84,7 +106,7 @@ export const shortList = () => {
       {iconTile({ component: MLIcon.SearchOutlined, props })}
       {iconTile({ component: MLIcon.SettingOutlined, props })}
       {iconTile({ component: MLIcon.DashboardOutlined, props })}
-      {iconTile({ component: MLIcon.Route, props })}
+      {iconTile({ component: MLIcon.RouteSolid, props })}
       {iconTile({ component: MLIcon.ArrowLeftOutlined, props })}
       {iconTile({ component: MLIcon.CheckCircleOutlined, props })}
       {iconTile({ component: MLIcon.CloseCircleOutlined, props })}
@@ -97,20 +119,14 @@ export const shortList = () => {
       {iconTile({ component: MLIcon.CloseCircleFilled, props })}
       {iconTile({ component: MLIcon.LockOutlined, props })}
       {iconTile({ component: MLIcon.DownOutlined, props })}
-      {iconTile({ component: MLIcon.Book, props })}
+      {iconTile({ component: MLIcon.BookSolid, props })}
     </div>
   )
 }
 
-export const completeList = () => {
+export const allAntIcons = () => {
   const filters = {
-    showAntIcons: boolean('show Ant icons', true),
-    antIconVariant: select('Ant icon variant', {
-      Filled: 'Filled',
-      Outlined: 'Outlined',
-      TwoTone: 'TwoTone',
-    }, 'Filled'),
-    showFontAwesomeIcons: boolean('show FontAwesome icons', true),
+    antIconVariant: select('Ant icon variant', antIconVariants, 'Filled'),
   }
   const props = {
     highlight: boolean('highlight', false),
@@ -121,24 +137,47 @@ export const completeList = () => {
       color: text('color', null),
     },
   }
-  const iconSets = []
-  if (filters.showAntIcons) {
-    iconSets.push(antIconSets[filters.antIconVariant])
-  }
-  if (filters.showFontAwesomeIcons) {
-    iconSets.push(FontAwesomeIcons)
-  }
+  const iconSet = antIconSets[filters.antIconVariant]
   const list = []
-  for (const iconSet of iconSets) {
-    for (const [componentName, component] of Object.entries(iconSet)) {
-      list.push((
-        iconTile({
-          componentName,
-          component,
-          props,
-        })
-      ))
-    }
+  for (const [componentName, component] of Object.entries(iconSet)) {
+    list.push((
+      iconTile({
+        componentName,
+        component,
+        props,
+      })
+    ))
+  }
+  return (
+    <div className='ml-storybook-icon-list'>
+      {list}
+    </div>
+  )
+}
+
+export const allFontAwesomeIcons = () => {
+  const filters = {
+    faIconVariant: select('FontAwesome icon variant', faIconVariants, 'Regular'),
+  }
+  const props = {
+    highlight: boolean('highlight', false),
+    spin: boolean('spin', false),
+    rotate: number('rotate', 0),
+    style: {
+      fontSize: number('fontSize (px)', 36) + 'px',
+      color: text('color', null),
+    },
+  }
+  const iconSet = faIconSets[filters.faIconVariant]
+  const list = []
+  for (const [componentName, component] of Object.entries(iconSet)) {
+    list.push((
+      iconTile({
+        componentName,
+        component,
+        props,
+      })
+    ))
   }
   return (
     <div className='ml-storybook-icon-list'>
