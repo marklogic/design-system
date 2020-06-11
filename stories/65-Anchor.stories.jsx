@@ -25,16 +25,18 @@ export const basic = () => {
   }
   return (
     <div>
-      <MLAnchor {...props}>
-        <MLAnchor.MLLink href='#anchor-1' title='Link 1' />
-        <MLAnchor.MLLink href='#anchor-2' title='Link 2' />
-        <MLAnchor.MLLink href='#anchor-3' title='Link 3 with _target' target='_blank' />
-        <MLAnchor.MLLink href='#anchor-4' title='Link 4'>
-          <MLAnchor.MLLink href='#anchor-5' title='Link 5' />
-          <MLAnchor.MLLink href='#anchor-6' title='Link 6' />
-        </MLAnchor.MLLink>
-        <MLAnchor.MLLink href='#anchor-7' title='Link 7' />
-      </MLAnchor>
+      <div style={{ position: 'absolute', right: '50px' }}>
+        <MLAnchor {...props}>
+          <MLAnchor.MLLink href='#anchor-1' title='Link 1' />
+          <MLAnchor.MLLink href='#anchor-2' title='Link 2' />
+          <MLAnchor.MLLink href='#anchor-3' title='Link 3 with _target' target='_blank' />
+          <MLAnchor.MLLink href='#anchor-4' title='Link 4'>
+            <MLAnchor.MLLink href='#anchor-5' title='Link 5' />
+            <MLAnchor.MLLink href='#anchor-6' title='Link 6' />
+          </MLAnchor.MLLink>
+          <MLAnchor.MLLink href='#anchor-7' title='Link 7' />
+        </MLAnchor>
+      </div>
       <div id='anchor-1'>anchor-1</div>
       <div id='anchor-2' style={{ height: '500px' }}>anchor-2</div>
       <div id='anchor-3' style={{ height: '500px' }}>anchor-3</div>
