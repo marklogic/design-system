@@ -20,7 +20,7 @@ Object.assign(
 
 export default MLIcon
 
-if (typeof process !== 'object') {
+if (typeof window !== 'undefined') {
   // Don't warn in Node (or Jest), just the browser
   console.warn("WARNING: Every Ant and FontAwesome icon is being imported. Make sure you're importing icons directly to avoid a large bundle size.\n" +
     "eg `import { CheckCircleFilled } from '@marklogic/design-system/es/MLIcon'`\n" +
