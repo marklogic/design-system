@@ -9,7 +9,7 @@ const merge = require('merge-stream')
 const Vinyl = require('vinyl')
 const eslint = require('gulp-eslint')
 
-const skipFiles = ({filePatterns}) => {
+const skipFiles = ({ filePatterns }) => {
   return through.obj((file, enc, cb) => {
     if (!Array.isArray(filePatterns)) {
       filePatterns = [filePatterns]
@@ -229,7 +229,7 @@ const addDocsPageToExports = () => {
     }
 
     file.contents = Buffer.from(
-      code.replace('  parameters: {\n', `  parameters: {\n    docs: {\n      page: mdx,\n    },\n`)
+      code.replace('  parameters: {\n', '  parameters: {\n    docs: {\n      page: mdx,\n    },\n'),
     )
     return cb(null, file)
   })
@@ -244,7 +244,7 @@ const addFileNameToExports = () => {
     }
 
     file.contents = Buffer.from(
-      code.replace('  parameters: {\n', `  parameters: {\n    fileName: '${path.basename(file.path)}',\n`)
+      code.replace('  parameters: {\n', `  parameters: {\n    fileName: '${path.basename(file.path)}',\n`),
     )
     return cb(null, file)
   })
@@ -267,12 +267,12 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
     const stories = gulp.src(path.resolve(__dirname, '../stories/*.stories.jsx'))
     const storyJobs = merge(
       stories
-        .pipe(skipFiles({filePatterns: [/0-Welcome.*/]}))
+        .pipe(skipFiles({ filePatterns: [/0-Welcome.*/] }))
         .pipe(addMDXFilenameToMeta())
         .pipe(ensureImport((file) => `import mdx from '${file.meta.mdxFilepath}'`)),
       stories
         .pipe(addFileNameToExports())
-        .pipe(addDocsPageToExports())
+        .pipe(addDocsPageToExports()),
     )
       .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
     // return storyJobs

@@ -110,7 +110,6 @@
     "react-scripts": "^3.3.0",
     "through2": "^3.0.1",
     "typescript": "^3.9.3",
-    "use-debounce": "^3.4.2",
     "vinyl": "^2.2.0",
     "webpack-cli": "^3.3.11"
   },
@@ -131,7 +130,8 @@
     "change-case": "^4.1.1",
     "classnames": "^2.2.6",
     "lodash-es": "^4",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "use-debounce": "^3.4.2"
   },
   "peerDependencies": {
     "react": "^16.8.6",
