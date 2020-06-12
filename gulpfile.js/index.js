@@ -19,10 +19,7 @@ function compile(modules) {
   const moduleDir = modules === false ? 'es' : 'lib'
   const babelFiles = merge([
     gulp.src([
-      path.resolve(__dirname, '../src/ML*/ML*.js'),
-      path.resolve(__dirname, '../src/ML*/*.js'),
-      path.resolve(__dirname, '../src/ML*/style/*.js'),
-      path.resolve(__dirname, '../src/index.js'),
+      path.resolve(__dirname, '../src/**/*.js'),
     ]),
   ])
   return merge([
@@ -73,8 +70,7 @@ function compile(modules) {
       })),
 
     gulp.src([
-      path.resolve(__dirname, '..', 'src/*/style/*.less'),
-      path.resolve(__dirname, '..', 'src/styles.less'),
+      path.resolve(__dirname, '..', 'src/**/*.less'),
     ], { base }),
 
     gulp.src([
