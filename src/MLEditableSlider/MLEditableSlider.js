@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { MLSlider, MLInputNumber } from '@marklogic/design-system'
+import MLSlider from '../MLSlider'
+import MLInputNumber from '../MLInputNumber'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { useDebouncedCallback } from 'use-debounce'

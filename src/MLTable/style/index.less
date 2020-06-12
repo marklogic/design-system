@@ -1,3 +1,5 @@
+@import '../../styles.less';
+
 .ml-header-table table {
   border-collapse: collapse; /* Hack to get borders between header-rows to show up */
 }
@@ -5,6 +7,10 @@
 .ml-table {
   td:not(.ant-table-row-expand-icon-cell) {
     vertical-align: top;
+  }
+
+  td.ant-table-row-expand-icon-cell {
+    background-color: @table-toggle-column-bg;
   }
 
   .ml-table .ant-table {

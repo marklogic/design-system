@@ -10,10 +10,6 @@ import isFunction from 'lodash-es/isFunction'
  * Component for showing an un-expanded nested table, which is just a vertical list of column headers.
  */
 class MLHeaderTable extends React.Component {
-  static propTypes = {
-    columns: PropTypes.arrayOf(PropTypes.any),
-  }
-
   render() {
     const { columns } = this.props
     return (
@@ -29,6 +25,10 @@ class MLHeaderTable extends React.Component {
       </Descriptions>
     )
   }
+}
+
+MLHeaderTable.propTypes = {
+  columns: PropTypes.arrayOf(PropTypes.any),
 }
 
 /**
@@ -77,6 +77,11 @@ class MLTable extends React.Component {
       this.setState(Object.assign(
         this.getInitialRowOrder(),
       ))
+      // This rule is OK to ignore because of the above if statement.
+      // But, consider using one of the alternatives here instead for new best practices:
+      // https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState(this.getInitialColumnExpandedStates())
     }
   }
 
@@ -351,6 +356,18 @@ MLTable.defaultProps = {
   showBody: true,
   onChange: () => {},
   rowKey: undefined,
+}
+
+MLTable.propTypes = { // TODO: Include default Table props as well
+  id: PropTypes.string,
+  rowKey: PropTypes.string,
+  showBody: PropTypes.bool,
+  dataSource: PropTypes.oneOfType([
+    PropTypes.objectOf(PropTypes.any), // Single item data sources are converted into arrays automatically (used in embedded table)
+    PropTypes.arrayOf(PropTypes.any),
+  ]),
+  columns: PropTypes.arrayOf(PropTypes.any),
+  onChange: PropTypes.func,
 }
 
 export default MLTable

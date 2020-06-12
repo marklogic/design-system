@@ -1,4 +1,8 @@
+body {
+  /* Undo addon-info padding which makes rendered slightly bigger than viewport */
+  padding: 0 !important;
+}
+
 #story-root {
-  margin-left: 40px;
-  margin-right: 40px;
+  margin: 0 40px;
 }

@@ -1,4 +1,5 @@
 import MLAlert from './MLAlert'
+import MLAnchor from './MLAnchor'
 import MLAutoComplete from './MLAutoComplete'
 import MLAvatar from './MLAvatar'
 import MLBreadcrumb from './MLBreadcrumb'
@@ -15,7 +16,7 @@ import MLDropdown from './MLDropdown'
 import MLEditableSlider from './MLEditableSlider'
 import MLEmpty from './MLEmpty'
 import MLHeader from './MLHeader'
-import * as MLIcon from './MLIcon'
+import MLIcon from './MLIcon'
 import MLInput from './MLInput'
 import MLInputNumber from './MLInputNumber'
 import MLLayout from './MLLayout'
@@ -33,6 +34,7 @@ import MLRow from './MLRow'
 import MLSelect from './MLSelect'
 import MLSlider from './MLSlider'
 import MLSpin from './MLSpin'
+import MLStatistic from './MLStatistic'
 import MLSwitch from './MLSwitch'
 import MLTable from './MLTable'
 import MLTag from './MLTag'
@@ -41,6 +43,7 @@ import MLUpload from './MLUpload'
 
 export {
   MLAlert,
+  MLAnchor,
   MLAutoComplete,
   MLAvatar,
   MLBreadcrumb,
@@ -75,9 +78,12 @@ export {
   MLSelect,
   MLSlider,
   MLSpin,
+  MLStatistic,
   MLSwitch,
   MLTable,
   MLTag,
   MLTooltip,
   MLUpload,
 }
+
+export { default as mlmessage } from './mlmessage'

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Data Entry/MLMentions Basic 1`] = `
+<div
+  class="ant-mentions ml-mentions"
+  style="width:100%"
+>
+  <textarea
+    rows="1"
+  >
+    @afc163
+  </textarea>
+</div>
+`;
