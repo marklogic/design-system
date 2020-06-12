@@ -1,32 +1,36 @@
 import React, { Component, useState } from 'react'
 import {
-  MLHeader,
-  MLTooltip,
+  MLAvatar,
   MLButton,
-  MLDatePicker,
-  MLLayout,
-  MLSlider,
-  MLRadio,
-  MLIcon,
-  MLTable,
-  MLTag,
   MLCollapse,
   MLConfigProvider,
-  MLResult,
+  MLDatePicker,
   MLEditableSlider,
   MLEmpty,
+  MLHeader,
+  MLIcon,
+  MLLayout,
+  MLPagination,
+  MLRadio,
+  MLResult,
+  MLSlider,
+  MLTable,
+  MLTag,
+  MLTooltip,
 } from '@marklogic/design-system'
 
 import {
-  Route as RouteIcon,
+  RouteSolid,
   CheckCircleFilled,
   SearchOutlined,
   QuestionCircleOutlined,
   SettingOutlined,
   UserOutlined,
-} from '@marklogic/design-system/MLIcon'
+  ClockCircleOutlined,
+  SmileBeamSolid,
+} from '@marklogic/design-system/es/MLIcon'
+
 import { text } from '@storybook/addon-knobs'
-import { Avatar as MLAvatar } from 'antd'
 
 import _ from 'lodash'
 
@@ -116,7 +120,7 @@ export default class App extends Component {
                   </a>
                 }
                 extra={[
-                  makeIcon(<RouteIcon />, 'route'),
+                  makeIcon(<RouteSolid />, 'route'),
                   <span key='divider' style={{ borderLeft: '1px dashed' }} />,
                   makeIcon(<SearchOutlined />, 'search'),
                   makeIcon(<QuestionCircleOutlined />, 'help'),
@@ -192,16 +196,7 @@ export default class App extends Component {
               />
               <MLButton type='primary'>Test</MLButton>
               <MLButton type='highlight'>Test</MLButton>
-              <RouteIcon />
-              <CheckCircleFilled />
-              <div>
-                <MLSlider tooltipPlacement='top' />
-              </div>
-              <MLDatePicker />
-              <MLDatePicker picker='week' />
-              <MLButton type='primary'>Test</MLButton>
-              <MLButton type='highlight'>Test</MLButton>
-              <RouteIcon />
+              <RouteSolid />
               <CheckCircleFilled />
               <div>
                 <MLSlider tooltipPlacement='top' />
@@ -211,8 +206,15 @@ export default class App extends Component {
               <MLDatePicker size='small' />
               <MLDatePicker size='default' />
               <MLDatePicker size='large' />
-              <MLDatePicker picker='week' />
-              <MLResult type='primary' icon={<Route />} title='title' subTitle='subtitle' />
+              <MLPagination
+                defaultCurrent={3}
+                defaultPageSize={10}
+                simple={false}
+                size='default'
+                total={50}
+              />
+
+              <MLResult type='primary' icon={<RouteSolid />} title='title' subTitle='subtitle' />
               <MLEmpty />
               <div
                 style={{
@@ -240,8 +242,9 @@ export default class App extends Component {
               </div>
               <div style={{ height: 2000 }}>Some tall content</div>
             </MLLayout.MLContent>
-            <MLLayout.MLFooter year='2019' />
+            <MLLayout.MLFooter year={2019} />
           </MLLayout>
+          <SmileBeamSolid style={{ fontSize: '300px' }} />
         </MLConfigProvider>
       </div>
     )

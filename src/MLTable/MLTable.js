@@ -9,10 +9,6 @@ import classNames from 'classnames'
  * Component for showing an un-expanded nested table, which is just a vertical list of column headers.
  */
 class MLHeaderTable extends React.Component {
-  static propTypes = {
-    columns: PropTypes.arrayOf(PropTypes.any),
-  }
-
   render() {
     const { columns } = this.props
     return (
@@ -30,22 +26,14 @@ class MLHeaderTable extends React.Component {
   }
 }
 
+MLHeaderTable.propTypes = {
+  columns: PropTypes.arrayOf(PropTypes.any),
+}
+
 /**
  * Component for showing basic tables, nested tables, and entity properties for rows in said tables.
  */
 class MLTable extends React.Component {
-  static propTypes = { // TODO: Include default Table props as well
-    id: PropTypes.string,
-    rowKey: PropTypes.string,
-    showBody: PropTypes.bool,
-    dataSource: PropTypes.oneOfType([
-      PropTypes.objectOf(PropTypes.any), // Single item data sources are converted into arrays automatically (used in embedded table)
-      PropTypes.arrayOf(PropTypes.any),
-    ]),
-    columns: PropTypes.arrayOf(PropTypes.any),
-    onChange: PropTypes.func,
-  }
-
   constructor(props) {
     super(props)
     this.state = this.getInitialColumnExpandedStates()
@@ -53,6 +41,10 @@ class MLTable extends React.Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.columns !== this.props.columns) {
+      // This rule is OK to ignore because of the above if statement.
+      // But, consider using one of the alternatives here instead for new best practices:
+      // https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState(this.getInitialColumnExpandedStates())
     }
   }
@@ -199,6 +191,18 @@ MLTable.defaultProps = {
   columnStyle: () => ({}),
   rowStyle: () => ({}),
   rowClassName: () => undefined,
+}
+
+MLTable.propTypes = { // TODO: Include default Table props as well
+  id: PropTypes.string,
+  rowKey: PropTypes.string,
+  showBody: PropTypes.bool,
+  dataSource: PropTypes.oneOfType([
+    PropTypes.objectOf(PropTypes.any), // Single item data sources are converted into arrays automatically (used in embedded table)
+    PropTypes.arrayOf(PropTypes.any),
+  ]),
+  columns: PropTypes.arrayOf(PropTypes.any),
+  onChange: PropTypes.func,
 }
 
 export default MLTable

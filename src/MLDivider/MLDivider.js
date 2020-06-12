@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Divider } from 'antd'
-import './style'
 import classNames from 'classnames'
 
 const MLDivider = (props) => {

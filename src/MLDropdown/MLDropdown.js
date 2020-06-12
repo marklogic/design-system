@@ -15,7 +15,7 @@ const MLDropdown = (props) => {
 }
 
 MLDropdown.defaultProps = {
-  trigger: 'click',
+  trigger: ['click'],
 }
 
 export default MLDropdown
