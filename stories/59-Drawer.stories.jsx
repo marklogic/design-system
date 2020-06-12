@@ -47,9 +47,6 @@ export const basic = () => {
       </MLButton>
       <MLDrawer
         {...props}
-        title='Basic Drawer'
-        placement='right'
-        closable={false}
         onClose={onClose}
         visible={state.visible}
       >
