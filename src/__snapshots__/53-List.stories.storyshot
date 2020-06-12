@@ -1,0 +1,376 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Data Display/MLList Basic 1`] = `
+<div>
+  <div
+    class="ant-list ml-list ant-list-split ant-list-something-after-last-item"
+  >
+    <div
+      class="ant-list-header"
+    >
+      <div>
+        Header
+      </div>
+    </div>
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <ul
+          class="ant-list-items"
+        >
+          <li
+            class="ant-list-item ml-list-item"
+          >
+            Racing car sprays burning fuel into crowd.
+          </li>
+          <li
+            class="ant-list-item ml-list-item"
+          >
+            Japanese princess to wed commoner.
+          </li>
+          <li
+            class="ant-list-item ml-list-item"
+          >
+            Australian walks 100km after outback crash.
+          </li>
+          <li
+            class="ant-list-item ml-list-item"
+          >
+            Man charged over missing wedding girl.
+          </li>
+          <li
+            class="ant-list-item ml-list-item"
+          >
+            Los Angeles battles huge wildfires.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="ant-list-footer"
+    >
+      <div>
+        Footer
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Data Display/MLList Grid 1`] = `
+<div
+  class="ant-list ml-list ant-list-split ant-list-grid"
+>
+  <div
+    class="ant-spin-nested-loading"
+  >
+    <div
+      class="ant-spin-container"
+    >
+      <div
+        class="ant-row"
+        style="margin-left:-8px;margin-right:-8px"
+      >
+        <div
+          class="ant-col ant-col-6"
+          style="padding-left:8px;padding-right:8px"
+        >
+          <div
+            class="ant-list-item ml-list-item"
+          >
+            <div
+              class="ant-card ant-card-bordered"
+            >
+              <div
+                class="ant-card-head"
+              >
+                <div
+                  class="ant-card-head-wrapper"
+                >
+                  <div
+                    class="ant-card-head-title"
+                  >
+                    Title 1
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-card-body"
+              >
+                Card content
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-6"
+          style="padding-left:8px;padding-right:8px"
+        >
+          <div
+            class="ant-list-item ml-list-item"
+          >
+            <div
+              class="ant-card ant-card-bordered"
+            >
+              <div
+                class="ant-card-head"
+              >
+                <div
+                  class="ant-card-head-wrapper"
+                >
+                  <div
+                    class="ant-card-head-title"
+                  >
+                    Title 2
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-card-body"
+              >
+                Card content
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-6"
+          style="padding-left:8px;padding-right:8px"
+        >
+          <div
+            class="ant-list-item ml-list-item"
+          >
+            <div
+              class="ant-card ant-card-bordered"
+            >
+              <div
+                class="ant-card-head"
+              >
+                <div
+                  class="ant-card-head-wrapper"
+                >
+                  <div
+                    class="ant-card-head-title"
+                  >
+                    Title 3
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-card-body"
+              >
+                Card content
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-6"
+          style="padding-left:8px;padding-right:8px"
+        >
+          <div
+            class="ant-list-item ml-list-item"
+          >
+            <div
+              class="ant-card ant-card-bordered"
+            >
+              <div
+                class="ant-card-head"
+              >
+                <div
+                  class="ant-card-head-wrapper"
+                >
+                  <div
+                    class="ant-card-head-title"
+                  >
+                    Title 4
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-card-body"
+              >
+                Card content
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Data Display/MLList With Meta 1`] = `
+<div
+  class="ant-list ml-list ant-list-split"
+>
+  <div
+    class="ant-spin-nested-loading"
+  >
+    <div
+      class="ant-spin-container"
+    >
+      <ul
+        class="ant-list-items"
+      >
+        <li
+          class="ant-list-item ml-list-item"
+        >
+          <div
+            class="ant-list-item-meta ml-list-item-meta"
+          >
+            <div
+              class="ant-list-item-meta-avatar"
+            >
+              <span
+                class="ant-avatar ant-avatar-circle"
+              >
+                <span
+                  class="ant-avatar-string"
+                  style="opacity:0"
+                />
+              </span>
+            </div>
+            <div
+              class="ant-list-item-meta-content"
+            >
+              <h4
+                class="ant-list-item-meta-title"
+              >
+                <a
+                  href="https://ant.design"
+                >
+                  Ant Design Title 1
+                </a>
+              </h4>
+              <div
+                class="ant-list-item-meta-description"
+              >
+                Ant Design, a design language for background applications, is refined by Ant UED Team
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="ant-list-item ml-list-item"
+        >
+          <div
+            class="ant-list-item-meta ml-list-item-meta"
+          >
+            <div
+              class="ant-list-item-meta-avatar"
+            >
+              <span
+                class="ant-avatar ant-avatar-circle"
+              >
+                <span
+                  class="ant-avatar-string"
+                  style="opacity:0"
+                />
+              </span>
+            </div>
+            <div
+              class="ant-list-item-meta-content"
+            >
+              <h4
+                class="ant-list-item-meta-title"
+              >
+                <a
+                  href="https://ant.design"
+                >
+                  Ant Design Title 2
+                </a>
+              </h4>
+              <div
+                class="ant-list-item-meta-description"
+              >
+                Ant Design, a design language for background applications, is refined by Ant UED Team
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="ant-list-item ml-list-item"
+        >
+          <div
+            class="ant-list-item-meta ml-list-item-meta"
+          >
+            <div
+              class="ant-list-item-meta-avatar"
+            >
+              <span
+                class="ant-avatar ant-avatar-circle"
+              >
+                <span
+                  class="ant-avatar-string"
+                  style="opacity:0"
+                />
+              </span>
+            </div>
+            <div
+              class="ant-list-item-meta-content"
+            >
+              <h4
+                class="ant-list-item-meta-title"
+              >
+                <a
+                  href="https://ant.design"
+                >
+                  Ant Design Title 3
+                </a>
+              </h4>
+              <div
+                class="ant-list-item-meta-description"
+              >
+                Ant Design, a design language for background applications, is refined by Ant UED Team
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="ant-list-item ml-list-item"
+        >
+          <div
+            class="ant-list-item-meta ml-list-item-meta"
+          >
+            <div
+              class="ant-list-item-meta-avatar"
+            >
+              <span
+                class="ant-avatar ant-avatar-circle"
+              >
+                <span
+                  class="ant-avatar-string"
+                  style="opacity:0"
+                />
+              </span>
+            </div>
+            <div
+              class="ant-list-item-meta-content"
+            >
+              <h4
+                class="ant-list-item-meta-title"
+              >
+                <a
+                  href="https://ant.design"
+                >
+                  Ant Design Title 4
+                </a>
+              </h4>
+              <div
+                class="ant-list-item-meta-description"
+              >
+                Ant Design, a design language for background applications, is refined by Ant UED Team
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

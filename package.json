@@ -12,6 +12,9 @@
     "npm": ">=5"
   },
   "sideEffects": [
+    "dist/*",
+    "es/**/style/*",
+    "lib/**/style/*",
     "*.css",
     "*.less"
   ],
@@ -43,28 +46,35 @@
     "@babel/plugin-proposal-numeric-separator": "^7.2.0",
     "@babel/plugin-proposal-optional-chaining": "^7.2.0",
     "@babel/plugin-proposal-pipeline-operator": "^7.5.0",
+    "@babel/plugin-proposal-private-methods": "^7.10.1",
+    "@babel/plugin-proposal-private-property-in-object": "^7.10.1",
     "@babel/plugin-proposal-throw-expressions": "^7.2.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-syntax-import-meta": "^7.2.0",
     "@babel/plugin-transform-react-jsx-development": "^7.9.0",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-docs": "^5.2.8",
-    "@storybook/addon-info": "^5.2.8",
-    "@storybook/addon-knobs": "^5.2.8",
-    "@storybook/addon-links": "^5.2.8",
-    "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8",
+    "@storybook/addon-actions": "^6.0.0-beta.19",
+    "@storybook/addon-docs": "^6.0.0-beta.19",
+    "@storybook/addon-info": "^6.0.0-alpha.2",
+    "@storybook/addon-knobs": "^6.0.0-beta.19",
+    "@storybook/addon-links": "^6.0.0-beta.19",
+    "@storybook/addon-storyshots": "6.0.0-beta.19",
+    "@storybook/addons": "^6.0.0-beta.19",
+    "@storybook/react": "^6.0.0-beta.19",
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^10.0.4",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "8.1.0",
     "babel-plugin-import": "^1.13.0",
+    "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "change-case": "^4.1.1",
     "classnames": "^2.2.6",
     "cross-env": "^5.2.0",
     "css-loader": "^3.4.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.5.0",
     "eslint": "^6.2.1",
     "eslint-config-standard": "^14.0.0",
     "eslint-config-standard-react": "^9.0.0",
@@ -81,22 +91,28 @@
     "gulp-concat-css": "^3.1.0",
     "gulp-cssmin": "^0.2.0",
     "gulp-debug-streams": "^3.0.0",
+    "gulp-dedupe": "^0.0.2",
     "gulp-eslint": "^6.0.0",
+    "gulp-eval": "^1.0.0",
     "gulp-less": "^4.0.1",
     "gulp-rename": "^2.0.0",
+    "jest-specific-snapshot": "^3.0.0",
+    "jest-transform-stub": "^2.0.0",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "lodash": "^4.17.15",
     "markdown-to-jsx": "^6.11.1",
     "merge-stream": "^2.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "plugin-error": "^1.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.3.0",
     "through2": "^3.0.1",
-    "use-debounce": "^3.4.2",
-    "vinyl": "^2.2.0"
+    "typescript": "^3.9.3",
+    "vinyl": "^2.2.0",
+    "webpack-cli": "^3.3.11"
   },
   "files": [
     "src",
@@ -106,16 +122,37 @@
   "dependencies": {
     "@ant-design/icons": "^4.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-regular-svg-icons": "5.13.0",
+    "@fortawesome/free-solid-svg-icons": "5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "ant-design-draggable-modal": "^0.0.16",
     "antd": "^3.26.13",
+    "change-case": "^4.1.1",
     "classnames": "^2.2.6",
     "lodash-es": "^4",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "use-debounce": "^3.4.2"
   },
   "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!lodash-es|antd|@storybook/addon-info|react-syntax-highlighter)"
+    ],
+    "transform": {
+      "^.+\\.[jt]sx?$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx"
+    },
+    "moduleNameMapper": {
+      "^@marklogic/design-system/src": "<rootDir>/src",
+      "^@marklogic/design-system": "<rootDir>/src",
+      "\\.(css|less)$": "jest-transform-stub"
+    }
   }
 }

@@ -3,15 +3,16 @@ import { action } from '@storybook/addon-actions'
 import { withKnobs, number } from '@storybook/addon-knobs'
 import { MLButton, mlmessage } from '@marklogic/design-system'
 import SmileOutlined from '@ant-design/icons/lib/icons/SmileOutlined'
-// import mdx from './60-message.mdx'
+import mdx from './60-message.mdx'
 
 export default {
   title: 'Feedback/mlmessage',
   decorators: [withKnobs],
   parameters: {
-    // docs: { // TODO: Uncomment once docs branch is merged
-    //   page: mdx,
-    // },
+    fileName: '60-message.stories.jsx',
+    docs: { // TODO: Uncomment once docs branch is merged
+      page: mdx,
+    },
     info: {
       text: 'Component description goes here',
     },

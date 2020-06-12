@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Feedback/MLPopconfirm Basic 1`] = `
+<a
+  class="ml-popconfirm"
+  href="#"
+>
+  Delete
+</a>
+`;

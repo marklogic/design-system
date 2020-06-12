@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const gulp = require('gulp')
 const babel = require('gulp-babel')
 const merge = require('merge-stream')
@@ -8,7 +9,6 @@ const rename = require('gulp-rename')
 const concatCss = require('gulp-concat-css')
 const themeVariables = require('../src/theme-variables.json')
 
-const _ = require('lodash')
 require('./fix-uniformity-gulp')
 const generateIconFiles = require('./generate-icon-files')
 
@@ -16,11 +16,11 @@ const cwd = path.resolve(__dirname, '..')
 const base = path.resolve(__dirname, '../src')
 
 function compile(modules) {
+  const moduleDir = modules === false ? 'es' : 'lib'
   const babelFiles = merge([
     gulp.src([
       path.resolve(__dirname, '../src/**/*.js'),
     ]),
-    generateIconFiles(),
   ])
   return merge([
     babelFiles
@@ -29,6 +29,24 @@ function compile(modules) {
           'transform-react-jsx',
           '@babel/plugin-transform-template-literals',
           '@babel/proposal-class-properties',
+          ['import', {
+            libraryName: 'lodash-es',
+            libraryDirectory: '',
+          }, 'lodash-es'],
+          ['import', {
+            libraryName: '@marklogic/design-system',
+            libraryDirectory: moduleDir,
+            camel2DashComponentName: false,
+            style: true,
+          }, '@marklogic/design-system'],
+          ['import', {
+            libraryName: '../MLIcon',
+            libraryDirectory: '',
+            camel2DashComponentName: false,
+            customName: function (name) {
+              return `../MLIcon/${name}`
+            },
+          }, '../MLIcon'],
         ],
         presets: [
           '@babel/preset-react',
@@ -59,7 +77,7 @@ function compile(modules) {
       path.resolve(__dirname, '../src/theme-variables.json'),
     ]),
   ]).pipe(gulp.dest(
-    modules === false ? 'es' : 'lib',
+    moduleDir,
     { cwd, base },
   ))
 }
