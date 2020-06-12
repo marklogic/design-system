@@ -2,15 +2,16 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, boolean, number } from '@storybook/addon-knobs'
 import { MLAnchor } from '@marklogic/design-system'
-// import mdx from './65-Anchor.mdx'
+import mdx from './65-Anchor.mdx'
 
 export default {
   title: 'Other/MLAnchor',
   decorators: [withKnobs],
   parameters: {
-    // docs: { // TODO: Uncomment when documentation branch is merged
-    //   page: mdx,
-    // },
+    docs: {
+      page: mdx,
+    },
+    fileName: '65-Anchor.stories.jsx',
     info: {
       text: 'Component description goes here',
     },

@@ -5,6 +5,7 @@ import classNames from 'classnames'
 const MLModal = (props) => {
   return (
     <DraggableModal
+      initialHeight={0}
       {...props}
       className={classNames('ml-modal', props.className)}
     >
