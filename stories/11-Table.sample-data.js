@@ -53,22 +53,26 @@ export const sampleBasicData = {
 export const sampleNestedData = {
   dataSource: [
     {
+      key: 281328,
       emp_no: 281328,
       first_name: 'Eishiro',
       last_name: 'Trachtenberg',
       gender: 'M',
       hire_date: '1988-01-21',
       work_experience: {
+        key: 281328,
         emp_no: 281328,
         dept_no: 'd008',
         dept_name: 'Research',
         titles: [
           {
+            key: 1,
             title: 'Staff',
             from_date: '1988-01-21',
             to_date: '1996-01-21',
           },
           {
+            key: 2,
             title: 'Senior Staff',
             from_date: '1996-01-21',
             to_date: '9999-01-01',
@@ -77,76 +81,91 @@ export const sampleNestedData = {
       },
       salary: [
         {
+          key: 1,
           salary: '56926',
           from_date: '1995-01-19',
           to_date: '1996-01-19',
         },
         {
+          key: 2,
           salary: '51184',
           from_date: '1989-01-20',
           to_date: '1990-01-20',
         },
         {
+          key: 3,
           salary: '60014',
           from_date: '1999-01-18',
           to_date: '2000-01-18',
         },
         {
+          key: 4,
           salary: '47619',
           from_date: '1988-01-21',
           to_date: '1989-01-20',
         },
         {
+          key: 5,
           salary: '58153',
           from_date: '1996-01-19',
           to_date: '1997-01-18',
         },
         {
+          key: 6,
           salary: '51837',
           from_date: '1990-01-20',
           to_date: '1991-01-20',
         },
         {
+          key: 7,
           salary: '56264',
           from_date: '1993-01-19',
           to_date: '1994-01-19',
         },
         {
+          key: 8,
           salary: '59706',
           from_date: '1998-01-18',
           to_date: '1999-01-18',
         },
         {
+          key: 9,
           salary: '62624',
           from_date: '2001-01-17',
           to_date: '2002-01-17',
         },
         {
+          key: 10,
           salary: '63223',
           from_date: '2002-01-17',
           to_date: '9999-01-01',
         },
         {
+          key: 11,
           salary: '57000',
           from_date: '1994-01-19',
           to_date: '1995-01-19',
         },
         {
+          key: 12,
           salary: '55221',
           from_date: '1991-01-20',
           to_date: '1992-01-20',
         },
         {
+          key: 13,
           salary: '54926',
           from_date: '1992-01-20',
           to_date: '1993-01-19',
         },
         {
+          key: 14,
           salary: '62816',
           from_date: '2000-01-18',
           to_date: '2001-01-17',
         },
         {
+          key: 15,
           salary: '58096',
           from_date: '1997-01-18',
           to_date: '1998-01-18',
@@ -155,22 +174,26 @@ export const sampleNestedData = {
     },
 
     {
+      key: 12315,
       emp_no: 12315,
       first_name: 'Firsty',
       last_name: 'Lasty',
       gender: 'X',
       hire_date: '2000-01-21',
       work_experience: {
+        key: 12315,
         emp_no: 12315,
         dept_no: 'd008',
         dept_name: 'Research',
         titles: [
           {
+            key: 1,
             title: 'Staff',
             from_date: '1988-01-21',
             to_date: '1996-01-21',
           },
           {
+            key: 2,
             title: 'Senior Staff',
             from_date: '1996-01-21',
             to_date: '9999-01-01',
@@ -179,76 +202,91 @@ export const sampleNestedData = {
       },
       salary: [
         {
+          key: 1,
           salary: '56926',
           from_date: '1995-01-19',
           to_date: '1996-01-19',
         },
         {
+          key: 2,
           salary: '51184',
           from_date: '1989-01-20',
           to_date: '1990-01-20',
         },
         {
+          key: 3,
           salary: '60014',
           from_date: '1999-01-18',
           to_date: '2000-01-18',
         },
         {
+          key: 4,
           salary: '47619',
           from_date: '1988-01-21',
           to_date: '1989-01-20',
         },
         {
+          key: 5,
           salary: '58153',
           from_date: '1996-01-19',
           to_date: '1997-01-18',
         },
         {
+          key: 6,
           salary: '51837',
           from_date: '1990-01-20',
           to_date: '1991-01-20',
         },
         {
+          key: 7,
           salary: '56264',
           from_date: '1993-01-19',
           to_date: '1994-01-19',
         },
         {
+          key: 8,
           salary: '59706',
           from_date: '1998-01-18',
           to_date: '1999-01-18',
         },
         {
+          key: 9,
           salary: '62624',
           from_date: '2001-01-17',
           to_date: '2002-01-17',
         },
         {
+          key: 10,
           salary: '63223',
           from_date: '2002-01-17',
           to_date: '9999-01-01',
         },
         {
+          key: 11,
           salary: '57000',
           from_date: '1994-01-19',
           to_date: '1995-01-19',
         },
         {
+          key: 12,
           salary: '55221',
           from_date: '1991-01-20',
           to_date: '1992-01-20',
         },
         {
+          key: 13,
           salary: '54926',
           from_date: '1992-01-20',
           to_date: '1993-01-19',
         },
         {
+          key: 14,
           salary: '62816',
           from_date: '2000-01-18',
           to_date: '2001-01-17',
         },
         {
+          key: 15,
           salary: '58096',
           from_date: '1997-01-18',
           to_date: '1998-01-18',
