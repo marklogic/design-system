@@ -9,6 +9,20 @@ const merge = require('merge-stream')
 const Vinyl = require('vinyl')
 const eslint = require('gulp-eslint')
 
+const skipFiles = ({filePatterns}) => {
+  return through.obj((file, enc, cb) => {
+    if (!Array.isArray(filePatterns)) {
+      filePatterns = [filePatterns]
+    }
+    for (const pattern of filePatterns) {
+      if (pattern.test(path.basename(file.path))) {
+        return cb(null, null)
+      }
+    }
+    return cb(null, file)
+  })
+}
+
 const checkMultipleComponentsOneFile = () => {
   return through.obj((file, enc, cb) => {
     const code = file.contents.toString()
@@ -24,11 +38,12 @@ const checkMultipleComponentsOneFile = () => {
   })
 }
 
-const ensureImport = (importStatement) => {
+const ensureImport = (_importStatement) => {
   return through.obj((file, enc, cb) => {
     if (!file.isBuffer()) {
       this.emit('error', new PluginError('fix stuff', 'Only buffers supported'))
     }
+    const importStatement = (typeof _importStatement === 'function' ? _importStatement(file) : _importStatement)
     if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
       return cb(null, file)
     }
@@ -191,10 +206,54 @@ $<exportLine>`
   })
 }
 
+const addMDXFilenameToMeta = () => {
+  return through.obj(function(file, enc, cb) {
+    if (file.meta === undefined) {
+      file.meta = {}
+    }
+    file.meta.mdxFilepath = `./${path.basename(file.path).replace('.stories.jsx', '.mdx')}`
+    return cb(null, file)
+  })
+}
+
+const addDocsPageToExports = () => {
+  return through.obj(function(file, enc, cb) {
+    const code = file.contents.toString()
+
+    if (/.*\/(0-Welcome.stories).*/.test(file.path)) {
+      return cb(null, file)
+    }
+
+    if (code.includes('    docs: {\n      page: ')) {
+      return cb(null, file)
+    }
+
+    file.contents = Buffer.from(
+      code.replace('  parameters: {\n', `  parameters: {\n    docs: {\n      page: mdx,\n    },\n`)
+    )
+    return cb(null, file)
+  })
+}
+
+const addFileNameToExports = () => {
+  return through.obj(function(file, enc, cb) {
+    const code = file.contents.toString()
+
+    if (code.includes('    fileName: ')) {
+      return cb(null, file)
+    }
+
+    file.contents = Buffer.from(
+      code.replace('  parameters: {\n', `  parameters: {\n    fileName: '${path.basename(file.path)}',\n`)
+    )
+    return cb(null, file)
+  })
+}
+
 const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
   function fixCustomUniformityRules() {
     const src = gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
-    return merge(
+    const srcJobs = merge(
       src
         .pipe(checkMultipleComponentsOneFile())
         .pipe(removeImport(/import '\.\/style'\n/))
@@ -205,6 +264,19 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
         .pipe(ensureStyleFolder()),
     )
       .pipe(gulp.dest(path.resolve(__dirname, '../src')))
+    const stories = gulp.src(path.resolve(__dirname, '../stories/*.stories.jsx'))
+    const storyJobs = merge(
+      stories
+        .pipe(skipFiles({filePatterns: [/0-Welcome.*/]}))
+        .pipe(addMDXFilenameToMeta())
+        .pipe(ensureImport((file) => `import mdx from '${file.meta.mdxFilepath}'`)),
+      stories
+        .pipe(addFileNameToExports())
+        .pipe(addDocsPageToExports())
+    )
+      .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
+    // return storyJobs
+    return merge(srcJobs, storyJobs)
   },
   function fixESLintProblems() {
     const base = path.resolve(__dirname, '..')
@@ -219,6 +291,14 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
       // .pipe(eslint.format()) // Enable later once the output is less
       .pipe(gulp.dest(path.resolve(__dirname, '..')))
   },
+  // function renameStoriesToJSX() {
+  //   return gulp.src(path.resolve(__dirname, '../stories/*.stories.js'))
+  //     .pipe(through.obj(function(file, enc, cb) {
+  //       file.path = file.path.replace('stories.js', 'stories.jsx')
+  //       return cb(null, file)
+  //     }))
+  //     .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
+  // }
 ))
 
 module.exports = fixUniformityTask

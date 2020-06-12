@@ -16,6 +16,7 @@ const cwd = path.resolve(__dirname, '..')
 const base = path.resolve(__dirname, '../src')
 
 function compile(modules) {
+  const moduleDir = modules === false ? 'es' : 'lib'
   const babelFiles = merge([
     gulp.src([
       path.resolve(__dirname, '../src/ML*/ML*.js'),
@@ -32,16 +33,19 @@ function compile(modules) {
           '@babel/plugin-transform-template-literals',
           '@babel/proposal-class-properties',
           ['import', {
-            libraryName: '@marklogic/design-system/es/MLIcon',
+            libraryName: '@marklogic/design-system',
+            libraryDirectory: moduleDir,
+            camel2DashComponentName: false,
+            style: true,
+          }, '@marklogic/design-system'],
+          ['import', {
+            libraryName: '../MLIcon',
             libraryDirectory: '',
             camel2DashComponentName: false,
             customName: function (name) {
-              return `@marklogic/design-system/es/MLIcon/${name}`
+              return `../MLIcon/${name}`
             },
-            style: function() {
-              return '@marklogic/design-system/es/MLIcon/style'
-            },
-          }],
+          }, '../MLIcon'],
         ],
         presets: [
           '@babel/preset-react',
@@ -73,7 +77,7 @@ function compile(modules) {
       path.resolve(__dirname, '../src/theme-variables.json'),
     ]),
   ]).pipe(gulp.dest(
-    modules === false ? 'es' : 'lib',
+    moduleDir,
     { cwd, base },
   ))
 }

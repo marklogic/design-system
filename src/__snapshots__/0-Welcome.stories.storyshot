@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Welcome To Storybook 1`] = `
+<span
+  class="storybook-welcome-page"
+>
+  0-Welcome.md
+</span>
+`;
