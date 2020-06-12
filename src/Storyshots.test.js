@@ -1,5 +1,5 @@
-import initStoryshots, { multiSnapshotWithOptions, renderOnly } from '@storybook/addon-storyshots'
-import Enzyme, { mount, shallow, render } from 'enzyme'
+import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots'
+import Enzyme, { render } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import { createSerializer } from 'enzyme-to-json'
 import { addSerializer } from 'jest-specific-snapshot'

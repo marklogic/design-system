@@ -41,6 +41,10 @@ class MLTable extends React.Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.columns !== this.props.columns) {
+      // This rule is OK to ignore because of the above if statement.
+      // But, consider using one of the alternatives here instead for new best practices:
+      // https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState(this.getInitialColumnExpandedStates())
     }
   }

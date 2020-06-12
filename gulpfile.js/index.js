@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const gulp = require('gulp')
 const babel = require('gulp-babel')
 const merge = require('merge-stream')
@@ -8,7 +9,6 @@ const rename = require('gulp-rename')
 const concatCss = require('gulp-concat-css')
 const themeVariables = require('../src/theme-variables.json')
 
-const _ = require('lodash')
 require('./fix-uniformity-gulp')
 const generateIconFiles = require('./generate-icon-files')
 
@@ -32,6 +32,10 @@ function compile(modules) {
           'transform-react-jsx',
           '@babel/plugin-transform-template-literals',
           '@babel/proposal-class-properties',
+          ['import', {
+            libraryName: 'lodash-es',
+            libraryDirectory: '',
+          }, 'lodash-es'],
           ['import', {
             libraryName: '@marklogic/design-system',
             libraryDirectory: moduleDir,

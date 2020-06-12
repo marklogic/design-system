@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 const gulp = require('gulp')
 const fs = require('fs-extra')
 const PluginError = require('plugin-error')
@@ -288,7 +289,7 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
       path.resolve(__dirname, '../*.js'),
     ], { base })
       .pipe(eslint({ fix: true }))
-      // .pipe(eslint.format()) // Enable later once the output is less
+      .pipe(eslint.format())
       .pipe(gulp.dest(path.resolve(__dirname, '..')))
   },
   // function renameStoriesToJSX() {
