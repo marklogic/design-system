@@ -164,7 +164,7 @@ exports[`Storyshots Data Display/MLCard With Actions And Meta 1`] = `
           class="ant-card-meta-avatar"
         >
           <span
-            class="ant-avatar ant-avatar-circle ant-avatar-image"
+            class="ant-avatar ml-avatar ant-avatar-sm ant-avatar-circle ant-avatar-image"
           >
             <img
               src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
