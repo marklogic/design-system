@@ -2,8 +2,8 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { boolean, number, withKnobs } from '@storybook/addon-knobs'
 import { MLBadge } from '@marklogic/design-system'
-import { ClockCircleOutlined } from '@marklogic/design-system/MLIcon'
-import { NotificationOutlined } from '../src/MLIcon'
+import ClockCircleOutlined from '../src/MLIcon/ClockCircleOutlined'
+import NotificationOutlined from '../src/MLIcon/NotificationOutlined'
 import mdx from './47-Badge.mdx'
 
 export default {
