@@ -2,11 +2,16 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs'
 import { MLTimeline } from '@marklogic/design-system'
+import mdx from './56-Timeline.mdx'
 
 export default {
   title: 'Data Display/MLTimeline',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
+    fileName: '56-Timeline.stories.jsx',
     info: {
       text: 'Component description goes here',
     },

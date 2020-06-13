@@ -313,14 +313,14 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
       .pipe(eslint.format())
       .pipe(gulp.dest(path.resolve(__dirname, '..')))
   },
-  // function renameStoriesToJSX() {
-  //   return gulp.src(path.resolve(__dirname, '../stories/*.stories.js'))
-  //     .pipe(through.obj(function(file, enc, cb) {
-  //       file.path = file.path.replace('stories.js', 'stories.jsx')
-  //       return cb(null, file)
-  //     }))
-  //     .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
-  // }
+  function renameStoriesToJSX() {
+    return gulp.src(path.resolve(__dirname, '../stories/*.stories.js'))
+      .pipe(through.obj(function(file, enc, cb) {
+        file.path = file.path.replace('stories.js', 'stories.jsx')
+        return cb(null, file)
+      }))
+      .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
+  },
 ))
 
 module.exports = fixUniformityTask

@@ -2,11 +2,16 @@ import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, number } from '@storybook/addon-knobs'
 import { MLAffix, MLButton } from '@marklogic/design-system'
+import mdx from './30-Affix.mdx'
 
 export default {
   title: 'Navigation/MLAffix',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
+    fileName: '30-Affix.stories.jsx',
     info: {
       text: 'Wrap Affix around another component to make it stick the viewport.',
     },

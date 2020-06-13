@@ -2,11 +2,16 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { boolean, number, radios, withKnobs } from '@storybook/addon-knobs'
 import { MLDescriptions } from '@marklogic/design-system'
+import mdx from './52-Descriptions.mdx'
 
 export default {
   title: 'Data Display/MLDescriptions',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
+    fileName: '52-Descriptions.stories.jsx',
     info: {
       text: 'Component description goes here',
     },

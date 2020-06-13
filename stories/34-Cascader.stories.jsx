@@ -2,11 +2,16 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { boolean, radios, withKnobs } from '@storybook/addon-knobs'
 import { MLCascader } from '@marklogic/design-system'
+import mdx from './34-Cascader.mdx'
 
 export default {
   title: 'Data Entry/MLCascader',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
+    fileName: '34-Cascader.stories.jsx',
     info: {
       text: 'Component description goes here',
     },

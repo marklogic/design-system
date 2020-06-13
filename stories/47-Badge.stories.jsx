@@ -4,11 +4,16 @@ import { boolean, number, withKnobs } from '@storybook/addon-knobs'
 import { MLBadge } from '@marklogic/design-system'
 import { ClockCircleOutlined } from '@marklogic/design-system/MLIcon'
 import { NotificationOutlined } from '../src/MLIcon'
+import mdx from './47-Badge.mdx'
 
 export default {
   title: 'Data Display/MLBadge',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
+    fileName: '47-Badge.stories.jsx',
     info: {
       text: 'Component description goes here',
     },

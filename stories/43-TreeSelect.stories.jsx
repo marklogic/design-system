@@ -2,11 +2,16 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { boolean, radios, withKnobs } from '@storybook/addon-knobs'
 import { MLTreeSelect } from '@marklogic/design-system'
+import mdx from './43-TreeSelect.mdx'
 
 export default {
   title: 'Data Entry/MLTreeSelect',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
+    fileName: '43-TreeSelect.stories.jsx',
     info: {
       text: 'Component description goes here',
     },

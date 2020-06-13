@@ -2,11 +2,16 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { MLSkeleton } from '@marklogic/design-system'
+import mdx from './64-Skeleton.mdx'
 
 export default {
   title: 'Feedback/MLSkeleton',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
+    fileName: '64-Skeleton.stories.jsx',
     info: {
       text: 'Component description goes here',
     },

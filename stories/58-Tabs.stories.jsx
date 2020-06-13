@@ -2,11 +2,16 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { radios, withKnobs } from '@storybook/addon-knobs'
 import { MLTabs } from '@marklogic/design-system'
+import mdx from './58-Tabs.mdx'
 
 export default {
   title: 'Data Display/MLTabs',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
+    fileName: '58-Tabs.stories.jsx',
     info: {
       text: 'Component description goes here',
     },

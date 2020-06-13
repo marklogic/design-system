@@ -3,11 +3,16 @@ import { action } from '@storybook/addon-actions'
 import { boolean, radios, withKnobs } from '@storybook/addon-knobs'
 import { MLPopover, MLButton } from '@marklogic/design-system'
 import './54-Popover.less'
+import mdx from './54-Popover.mdx'
 
 export default {
   title: 'Data Display/MLPopover',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
+    fileName: '54-Popover.stories.jsx',
     info: {
       text: 'Component description goes here',
     },
