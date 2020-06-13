@@ -21,18 +21,25 @@ export default {
 }
 
 export const basic = () => {
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const props = {
     size: radios('size', ['default', 'middle', 'small'], 'middle'),
     dataSource: sampleBasicData.dataSource,
     columns: sampleBasicData.columns,
     rowKey: 'key',
   }
+  if (draggableRows) {
+    props.columns = cloneDeep(props.columns)
+    removeKeyRecursively(props.columns, 'sorter')
+  }
   return (
     <div>
       <MLTable
         {...props}
+        key={draggableRows ? 'draggableRows-example' : 'non-draggable-example'}
         onChange={action('onChange')}
         rowKey='key'
+        draggableRows={draggableRows}
       />
     </div>
   )
@@ -41,7 +48,6 @@ export const basic = () => {
 function removeKeyRecursively(obj, key) {
   for (const prop in obj) {
     if (prop === key) {
-      console.log(`Deleting ${key} from obj: `, obj)
       delete obj[prop]
     } else if (typeof obj[prop] === 'object') {
       removeKeyRecursively(obj[prop], key)

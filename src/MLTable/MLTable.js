@@ -73,7 +73,7 @@ class MLTable extends React.Component {
         this.getInitialColumnExpandedStates(),
       ))
     }
-    if (this.props.draggableRows && prevProps.dataSource !== this.props.dataSource) {
+    if (this.props.draggableRows && (!prevState.rowOrder || prevProps.dataSource !== this.props.dataSource)) {
       this.setState(Object.assign(
         this.getInitialRowOrder(),
       ))
@@ -168,6 +168,9 @@ class MLTable extends React.Component {
       return dataSource
     }
     const rowOrder = this.state.tempRowOrder || this.state.rowOrder
+    if (!rowOrder) { // This can happen if draggableRows is turned on after mount, before rowOrder gets populated
+      return dataSource
+    }
     const reorderedData = []
     for (const row of dataSource) {
       const rowKeyValue = this.getRowKeyValue(row)
