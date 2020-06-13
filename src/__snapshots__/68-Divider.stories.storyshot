@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Other/MLDivider Basic 1`] = `
+<div>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.
+  </p>
+  <div
+    class="ml-divider ant-divider ant-divider-horizontal"
+    role="separator"
+  />
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.
+  </p>
+  <div
+    class="ml-divider ant-divider ant-divider-horizontal ant-divider-dashed"
+    role="separator"
+  />
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.
+  </p>
+</div>
+`;

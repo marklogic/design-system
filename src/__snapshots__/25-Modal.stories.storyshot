@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Feedback/MLModal Basic 1`] = `
+Array [
+  <div>
+    See more documentation at 
+    <a
+      href="https://github.com/DylanVann/ant-design-draggable-modal"
+    >
+      ant-design-draggable-modal
+    </a>
+  </div>,
+  <button
+    class="ant-btn ml-btn ant-btn-primary ant-btn-sm"
+    type="button"
+  >
+    <span>
+      Open Modal
+    </span>
+  </button>,
+]
+`;
+
+exports[`Storyshots Feedback/MLModal With Footer 1`] = `
+<button
+  class="ant-btn ml-btn ant-btn-primary ant-btn-sm"
+  type="button"
+>
+  <span>
+    Modal with footer
+  </span>
+</button>
+`;
