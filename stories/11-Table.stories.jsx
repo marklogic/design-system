@@ -50,7 +50,7 @@ function removeKeyRecursively(obj, key) {
 }
 
 export const embeddedTables = () => {
-  const draggableRows = boolean('draggableRows (and disable sorting)', true)
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const props = {
     size: radios('size', ['default', 'middle', 'small'], 'middle'),
     dataSource: sampleNestedData.dataSource,
@@ -85,7 +85,7 @@ const dateSorter = extractSortColumnDecorator((a, b) => {
 
 export const rowNestedTable = () => {
   const size = radios('size', ['default', 'middle', 'small'], 'middle')
-  const draggableRows = boolean('draggableRows (and disable sorting)', true)
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const abColumns = [
     {
       title: 'A',
@@ -153,7 +153,7 @@ export const rowNestedTable = () => {
 
 export const rowNestedTableWithButtons = () => {
   const size = radios('size', ['default', 'middle', 'small'], 'middle')
-  const draggableRows = boolean('draggableRows (and disable sorting)', true)
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const abColumns = [
     {
       title: 'A',

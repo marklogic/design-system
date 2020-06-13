@@ -180,8 +180,8 @@ export const sampleNestedData = {
       last_name: 'Lasty',
       gender: 'X',
       hire_date: '2000-01-21',
-      work_experience: {
-        key: '12315',
+      work_experience: [{
+        key: '1',
         emp_no: 12315,
         dept_no: 'd008',
         dept_name: 'Research',
@@ -199,7 +199,26 @@ export const sampleNestedData = {
             to_date: '9999-01-01',
           },
         ],
-      },
+      }, {
+        key: '2',
+        emp_no: 12315,
+        dept_no: 'd008',
+        dept_name: 'Development',
+        titles: [
+          {
+            key: '1',
+            title: 'Staff',
+            from_date: '1988-01-21',
+            to_date: '1996-01-21',
+          },
+          {
+            key: '2',
+            title: 'Senior Staff',
+            from_date: '1996-01-21',
+            to_date: '9999-01-01',
+          },
+        ],
+      }],
       salary: [
         {
           key: '1',
