@@ -276,7 +276,7 @@ class MLTable extends React.Component {
           <MLTable
             columns={originalColumn.columns}
             dataSource={record[originalColumn.dataIndex]}
-            draggableRows={this.props.draggableRows}
+            // draggableRows={this.props.draggableRows}
             showBody={this.state.columnExpandedStates[originalColumn.dataIndex]}
             size={this.props.size}
             // onChange={(e) => this.handleEmbeddedTableChange(e, restructuredColumn, record)}
