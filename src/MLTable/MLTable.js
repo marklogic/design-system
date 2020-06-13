@@ -56,7 +56,10 @@ class MLTable extends React.Component {
     if (props.draggableRows) {
       for (const column of props.columns) {
         if (column.sorter) {
-          throw Error('MLTable draggableRows cannot be set when columns prop has sorters.')
+          throw Error('MLTable draggableRows cannot be set when columns prop has `sorter`.')
+        }
+        if (column.filters) {
+          throw Error('MLTable draggableRows cannot be set when columns prop has `filters`.')
         }
       }
       for (const row of this.restructureData(props.dataSource)) {
