@@ -3,15 +3,16 @@ import { action } from '@storybook/addon-actions'
 import { withKnobs, radios, boolean } from '@storybook/addon-knobs'
 import { MLDrawer } from '@marklogic/design-system'
 import MLButton from '@marklogic/design-system/MLButton'
-// import mdx from './59-Drawer.mdx'
+import mdx from './59-Drawer.mdx'
 
 export default {
   title: 'Feedback/MLDrawer',
   decorators: [withKnobs],
   parameters: {
-    // docs: { // TODO: Uncomment once docs branch is merged
-    //   page: mdx,
-    // },
+    fileName: '59-Drawer.stories.jsx',
+    docs: { // TODO: Uncomment once docs branch is merged
+      page: mdx,
+    },
     info: {
       text: 'Component description goes here',
     },

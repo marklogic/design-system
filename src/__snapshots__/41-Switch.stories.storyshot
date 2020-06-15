@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Data Entry/MLSwitch Basic 1`] = `
+<button
+  aria-checked="false"
+  class="ml-switch ant-switch-small ant-switch"
+  role="switch"
+  type="button"
+>
+  <span
+    class="ant-switch-inner"
+  />
+</button>
+`;
