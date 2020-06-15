@@ -5,7 +5,7 @@ exports[`Storyshots Data Entry/MLDatePicker Date Picker 1`] = `
   <div>
     date: 
     <span
-      class="ml-date-picker ant-calendar-picker ant-calendar-picker-small"
+      class="ml-date-picker ml-date-picker-7 ant-calendar-picker ant-calendar-picker-small"
     >
       <div>
         <input
@@ -112,7 +112,7 @@ exports[`Storyshots Data Entry/MLDatePicker Date Picker 1`] = `
 exports[`Storyshots Data Entry/MLDatePicker Range Picker 1`] = `
 <div>
   <span
-    class="ml-date-picker-range-picker ant-calendar-picker ant-calendar-picker-small"
+    class="ml-date-picker-range-picker ml-date-picker-range-picker-8 ant-calendar-picker ant-calendar-picker-small"
     tabindex="0"
   >
     <span

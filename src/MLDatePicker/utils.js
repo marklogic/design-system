@@ -1,4 +1,4 @@
-import { get } from 'lodash-es'
+import { get, isArray } from 'lodash-es'
 
 export const pickerPropsFromContext = (picker, { dateFormat, dateTimeFormat, weekFormat, monthFormat }, props) => {
   let format

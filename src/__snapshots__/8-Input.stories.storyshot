@@ -672,7 +672,7 @@ exports[`Storyshots Data Entry/MLInput Input Group 1`] = `
       </span>
     </span>
     <span
-      class="ml-date-picker ant-calendar-picker ant-calendar-picker-small"
+      class="ml-date-picker ml-date-picker-9 ant-calendar-picker ant-calendar-picker-small"
       style="width:50%"
     >
       <div>
