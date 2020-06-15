@@ -1,8 +1,14 @@
+/* eslint-disable no-unused-vars */
 const gulp = require('gulp')
 const babel = require('gulp-babel')
 const merge = require('merge-stream')
 const path = require('path')
-const _ = require('lodash')
+const less = require('gulp-less')
+const cssmin = require('gulp-cssmin')
+const rename = require('gulp-rename')
+const concatCss = require('gulp-concat-css')
+const themeVariables = require('../src/theme-variables.json')
+
 require('./fix-uniformity-gulp')
 const generateIconFiles = require('./generate-icon-files')
 
@@ -10,14 +16,11 @@ const cwd = path.resolve(__dirname, '..')
 const base = path.resolve(__dirname, '../src')
 
 function compile(modules) {
+  const moduleDir = modules === false ? 'es' : 'lib'
   const babelFiles = merge([
     gulp.src([
-      path.resolve(__dirname, '../src/ML*/ML*.js'),
-      path.resolve(__dirname, '../src/ML*/*.js'),
-      path.resolve(__dirname, '../src/ML*/style/*.js'),
-      path.resolve(__dirname, '../src/index.js'),
+      path.resolve(__dirname, '../src/**/*.js'),
     ]),
-    generateIconFiles(),
   ])
   return merge([
     babelFiles
@@ -26,6 +29,24 @@ function compile(modules) {
           'transform-react-jsx',
           '@babel/plugin-transform-template-literals',
           '@babel/proposal-class-properties',
+          ['import', {
+            libraryName: 'lodash-es',
+            libraryDirectory: '',
+          }, 'lodash-es'],
+          ['import', {
+            libraryName: '@marklogic/design-system',
+            libraryDirectory: moduleDir,
+            camel2DashComponentName: false,
+            style: true,
+          }, '@marklogic/design-system'],
+          ['import', {
+            libraryName: '../MLIcon',
+            libraryDirectory: '',
+            camel2DashComponentName: false,
+            customName: function (name) {
+              return `../MLIcon/${name}`
+            },
+          }, '../MLIcon'],
         ],
         presets: [
           '@babel/preset-react',
@@ -49,18 +70,44 @@ function compile(modules) {
       })),
 
     gulp.src([
-      path.resolve(__dirname, '..', 'src/*/style/*.less'),
-      path.resolve(__dirname, '..', 'src/styles.less'),
+      path.resolve(__dirname, '..', 'src/**/*.less'),
     ], { base }),
 
     gulp.src([
       path.resolve(__dirname, '../src/theme-variables.json'),
     ]),
   ]).pipe(gulp.dest(
-    modules === false ? 'es' : 'lib',
+    moduleDir,
     { cwd, base },
   ))
 }
+
+gulp.task('compile-bundle-less', done => {
+  const lessSrc = gulp.src([
+    path.resolve(__dirname, '../node_modules/antd/dist/antd.less'),
+    path.resolve(__dirname, '..', 'src/*/style/*.less'),
+    path.resolve(__dirname, '..', 'src/styles.less'),
+  ])
+
+  const compileAndBundle = lessSrc
+    .pipe(less({
+      javascriptEnabled: true,
+      modifyVars: themeVariables,
+    }).on('error', function (err) {
+      console.log(err)
+    }))
+    .pipe(concatCss('index.css'))
+
+  const minified = compileAndBundle
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(cssmin().on('error', function(err) {
+      console.log(err)
+    }))
+
+  return merge(compileAndBundle, minified)
+    .pipe(gulp.dest(path.resolve(__dirname, '../dist')))
+    .on('finish', done)
+})
 
 gulp.task('compile-with-es', done => {
   console.log('[Parallel] Compile to es...')
@@ -72,8 +119,19 @@ gulp.task('compile-with-lib', done => {
   compile().on('finish', done)
 })
 
-gulp.task('compile', gulp.parallel('compile-with-es', 'compile-with-lib'))
+gulp.task('compile-js', gulp.parallel('compile-with-es', 'compile-with-lib'))
+gulp.task('compile-less', gulp.parallel('compile-bundle-less'))
 
-gulp.task('compile-watch', () => gulp.watch(path.resolve(__dirname, '../src'), gulp.series(['compile'])))
+gulp.task('compile-all', gulp.parallel('compile-bundle-less', 'compile-with-es', 'compile-with-lib'))
 
-gulp.task('fix-and-compile', gulp.series(['fix-uniformity', 'compile']))
+gulp.task('compile-watch', () => {
+  gulp.watch([
+    path.resolve(__dirname, '../src/**/*.js'),
+    path.resolve(__dirname, '../src/**/*.jsx'),
+  ], gulp.series(['compile-js']))
+  gulp.watch([
+    path.resolve(__dirname, '../src/**/*.less'),
+  ], gulp.series(['compile-less']))
+})
+
+gulp.task('fix-and-compile', gulp.series(['fix-uniformity', 'compile-all']))

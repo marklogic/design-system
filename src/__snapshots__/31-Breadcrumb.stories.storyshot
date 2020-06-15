@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Navigation/MLBreadcrumb Basic 1`] = `
+<div
+  class="ml-breadcrumb ant-breadcrumb"
+>
+  <span>
+    <span
+      class="ml-breadcrumb-item"
+    >
+      Home
+    </span>
+    <span
+      class="ant-breadcrumb-separator"
+    >
+      /
+    </span>
+  </span>
+  <span>
+    <span
+      class="ml-breadcrumb-item"
+    >
+      <a
+        href=""
+      >
+        Application Center
+      </a>
+    </span>
+    <span
+      class="ant-breadcrumb-separator"
+    >
+      /
+    </span>
+  </span>
+  <span>
+    <span
+      class="ml-breadcrumb-item"
+    >
+      <a
+        href=""
+      >
+        Application List
+      </a>
+    </span>
+    <span
+      class="ant-breadcrumb-separator"
+    >
+      /
+    </span>
+  </span>
+  <span>
+    <span
+      class="ml-breadcrumb-item"
+    >
+      An Application
+    </span>
+    <span
+      class="ant-breadcrumb-separator"
+    >
+      /
+    </span>
+  </span>
+</div>
+`;

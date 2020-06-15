@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { MLSlider, MLInputNumber } from '@marklogic/design-system'
+import MLSlider from '../MLSlider'
+import MLInputNumber from '../MLInputNumber'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { useDebouncedCallback } from 'use-debounce'
@@ -15,12 +16,12 @@ const MLEditableSlider = (props) => {
   )
 
   const sliderProps = Object.assign(
-    pick(props, Object.keys(MLSlider.propTypes)),
+    pick(props, MLSlider.propKeys),
     props.sliderProps,
   )
 
   const inputNumberProps = Object.assign(
-    pick(props, Object.keys(MLInputNumber.propTypes)),
+    pick(props, MLInputNumber.propKeys),
     props.inputNumberProps,
   )
 

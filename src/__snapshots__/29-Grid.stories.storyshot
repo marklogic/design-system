@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Layout/Grid (MLRow and MLCol) Basic 1`] = `
+<div
+  class="ant-row ml-row"
+>
+  <div
+    class="ant-col ml-col ant-col-xs-2 ant-col-sm-4 ant-col-md-6 ant-col-lg-8 ant-col-xl-10"
+  >
+    <div
+      style="background:#0092ff;border:1px solid black"
+    >
+      Col
+    </div>
+  </div>
+  <div
+    class="ant-col ml-col ant-col-xs-20 ant-col-sm-16 ant-col-md-12 ant-col-lg-8 ant-col-xl-4"
+  >
+    <div
+      style="background:#0092ff;border:1px solid black"
+    >
+      Col
+    </div>
+  </div>
+  <div
+    class="ant-col ml-col ant-col-xs-2 ant-col-sm-4 ant-col-md-6 ant-col-lg-8 ant-col-xl-10"
+  >
+    <div
+      style="background:#0092ff;border:1px solid black"
+    >
+      Col
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Data Entry/MLUpload Basic 1`] = `
+<span
+  class="ml-upload"
+>
+  <div
+    class="ant-upload ant-upload-select ant-upload-select-text"
+  />
+  <div
+    class="ant-upload-list ant-upload-list-text"
+  />
+</span>
+`;

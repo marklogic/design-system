@@ -1,28 +1,69 @@
 import React, { Component } from 'react'
 
 import {
-  MLHeader,
-  MLTooltip,
+  MLAffix,
+  MLAlert,
+  MLAnchor,
+  MLAutoComplete,
+  MLAvatar,
+  MLBadge,
+  MLBreadcrumb,
   MLButton,
-  MLDatePicker,
-  MLLayout,
-  MLSlider,
+  MLCard,
+  MLCarousel,
+  MLCascader,
+  MLCheckbox,
+  MLCol,
+  MLCollapse,
   MLConfigProvider,
-  MLResult,
+  MLDatePicker,
+  MLDescriptions,
+  MLDivider,
+  MLDropdown,
   MLEditableSlider,
   MLEmpty,
+  MLHeader,
+  MLInput,
+  MLInputNumber,
+  MLLayout,
+  MLMentions,
+  MLMenu,
+  MLModal,
+  MLPageHeader,
+  MLPagination,
+  MLPopconfirm,
+  MLProgress,
+  MLRadio,
+  MLRate,
+  MLResult,
+  MLRow,
+  MLSelect,
+  MLSkeleton,
+  MLSlider,
+  MLSpin,
+  MLStatistic,
+  MLSwitch,
+  MLTable,
+  MLTabs,
+  MLTag,
+  MLTimeline,
+  MLTooltip,
+  MLTreeSelect,
+  MLUpload,
+  mlmessage,
 } from '@marklogic/design-system'
 
 import {
-  Route as RouteIcon,
+  RouteSolid,
   CheckCircleFilled,
   SearchOutlined,
   QuestionCircleOutlined,
   SettingOutlined,
   UserOutlined,
-} from '@marklogic/design-system/MLIcon'
-import { text } from '@storybook/addon-knobs'
-import { Avatar as MLAvatar } from 'antd'
+  SmileOutlined,
+  ClockCircleOutlined,
+  SmileBeamSolid,
+} from '@marklogic/design-system/es/MLIcon'
 
 const configValues = {
   dateFormat: 'YYYY-MMM-DD', // Default for all dates, and DatePicker
@@ -46,26 +87,54 @@ function makeIcon(icon, title) {
   )
 }
 
+mlmessage.config({
+  maxCount: 3,
+})
+const info = () => {
+  mlmessage.info('This is an info message')
+}
+const success = () => {
+  mlmessage.success('This is a success message')
+}
+
+const error = () => {
+  mlmessage.error('This is an error message')
+}
+
+const warning = () => {
+  mlmessage.warning('This is a warning message')
+}
+
+const loading = () => {
+  const hide = mlmessage.loading('Action in progress..', 0)
+  // Dismiss manually and asynchronously
+  setTimeout(hide, 2500)
+}
+
+const customIcon = () => {
+  mlmessage.info({ content: 'smiley content', icon: <SmileOutlined /> })
+}
+
 export default class App extends Component {
   render() {
     return (
       <div>
         <MLConfigProvider {...configValues}>
           <MLLayout>
-            <MLLayout.MLHeader style={{ padding: 0, position: 'fixed', zIndex: 1, width: '100%' }}>
+            <MLLayout.MLHeader style={{ padding: 0, position: 'fixed', zIndex: 2, width: '100%' }}>
               <MLHeader
-                title={text('title', 'Data Hub Central')}
+                title='Data Hub Central'
                 avatar={
                   <a href='#'>
                     <MLAvatar
-                      src={text('project avatar url', 'https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png')}
+                      src='https://www.marklogic.com/wp-content/themes/marklogic-bs4/resources/favicons/favicon-32x32.png'
                       style={{ backgroundColor: 'white' }} // Because the given src has transparent background
                       size={48}
                     />
                   </a>
                 }
                 extra={[
-                  makeIcon(<RouteIcon />, 'route'),
+                  makeIcon(<RouteSolid />, 'route'),
                   <span key='divider' style={{ borderLeft: '1px dashed' }} />,
                   makeIcon(<SearchOutlined />, 'search'),
                   makeIcon(<QuestionCircleOutlined />, 'help'),
@@ -77,7 +146,19 @@ export default class App extends Component {
             <MLLayout.MLContent style={{ marginTop: 64 }}>
               <MLButton type='primary'>Test</MLButton>
               <MLButton type='highlight'>Test</MLButton>
-              <RouteIcon />
+              <>
+                <h1>mlmessage buttons:</h1>
+                <br />
+                <MLButton type='primary' onClick={info}>
+                  Info
+                </MLButton><br />
+                <MLButton onClick={success}>Success</MLButton><br />
+                <MLButton onClick={error}>Error</MLButton><br />
+                <MLButton onClick={warning}>Warning</MLButton><br />
+                <MLButton onClick={loading}>Display a loading indicator</MLButton><br />
+                <MLButton onClick={customIcon}>Custom icon</MLButton><br />
+              </>
+              <RouteSolid />
               <CheckCircleFilled />
               <div>
                 <MLSlider tooltipPlacement='top' />
@@ -87,8 +168,15 @@ export default class App extends Component {
               <MLDatePicker size='small' />
               <MLDatePicker size='default' />
               <MLDatePicker size='large' />
-              <MLDatePicker picker='week' />
-              <MLResult type='primary' icon={<Route />} title='title' subTitle='subtitle' />
+              <MLPagination
+                defaultCurrent={3}
+                defaultPageSize={10}
+                simple={false}
+                size='default'
+                total={50}
+              />
+
+              <MLResult type='primary' icon={<RouteSolid />} title='title' subTitle='subtitle' />
               <MLEmpty />
               <div
                 style={{
@@ -114,10 +202,353 @@ export default class App extends Component {
                   onChange={(v) => console.log(v)}
                 />
               </div>
+              <div>
+                <div style={{ position: 'absolute', right: '50px' }}>
+                  <MLAnchor offsetTop={88}>
+                    <MLAnchor.MLLink href='#anchor-1' title='Link 1' />
+                    <MLAnchor.MLLink href='#anchor-2' title='Link 2' />
+                    <MLAnchor.MLLink href='#anchor-3' title='Link 3 with _target' target='_blank' />
+                    <MLAnchor.MLLink href='#anchor-4' title='Link 4'>
+                      <MLAnchor.MLLink href='#anchor-5' title='Link 5' />
+                      <MLAnchor.MLLink href='#anchor-6' title='Link 6' />
+                    </MLAnchor.MLLink>
+                    <MLAnchor.MLLink href='#anchor-7' title='Link 7' />
+                  </MLAnchor>
+                </div>
+                <div id='anchor-1'>anchor-1</div>
+                <div id='anchor-2' style={{ height: '500px' }}>anchor-2</div>
+                <div id='anchor-3' style={{ height: '500px' }}>anchor-3</div>
+                <div id='anchor-4' style={{ height: '500px' }}>
+                  anchor-4
+                  <div id='anchor-5' style={{ height: '200px' }}>anchor-5</div>
+                  <div id='anchor-6' style={{ height: '200px' }}>anchor-6</div>
+                </div>
+                <div id='anchor-7' style={{ height: '500px' }}>anchor-7</div>
+              </div>
               <div style={{ height: 2000 }}>Some tall content</div>
+              <div>
+                <MLAffix
+                  offsetTop={24}
+                >
+                  <MLButton
+                    size='small'
+                    type='primary'
+                  >
+                    Affix top
+                  </MLButton>
+                </MLAffix>
+                <br />
+                <MLAffix
+                  offsetBottom={24}
+                >
+                  <MLButton
+                    size='small'
+                    type='primary'
+                  >
+                    Affix bottom
+                  </MLButton>
+                </MLAffix>
+              </div>
+              <MLCascader
+                defaultValue={[
+                  'zhejiang',
+                  'hangzhou',
+                  'xihu',
+                ]}
+                expandTrigger='click'
+                options={[
+                  {
+                    children: [
+                      {
+                        children: [
+                          {
+                            label: 'West Lake',
+                            value: 'xihu',
+                          },
+                        ],
+                        label: 'Hangzhou',
+                        value: 'hangzhou',
+                      },
+                    ],
+                    label: 'Zhejiang',
+                    value: 'zhejiang',
+                  },
+                  {
+                    children: [
+                      {
+                        children: [
+                          {
+                            label: 'Zhong Hua Men',
+                            value: 'zhonghuamen',
+                          },
+                        ],
+                        label: 'Nanjing',
+                        value: 'nanjing',
+                      },
+                      {
+                        children: [
+                          {
+                            label: 'Foo',
+                            value: 'foo',
+                          },
+                        ],
+                        disabled: true,
+                        label: 'Disabled',
+                        value: 'disabled',
+                      },
+                    ],
+                    label: 'Jiangsu',
+                    value: 'jiangsu',
+                  },
+                ]}
+                placeholder='Please select'
+                size='small'
+              />
+              <MLTreeSelect
+                allowClear
+                dropdownStyle={{
+                  maxHeight: 400,
+                  overflow: 'auto',
+                }}
+                placeholder='Please select'
+                size='small'
+                style={{
+                  width: '100%',
+                }}
+              >
+                <MLTreeSelect.MLTreeNode
+                  title='parent 1'
+                  value='parent 1'
+                >
+                  <MLTreeSelect.MLTreeNode
+                    title='parent 1-0'
+                    value='parent 1-0'
+                  >
+                    <MLTreeSelect.MLTreeNode
+                      title='my leaf'
+                      value='leaf1'
+                    />
+                    <MLTreeSelect.MLTreeNode
+                      title='your leaf'
+                      value='leaf2'
+                    />
+                  </MLTreeSelect.MLTreeNode>
+                  <MLTreeSelect.MLTreeNode
+                    title='parent 1-1'
+                    value='parent 1-1'
+                  >
+                    <MLTreeSelect.MLTreeNode
+                      title={<b style={{ color: '#08c' }}>sss</b>}
+                      value='sss'
+                    />
+                  </MLTreeSelect.MLTreeNode>
+                </MLTreeSelect.MLTreeNode>
+              </MLTreeSelect>
+              <div className='badge-stories'>
+                <MLBadge
+                  count={5}
+                  overflowCount={99}
+                >
+                  <a
+                    className='head-example'
+                    href='#'
+                  />
+                </MLBadge>
+                <MLBadge
+                  count={0}
+                  showZero
+                >
+                  <a
+                    className='head-example'
+                    href='#'
+                  />
+                </MLBadge>
+                <MLBadge count={<ClockCircleOutlined style={{ color: '#f5222d' }} />}>
+                  <a
+                    className='head-example'
+                    href='#'
+                  />
+                </MLBadge>
+                <style>
+                  {`
+    .badge-stories .head-example {
+      width: 42px;
+      height: 42px;
+      border-radius: 2px;
+      background: #eee;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .badge-stories .ant-badge:not(.ant-badge-not-a-wrapper) {
+      margin-right: 20px;
+    }
+          `}
+                </style>
+              </div>
+              <MLDescriptions
+                colon={false}
+                column={{
+                  lg: 3,
+                  md: 3,
+                  sm: 2,
+                  xl: 3,
+                  xs: 1,
+                  xxl: 4,
+                }}
+                size='default'
+                title='User Info'
+              >
+                <MLDescriptions.MLItem label='UserName'>
+                  Zhou Maomao
+                </MLDescriptions.MLItem>
+                <MLDescriptions.MLItem label='Telephone'>
+                  1810000000
+                </MLDescriptions.MLItem>
+                <MLDescriptions.MLItem label='Live'>
+                  Hangzhou, Zhejiang
+                </MLDescriptions.MLItem>
+                <MLDescriptions.MLItem label='Remark'>
+                  empty
+                </MLDescriptions.MLItem>
+                <MLDescriptions.MLItem label='Address'>
+                  No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China
+                </MLDescriptions.MLItem>
+              </MLDescriptions>
+              <div className='timeline-story'>
+                <MLTimeline>
+                  <MLTimeline.MLItem
+                    color='green'
+                    position='left'
+                  >
+                    <p className='timeline-date-label'>
+                      2015-09-01
+                    </p>
+                    <p>
+                      Create a services site
+                    </p>
+                  </MLTimeline.MLItem>
+                  <MLTimeline.MLItem
+                    color='green'
+                    position='left'
+                  >
+                    <p className='timeline-date-label'>
+                      2015-09-01
+                    </p>
+                    <p>
+                      Create a services site
+                    </p>
+                  </MLTimeline.MLItem>
+                  <MLTimeline.MLItem
+                    color='red'
+                    position='left'
+                  >
+                    <p className='timeline-date-label'>
+                      2015-09-01
+                    </p>
+                    <p>
+                      Solve initial network problems 1
+                    </p>
+                    <p>
+                      Solve initial network problems 2
+                    </p>
+                    <p>
+                      Solve initial network problems 3
+                    </p>
+                  </MLTimeline.MLItem>
+                  <MLTimeline.MLItem position='left'>
+                    <p className='timeline-date-label'>
+                      2015-09-01
+                    </p>
+                    <p>
+                      Technical testing 1
+                    </p>
+                    <p>
+                      Technical testing 2
+                    </p>
+                    <p>
+                      Technical testing 3
+                    </p>
+                  </MLTimeline.MLItem>
+                  <MLTimeline.MLItem
+                    color='gray'
+                    position='left'
+                  >
+                    <p className='timeline-date-label'>
+                      2015-09-01
+                    </p>
+                    <p>
+                      Technical testing 1
+                    </p>
+                    <p>
+                      Technical testing 2
+                    </p>
+                    <p>
+                      Technical testing 3
+                    </p>
+                  </MLTimeline.MLItem>
+                  <MLTimeline.MLItem
+                    color='gray'
+                    position='left'
+                  >
+                    <p className='timeline-date-label'>
+                      2015-09-01
+                    </p>
+                    <p>
+                      Technical testing 1
+                    </p>
+                    <p>
+                      Technical testing 2
+                    </p>
+                    <p>
+                      Technical testing 3
+                    </p>
+                  </MLTimeline.MLItem>
+                  <style>
+                    {`
+      .timeline-story .ml-timeline .ant-timeline-item-content {
+        // margin-top: -5px;
+      }
+
+      .timeline-story .ant-timeline-item-content {
+        position: relative;
+        top: -12px;
+      }
+      .timeline-story .timeline-date-label {
+        margin-bottom: -3px;
+      }
+      `}
+                  </style>
+                </MLTimeline>
+              </div>
+              <MLTabs
+                defaultActiveKey='1'
+                size='default'
+                tabPosition='top'
+              >
+                <MLTabs.MLTabPane tab='Tab 1' key={1}>
+                  Content of Tab Pane 1
+                </MLTabs.MLTabPane>
+                <MLTabs.MLTabPane tab='Tab 2' key={2}>
+                  Content of Tab Pane 2
+                </MLTabs.MLTabPane>
+                <MLTabs.MLTabPane tab='Tab 3' key={3}>
+                  Content of Tab Pane 3
+                </MLTabs.MLTabPane>
+              </MLTabs>
+              <MLSkeleton
+                avatar={{
+                  circle: 'true',
+                  size: 'small',
+                }}
+                loading
+                paragraph
+                title
+              />
             </MLLayout.MLContent>
-            <MLLayout.MLFooter year='2019' />
+            <MLLayout.MLFooter year={2019} />
           </MLLayout>
+          <SmileBeamSolid style={{ fontSize: '300px' }} />
         </MLConfigProvider>
       </div>
     )
