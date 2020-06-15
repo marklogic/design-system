@@ -6,6 +6,7 @@ const MLModal = React.forwardRef((props, ref) => {
   return (
     <DraggableModal
       ref={ref}
+      initialHeight={0}
       {...props}
       className={classNames('ml-modal', props.className)}
     >

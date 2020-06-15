@@ -32,7 +32,7 @@ export const createWrappedMLIcon = (component) => {
   return wrappedComponent
 }
 
-export const wrapFontAwesomeIcon = (faIcon) => {
+export const wrapFontAwesomeIcon = (faIcon, variantName) => {
   const componentFn = React.forwardRef((props, ref) => {
     return (
       <Icon
@@ -44,6 +44,6 @@ export const wrapFontAwesomeIcon = (faIcon) => {
       />
     )
   })
-  componentFn.displayName = faIcon.iconName
+  componentFn.displayName = pascalCase(faIcon.iconName + variantName)
   return createWrappedMLIcon(componentFn)
 }

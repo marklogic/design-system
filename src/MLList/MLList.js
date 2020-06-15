@@ -19,4 +19,6 @@ MLList.defaultProps = {
 MLList.propTypes = {
 }
 
+MLList.displayName = 'MLList'
+
 export default MLList

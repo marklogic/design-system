@@ -18,4 +18,6 @@ const MLItem = React.forwardRef((props, ref) => {
 
 MLItem.displayName = 'MLBreadcrumb.MLItem'
 
+MLItem.__ANT_BREADCRUMB_ITEM = true
+
 export default MLItem

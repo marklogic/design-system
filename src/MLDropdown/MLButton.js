@@ -18,7 +18,7 @@ const MLButton = React.forwardRef((props, ref) => {
 
 MLButton.defaultProps = {
   size: 'small',
-  trigger: 'click',
+  trigger: ['click'],
 }
 
 MLButton.displayName = 'MLDropdown.MLButton'

@@ -16,7 +16,7 @@ const MLDropdown = React.forwardRef((props, ref) => {
 })
 
 MLDropdown.defaultProps = {
-  trigger: 'click',
+  trigger: ['click'],
 }
 
 MLDropdown.displayName = 'MLDropdown'
