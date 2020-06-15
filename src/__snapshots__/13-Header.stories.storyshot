@@ -12,7 +12,7 @@ exports[`Storyshots Navigation/MLHeader Basic 1`] = `
         href="#"
       >
         <span
-          class="ant-avatar ant-avatar-circle ant-avatar-image"
+          class="ant-avatar ml-avatar ant-avatar-circle ant-avatar-image"
           style="width:48px;height:48px;line-height:48px;font-size:18px;background-color:white"
         >
           <img

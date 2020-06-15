@@ -3,11 +3,16 @@ import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs'
 import { MLStatistic, MLRow, MLCol } from '@marklogic/design-system'
 import LikeOutlined from '../src/MLIcon/LikeOutlined'
+import mdx from './22-Statistic.mdx'
 
 export default {
   title: 'Data Display/MLStatistic',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
+    fileName: '22-Statistic.stories.jsx',
     info: {
       text: 'Component description goes here',
     },

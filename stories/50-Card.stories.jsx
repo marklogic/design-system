@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { MLCard, MLCol, MLRow, MLCollapse } from '@marklogic/design-system'
+import { MLCard, MLCol, MLRow, MLCollapse, MLAvatar } from '@marklogic/design-system'
 import '@marklogic/design-system/MLCard/style'
 import EditOutlined from '../src/MLIcon/EditOutlined'
 import EllipsisOutlined from '../src/MLIcon/EllipsisOutlined'
@@ -11,9 +11,6 @@ import CloseOutlined from '../src/MLIcon/CloseOutlined'
 import PlayCircleFilled from '../src/MLIcon/PlayCircleFilled'
 import { withKnobs, radios, text, boolean } from '@storybook/addon-knobs'
 import mdx from './50-Card.mdx'
-
-// TODO: Use MLAvatar once it exists
-import { Avatar as MLAvatar } from 'antd'
 
 export default {
   title: 'Data Display/MLCard',
