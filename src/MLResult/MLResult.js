@@ -2,7 +2,7 @@ import React from 'react'
 import { Result } from 'antd'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { CheckCircleFilled, InfoCircleFilled, ExclamationCircleFilled, CloseCircleFilled } from '@marklogic/design-system/es/MLIcon'
+import { CheckCircleFilled, InfoCircleFilled, ExclamationCircleFilled, CloseCircleFilled } from '../MLIcon'
 
 const MLResult = (props) => {
   let { icon } = props
