@@ -1102,7 +1102,21 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.28"
 
-"@fortawesome/free-solid-svg-icons@^5.11.2":
+"@fortawesome/free-brands-svg-icons@^5.13.0":
+  version "5.13.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.13.0.tgz#e79de73ba6555055204828dca9c0691e7ce5242b"
+  integrity sha512-/6xXiJFCMEQxqxXbL0FPJpwq5Cv6MRrjsbJEmH/t5vOvB4dILDpnY0f7zZSlA8+TG7jwlt12miF/yZpZkykucA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
+
+"@fortawesome/free-regular-svg-icons@5.13.0":
+  version "5.13.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-5.13.0.tgz#925a13d8bdda0678f71551828cac80ab47b8150c"
+  integrity sha512-70FAyiS5j+ANYD4dh9NGowTorNDnyvQHHpCM7FpnF7GxtDjBUCKdrFqCPzesEIpNDFNd+La3vex+jDk4nnUfpA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
+
+"@fortawesome/free-solid-svg-icons@5.13.0":
   version "5.13.0"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.13.0.tgz#44d9118668ad96b4fd5c9434a43efc5903525739"
   integrity sha512-IHUgDJdomv6YtG4p3zl1B5wWf9ffinHIvebqQOmV3U+3SLw4fC+LUCCgwfETkbTtjy5/Qws2VoVf6z/ETQpFpg==
@@ -1301,9 +1315,13 @@
   dependencies:
     "@ant-design/icons" "^4.1.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.25"
-    "@fortawesome/free-solid-svg-icons" "^5.11.2"
+    "@fortawesome/free-brands-svg-icons" "^5.13.0"
+    "@fortawesome/free-regular-svg-icons" "5.13.0"
+    "@fortawesome/free-solid-svg-icons" "5.13.0"
     "@fortawesome/react-fontawesome" "^0.1.7"
+    ant-design-draggable-modal "^0.0.16"
     antd "^3.26.13"
+    classnames "^2.2.6"
     lodash-es "^4"
     prop-types "^15.7.2"
 
@@ -1924,6 +1942,13 @@ ansi-styles@^4.1.0:
   dependencies:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
+
+ant-design-draggable-modal@^0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/ant-design-draggable-modal/-/ant-design-draggable-modal-0.0.16.tgz#e7bdcaa3cab2e44fdae69a554432bf5365feb86b"
+  integrity sha512-cWqK+DpiJKgjkdifAqw14m8+BH/3UQAm+hwIu3Gfcf+QndPciSZ77c6+UmCkZ8+H9vEJ6x6oyXVVwDqpkPRTXw==
+  dependencies:
+    react-uid "^2.2.0"
 
 antd@^3.26.13:
   version "3.26.16"
@@ -9407,6 +9432,11 @@ react-slick@~0.25.2:
     json2mq "^0.2.0"
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
+
+react-uid@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-uid/-/react-uid-2.2.0.tgz#0f77e1e0594fbf29fc4fe528cc9aa415c5bf9159"
+  integrity sha512-z+g5+hFOQ08hCfrGcJ1PNs+cmvH8Uq2CVzCmPeWBsUi5A4W4NWXR5jouledzy3oSKGMU9HOzf8zFuGi15TXJoQ==
 
 read-pkg-up@^2.0.0:
   version "2.0.0"

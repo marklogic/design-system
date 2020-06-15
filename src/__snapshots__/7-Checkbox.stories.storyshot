@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Data Entry/MLCheckbox Basic 1`] = `
+<label
+  class="ml-checkbox ant-checkbox-wrapper"
+>
+  <span
+    class="ant-checkbox"
+  >
+    <input
+      class="ant-checkbox-input"
+      type="checkbox"
+    />
+    <span
+      class="ant-checkbox-inner"
+    />
+  </span>
+  <span>
+    Checkbox
+  </span>
+</label>
+`;

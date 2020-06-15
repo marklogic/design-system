@@ -1,0 +1,24 @@
+.ml-editable-slider {
+  display: flex;
+  align-items: center;
+
+  .ml-slider {
+    // Clear top/bottom margins to allow vertical centering in flexbox
+    margin-top: 0;
+    margin-bottom: 0;
+
+    margin-right: 10px;
+
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  .ml-input-number {
+    flex-grow: 0;
+    flex-basis: 60px;
+  }
+
+  .ml-input-number ~ .ml-input-number {
+      margin-left: 6px;
+  }
+}
