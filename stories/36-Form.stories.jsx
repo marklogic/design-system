@@ -29,7 +29,8 @@ import {
   LockOutlined,
   InboxOutlined,
   UploadOutlined,
-} from '@marklogic/design-system/MLIcon'
+} from '../src/MLIcon'
+import mdx from './36-Form.mdx'
 
 import {
   Cascader as MLCascader,
@@ -40,6 +41,10 @@ export default {
   title: 'Data Entry/MLForm',
   decorators: [withKnobs],
   parameters: {
+    docs: {
+      page: mdx,
+    },
+    fileName: '36-Form.stories.jsx',
     info: {
       text: 'See Ant documentation for source code; it is too complex to display usefully here.',
     },
@@ -99,7 +104,7 @@ class HorizontalLoginForm extends React.Component {
     this.props.form.validateFields()
   }
 
-  handleSubmit = e => {
+  handleSubmit(e) {
     e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
@@ -189,12 +194,15 @@ const residences = [
 ]
 
 class RegistrationForm extends React.Component {
-  state = {
-    confirmDirty: false,
-    autoCompleteResult: [],
-  };
+  constructor(props) {
+    super(props)
+    this.state = {
+      confirmDirty: false,
+      autoCompleteResult: [],
+    };
+  }
 
-  handleSubmit = e => {
+  handleSubmit(e) {
     e.preventDefault()
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
@@ -203,12 +211,12 @@ class RegistrationForm extends React.Component {
     })
   };
 
-  handleConfirmBlur = e => {
+  handleConfirmBlur(e) {
     const { value } = e.target
     this.setState({ confirmDirty: this.state.confirmDirty || !!value })
   };
 
-  compareToFirstPassword = (rule, value, callback) => {
+  compareToFirstPassword(rule, value, callback) {
     const { form } = this.props
     if (value && value !== form.getFieldValue('password')) {
       callback('Two passwords that you enter is inconsistent!')
@@ -217,7 +225,7 @@ class RegistrationForm extends React.Component {
     }
   };
 
-  validateToNextPassword = (rule, value, callback) => {
+  validateToNextPassword(rule, value, callback) {
     const { form } = this.props
     if (value && this.state.confirmDirty) {
       form.validateFields(['confirm'], { force: true })
@@ -225,7 +233,7 @@ class RegistrationForm extends React.Component {
     callback()
   };
 
-  handleWebsiteChange = value => {
+  handleWebsiteChange(value) {
     let autoCompleteResult
     if (!value) {
       autoCompleteResult = []
@@ -393,7 +401,7 @@ export const registration = () => (<WrappedRegistration />)
 /* Story 3 */
 
 class NormalLoginForm extends React.Component {
-  handleSubmit = e => {
+  handleSubmit(e) {
     e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
@@ -455,7 +463,7 @@ export const normalLoginForm = () => (
 /* Story 4 */
 
 class TimeRelatedForm extends React.Component {
-  handleSubmit = e => {
+  handleSubmit(e) {
     e.preventDefault()
 
     this.props.form.validateFields((err, fieldsValue) => {
@@ -558,7 +566,7 @@ const formItemLayout = {
 /* Story 6 */
 
 class Demo extends React.Component {
-  handleSubmit = e => {
+  handleSubmit(e) {
     e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
@@ -567,7 +575,7 @@ class Demo extends React.Component {
     })
   };
 
-  normFile = e => {
+  normFile(e) {
     console.log('Upload event:', e)
     if (Array.isArray(e)) {
       return e
