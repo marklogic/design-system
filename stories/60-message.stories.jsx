@@ -10,7 +10,7 @@ export default {
   decorators: [withKnobs],
   parameters: {
     fileName: '60-message.stories.jsx',
-    docs: { // TODO: Uncomment once docs branch is merged
+    docs: {
       page: mdx,
     },
     info: {

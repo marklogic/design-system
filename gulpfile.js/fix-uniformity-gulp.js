@@ -207,6 +207,25 @@ $<exportLine>`
   })
 }
 
+const generateIndexFile = (componentPath) => {
+  return through.obj(function(file, enc, cb) {
+    const componentNames = fs.readdirSync(componentPath).filter((dirName) => {
+      return /^(ML|ml).*$/.test(dirName)
+    })
+
+    let contents = ('')
+    for (const componentName of componentNames) {
+      contents += (
+`export { default as ${componentName} } from './${componentName}'
+`
+      )
+    }
+    file.contents = Buffer.from(contents)
+
+    return cb(null, file)
+  })
+}
+
 const addMDXFilenameToMeta = () => {
   return through.obj(function(file, enc, cb) {
     if (file.meta === undefined) {
@@ -255,6 +274,8 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
   function fixCustomUniformityRules() {
     const src = gulp.src(path.resolve(__dirname, '../src/ML*/ML*.js'))
     const srcJobs = merge(
+      gulp.src(path.resolve(__dirname, '../src/index.js'))
+        .pipe(generateIndexFile(path.resolve(__dirname, '../src'))),
       src
         .pipe(checkMultipleComponentsOneFile())
         .pipe(removeImport(/import '\.\/style'\n/))
@@ -292,14 +313,14 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
       .pipe(eslint.format())
       .pipe(gulp.dest(path.resolve(__dirname, '..')))
   },
-  // function renameStoriesToJSX() {
-  //   return gulp.src(path.resolve(__dirname, '../stories/*.stories.js'))
-  //     .pipe(through.obj(function(file, enc, cb) {
-  //       file.path = file.path.replace('stories.js', 'stories.jsx')
-  //       return cb(null, file)
-  //     }))
-  //     .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
-  // }
+  function renameStoriesToJSX() {
+    return gulp.src(path.resolve(__dirname, '../stories/*.stories.js'))
+      .pipe(through.obj(function(file, enc, cb) {
+        file.path = file.path.replace('stories.js', 'stories.jsx')
+        return cb(null, file)
+      }))
+      .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
+  },
 ))
 
 module.exports = fixUniformityTask

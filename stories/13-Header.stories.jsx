@@ -1,12 +1,11 @@
 import React from 'react'
-import { MLHeader, MLTooltip, MLLayout } from '@marklogic/design-system'
+import { MLHeader, MLTooltip, MLLayout, MLAvatar } from '@marklogic/design-system'
 import RouteSolid from '../src/MLIcon/RouteSolid'
 import SearchOutlined from '../src/MLIcon/SearchOutlined'
 import QuestionCircleOutlined from '../src/MLIcon/QuestionCircleOutlined'
 import SettingOutlined from '../src/MLIcon/SettingOutlined'
 import UserOutlined from '../src/MLIcon/UserOutlined'
 import { withKnobs, text } from '@storybook/addon-knobs'
-import { Avatar as MLAvatar } from 'antd' // TODO: Use MLAvatar once it exists
 import mdx from './13-Header.mdx'
 
 export default {
