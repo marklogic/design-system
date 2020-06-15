@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, radios, boolean } from '@storybook/addon-knobs'
-import { MLDrawer } from '@marklogic/design-system'
-import MLButton from '@marklogic/design-system/MLButton'
+import { MLDrawer, MLButton } from '@marklogic/design-system'
 import mdx from './59-Drawer.mdx'
 
 export default {
