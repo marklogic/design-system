@@ -1,3 +1,3 @@
-import 'antd/es/slider/style'
-import 'antd/es/input-number/style'
+import '../../MLSlider/style'
+import '../../MLInputNumber/style'
 import './index.less'

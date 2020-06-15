@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Other/MLAnchor Basic 1`] = `
+<div>
+  <div
+    style="position:absolute;right:50px"
+  >
+    <div>
+      <div
+        class=""
+      >
+        <div
+          class="ml-anchor ant-anchor-wrapper"
+          style="max-height:calc(100vh - 24px)"
+        >
+          <div
+            class="ant-anchor"
+          >
+            <div
+              class="ant-anchor-ink"
+            >
+              <span
+                class="ant-anchor-ink-ball"
+              />
+            </div>
+            <div
+              class="ml-anchor-link ant-anchor-link"
+            >
+              <a
+                class="ant-anchor-link-title"
+                href="#anchor-1"
+                title="Link 1"
+              >
+                Link 1
+              </a>
+            </div>
+            <div
+              class="ml-anchor-link ant-anchor-link"
+            >
+              <a
+                class="ant-anchor-link-title"
+                href="#anchor-2"
+                title="Link 2"
+              >
+                Link 2
+              </a>
+            </div>
+            <div
+              class="ml-anchor-link ant-anchor-link"
+            >
+              <a
+                class="ant-anchor-link-title"
+                href="#anchor-3"
+                target="_blank"
+                title="Link 3 with _target"
+              >
+                Link 3 with _target
+              </a>
+            </div>
+            <div
+              class="ml-anchor-link ant-anchor-link"
+            >
+              <a
+                class="ant-anchor-link-title"
+                href="#anchor-4"
+                title="Link 4"
+              >
+                Link 4
+              </a>
+              <div
+                class="ml-anchor-link ant-anchor-link"
+              >
+                <a
+                  class="ant-anchor-link-title"
+                  href="#anchor-5"
+                  title="Link 5"
+                >
+                  Link 5
+                </a>
+              </div>
+              <div
+                class="ml-anchor-link ant-anchor-link"
+              >
+                <a
+                  class="ant-anchor-link-title"
+                  href="#anchor-6"
+                  title="Link 6"
+                >
+                  Link 6
+                </a>
+              </div>
+            </div>
+            <div
+              class="ml-anchor-link ant-anchor-link"
+            >
+              <a
+                class="ant-anchor-link-title"
+                href="#anchor-7"
+                title="Link 7"
+              >
+                Link 7
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    id="anchor-1"
+  >
+    anchor-1
+  </div>
+  <div
+    id="anchor-2"
+    style="height:500px"
+  >
+    anchor-2
+  </div>
+  <div
+    id="anchor-3"
+    style="height:500px"
+  >
+    anchor-3
+  </div>
+  <div
+    id="anchor-4"
+    style="height:500px"
+  >
+    anchor-4
+    <div
+      id="anchor-5"
+      style="height:200px"
+    >
+      anchor-5
+    </div>
+    <div
+      id="anchor-6"
+      style="height:200px"
+    >
+      anchor-6
+    </div>
+  </div>
+  <div
+    id="anchor-7"
+    style="height:500px"
+  >
+    anchor-7
+  </div>
+</div>
+`;

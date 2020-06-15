@@ -22,6 +22,10 @@
   "error-color-background": "#F7E9E9",
   "info-color": "#5B69AF",
   "info-color-background": "#EFF0F7",
+  "item-hover-bg": "#E9F7FE",
+  "table-row-hover-bg": "@item-hover-bg",
+  "table-header-bg": "#e8e8e8",
+  "table-toggle-column-bg": "#fafafa",
   "site-header-color": "#031529",
   "tooltip-bg": "#373737",
   "tooltip-arrow-color": "#373737",
@@ -67,5 +71,6 @@
   "heading-1-size": "22px",
   "heading-2-size": "20px",
   "heading-3-size": "18px",
-  "heading-4-size": "16px"
+  "heading-4-size": "16px",
+  "pagination-font-weight-active": "bold"
 }

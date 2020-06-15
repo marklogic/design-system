@@ -9,6 +9,7 @@ const dateSorter = extractSortColumnDecorator((a, b) => {
 export const sampleBasicData = {
   dataSource: [
     {
+      key: '1',
       col1: 'row1 val1',
       col2: 'row1 val2',
       col3: 'row1 val3',
@@ -16,6 +17,7 @@ export const sampleBasicData = {
       col5: 'row1 val5',
     },
     {
+      key: '2',
       col1: 'row2 val1',
       col2: 'row2 val2',
       col3: 'row2 val3',
