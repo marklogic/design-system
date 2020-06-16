@@ -90,7 +90,7 @@ exports[`Storyshots Data Display/MLStatistic Countdown 1`] = `
         <span
           class="ant-statistic-content-value"
         >
-          48:00:04
+          48:00:05
         </span>
       </div>
     </div>
@@ -113,7 +113,7 @@ exports[`Storyshots Data Display/MLStatistic Countdown 1`] = `
         <span
           class="ant-statistic-content-value"
         >
-          48:00:04:997
+          48:00:05:000
         </span>
       </div>
     </div>
@@ -136,7 +136,7 @@ exports[`Storyshots Data Display/MLStatistic Countdown 1`] = `
         <span
           class="ant-statistic-content-value"
         >
-          2 Days 0 Hours 0 Min 4 Sec
+          2 Days 0 Hours 0 Min 5 Sec
         </span>
       </div>
     </div>

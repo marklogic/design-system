@@ -32,6 +32,7 @@ function compile(modules) {
           ['import', {
             libraryName: 'lodash-es',
             libraryDirectory: '',
+            camel2DashComponentName: false,
           }, 'lodash-es'],
           ['import', {
             libraryName: '@marklogic/design-system',
