@@ -116,37 +116,37 @@ exports[`Storyshots Styles Color Palette 1`] = `
     >
       <div>
         <span
-          class="ant-typography"
+          class="ant-typography ml-typography"
         >
-          Primary
+          Primary (try highlighting me)
         </span>
       </div>
       <div>
         <span
-          class="ant-typography ant-typography-secondary"
+          class="ant-typography ml-typography ant-typography-secondary"
         >
           Secondary
         </span>
       </div>
       <div>
         <span
-          class="ant-typography"
+          class="ant-typography ml-typography"
         >
           <mark>
-            Highlight
+            Mark
           </mark>
         </span>
       </div>
       <div>
         <span
-          class="ant-typography ant-typography-disabled"
+          class="ant-typography ml-typography ant-typography-disabled"
         >
           Disabled
         </span>
       </div>
       <div>
         <span
-          class="ant-typography"
+          class="ant-typography ml-typography"
         >
           <code>
             Code
