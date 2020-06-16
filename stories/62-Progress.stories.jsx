@@ -12,7 +12,7 @@ export default {
     docs: {
       page: mdx,
     },
-  }
+  },
 }
 
 export const Line = () => {
