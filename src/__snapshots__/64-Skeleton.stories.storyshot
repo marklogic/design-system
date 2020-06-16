@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Feedback/MLSkeleton Basic 1`] = `
+<div
+  class="ant-skeleton ml-skeleton ant-skeleton-with-avatar"
+>
+  <div
+    class="ant-skeleton-header"
+  >
+    <span
+      class="ant-skeleton-avatar ant-skeleton-avatar-sm ant-skeleton-avatar-circle"
+    />
+  </div>
+  <div
+    class="ant-skeleton-content"
+  >
+    <h3
+      class="ant-skeleton-title"
+      style="width:50%"
+    />
+    <ul
+      class="ant-skeleton-paragraph"
+    >
+      <li />
+      <li />
+    </ul>
+  </div>
+</div>
+`;
