@@ -1,11 +1,12 @@
 import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 // import 'antd/es/typography/style/index.less'
-// import '@marklogic/design-system/styles.less' // TODO: Remove once we have MLTypography
-import { MLAlert, MLButton } from '@marklogic/design-system'
-import { Card, Typography } from 'antd'
+import { MLAlert, MLButton, MLTypography } from '@marklogic/design-system'
+import { Card } from 'antd'
 import './3-ColorPalette.less'
 import mdx from './3-ColorPalette.mdx'
+
+const MLCard = Card
 
 export default {
   title: 'Styles',
@@ -23,7 +24,7 @@ export default {
 
 export const colorPalette = () => (
   <div className='color-palette-story'>
-    <Card title='Component colors'>
+    <MLCard title='Component colors'>
       <div><MLButton type='highlight'>Highlight (?)</MLButton></div>
       <div><MLButton type='primary'>primary</MLButton></div>
       <div><MLButton type='default'>default (secondary)</MLButton></div>
@@ -31,26 +32,26 @@ export const colorPalette = () => (
       <div><MLButton type='dashed'>dashed</MLButton></div>
       <div><MLButton type='danger'>danger</MLButton></div>
       <div><MLButton type='link'>link (Button component)</MLButton></div>
-    </Card>
-    <Card title='Text colors'>
-      <div><Typography.Text>Primary</Typography.Text></div>
-      <div><Typography.Text type='secondary'>Secondary</Typography.Text></div>
-      <div><Typography.Text mark>Highlight</Typography.Text></div>
-      <div><Typography.Text disabled>Disabled</Typography.Text></div>
-      <div><Typography.Text code>Code</Typography.Text></div>
+    </MLCard>
+    <MLCard title='Text colors'>
+      <div><MLTypography.MLText>Primary (try highlighting me)</MLTypography.MLText></div>
+      <div><MLTypography.MLText type='secondary'>Secondary</MLTypography.MLText></div>
+      <div><MLTypography.MLText mark>Mark</MLTypography.MLText></div>
+      <div><MLTypography.MLText disabled>Disabled</MLTypography.MLText></div>
+      <div><MLTypography.MLText code>Code</MLTypography.MLText></div>
       <div><a>Link (anchor tag)</a></div>
       <div><a className='link-color-hover-example'>(Hovered link)</a></div>
-    </Card>
-    <Card title='Alerts'>
+    </MLCard>
+    <MLCard title='Alerts'>
       <MLAlert message='Success Text' type='success' />
       <MLAlert message='Warning Text' type='warning' />
       <MLAlert message='Error Text' type='error' />
       <MLAlert message='Info Text' type='info' />
-    </Card>
-    <Card title='Tiles'>
+    </MLCard>
+    <MLCard title='Tiles'>
       TODO when Tile Header component is written.
-    </Card>
-    <Card title='Graphical colors'>
+    </MLCard>
+    <MLCard title='Graphical colors'>
       <div className='node-1-color'>node-1</div>
       <div className='node-2-color'>node-2</div>
       <div className='node-3-color'>node-3</div>
@@ -71,6 +72,6 @@ export const colorPalette = () => (
       <div className='node-18-color'>node-18</div>
       <div className='node-19-color'>node-19</div>
       <div className='node-20-color'>node-20</div>
-    </Card>
+    </MLCard>
   </div>
 )

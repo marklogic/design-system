@@ -127,7 +127,6 @@ gulp.task('compile-all', gulp.parallel('compile-bundle-less', 'compile-with-es',
 gulp.task('compile-watch', () => {
   gulp.watch([
     path.resolve(__dirname, '../src/**/*.js'),
-    path.resolve(__dirname, '../src/**/*.jsx'),
   ], gulp.series(['compile-js']))
   gulp.watch([
     path.resolve(__dirname, '../src/**/*.less'),

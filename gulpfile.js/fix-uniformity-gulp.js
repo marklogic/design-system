@@ -9,6 +9,7 @@ const { kebabCase } = require('lodash/string')
 const merge = require('merge-stream')
 const Vinyl = require('vinyl')
 const eslint = require('gulp-eslint')
+const exec = require('gulp-exec')
 
 const skipFiles = ({ filePatterns }) => {
   return through.obj((file, enc, cb) => {
@@ -80,7 +81,7 @@ const removeImport = (importStatementRegex) => {
 
 const addClassNames = () => {
   return through.obj((file, enc, cb) => {
-    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
+    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLIcon|MLSizeContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
       return cb(null, file)
     }
     let madeChanges = false
@@ -303,11 +304,11 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
   function fixESLintProblems() {
     const base = path.resolve(__dirname, '..')
     return gulp.src([
-      path.resolve(__dirname, '../src/**/*.js'),
-      path.resolve(__dirname, '../stories/**/*.js'),
-      path.resolve(__dirname, '../.storybook/*.js'),
-      path.resolve(__dirname, './*.js'),
-      path.resolve(__dirname, '../*.js'),
+      path.resolve(__dirname, '../src/**/*.js?(x)'),
+      path.resolve(__dirname, '../stories/**/*.js?(x)'),
+      path.resolve(__dirname, '../.storybook/*.js?(x)'),
+      path.resolve(__dirname, './*.js?(x)'),
+      path.resolve(__dirname, '../*.js?(x)'),
     ], { base })
       .pipe(eslint({ fix: true }))
       .pipe(eslint.format())
@@ -315,11 +316,11 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
   },
   function renameStoriesToJSX() {
     return gulp.src(path.resolve(__dirname, '../stories/*.stories.js'))
+      .pipe(exec(file => `git mv ${file.path} ${file.path.replace('.js', '.jsx')}`))
       .pipe(through.obj(function(file, enc, cb) {
-        file.path = file.path.replace('stories.js', 'stories.jsx')
-        return cb(null, file)
+        console.warn(`Renaming story file: ${file.path} -- corresponding mdx file may need to be created.`)
+        return cb(null)
       }))
-      .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
   },
 ))
 
