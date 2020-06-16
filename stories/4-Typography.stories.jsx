@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs } from '@storybook/addon-knobs/react'
+import { withKnobs } from '@storybook/addon-knobs'
 import { MLTypography } from '@marklogic/design-system'
+import mdx from './4-Typography.mdx'
 
 export default {
   title: 'General/MLTypography',
   decorators: [withKnobs],
   parameters: {
+    fileName: '4-Typography.stories.jsx',
+    docs: {
+      page: mdx,
+    },
     info: {
       text: 'Component description goes here',
     },
