@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Data Display/MLPopover Basic 1`] = `
+<div
+  class="popover-story-demo-container"
+>
+  <button
+    class="ant-btn ml-btn ml-popover ant-btn-primary ant-btn-sm"
+    type="button"
+  >
+    <span>
+      Hover me
+    </span>
+  </button>
+</div>
+`;

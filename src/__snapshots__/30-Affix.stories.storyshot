@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Navigation/MLAffix Basic 1`] = `
+<div>
+  <div
+    class="ml-affix"
+  >
+    <div
+      class=""
+    >
+      <button
+        class="ant-btn ml-btn ant-btn-primary ant-btn-sm"
+        type="button"
+      >
+        <span>
+          Affix top
+        </span>
+      </button>
+    </div>
+  </div>
+  <br />
+  <div
+    class="ml-affix"
+  >
+    <div
+      class=""
+    >
+      <button
+        class="ant-btn ml-btn ant-btn-primary ant-btn-sm"
+        type="button"
+      >
+        <span>
+          Affix bottom
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
