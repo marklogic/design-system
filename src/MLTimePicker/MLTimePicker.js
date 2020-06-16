@@ -17,7 +17,7 @@ const MLTimePicker = React.forwardRef(({ hourLabel, minuteLabel, secondLabel, ..
         <MLSizeContext.Consumer>
           {(contextSize) => {
             // const contextProps = pickerPropsFromContext('date', pickerContext, props)
-            const format = pickerContext.timeFormat
+            const format = props.format || pickerContext.timeFormat
             const size = contextSize || props.size
 
             const unitPositions = getOrderedTimeUnits({ hourLabel, minuteLabel, secondLabel, format })

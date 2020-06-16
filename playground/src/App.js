@@ -47,6 +47,7 @@ import {
   MLTabs,
   MLTag,
   MLTimeline,
+  MLTimePicker,
   MLTooltip,
   MLTreeSelect,
   MLUpload,
@@ -67,6 +68,7 @@ import {
 
 const configValues = {
   dateFormat: 'YYYY-MMM-DD', // Default for all dates, and DatePicker
+  timeFormat: 'HH:mm:ss',
   dateTimeFormat: 'YYYY-MMM-DD, HH:mm:ss', // default for all dates with times, and DatePicker with times
   monthFormat: 'YYYY-MM', // default for Month picker
   weekFormat: 'YYYY-wo', // default for Week picker
@@ -168,6 +170,10 @@ export default class App extends Component {
               <MLDatePicker size='small' />
               <MLDatePicker size='default' />
               <MLDatePicker size='large' />
+              <MLTimePicker />
+              <MLTimePicker
+                format='HH:mm'
+              />
               <MLPagination
                 defaultCurrent={3}
                 defaultPageSize={10}
