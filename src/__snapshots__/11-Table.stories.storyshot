@@ -258,7 +258,7 @@ exports[`Storyshots Data Display/MLTable Embedded Tables 1`] = `
         class="ant-spin-container"
       >
         <div
-          class="ant-table ant-table-middle ant-table-scroll-position-left"
+          class="ant-table ant-table-middle ant-table-fixed-header ant-table-scroll-position-left ant-table-layout-fixed"
         >
           <div
             class="ant-table-content"
@@ -267,9 +267,7 @@ exports[`Storyshots Data Display/MLTable Embedded Tables 1`] = `
               class="ant-table-scroll"
             >
               <div
-                class="ant-table-body"
-                style="overflow-x:scroll;-webkit-transform:translate3d (0, 0, 0)"
-                tabindex="-1"
+                class="ant-table-header"
               >
                 <table
                   class="ant-table-fixed"
@@ -602,6 +600,26 @@ exports[`Storyshots Data Display/MLTable Embedded Tables 1`] = `
                       </th>
                     </tr>
                   </thead>
+                </table>
+              </div>
+              <div
+                class="ant-table-body"
+                style="overflow-x:scroll;-webkit-transform:translate3d (0, 0, 0);max-height:;overflow-y:scroll"
+                tabindex="-1"
+              >
+                <table
+                  class="ant-table-fixed"
+                  style="width:auto"
+                >
+                  <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                  </colgroup>
                   <tbody
                     class="ant-table-tbody"
                   >
