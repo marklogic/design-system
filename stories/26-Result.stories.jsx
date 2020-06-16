@@ -27,7 +27,7 @@ export const basic = () => {
     status: radios('status', ['success', 'error', 'info', 'warning', '404', '403', '500'], 'info'),
   }
   if (useCustomIcon) {
-    props.icon = <Smile />
+    props.icon = <SmileRegular />
   }
   return (
     <MLResult
