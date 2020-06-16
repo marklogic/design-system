@@ -4,9 +4,14 @@ import { Progress } from 'antd'
 import classNames from 'classnames'
 
 const MLProgress = (props) => {
+  let { strokeColor } = props
+  if (['circle', 'dashboard'].includes(props.type) && props.strokeColor === undefined) {
+    strokeColor = 'inherit' // Patch to use @primary-color from less rules by default
+  }
   return (
     <Progress
       {...props}
+      strokeColor={strokeColor}
       className={classNames('ml-progress', props.className)}
     >
       {props.children}

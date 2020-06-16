@@ -50,4 +50,26 @@
   .ml-header-table .ant-descriptions-item-label + td {
     display: none;
   }
+
+  .ant-table-tbody > tr.ml-table-row-drag-stale {
+    &:hover > td {
+      // Cancel out hover color on wrong row after drag
+      background: inherit;
+    }
+  }
+
+  .ml-table-row-drop-target {
+    position: relative;
+    transform: scale(1); // Hack to allow <tr>s to correctly size `position: absolute` children
+  }
+  .ml-table-row-drop-target::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #ccc;
+  }
 }

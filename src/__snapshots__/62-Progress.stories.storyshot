@@ -33,7 +33,7 @@ exports[`Storyshots Feedback/MLProgress Circle 1`] = `
         stroke=""
         stroke-linecap="round"
         stroke-width="6"
-        style="stroke:#108ee9;stroke-dasharray:147.6548547187203px 295.3097094374406px;stroke-dashoffset:-0px;transition:stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s"
+        style="stroke:inherit;stroke-dasharray:147.6548547187203px 295.3097094374406px;stroke-dashoffset:-0px;transition:stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s"
       />
     </svg>
     <span
@@ -46,34 +46,7 @@ exports[`Storyshots Feedback/MLProgress Circle 1`] = `
 </div>
 `;
 
-exports[`Storyshots Feedback/MLProgress Line 1`] = `
-<div
-  class="ant-progress ant-progress-line ant-progress-status-normal ant-progress-show-info ant-progress-default ml-progress"
->
-  <div>
-    <div
-      class="ant-progress-outer"
-    >
-      <div
-        class="ant-progress-inner"
-      >
-        <div
-          class="ant-progress-bg"
-          style="width:50%;height:8px;border-radius:"
-        />
-      </div>
-    </div>
-    <span
-      class="ant-progress-text"
-      title="50%"
-    >
-      50%
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Feedback/MLProgress Meter 1`] = `
+exports[`Storyshots Feedback/MLProgress Dashboard 1`] = `
 <div
   class="ant-progress ant-progress-circle ant-progress-status-normal ant-progress-show-info ant-progress-default ml-progress"
 >
@@ -106,9 +79,37 @@ exports[`Storyshots Feedback/MLProgress Meter 1`] = `
         stroke=""
         stroke-linecap="round"
         stroke-width="6"
-        style="stroke:#108ee9;stroke-dasharray:110.15485471872029px 295.3097094374406px;stroke-dashoffset:-37.5px;transition:stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s"
+        style="stroke:inherit;stroke-dasharray:110.15485471872029px 295.3097094374406px;stroke-dashoffset:-37.5px;transition:stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s"
       />
     </svg>
+    <span
+      class="ant-progress-text"
+      title="50%"
+    >
+      50%
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Feedback/MLProgress Line 1`] = `
+<div
+  class="ant-progress ant-progress-line ant-progress-status-normal ant-progress-show-info ant-progress-default ml-progress"
+  style="width:100%"
+>
+  <div>
+    <div
+      class="ant-progress-outer"
+    >
+      <div
+        class="ant-progress-inner"
+      >
+        <div
+          class="ant-progress-bg"
+          style="width:50%;height:8px;border-radius:"
+        />
+      </div>
+    </div>
     <span
       class="ant-progress-text"
       title="50%"
