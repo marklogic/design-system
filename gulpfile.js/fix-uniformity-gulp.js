@@ -303,11 +303,11 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
   function fixESLintProblems() {
     const base = path.resolve(__dirname, '..')
     return gulp.src([
-      path.resolve(__dirname, '../src/**/*.js'),
-      path.resolve(__dirname, '../stories/**/*.js'),
-      path.resolve(__dirname, '../.storybook/*.js'),
-      path.resolve(__dirname, './*.js'),
-      path.resolve(__dirname, '../*.js'),
+      path.resolve(__dirname, '../src/**/*.js?(x)'),
+      path.resolve(__dirname, '../stories/**/*.js?(x)'),
+      path.resolve(__dirname, '../.storybook/*.js?(x)'),
+      path.resolve(__dirname, './*.js?(x)'),
+      path.resolve(__dirname, '../*.js?(x)'),
     ], { base })
       .pipe(eslint({ fix: true }))
       .pipe(eslint.format())
@@ -316,6 +316,7 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
   function renameStoriesToJSX() {
     return gulp.src(path.resolve(__dirname, '../stories/*.stories.js'))
       .pipe(through.obj(function(file, enc, cb) {
+        console.warn(`Renaming story file: ${file.path} -- corresponding mdx file may need to be created.`)
         file.path = file.path.replace('stories.js', 'stories.jsx')
         return cb(null, file)
       }))
