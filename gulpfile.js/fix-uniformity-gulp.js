@@ -9,6 +9,7 @@ const { kebabCase } = require('lodash/string')
 const merge = require('merge-stream')
 const Vinyl = require('vinyl')
 const eslint = require('gulp-eslint')
+const exec = require('gulp-exec')
 
 const skipFiles = ({ filePatterns }) => {
   return through.obj((file, enc, cb) => {
@@ -315,12 +316,11 @@ const fixUniformityTask = gulp.task('fix-uniformity', gulp.series(
   },
   function renameStoriesToJSX() {
     return gulp.src(path.resolve(__dirname, '../stories/*.stories.js'))
+      .pipe(exec(file => `git mv ${file.path} ${file.path.replace('.js', '.jsx')}`))
       .pipe(through.obj(function(file, enc, cb) {
         console.warn(`Renaming story file: ${file.path} -- corresponding mdx file may need to be created.`)
-        file.path = file.path.replace('stories.js', 'stories.jsx')
-        return cb(null, file)
+        return cb(null)
       }))
-      .pipe(gulp.dest(path.resolve(__dirname, '../stories')))
   },
 ))
 
