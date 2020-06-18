@@ -3,10 +3,11 @@ import classNames from 'classnames'
 import React from 'react'
 import { Input } from 'antd'
 
-const MLGroup = (props) => {
+const MLGroup = React.forwardRef((props, ref) => {
   return (
     <MLSizeContextProvider size={props.size}>
       <Input.Group
+        ref={ref}
         {...props}
         className={classNames('ml-input-group', props.className)}
       >
@@ -14,7 +15,7 @@ const MLGroup = (props) => {
       </Input.Group>
     </MLSizeContextProvider>
   )
-}
+})
 
 MLGroup.defaultProps = {
   size: 'small',

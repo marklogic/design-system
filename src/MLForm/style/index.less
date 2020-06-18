@@ -1,0 +1,25 @@
+@import '../../styles.less';
+
+.ml-form {
+  .ant-form-item-label {
+    text-align: left;
+  }
+
+  .ant-form-item label {
+    &::after { // Colon
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .ant-form-item-required {
+    display: flex;
+    align-items: center;
+
+    &::before { // 'Required' asterisk
+      order: 2;
+      color: @error-color;
+      margin-left: 2px;
+    }
+  }
+}

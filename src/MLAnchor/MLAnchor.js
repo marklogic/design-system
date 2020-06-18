@@ -22,4 +22,6 @@ MLAnchor.defaultProps = {
 MLAnchor.propTypes = {
 }
 
+MLAnchor.displayName = 'MLAnchor'
+
 export default MLAnchor

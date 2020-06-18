@@ -6,7 +6,7 @@ import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import { pickerPropsFromContext } from './utils'
 import classNames from 'classnames'
 
-const MLDatePicker = (props) => {
+const MLDatePicker = React.forwardRef((props, ref) => {
   return (
     <MLConfigContext.Consumer>
       {(pickerContext) => (
@@ -17,6 +17,7 @@ const MLDatePicker = (props) => {
             return (
               <DatePicker
                 {...contextProps}
+                ref={ref}
                 {...props}
                 // The following have to go after props to override it properly
                 showTime={contextProps.showTime}
@@ -31,7 +32,7 @@ const MLDatePicker = (props) => {
       )}
     </MLConfigContext.Consumer>
   )
-}
+})
 
 MLDatePicker.defaultProps = {
   bordered: true,
@@ -42,5 +43,7 @@ MLDatePicker.propTypes = {
   bordered: PropTypes.bool,
   size: PropTypes.string,
 }
+
+MLDatePicker.displayName = 'MLDatePicker'
 
 export default MLDatePicker

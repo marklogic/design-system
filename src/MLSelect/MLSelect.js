@@ -5,7 +5,7 @@ import { includes } from 'lodash-es'
 import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import classNames from 'classnames'
 
-const MLSelect = (props) => {
+const MLSelect = React.forwardRef((props, ref) => {
   const { mode = '' } = props
   const allowClear = includes(['tags', 'multiple'], mode)
   return (
@@ -15,6 +15,7 @@ const MLSelect = (props) => {
         return (
           <Select
             allowClear={allowClear}
+            ref={ref}
             {...props}
             size={size}
             className={classNames('ml-select', props.className)}
@@ -25,7 +26,7 @@ const MLSelect = (props) => {
       }}
     </MLSizeContext.Consumer>
   )
-}
+})
 
 MLSelect.defaultProps = {
   showArrow: true,
@@ -37,5 +38,7 @@ MLSelect.propTypes = {
   showArrow: PropTypes.bool,
   size: PropTypes.oneOf(['default', 'large', 'small']),
 }
+
+MLSelect.displayName = 'MLSelect'
 
 export default MLSelect

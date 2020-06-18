@@ -34,4 +34,6 @@ MLDescriptions.propTypes = {
   colon: PropTypes.bool,
 }
 
+MLDescriptions.displayName = 'MLDescriptions'
+
 export default MLDescriptions

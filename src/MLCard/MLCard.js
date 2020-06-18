@@ -3,16 +3,17 @@ import PropTypes from 'prop-types'
 import { Card } from 'antd'
 import classNames from 'classnames'
 
-const MLCard = (props) => {
+const MLCard = React.forwardRef((props, ref) => {
   return (
     <Card
+      ref={ref}
       {...props}
       className={classNames('ml-card', props.className)}
     >
       {props.children}
     </Card>
   )
-}
+})
 
 MLCard.defaultProps = {
   size: 'small',
@@ -23,5 +24,7 @@ MLCard.propTypes = {
   size: PropTypes.oneOf(['default', 'small']),
   bordered: PropTypes.bool,
 }
+
+MLCard.displayName = 'MLCard'
 
 export default MLCard

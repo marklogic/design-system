@@ -26,4 +26,6 @@ MLAffix.propTypes = {
   target: PropTypes.func,
 }
 
+MLAffix.displayName = 'MLAffix'
+
 export default MLAffix

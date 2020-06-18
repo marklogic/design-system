@@ -4,13 +4,14 @@ import { AutoComplete } from 'antd'
 import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import classNames from 'classnames'
 
-const MLAutoComplete = (props) => {
+const MLAutoComplete = React.forwardRef((props, ref) => {
   return (
     <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
           <AutoComplete
+            ref={ref}
             {...props}
             size={size}
             className={classNames('ml-auto-complete', props.className)}
@@ -21,6 +22,8 @@ const MLAutoComplete = (props) => {
       }}
     </MLSizeContext.Consumer>
   )
-}
+})
+
+MLAutoComplete.displayName = 'MLAutoComplete'
 
 export default MLAutoComplete

@@ -4,16 +4,17 @@ import { Layout } from 'antd'
 import classNames from 'classnames'
 const { Sider } = Layout
 
-const MLSider = (props) => {
+const MLSider = React.forwardRef((props, ref) => {
   return (
     <Sider
+      ref={ref}
       {...props}
       className={classNames('ml-layout-sider', props.className)}
     >
       {props.children}
     </Sider>
   )
-}
+})
 
 MLSider.displayName = 'MLLayout.MLSider'
 

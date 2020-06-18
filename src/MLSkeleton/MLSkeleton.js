@@ -35,4 +35,6 @@ MLSkeleton.propTypes = {
 
 }
 
+MLSkeleton.displayName = 'MLSkeleton'
+
 export default MLSkeleton

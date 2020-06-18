@@ -4,6 +4,7 @@ import { Descriptions, Table } from 'antd'
 import { clone, merge } from 'lodash-es'
 import { DownOutlined, RightOutlined } from '../MLIcon'
 import classNames from 'classnames'
+import { MLTableContextProvider } from '../MLConfigProvider/MLTableContext'
 import isFunction from 'lodash-es/isFunction'
 
 /**
@@ -317,26 +318,35 @@ class MLTable extends React.Component {
     }
 
     return (
-      <Table
-        pagination={{ hideOnSinglePage: true }}
-        {...this.props} // This is positioned here so the above props can be overwritten if desired
-        onChange={(pagination, filters, sorter, extra) => {
-          this.state.rowOrder = extra.currentDataSource.map((r) => this.getRowKeyValue(r))
-          this.emitChange()
-        }}
-        expandIcon={restructuredExpandIcon}
-        dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
-        columns={restructuredColumns}
-        className={classNames('ml-table', this.props.className)}
-        onRow={(record, rowIndex) => {
-          return Object.assign(
-            {},
-            (this.props.draggableRows ? this.rowDragProps(record, rowIndex) : {}),
-          )
-        }}
-      />
+      <MLTableContextProvider isInsideTable={true}>
+        <Table
+          pagination={{ hideOnSinglePage: true }}
+          {...this.props} // This is positioned here so the above props can be overwritten if desired
+          onChange={(pagination, filters, sorter, extra) => {
+            this.state.rowOrder = extra.currentDataSource.map((r) => this.getRowKeyValue(r))
+            this.emitChange()
+          }}
+          expandIcon={restructuredExpandIcon}
+          dataSource={restructuredData} // But force the dataSource and columns to be our modified versions
+          columns={restructuredColumns}
+          className={classNames('ml-table', this.props.className)}
+          onRow={(record, rowIndex) => {
+            return Object.assign(
+              {},
+              (this.props.draggableRows ? this.rowDragProps(record, rowIndex) : {}),
+            )
+          }}
+        />
+      </MLTableContextProvider>
     )
   }
+}
+
+MLTable.defaultProps = {
+  size: 'middle',
+  showBody: true,
+  onChange: () => {},
+  rowKey: undefined,
 }
 
 MLTable.propTypes = { // TODO: Include default Table props as well
@@ -357,23 +367,6 @@ MLTable.propTypes = { // TODO: Include default Table props as well
   onChange: PropTypes.func,
 }
 
-MLTable.defaultProps = {
-  size: 'middle',
-  showBody: true,
-  onChange: () => {},
-  rowKey: undefined,
-}
-
-MLTable.propTypes = { // TODO: Include default Table props as well
-  id: PropTypes.string,
-  rowKey: PropTypes.string,
-  showBody: PropTypes.bool,
-  dataSource: PropTypes.oneOfType([
-    PropTypes.objectOf(PropTypes.any), // Single item data sources are converted into arrays automatically (used in embedded table)
-    PropTypes.arrayOf(PropTypes.any),
-  ]),
-  columns: PropTypes.arrayOf(PropTypes.any),
-  onChange: PropTypes.func,
-}
+MLTable.displayName = 'MLTable'
 
 export default MLTable

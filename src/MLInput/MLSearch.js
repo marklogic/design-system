@@ -3,13 +3,14 @@ import classNames from 'classnames'
 import React from 'react'
 import { Input } from 'antd'
 
-const MLSearch = (props) => {
+const MLSearch = React.forwardRef((props, ref) => {
   return (
     <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
           <Input.Search
+            ref={ref}
             {...props}
             size={size}
             className={classNames('ml-input-search', props.className)}
@@ -20,9 +21,10 @@ const MLSearch = (props) => {
       }}
     </MLSizeContext.Consumer>
   )
-}
+})
 
 MLSearch.defaultProps = {
+  allowClear: true,
   size: 'small',
 }
 

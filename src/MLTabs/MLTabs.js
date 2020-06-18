@@ -52,4 +52,6 @@ MLTabs.propTypes = {
   onTabClick: PropTypes.func,
 }
 
+MLTabs.displayName = 'MLTabs'
+
 export default MLTabs

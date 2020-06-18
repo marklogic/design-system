@@ -96,4 +96,6 @@ MLTreeSelect.propTypes = {
   onSelect: PropTypes.func,
 }
 
+MLTreeSelect.displayName = 'MLTreeSelect'
+
 export default MLTreeSelect
