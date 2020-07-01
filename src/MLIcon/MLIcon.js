@@ -5,6 +5,8 @@ import classNames from 'classnames'
 
 const MLIcon = Icon
 
+MLIcon.displayName = 'MLIcon'
+
 export default MLIcon
 
 export const antIconVariants = ['Filled', 'Outlined', 'TwoTone']

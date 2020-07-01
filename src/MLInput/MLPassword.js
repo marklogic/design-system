@@ -3,13 +3,14 @@ import classNames from 'classnames'
 import React from 'react'
 import { Input } from 'antd'
 
-const MLPassword = (props) => {
+const MLPassword = React.forwardRef((props, ref) => {
   return (
     <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
           <Input.Password
+            ref={ref}
             {...props}
             size={size}
             className={classNames('ml-input-password', props.className)}
@@ -20,9 +21,10 @@ const MLPassword = (props) => {
       }}
     </MLSizeContext.Consumer>
   )
-}
+})
 
 MLPassword.defaultProps = {
+  allowClear: true,
   size: 'small',
 }
 

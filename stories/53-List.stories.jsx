@@ -1,14 +1,12 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, radios, boolean } from '@storybook/addon-knobs'
-import { MLList, MLDivider } from '@marklogic/design-system'
+import { MLList, MLDivider, MLAvatar, MLCard } from '@marklogic/design-system'
 import mdx from './53-List.mdx'
 
 // TODO: Replace with ML version when it's merged
 import {
   Typography as MLTypography,
-  Avatar as MLAvatar,
-  Card as MLCard,
 } from 'antd'
 const MLText = MLTypography.Text
 

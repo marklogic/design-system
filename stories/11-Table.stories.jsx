@@ -35,6 +35,7 @@ const colorStyles = (
 export const basic = () => {
   const useCustomRowColor = boolean('use custom row color', true)
   const useCustomColColor = boolean('use custom column color', true)
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const props = {
     size: radios('size', ['default', 'middle', 'small'], 'middle'),
     dataSource: cloneDeep(sampleBasicData.dataSource),
@@ -47,27 +48,47 @@ export const basic = () => {
   if (useCustomRowColor) {
     props.dataSource[0].rowClassName = 'ml-table-row-red'
   }
+  if (draggableRows) {
+    props.columns = cloneDeep(props.columns)
+    removeKeyRecursively(props.columns, 'sorter')
+  }
   return (
     <div>
       <MLTable
         {...props}
+        key={draggableRows ? 'draggableRows-example' : 'non-draggable-example'}
         onChange={action('onChange')}
+        rowKey='key'
+        draggableRows={draggableRows}
         rowClassName={(record, rowIndex) => {
           return record.rowClassName
         }}
       />
-      {colorStyles}
     </div>
   )
+}
+
+function removeKeyRecursively(obj, key) {
+  for (const prop in obj) {
+    if (prop === key) {
+      delete obj[prop]
+    } else if (typeof obj[prop] === 'object') {
+      removeKeyRecursively(obj[prop], key)
+    }
+  }
 }
 
 export const embeddedTables = () => {
   const useCustomRowColor = boolean('use custom row color', true)
   const useCustomColColor = boolean('use custom column color', true)
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
+  const defaultShowEmbeddedTableBodies = boolean('defaultShowEmbeddedTableBodies', false)
   const props = {
     size: radios('size', ['default', 'middle', 'small'], 'middle'),
     dataSource: cloneDeep(sampleNestedData.dataSource),
     columns: cloneDeep(sampleNestedData.columns),
+    draggableRows,
+    defaultShowEmbeddedTableBodies,
   }
   if (useCustomColColor) {
     props.columns[0].className = 'ml-table-col-green'
@@ -75,11 +96,20 @@ export const embeddedTables = () => {
   if (useCustomRowColor) {
     props.dataSource[0].rowClassName = 'ml-table-row-red'
   }
+  if (draggableRows) {
+    props.columns = cloneDeep(props.columns)
+    removeKeyRecursively(props.columns, 'sorter')
+  }
   // TODO: Handle onChange for nested tables, and figure out a way to differentiate the callback values
   return (
     <div>
       <MLTable
+        key={(
+          (draggableRows ? 'draggableRows-example' : 'non-draggable-example') +
+          (defaultShowEmbeddedTableBodies ? '-showbody-default-true' : '-showbody-default-false')
+        )}
         scroll={{ x: true }}
+        rowKey='emp_no'
         {...props}
         onChange={action('onChange')}
         rowClassName={(record, rowIndex) => {
@@ -104,18 +134,19 @@ export const rowNestedTable = () => {
   const size = radios('size', ['default', 'middle', 'small'], 'middle')
   const useCustomRowColor = boolean('use custom row color', true)
   const useCustomColColor = boolean('use custom column color', true)
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const abColumns = [
     {
       title: 'A',
       dataIndex: 'a',
       key: 'a',
-      sorter: lessThanSorter('a'),
+      ...(draggableRows ? {} : { sorter: lessThanSorter('a') }),
     },
     {
       title: 'B',
       dataIndex: 'b',
       key: 'b',
-      sorter: lessThanSorter('b'),
+      ...(draggableRows ? {} : { sorter: lessThanSorter('b') }),
     },
   ]
   if (useCustomColColor) {
@@ -132,6 +163,7 @@ export const rowNestedTable = () => {
       rowClassName={(record, rowIndex) => {
         return record.rowClassName
       }}
+      draggableRows={draggableRows}
     />
   )
   const dataSource = [
@@ -168,6 +200,7 @@ export const rowNestedTable = () => {
         dataSource={dataSource}
         columns={abColumns}
         expandedRowRender={expandedRowRender}
+        draggableRows={draggableRows}
       />
       <div style={{ display: 'none' }}>
         Below is the contents of the expandedRowRender prop function that is
@@ -184,18 +217,19 @@ export const rowNestedTableWithButtons = () => {
   const size = radios('size', ['default', 'middle', 'small'], 'middle')
   const useCustomRowColor = boolean('use custom row color', true)
   const useCustomColColor = boolean('use custom column color', true)
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const abColumns = [
     {
       title: 'A',
       dataIndex: 'a',
       key: 'a',
-      sorter: lessThanSorter('a'),
+      ...(draggableRows ? {} : { sorter: lessThanSorter('a') }),
     },
     {
       title: 'B',
       dataIndex: 'b',
       key: 'b',
-      sorter: lessThanSorter('b'),
+      ...(draggableRows ? {} : { sorter: lessThanSorter('b') }),
     },
   ]
   const expandedRowRender = (row) => (
@@ -210,6 +244,7 @@ export const rowNestedTableWithButtons = () => {
         columns={abColumns}
         showHeader={true}
         size={size}
+        draggableRows={draggableRows}
       />
     </div>
   )
@@ -245,6 +280,7 @@ export const rowNestedTableWithButtons = () => {
         <MLButton>Example Button</MLButton>
       </div>
       <MLTable
+        key={draggableRows ? 'draggableRows-example' : 'non-draggable-example'}
         scroll={{ x: true }}
         size={size}
         dataSource={dataSource}
@@ -253,6 +289,7 @@ export const rowNestedTableWithButtons = () => {
         rowClassName={(record, rowIndex) => {
           return record.rowClassName
         }}
+        draggableRows={draggableRows}
       />
       <div style={{ display: 'none' }}>
         Below is the contents of the expandedRowRender prop function that is

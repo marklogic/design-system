@@ -235,6 +235,66 @@ exports[`Storyshots Data Display/MLTable Basic 1`] = `
                       row2 val5
                     </td>
                   </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="3"
+                  >
+                    <td
+                      class="ant-table-column-has-actions ant-table-column-has-sorters"
+                    >
+                      row3 val1
+                    </td>
+                    <td
+                      class=""
+                    >
+                      row3 val2
+                    </td>
+                    <td
+                      class=""
+                    >
+                      row3 val3
+                    </td>
+                    <td
+                      class=""
+                    >
+                      row3 val4
+                    </td>
+                    <td
+                      class=""
+                    >
+                      row3 val5
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="4"
+                  >
+                    <td
+                      class="ant-table-column-has-actions ant-table-column-has-sorters"
+                    >
+                      row4 val1
+                    </td>
+                    <td
+                      class=""
+                    >
+                      row4 val2
+                    </td>
+                    <td
+                      class=""
+                    >
+                      row4 val3
+                    </td>
+                    <td
+                      class=""
+                    >
+                      row4 val4
+                    </td>
+                    <td
+                      class=""
+                    >
+                      row4 val5
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -607,7 +667,7 @@ exports[`Storyshots Data Display/MLTable Embedded Tables 1`] = `
                   >
                     <tr
                       class="ant-table-row ant-table-row-level-0"
-                      data-row-key="0"
+                      data-row-key="12315"
                     >
                       <td
                         class="ant-table-column-has-actions ant-table-column-has-sorters"
@@ -760,7 +820,7 @@ exports[`Storyshots Data Display/MLTable Embedded Tables 1`] = `
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
-                      data-row-key="1"
+                      data-row-key="281328"
                     >
                       <td
                         class="ant-table-column-has-actions ant-table-column-has-sorters"

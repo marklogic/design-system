@@ -6,7 +6,7 @@ import classNames from 'classnames'
 import { useDebouncedCallback } from 'use-debounce'
 import pick from 'lodash-es/pick'
 
-const MLEditableSlider = (props) => {
+const MLEditableSlider = React.forwardRef((props, ref) => {
   // Two states are used because Slider value needs to be debounced when controlled by InputNumber
   const [sliderValue, setSliderValue] = useState(props.defaultValue)
   const [inputNumberValue, setInputNumberValue] = useState(props.defaultValue)
@@ -87,7 +87,7 @@ const MLEditableSlider = (props) => {
       )}
     </div>
   )
-}
+})
 
 MLEditableSlider.defaultProps = {
   defaultValue: 0,
@@ -159,5 +159,7 @@ MLEditableSlider.propTypes = {
   /** Supplied to just MLInputNumber */
   onPressEnter: PropTypes.func,
 }
+
+MLEditableSlider.displayName = 'MLEditableSlider'
 
 export default MLEditableSlider

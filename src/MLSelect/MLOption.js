@@ -5,6 +5,8 @@ const { Option } = Select
 // Ant checking for the types of MLSelect's children to be only Option or OptGroup
 class MLOption extends Option {}
 
+MLOption.isSelectOption = true
+
 MLOption.defaultProps = {}
 MLOption.propTypes = {}
 

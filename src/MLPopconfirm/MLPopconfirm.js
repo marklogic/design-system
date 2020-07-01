@@ -4,16 +4,19 @@ import { Popconfirm } from 'antd'
 import classNames from 'classnames'
 import { AbstractTooltipProps } from '../MLTooltip'
 
-const MLPopconfirm = (props) => {
+const MLPopconfirm = React.forwardRef((props, ref) => {
   return (
     <Popconfirm
+      ref={ref}
       {...props}
       className={classNames('ml-popconfirm', props.className)}
     >
       {props.children}
     </Popconfirm>
   )
-}
+})
+
+MLPopconfirm.displayName = 'MLPopconfirm'
 
 MLPopconfirm.defaultProps = {
 }

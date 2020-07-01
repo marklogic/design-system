@@ -3,7 +3,7 @@ import { Props } from '@storybook/addon-docs/blocks'
 
 const PropsPanels = ({ of }) => (
   <>
-    <hr/>
+    <hr />
     {of.map((component) => (
       <>
         <h2>{component.displayName} props:</h2>

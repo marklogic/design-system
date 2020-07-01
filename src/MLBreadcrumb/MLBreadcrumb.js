@@ -3,15 +3,18 @@ import PropTypes from 'prop-types'
 import { Breadcrumb } from 'antd'
 import classNames from 'classnames'
 
-const MLBreadcrumb = (props) => {
+const MLBreadcrumb = React.forwardRef((props, ref) => {
   return (
     <Breadcrumb
+      ref={ref}
       {...props}
       className={classNames('ml-breadcrumb', props.className)}
     >
       {props.children}
     </Breadcrumb>
   )
-}
+})
+
+MLBreadcrumb.displayName = 'MLBreadcrumb'
 
 export default MLBreadcrumb

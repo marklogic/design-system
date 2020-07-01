@@ -4,16 +4,17 @@ import { Breadcrumb } from 'antd'
 import classNames from 'classnames'
 const { Item } = Breadcrumb
 
-const MLItem = (props) => {
+const MLItem = React.forwardRef((props, ref) => {
   return (
     <Item
+      ref={ref}
       {...props}
       className={classNames('ml-breadcrumb-item', props.className)}
     >
       {props.children}
     </Item>
   )
-}
+})
 
 MLItem.displayName = 'MLBreadcrumb.MLItem'
 

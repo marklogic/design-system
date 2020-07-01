@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Feedback/mlmessage Basic 1`] = `
+Array [
+  <button
+    class="ant-btn ml-btn ant-btn-primary ant-btn-sm"
+    type="button"
+  >
+    <span>
+      Info
+    </span>
+  </button>,
+  <br />,
+  <button
+    class="ant-btn ml-btn ant-btn-sm"
+    type="button"
+  >
+    <span>
+      Success
+    </span>
+  </button>,
+  <br />,
+  <button
+    class="ant-btn ml-btn ant-btn-sm"
+    type="button"
+  >
+    <span>
+      Error
+    </span>
+  </button>,
+  <br />,
+  <button
+    class="ant-btn ml-btn ant-btn-sm"
+    type="button"
+  >
+    <span>
+      Warning
+    </span>
+  </button>,
+  <br />,
+  <button
+    class="ant-btn ml-btn ant-btn-sm"
+    type="button"
+  >
+    <span>
+      Display a loading indicator
+    </span>
+  </button>,
+  <br />,
+  <button
+    class="ant-btn ml-btn ant-btn-sm"
+    type="button"
+  >
+    <span>
+      Custom icon
+    </span>
+  </button>,
+  <br />,
+]
+`;

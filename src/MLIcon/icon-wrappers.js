@@ -24,25 +24,26 @@ export function MLIconWrapper({ highlight, color, displayName, component, ...pro
 
 export const createWrappedMLIcon = (component) => {
   const displayName = component.displayName || component.render.displayName // go through render if it's a forwardRef object
-  const wrappedComponent = (props) => {
-    return (<MLIconWrapper {...props} displayName={displayName} component={component} />)
-  }
+  const wrappedComponent = React.forwardRef((props, ref) => {
+    return (<MLIconWrapper ref={ref} {...props} displayName={displayName} component={component} />)
+  })
   wrappedComponent.displayName = pascalCase(displayName)
   // TODO: Consider using React.forwardRef here like Ant does
   return wrappedComponent
 }
 
 export const wrapFontAwesomeIcon = (faIcon, variantName) => {
-  const componentFn = (props) => {
+  const componentFn = React.forwardRef((props, ref) => {
     return (
       <Icon
+        ref={ref}
         {...props}
         component={(props) => (
           <FontAwesomeIcon icon={faIcon} {...props} />
         )}
       />
     )
-  }
+  })
   componentFn.displayName = pascalCase(faIcon.iconName + variantName)
   return createWrappedMLIcon(componentFn)
 }

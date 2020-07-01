@@ -20,4 +20,6 @@ MLStatistic.defaultProps = {
 MLStatistic.propTypes = {
 }
 
+MLStatistic.displayName = 'MLStatistic'
+
 export default MLStatistic

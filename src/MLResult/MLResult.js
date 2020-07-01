@@ -40,4 +40,6 @@ MLResult.propTypes = {
   extra: PropTypes.node,
 }
 
+MLResult.displayName = 'MLResult'
+
 export default MLResult

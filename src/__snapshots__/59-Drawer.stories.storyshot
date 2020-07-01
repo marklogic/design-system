@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Feedback/MLDrawer Basic 1`] = `
+<div>
+  <button
+    class="ant-btn ml-btn ant-btn-primary ant-btn-sm"
+    type="button"
+  >
+    <span>
+      Open
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Feedback/MLDrawer Multi Level Drawer 1`] = `
+<div>
+  <button
+    class="ant-btn ml-btn ant-btn-primary ant-btn-sm"
+    type="button"
+  >
+    <span>
+      Open drawer
+    </span>
+  </button>
+</div>
+`;

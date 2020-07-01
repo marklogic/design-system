@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Data Display/MLTimeline Basic 1`] = `
+<div
+  class="timeline-story"
+>
+  <ul
+    class="ant-timeline ml-timeline"
+  >
+    <li
+      class="ant-timeline-item ml-timeline-item"
+    >
+      <div
+        class="ant-timeline-item-tail"
+      />
+      <div
+        class="ant-timeline-item-head ant-timeline-item-head-green"
+      />
+      <div
+        class="ant-timeline-item-content"
+      >
+        <p
+          class="timeline-date-label"
+        >
+          2015-09-01
+        </p>
+        <p>
+          Create a services site
+        </p>
+      </div>
+    </li>
+    <li
+      class="ant-timeline-item ml-timeline-item"
+    >
+      <div
+        class="ant-timeline-item-tail"
+      />
+      <div
+        class="ant-timeline-item-head ant-timeline-item-head-green"
+      />
+      <div
+        class="ant-timeline-item-content"
+      >
+        <p
+          class="timeline-date-label"
+        >
+          2015-09-01
+        </p>
+        <p>
+          Create a services site
+        </p>
+      </div>
+    </li>
+    <li
+      class="ant-timeline-item ml-timeline-item"
+    >
+      <div
+        class="ant-timeline-item-tail"
+      />
+      <div
+        class="ant-timeline-item-head ant-timeline-item-head-red"
+      />
+      <div
+        class="ant-timeline-item-content"
+      >
+        <p
+          class="timeline-date-label"
+        >
+          2015-09-01
+        </p>
+        <p>
+          Solve initial network problems 1
+        </p>
+        <p>
+          Solve initial network problems 2
+        </p>
+        <p>
+          Solve initial network problems 3
+        </p>
+      </div>
+    </li>
+    <li
+      class="ant-timeline-item ml-timeline-item"
+    >
+      <div
+        class="ant-timeline-item-tail"
+      />
+      <div
+        class="ant-timeline-item-head ant-timeline-item-head-blue"
+      />
+      <div
+        class="ant-timeline-item-content"
+      >
+        <p
+          class="timeline-date-label"
+        >
+          2015-09-01
+        </p>
+        <p>
+          Technical testing 1
+        </p>
+        <p>
+          Technical testing 2
+        </p>
+        <p>
+          Technical testing 3
+        </p>
+      </div>
+    </li>
+    <li
+      class="ant-timeline-item ml-timeline-item"
+    >
+      <div
+        class="ant-timeline-item-tail"
+      />
+      <div
+        class="ant-timeline-item-head ant-timeline-item-head-gray"
+      />
+      <div
+        class="ant-timeline-item-content"
+      >
+        <p
+          class="timeline-date-label"
+        >
+          2015-09-01
+        </p>
+        <p>
+          Technical testing 1
+        </p>
+        <p>
+          Technical testing 2
+        </p>
+        <p>
+          Technical testing 3
+        </p>
+      </div>
+    </li>
+    <li
+      class="ant-timeline-item ml-timeline-item"
+    >
+      <div
+        class="ant-timeline-item-tail"
+      />
+      <div
+        class="ant-timeline-item-head ant-timeline-item-head-gray"
+      />
+      <div
+        class="ant-timeline-item-content"
+      >
+        <p
+          class="timeline-date-label"
+        >
+          2015-09-01
+        </p>
+        <p>
+          Technical testing 1
+        </p>
+        <p>
+          Technical testing 2
+        </p>
+        <p>
+          Technical testing 3
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
