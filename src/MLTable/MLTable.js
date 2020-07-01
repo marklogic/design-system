@@ -92,7 +92,7 @@ class MLTable extends React.Component {
   getInitialColumnExpandedStates() {
     return {
       columnExpandedStates: Object.fromEntries(this.props.columns.map((column) => (
-        [column.dataIndex, false]
+        [column.dataIndex, this.props.defaultShowEmbeddedTableBodies || false]
       ))),
     }
   }
@@ -282,6 +282,7 @@ class MLTable extends React.Component {
             dataSource={record[originalColumn.dataIndex]}
             // draggableRows={this.props.draggableRows}
             showBody={this.state.columnExpandedStates[originalColumn.dataIndex]}
+            defaultShowEmbeddedTableBodies={this.props.defaultShowEmbeddedTableBodies}
             size={this.props.size}
             // onChange={(e) => this.handleEmbeddedTableChange(e, restructuredColumn, record)}
           />
@@ -347,6 +348,7 @@ MLTable.defaultProps = {
   showBody: true,
   onChange: () => {},
   rowKey: undefined,
+  defaultShowEmbeddedTableBodies: false,
 }
 
 MLTable.propTypes = { // TODO: Include default Table props as well
@@ -365,6 +367,8 @@ MLTable.propTypes = { // TODO: Include default Table props as well
    *  rowOrder: is the current order of rowKeys in the table
    *  data: is the reordered */
   onChange: PropTypes.func,
+  /** Show the body of tables embedded inside table cells by default */
+  defaultShowEmbeddedTableBodies: PropTypes.bool,
 }
 
 MLTable.displayName = 'MLTable'

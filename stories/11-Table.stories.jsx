@@ -57,11 +57,13 @@ function removeKeyRecursively(obj, key) {
 
 export const embeddedTables = () => {
   const draggableRows = boolean('draggableRows (and disable sorting)', false)
+  const defaultShowEmbeddedTableBodies = boolean('defaultShowEmbeddedTableBodies', false)
   const props = {
     size: radios('size', ['default', 'middle', 'small'], 'middle'),
     dataSource: sampleNestedData.dataSource,
     columns: sampleNestedData.columns,
     draggableRows,
+    defaultShowEmbeddedTableBodies,
   }
   if (draggableRows) {
     props.columns = cloneDeep(props.columns)
@@ -71,7 +73,10 @@ export const embeddedTables = () => {
   return (
     <div>
       <MLTable
-        key={draggableRows ? 'draggableRows-example' : 'non-draggable-example'}
+        key={(
+          (draggableRows ? 'draggableRows-example' : 'non-draggable-example') +
+          (defaultShowEmbeddedTableBodies ? '-showbody-default-true' : '-showbody-default-false')
+        )}
         scroll={{ x: true }}
         rowKey='emp_no'
         {...props}
