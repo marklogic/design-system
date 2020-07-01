@@ -3,16 +3,17 @@ import PropTypes from 'prop-types'
 import { Slider } from 'antd'
 import classNames from 'classnames'
 
-const MLSlider = (props) => {
+const MLSlider = React.forwardRef((props, ref) => {
   return (
     <Slider
+      ref={ref}
       {...props}
       className={classNames('ml-slider', props.className)}
     >
       {props.children}
     </Slider>
   )
-}
+})
 
 MLSlider.defaultProps = {
   tooltipVisible: undefined,
@@ -62,5 +63,7 @@ MLSlider.propTypes = {
   tooltipVisible: PropTypes.bool,
   getTooltipPopupContainer: PropTypes.func,
 }
+
+MLSlider.displayName = 'MLSlider'
 
 export default MLSlider

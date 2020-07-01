@@ -3,13 +3,14 @@ import classNames from 'classnames'
 import React from 'react'
 import { Input } from 'antd'
 
-const MLTextArea = (props) => {
+const MLTextArea = React.forwardRef((props, ref) => {
   return (
     <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
           <Input.TextArea
+            ref={ref}
             {...props}
             size={size}
             className={classNames('ml-input-textarea', props.className)}
@@ -20,7 +21,7 @@ const MLTextArea = (props) => {
       }}
     </MLSizeContext.Consumer>
   )
-}
+})
 
 MLTextArea.defaultProps = {
   size: 'small',

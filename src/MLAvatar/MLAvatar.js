@@ -7,17 +7,18 @@ import classNames from 'classnames'
 /**
  * A default icon is shown unless children or `src` are present.
  */
-const MLAvatar = (props) => {
+const MLAvatar = React.forwardRef((props, ref) => {
   return (
     <Avatar
       icon={(props.children || props.src) ? null : <UserOutlined />}
+      ref={ref}
       {...props}
       className={classNames('ml-avatar', props.className)}
     >
       {props.children}
     </Avatar>
   )
-}
+})
 
 MLAvatar.propTypes = {
   children: PropTypes.node,
@@ -33,5 +34,7 @@ MLAvatar.defaultProps = {
   size: 'small',
   shape: 'circle',
 }
+
+MLAvatar.displayName = 'MLAvatar'
 
 export default MLAvatar

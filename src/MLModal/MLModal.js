@@ -2,9 +2,10 @@ import React from 'react'
 import { DraggableModal } from 'ant-design-draggable-modal'
 import classNames from 'classnames'
 
-const MLModal = (props) => {
+const MLModal = React.forwardRef((props, ref) => {
   return (
     <DraggableModal
+      ref={ref}
       initialHeight={0}
       {...props}
       className={classNames('ml-modal', props.className)}
@@ -12,6 +13,8 @@ const MLModal = (props) => {
       {props.children}
     </DraggableModal>
   )
-}
+})
+
+MLModal.displayName = 'MLModal'
 
 export default MLModal

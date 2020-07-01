@@ -6,7 +6,7 @@ import { pickerPropsFromContext } from './utils'
 import classNames from 'classnames'
 const { MonthPicker } = DatePicker
 
-const MLMonthPicker = (props) => {
+const MLMonthPicker = React.forwardRef((props, ref) => {
   return (
     <MLConfigContext.Consumer>
       {(context) => {
@@ -14,6 +14,7 @@ const MLMonthPicker = (props) => {
         return (
           <MonthPicker
             {...contextProps}
+            ref={ref}
             {...props}
             showTime={contextProps.showTime}
             className={classNames('ml-date-picker-month-picker', props.className)}
@@ -25,7 +26,7 @@ const MLMonthPicker = (props) => {
       }}
     </MLConfigContext.Consumer>
   )
-}
+})
 
 MLMonthPicker.defaultProps = {
   bordered: true,

@@ -8,7 +8,7 @@ import classNames from 'classnames'
 import uniqueId from 'lodash-es/uniqueId'
 const { RangePicker } = DatePicker
 
-const MLRangePicker = ({ hourLabel, minuteLabel, secondLabel, ...props }) => {
+const MLRangePicker = React.forwardRef(({ hourLabel, minuteLabel, secondLabel, ...props }, ref) => {
   // Generate an unchanging unique ID to tie this to its specific style elements
   const [componentId] = useState(uniqueId('ml-date-picker-range-picker-'))
 
@@ -35,6 +35,7 @@ const MLRangePicker = ({ hourLabel, minuteLabel, secondLabel, ...props }) => {
                 <RangePicker
                   {...contextProps}
                   {...props}
+                  ref={ref}
                   // The following have to go after props to override it properly
                   showTime={contextProps.showTime}
                   size={size}
@@ -51,7 +52,7 @@ const MLRangePicker = ({ hourLabel, minuteLabel, secondLabel, ...props }) => {
       )}
     </MLConfigContext.Consumer>
   )
-}
+})
 
 MLRangePicker.defaultProps = {
   bordered: true,

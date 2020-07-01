@@ -4,16 +4,17 @@ import { Menu } from 'antd'
 import classNames from 'classnames'
 const { Divider } = Menu
 
-const MLDivider = (props) => {
+const MLDivider = React.forwardRef((props, ref) => {
   return (
     <Divider
+      ref={ref}
       {...props}
       className={classNames('ml-menu-divider', props.className)}
     >
       {props.children}
     </Divider>
   )
-}
+})
 
 MLDivider.displayName = 'MLMenu.MLDivider'
 

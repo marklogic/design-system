@@ -46,7 +46,7 @@ const ensureImport = (_importStatement) => {
       this.emit('error', new PluginError('fix stuff', 'Only buffers supported'))
     }
     const importStatement = (typeof _importStatement === 'function' ? _importStatement(file) : _importStatement)
-    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
+    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLSizeContext|MLTableContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
       return cb(null, file)
     }
 
@@ -81,7 +81,7 @@ const removeImport = (importStatementRegex) => {
 
 const addClassNames = () => {
   return through.obj((file, enc, cb) => {
-    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLIcon|MLSizeContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
+    if (/.*\/(MLSelect\/(MLOptGroup|MLOption)|MLIcon|MLSizeContext|MLTableContext|(MLTreeSelect\/MLTreeNode)).*/.test(file.path)) {
       return cb(null, file)
     }
     let madeChanges = false
@@ -177,16 +177,17 @@ const fixDisplayNames = () => {
       return cb(null, file)
     }
 
+    let correctedDisplayNameLine
     if (parentComponentName === childComponentName) {
-      return cb(null, file)
+      correctedDisplayNameLine = `${childComponentName}.displayName = '${parentComponentName}'\n`
+    } else {
+      correctedDisplayNameLine = `${childComponentName}.displayName = '${parentComponentName}.${childComponentName}'\n`
     }
 
     const pattern = RegExp(`${childComponentName}.displayName = (.*?)\n`, 'g')
 
     const code = file.contents.toString()
     const matches = [...code.matchAll(pattern)]
-
-    const correctedDisplayNameLine = `${childComponentName}.displayName = '${parentComponentName}.${childComponentName}'\n`
 
     if (matches.length === 0) {
       // Insert it before the export line

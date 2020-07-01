@@ -28,4 +28,6 @@ MLTimeline.propTypes = {
   mode: PropTypes.oneOf(['left', 'alternate', 'right']),
 }
 
+MLTimeline.displayName = 'MLTimeline'
+
 export default MLTimeline

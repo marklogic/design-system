@@ -7,7 +7,7 @@ import { pickerPropsFromContext } from './utils'
 import classNames from 'classnames'
 import uniqueId from 'lodash-es/uniqueId'
 
-const MLDatePicker = ({ hourLabel, minuteLabel, secondLabel, ...props }) => {
+const MLDatePicker = React.forwardRef(({ hourLabel, minuteLabel, secondLabel, ...props }, ref) => {
   // Generate an unchanging unique ID to tie this to its specific style elements
   const [componentId] = useState(uniqueId('ml-date-picker-'))
 
@@ -34,6 +34,7 @@ const MLDatePicker = ({ hourLabel, minuteLabel, secondLabel, ...props }) => {
                 <DatePicker
                   {...contextProps}
                   {...props}
+                  ref={ref}
                   // The following have to go after props to override it properly
                   showTime={contextProps.showTime}
                   size={size}
@@ -50,7 +51,7 @@ const MLDatePicker = ({ hourLabel, minuteLabel, secondLabel, ...props }) => {
       )}
     </MLConfigContext.Consumer>
   )
-}
+})
 
 MLDatePicker.defaultProps = {
   bordered: true,
@@ -69,5 +70,7 @@ MLDatePicker.propTypes = {
   bordered: PropTypes.bool,
   size: PropTypes.string,
 }
+
+MLDatePicker.displayName = 'MLDatePicker'
 
 export default MLDatePicker

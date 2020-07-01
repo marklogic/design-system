@@ -10,4 +10,6 @@ export const MLSizeContextProvider = ({ children, size }) => (
   </MLSizeContext.Consumer>
 )
 
+MLSizeContext.displayName = 'MLConfigProvider.MLSizeContext'
+
 export default MLSizeContext

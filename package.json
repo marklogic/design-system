@@ -27,8 +27,8 @@
     "prepublishOnly": "yarn run build",
     "deploy": "gh-pages -d playground/build",
     "install:all": "(yarn unlink; yarn link; pushd playground; yarn link @marklogic/design-system; popd); (yarn); (cd playground && yarn); (yarn run build)",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "gulp compile-bundle-less; build-storybook -c .storybook -o storybook-dist"
+    "storybook": "start-storybook -s stories -p 6006",
+    "build-storybook": "gulp compile-bundle-less; build-storybook -s stories -c .storybook -o storybook-dist"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

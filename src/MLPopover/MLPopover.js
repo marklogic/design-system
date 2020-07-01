@@ -27,4 +27,6 @@ MLPopover.propTypes = Object.assign({
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 }, AbstractTooltipProps)
 
+MLPopover.displayName = 'MLPopover'
+
 export default MLPopover

@@ -67,4 +67,6 @@ MLPagination.propTypes = {
   onChange: PropTypes.func,
 }
 
+MLPagination.displayName = 'MLPagination'
+
 export default MLPagination

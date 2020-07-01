@@ -4,16 +4,17 @@ import { Card } from 'antd'
 import classNames from 'classnames'
 const { Grid } = Card
 
-const MLGrid = (props) => {
+const MLGrid = React.forwardRef((props, ref) => {
   return (
     <Grid
+      ref={ref}
       {...props}
       className={classNames('ml-card-grid', props.className)}
     >
       {props.children}
     </Grid>
   )
-}
+})
 
 MLGrid.displayName = 'MLCard.MLGrid'
 
