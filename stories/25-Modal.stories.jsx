@@ -67,6 +67,10 @@ export const WithFooter = () => {
       <MLModal
         visible={visible}
         title='Modal with footer'
+        onOk={(e) => { action('onOk')(e); return hide(e) }}
+        okText={text('okText', 'OK')}
+        onCancel={(e) => { action('onCancel')(e); return hide(e) }}
+        okType={text('okType', 'primary')}
         footer={
           <div
             style={{
