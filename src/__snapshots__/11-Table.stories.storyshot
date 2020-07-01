@@ -35,7 +35,7 @@ exports[`Storyshots Data Display/MLTable Basic 1`] = `
                 >
                   <tr>
                     <th
-                      class="ant-table-column-has-actions ant-table-column-has-sorters"
+                      class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                     >
                       <span
                         class="ant-table-header-column"
@@ -176,11 +176,11 @@ exports[`Storyshots Data Display/MLTable Basic 1`] = `
                   class="ant-table-tbody"
                 >
                   <tr
-                    class="ant-table-row ant-table-row-level-0"
+                    class="ant-table-row ml-table-row-red ant-table-row-level-0"
                     data-row-key="1"
                   >
                     <td
-                      class="ant-table-column-has-actions ant-table-column-has-sorters"
+                      class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                     >
                       row1 val1
                     </td>
@@ -210,7 +210,7 @@ exports[`Storyshots Data Display/MLTable Basic 1`] = `
                     data-row-key="2"
                   >
                     <td
-                      class="ant-table-column-has-actions ant-table-column-has-sorters"
+                      class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                     >
                       row2 val1
                     </td>
@@ -240,7 +240,7 @@ exports[`Storyshots Data Display/MLTable Basic 1`] = `
                     data-row-key="3"
                   >
                     <td
-                      class="ant-table-column-has-actions ant-table-column-has-sorters"
+                      class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                     >
                       row3 val1
                     </td>
@@ -270,7 +270,7 @@ exports[`Storyshots Data Display/MLTable Basic 1`] = `
                     data-row-key="4"
                   >
                     <td
-                      class="ant-table-column-has-actions ant-table-column-has-sorters"
+                      class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                     >
                       row4 val1
                     </td>
@@ -349,7 +349,7 @@ exports[`Storyshots Data Display/MLTable Embedded Tables 1`] = `
                   >
                     <tr>
                       <th
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         <span
                           class="ant-table-header-column"
@@ -670,7 +670,7 @@ exports[`Storyshots Data Display/MLTable Embedded Tables 1`] = `
                       data-row-key="12315"
                     >
                       <td
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         12315
                       </td>
@@ -819,11 +819,11 @@ exports[`Storyshots Data Display/MLTable Embedded Tables 1`] = `
                       </td>
                     </tr>
                     <tr
-                      class="ant-table-row ant-table-row-level-0"
+                      class="ant-table-row ml-table-row-red ant-table-row-level-0"
                       data-row-key="281328"
                     >
                       <td
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         281328
                       </td>
@@ -1029,7 +1029,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table 1`] = `
                         title=""
                       />
                       <th
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         <span
                           class="ant-table-header-column"
@@ -1162,7 +1162,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table 1`] = `
                     class="ant-table-tbody"
                   >
                     <tr
-                      class="ant-table-row ant-table-row-level-0"
+                      class="ant-table-row ml-table-row-red ant-table-row-level-0"
                       data-row-key="1"
                     >
                       <td
@@ -1195,7 +1195,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table 1`] = `
                         </div>
                       </td>
                       <td
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         Thing 1
                       </td>
@@ -1239,7 +1239,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table 1`] = `
                         </div>
                       </td>
                       <td
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         Thing 2
                       </td>
@@ -1298,7 +1298,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table 1`] = `
                     >
                       <tr>
                         <th
-                          class="ant-table-column-has-actions ant-table-column-has-sorters"
+                          class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                         >
                           <span
                             class="ant-table-header-column"
@@ -1435,7 +1435,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table 1`] = `
                         data-row-key="0"
                       >
                         <td
-                          class="ant-table-column-has-actions ant-table-column-has-sorters"
+                          class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                         >
                           Subtable Thing 1
                         </td>
@@ -1450,7 +1450,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table 1`] = `
                         data-row-key="1"
                       >
                         <td
-                          class="ant-table-column-has-actions ant-table-column-has-sorters"
+                          class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                         >
                           Subtable Thing 2
                         </td>
@@ -1531,7 +1531,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table With Buttons 1`] = `
                         title=""
                       />
                       <th
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         <span
                           class="ant-table-header-column"
@@ -1664,7 +1664,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table With Buttons 1`] = `
                     class="ant-table-tbody"
                   >
                     <tr
-                      class="ant-table-row ant-table-row-level-0"
+                      class="ant-table-row ml-table-row-red ant-table-row-level-0"
                       data-row-key="1"
                     >
                       <td
@@ -1697,7 +1697,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table With Buttons 1`] = `
                         </div>
                       </td>
                       <td
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         Thing 1
                       </td>
@@ -1741,7 +1741,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table With Buttons 1`] = `
                         </div>
                       </td>
                       <td
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         Thing 2
                       </td>
@@ -1813,7 +1813,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table With Buttons 1`] = `
                       >
                         <tr>
                           <th
-                            class="ant-table-column-has-actions ant-table-column-has-sorters"
+                            class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                           >
                             <span
                               class="ant-table-header-column"
@@ -1950,7 +1950,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table With Buttons 1`] = `
                           data-row-key="0"
                         >
                           <td
-                            class="ant-table-column-has-actions ant-table-column-has-sorters"
+                            class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                           >
                             Subtable Thing 1
                           </td>
@@ -1965,7 +1965,7 @@ exports[`Storyshots Data Display/MLTable Row Nested Table With Buttons 1`] = `
                           data-row-key="1"
                         >
                           <td
-                            class="ant-table-column-has-actions ant-table-column-has-sorters"
+                            class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                           >
                             Subtable Thing 2
                           </td>
@@ -2027,7 +2027,7 @@ exports[`Storyshots Data Display/MLTable Tree Data 1`] = `
                   >
                     <tr>
                       <th
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         <span
                           class="ant-table-header-column"
@@ -2160,11 +2160,11 @@ exports[`Storyshots Data Display/MLTable Tree Data 1`] = `
                     class="ant-table-tbody"
                   >
                     <tr
-                      class="ant-table-row ant-table-row-level-0"
+                      class="ant-table-row ml-table-row-red ant-table-row-level-0"
                       data-row-key="1"
                     >
                       <td
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -2186,7 +2186,7 @@ exports[`Storyshots Data Display/MLTable Tree Data 1`] = `
                       data-row-key="2"
                     >
                       <td
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
@@ -2230,7 +2230,7 @@ exports[`Storyshots Data Display/MLTable Tree Data 1`] = `
                       data-row-key="7"
                     >
                       <td
-                        class="ant-table-column-has-actions ant-table-column-has-sorters"
+                        class="ml-table-col-green ant-table-column-has-actions ant-table-column-has-sorters"
                       >
                         <span
                           class="ant-table-row-indent indent-level-0"
