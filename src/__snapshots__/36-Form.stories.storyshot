@@ -2347,7 +2347,7 @@ exports[`Storyshots Data Entry/MLForm Time Related Form 1`] = `
           class="ant-form-item-children"
         >
           <span
-            class="ml-date-picker ant-calendar-picker ant-calendar-picker-small"
+            class="ml-date-picker ml-date-picker-1 ant-calendar-picker ant-calendar-picker-small"
             id="time_related_controls_date-picker"
           >
             <div>
@@ -2406,7 +2406,7 @@ exports[`Storyshots Data Entry/MLForm Time Related Form 1`] = `
           class="ant-form-item-children"
         >
           <span
-            class="ml-date-picker ant-calendar-picker ant-calendar-picker-small"
+            class="ml-date-picker ml-date-picker-2 ant-calendar-picker ant-calendar-picker-small"
             id="time_related_controls_date-time-picker"
             style="min-width:195px"
           >
@@ -2525,7 +2525,7 @@ exports[`Storyshots Data Entry/MLForm Time Related Form 1`] = `
           class="ant-form-item-children"
         >
           <span
-            class="ml-date-picker-range-picker ant-calendar-picker ant-calendar-picker-small"
+            class="ml-date-picker-range-picker ml-date-picker-range-picker-3 ant-calendar-picker ant-calendar-picker-small"
             id="time_related_controls_range-picker"
             tabindex="0"
           >
@@ -2606,7 +2606,7 @@ exports[`Storyshots Data Entry/MLForm Time Related Form 1`] = `
           class="ant-form-item-children"
         >
           <span
-            class="ml-date-picker-range-picker ant-calendar-picker ant-calendar-picker-small"
+            class="ml-date-picker-range-picker ml-date-picker-range-picker-4 ant-calendar-picker ant-calendar-picker-small"
             id="time_related_controls_range-time-picker"
             style="width:350px"
             tabindex="0"

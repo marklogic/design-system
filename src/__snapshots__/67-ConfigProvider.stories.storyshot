@@ -10,7 +10,7 @@ exports[`Storyshots Other/MLConfigProvider Basic 1`] = `
   (application components go here)
   <br />
   <span
-    class="ml-date-picker ml-date-picker-2 ant-calendar-picker ant-calendar-picker-small"
+    class="ml-date-picker ml-date-picker-6 ant-calendar-picker ant-calendar-picker-small"
   >
     <div>
       <input
@@ -42,7 +42,7 @@ exports[`Storyshots Other/MLConfigProvider Basic 1`] = `
   </span>
   <br />
   <span
-    class="ml-date-picker ml-date-picker-3 ant-calendar-picker ant-calendar-picker-small"
+    class="ml-date-picker ml-date-picker-7 ant-calendar-picker ant-calendar-picker-small"
     style="min-width:195px"
   >
     <div>
@@ -75,7 +75,7 @@ exports[`Storyshots Other/MLConfigProvider Basic 1`] = `
   </span>
   <br />
   <span
-    class="ml-date-picker-range-picker ml-date-picker-range-picker-4 ant-calendar-picker ant-calendar-picker-small"
+    class="ml-date-picker-range-picker ml-date-picker-range-picker-8 ant-calendar-picker ant-calendar-picker-small"
     tabindex="0"
   >
     <span
@@ -129,7 +129,7 @@ exports[`Storyshots Other/MLConfigProvider Basic 1`] = `
   </span>
   <br />
   <span
-    class="ml-date-picker-range-picker ml-date-picker-range-picker-5 ant-calendar-picker ant-calendar-picker-small"
+    class="ml-date-picker-range-picker ml-date-picker-range-picker-9 ant-calendar-picker ant-calendar-picker-small"
     style="width:350px"
     tabindex="0"
   >
@@ -250,7 +250,7 @@ exports[`Storyshots Other/MLConfigProvider Basic 1`] = `
   </span>
   <br />
   <span
-    class="ant-time-picker ml-time-picker ml-time-picker-6"
+    class="ant-time-picker ml-time-picker ml-time-picker-10"
   >
     <input
       class="ant-time-picker-input"

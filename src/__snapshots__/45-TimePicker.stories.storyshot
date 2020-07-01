@@ -3,7 +3,7 @@
 exports[`Storyshots Data Entry/MLTimePicker Basic 1`] = `
 Array [
   <span
-    class="ant-time-picker ml-time-picker ml-time-picker-1"
+    class="ant-time-picker ml-time-picker ml-time-picker-5"
   >
     <input
       class="ant-time-picker-input"
