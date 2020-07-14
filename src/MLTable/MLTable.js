@@ -6,6 +6,7 @@ import { DownOutlined, RightOutlined } from '../MLIcon'
 import classNames from 'classnames'
 import { MLTableContextProvider } from '../MLConfigProvider/MLTableContext'
 import isFunction from 'lodash-es/isFunction'
+import fromPairs from 'lodash-es/fromPairs'
 
 /**
  * Component for showing an un-expanded nested table, which is just a vertical list of column headers.
@@ -91,7 +92,7 @@ class MLTable extends React.Component {
 
   getInitialColumnExpandedStates() {
     return {
-      columnExpandedStates: Object.fromEntries(this.props.columns.map((column) => (
+      columnExpandedStates: fromPairs(this.props.columns.map((column) => (
         [column.dataIndex, this.props.defaultShowEmbeddedTableBodies || false]
       ))),
     }
