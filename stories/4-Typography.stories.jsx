@@ -67,9 +67,7 @@ export const MLTitleComponent = () => (
     <MLTypography.MLTitle level={4}>h4. Ant Design</MLTypography.MLTitle>
   </div>
 )
-MLTitleComponent.story = {
-  name: 'MLTitle',
-}
+MLTitleComponent.storyName = 'MLTitle'
 
 export const MLTextComponent = () => (
   <div>
@@ -98,9 +96,7 @@ export const MLTextComponent = () => (
     <a className='link-color-hover-example'>(Hovered link)</a>
   </div>
 )
-MLTextComponent.story = {
-  name: 'MLText',
-}
+MLTextComponent.storyName = 'MLText'
 
 export const editable = () => {
   const [state, setState] = useState({ str: 'This is an editable text.' })

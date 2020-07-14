@@ -9,6 +9,10 @@ addSerializer(createSerializer())
 
 Enzyme.configure({ adapter: new Adapter() })
 
+beforeAll(() => {
+  global.Date.now = jest.fn(() => new Date('2019-04-07T10:20:30Z').getTime())
+})
+
 initStoryshots({
   snapshotSerializers: [createSerializer()],
   test: multiSnapshotWithOptions({

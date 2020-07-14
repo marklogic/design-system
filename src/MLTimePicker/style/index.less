@@ -1,18 +1,18 @@
-.ml-date-picker-container, .ml-date-picker-range-picker-container {
-  .ant-calendar-time .ant-calendar-time-picker-select {
-    ul {
-      // Fix scroll height
-      max-height: unset;
+.ml-time-picker {
+}
 
+.ml-time-picker-panel {
+  .ant-time-picker-panel-select {
+    ul {
       // Counter the translateY on the <li>s
-      margin-top: -24px;
+      margin-top: -32px;
 
       // Remove the extra blank space below the numbers
       padding-bottom: 0;
 
       li {
         // Adjust the position numbers scroll to after clicking on them
-        transform: translateY(24px)
+        transform: translateY(32px)
       }
 
       &::before {
@@ -22,20 +22,15 @@
         background-color: #f5f5f5;
         font-weight: bold;
 
-        text-align: center; // Center in DatePicker/RangePicker (has wide columns)
-
         display: list-item; // Make it a fake <li> so it sizes right
 
         // Keep it sized properly, same as the other <li>s
-        line-height: 24px;
+        padding: 0 0 0 12px;
+        line-height: 32px;
         user-select: none;
 
         // Bring it in front of the <li>s
         z-index: 1;
-      }
-
-      li:last-child::after {
-        height: 0;
       }
     }
   }

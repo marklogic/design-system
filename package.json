@@ -21,7 +21,7 @@
   "scripts": {
     "build": "gulp compile-all",
     "watch": "gulp compile-watch",
-    "test": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test": "cross-env CI=1 react-scripts test --colors --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd playground && yarn && yarn run build",
     "prepublishOnly": "yarn run build",

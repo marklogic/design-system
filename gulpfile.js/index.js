@@ -32,6 +32,7 @@ function compile(modules) {
           ['import', {
             libraryName: 'lodash-es',
             libraryDirectory: '',
+            camel2DashComponentName: false,
           }, 'lodash-es'],
           ['import', {
             libraryName: '@marklogic/design-system',
@@ -132,5 +133,10 @@ gulp.task('compile-watch', () => {
     path.resolve(__dirname, '../src/**/*.less'),
   ], gulp.series(['compile-less']))
 })
+
+gulp.task('compile-and-watch', gulp.series([
+  'compile-all',
+  'compile-watch',
+]))
 
 gulp.task('fix-and-compile', gulp.series(['fix-uniformity', 'compile-all']))

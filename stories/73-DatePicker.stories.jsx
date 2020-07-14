@@ -23,7 +23,7 @@ const disableOddDates = (d) => d.date() % 2 === 0
 
 const configValues = {
   dateFormat: ['YYYY-MMM-DD', 'MM/DD/YYYY', 'M/D/YY'],
-  timeFormat: ['HH:mm:ss'],
+  timeFormat: 'HH:mm:ss',
   dateTimeFormat: ['YYYY-MMM-DD, HH:mm:ss', 'YYYY-MMM-DD, HH:mm', 'LT', 'LTS'],
   monthFormat: 'YYYY-MM',
   weekFormat: 'YYYY-wo',
