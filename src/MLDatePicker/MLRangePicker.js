@@ -6,7 +6,7 @@ import { pickerPropsFromContext } from './utils'
 import classNames from 'classnames'
 const { RangePicker } = DatePicker
 
-const MLRangePicker = (props) => {
+const MLRangePicker = React.forwardRef((props, ref) => {
   return (
     <MLConfigContext.Consumer>
       {(context) => {
@@ -14,6 +14,7 @@ const MLRangePicker = (props) => {
         return (
           <RangePicker
             {...contextProps}
+            ref={ref}
             {...props}
             showTime={contextProps.showTime}
             className={classNames('ml-date-picker-range-picker', props.className)}
@@ -24,7 +25,7 @@ const MLRangePicker = (props) => {
       }}
     </MLConfigContext.Consumer>
   )
-}
+})
 
 MLRangePicker.defaultProps = {
   bordered: true,

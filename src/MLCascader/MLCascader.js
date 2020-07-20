@@ -69,4 +69,6 @@ MLCascader.propTypes = {
   onPopupVisibleChange: PropTypes.func,
 }
 
+MLCascader.displayName = 'MLCascader'
+
 export default MLCascader

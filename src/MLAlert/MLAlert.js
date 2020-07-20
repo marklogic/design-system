@@ -4,7 +4,7 @@ import { Alert } from 'antd'
 import { CheckCircleFilled, InfoCircleFilled, ExclamationCircleFilled, CloseCircleFilled } from '../MLIcon'
 import classNames from 'classnames'
 
-const MLAlert = (props) => {
+const MLAlert = React.forwardRef((props, ref) => {
   let icon
   if (props.type === 'success') {
     icon = <CheckCircleFilled />
@@ -19,11 +19,12 @@ const MLAlert = (props) => {
   return (
     <Alert
       icon={icon}
+      ref={ref}
       {...props}
       className={classNames('ml-alert', props.className)}
     />
   )
-}
+})
 
 MLAlert.defaultProps = {
   closable: false,
@@ -36,5 +37,7 @@ MLAlert.propTypes = {
   type: PropTypes.oneOf(['success', 'info', 'warning', 'error']),
   showIcon: PropTypes.bool,
 }
+
+MLAlert.displayName = 'MLAlert'
 
 export default MLAlert

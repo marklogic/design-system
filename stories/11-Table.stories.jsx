@@ -1,8 +1,9 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { MLTable, MLButton } from '@marklogic/design-system'
-import { withKnobs, radios } from '@storybook/addon-knobs'
+import { withKnobs, radios, boolean } from '@storybook/addon-knobs'
 import { sampleBasicData, sampleNestedData } from './11-Table.sample-data.js'
+import cloneDeep from 'lodash-es/cloneDeep'
 import mdx from './11-Table.mdx'
 
 export default {
@@ -20,33 +21,68 @@ export default {
 }
 
 export const basic = () => {
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const props = {
     size: radios('size', ['default', 'middle', 'small'], 'middle'),
     dataSource: sampleBasicData.dataSource,
     columns: sampleBasicData.columns,
     rowKey: 'key',
   }
+  if (draggableRows) {
+    props.columns = cloneDeep(props.columns)
+    removeKeyRecursively(props.columns, 'sorter')
+  }
   return (
     <div>
-      <MLTable {...props} onChange={action('onChange')} />
+      <MLTable
+        {...props}
+        key={draggableRows ? 'draggableRows-example' : 'non-draggable-example'}
+        onChange={action('onChange')}
+        rowKey='key'
+        draggableRows={draggableRows}
+      />
     </div>
   )
 }
 
+function removeKeyRecursively(obj, key) {
+  for (const prop in obj) {
+    if (prop === key) {
+      delete obj[prop]
+    } else if (typeof obj[prop] === 'object') {
+      removeKeyRecursively(obj[prop], key)
+    }
+  }
+}
+
 export const embeddedTables = () => {
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
+  const defaultShowEmbeddedTableBodies = boolean('defaultShowEmbeddedTableBodies', false)
   const props = {
     size: radios('size', ['default', 'middle', 'small'], 'middle'),
     dataSource: sampleNestedData.dataSource,
     columns: sampleNestedData.columns,
+    draggableRows,
+    defaultShowEmbeddedTableBodies,
+  }
+  if (draggableRows) {
+    props.columns = cloneDeep(props.columns)
+    removeKeyRecursively(props.columns, 'sorter')
   }
   // TODO: Handle onChange for nested tables, and figure out a way to differentiate the callback values
   return (
     <div>
       <MLTable
-        scroll={{
-          x: 1600,
-          y: 500,
-        }}
+        // scroll={{
+        //   x: 1600,
+        //   y: 500,
+        // }}
+        scroll={{ x: true }}
+        key={(
+          (draggableRows ? 'draggableRows-example' : 'non-draggable-example') +
+          (defaultShowEmbeddedTableBodies ? '-showbody-default-true' : '-showbody-default-false')
+        )}
+        rowKey='emp_no'
         {...props}
         onChange={action('onChange')}
       />
@@ -64,18 +100,19 @@ const dateSorter = extractSortColumnDecorator((a, b) => {
 
 export const rowNestedTable = () => {
   const size = radios('size', ['default', 'middle', 'small'], 'middle')
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const abColumns = [
     {
       title: 'A',
       dataIndex: 'a',
       key: 'a',
-      sorter: lessThanSorter('a'),
+      ...(draggableRows ? {} : { sorter: lessThanSorter('a') }),
     },
     {
       title: 'B',
       dataIndex: 'b',
       key: 'b',
-      sorter: lessThanSorter('b'),
+      ...(draggableRows ? {} : { sorter: lessThanSorter('b') }),
     },
   ]
   const expandedRowRender = (row) => (
@@ -86,6 +123,7 @@ export const rowNestedTable = () => {
       columns={abColumns}
       showHeader={true}
       size={size}
+      draggableRows={draggableRows}
     />
   )
   const dataSource = [
@@ -116,6 +154,7 @@ export const rowNestedTable = () => {
         dataSource={dataSource}
         columns={abColumns}
         expandedRowRender={expandedRowRender}
+        draggableRows={draggableRows}
       />
       <div style={{ display: 'none' }}>
         Below is the contents of the expandedRowRender prop function that is
@@ -129,18 +168,19 @@ export const rowNestedTable = () => {
 
 export const rowNestedTableWithButtons = () => {
   const size = radios('size', ['default', 'middle', 'small'], 'middle')
+  const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const abColumns = [
     {
       title: 'A',
       dataIndex: 'a',
       key: 'a',
-      sorter: lessThanSorter('a'),
+      ...(draggableRows ? {} : { sorter: lessThanSorter('a') }),
     },
     {
       title: 'B',
       dataIndex: 'b',
       key: 'b',
-      sorter: lessThanSorter('b'),
+      ...(draggableRows ? {} : { sorter: lessThanSorter('b') }),
     },
   ]
   const expandedRowRender = (row) => (
@@ -155,6 +195,7 @@ export const rowNestedTableWithButtons = () => {
         columns={abColumns}
         showHeader={true}
         size={size}
+        draggableRows={draggableRows}
       />
     </div>
   )
@@ -184,11 +225,13 @@ export const rowNestedTableWithButtons = () => {
         <MLButton>Example Button</MLButton>
       </div>
       <MLTable
+        key={draggableRows ? 'draggableRows-example' : 'non-draggable-example'}
         scroll={{ x: true }}
         size={size}
         dataSource={dataSource}
         columns={abColumns}
         expandedRowRender={expandedRowRender}
+        draggableRows={draggableRows}
       />
       <div style={{ display: 'none' }}>
         Below is the contents of the expandedRowRender prop function that is

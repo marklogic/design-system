@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { ConfigProvider } from 'antd'
 import classNames from 'classnames'
 
-const MLConfigProvider = (props) => {
+const MLConfigProvider = React.forwardRef((props, ref) => {
   return (
     <MLConfigContext.Provider
       value={{
@@ -16,6 +16,7 @@ const MLConfigProvider = (props) => {
     >
       {/* Include Ant's normal config values as well, for Ant components to use */}
       <ConfigProvider
+        ref={ref}
         {...props}
         className={classNames('ml-config-provider', props.className)}
       >
@@ -23,7 +24,7 @@ const MLConfigProvider = (props) => {
       </ConfigProvider>
     </MLConfigContext.Provider>
   )
-}
+})
 
 MLConfigProvider.defaultProps = {
   dateFormat: 'YYYY-MMM-DD',
@@ -42,5 +43,7 @@ MLConfigProvider.propTypes = {
 }
 
 export const MLConfigContext = React.createContext(MLConfigProvider.defaultProps)
+
+MLConfigProvider.displayName = 'MLConfigProvider'
 
 export default MLConfigProvider

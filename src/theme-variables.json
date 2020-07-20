@@ -4,7 +4,7 @@
   "highlight-color": "#7f86b5",
   "text-color": "#333333",
   "text-color-secondary": "#777777",
-  "text-color-highlight": "#7f86b5",
+  "text-selection-bg": "#7f86b580",
   "disabled-color": "#cccccc",
   "link-color": "#5B69AF",
   "link-hover-color": "#7f86b5",

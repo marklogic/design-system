@@ -38,4 +38,6 @@ MLBadge.propTypes = {
   title: PropTypes.string,
 }
 
+MLBadge.displayName = 'MLBadge'
+
 export default MLBadge

@@ -4,13 +4,14 @@ import { InputNumber } from 'antd'
 import MLSizeContext from '../MLConfigProvider/MLSizeContext'
 import classNames from 'classnames'
 
-const MLInputNumber = (props) => {
+const MLInputNumber = React.forwardRef((props, ref) => {
   return (
     <MLSizeContext.Consumer>
       {(contextSize) => {
         const size = contextSize || props.size
         return (
           <InputNumber
+            ref={ref}
             {...props}
             size={size}
             className={classNames('ml-input-number', props.className)}
@@ -21,7 +22,7 @@ const MLInputNumber = (props) => {
       }}
     </MLSizeContext.Consumer>
   )
-}
+})
 
 // propTypes is removed in production automatically, so we need to list them here for runtime use in MLEditableSlider
 MLInputNumber.propKeys = [
@@ -57,5 +58,7 @@ MLInputNumber.propTypes = {
   onChange: PropTypes.func,
   onPressEnter: PropTypes.func,
 }
+
+MLInputNumber.displayName = 'MLInputNumber'
 
 export default MLInputNumber
