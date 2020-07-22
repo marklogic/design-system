@@ -1,0 +1,27 @@
+import React from 'react'
+import { {{parentAntComponentName}} } from 'antd'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+const { {{childAntComponentName}} } = {{parentAntComponentName}}
+
+const ML{{childAntComponentName}} = React.forwardRef((props, ref) => {
+  return (
+    <{{childAntComponentName}}
+      ref={ref}
+      {...props}
+      className={classNames('ml-{{kebabCase parentAntComponentName}}-{{kebabCase childAntComponentName}}', props.className)}
+    >
+      {props.children}
+    </{{childAntComponentName}}>
+  )
+})
+
+ML{{childAntComponentName}}.defaultProps = {
+}
+
+ML{{childAntComponentName}}.propTypes = {
+}
+
+ML{{childAntComponentName}}.displayName = 'ML{{parentAntComponentName}}.ML{{childAntComponentName}}'
+
+export default ML{{childAntComponentName}}
