@@ -1,3 +1,14 @@
+/** Usage:
+ *  0. `yarn global add plop` or `npm install -g plop`
+ *  1a. Just run "plop" and type in the arguments as prompted
+ *  1b. or, pass in the arguments as space-separate command line arguments:
+ *    plop component  4 "General" MLTypography "MLText MLTitle MLParagraph"
+ *    - 4 corresponds to UX-4
+ *    - "General" Corresponds to the category the Ant component is in on the Ant documentation sidebar
+ *    - MLTypography is the name of the main component
+ *    - "MLText MLTitle MLParagraph" is the name of all child components (eg MLTypography.MLText)
+ */
+
 module.exports = function (plop) {
   // component generator
   plop.setGenerator('component', {
