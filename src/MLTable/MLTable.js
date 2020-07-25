@@ -288,6 +288,7 @@ class MLTable extends React.Component {
             // onChange={(e) => this.handleEmbeddedTableChange(e, restructuredColumn, record)}
           />
         )
+        restructuredColumn.width = (this.state.columnExpandedStates[originalColumn.dataIndex] ? originalColumn.expandedWidth : originalColumn.width)
       }
       return restructuredColumn
     })

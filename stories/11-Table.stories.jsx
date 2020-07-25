@@ -73,11 +73,11 @@ export const embeddedTables = () => {
   return (
     <div>
       <MLTable
-        // scroll={{
-        //   x: 1600,
-        //   y: 500,
-        // }}
-        scroll={{ x: true }}
+        scroll={{
+          x: 1200,
+          y: 500,
+        }}
+        // scroll={{ x: true }}
         key={(
           (draggableRows ? 'draggableRows-example' : 'non-draggable-example') +
           (defaultShowEmbeddedTableBodies ? '-showbody-default-true' : '-showbody-default-false')
