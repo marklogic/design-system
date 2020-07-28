@@ -45,6 +45,21 @@ export const basic = () => {
   )
 }
 
+export const noData = () => {
+  const props = {
+    size: radios('size', ['default', 'middle', 'small'], 'middle'),
+    dataSource: undefined,
+    columns: sampleBasicData.columns,
+  }
+  return (
+    <div>
+      <MLTable
+        {...props}
+      />
+    </div>
+  )
+}
+
 function removeKeyRecursively(obj, key) {
   for (const prop in obj) {
     if (prop === key) {

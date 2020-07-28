@@ -157,6 +157,9 @@ class MLTable extends React.Component {
   }
 
   restructureData (dataSource) {
+    if (!dataSource) {
+      return dataSource
+    }
     // TODO: Might restructure more things here; for now just wrap objects in arrays
     const restructuredData = (Array.isArray(dataSource) ? dataSource : [dataSource]).map((row) => {
       const restructuredRow = {}
@@ -169,6 +172,9 @@ class MLTable extends React.Component {
   }
 
   reorderData (dataSource) {
+    if (!dataSource) {
+      return dataSource
+    }
     if (!this.props.draggableRows) {
       return dataSource
     }
@@ -295,7 +301,7 @@ class MLTable extends React.Component {
     const restructuredData = this.reorderData(this.restructureData(dataSource))
 
     // Determine how to modify the expand icon based on children and nested tables
-    const hasTreeData = restructuredData.some((row) => (row.children !== undefined))
+    const hasTreeData = restructuredData && restructuredData.some((row) => (row.children !== undefined))
     const hasNestedTables = (this.props.expandedRowRender !== undefined)
 
     const restructuredExpandIcon = ({ expanded, onExpand, record }) => {
