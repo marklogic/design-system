@@ -304,10 +304,21 @@ class MLTable extends React.Component {
         return null
       }
       const showIcon = record.children || hasNestedTables
+
+      let testId = 'mltable-expand'
+      if (record.hasOwnProperty('entityName')) {
+        let parseText = record['entityName'].split(',')
+        let entityName = parseText[0]
+        testId = `mltable-expand-${entityName}`
+      } else if (record.hasOwnProperty('propertyName')) {
+        testId = `mltable-expand-${record['propertyName']}`
+      }
+
       return (
         <div
-          style={{ cursor: showIcon ? 'pointer' : 'inherit', width: '20px', display: 'inline-block' }}
-          // className='ant-table-row-expand-icon ant-table-row-expand-icon-spaced'
+          style={{ cursor: showIcon ? 'pointer' : 'inherit', display: 'inline-block' }}
+          className={expanded && 'expand-fix' }
+          data-testid={testId}
         >
           {!showIcon ? null : (
             expanded ? (
