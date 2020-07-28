@@ -82,6 +82,10 @@ npm run storybook
 Storybook: localhost:6006
 ```
 
+## Updating the storyshots
+
+When you've made changes to components, you should update their storyshots with `yarn run test -u`, and, after inspecting the changes it generates for correctness, commit these changes. This way, `yarn run test` can be used to check for unexpected changes in how components render.
+
 ## Publishing static version of Storybook
 ```
 # Build Storybook
