@@ -1403,7 +1403,8 @@ exports[`Storyshots Data Display/MLTable Row Nested Table 1`] = `
                         class="ant-table-row-expand-icon-cell"
                       >
                         <div
-                          style="cursor:pointer;width:20px;display:inline-block"
+                          data-testid="mltable-expand"
+                          style="cursor:pointer;display:inline-block"
                         >
                           <span
                             aria-label="right"
@@ -1447,7 +1448,8 @@ exports[`Storyshots Data Display/MLTable Row Nested Table 1`] = `
                         class="ant-table-row-expand-icon-cell"
                       >
                         <div
-                          style="cursor:pointer;width:20px;display:inline-block"
+                          data-testid="mltable-expand"
+                          style="cursor:pointer;display:inline-block"
                         >
                           <span
                             aria-label="right"
@@ -1905,7 +1907,8 @@ exports[`Storyshots Data Display/MLTable Row Nested Table With Buttons 1`] = `
                         class="ant-table-row-expand-icon-cell"
                       >
                         <div
-                          style="cursor:pointer;width:20px;display:inline-block"
+                          data-testid="mltable-expand"
+                          style="cursor:pointer;display:inline-block"
                         >
                           <span
                             aria-label="right"
@@ -1949,7 +1952,8 @@ exports[`Storyshots Data Display/MLTable Row Nested Table With Buttons 1`] = `
                         class="ant-table-row-expand-icon-cell"
                       >
                         <div
-                          style="cursor:pointer;width:20px;display:inline-block"
+                          data-testid="mltable-expand"
+                          style="cursor:pointer;display:inline-block"
                         >
                           <span
                             aria-label="right"
@@ -2405,7 +2409,8 @@ exports[`Storyshots Data Display/MLTable Tree Data 1`] = `
                           style="padding-left:0px"
                         />
                         <div
-                          style="cursor:inherit;width:20px;display:inline-block"
+                          data-testid="mltable-expand"
+                          style="cursor:inherit;display:inline-block"
                         />
                         1
                       </td>
@@ -2427,7 +2432,8 @@ exports[`Storyshots Data Display/MLTable Tree Data 1`] = `
                           style="padding-left:0px"
                         />
                         <div
-                          style="cursor:pointer;width:20px;display:inline-block"
+                          data-testid="mltable-expand"
+                          style="cursor:pointer;display:inline-block"
                         >
                           <span
                             aria-label="right"
@@ -2471,7 +2477,8 @@ exports[`Storyshots Data Display/MLTable Tree Data 1`] = `
                           style="padding-left:0px"
                         />
                         <div
-                          style="cursor:inherit;width:20px;display:inline-block"
+                          data-testid="mltable-expand"
+                          style="cursor:inherit;display:inline-block"
                         />
                         7
                       </td>
