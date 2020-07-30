@@ -13,6 +13,58 @@ There's nothing here yet.
 
 There's nothing here yet.
 
+## Usage Guidelines
+Use modal to get user's input. Modal creates a mode that disables the main window but keeps it visible with the modal window as a child window in front of it. 
+* Background color behind modal: #C4C4C4 50% Opacity
+* Close icon: Ant CloseOutlined 20 X 20
+* Buttons: Bottom right corner
+
+<img src="images/modal_input.png" width="600">
+
+Use Modal for to communicate to the user confirmation/success or error messages without leaving the main page.
+
+<img src="images/modal_error.png" width="600">
+<img src="images/modal_confirm.png" width="400">
+<img src="images/modal_success.png" width="400">
+
+* The name of the action button should be the action, like Save, as opposed to just OK.
+* If asking a yes/no question, the buttons should be No and Yes.
+* If the dialog is simply giving information, or just showing the (readonly) details of an object, there should be one button, Close.
+
+Use "Add" button to open Add modal, place it in the right corner above the element. Use "Cancel" and "Add" buttons at the bottom of the Add Modal to save or cancel your changes.
+
+<img src="images/add_element.png" width="600">
+
+## Text Guidelines
+* Use the same text for the modal title and the button that launched it. In the following examples, the titles **Delete Object** would be launched by a button labeled **Delete** and **Create Object** by a button labeled **Create**.
+* Use plain language to convey what users must do to proceed.
+* For the button label use **Yes** or an explicit verb for the affirmative answer such as **Add**.
+
+![Modal delete object](images/modal_deleteobject.png)
+![Modal create object](images/modal_create_object.png)
+
+### Page/Modal Titles and Subtitles
+Page title should be place in the top left corner of each page. It should concisely describe what the page is:
+
+<img src="images/modal_page_title.png" width="600">
+
+Page subtitle (optional). In some cases we use a combination of title and subtitle to provide enough context to the user:
+
+<img src="images/modal_subtitle.png" width="600">
+
+### Field Labels 
+* Do not capitalize all letters.
+* Use title case for phrases. Do not use punctuation for phrases. 
+* Use  sentence case if the text is a complete sentence
+* Avoid "number of." Use precise terms to make it clear that the table cell value will be a number.
+  * **Bad**: Number of documents to process
+  * **Good**: Batch Size
+* Avoid question marks.
+  * **Bad**: Thread Count?
+  * **Good**: Thread Count
+* Use short, precise terms whenever possible.
+* Use parallel structure when listing radios or check box options. If all options have the same introductory text, move that text to the group label.
+
 <PropsPanels of={[
   MLModal,
   MLModal.MLDraggableModalProvider,
