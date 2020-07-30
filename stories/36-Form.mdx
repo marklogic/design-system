@@ -13,6 +13,103 @@ There's nothing here yet.
 
 There's nothing here yet.
 
+## Usage Guidelines
+### Horizontal Usage
+* default use
+
+### Inline Layout
+* can be used if placed in header or space is a constraint
+
+### Verticle Layout 
+* can be used if horizontal space is limited
+
+### Password Hints
+
+![Password collapse](images/password_collapsed.png)
+![Password expand](images/password_expanded.png)
+
+### Inline Help
+#### Form Field Tooltips
+Use help icon, place it to the right of the form field:
+
+![Form field tooltip](images/form_field_tooltip.png)
+
+#### Info Popovers
+Use help icon, place it to the right of the heading/text:
+
+<img src="images/info_popover.png" width="500">
+
+### Input Fields
+If an input field has no default value, it should include placeholder text, of the form "Enter ...".
+
+![Input placeholder text](images/input_placeholder.png)
+
+### Errors
+Any errors should use the error color from our [color pallet](http://marklogic-ui-component-library.eng.marklogic.com/?path=/story/styles--color-palette).
+
+#### Form Field Error
+Highlight input field in error color, place error text below the field:
+
+![Form field error](images/form_field_error.png)
+
+If the error is a missing required field, the text should be `<fieldname> is required`.
+
+#### Form field error with limited space (for example, inside a table cell)
+Use error icon inside the field with error text on mouse-over:  
+
+![Form field error small](images/form_field_error_small.png)
+
+### Handling Required Fields 
+If a form has one or more required fields, DO NOT disable the Save (or equivalent) button if they are empty. Instead, display an error message as described above when the user hits Save.
+
+### Read-Only Forms
+* Do not show inputs
+* Show field values in bold text
+* Remove <img src="images/help.png" width="20"> icons if they contain instructions how to fill in the form, keep <img src="images/help.png" width="20"> icons if they provide helpful content about the fields.
+
+## Text Guidelines
+Use [Sentence case](https://elementary.io/docs/human-interface-guidelines#capitalization) for explanatory or instructional test.
+For field labels:
+* Do not capitalize all letters.
+* Use [Title Case](https://elementary.io/docs/human-interface-guidelines#capitalization) for phrases. Do not use punctuation for phrases. 
+Examples:
+
+  **Bad**
+
+  <img src="images/form_bad.png" width="500">
+
+  **Good**
+
+  ![Form good](images/form_good.png)
+  
+* Use  [Sentence case](https://elementary.io/docs/human-interface-guidelines#capitalization) if the text is a complete sentence
+* Avoid "number of." Use precise terms to make it clear that the table cell value will be a number. Examples:
+  * **Bad**: Number of documents to process
+  * **Good**: Batch Size
+* Avoid question marks. Examples:
+  * **Bad**: Thread Count?
+  * **Good**: Thread Count
+* Use short, precise terms whenever possible.
+* Use [parallel structure](https://owl.purdue.edu/owl/general_writing/mechanics/parallel_structure.html) when listing radios or check box options. If all options have the same introductory text, move that text to the group label.
+
+Examples:
+
+**Bad**
+
+  Search:
+  - [ ] When searching an indexed database include company owner
+  - [ ] When searching an indexed database include company name
+  - [ ] When searching an indexed database include industry name
+  
+ **Good**
+ 
+   When searching an indexed database, include:
+  - [ ] Company Name
+  - [ ] Company Owner
+  - [ ] Industry Name
+
+
+
 <PropsPanels of={[
   MLForm,
   MLForm.MLItem,
