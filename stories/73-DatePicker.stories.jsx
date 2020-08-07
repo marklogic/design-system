@@ -38,7 +38,6 @@ export const datePicker = () => {
       middle: 'middle',
       large: 'large',
     }, 'small'),
-    bordered: boolean('bordered', true),
     autoFocus: boolean('autoFocus', false),
     disabled: boolean('disabled', false),
     disabledDate: select('disabledDate', {
@@ -70,7 +69,6 @@ export const rangePicker = () => {
       middle: 'middle',
       large: 'large',
     }, 'small'),
-    bordered: boolean('bordered', true),
     autoFocus: boolean('autoFocus', false),
     disabled: boolean('disabled', false),
     disabledDate: select('disabledDate', {

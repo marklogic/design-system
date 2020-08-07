@@ -1,0 +1,10 @@
+import ML{{parentAntComponentName}} from './ML{{parentAntComponentName}}'
+{{#each childAntComponentNames}}
+import ML{{this}} from './ML{{this}}'
+{{/each}}
+
+{{#each childAntComponentNames}}
+ML{{../parentAntComponentName}}.ML{{this}} = ML{{this}}
+{{/each}}
+
+export default ML{{parentAntComponentName}}

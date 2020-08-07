@@ -2,7 +2,7 @@
   "author": "MarkLogic",
   "name": "@marklogic/design-system",
   "description": "MarkLogic Engineering UX design system",
-  "version": "0.2.2",
+  "version": "1.0.4",
   "license": "Apache-2.0",
   "repository": "http://github.com/marklogic/design-system",
   "main": "lib/index.js",

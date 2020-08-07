@@ -1,0 +1,24 @@
+import React from 'react'
+import { action } from '@storybook/addon-actions'
+import { withKnobs } from '@storybook/addon-knobs'
+import { ML{{parentAntComponentName}} } from '@marklogic/design-system'
+import mdx from './{{issueNumber}}-{{parentAntComponentName}}.mdx'
+
+export default {
+  title: '{{componentCategory}}/ML{{parentAntComponentName}}',
+  decorators: [withKnobs],
+  parameters: {
+    docs: {
+      page: mdx,
+    },
+    info: {
+      text: 'Component description goes here',
+    },
+  },
+}
+
+export const basic = () => {
+  return (
+    <ML{{parentAntComponentName}} />
+  )
+}

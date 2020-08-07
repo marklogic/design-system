@@ -9,6 +9,14 @@ addSerializer(createSerializer())
 
 Enzyme.configure({ adapter: new Adapter() })
 
+// Mock out dates
+const DATE_TO_USE = new Date('2020')
+const _Date = Date
+global.Date = jest.fn(() => DATE_TO_USE)
+global.Date.UTC = _Date.UTC
+global.Date.parse = _Date.parse
+global.Date.now = _Date.now
+
 initStoryshots({
   snapshotSerializers: [createSerializer()],
   test: multiSnapshotWithOptions({

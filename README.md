@@ -50,10 +50,25 @@ cd playground; yarn run start
 # Playground should be running at http://localhost:3000
 
 ```
-- Add new components in the root/src folder
-- Add CSS to root/src/styles.scss file
-- Import/Export component in root/src/index.js
-- Create Stories for the component in the root/stories folder
+
+### Generate a new component with Plop.js:
+Install plop: `yarn global add plop` or `npm install -g plop`
+Then run the generator in one of two ways:
+
+a. Just run "plop" and type in the arguments as prompted
+
+b. or, pass in the arguments as space-separate command line arguments, eg:
+  `plop component  4 "General" MLTypography "MLText MLTitle MLParagraph"`
+  - 4 corresponds to UX-4
+  - "General" Corresponds to the category the Ant component is in on the Ant documentation sidebar
+  - MLTypography is the name of the main component
+  - "MLText MLTitle MLParagraph" is the name of all child components (eg MLTypography.MLText)
+  
+This will generate:
+  - The component folder, with its JS and Less files in `src/`
+  - The Story file (jsx) and its documentation file (mdx) in `stories/`
+
+Then, once it's been generated, add an entry to `src/index.js` to export the component.
 
 ## Viewing UI Components
 This repo uses Storybook to view components and provide usage guidelines and API documentation
@@ -66,6 +81,10 @@ npm run storybook
 
 Storybook: localhost:6006
 ```
+
+## Updating the storyshots
+
+When you've made changes to components, you should update their storyshots with `yarn run test -u`, and, after inspecting the changes it generates for correctness, commit these changes. This way, `yarn run test` can be used to check for unexpected changes in how components render.
 
 ## Publishing static version of Storybook
 ```
