@@ -25,6 +25,42 @@ There's nothing here yet.
 
 There's nothing here yet.
 
+## Usage Guidelines
+### Inline Help
+Use help icon, place it to the right of the form field:
+
+![Inline help](images/form_field_tooltip.png)
+
+### Default Value 
+If an input field has no default value, it should include placeholder text, of the form "Enter ...".
+
+![Input placeholder](images/input_placeholder.png)
+
+### Errors
+Any errors using Red should use the error color from the [color pallet](http://marklogic-ui-component-library.eng.marklogic.com/?path=/story/styles--color-palette).
+
+#### Form Field Error
+Highlight input field in error color, place error text below the field:
+
+<img src="images/form_field_error.png" width="500"/>
+
+If the error is a missing required field, the text should be `"<fieldname> is required"`.
+
+#### Form Field Error with Limited Space (For Example, Inside a Table Cell)
+Use error icon inside the field with error text on mouse-over:    
+
+<img src="images/form_field_error_small.png" width="400"/>
+
+## Text Guidelines
+For field labels:
+* Do not capitalize all letters.
+* Use [Title Case](https://elementary.io/docs/human-interface-guidelines#capitalization) for phrases. Do not use punctuation for phrases. 
+
+For select options:
+* Use [Title Case](https://elementary.io/docs/human-interface-guidelines#capitalization).
+* Avoid punctuation.
+* Use short, precise terms.
+
 <PropsPanels of={[
   MLInput,
   MLInput.MLGroup,
