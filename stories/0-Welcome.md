@@ -1,4 +1,4 @@
-# Welcome to the MarkLogic Design System Storybook
+# Introduction to the MarkLogic Design System Storybook
 
 This StoryBook contains demos of the components found in the `@marklogic/design-system` library, along with the source code you can copy in order to use them. Some slight code modifications may be necessary (see below for Gotchas), but it should be a good guideline.
 
