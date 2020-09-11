@@ -312,10 +312,14 @@ class MLTable extends React.Component {
       const showIcon = record.children || hasNestedTables
 
       let testId = 'mltable-expand'
+      let isEntityTypeTable = false;
+
       if (record.hasOwnProperty('entityName') && typeof record['entityName'] === 'string') {
         let parseText = record['entityName'].split(',')
         let entityName = parseText[0]
         testId = `mltable-expand-${entityName}`
+        isEntityTypeTable = true;
+
       } else if (record.hasOwnProperty('propertyName') && typeof record['propertyName'] === 'string') {
         testId = `mltable-expand-${record['propertyName']}`
       }
@@ -323,7 +327,7 @@ class MLTable extends React.Component {
       return (
         <div
           style={{ cursor: showIcon ? 'pointer' : 'inherit', display: 'inline-block' }}
-          className={expanded ? 'expand-fix' : '' }
+          className={expanded && isEntityTypeTable ? 'expand-fix' : '' }
           data-testid={testId}
         >
           {!showIcon ? null : (
