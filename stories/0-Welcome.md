@@ -133,12 +133,12 @@ Use title case for the Admin Interface, the tool that runs on port 8001. Example
 * **Bad**: Admin UI
 * **Good**: Admin Interface
 
-Dropdown versus pulldown: Dropdown is the proper name in the Ant framework. See the [dropdown](http://marklogic-ui-component-library.eng.marklogic.com/?path=/docs/navigation-mldropdown--basic) component documentation for text guidelines.
+Dropdown versus pulldown: We refer to this component as drop-down list/menu or pull-down list/menu. See the [dropdown](http://marklogic-ui-component-library.eng.marklogic.com/?path=/docs/navigation-mldropdown--basic) component documentation for text guidelines.
 
-Checkbox examples:
-* **Bad**: Check box or check-box
-* **Good**: Checkbox
-* Note: Checkboxes are selected, not clicked. Use select and unselect when referring to check boxes.
+Check box examples:
+* **Bad**: checkbox or check-box
+* **Good**: check box
+* Note: Check boxes are selected, not clicked. Use select and unselect when referring to check boxes.
 
 Use "allow" and "enable" correctly. Enable refers to capability while allow refers to granting permission. Examples:
 * MarkLogic products enable data integration.
@@ -194,6 +194,7 @@ Only use these approved abbreviations:
 * TB for Terabytes
 * URI for Uniform Resource Identifier              
 * URI for Uniform Resource Identifier [Across app]
+* VNET for Azure Virtual Network
 * VPC for Virtual Private Cloud
 
 Only use these approved acronyms:
@@ -268,6 +269,10 @@ Use semicolons:
   * Requirements might also include: Enriching data by iteratively processing, identifying, and tagging references within the data; transforming properties, modeling relationships between entities using triples; mastering your data to match and merge duplicates
   
 #### Ellipsis 
+
+End phrases with an ellipsis (…) if asking users to wait for something to load or change.
+* Example: Please wait. Getting your network status….”
+
 Use the ellipsis character (…) to inform users that:
 * The entire string is available by drilling down or some other action that users can take within the UI.
 * Text has been truncated.
