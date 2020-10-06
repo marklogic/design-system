@@ -43,6 +43,11 @@ Avoid "number of" in table cells. Simply list the number.
 
 When there is no content, show a message of this form: `"There are currently no <data type>."`
 
+### Empty Values in Table
+* “none”: Use this when there could be a value, but there isn’t.
+* “-”: Just like “none” only use it when you have a large and busy table, and extra words would make the table seem more complex and busy.
+* “n/a”: Use this when there will never be a value for this. For example, if you had a table of animals and the column was “average number of eggs laid”, it would be “n/a” for all mammals.
+
 <PropsPanels of={[
   MLTable,
 ]} />
