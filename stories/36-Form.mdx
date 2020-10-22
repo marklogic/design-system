@@ -64,9 +64,15 @@ Use error icon inside the field with error text on mouse-over:
 If a form has one or more required fields, DO NOT disable the Save (or equivalent) button if they are empty. Instead, display an error message as described above when the user hits Save.
 
 ### Read-Only Forms
+When the user doesn’t have permission to edit something, deal with displaying the edit form as follows:
 * Do not show inputs
 * Show field values in bold text
 * Remove <img src="images/help.png" width="20" /> icons if they contain instructions how to fill in the form, keep <img src="images/help.png" width="20" /> icons if they provide helpful content about the fields.
+* "Close Button" will be right-aligned with "info icon."
+* "info icon" should be 56 pixels from the longest sentence and all other info icons will right aligned with it.
+* When you don't know the exact permissions/roles needed use "*Additional permissions required to edit" as guided text at the bottom of the page or card. 
+
+![Alternative Text](images/readonlyform.png)
 
 ## Text Guidelines
 Use [Sentence case](https://elementary.io/docs/human-interface-guidelines#capitalization) for explanatory or instructional test.
