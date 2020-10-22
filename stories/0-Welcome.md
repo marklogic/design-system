@@ -174,6 +174,16 @@ Use dynamic help text for instructions about a specific field. Guidelines:
   * **Bad**: You can customize your dashboard by finding the master list of commands and then typing the proper commands on the command line. If you receive an error, such as 1*&^099, refer to the master list of commands for the proper syntax. 
   * **Good**: You can customize your dashboard with column sorting, column configuring, and searching and filtering.
 
+#### Hint Text Message
+  * When a whole page or card is read-only, need to provide the user with an explanation.
+  * There are two ways to word the text, depending on the situation. 
+  * When you know the exact permissions/roles needed use  "*<name of the permission> permission required to edit" as guided text at the bottom of the page or card. 
+
+
+<img src="images/form.png" width="500"/>
+<img src="images/cardview.png" width="200"/>
+  
+
 ### Abbreviations and Acronyms
 Only use these approved abbreviations:
 * ARN for Amazon Resource Name                  
