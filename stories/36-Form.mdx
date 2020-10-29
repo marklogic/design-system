@@ -64,9 +64,26 @@ Use error icon inside the field with error text on mouse-over:
 If a form has one or more required fields, DO NOT disable the Save (or equivalent) button if they are empty. Instead, display an error message as described above when the user hits Save.
 
 ### Read-Only Forms
+When entire form is read-only and the user doesn’t have permission to edit something, deal with displaying the edit form as follows:
 * Do not show inputs
 * Show field values in bold text
 * Remove <img src="images/help.png" width="20" /> icons if they contain instructions how to fill in the form, keep <img src="images/help.png" width="20" /> icons if they provide helpful content about the fields.
+* "Close Button" should be right-aligned with "info icon."
+* The "info" icon, if provided for the field, should be 56 pixels to the right of the longest field value, and all other info icons should center-aligned with it.
+* The text telling the user why they can't edit is at the bottom <position?>
+* The exact text shown should follow the [Hints about Permission](http://marklogic-ui-component-library.eng.marklogic.com/?path=/docs/welcome--to-storybook) guideline.
+
+<img src="images/Read-Only_Form.png" width="500" />
+
+### Readonly Fields within Editable Forms
+When an editable form has some fields that are not editable:
+* The field should be disabled.
+* Provide hover text  to explain why the field isn't editable.
+  * If because of permissions, see the [Hints about Permission](http://marklogic-ui-component-library.eng.marklogic.com/?path=/docs/welcome--to-storybook#hints) for the appropriate text to use.
+  * If for some other reason, state the reason.
+
+<img src="images/Read-only_Field_With_Permission_Message.png" width="500" />
+<img src="images/Read-only_Field_With_Specific_Permission_Message.png" width="500" />
 
 ## Text Guidelines
 Use [Sentence case](https://elementary.io/docs/human-interface-guidelines#capitalization) for explanatory or instructional test.
