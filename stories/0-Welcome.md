@@ -173,6 +173,22 @@ Use dynamic help text for instructions about a specific field. Guidelines:
 * Write short, direct, informative, and grammatically correct text. Avoid jargon and include proper punctuation and consistent capitalization. Examples:
   * **Bad**: You can customize your dashboard by finding the master list of commands and then typing the proper commands on the command line. If you receive an error, such as 1*&^099, refer to the master list of commands for the proper syntax. 
   * **Good**: You can customize your dashboard with column sorting, column configuring, and searching and filtering.
+  
+#### Hints about Permissions
+There are 4 places where we need to provide messages to tell users they do not have permission:
+* Disabled buttons, as described in the [Button Spec](http://marklogic-ui-component-library.eng.marklogic.com/?path=/docs/general-mlbutton--basic#disabled-button).
+* Disabled fields, as described in the [Form Spec](http://marklogic-ui-component-library.eng.marklogic.com/?path=/docs/data-entry-mlform--basic).
+* When a whole form is readonly, as described in the [Form Spec](http://marklogic-ui-component-library.eng.marklogic.com/?path=/docs/data-entry-mlform--basic#read-only-fields-within-editable-forms). 
+* When the functions on a card are not available, as described in the [Card Spec](http://marklogic-ui-component-library.eng.marklogic.com/?path=/docs/data-display-mlcard--with-actions-and-meta#functionality-not-available).
+
+There are two ways to word the text, depending on the situation.
+* When the exact permissions/roles needed are relevant to the user, use "<name of the permission> permission required to <the operation>".
+* When the exact permissions/roles needed are not really needed to be exposed to the expected user, use "additional permissions are required to <the operation>".
+
+The location of the text depends on which of the 4 places the text is found. See the appropriate spec linked above for location information.
+  
+<img src="images/Permission_Text_Example_1.png" width="500" />
+<img src="images/Permission_Text_Example_2.png" width="300" />
 
 ### Abbreviations and Acronyms
 Only use these approved abbreviations:
