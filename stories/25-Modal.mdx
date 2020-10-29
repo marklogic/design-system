@@ -35,6 +35,16 @@ Use "Add" button to open Add modal, place it in the right corner above the eleme
 
 <img src="images/add_element.png" width="600" />
 
+### Warning Modal for Rendering Large Files
+
+If the UI is rendering a file greater than 5MB, this warning modal pops up on the page:
+* Header should have warning icon in warning color, and say "Large File Size" 
+* The body text should say: "The document you are trying to view is large (_insert document size here, if possible_) and may take some time to load. _new line_ Do you wish to continue?"
+* 'Continue' should be a primary button
+* 'Go Back' should be a secondary button 
+
+<img src="images/Large_File_Warning.png" width="700" />
+
 ## Text Guidelines
 * Use the same text for the modal title and the button that launched it. In the following examples, the titles **Delete Object** would be launched by a button labeled **Delete** and **Create Object** by a button labeled **Create**.
 * Use plain language to convey what users must do to proceed.
