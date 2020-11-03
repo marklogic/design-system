@@ -9,7 +9,7 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 import mdx from './13-Header.mdx'
 
 export default {
-  title: 'Navigation/MLHeader',
+  title: 'Header',
   component: MLHeader,
   decorators: [withKnobs],
   description: 'Unlike the other components in this library, this component is not based on any Ant component.',
