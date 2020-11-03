@@ -7,7 +7,7 @@ import cloneDeep from 'lodash-es/cloneDeep'
 import mdx from './11-Table.mdx'
 
 export default {
-  title: 'Data Display/MLTable',
+  title: 'Table',
   decorators: [withKnobs],
   parameters: {
     fileName: '11-Table.stories.jsx',
