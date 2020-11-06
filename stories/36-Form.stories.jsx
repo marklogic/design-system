@@ -38,7 +38,7 @@ import {
 } from 'antd'
 
 export default {
-  title: 'Data Entry/MLForm',
+  title: 'Form',
   decorators: [withKnobs],
   parameters: {
     docs: {
