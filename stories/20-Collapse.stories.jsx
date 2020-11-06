@@ -8,7 +8,7 @@ import mdx from './20-Collapse.mdx'
 const { MLPanel } = MLCollapse
 
 export default {
-  title: 'Data Display/MLCollapse',
+  title: 'Collapse (Expand)',
   decorators: [withKnobs],
   parameters: {
     fileName: '20-Collapse.stories.jsx',
