@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import mdx from './29-Grid.mdx'
 
 export default {
-  title: 'Layout/Grid (MLRow and MLCol)',
+  title: 'Grid (Row and Col)',
   decorators: [withKnobs],
   parameters: {
     fileName: '29-Grid.stories.jsx',
