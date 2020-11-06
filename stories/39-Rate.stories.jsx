@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import mdx from './39-Rate.mdx'
 
 export default {
-  title: 'Data Entry/MLRate',
+  title: 'Rate',
   decorators: [withKnobs],
   parameters: {
     fileName: '39-Rate.stories.jsx',
