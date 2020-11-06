@@ -5,7 +5,7 @@ import { MLAffix, MLButton } from '@marklogic/design-system'
 import mdx from './30-Affix.mdx'
 
 export default {
-  title: 'Navigation/MLAffix',
+  title: 'Affix (Anchor)',
   decorators: [withKnobs],
   parameters: {
     docs: {
