@@ -6,7 +6,7 @@ import './49-Carousel.less'
 import mdx from './49-Carousel.mdx'
 
 export default {
-  title: 'Data Display/MLCarousel',
+  title: 'Carousel',
   decorators: [withKnobs],
   parameters: {
     fileName: '49-Carousel.stories.jsx',
