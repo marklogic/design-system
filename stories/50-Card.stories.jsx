@@ -13,7 +13,7 @@ import { withKnobs, radios, text, boolean } from '@storybook/addon-knobs'
 import mdx from './50-Card.mdx'
 
 export default {
-  title: 'Data Display/MLCard',
+  title: 'Card',
   decorators: [withKnobs],
   parameters: {
     fileName: '50-Card.stories.jsx',
