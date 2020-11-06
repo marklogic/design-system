@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import mdx from './27-Spin.mdx'
 
 export default {
-  title: 'Feedback/MLSpin',
+  title: 'Spin (Loading)',
   decorators: [withKnobs],
   parameters: {
     fileName: '27-Spin.stories.jsx',
