@@ -8,7 +8,7 @@ import SettingOutlined from '../src/MLIcon/SettingOutlined'
 import mdx from './16-Menu.mdx'
 
 export default {
-  title: 'Navigation/MLMenu',
+  title: 'MLMenu',
   decorators: [withKnobs],
   parameters: {
     fileName: '16-Menu.stories.jsx',
