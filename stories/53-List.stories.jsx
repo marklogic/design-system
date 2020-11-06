@@ -11,7 +11,7 @@ import {
 const MLText = MLTypography.Text
 
 export default {
-  title: 'Data Display/MLList',
+  title: 'List',
   decorators: [withKnobs],
   parameters: {
     fileName: '53-List.stories.jsx',
