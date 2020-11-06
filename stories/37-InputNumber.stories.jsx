@@ -5,7 +5,7 @@ import { MLInputNumber } from '@marklogic/design-system'
 import mdx from './37-InputNumber.mdx'
 
 export default {
-  title: 'Data Entry/MLInputNumber',
+  title: 'InputNumber',
   decorators: [withKnobs],
   parameters: {
     fileName: '37-InputNumber.stories.jsx',
