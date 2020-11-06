@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import mdx from './33-AutoComplete.mdx'
 
 export default {
-  title: 'Data Entry/MLAutoComplete',
+  title: 'AutoComplete',
   decorators: [withKnobs],
   parameters: {
     fileName: '33-AutoComplete.stories.jsx',
