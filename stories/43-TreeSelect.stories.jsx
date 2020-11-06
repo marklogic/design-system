@@ -5,7 +5,7 @@ import { MLTreeSelect } from '@marklogic/design-system'
 import mdx from './43-TreeSelect.mdx'
 
 export default {
-  title: 'Data Entry/MLTreeSelect',
+  title: 'TreeSelect',
   decorators: [withKnobs],
   parameters: {
     docs: {
