@@ -4,7 +4,7 @@ import { text, withKnobs } from '@storybook/addon-knobs'
 import mdx from './18-Avatar.mdx'
 
 export default {
-  title: 'Data Display/MLAvatar',
+  title: 'MLAvatar',
   component: MLAvatar,
   decorators: [withKnobs],
   parameters: {
