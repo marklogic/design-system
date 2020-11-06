@@ -5,7 +5,7 @@ import { MLSlider } from '@marklogic/design-system'
 import mdx from './42-Slider.mdx'
 
 export default {
-  title: 'Data Entry/MLSlider',
+  title: 'Slider',
   decorators: [withKnobs],
   parameters: {
     fileName: '42-Slider.stories.jsx',
