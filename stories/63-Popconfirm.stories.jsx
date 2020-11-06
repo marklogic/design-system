@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import mdx from './63-Popconfirm.mdx'
 
 export default {
-  title: 'Feedback/MLPopconfirm',
+  title: 'Popconfirm',
   decorators: [withKnobs],
   parameters: {
     fileName: '63-Popconfirm.stories.jsx',
