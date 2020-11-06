@@ -6,7 +6,7 @@ import './54-Popover.less'
 import mdx from './54-Popover.mdx'
 
 export default {
-  title: 'Data Display/MLPopover',
+  title: 'Popover',
   decorators: [withKnobs],
   parameters: {
     docs: {
