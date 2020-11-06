@@ -5,7 +5,7 @@ import { DownOutlined } from '../src/MLIcon'
 import mdx from './55-Tree.mdx'
 
 export default {
-  title: 'Data Display/MLTree',
+  title: 'Tree',
   component: MLTree,
   decorators: [withKnobs],
   parameters: {
