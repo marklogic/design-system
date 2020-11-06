@@ -5,7 +5,7 @@ import { MLCascader } from '@marklogic/design-system'
 import mdx from './34-Cascader.mdx'
 
 export default {
-  title: 'Data Entry/MLCascader',
+  title: 'Cascader',
   decorators: [withKnobs],
   parameters: {
     docs: {
