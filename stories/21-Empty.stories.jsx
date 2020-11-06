@@ -5,7 +5,7 @@ import { MLEmpty } from '@marklogic/design-system'
 import mdx from './21-Empty.mdx'
 
 export default {
-  title: 'Data Display/MLEmpty',
+  title: 'Empty',
   decorators: [withKnobs],
   parameters: {
     fileName: '21-Empty.stories.jsx',
