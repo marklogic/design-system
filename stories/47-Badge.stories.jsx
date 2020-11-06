@@ -7,7 +7,7 @@ import NotificationOutlined from '../src/MLIcon/NotificationOutlined'
 import mdx from './47-Badge.mdx'
 
 export default {
-  title: 'Data Display/MLBadge',
+  title: 'Badge',
   decorators: [withKnobs],
   parameters: {
     docs: {
