@@ -7,7 +7,7 @@ import mdx from './17-Select.mdx'
 const { MLOption, MLOptGroup } = MLSelect
 
 export default {
-  title: 'MLSelect',
+  title: 'Select',
   decorators: [withKnobs],
   parameters: {
     fileName: '17-Select.stories.jsx',
