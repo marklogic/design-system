@@ -5,7 +5,7 @@ import { MLDescriptions } from '@marklogic/design-system'
 import mdx from './52-Descriptions.mdx'
 
 export default {
-  title: 'Data Display/MLDescriptions',
+  title: 'Descriptions',
   decorators: [withKnobs],
   parameters: {
     docs: {
