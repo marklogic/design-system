@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import mdx from './46-Upload.mdx'
 
 export default {
-  title: 'Data Entry/MLUpload',
+  title: 'Upload',
   decorators: [withKnobs],
   parameters: {
     fileName: '46-Upload.stories.jsx',
