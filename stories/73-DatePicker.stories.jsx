@@ -6,7 +6,7 @@ import mdx from './73-DatePicker.mdx'
 const { MLRangePicker } = MLDatePicker
 
 export default {
-  title: 'Data Entry/MLDatePicker',
+  title: 'DatePicker',
   decorators: [withKnobs],
   parameters: {
     fileName: '73-DatePicker.stories.jsx',
