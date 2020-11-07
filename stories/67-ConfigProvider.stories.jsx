@@ -5,7 +5,7 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 import mdx from './67-ConfigProvider.mdx'
 
 export default {
-  title: 'Other/MLConfigProvider',
+  title: 'ConfigProvider',
   decorators: [withKnobs],
   parameters: {
     fileName: '67-ConfigProvider.stories.jsx',
