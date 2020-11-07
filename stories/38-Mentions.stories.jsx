@@ -6,7 +6,7 @@ import mdx from './38-Mentions.mdx'
 const { MLOption } = MLMentions
 
 export default {
-  title: 'Mentions',
+  title: 'Mentions (Tag)',
   decorators: [withKnobs],
   parameters: {
     fileName: '38-Mentions.stories.jsx',
