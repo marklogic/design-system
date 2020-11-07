@@ -6,7 +6,7 @@ import mdx from './75-Layout.mdx'
 const { MLHeader, MLFooter, MLSider, MLContent } = MLLayout
 
 export default {
-  title: 'Layout/MLLayout',
+  title: 'Layout',
   decorators: [withKnobs],
   parameters: {
     fileName: '75-Layout.stories.jsx',
