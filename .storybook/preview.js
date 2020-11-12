@@ -14,3 +14,13 @@ if (process.env.NODE_ENV !== 'test') {
     })
   );
 }
+
+// Sort in alphabetical order, with Welcome page first
+export const parameters = {
+  options: {
+    storySort: {
+      method: 'alphabetical',
+      order: ['Welcome', 'Components'], 
+    },
+  },
+};
