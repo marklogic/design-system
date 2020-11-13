@@ -9,7 +9,7 @@ import mdx from './3-ColorPalette.mdx'
 const MLCard = Card
 
 export default {
-  title: 'Styles',
+  title: 'Color Pallete',
   decorators: [withKnobs],
   parameters: {
     fileName: '3-ColorPalette.stories.jsx',

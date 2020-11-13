@@ -5,7 +5,7 @@ import { MLTimeline } from '@marklogic/design-system'
 import mdx from './56-Timeline.mdx'
 
 export default {
-  title: 'Data Display/MLTimeline',
+  title: 'Timeline',
   decorators: [withKnobs],
   parameters: {
     docs: {

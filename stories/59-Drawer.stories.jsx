@@ -5,7 +5,7 @@ import { MLDrawer, MLButton } from '@marklogic/design-system'
 import mdx from './59-Drawer.mdx'
 
 export default {
-  title: 'Feedback/MLDrawer',
+  title: 'Drawer (Panel)',
   decorators: [withKnobs],
   parameters: {
     fileName: '59-Drawer.stories.jsx',

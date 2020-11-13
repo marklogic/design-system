@@ -6,7 +6,7 @@ import SmileOutlined from '@ant-design/icons/lib/icons/SmileOutlined'
 import mdx from './60-message.mdx'
 
 export default {
-  title: 'Feedback/mlmessage',
+  title: 'Message',
   decorators: [withKnobs],
   parameters: {
     fileName: '60-message.stories.jsx',

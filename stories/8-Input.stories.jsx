@@ -13,7 +13,7 @@ import {
 import mdx from './8-Input.mdx'
 
 export default {
-  title: 'Data Entry/MLInput',
+  title: 'Input',
   decorators: [withKnobs],
   parameters: {
     fileName: '8-Input.stories.jsx',

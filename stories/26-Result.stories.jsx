@@ -6,7 +6,7 @@ import SmileRegular from '../src/MLIcon/SmileRegular'
 import mdx from './26-Result.mdx'
 
 export default {
-  title: 'Feedback/MLResult',
+  title: 'Result',
   decorators: [withKnobs],
   parameters: {
     fileName: '26-Result.stories.jsx',

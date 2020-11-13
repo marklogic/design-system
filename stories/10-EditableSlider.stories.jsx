@@ -5,7 +5,7 @@ import { MLEditableSlider } from '@marklogic/design-system'
 import mdx from './10-EditableSlider.mdx'
 
 export default {
-  title: 'Data Entry/MLEditableSlider',
+  title: 'EditableSlider',
   decorators: [withKnobs],
   parameters: {
     fileName: '10-EditableSlider.stories.jsx',

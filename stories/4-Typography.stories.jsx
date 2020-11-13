@@ -5,7 +5,7 @@ import { MLTypography } from '@marklogic/design-system'
 import mdx from './4-Typography.mdx'
 
 export default {
-  title: 'General/MLTypography',
+  title: 'Typography',
   decorators: [withKnobs],
   parameters: {
     fileName: '4-Typography.stories.jsx',

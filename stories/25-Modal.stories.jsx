@@ -6,7 +6,7 @@ import TrashAltSolid from '../src/MLIcon/TrashAltSolid'
 import mdx from './25-Modal.mdx'
 
 export default {
-  title: 'Feedback/MLModal',
+  title: 'Modal',
   component: MLModal,
   decorators: [withKnobs],
   parameters: {

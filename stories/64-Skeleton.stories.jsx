@@ -5,7 +5,7 @@ import { MLSkeleton } from '@marklogic/design-system'
 import mdx from './64-Skeleton.mdx'
 
 export default {
-  title: 'Feedback/MLSkeleton',
+  title: 'Skeleton',
   decorators: [withKnobs],
   parameters: {
     docs: {

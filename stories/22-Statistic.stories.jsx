@@ -6,7 +6,7 @@ import LikeOutlined from '../src/MLIcon/LikeOutlined'
 import mdx from './22-Statistic.mdx'
 
 export default {
-  title: 'Data Display/MLStatistic',
+  title: 'Statistic',
   decorators: [withKnobs],
   parameters: {
     docs: {

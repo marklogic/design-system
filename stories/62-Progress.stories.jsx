@@ -5,7 +5,7 @@ import mdx from './62-Progress.mdx'
 
 export default {
   component: MLProgress,
-  title: 'Feedback/MLProgress',
+  title: 'Progress Bar',
   decorators: [withKnobs],
   parameters: {
     fileName: '62-Progress.stories.jsx',

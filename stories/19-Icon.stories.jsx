@@ -12,7 +12,7 @@ import { antIconVariants, faIconVariants } from '../src/MLIcon/MLIcon'
 import reduce from 'lodash-es/reduce'
 
 export default {
-  title: 'General/MLIcon',
+  title: 'Icon',
   decorators: [withKnobs],
   parameters: {
     fileName: '19-Icon.stories.jsx',

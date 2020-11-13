@@ -5,7 +5,7 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import mdx from './24-Alert.mdx'
 
 export default {
-  title: 'Feedback/MLAlert',
+  title: 'Alert',
   decorators: [withKnobs],
   parameters: {
     fileName: '24-Alert.stories.jsx',

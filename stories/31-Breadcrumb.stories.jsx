@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import mdx from './31-Breadcrumb.mdx'
 
 export default {
-  title: 'Navigation/MLBreadcrumb',
+  title: 'Breadcrumb',
   decorators: [withKnobs],
   parameters: {
     fileName: '31-Breadcrumb.stories.jsx',

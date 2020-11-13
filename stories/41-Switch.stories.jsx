@@ -6,7 +6,7 @@ import mdx from './41-Switch.mdx'
 
 export default {
   component: MLSwitch,
-  title: 'Data Entry/MLSwitch',
+  title: 'Switch (Toggle)',
   decorators: [withKnobs],
   parameters: {
     fileName: '41-Switch.stories.jsx',

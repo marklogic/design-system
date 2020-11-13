@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import mdx from './5-PageHeader.mdx'
 
 export default {
-  title: 'Navigation/MLPageHeader',
+  title: 'PageHeader',
   decorators: [withKnobs],
   parameters: {
     fileName: '5-PageHeader.stories.jsx',

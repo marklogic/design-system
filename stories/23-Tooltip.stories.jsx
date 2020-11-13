@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import mdx from './23-Tooltip.mdx'
 
 export default {
-  title: 'Data Display/MLTooltip',
+  title: 'Tooltip',
   decorators: [withKnobs],
   parameters: {
     fileName: '23-Tooltip.stories.jsx',

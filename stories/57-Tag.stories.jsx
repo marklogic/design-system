@@ -7,7 +7,7 @@ import mdx from './57-Tag.mdx'
 const { MLCheckableTag } = MLTag
 
 export default {
-  title: 'Data Display/MLTag',
+  title: 'Tag',
   decorators: [withKnobs],
   parameters: {
     fileName: '57-Tag.stories.jsx',

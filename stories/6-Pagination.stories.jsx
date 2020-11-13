@@ -5,7 +5,7 @@ import { MLPagination } from '@marklogic/design-system'
 import mdx from './6-Pagination.mdx'
 
 export default {
-  title: 'Navigation/MLPagination',
+  title: 'Pagination',
   decorators: [withKnobs],
   parameters: {
     docs: {

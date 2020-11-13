@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import mdx from './7-Checkbox.mdx'
 
 export default {
-  title: 'Data Entry/MLCheckbox',
+  title: 'Checkbox',
   decorators: [withKnobs],
   parameters: {
     fileName: '7-Checkbox.stories.jsx',

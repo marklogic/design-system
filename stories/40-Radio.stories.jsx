@@ -5,7 +5,7 @@ import { withKnobs, boolean, text, array, number } from '@storybook/addon-knobs'
 import mdx from './40-Radio.mdx'
 
 export default {
-  title: 'Data Entry/MLRadio',
+  title: 'Radio',
   decorators: [withKnobs],
   parameters: {
     fileName: '40-Radio.stories.jsx',

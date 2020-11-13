@@ -5,7 +5,7 @@ import { MLAnchor } from '@marklogic/design-system'
 import mdx from './65-Anchor.mdx'
 
 export default {
-  title: 'Other/MLAnchor',
+  title: 'Anchor',
   decorators: [withKnobs],
   parameters: {
     docs: {

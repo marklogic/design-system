@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import mdx from './68-Divider.mdx'
 
 export default {
-  title: 'Other/MLDivider',
+  title: 'Divider',
   decorators: [withKnobs],
   parameters: {
     fileName: '68-Divider.stories.jsx',

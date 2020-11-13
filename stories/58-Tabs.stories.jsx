@@ -5,7 +5,7 @@ import { MLTabs } from '@marklogic/design-system'
 import mdx from './58-Tabs.mdx'
 
 export default {
-  title: 'Data Display/MLTabs',
+  title: 'Tabs',
   decorators: [withKnobs],
   parameters: {
     docs: {

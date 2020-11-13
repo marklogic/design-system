@@ -7,7 +7,7 @@ import UserOutlined from '../src/MLIcon/UserOutlined'
 import mdx from './15-Dropdown.mdx'
 
 export default {
-  title: 'Navigation/MLDropdown',
+  title: 'Dropdown (Drop Menu)',
   decorators: [withKnobs],
   parameters: {
     fileName: '15-Dropdown.stories.jsx',

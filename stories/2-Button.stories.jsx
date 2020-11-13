@@ -5,7 +5,7 @@ import { MLButton } from '@marklogic/design-system'
 import mdx from './2-Button.mdx'
 
 export default {
-  title: 'General/MLButton',
+  title: 'Button',
   decorators: [withKnobs],
   parameters: {
     fileName: '2-Button.stories.jsx',
