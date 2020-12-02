@@ -126,6 +126,7 @@ Avoid phrases like "by means of" because they do not add meaning. Replace long p
   </tr>
 
 
+
 Avoid "should" because it is indefinite, implies that the product does not work, or sounds like you are scolding the reader. Instead, use specific and direct language. Examples:
 
 <table>
@@ -141,6 +142,8 @@ Avoid "should" because it is indefinite, implies that the product does not work,
     <td>The result should display in the lower window.</td>
     <td>The result displays in the lower window.</td>
   </tr>
+
+
 
 "Should" is appropriate for troubleshooting instructions such as:
 
@@ -251,6 +254,7 @@ Use dynamic help text for instructions about a specific field. Guidelines:
     
     - **Good**: You can customize your dashboard with column sorting, column configuring, and searching and filtering.
     
+    
   
 #### Hints about Permissions
 There are 4 places where we need to provide messages to tell users they do not have permission:
@@ -277,6 +281,7 @@ The location of the text depends on which of the 4 places the text is found. See
 <img src="images/Permission_Text_Example_2.png" width="300" />
 
 ### Abbreviations and Acronyms
+
 Only use these approved abbreviations:
 <ul>
   <li> ARN for Amazon Resource Name </li>                  
