@@ -265,7 +265,7 @@ There are 4 places where we need to provide messages to tell users they do not h
 
 - When a whole form is readonly, as described in the [Form Spec](http://marklogic-ui-component-library.eng.marklogic.com/?path=/docs/data-entry-mlform--basic#read-only-fields-within-editable-forms). 
 
-- When the functions on a card are not available, as described in the [Card Spec](http://marklogic-ui-component-library.eng.marklogic.com/?path=/docs/data-display-mlcard--with-actions-and-meta#functionality-not-available).
+- When the functions on a card are not available, as described in the [Card Spec](http://marklogic-ui-component-library.eng.marklogic.com/?path=/docs/card--basic#permission-text-guidelines).
 
 
 There are two ways to word the text, depending on the situation.
