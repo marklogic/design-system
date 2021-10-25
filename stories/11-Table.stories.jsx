@@ -20,13 +20,33 @@ export default {
   },
 }
 
+const colorStyles = (
+  <style>{`
+.ml-table-row-red {
+  background: red;
+}
+
+.ml-table-col-green {
+  background: green;
+}
+`}</style>
+)
+
 export const basic = () => {
+  const useCustomRowColor = boolean('use custom row color', true)
+  const useCustomColColor = boolean('use custom column color', true)
   const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const props = {
     size: radios('size', ['default', 'middle', 'small'], 'middle'),
-    dataSource: sampleBasicData.dataSource,
-    columns: sampleBasicData.columns,
+    dataSource: cloneDeep(sampleBasicData.dataSource),
+    columns: cloneDeep(sampleBasicData.columns),
     rowKey: 'key',
+  }
+  if (useCustomColColor) {
+    props.columns[0].className = 'ml-table-col-green'
+  }
+  if (useCustomRowColor) {
+    props.dataSource[0].rowClassName = 'ml-table-row-red'
   }
   if (draggableRows) {
     props.columns = cloneDeep(props.columns)
@@ -40,6 +60,9 @@ export const basic = () => {
         onChange={action('onChange')}
         rowKey='key'
         draggableRows={draggableRows}
+        rowClassName={(record, rowIndex) => {
+          return record.rowClassName
+        }}
       />
     </div>
   )
@@ -71,14 +94,22 @@ function removeKeyRecursively(obj, key) {
 }
 
 export const embeddedTables = () => {
+  const useCustomRowColor = boolean('use custom row color', true)
+  const useCustomColColor = boolean('use custom column color', true)
   const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const defaultShowEmbeddedTableBodies = boolean('defaultShowEmbeddedTableBodies', false)
   const props = {
     size: radios('size', ['default', 'middle', 'small'], 'middle'),
-    dataSource: sampleNestedData.dataSource,
-    columns: sampleNestedData.columns,
+    dataSource: cloneDeep(sampleNestedData.dataSource),
+    columns: cloneDeep(sampleNestedData.columns),
     draggableRows,
     defaultShowEmbeddedTableBodies,
+  }
+  if (useCustomColColor) {
+    props.columns[0].className = 'ml-table-col-green'
+  }
+  if (useCustomRowColor) {
+    props.dataSource[0].rowClassName = 'ml-table-row-red'
   }
   if (draggableRows) {
     props.columns = cloneDeep(props.columns)
@@ -96,7 +127,12 @@ export const embeddedTables = () => {
         rowKey='emp_no'
         {...props}
         onChange={action('onChange')}
+        rowClassName={(record, rowIndex) => {
+          return record.rowClassName
+        }}
+
       />
+      {colorStyles}
     </div>
   )
 }
@@ -111,6 +147,8 @@ const dateSorter = extractSortColumnDecorator((a, b) => {
 
 export const rowNestedTable = () => {
   const size = radios('size', ['default', 'middle', 'small'], 'middle')
+  const useCustomRowColor = boolean('use custom row color', true)
+  const useCustomColColor = boolean('use custom column color', true)
   const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const abColumns = [
     {
@@ -126,6 +164,9 @@ export const rowNestedTable = () => {
       ...(draggableRows ? {} : { sorter: lessThanSorter('b') }),
     },
   ]
+  if (useCustomColColor) {
+    abColumns[0].className = 'ml-table-col-green'
+  }
   const expandedRowRender = (row) => (
     <MLTable
       scroll={{ x: true }}
@@ -134,6 +175,9 @@ export const rowNestedTable = () => {
       columns={abColumns}
       showHeader={true}
       size={size}
+      rowClassName={(record, rowIndex) => {
+        return record.rowClassName
+      }}
       draggableRows={draggableRows}
     />
   )
@@ -157,9 +201,15 @@ export const rowNestedTable = () => {
       ],
     },
   ]
+  if (useCustomRowColor) {
+    dataSource[0].rowClassName = 'ml-table-row-red'
+  }
   return (
     <div>
       <MLTable
+        rowClassName={(record, rowIndex) => {
+          return record.rowClassName
+        }}
         scroll={{ x: true }}
         size={size}
         dataSource={dataSource}
@@ -173,12 +223,15 @@ export const rowNestedTable = () => {
         function that returns a value like the below, for the expandedRowRender prop.
         {expandedRowRender(dataSource[0])}
       </div>
+      {colorStyles}
     </div>
   )
 }
 
 export const rowNestedTableWithButtons = () => {
   const size = radios('size', ['default', 'middle', 'small'], 'middle')
+  const useCustomRowColor = boolean('use custom row color', true)
+  const useCustomColColor = boolean('use custom column color', true)
   const draggableRows = boolean('draggableRows (and disable sorting)', false)
   const abColumns = [
     {
@@ -230,6 +283,12 @@ export const rowNestedTableWithButtons = () => {
       ],
     },
   ]
+  if (useCustomColColor) {
+    abColumns[0].className = 'ml-table-col-green'
+  }
+  if (useCustomRowColor) {
+    dataSource[0].rowClassName = 'ml-table-row-red'
+  }
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -242,6 +301,9 @@ export const rowNestedTableWithButtons = () => {
         dataSource={dataSource}
         columns={abColumns}
         expandedRowRender={expandedRowRender}
+        rowClassName={(record, rowIndex) => {
+          return record.rowClassName
+        }}
         draggableRows={draggableRows}
       />
       <div style={{ display: 'none' }}>
@@ -250,12 +312,14 @@ export const rowNestedTableWithButtons = () => {
         function that returns a value like the below, for the expandedRowRender prop.
         {expandedRowRender(dataSource[0])}
       </div>
-
+      {colorStyles}
     </div>
   )
 }
 
 export const treeData = () => {
+  const useCustomRowColor = boolean('use custom row color', true)
+  const useCustomColColor = boolean('use custom column color', true)
   const abColumns = [
     {
       title: 'A',
@@ -291,6 +355,12 @@ export const treeData = () => {
     },
     { key: 7, a: 7, b: 7 },
   ]
+  if (useCustomColColor) {
+    abColumns[0].className = 'ml-table-col-green'
+  }
+  if (useCustomRowColor) {
+    dataSource[0].rowClassName = 'ml-table-row-red'
+  }
   return (
     <div>
       <MLTable
@@ -298,7 +368,11 @@ export const treeData = () => {
         size={radios('size', ['default', 'middle', 'small'], 'middle')}
         dataSource={dataSource}
         columns={abColumns}
+        rowClassName={(record, rowIndex) => {
+          return record.rowClassName
+        }}
       />
+      {colorStyles}
     </div>
   )
 }

@@ -38,6 +38,8 @@
   "tile-color-custom": "#1D252D",
   "slider-track-background-color": "#a9b1c9",
   "slider-track-background-color-hover": "@highlight-color",
+  "table-header-bg": "#e8e8e8",
+  "table-expand-button-column-bg": "#fafafa",
   "node-1-color": "#D5D3DD",
   "node-2-color": "#CAE4EA",
   "node-3-color": "#E1F3EC",

@@ -5,6 +5,18 @@
 }
 
 .ml-table {
+  thead > tr > th {
+    background: unset; // Undo too-specific background so we can set it on the tr with JS
+  }
+
+  thead tr {
+    background: @table-header-bg;
+  }
+
+  tbody > tr > td.ant-table-row-expand-icon-cell {
+    background: @table-expand-button-column-bg;
+  }
+
   td:not(.ant-table-row-expand-icon-cell) {
     vertical-align: top;
   }

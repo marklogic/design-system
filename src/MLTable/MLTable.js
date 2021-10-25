@@ -126,6 +126,14 @@ class MLTable extends React.Component {
     this.setState(stateTransform)
   }
 
+  getCellStyle(text, row, rowIndex, column, colIndex) {
+    return Object.assign(
+      { before: ' ' },
+      this.props.rowStyle(column, colIndex),
+      this.props.columnStyle(row, rowIndex),
+    )
+  }
+
   handleDragEnterRow(draggingRecordInfo, dropTargetRecordInfo) {
     this.setState({
       dropTargetRecordInfo,
@@ -260,12 +268,21 @@ class MLTable extends React.Component {
   }
 
   render() {
-    const { showBody, dataSource, columns } = this.props
+    const {
+      showBody,
+      dataSource,
+      columns,
+      columnStyle,
+    } = this.props
+
     if (!showBody) {
       return <MLHeaderTable columns={columns} />
     }
     const restructuredColumns = columns.map((originalColumn) => {
       const restructuredColumn = clone(originalColumn)
+      restructuredColumn.render = restructuredColumn.render || ((text, record, index) => {
+        return text
+      })
       if (originalColumn.columns !== undefined) {
         if (originalColumn.dataIndex === undefined) {
           throw Error('dataIndex must be specified when nesting columns')
@@ -283,7 +300,7 @@ class MLTable extends React.Component {
           )
         }
         // If the column has sub-columns, render a sub-table
-        restructuredColumn.render = (text, record, index) => (
+        restructuredColumn.render = (text, record, colIndex) => (
           <MLTable
             columns={originalColumn.columns}
             dataSource={record[originalColumn.dataIndex]}
@@ -340,6 +357,18 @@ class MLTable extends React.Component {
         </div>)
     }
 
+    // const restructuredOnRow = (record, rowIndex) => {
+    //   const originalOnRowResult = this.props.onRow(record, rowIndex)
+    //   const rowClassName = this.props.rowClassName(record, rowIndex)
+    //   if (rowClassName === undefined) {
+    //     return originalOnRowResult
+    //   }
+    //   const newRowProps = {
+    //     className: rowClassName,
+    //   }
+    //   return Object.assign(newRowProps, originalOnRowResult)
+    // }
+
     return (
       <MLTableContextProvider isInsideTable={true}>
         <Table
@@ -368,6 +397,9 @@ class MLTable extends React.Component {
 MLTable.defaultProps = {
   size: 'middle',
   showBody: true,
+  columnStyle: () => ({}),
+  rowStyle: () => ({}),
+  rowClassName: () => undefined,
   onChange: () => {},
   rowKey: undefined,
   defaultShowEmbeddedTableBodies: false,
