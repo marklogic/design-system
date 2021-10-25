@@ -329,6 +329,7 @@ export const sampleNestedData = {
       title: 'Work Experience',
       dataIndex: 'work_experience',
       key: 'work_experience',
+      expandedWidth: 500,
       columns: [
         { title: 'Employee Number', dataIndex: 'emp_no', key: 'emp_no', sorter: lessThanSorter('emp_no') },
         { title: 'Department Number', dataIndex: 'dept_no', key: 'dept_no', sorter: lessThanSorter('dept_no') },
@@ -337,6 +338,7 @@ export const sampleNestedData = {
           title: 'Job Titles',
           dataIndex: 'titles',
           key: 'titles',
+          expandedWidth: 200,
           columns: [
             { title: 'Job Title', dataIndex: 'title', key: 'title', sorter: lessThanSorter('title') },
             { title: 'From', dataIndex: 'from_date', key: 'from_date', sorter: dateSorter('from_date') },
@@ -349,6 +351,7 @@ export const sampleNestedData = {
       title: 'Salary History',
       dataIndex: 'salary',
       key: 'salary',
+      expandedWidth: 350,
       columns: [
         { title: 'Salary', dataIndex: 'salary', key: 'salary2', sorter: lessThanSorter('salary') },
         { title: 'From', dataIndex: 'from_date', key: 'from_date', sorter: dateSorter('from_date') },
